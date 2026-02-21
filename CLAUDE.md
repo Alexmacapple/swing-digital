@@ -106,6 +106,15 @@ Brandon, Fragen, Raleway Bold, Roboto Bold, Walden Black
 
 ---
 
+## Guidelines Templates - OBLIGATOIRE
+
+**Lors de la creation ou modification de toute page/template du site, TOUJOURS suivre** :
+`/Users/alex/Claude/active/swing-digital/GUIDELINES-TEMPLATES.md`
+
+Ce fichier contient les conventions etablies (archetypes, BEM, variables CSS, contraste WCAG AA, responsive, images, checklist) et doit etre consulte AVANT toute integration.
+
+---
+
 ## Decisions
 
 1. YOLO STRICT : intégrer les 62 pages séquentiellement, fidèles à la maquette

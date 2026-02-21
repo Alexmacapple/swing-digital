@@ -114,23 +114,24 @@ La variable `--section-height` est definie dans `:root` puis surchargee :
 
 ```css
 /* Marque */
-var(--color-brand)          /* #E8494B - rouge principal (fonds, gradients) */
-var(--color-brand-btn)      /* #CE3B3D - rouge boutons (WCAG AA 4.86:1 sur blanc) */
+var(--color-brand)          /* #E8494B - rouge principal (fonds decoratifs, NON pour texte) */
+var(--color-brand-btn)      /* #CE3B3D - rouge conforme WCAG AA 4.86:1 sur blanc */
 var(--color-brand-light)    /* #F49C9E */
 var(--color-brand-pale)     /* #FFB3A7 */
-var(--color-brand-alt)      /* #FF8080 */
+var(--color-brand-alt)      /* #CE3B3D - endpoint clair du gradient (etait #FF8080, non conforme) */
 var(--color-white)          /* #ffffff */
 
 /* Gradients */
-var(--gradient-brand)       /* rouge → rose 135deg */
-var(--gradient-hero)        /* rouge → rose pale 135deg */
+var(--gradient-brand)       /* #B93539 (5.78:1) → #CE3B3D (4.86:1) - WCAG AA a tous les points */
+var(--gradient-hero)        /* rouge → rose pale 135deg (page 1 uniquement, texte large) */
 ```
 
 **Regle contraste WCAG AA** :
 - `--color-brand` (#E8494B) : ratio 3.83:1 sur blanc → **insuffisant pour du texte**
 - `--color-brand-btn` (#CE3B3D) : ratio 4.86:1 sur blanc → **conforme WCAG AA**
+- `--gradient-brand` : les DEUX endpoints passent 4.5:1 (5.78:1 et 4.86:1)
 - Utiliser `--color-brand-btn` pour tout element texte blanc sur fond rouge (boutons, badges, tags)
-- Utiliser `--color-brand` pour les fonds decoratifs, gradients, bordures
+- Utiliser `--color-brand` uniquement pour les fonds decoratifs sans texte dessus (ex: partners-page)
 
 ### Espacement responsive
 
@@ -567,41 +568,86 @@ Uniquement pour les changements de **structure** (pas d'espacement) :
 
 ### Regle : ratio minimum 4.5:1 pour le texte normal
 
-Tout texte sur fond colore doit atteindre un ratio de contraste de 4.5:1 (texte normal) ou 3:1 (texte large 18pt+).
+Tout texte sur fond colore doit atteindre un ratio de contraste de 4.5:1 (texte normal) ou 3:1 (texte large >= 18.5px bold / 24px normal).
 
 ### Variables couleurs et contraste
 
 | Variable | Hex | Ratio sur blanc | Usage |
 |----------|-----|----------------|-------|
-| `--color-brand` | #E8494B | 3.83:1 | Fonds decoratifs, gradients (pas de texte blanc dessus) |
-| `--color-brand-btn` | #CE3B3D | 4.86:1 | Boutons, badges, tags avec texte blanc |
+| `--color-brand` | #E8494B | 3.83:1 | Fonds decoratifs uniquement (pas de texte blanc dessus) |
+| `--color-brand-btn` | #CE3B3D | 4.86:1 | Boutons, badges, conteneurs texte, background-color fallback |
 
-### Quand utiliser quelle variable
+### Regle 1 : Toujours coupler `background-color` et `color`
+
+Les outils d'accessibilite comparent `color` et `background-color` de chaque element. Si `color` n'est pas defini, ils utilisent le noir par defaut du body (#000 sur #CE3B3D = 4.32:1, FAIL).
 
 ```css
-/* CORRECT : bouton avec texte blanc */
-.pageN__button {
-    background-color: var(--color-brand-btn);  /* 4.86:1 - WCAG AA */
+/* CORRECT : toujours les deux */
+.pageN__container {
+    background-color: var(--color-brand-btn);
     color: var(--color-white);
 }
 
-/* CORRECT : fond decoratif sans texte directement dessus */
-.pageN__background {
-    background: var(--gradient-brand);  /* Decoratif, OK */
+/* INCORRECT : manque color → outil voit noir sur rouge */
+.pageN__container {
+    background-color: var(--color-brand-btn);
+    /* color manquant → #000000 par defaut → 4.32:1 FAIL */
+}
+```
+
+### Regle 2 : background-color explicite sur les elements texte
+
+Les outils a11y ne traversent PAS toujours le DOM pour trouver le `background-color` d'un ancetre. Chaque element texte dans un conteneur a fond colore doit avoir son propre `background-color`.
+
+```css
+/* CORRECT : background-color explicite sur l'element texte */
+.pageN__meta {
+    background-color: var(--color-brand-btn);
 }
 
-/* INCORRECT : texte blanc sur brand non-btn */
-.pageN__tag {
-    background-color: var(--color-brand);  /* 3.83:1 - FAIL WCAG */
+/* INCORRECT : compter sur l'heritage CSS (background-color n'herite PAS) */
+.pageN__container {
+    background-color: var(--color-brand-btn);
+}
+.pageN__meta {
+    /* pas de background-color → outil voit #ffffff → ratio 1:1 FAIL */
+}
+```
+
+**Note** : `background-color: inherit` ne fonctionne PAS non plus car il herite du parent direct (qui peut etre `transparent`), pas du premier ancetre colore.
+
+### Regle 3 : Pas de `background: transparent` sur les conteneurs texte
+
+Le shorthand `background: transparent` bloque la traversee DOM des outils a11y. Soit le supprimer, soit le remplacer par `background-color: var(--color-brand-btn)`.
+
+### Regle 4 : Gradients et background-color fallback
+
+Les outils calculent le contraste sur le point le PLUS CLAIR du gradient. Le gradient `--gradient-brand` (#B93539 → #CE3B3D) passe 4.5:1 a tous les points. Ajouter toujours un `background-color` solide apres le gradient.
+
+```css
+/* CORRECT : gradient + fallback */
+.pageN__container {
+    background: var(--gradient-brand);
+    background-color: var(--color-brand-btn);
     color: var(--color-white);
 }
 ```
+
+### Regle 5 : Tailles de texte minimales
+
+| Contexte | Minimum | Raison |
+|----------|---------|--------|
+| Corps de texte, meta | 0.9rem (14.4px) | Lisibilite sur ecran |
+| Badges, tags | 0.9rem (14.4px) | Coherence visuelle |
+| Titres section | 1rem (16px) | Hierarchie visuelle |
+| Mobile (480px) | 0.7rem (11.2px) | Seuil absolu minimum |
 
 ### Verification
 
 Avant chaque commit, verifier le contraste des elements texte sur fond colore :
 - Outil en ligne : webaim.org/resources/contrastchecker
-- Script Python dans le workflow de test
+- Tanaguru (extension navigateur, detecte les gradients)
+- Verifier aux viewports desktop ET mobile (les tailles changent)
 
 ---
 
@@ -687,6 +733,10 @@ Avant chaque commit, verifier le contraste des elements texte sur fond colore :
 | `--color-brand` pour fond sous texte blanc | Contraste 3.83:1 insuffisant | `--color-brand-btn` (4.86:1) |
 | `height` fixe + `overflow: hidden` sur pages denses en mobile | Troncature du contenu | `min-height` + `overflow: visible` |
 | Font-size < 0.7rem en mobile | Illisible sur petit ecran | Minimum 0.7rem, preferer les variables `--fs-slide-*` |
+| `background-color` sans `color` sur conteneur rouge | Outil voit #000 par defaut → 4.32:1 FAIL | Toujours coupler `background-color` et `color` |
+| `background: transparent` sur conteneur texte | Bloque traversee DOM outils a11y | Supprimer ou remplacer par `background-color` explicite |
+| `background-color: inherit` sur elements texte | Herite du parent direct (souvent `transparent`) | `background-color: var(--color-brand-btn)` explicite |
+| Gradient sans `background-color` fallback | Outils ne detectent pas le gradient | Ajouter `background-color` solide apres `background` |
 
 ---
 
@@ -714,6 +764,10 @@ Avant de valider une nouvelle page :
 ### Contraste WCAG AA
 - [ ] Texte blanc sur fond rouge : utilise `--color-brand-btn` (pas `--color-brand`)
 - [ ] Ratio contraste >= 4.5:1 verifie sur tous les elements texte
+- [ ] `background-color` ET `color` couples sur chaque conteneur a fond colore
+- [ ] `background-color` explicite sur les elements texte (pas d'heritage implicite)
+- [ ] Pas de `background: transparent` sur les conteneurs texte
+- [ ] Gradient accompagne d'un `background-color` solide fallback
 
 ### Responsive
 - [ ] Responsive verifie aux 4 breakpoints (1200, 1024, 768, 480)
