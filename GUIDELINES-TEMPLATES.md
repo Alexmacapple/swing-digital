@@ -442,19 +442,22 @@ Utilise pour : partenaires, portfolios, galeries d'elements.
 }
 ```
 
-### Alt text WCAG 2.2 AA
+### Alt text
 
-- Minimum 125 caracteres par image
-- Decrire le contenu visuel, pas le role technique
-- Format : `[Sujet] [Action/Contexte] [Details visuels pertinents]`
+- **Maximum 80 caracteres** (outils a11y signalent au-dela)
+- Decrire le contenu visuel de facon concise
+- Format : `[Sujet] [Action/Contexte]`
 
 ```html
-<!-- BON -->
+<!-- BON (concis, < 80 chars) -->
+alt="Femme enveloppee de tissu blanc fluide sur fond rose corail degrade"
+
+<!-- MAUVAIS (trop long) -->
 alt="Portrait artistique d'une femme enveloppee de tissu blanc fluide
 sur un fond rose corail degrade, symbolisant les experiences sensorielles
 immersives et creatives proposees par Swing Digital"
 
-<!-- MAUVAIS -->
+<!-- MAUVAIS (non descriptif) -->
 alt="Image hero"
 alt="photo.jpg"
 ```
@@ -706,7 +709,7 @@ Avant de valider une nouvelle page :
 ### Images
 - [ ] `object-fit: contain` sur toutes les images (sauf archetype D et portraits)
 - [ ] `contain` maintenu en responsive mobile (pas de switch vers `cover`)
-- [ ] Alt text >= 125 caracteres sur chaque image
+- [ ] Alt text descriptif <= 80 caracteres sur chaque image
 
 ### Contraste WCAG AA
 - [ ] Texte blanc sur fond rouge : utilise `--color-brand-btn` (pas `--color-brand`)
