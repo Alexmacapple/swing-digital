@@ -570,7 +570,8 @@ img {
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
     .hero-page1__image {
-        max-width: 70%;
+        max-width: 85%;
+        max-height: 90vh;
     }
 
     .hero-page1__title-group {
