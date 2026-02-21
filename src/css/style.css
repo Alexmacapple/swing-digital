@@ -493,8 +493,8 @@ img {
 .hero-page1__image {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-35%, -50%);
+    right: 5%;
+    transform: translateY(-50%);
     max-width: 65%;
     height: auto;
     object-fit: contain;
@@ -567,7 +567,6 @@ img {
 @media (max-width: 1024px) {
     .hero-page1__image {
         max-width: 70%;
-        transform: translate(-30%, -50%);
     }
 
     .hero-page1__title-group {
@@ -580,34 +579,41 @@ img {
         height: auto;
         min-height: 100vh;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
     }
 
     .hero-page1__logo {
         top: 1rem;
         left: 1rem;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .hero-page1__nav {
-        top: 5rem;
+        top: 4rem;
         right: 1rem;
-        width: 100%;
-        max-width: 300px;
+        left: auto;
+        width: auto;
+        max-width: 100%;
     }
 
     .hero-page1__nav-list {
-        gap: 0.5rem;
+        gap: 0.4rem;
+        flex-direction: column;
+        align-items: flex-end;
     }
 
     .hero-page1__nav-btn {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.65rem;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.6rem;
+        white-space: normal;
+        width: 80px;
     }
 
     .hero-page1__partners {
         top: 3rem;
         left: 1rem;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
     }
 
     .hero-page1__title-group {
@@ -615,18 +621,27 @@ img {
         top: auto;
         left: auto;
         transform: none;
-        margin-top: 3rem;
+        margin-top: 2.5rem;
         margin-bottom: 2rem;
         max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-page1__title-group h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero-page1__hashtags {
+        font-size: 0.65rem;
     }
 
     .hero-page1__image {
         position: relative;
         top: auto;
-        left: auto;
+        right: auto;
         transform: none;
-        max-width: 100%;
-        margin: 2rem auto;
+        max-width: 90%;
+        margin: 1.5rem auto;
     }
 
     .hero-page1__bottom-left,
@@ -635,19 +650,21 @@ img {
         bottom: auto;
         left: auto;
         right: auto;
-        flex-direction: row;
-        gap: 2rem;
-        margin-top: 2rem;
-        justify-content: center;
-        text-align: center;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .hero-page1__bottom-right {
-        text-align: center;
+        text-align: left;
+        align-items: flex-start;
     }
 
     .hero-page1__follow-label {
-        display: none;
+        display: block;
+        font-size: 0.7rem;
     }
 }
 
