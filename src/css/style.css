@@ -369,7 +369,7 @@ img {
     z-index: 15;
 }
 
-.hero-page1__partners p {
+.hero-page1__partners a {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-white);
