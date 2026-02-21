@@ -16,3 +16,7 @@ Thumbs.db
 
 # Dossier Claude interne
 .claude/
+
+# Node modules
+node_modules/
+package-lock.json
