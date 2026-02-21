@@ -1728,4 +1728,51 @@ img {
     .page3__project-title {
         font-size: 0.75rem;
     }
+
+    /* Page 8 - Partners Grid Responsive */
+    .partners-page__title {
+        font-size: 1.3rem;
+        margin: 0 0 0.8rem 0;
+    }
+
+    .partners-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.4rem;
+    }
+
+    .partners-page__container {
+        padding: 1.2rem 1rem 0.8rem 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .partners-page__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+    }
+
+    .partners-page__container {
+        padding: 1.5rem 1.2rem 1rem 1.2rem;
+    }
+
+    .partners-page__title {
+        font-size: 1.6rem;
+        margin: 0 0 1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-page__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .partners-page__container {
+        padding: 1.3rem 1rem 0.8rem 1rem;
+    }
+
+    .partners-page__title {
+        font-size: 1.4rem;
+        margin: 0 0 0.9rem 0;
+    }
 }
