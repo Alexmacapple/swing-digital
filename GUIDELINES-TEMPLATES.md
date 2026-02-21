@@ -169,7 +169,7 @@ var(--font-secondary)       /* Fragen - corps, sous-titres */
 
 ## 4. Archetypes de layout
 
-8 templates de base couvrent tous les cas de la maquette.
+9 templates de base couvrent tous les cas de la maquette.
 
 ### A. Hero (plein ecran, elements absolus)
 
@@ -687,7 +687,33 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
 
 ### I. Bandeau de cartes numerotees
 
-**Description** : Titre section + rangee horizontale de N cartes. Chaque carte = image cover + numero decoratif en surimpression + zone texte avec fond colore (image gradient ou couleur solide).
+Utilise pour : rangee horizontale de N cartes avec image cover, numero decoratif en surimpression et zone texte a fond colore.
+
+```html
+<section id="page-N" class="pageN" aria-labelledby="pageN-title">
+    <div class="pageN__container">
+        <div class="pageN__header">
+            <span class="pageN__arrow" aria-hidden="true">&#x2192;</span>
+            <h2 id="pageN-title">TITRE SECTION</h2>
+        </div>
+        <div class="pageN__cards" role="region" aria-label="Description des cartes">
+            <article class="pageN__card">
+                <div class="pageN__card-image-wrapper">
+                    <img src="..." alt="..." class="pageN__card-image">
+                    <span class="pageN__card-number" aria-hidden="true">1</span>
+                </div>
+                <div class="pageN__card-body" style="background-image: url('...')">
+                    <h3 class="pageN__card-title">TITRE</h3>
+                    <p class="pageN__card-subtitle">Sous-titre</p>
+                </div>
+            </article>
+            <!-- Variantes card-body : -->
+            <!-- Fond image gradient : style="background-image: url('...')" -->
+            <!-- Fond couleur solide : class="pageN__card-body--dark" ou "--pink" -->
+        </div>
+    </div>
+</section>
+```
 
 ```css
 .pageN {
@@ -705,8 +731,7 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.5rem;
-    flex: 1;
-    min-height: 0;
+    max-height: 65vh;  /* Eviter que les cartes s'etirent sur toute la hauteur */
 }
 .pageN__card {
     display: flex;
@@ -737,10 +762,16 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
 }
 .pageN__card-body {
     padding: 0.8rem;
+    min-height: 4.5rem;          /* Hauteur harmonisee entre toutes les cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background-size: cover;
     background-position: center;
     color: var(--color-white);
+    flex-shrink: 0;
 }
 .pageN__card-title {
     font-size: clamp(0.75rem, 1.2vw, 1rem);
@@ -754,6 +785,9 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
 - Les cartes bandeau utilisent `object-fit: cover` (comme les portraits team, archetype D et archetype F) car les images doivent remplir uniformement la carte.
 - Les fonds de `card-body` sont soit une image gradient (`background-image` inline), soit une couleur solide (modifier `--dark`, `--pink`, etc.).
 - Les numeros sont decoratifs (`aria-hidden="true"`), en surimpression sur l'image.
+- `max-height: 65vh` sur la grille evite que les cartes soient trop hautes en desktop.
+- `min-height: 4.5rem` + flexbox sur `card-body` harmonise la hauteur des blocs titre entre toutes les cartes.
+- **Contraste** : les fonds colores solides doivent atteindre 4.5:1 avec le texte blanc (ex: `#B5364E` au lieu de `#E8667E`).
 - **Responsive** : 768px passe en `repeat(3, 1fr)`, 480px en `repeat(2, 1fr)`.
 
 **Reference** : Page 13
@@ -1098,7 +1132,7 @@ Avant chaque commit, verifier le contraste des elements texte sur fond colore :
 | Code CSS commente | Pollution | Supprimer, git garde l'historique |
 | Sections CSS generiques inutilisees | CSS mort | Supprimer avant commit |
 | `object-fit: cover` en responsive | Recadrage non desire | `object-fit: contain` |
-| `object-fit: cover` (sauf archetype D et portraits) | Recadrage non desire | `object-fit: contain` |
+| `object-fit: cover` (sauf archetypes D, F, I et portraits) | Recadrage non desire | `object-fit: contain` |
 | `--color-brand` pour fond sous texte blanc | Contraste 3.83:1 insuffisant | `--color-brand-btn` (4.86:1) |
 | `height` fixe + `overflow: hidden` sur pages denses en mobile | Troncature du contenu | `min-height` + `overflow: visible` |
 | Font-size < 0.7rem en mobile | Illisible sur petit ecran | Minimum 0.7rem, preferer les variables `--fs-slide-*` |
@@ -1129,7 +1163,7 @@ Avant de valider une nouvelle page :
 - [ ] Variables espacement utilisees (`--slide-pad-x/y`, `--grid-gap`)
 
 ### Images
-- [ ] `object-fit: contain` sur toutes les images (sauf archetype D et portraits)
+- [ ] `object-fit: contain` sur toutes les images (sauf archetypes D, F, I et portraits)
 - [ ] `contain` maintenu en responsive mobile (pas de switch vers `cover`)
 - [ ] Alt text descriptif <= 80 caracteres sur chaque image
 
@@ -1165,7 +1199,7 @@ Pour chaque nouvelle page a integrer :
 
 1. **Consulter** la maquette : `src/pages-extracted/page-N/page-N-screenshot.png`
 2. **Lire** le texte exact : `src/pages-extracted/page-N/texte-page-N.md`
-3. **Identifier** l'archetype de layout (A-E ci-dessus)
+3. **Identifier** l'archetype de layout (A-I ci-dessus)
 4. **Ecrire** le HTML dans `index.html` (section apres la derniere)
 5. **Ecrire** le CSS dans `style.css` (section apres la derniere page)
 6. **Copier** les images dans `src/img/pages/page-N/`
