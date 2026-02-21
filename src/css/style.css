@@ -1581,10 +1581,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: transparent;
     aspect-ratio: 1;
-    padding: 0.6rem;
-    border-radius: 3px;
+    padding: 0.4rem;
+    border-radius: 0;
 }
 
 .partners-page__logo {
