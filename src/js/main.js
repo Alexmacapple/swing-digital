@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAccessibility();
     initEventListeners();
     initScrollTracking();
+    initVideoSound();
 });
 
 /**
@@ -151,11 +152,51 @@ function updateNavActive(currentSectionId) {
     });
 }
 
+/**
+ * Video Sound Toggle (Vimeo Player API)
+ */
+function initVideoSound() {
+    var iframe = document.getElementById('vimeo-monroe');
+    var playBtn = document.querySelector('.page11__play-btn');
+    var soundBtn = document.querySelector('.page11__sound-btn');
+
+    if (!iframe || typeof Vimeo === 'undefined') return;
+
+    var player = new Vimeo.Player(iframe);
+
+    if (playBtn) {
+        playBtn.addEventListener('click', function() {
+            var isPlaying = playBtn.getAttribute('aria-pressed') === 'true';
+            if (isPlaying) {
+                player.pause();
+                playBtn.setAttribute('aria-pressed', 'false');
+            } else {
+                player.play();
+                playBtn.setAttribute('aria-pressed', 'true');
+            }
+        });
+    }
+
+    if (soundBtn) {
+        soundBtn.addEventListener('click', function() {
+            var isSoundOn = soundBtn.getAttribute('aria-pressed') === 'true';
+            if (isSoundOn) {
+                player.setVolume(0);
+                soundBtn.setAttribute('aria-pressed', 'false');
+            } else {
+                player.setVolume(1);
+                soundBtn.setAttribute('aria-pressed', 'true');
+            }
+        });
+    }
+}
+
 // Export functions if needed
 window.SwingDigital = {
     initNavigation,
     initAccessibility,
     initEventListeners,
     initScrollTracking,
-    updateNavActive
+    updateNavActive,
+    initVideoSound
 };

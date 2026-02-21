@@ -71,6 +71,7 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 8 | `partners-page` | `.partners-page` |
 | 9 | `page9` | `.page9` |
 | 10 | `page10` | `.page10` |
+| 11 | `page11` | `.page11` |
 
 ### Convention pour les nouvelles pages
 
@@ -166,7 +167,7 @@ var(--font-secondary)       /* Fragen - corps, sous-titres */
 
 ## 4. Archetypes de layout
 
-6 templates de base couvrent tous les cas de la maquette.
+7 templates de base couvrent tous les cas de la maquette.
 
 ### A. Hero (plein ecran, elements absolus)
 
@@ -476,18 +477,97 @@ Utilise pour : pages catalogue avec image de fond plein ecran + overlay gradient
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 4px;
-    background-color: var(--color-brand-btn);  /* fallback a11y */
 }
 ```
 
 **Notes** :
 - Les cartes-projets utilisent `object-fit: cover` (comme les portraits team et archetype D) car les images doivent remplir uniformement la carte.
 - Le container est transparent (pas de `background-color`) pour laisser voir l'image de fond avec overlay gradient.
-- Les titres de cartes sont centres (top/left 50% + transform) avec `background-color` fallback pour le contraste a11y.
+- Les titres de cartes sont centres (top/left 50% + transform), texte blanc seul sans fond.
+- **Variante sans header** : la grille peut occuper tout le viewport (header/intro optionnels). Utiliser `<h2 class="sr-only">` pour l'accessibilite.
 
-**Reference** : Page 9
+**Reference** : Pages 9, 10
+
+### G. Video plein ecran (iframe cover)
+
+Utilise pour : pages video immersives en boucle, transitions visuelles.
+
+```html
+<section id="page-N" class="pageN" aria-label="Description de la video">
+    <div class="pageN__video-wrapper">
+        <iframe id="vimeo-ID" src="https://player.vimeo.com/video/ID?h=HASH&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+                title="Description accessible"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+    <div class="pageN__controls">
+        <button class="pageN__play-btn" aria-label="Lecture" aria-pressed="true" type="button">
+            <!-- SVG pause (pressed=true) / play (pressed=false) -->
+        </button>
+        <button class="pageN__sound-btn" aria-label="Son" aria-pressed="false" type="button">
+            <!-- SVG mute (pressed=false) / ondes (pressed=true) -->
+        </button>
+    </div>
+</section>
+<!-- Vimeo Player SDK (avant main.js) -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+```css
+.pageN {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: #000;
+}
+.pageN__video-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+/* Technique cover pour iframe : dimensionner plus grand que le viewport
+   et centrer avec translate. overflow:hidden du parent coupe l'excedent.
+   PAS de pointer-events:none (bloque l'API Vimeo postMessage). */
+.pageN__video-wrapper iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 177.78vh;    /* 100vh * 16/9 */
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    border: 0;
+}
+.pageN__controls {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10;       /* Au-dessus de l'iframe (z-index: 1) */
+    display: flex;
+    gap: 0.75rem;
+}
+```
+
+**Notes** :
+- Parametres Vimeo : `autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`. Ne PAS utiliser `background=1` (bloque l'API Player pour le volume).
+- Boutons custom play/pause + son via Vimeo Player SDK. Le JS toggle `aria-pressed` sur chaque bouton.
+- Ne PAS mettre `pointer-events: none` sur l'iframe (bloque `postMessage` necessaire au SDK Vimeo). Les boutons sont cliquables grace au `z-index: 10` au-dessus du wrapper `z-index: 1`.
+- La technique scaling + translate est inheritement responsive (couvre paysage ET portrait sans media queries).
+- `background-color: #000` sur la section = fallback pendant le chargement.
+- `aria-label` sur la section (pas `aria-labelledby`) car pas de `<h2>` visible.
+
+**Accessibilite boutons toggle (WCAG)** :
+- `aria-label` fixe = identifie la fonction ("Lecture", "Son")
+- `aria-pressed` = communique l'etat (true/false)
+- Le CSS utilise `[aria-pressed="true/false"]` pour afficher la bonne icone
+- Lecteur d'ecran annonce : "Lecture, bouton bascule, active/inactive"
+- Taille minimum 48x48px (cible tactile WCAG 2.5.8)
+
+**Reference** : Page 11
 
 ---
 
@@ -518,6 +598,7 @@ Utilise pour : pages catalogue avec image de fond plein ecran + overlay gradient
 | 7 | Plein ecran | `cover` | **Seule exception** (archetype D) |
 | 8 | Logos partenaires | `contain` | Proportions logos preservees |
 | 9 | Cartes-projets | `cover` | Remplir uniformement la carte (archetype F) |
+| 10 | Cartes-projets | `cover` | Idem page 9 (archetype F sans header) |
 
 ### INTERDIT en responsive
 

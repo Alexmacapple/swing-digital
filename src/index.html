@@ -493,6 +493,39 @@
                 </div>
             </div>
         </section>
+
+        <!-- Page 11 : Video L'Experience Monroe (Vimeo plein ecran en boucle) -->
+        <section id="page-11" class="page11" aria-label="Video L'Experience Monroe">
+            <div class="page11__video-wrapper">
+                <iframe id="vimeo-monroe" src="https://player.vimeo.com/video/838300539?h=039ec8820a&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0"
+                        title="Video L'Experience Monroe - Swing Digital"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            <div class="page11__controls">
+            <button class="page11__play-btn" aria-label="Lecture" aria-pressed="true" type="button">
+                <svg class="page11__play-icon page11__play-icon--playing" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                    <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+                </svg>
+                <svg class="page11__play-icon page11__play-icon--paused" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                </svg>
+            </button>
+            <button class="page11__sound-btn" aria-label="Son" aria-pressed="false" type="button">
+                <svg class="page11__sound-icon page11__sound-icon--off" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+                    <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2"/>
+                    <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <svg class="page11__sound-icon page11__sound-icon--on" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+                    <path d="M15.54 8.46a5 5 0 010 7.07" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+            </button>
+            </div>
+        </section>
     </main>
     <!-- Footer -->
     <footer class="footer">
@@ -509,6 +542,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="./js/main.js" defer></script>
 </body>
 </html>

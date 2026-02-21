@@ -1554,6 +1554,95 @@ img {
 }
 
 /* ============================================================
+   PAGE 11 : VIDEO PLEIN ECRAN (Vimeo background)
+   ============================================================
+   Technique cover pour iframe : on dimensionne l'iframe plus
+   grand que le viewport (min-width/min-height 100%) et on centre
+   avec translate. Le overflow:hidden du parent coupe l'excedent.
+   Resultat identique a object-fit:cover mais compatible iframe.
+   ============================================================ */
+
+.page11 {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: #000;
+}
+
+.page11__video-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.page11__video-wrapper iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 177.78vh;   /* 100vh * 16/9 : couvre la hauteur en gardant le ratio */
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    border: 0;
+}
+
+.page11__controls {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 10;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.page11__play-btn,
+.page11__sound-btn {
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.page11__play-btn:hover,
+.page11__sound-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Play : aria-pressed=true → en lecture (icone pause visible) */
+.page11__play-icon--paused {
+    display: none;
+}
+
+.page11__play-btn[aria-pressed="false"] .page11__play-icon--playing {
+    display: none;
+}
+
+.page11__play-btn[aria-pressed="false"] .page11__play-icon--paused {
+    display: block;
+}
+
+/* Son : aria-pressed=false → mute (icone off visible) */
+.page11__sound-icon--on {
+    display: none;
+}
+
+.page11__sound-btn[aria-pressed="true"] .page11__sound-icon--off {
+    display: none;
+}
+
+.page11__sound-btn[aria-pressed="true"] .page11__sound-icon--on {
+    display: block;
+}
+
+/* ============================================================
    RESPONSIVE - PAGES 5, 6, 7
    ============================================================ */
 
