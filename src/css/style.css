@@ -1555,24 +1555,24 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 2rem 2rem 1.5rem 2rem;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
     overflow: hidden;
 }
 
 .partners-page__title {
     font-family: var(--font-secondary);
-    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.3rem, 3vw, 2rem);
     font-weight: 700;
     color: #ffffff;
-    margin: 0 0 1.5rem 0;
-    line-height: 1.15;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
     text-transform: uppercase;
 }
 
 .partners-page__grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
+    gap: 0.8rem;
     flex: 1;
     align-content: start;
 }
@@ -1583,7 +1583,7 @@ img {
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.95);
     aspect-ratio: 1;
-    padding: 0.75rem;
+    padding: 0.6rem;
     border-radius: 3px;
 }
 
