@@ -878,7 +878,7 @@ img {
 
 /* Colonne gauche - Texte */
 .page3__left {
-    background: transparent;
+    background-color: var(--color-brand-btn); /* fallback a11y : outils ne traversent pas les gradients parents */
     color: var(--color-white);
     padding: var(--slide-pad-y) var(--slide-pad-x);
     display: flex;
@@ -1224,6 +1224,7 @@ img {
     gap: var(--grid-gap);
     padding: var(--slide-pad-x);
     overflow: hidden;
+    background-color: var(--color-brand-btn); /* fallback a11y : outils ne traversent pas les gradients parents */
 }
 
 .page6__section {
