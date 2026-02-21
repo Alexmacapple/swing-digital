@@ -580,9 +580,10 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
     <div class="pageN__background"></div>
     <div class="pageN__container">
         <div class="pageN__badge">Badge</div>
-        <figure class="pageN__poster" aria-labelledby="pageN-title">
+        <figure class="pageN__poster" aria-labelledby="pageN-fig-desc">
             <img src="..." alt="..." class="pageN__poster-image">
             <figcaption class="pageN__poster-caption">
+                <span id="pageN-fig-desc" class="sr-only">Description textuelle de l'image</span>
                 <h2 id="pageN-title" class="sr-only">Titre</h2>
                 <button class="pageN__disclosure-btn" type="button"
                         aria-expanded="false" aria-controls="pageN-quotes"
@@ -672,6 +673,7 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
 ```
 
 **Notes** :
+- **Figure/figcaption complexe** : quand un `<figcaption>` contient du contenu interactif (boutons, listes), isoler le texte descriptif dans un `<span id="...">` et utiliser `aria-labelledby` sur `<figure>` pointant vers ce span. Cela evite la "pollution du nom accessible" (concatenation des labels de boutons avec la legende). Ne pas utiliser `role="group"` sur `<figure>` (ecrase le role natif `figure`).
 - **Disclosure** : pattern W3C ARIA APG (`aria-expanded` + `aria-controls` + `hidden`). Le JS generique dans `main.js` (`initDisclosure`) gere tous les boutons. Le texte du bouton change entre les deux etats via `data-label-show` / `data-label-hide`.
 - **Poster** : `overflow: hidden` sur le poster, `flex: 1; min-height: 0` sur l'image pour qu'elle se reduise quand les citations s'ouvrent. Caption avec `max-height: 40vh; overflow-y: auto`.
 - **Logos** : grille CSS `repeat(6, 1fr)` pour repartition equilibree sur 2 lignes. `mix-blend-mode: multiply` fusionne les fonds colores des JPG dans le blanc. Modifier `--invert` pour les logos sur fond sombre.

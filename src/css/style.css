@@ -1643,7 +1643,7 @@ img {
 }
 
 /* ============================================================
-   PAGE 12 : L'EXPERIENCE MONROE - AFFICHE PRESSE
+   PAGE 12 : L'EXPÉRIENCE MONROE - AFFICHE PRESSE
    ============================================================ */
 
 .page12 {
@@ -1791,7 +1791,7 @@ img {
 }
 
 /* ============================================================
-   PAGE 13 : L'EXPERIENCE MONROE - BANDEAU CARTES
+   PAGE 13 : L'EXPÉRIENCE MONROE - BANDEAU CARTES
    ============================================================ */
 
 .page13 {
@@ -1883,7 +1883,7 @@ img {
 }
 
 .page13__card-body--pink {
-    background-color: #E8667E;
+    background-color: #B5364E;
 }
 
 .page13__card-title {
@@ -2336,7 +2336,7 @@ img {
 }
 
 /* ============================================================
-   RESPONSIVE - PAGE 12 (L'Experience Monroe - Affiche presse)
+   RESPONSIVE - PAGE 12 (L'Expérience Monroe - Affiche presse)
    ============================================================ */
 
 @media (max-width: 1024px) {
@@ -2427,7 +2427,7 @@ img {
 }
 
 /* ============================================================
-   RESPONSIVE - PAGE 13 (L'Experience Monroe - Bandeau cartes)
+   RESPONSIVE - PAGE 13 (L'Expérience Monroe - Bandeau cartes)
    ============================================================ */
 
 @media (max-width: 1024px) {
