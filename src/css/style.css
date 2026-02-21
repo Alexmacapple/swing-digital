@@ -1337,14 +1337,15 @@ img {
     .page5__image-wrapper {
         width: 100%;
         max-width: none;
-        padding: 0;
+        padding: 0 var(--slide-pad-x);
         flex: 1;
+        min-height: 0;
     }
 
     .page5__image {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        max-height: 100%;
+        object-fit: contain;
     }
 
     .page5__footer {
