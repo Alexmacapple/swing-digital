@@ -650,6 +650,18 @@ img {
     outline-offset: 2px;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .skip-link {
     position: absolute;
     top: -40px;
@@ -1349,6 +1361,199 @@ img {
 }
 
 /* ============================================================
+   PAGE 9 : EXPERIENCES SERIES - GRILLE DE CARTES PROJETS
+   ============================================================ */
+
+.page9 {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+}
+
+.page9__background {
+    position: absolute;
+    inset: 0;
+    background: url('../img/pages/page-9/page-9-image-5.jpg') center/cover;
+    z-index: 0;
+}
+
+.page9__background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+}
+
+.page9__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--color-white);
+}
+
+.page9__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--slide-pad-y) var(--slide-pad-x) 0;
+}
+
+.page9__hashtags p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin: 0;
+    color: var(--color-white);
+}
+
+.page9__badge {
+    background-color: var(--color-brand-btn);
+    color: var(--color-white);
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.page9__intro {
+    text-align: center;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+
+.page9__intro h2 {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.page9__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    flex: 1;
+    min-height: 0;
+    padding: 0 var(--slide-pad-x);
+}
+
+.page9__card {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.page9__card:hover {
+    text-decoration: none;
+}
+
+.page9__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page9__card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 700;
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin: 0;
+    text-align: center;
+}
+
+/* ============================================================
+   PAGE 10 : PROJETS EN DEVELOPPEMENT - GRILLE DE CARTES
+   ============================================================ */
+
+.page10 {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+}
+
+.page10__background {
+    position: absolute;
+    inset: 0;
+    background: url('../img/pages/page-10/page-10-image-5.jpg') center/cover;
+    z-index: 0;
+}
+
+.page10__background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+}
+
+.page10__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--color-white);
+}
+
+.page10__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    flex: 1;
+    min-height: 0;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+
+.page10__card {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.page10__card:hover {
+    text-decoration: none;
+}
+
+.page10__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.page10__card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 700;
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin: 0;
+    text-align: center;
+}
+
+/* ============================================================
    RESPONSIVE - PAGES 5, 6, 7
    ============================================================ */
 
@@ -1691,5 +1896,93 @@ img {
     .partners-page__title {
         font-size: 1.2rem;   /* >= 14pt bold (18.67px) = large text WCAG, seuil 3:1 */
         margin: 0 0 0.6rem 0;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE - PAGE 9 (Experiences Series)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .page9__hashtags p {
+        font-size: 0.8rem;
+    }
+
+    .page9__intro h2 {
+        font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+    }
+
+    .page9__card-title {
+        font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .page9__header {
+        padding: var(--slide-pad-y) var(--slide-pad-x) 0;
+    }
+
+    .page9__hashtags p {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+
+    .page9__badge {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .page9__intro {
+        padding: 0.8rem var(--slide-pad-x);
+    }
+
+    .page9__intro h2 {
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        line-height: 1.4;
+    }
+
+    .page9__card-title {
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .page9__hashtags p {
+        font-size: 0.65rem;
+    }
+
+    .page9__badge {
+        font-size: 0.6rem;
+        padding: 0.4rem 0.5rem;
+    }
+
+    .page9__intro h2 {
+        font-size: 0.75rem;
+    }
+
+    .page9__card-title {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE - PAGE 10 (Projets en developpement)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .page10__card-title {
+        font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .page10__card-title {
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .page10__card-title {
+        font-size: 0.75rem;
     }
 }

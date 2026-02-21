@@ -69,6 +69,8 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 6 | `page6` | `.page6` |
 | 7 | `full-image-page` | `.full-image-page` |
 | 8 | `partners-page` | `.partners-page` |
+| 9 | `page9` | `.page9` |
+| 10 | `page10` | `.page10` |
 
 ### Convention pour les nouvelles pages
 
@@ -164,7 +166,7 @@ var(--font-secondary)       /* Fragen - corps, sous-titres */
 
 ## 4. Archetypes de layout
 
-5 templates de base couvrent tous les cas de la maquette.
+6 templates de base couvrent tous les cas de la maquette.
 
 ### A. Hero (plein ecran, elements absolus)
 
@@ -399,6 +401,94 @@ Utilise pour : partenaires, portfolios, galeries d'elements.
 
 **Reference** : Pages 2, 8
 
+### F. Grille de cartes projets
+
+Utilise pour : pages catalogue avec image de fond plein ecran + overlay gradient + grille 2x2 de cartes cliquables avec image cover.
+
+```html
+<section id="page-N" class="pageN" aria-labelledby="pageN-title">
+    <div class="pageN__background"></div>
+    <div class="pageN__container">
+        <div class="pageN__header">
+            <div class="pageN__hashtags"><p>#TAG1 #TAG2</p></div>
+            <div class="pageN__badge">Badge</div>
+        </div>
+        <div class="pageN__intro">
+            <h2 id="pageN-title">Titre</h2>
+        </div>
+        <div class="pageN__grid" role="region" aria-label="Description">
+            <a href="#" class="pageN__card">
+                <img src="..." alt="..." class="pageN__card-image">
+                <h3 class="pageN__card-title">TITRE CARTE</h3>
+            </a>
+            <!-- ... -->
+        </div>
+    </div>
+</section>
+```
+
+```css
+.pageN {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+}
+.pageN__background {
+    position: absolute;
+    inset: 0;
+    background: url('...') center/cover;
+    z-index: 0;
+}
+.pageN__background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-hero);
+    opacity: 0.75;
+    mix-blend-mode: multiply;
+}
+.pageN__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--color-white);
+    /* PAS de background-color : le container est transparent
+       pour laisser voir l'image de fond + overlay */
+}
+.pageN__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    flex: 1;
+    min-height: 0;
+    padding: 0 var(--slide-pad-x);  /* Marges laterales : fond visible sur les cotes */
+}
+.pageN__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Exception : cartes-projets dans conteneur fixe */
+}
+.pageN__card-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    background-color: var(--color-brand-btn);  /* fallback a11y */
+}
+```
+
+**Notes** :
+- Les cartes-projets utilisent `object-fit: cover` (comme les portraits team et archetype D) car les images doivent remplir uniformement la carte.
+- Le container est transparent (pas de `background-color`) pour laisser voir l'image de fond avec overlay gradient.
+- Les titres de cartes sont centres (top/left 50% + transform) avec `background-color` fallback pour le contraste a11y.
+
+**Reference** : Page 9
+
 ---
 
 ## 5. Images
@@ -413,6 +503,7 @@ Utilise pour : partenaires, portfolios, galeries d'elements.
 | Image en responsive mobile | `object-fit: contain` | Meme regle, pas de cover en mobile |
 | Image plein ecran (archetype D) | `object-fit: cover` | **Seule exception** : remplir le viewport |
 | Portrait carre (team) | `object-fit: cover` + `aspect-ratio` | Cadrage portrait dans format fixe |
+| Carte-projet (archetype F) | `object-fit: cover` | Remplir uniformement la carte |
 | Logo / icone | `object-fit: contain` | Garder les proportions |
 
 ### Reference par page existante
@@ -426,6 +517,7 @@ Utilise pour : partenaires, portfolios, galeries d'elements.
 | 6 | Photo groupe | `contain` | Image complete visible |
 | 7 | Plein ecran | `cover` | **Seule exception** (archetype D) |
 | 8 | Logos partenaires | `contain` | Proportions logos preservees |
+| 9 | Cartes-projets | `cover` | Remplir uniformement la carte (archetype F) |
 
 ### INTERDIT en responsive
 
@@ -701,8 +793,11 @@ Avant chaque commit, verifier le contraste des elements texte sur fond colore :
 - `id="page-N"` sur chaque section (navigation par ancre)
 - `aria-labelledby="pageN-title"` pour l'accessibilite
 - Un `<h2>` avec `id` correspondant par section
-- `role="region"` + `aria-label` sur les grilles d'images
+- `role="region"` + `aria-label` sur les grilles d'images (elements `<div>` uniquement)
 - Liens externes : `target="_blank" rel="noopener noreferrer"`
+- Void elements sans trailing slash : `<br>` et non `<br/>`
+- Pas de `role` redondant sur elements semantiques HTML5 (`<main>`, `<footer>`, `<nav>`, `<header>` ont deja leur role implicite)
+- Pas de styles inline injectes par JS (`document.createElement('style')`) — deplacer dans `style.css`
 
 ### Hierarchie des titres
 
@@ -737,6 +832,9 @@ Avant chaque commit, verifier le contraste des elements texte sur fond colore :
 | `background: transparent` sur conteneur texte | Bloque traversee DOM outils a11y | Supprimer ou remplacer par `background-color` explicite |
 | `background-color: inherit` sur elements texte | Herite du parent direct (souvent `transparent`) | `background-color: var(--color-brand-btn)` explicite |
 | Gradient sans `background-color` fallback | Outils ne detectent pas le gradient | Ajouter `background-color` solide apres `background` |
+| `role` redondant sur elements semantiques | `<main>`, `<footer>`, `<nav>` ont deja leur role implicite | Supprimer le `role` |
+| `<br/>` (trailing slash sur void elements) | Invalide en HTML5, interfere avec attributs non quotes | `<br>` sans slash |
+| Styles inline injectes par JS | Viole CSP `style-src 'self'` | Deplacer dans `style.css` |
 
 ---
 
@@ -775,6 +873,11 @@ Avant de valider une nouvelle page :
 - [ ] Images visibles en entier (pas de crop) a tous les breakpoints
 - [ ] Font-size minimum 0.7rem en mobile
 - [ ] Pas de scroll vertical non desire
+
+### HTML valide
+- [ ] Pas de `role` redondant sur elements semantiques (`<main>`, `<footer>`, `<nav>`)
+- [ ] Void elements sans trailing slash (`<br>`, `<img>`, `<input>`)
+- [ ] Pas de styles inline injectes par JS
 
 ### Technique
 - [ ] Pas de `!important`
