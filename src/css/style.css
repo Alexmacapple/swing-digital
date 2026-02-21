@@ -269,6 +269,7 @@ img {
     width: 100%;
     height: 100%;
     background: var(--gradient-hero);
+    background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
     z-index: 1;
 }
 
@@ -864,6 +865,7 @@ img {
     width: 100%;
     height: 100%;
     background: var(--gradient-brand);
+    background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
 }
 
 /* Colonne gauche - Texte */
@@ -1072,6 +1074,7 @@ img {
     width: 100%;
     height: 100%;
     background: var(--gradient-brand);
+    background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
     position: relative;
 }
 
@@ -1149,6 +1152,7 @@ img {
     display: flex;
     flex-direction: column;
     background: var(--gradient-brand);
+    background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
 }
 
 .page6__header {
