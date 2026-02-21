@@ -1,0 +1,116 @@
+{
+  "session_id": "value-ltat-du-dpt-swing-digital-0221-1803",
+  "query": "Évalue l'état du dépôt swing-digital (structure, documentation, assets, conformité WCAG 2.2 AA, préparation workflow YOLO 62 pages). Recommande les améliorations et propose une roadmap d'intégration détaillée avec phases, priorités et livrables.",
+  "started_at": "2026-02-21T18:03:34",
+  "updated_at": "2026-02-21T18:03:34",
+  "current_stage": "initializing",
+  "current_round": 0,
+  "max_rounds": 3,
+  "progress_pct": 0,
+  "estimated_remaining_s": null,
+  "detected_mode": null,
+  "mode_reason": null,
+  "mode_selection": {
+    "selector": null,
+    "is_forced": false,
+    "style": "default",
+    "is_simple_query": false,
+    "refined_query": null
+  },
+  "personas": {},
+  "config": {
+    "timeout_per_model": 420,
+    "chairman": "glm",
+    "total_models": 5,
+    "min_quorum": 1,
+    "models_requested": [
+      "claude",
+      "gemini",
+      "codex",
+      "glm",
+      "qwen"
+    ]
+  },
+  "stages": {},
+  "models": {
+    "claude": {
+      "status": "pending",
+      "total_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "total_latency_ms": 0,
+      "avg_latency_ms": 0,
+      "stages_completed": [],
+      "last_confidence": null,
+      "last_error": null,
+      "stage_history": []
+    },
+    "gemini": {
+      "status": "pending",
+      "total_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "total_latency_ms": 0,
+      "avg_latency_ms": 0,
+      "stages_completed": [],
+      "last_confidence": null,
+      "last_error": null,
+      "stage_history": []
+    },
+    "codex": {
+      "status": "pending",
+      "total_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "total_latency_ms": 0,
+      "avg_latency_ms": 0,
+      "stages_completed": [],
+      "last_confidence": null,
+      "last_error": null,
+      "stage_history": []
+    },
+    "glm": {
+      "status": "pending",
+      "total_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "total_latency_ms": 0,
+      "avg_latency_ms": 0,
+      "stages_completed": [],
+      "last_confidence": null,
+      "last_error": null,
+      "stage_history": []
+    },
+    "qwen": {
+      "status": "pending",
+      "total_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "total_latency_ms": 0,
+      "avg_latency_ms": 0,
+      "stages_completed": [],
+      "last_confidence": null,
+      "last_error": null,
+      "stage_history": []
+    }
+  },
+  "peer_ratings": {
+    "matrix": {},
+    "aggregated_scores": {},
+    "evolution": {}
+  },
+  "degradation": {
+    "level": "FULL",
+    "expected_models": 5,
+    "available_models": 5,
+    "failed_models": [],
+    "failure_reasons": {}
+  },
+  "consensus": {
+    "reached": false,
+    "confidence": null,
+    "round_reached": null,
+    "convergence_scores": []
+  },
+  "call_log": []
+}
