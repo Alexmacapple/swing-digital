@@ -1,0 +1,382 @@
+================================================================================
+MASONRY LAYOUT - VISUALISATION DES 3 SOLUTIONS
+================================================================================
+
+CONTEXTE:
+- Page 3: Colonne droite 62% de largeur
+- 5 images avec proportions variables
+- Objectif: Zéro espace blanc vertical
+
+================================================================================
+SOLUTION 1: CSS COLUMNS (RECOMMANDÉE)
+================================================================================
+
+MAQUETTE VISUELLE:
+┌─────────────────────────────┐
+│       .page3__right         │
+│  (Colonne 62% de largeur)   │
+├─────────────────────────────┤
+│                             │
+│        ┌───────────┐        │
+│        │  Image 1  │        │  240px (ratio 1:1)
+│        │  (carrée) │        │
+│        ├───────────┤        │
+│        │  Image 2  │        │  120px (ratio 16:9)
+│        ├───────────┤        │
+│        │           │        │
+│        │  Image 3  │        │  240px (ratio 4:3)
+│        │           │        │
+│        ├───────────┤        │
+│        │  Image 4  │        │  120px (ratio 1:1)
+│        ├───────────┤        │
+│        │           │        │
+│        │  Image 5  │        │  240px (ratio 3:2)
+│        │           │        │
+│        └───────────┘        │
+│                             │  ← AUCUN BLANC ICI! ✓
+│                             │
+└─────────────────────────────┘
+
+CSS:
+.page3__gallery {
+    column-count: 1;           ← 1 colonne unique
+    column-gap: 0;             ← Aucun gap
+}
+
+.page3__gallery-image {
+    height: auto;              ← Dynamique selon image ✓
+}
+
+RÉSULTAT:
+- Images vertically stacked
+- Chaque image prend sa hauteur naturelle
+- Zéro blanc entre images
+- Total hauteur = sum(img1 + img2 + img3 + img4 + img5)
+
+================================================================================
+SOLUTION 2: CSS GRID DENSE (ACTUELLE - MAUVAISE)
+================================================================================
+
+MAQUETTE VISUELLE:
+┌─────────────────────────────┐
+│       .page3__right         │
+├─────────────────────────────┤
+│ ┌────┐ ┌────┐ ┌────────┐   │
+│ │ I1 │ │ I2 │ │        │   │  120px × 2 (span 2 rows)
+│ │    │ ├────┤ │   I3   │   │
+│ ├────┤ │ I4 │ │        │   │  120px × 2
+│ │ I1 │ ├────┤ ├────────┤   │
+│ │    │ │    │ │        │   │
+│ ├────┤ │    │ │        │   │
+│ │    │ │    │ │   I5   │   │
+│ │    │ │    │ │        │   │
+│ │    │ │    │ │        │   │
+│ └────┘ └────┘ └────────┘   │
+│                             │
+│ ← BLANC ICI (20-40px) ✗     │
+│                             │
+└─────────────────────────────┘
+
+CSS (MAUVAIS):
+.page3__gallery {
+    grid-template-columns: repeat(3, 1fr);
+    auto-rows: 120px;          ← FIXE! Crée du blanc ✗
+}
+
+.page3__gallery-image {
+    height: 100%;              ← Force 120px
+}
+
+SPANS:
+img1: 2×1  (240px)
+img2: 1×1  (120px)
+img3: 2×2  (240px)
+img4: 1×1  (120px)
+img5: 2×2  (240px)
+
+PROBLÈME:
+- auto-rows: 120px fixe chaque ligne
+- Les images n'ont pas exactement 120px (ratio ≠ exact)
+- Crée du vide entre images
+- Total blanc: 20-40px en bas
+
+================================================================================
+SOLUTION 3: CSS GRID AUTO (ALTERNATIVE)
+================================================================================
+
+MAQUETTE VISUELLE:
+┌─────────────────────────────┐
+│       .page3__right         │
+├─────────────────────────────┤
+│ ┌────┐ ┌────┐ ┌────────┐   │
+│ │ I1 │ │ I2 │ │        │   │  auto (img1 height + img4 height)
+│ │ .. │ ├────┤ │   I3   │   │
+│ ├────┤ │ I4 │ │   ..   │   │  auto (img3 height)
+│ │ .. │ ├────┤ ├────────┤   │
+│ │ .. │ │... │ │        │   │
+│ └────┘ └────┘ │   I5   │   │
+│               │   ..   │   │
+│               └────────┘   │
+│                             │ ← Moins de blanc, meilleur ✓
+│                             │
+└─────────────────────────────┘
+
+CSS (MIEUX):
+.page3__gallery {
+    grid-template-columns: repeat(3, 1fr);
+    auto-rows: auto;           ← Dynamique! ✓
+}
+
+.page3__gallery-image {
+    height: auto;              ← Hauteur réelle
+}
+
+SPANS (mêmes que Solution 2):
+img1: 2×1
+img2: 1×1
+img3: 2×2
+img4: 1×1
+img5: 2×2
+
+AMÉLIORATIONS:
+- auto-rows: auto = hauteurs dynamiques
+- Moins d'espace blanc
+- Spans donnent contrôle
+- Mais peut varier selon images
+
+================================================================================
+COMPARAISON DÉTAILLÉE - HAUTEURS IMAGES
+================================================================================
+
+IMAGE EXAMPLE (proportions réelles):
+┌──────────────────────┐
+│      Image 1         │ Ratio: 1:1 (carré)
+│ 200px × 200px        │
+└──────────────────────┘
+
+DANS DIFFÉRENTS LAYOUTS:
+
+1) CSS COLUMNS (height: auto):
+   ┌──────────────┐
+   │  Image 1     │  200px (ratio 1:1 appliqué)
+   └──────────────┘  ← Hauteur naturelle
+
+2) GRID fixe (height: 100%, auto-rows: 120px):
+   ┌──────────────┐
+   │  Image 1     │  120px (forcé!)
+   │ [CROP]       │  ← Déformation ou crop
+   └──────────────┘
+
+3) GRID auto (height: auto, auto-rows: auto):
+   ┌──────────────┐
+   │  Image 1     │  200px (ratio appliqué)
+   └──────────────┘  ← Hauteur naturelle (comme Columns)
+
+================================================================================
+CALCUL MATHÉMATIQUE DES HAUTEURS
+================================================================================
+
+Formule universelle:
+height = width × (aspect_ratio_height / aspect_ratio_width)
+
+EXEMPLE avec 5 images dans conteneur 300px large:
+
+Image 1 (Carré 1:1):
+  height = 300 × (1/1) = 300px
+
+Image 2 (16:9):
+  height = 300 × (9/16) = 168.75px
+
+Image 3 (4:3):
+  height = 300 × (3/4) = 225px
+
+Image 4 (1:1):
+  height = 300 × (1/1) = 300px
+
+Image 5 (3:2):
+  height = 300 × (2/3) = 200px
+
+TOTAL SANS BLANC:
+300 + 168.75 + 225 + 300 + 200 = 1193.75px
+
+AVEC auto-rows: 120px (Solution mauvaise):
+Ligne 1: 120px (Image 1 span 2)
+Ligne 2: 120px
+Ligne 3: 120px (Image 2)
+Ligne 4: 120px (Image 3 span 2)
+Ligne 5: 120px
+...
+Total: 840px + BLANC: ~350px inutile!
+
+================================================================================
+VISUALISATION: SCALE 1:50
+================================================================================
+
+SOLUTION 1 (CSS COLUMNS - 100% optimal):
+┌──────────────────────────────┐
+│     Image 1 (240px)          │ ██████
+│     Image 2 (120px)          │ ███
+│     Image 3 (240px)          │ ██████
+│     Image 4 (120px)          │ ███
+│     Image 5 (240px)          │ ██████
+│                              │ ← FIN (pas de blanc)
+└──────────────────────────────┘
+Espace blanc: 0px ✓✓✓
+
+SOLUTION 2 (GRID fixe - MAUVAIS):
+┌──────────────────────────────┐
+│   Grid 3 col × 120px height  │ ██████
+│   Grid 3 col × 120px height  │ ██████
+│   Grid 3 col × 120px height  │ ██████
+│   Grid 3 col × 120px height  │ ██████
+│   Grid 3 col × 120px height  │ ██████
+│   Grid 3 col × 120px height  │ ██████
+│   Grid 3 col × 120px height  │ ██████
+│                              │ ← BLANC ✗
+└──────────────────────────────┘
+Espace blanc: ~30px ✗✗✗
+
+================================================================================
+SWITCH ENTRE SOLUTIONS
+================================================================================
+
+AVANT (MAUVAIS):
+───────────────
+
+.page3__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    width: 100%;
+    auto-rows: 120px;              ← PROBLÈME
+    grid-auto-flow: dense;
+}
+
+.page3__gallery-image {
+    width: 100%;
+    height: 100%;                  ← PROBLÈME
+    object-fit: cover;
+    display: block;
+}
+
+.page3__gallery-image:nth-child(1) { grid-row: span 2; grid-column: span 1; }
+.page3__gallery-image:nth-child(2) { grid-row: span 1; grid-column: span 1; }
+.page3__gallery-image:nth-child(3) { grid-row: span 2; grid-column: span 2; }
+.page3__gallery-image:nth-child(4) { grid-row: span 1; grid-column: span 1; }
+.page3__gallery-image:nth-child(5) { grid-row: span 2; grid-column: span 2; }
+
+Résultat: 20-40px blanc en bas ✗
+
+
+APRÈS (BON):
+────────────
+
+.page3__gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    width: 100%;
+    column-count: 1;               ← SOLUTION
+    column-gap: 0;
+}
+
+.page3__gallery-image {
+    width: 100%;
+    height: auto;                  ← SOLUTION
+    object-fit: cover;
+    display: block;
+    break-inside: avoid;
+}
+
+/* Supprimer TOUS les :nth-child() */
+
+Résultat: 0px blanc en bas ✓
+
+================================================================================
+RESPONSIVE ADAPTATIF
+================================================================================
+
+Pour passer à multi-colonnes:
+
+@media (max-width: 768px) {
+    .page3__gallery {
+        column-count: 2;   ← 2 colonnes sur tablet
+    }
+}
+
+@media (max-width: 480px) {
+    .page3__gallery {
+        column-count: 1;   ← 1 colonne sur mobile
+    }
+}
+
+Les images se redistribuent AUTOMATIQUEMENT!
+Aucun besoin de spans, de grid ou calcul manuel.
+
+================================================================================
+CHECKLIST DE MIGRATION
+================================================================================
+
+Avant modif:
+☐ Backup style.css (cp style.css style.css.backup)
+☐ Identifier section .page3__gallery (ligne 1230)
+
+Pendant modif:
+☐ Remplacer .page3__gallery { ... }
+☐ Remplacer .page3__gallery-image { height: auto }
+☐ Supprimer TOUS les .page3__gallery-image:nth-child(...) spans
+☐ Ajouter break-inside: avoid
+
+Après modif:
+☐ Ouvrir generated-pages.html
+☐ Scroller Page 3 jusqu'au bout
+☐ Vérifier: AUCUN blanc en bas
+☐ Vérifier: Images se touchent
+☐ Vérifier: Responsive (mobile/tablet/desktop)
+☐ DevTools: Pas de reflow excessif
+☐ Commit: "Correction masonry layout Page 3 - CSS Columns"
+
+================================================================================
+FAQ VISUEL
+================================================================================
+
+Q: Pourquoi auto-rows: 120px crée du blanc?
+R: Parce que 120px n'est pas la hauteur réelle de tes images
+   (qui ont des ratios 1:1, 16:9, 4:3, 3:2 différents)
+
+Q: Comment CSS Columns l'évite?
+R: Parce que chaque image garde sa hauteur naturelle
+   Aucune hauteur fixe imposée
+
+Q: Et les images sont déformées?
+R: Non! object-fit: cover préserve le ratio
+   Uniquement changement de hauteur du conteneur
+
+Q: Mais mes maquettes disent "3 colonnes"?
+R: Non, elles disent "1 colonne de 62% de largeur"
+   Si besoin 3 colonnes plus tard: column-count: 3
+
+================================================================================
+TIMING
+================================================================================
+
+Étapes:             Durée estimée
+──────────────────────────────────
+1. Sauvegarder     30 secondes
+2. Remplacer CSS   2 minutes
+3. Tester          1 minute
+4. Vérifier        2 minutes
+5. Commit          1 minute
+                   ──────────
+TOTAL:             6-7 minutes (MAX)
+
+================================================================================
+VERSION
+================================================================================
+
+Créé: 2026-02-21
+Par: Claude Code - CSS Grid & Masonry Expert
+Status: ✅ Prêt à implémenter
+Complexité: Basse (3 changements seulement)
+
+================================================================================

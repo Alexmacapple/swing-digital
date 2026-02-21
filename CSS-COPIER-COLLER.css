@@ -1,0 +1,182 @@
+/* ============================================================
+   PAGE 3 GALLERY - MASONRY LAYOUT SOLUTION
+   ============================================================
+
+   FICHIER: src/css/style.css (lignes 1230-1270)
+   ACTION: Remplacer COMPLÈTEMENT la section .page3__gallery
+
+   AVANT: auto-rows: 120px (crée du blanc)
+   APRÈS: CSS Columns + height: auto (zéro blanc)
+
+   ============================================================ */
+
+/* ============================================================
+   SOLUTION RECOMMANDÉE: CSS COLUMNS
+
+   Pourquoi?
+   - Zéro espace blanc vertical
+   - Images au ratio naturel
+   - Remplissage optimal
+   - Responsive automatique
+   - Scalable (change column-count pour multi-col)
+   ============================================================ */
+
+.page3__gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    width: 100%;
+
+    /* CSS Columns masonry */
+    column-count: 1;
+    column-gap: 0;
+}
+
+.page3__gallery-image {
+    width: 100%;
+    height: auto;              /* ← CLEF! Auto, pas fixe! */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0;
+    break-inside: avoid;       /* Éviter rupture image */
+}
+
+/* ============================================================
+   SUPPIMER COMPLÈTEMENT LES ANCIENNES RÈGLES:
+
+   .page3__gallery-image:nth-child(1) { ... }
+   .page3__gallery-image:nth-child(2) { ... }
+   .page3__gallery-image:nth-child(3) { ... }
+   .page3__gallery-image:nth-child(4) { ... }
+   .page3__gallery-image:nth-child(5) { ... }
+
+   Ces spans ne sont plus nécessaires avec CSS Columns!
+   Les garder peut créer des conflits CSS.
+   ============================================================ */
+
+/* ============================================================
+   RESPONSIVE: Passer à 2-3 colonnes (optionnel)
+
+   Décommenter et adapter si tu veux multi-colonnes
+   ============================================================ */
+
+/*
+@media (max-width: 1200px) {
+    / * Passer à 2 colonnes sur tablet * /
+    .page3__gallery {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    / * Revenir à 1 colonne sur mobile * /
+    .page3__gallery {
+        column-count: 1;
+        column-gap: 0;
+    }
+}
+*/
+
+/* ============================================================
+   ALTERNATIVE: Si tu VEUX absolument rester en Grid
+
+   (Non recommandé pour 1 colonne, mais voici la version améliorée)
+   ============================================================ */
+
+/*
+.page3__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    width: 100%;
+    auto-rows: auto;             / * Dynamique, pas 120px! * /
+    grid-auto-flow: dense;
+}
+
+.page3__gallery-image {
+    width: 100%;
+    height: auto;                / * Dynamique * /
+    object-fit: cover;
+    display: block;
+}
+
+/ * Les spans si tu insistes (Grid 3 colonnes) * /
+.page3__gallery-image:nth-child(1) {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+.page3__gallery-image:nth-child(2) {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.page3__gallery-image:nth-child(3) {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.page3__gallery-image:nth-child(4) {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.page3__gallery-image:nth-child(5) {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+*/
+
+/* ============================================================
+   CHECKLIST DE VÉRIFICATION
+   ============================================================
+
+   Après implémentation, vérifier:
+
+   ☐ Pas de blanc en bas de la galerie (scroll complètement)
+   ☐ Images se touchent (gap: 0 fonctionne)
+   ☐ Proportions naturelles (pas écrasées)
+   ☐ Responsive mobile (viewport < 768px)
+   ☐ Responsive tablet (viewport 768-1024px)
+   ☐ Responsive desktop (viewport > 1024px)
+   ☐ Performance (DevTools: pas reflow excessif)
+   ☐ Accessibilité (alt text sur images)
+
+   ============================================================ */
+
+/* ============================================================
+   COMPARAISON AVANT/APRÈS
+   ============================================================
+
+   AVANT:
+   - .page3__gallery { auto-rows: 120px; ... }
+   - .page3__gallery-image { height: 100%; ... }
+   - Espace blanc en bas: 20-40px visible
+   - Images forcées à 120px (déformation)
+
+   APRÈS:
+   - .page3__gallery { column-count: 1; ... }
+   - .page3__gallery-image { height: auto; ... }
+   - Espace blanc: ZÉRO
+   - Images fluides (ratio naturel)
+
+   ============================================================ */
+
+/* ============================================================
+   RESOURCES & SUPPORT
+   ============================================================
+
+   Fichiers créés pour toi:
+   - test-masonry-solutions.html     → Démo 3 solutions
+   - test-masonry-real-images.html   → Test vraies images
+   - GUIDE-MASONRY-LAYOUT.md         → Guide complet
+   - MASONRY-SOLUTION-RESUME.md      → Résumé détaillé
+   - CSS-COPIER-COLLER.css           → CE FICHIER
+
+   Documentation MDN:
+   - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Columns
+   - https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows
+   - https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+
+   ============================================================ */
