@@ -731,6 +731,7 @@ img {
 
 .team__member {
     background-color: var(--color-brand-btn); /* WCAG AA : 4.86:1 sur blanc (vs 3.83:1 avec --color-brand) */
+    color: var(--color-white);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -874,6 +875,7 @@ img {
     height: 100%;
     background: var(--gradient-brand);
     background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
+    color: var(--color-white);
 }
 
 /* Colonne gauche - Texte */
@@ -1086,6 +1088,7 @@ img {
     height: 100%;
     background: var(--gradient-brand);
     background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
+    color: var(--color-white);
     position: relative;
 }
 
@@ -1164,6 +1167,7 @@ img {
     flex-direction: column;
     background: var(--gradient-brand);
     background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
+    color: var(--color-white);
 }
 
 .page6__header {
