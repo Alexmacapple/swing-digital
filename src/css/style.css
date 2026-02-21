@@ -379,12 +379,12 @@ img {
 .hero-page1__logo a {
     display: block;
     font-family: var(--font-secondary);
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 2vw, 1rem);
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    line-height: 1.2;
-    letter-spacing: 1px;
+    line-height: 1.15;
+    letter-spacing: 1.2px;
 }
 
 .hero-page1__logo span {
