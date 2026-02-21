@@ -1254,7 +1254,7 @@ img {
     display: block;
 }
 
-/* Spans pour remplir l'espace */
+/* Spans pour remplir l'espace (4 images) */
 .page3__gallery-image:nth-child(1) {
     grid-column: span 1;
     grid-row: span 2;
@@ -1267,17 +1267,12 @@ img {
 
 .page3__gallery-image:nth-child(3) {
     grid-column: span 1;
-    grid-row: span 1;
+    grid-row: span 2;
 }
 
 .page3__gallery-image:nth-child(4) {
-    grid-column: span 1;
+    grid-column: span 3;
     grid-row: span 1;
-}
-
-.page3__gallery-image:nth-child(5) {
-    grid-column: span 2;
-    grid-row: span 2;
 }
 
 /* Pour masonry multi-colonnes (optionnel, non utilisé ici) */
