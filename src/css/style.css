@@ -1380,7 +1380,7 @@ img {
 
     .page6__image {
         max-height: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     .page6__section-title {
@@ -1506,12 +1506,11 @@ img {
         order: -1;
     }
 
-    /* Zone image uniquement : hauteur fixe, cover */
+    /* Zone image : contain pour afficher l'image complete */
     .page3__right:not(.page3__right--text),
     .page3__left--image {
-        height: 35vh;
-        min-height: 180px;
-        overflow: hidden;
+        height: auto;
+        overflow: visible;
     }
 
     /* Zone texte (page 4 inversee) : auto, pas de troncature */
@@ -1521,14 +1520,14 @@ img {
     }
 
     .page3__gallery {
-        height: 100%;
-        padding: 0;
+        height: auto;
+        padding: 0 var(--slide-pad-x);
     }
 
     .page3__gallery-image {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
         margin: 0;
         max-height: none;
     }
@@ -1575,8 +1574,7 @@ img {
 @media (max-width: 480px) {
     .page3__right:not(.page3__right--text),
     .page3__left--image {
-        height: 30vh;
-        min-height: 150px;
+        height: auto;
     }
 
     .page3__left,
