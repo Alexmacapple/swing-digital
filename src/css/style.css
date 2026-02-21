@@ -961,6 +961,7 @@ img {
     margin: 0.3rem 0;
     line-height: 1.5;
     font-weight: 400;
+    background-color: inherit; /* a11y : propage le bg parent pour les outils de contraste */
 }
 
 .page3__project--secondary {
@@ -987,6 +988,7 @@ img {
     font-weight: 400;
     letter-spacing: 0.3px;
     transition: all 0.3s ease;
+    background-color: inherit; /* a11y : propage le bg parent pour les outils de contraste */
 }
 
 .page3__project-link:hover {
