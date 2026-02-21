@@ -60,6 +60,7 @@
     --color-brand-light: #F49C9E;
     --color-brand-pale: #FFB3A7;
     --color-brand-alt: #FF8080;
+    --color-brand-btn: #CE3B3D;   /* WCAG AA 4.86:1 sur blanc */
     --color-white: #ffffff;
 
     /* Gradients */
@@ -326,7 +327,7 @@ img {
 
 .hero-page1__nav-btn {
     display: inline-block;
-    background-color: var(--color-brand);
+    background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.75rem 1.2rem;
     font-size: 0.85rem;
@@ -1166,7 +1167,7 @@ img {
 }
 
 .page6__badge {
-    background-color: var(--color-brand);
+    background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.8rem 1rem;
     font-size: 0.65rem;
