@@ -625,7 +625,8 @@ img {
         padding: 0.35rem 0.5rem;
         font-size: 0.6rem;
         white-space: normal;
-        width: 80px;
+        width: auto;
+        min-width: 70px;
     }
 
     .hero-page1__partners {
@@ -922,6 +923,7 @@ img {
     padding: var(--space-2xl) var(--space-md) !important;
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 .team::before {
@@ -1366,7 +1368,7 @@ img {
 }
 
 .page5__title {
-    font-size: 2.5rem;
+    font-size: clamp(1.3rem, 5vw, 2.5rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.2;
@@ -1442,7 +1444,7 @@ img {
 }
 
 .page6__title {
-    font-size: 2rem;
+    font-size: clamp(1.3rem, 4vw, 2rem);
     font-weight: 700;
     color: #ffffff;
     line-height: 1.1;
@@ -1596,7 +1598,122 @@ img {
     display: block;
 }
 
-/* Responsive */
+/* ============================================================
+   RESPONSIVE - PAGES 5, 6, 7
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    /* Page 5 */
+    .page5__header {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .page5__image-wrapper {
+        width: 95%;
+    }
+
+    .page5__footer {
+        padding: 1.5rem 1.2rem;
+    }
+
+    /* Page 6 */
+    .page6__header {
+        padding: 1.5rem 1.2rem;
+    }
+
+    .page6__image-wrapper {
+        padding: 1rem;
+    }
+
+    .page6__text-wrapper {
+        padding: 1.5rem 1.2rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Page 5 */
+    .page5__header {
+        flex-direction: column;
+        padding: 1.2rem 1rem;
+        gap: 0.5rem;
+    }
+
+    .page5__badge {
+        align-self: flex-start;
+        font-size: 0.6rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .page5__image-wrapper {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .page5__footer {
+        padding: 1rem;
+    }
+
+    .page5__subtitle {
+        font-size: 0.8rem;
+    }
+
+    /* Page 6 - Grid empilé */
+    .page6__main {
+        grid-template-columns: 1fr;
+    }
+
+    .page6__header {
+        padding: 1rem;
+    }
+
+    .page6__badge {
+        font-size: 0.6rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .page6__image-wrapper {
+        padding: 0.5rem 1rem;
+        max-height: 40vh;
+    }
+
+    .page6__image {
+        max-height: 100%;
+    }
+
+    .page6__text-wrapper {
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+
+    .page6__section-title {
+        font-size: 0.75rem;
+    }
+
+    .page6__section-text {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Page 5 */
+    .page5__subtitle {
+        font-size: 0.7rem;
+    }
+
+    /* Page 6 */
+    .page6__section-title {
+        font-size: 0.7rem;
+    }
+
+    .page6__section-text {
+        font-size: 0.65rem;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE - PAGES 3, 4
+   ============================================================ */
 @media (max-width: 1200px) {
     .page3__container {
         grid-template-columns: 38% 62%;
@@ -1691,7 +1808,7 @@ img {
     }
 
     .page3__project-meta {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -1709,24 +1826,24 @@ img {
     }
 
     .page3__gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 0.5rem;
     }
 
     .page3__header h2 {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .page3__intro p {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
     }
 
     .page3__section-title {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     .page3__project-title {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     /* Page 8 - Partners Grid Responsive - Mobile */
