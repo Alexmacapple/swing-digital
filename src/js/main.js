@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initAccessibility();
     initEventListeners();
     initScrollTracking();
-    initVideoSound();
+    initDisclosure();
+    try { initVideoSound(); } catch (e) { console.warn('Video init:', e); }
 });
 
 /**
@@ -191,6 +192,31 @@ function initVideoSound() {
     }
 }
 
+/**
+ * Disclosure Toggle (W3C ARIA APG pattern)
+ */
+function initDisclosure() {
+    var buttons = document.querySelectorAll('[aria-expanded][aria-controls]');
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            var targetId = btn.getAttribute('aria-controls');
+            var target = document.getElementById(targetId);
+
+            if (!target) return;
+
+            btn.setAttribute('aria-expanded', String(!expanded));
+
+            if (expanded) {
+                target.setAttribute('hidden', '');
+            } else {
+                target.removeAttribute('hidden');
+            }
+        });
+    });
+}
+
 // Export functions if needed
 window.SwingDigital = {
     initNavigation,
@@ -198,5 +224,6 @@ window.SwingDigital = {
     initEventListeners,
     initScrollTracking,
     updateNavActive,
-    initVideoSound
+    initVideoSound,
+    initDisclosure
 };

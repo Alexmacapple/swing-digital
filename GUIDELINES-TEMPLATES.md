@@ -72,6 +72,7 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 9 | `page9` | `.page9` |
 | 10 | `page10` | `.page10` |
 | 11 | `page11` | `.page11` |
+| 12 | `page12` | `.page12` |
 
 ### Convention pour les nouvelles pages
 
@@ -167,7 +168,7 @@ var(--font-secondary)       /* Fragen - corps, sous-titres */
 
 ## 4. Archetypes de layout
 
-7 templates de base couvrent tous les cas de la maquette.
+8 templates de base couvrent tous les cas de la maquette.
 
 ### A. Hero (plein ecran, elements absolus)
 
@@ -569,6 +570,99 @@ Utilise pour : pages video immersives en boucle, transitions visuelles.
 
 **Reference** : Page 11
 
+### H. Affiche / poster avec disclosure
+
+Utilise pour : pages de presentation d'un projet avec affiche centree, citations presse cachees, et barre de logos partenaires.
+
+```html
+<section id="page-N" class="pageN" aria-labelledby="pageN-title">
+    <div class="pageN__background"></div>
+    <div class="pageN__container">
+        <div class="pageN__badge">Badge</div>
+        <figure class="pageN__poster" aria-labelledby="pageN-title">
+            <img src="..." alt="..." class="pageN__poster-image">
+            <figcaption class="pageN__poster-caption">
+                <h2 id="pageN-title" class="sr-only">Titre</h2>
+                <button class="pageN__disclosure-btn" type="button" aria-expanded="false" aria-controls="pageN-quotes">
+                    Voir les citations
+                </button>
+                <div id="pageN-quotes" class="pageN__quotes" hidden>
+                    <ul class="pageN__quotes-list">
+                        <li><blockquote><p>Citation</p><footer>-- <cite>Source</cite></footer></blockquote></li>
+                    </ul>
+                </div>
+                <noscript><!-- Meme contenu sans hidden --></noscript>
+            </figcaption>
+        </figure>
+        <div class="pageN__logos" role="region" aria-label="Partenaires">
+            <div class="pageN__logos-bar">
+                <img src="..." alt="..." class="pageN__logo">
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+```css
+.pageN {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: #000;
+}
+.pageN__background {
+    position: absolute;
+    inset: 0;
+    background: url('...') center/cover;
+    z-index: 0;
+    opacity: 0.4;  /* Image assombrie pour contraste */
+}
+.pageN__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--color-white);
+}
+.pageN__poster {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pageN__poster-image {
+    max-height: 100%;
+    max-width: 50%;  /* Affiche centree, pas trop large */
+    object-fit: contain;
+}
+.pageN__logos {
+    background-color: var(--color-white);
+    padding: 0.8rem var(--slide-pad-x);
+}
+.pageN__logos-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.pageN__logo {
+    height: 2.5rem;
+    object-fit: contain;
+}
+```
+
+**Notes** :
+- Le disclosure suit le pattern W3C ARIA APG : `aria-expanded` + `aria-controls` + `hidden`. Le JS toggle generique dans `main.js` gere tous les boutons disclosure.
+- `<noscript>` fallback affiche les citations sans JS.
+- L'image de fond est assombrie (`opacity: 0.4`) sur fond `#000` pour le contraste texte blanc.
+- Les logos partenaires sont sur fond blanc pour visibilite.
+- Responsive : `max-width` de l'affiche augmente en mobile (50% → 85%), quotes passent en 1 colonne a 768px, logos wrap.
+
+**Reference** : Page 12
+
 ---
 
 ## 5. Images
@@ -599,6 +693,8 @@ Utilise pour : pages video immersives en boucle, transitions visuelles.
 | 8 | Logos partenaires | `contain` | Proportions logos preservees |
 | 9 | Cartes-projets | `cover` | Remplir uniformement la carte (archetype F) |
 | 10 | Cartes-projets | `cover` | Idem page 9 (archetype F sans header) |
+| 12 | Affiche poster | `contain` | Affiche centree sans recadrage (archetype H) |
+| 12 | Logos partenaires | `contain` | Proportions logos preservees |
 
 ### INTERDIT en responsive
 
