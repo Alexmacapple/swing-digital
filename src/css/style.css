@@ -1729,50 +1729,80 @@ img {
         font-size: 0.75rem;
     }
 
-    /* Page 8 - Partners Grid Responsive */
+    /* Page 8 - Partners Grid Responsive - Mobile */
+    .partners-page {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .partners-page__container {
+        height: auto;
+        padding: 1.2rem 1rem;
+        overflow: visible;
+    }
+
     .partners-page__title {
         font-size: 1.3rem;
         margin: 0 0 0.8rem 0;
     }
 
     .partners-page__grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.4rem;
+    }
+
+    .partners-page__logo-item {
+        aspect-ratio: auto;
+        padding: 0.3rem;
+        min-height: 3.5rem;
+    }
+}
+
+/* Page 8 - Responsive Tablet */
+@media (max-width: 1024px) {
+    .partners-page__grid {
         gap: 0.4rem;
     }
 
     .partners-page__container {
-        padding: 1.2rem 1rem 0.8rem 1rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .partners-page__grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.6rem;
-    }
-
-    .partners-page__container {
-        padding: 1.5rem 1.2rem 1rem 1.2rem;
+        padding: 1.2rem 1.2rem 0.8rem 1.2rem;
     }
 
     .partners-page__title {
-        font-size: 1.6rem;
-        margin: 0 0 1rem 0;
+        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        margin: 0 0 0.8rem 0;
+    }
+
+    .partners-page__logo-item {
+        padding: 0.3rem;
     }
 }
 
 @media (max-width: 768px) {
-    .partners-page__grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
+    .partners-page {
+        height: auto;
+        min-height: 100vh;
     }
 
     .partners-page__container {
-        padding: 1.3rem 1rem 0.8rem 1rem;
+        height: auto;
+        padding: 1.2rem 1rem;
+        overflow: visible;
+    }
+
+    .partners-page__grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.4rem;
     }
 
     .partners-page__title {
         font-size: 1.4rem;
-        margin: 0 0 0.9rem 0;
+        margin: 0 0 0.8rem 0;
+    }
+
+    .partners-page__logo-item {
+        aspect-ratio: auto;
+        padding: 0.3rem;
+        min-height: 3rem;
     }
 }
