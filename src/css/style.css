@@ -260,6 +260,7 @@ img {
     height: var(--section-height);
     overflow: hidden;
     display: block; /* Important: not flex */
+    background-color: var(--color-brand-btn); /* fallback a11y : fond sur div enfant invisible aux outils */
 }
 
 .hero-page1__background {
@@ -298,7 +299,6 @@ img {
 
 .hero-page1__logo a span:first-child,
 .hero-page1__logo a span:last-child {
-    opacity: 0.8;
     font-weight: 300;
     font-size: 1.2em;
 }
@@ -666,6 +666,7 @@ img {
 .section.team {
     background: url('../img/pages/page-2/page-2-image-9.jpg') center/cover,
                 linear-gradient(90deg, #E84A7E 0%, #FF6B6B 50%, #FF9966 100%);
+    background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
     background-blend-mode: multiply;
     padding: var(--slide-pad-y) var(--slide-pad-x);
     min-height: var(--section-height);
@@ -729,7 +730,7 @@ img {
 }
 
 .team__member {
-    background-color: var(--color-brand);
+    background-color: var(--color-brand-btn); /* WCAG AA : 4.86:1 sur blanc (vs 3.83:1 avec --color-brand) */
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -770,7 +771,7 @@ img {
 
 .team__member-info h3 {
     color: var(--color-white);
-    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+    font-size: clamp(0.95rem, 2.2vw, 1.2rem); /* 19.2px >= 18.5px = large text WCAG (seuil 3:1) */
     font-weight: 700;
     margin: 0 0 0.5rem 0;
     text-transform: uppercase;
@@ -892,7 +893,7 @@ img {
 }
 
 .page3__header h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem; /* 19.2px >= 18.5px = large text WCAG (seuil 3:1) */
     font-weight: 700;
     letter-spacing: 1.5px;
     margin: 0 0 0.6rem 0;
@@ -1105,7 +1106,7 @@ img {
 }
 
 .page5__badge {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--color-brand-btn); /* solide pour a11y (rgba non calculable sur gradient) */
     color: var(--color-white);
     padding: 0.8rem 1rem;
     font-size: 0.7rem;
