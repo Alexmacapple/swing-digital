@@ -65,11 +65,57 @@
     --space-xl: 3rem;
     --space-2xl: 4rem;
 
-    --breakpoint-mobile: 320px;
-    --breakpoint-tablet: 768px;
-    --breakpoint-desktop: 1024px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
 
     --transition: all 0.3s ease;
+
+    /* Responsive slide spacing */
+    --slide-pad-x: 2rem;
+    --slide-pad-y: 2rem;
+
+    /* Responsive font sizes for slides */
+    --fs-slide-title: clamp(1.5rem, 4vw, 2.5rem);
+    --fs-slide-subtitle: clamp(0.95rem, 2.5vw, 1.2rem);
+    --fs-slide-body: clamp(0.8rem, 1.5vw, 0.9rem);
+    --fs-slide-meta: clamp(0.7rem, 1.3vw, 0.85rem);
+    --fs-slide-small: 0.75rem;
+
+    /* Responsive grid gaps */
+    --grid-gap: 1rem;
+    --grid-gap-sm: 0.5rem;
+}
+
+/* ============================================================
+   2b. RESPONSIVE VARIABLE OVERRIDES
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    :root {
+        --slide-pad-x: 1.5rem;
+        --slide-pad-y: 1.5rem;
+        --grid-gap: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --slide-pad-x: 1.2rem;
+        --slide-pad-y: 1.2rem;
+        --grid-gap: 0.6rem;
+        --grid-gap-sm: 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --slide-pad-x: 1rem;
+        --slide-pad-y: 1rem;
+        --grid-gap: 0.5rem;
+        --grid-gap-sm: 0.3rem;
+    }
 }
 
 /* ============================================================
@@ -596,14 +642,14 @@ img {
     .hero-page1 {
         height: auto;
         min-height: 100vh;
-        padding: 1rem;
+        padding: var(--slide-pad-x);
         display: flex;
         flex-direction: column;
     }
 
     .hero-page1__logo {
-        top: 1rem;
-        left: 1rem;
+        top: var(--slide-pad-x);
+        left: var(--slide-pad-x);
         font-size: 0.75rem;
     }
 
@@ -687,202 +733,7 @@ img {
     }
 }
 
-/* ============================================================
-   13. PARTNERS SECTION
-   ============================================================ */
-
-.partners {
-    background-color: var(--color-bg-dark);
-}
-
-.partners__container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.partners__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--space-lg);
-    margin-top: var(--space-lg);
-}
-
-/* ============================================================
-   14. CONTACT SECTION
-   ============================================================ */
-
-.contact {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    text-align: center;
-}
-
-.contact__container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.contact__text {
-    font-size: 1.25rem;
-    margin-bottom: var(--space-lg);
-}
-
-/* ============================================================
-   15. SOCIAL SECTION
-   ============================================================ */
-
-.social {
-    background-color: var(--color-bg);
-    text-align: center;
-}
-
-.social__container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.social__links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: var(--space-lg);
-    margin-top: var(--space-lg);
-}
-
-.social__links a {
-    color: var(--color-text);
-    font-weight: 500;
-    padding: var(--space-sm);
-    border-radius: 4px;
-    transition: var(--transition);
-}
-
-.social__links a:hover {
-    background-color: var(--color-bg-dark);
-    color: var(--color-accent);
-}
-
-/* ============================================================
-   16. TEAM SECTION
-   ============================================================ */
-
-.team {
-    background-color: var(--color-bg-dark);
-}
-
-.team__container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.team__subtitle {
-    font-size: 1.1rem;
-    color: var(--color-text-light);
-    text-align: center;
-    margin-top: var(--space-md);
-    margin-bottom: var(--space-2xl);
-}
-
-.team__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-lg);
-    margin-top: var(--space-2xl);
-}
-
-.team__member {
-    text-align: center;
-    padding: var(--space-md);
-    background-color: var(--color-bg);
-    border-radius: 8px;
-    transition: var(--transition);
-}
-
-.team__member:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px);
-}
-
-.team__photo {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: var(--space-md);
-    display: block;
-}
-
-.team__member h3 {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-sm);
-}
-
-.team__role {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    margin-bottom: var(--space-xs);
-}
-
-/* ============================================================
-   17. GENERIC PAGE SECTION (Pages 3-62)
-   ============================================================ */
-
-.page {
-    padding: var(--space-2xl) var(--space-md);
-}
-
-.page__container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.page__container h2 {
-    margin-bottom: var(--space-lg);
-}
-
-.page__content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-}
-
-.page__text {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--color-text);
-}
-
-.page__gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--space-md);
-    margin-top: var(--space-lg);
-}
-
-.page__image {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.page__image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* ============================================================
-   18. EXPERIENCES SECTION
-   ============================================================ */
-
-.experiences {
-    background-color: var(--color-bg);
-}
-
-.experiences__container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* (Sections 13-18 supprimées : styles génériques inutilisés) */
 
 /* ============================================================
    11. ACCESSIBILITY
@@ -916,11 +767,11 @@ img {
    PAGE 2: TEAM / QUI SOMMES NOUS
    ============================================================ */
 
-.team {
+.section.team {
     background: url('./img/pages/page-2/page-2-image-9.jpg') center/cover,
                 linear-gradient(90deg, #E84A7E 0%, #FF6B6B 50%, #FF9966 100%);
     background-blend-mode: multiply;
-    padding: var(--space-2xl) var(--space-md) !important;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
     min-height: 100vh;
     position: relative;
     overflow: hidden;
@@ -978,7 +829,7 @@ img {
 .team__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: var(--grid-gap);
     margin-bottom: var(--space-2xl);
 }
 
@@ -1047,18 +898,12 @@ img {
 @media (max-width: 1024px) {
     .team__grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .team {
-        padding: var(--space-lg) var(--space-md) !important;
-    }
-
     .team__grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
     }
 
     .team__container h2 {
@@ -1067,7 +912,7 @@ img {
     }
 
     .team__subtitle {
-        font-size: 0.95rem;
+        font-size: var(--fs-slide-subtitle);
         margin-bottom: 1.5rem;
     }
 
@@ -1080,14 +925,13 @@ img {
     }
 
     .team__member-info p {
-        font-size: 0.75rem;
+        font-size: var(--fs-slide-small);
     }
 }
 
 @media (max-width: 480px) {
     .team__grid {
         grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
     }
 
     .team__container h2 {
@@ -1095,7 +939,7 @@ img {
     }
 
     .team__subtitle {
-        font-size: 0.85rem;
+        font-size: var(--fs-slide-body);
     }
 }
 
@@ -1124,7 +968,7 @@ img {
 .page3__left {
     background: transparent;
     color: #ffffff;
-    padding: 2rem 1.8rem;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1362,7 +1206,7 @@ img {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    padding: 2.5rem 2rem;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
     position: relative;
     z-index: 10;
 }
@@ -1407,7 +1251,7 @@ img {
 
 .page5__footer {
     width: 100%;
-    padding: 2rem;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
     text-align: left;
 }
 
@@ -1439,7 +1283,7 @@ img {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    padding: 2rem;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
     z-index: 10;
 }
 
@@ -1477,7 +1321,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: var(--slide-pad-x);
 }
 
 .page6__image {
@@ -1492,8 +1336,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.5rem;
-    padding: 2rem;
+    gap: var(--grid-gap);
+    padding: var(--slide-pad-x);
     overflow: hidden;
 }
 
@@ -1557,7 +1401,7 @@ img {
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    padding: var(--slide-pad-y) var(--slide-pad-x) 1rem var(--slide-pad-x);
     overflow: hidden;
 }
 
@@ -1574,7 +1418,7 @@ img {
 .partners-page__grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 0.5rem;
+    gap: var(--grid-gap-sm);
     flex: 1;
     align-content: start;
 }
@@ -1603,40 +1447,19 @@ img {
    ============================================================ */
 
 @media (max-width: 1024px) {
-    /* Page 5 */
-    .page5__header {
-        padding: 1.5rem 1.2rem;
-    }
-
+    /* Page 5 - padding auto via variables */
     .page5__image-wrapper {
         width: 95%;
     }
 
-    .page5__footer {
-        padding: 1.5rem 1.2rem;
-    }
-
-    /* Page 6 */
-    .page6__header {
-        padding: 1.5rem 1.2rem;
-    }
-
-    .page6__image-wrapper {
-        padding: 1rem;
-    }
-
-    .page6__text-wrapper {
-        padding: 1.5rem 1.2rem;
-        gap: 1rem;
-    }
+    /* Page 6 - padding auto via variables */
 }
 
 @media (max-width: 768px) {
-    /* Page 5 */
+    /* Page 5 - padding auto via variables */
     .page5__header {
         flex-direction: column;
-        padding: 1.2rem 1rem;
-        gap: 0.5rem;
+        gap: var(--grid-gap-sm);
     }
 
     .page5__badge {
@@ -1647,24 +1470,16 @@ img {
 
     .page5__image-wrapper {
         width: 100%;
-        padding: 0 1rem;
-    }
-
-    .page5__footer {
-        padding: 1rem;
+        padding: 0 var(--slide-pad-x);
     }
 
     .page5__subtitle {
-        font-size: 0.8rem;
+        font-size: var(--fs-slide-body);
     }
 
-    /* Page 6 - Grid empilé */
+    /* Page 6 - Grid empile */
     .page6__main {
         grid-template-columns: 1fr;
-    }
-
-    .page6__header {
-        padding: 1rem;
     }
 
     .page6__badge {
@@ -1673,7 +1488,6 @@ img {
     }
 
     .page6__image-wrapper {
-        padding: 0.5rem 1rem;
         max-height: 40vh;
     }
 
@@ -1681,33 +1495,12 @@ img {
         max-height: 100%;
     }
 
-    .page6__text-wrapper {
-        padding: 1rem;
-        gap: 0.8rem;
-    }
-
     .page6__section-title {
-        font-size: 0.75rem;
+        font-size: var(--fs-slide-small);
     }
 
     .page6__section-text {
-        font-size: 0.7rem;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Page 5 */
-    .page5__subtitle {
-        font-size: 0.7rem;
-    }
-
-    /* Page 6 */
-    .page6__section-title {
-        font-size: 0.7rem;
-    }
-
-    .page6__section-text {
-        font-size: 0.65rem;
+        font-size: var(--fs-slide-meta);
     }
 }
 
@@ -1720,33 +1513,29 @@ img {
     }
 
     .page3__container--inverted {
-        grid-template-columns: 40% 60% !important;
+        grid-template-columns: 40% 60%;
     }
 }
 
 @media (max-width: 1024px) {
-    .page3__container {
+    .page3__container,
+    .page3__container--inverted {
         grid-template-columns: 1fr;
         min-height: auto;
     }
 
-    .page3__container--inverted {
-        grid-template-columns: 1fr !important;
-    }
-
     .page3__left {
         min-height: auto;
-        padding: 2rem 1.5rem;
     }
 
     .page3__left--image {
         min-height: 300px;
-        padding: 1.5rem;
+        padding: var(--slide-pad-x);
     }
 
     .page3__right {
         min-height: auto;
-        padding: 1.5rem;
+        padding: var(--slide-pad-x);
     }
 
     .page3__right--text {
@@ -1755,13 +1544,12 @@ img {
 
     .page3__right--text .page3__left {
         height: auto;
-        padding: 1.5rem;
         overflow: visible;
     }
 
     .page3__gallery {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
+        gap: var(--grid-gap);
     }
 
     .page3__header h2 {
@@ -1769,26 +1557,18 @@ img {
     }
 
     .page3__intro p {
-        font-size: 0.75rem;
+        font-size: var(--fs-slide-small);
     }
 
     .page3__section-title {
-        font-size: 0.85rem;
+        font-size: var(--fs-slide-meta);
     }
 }
 
 @media (max-width: 768px) {
-    .page3__left {
-        padding: 1.5rem 1.2rem;
-    }
-
-    .page3__right {
-        padding: 1.2rem;
-    }
-
     .page3__gallery {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
+        gap: var(--grid-gap-sm);
     }
 
     .page3__header h2 {
@@ -1796,93 +1576,48 @@ img {
     }
 
     .page3__intro p {
-        font-size: 0.7rem;
+        font-size: var(--fs-slide-meta);
     }
 
     .page3__section-title {
-        font-size: 0.8rem;
+        font-size: var(--fs-slide-body);
     }
 
     .page3__project-title {
-        font-size: 0.85rem;
+        font-size: var(--fs-slide-meta);
     }
 
     .page3__project-meta {
-        font-size: 0.75rem;
+        font-size: var(--fs-slide-small);
     }
 }
 
 @media (max-width: 480px) {
-    .page3__container {
-        grid-template-columns: 1fr;
-    }
-
-    .page3__left {
-        padding: 1.2rem 1rem;
-    }
-
-    .page3__right {
-        padding: 1rem;
-    }
-
     .page3__gallery {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
+        gap: var(--grid-gap-sm);
     }
 
     .page3__header h2 {
         font-size: 0.95rem;
     }
 
-    .page3__intro p {
-        font-size: 0.75rem;
-    }
-
-    .page3__section-title {
-        font-size: 0.8rem;
-    }
-
     .page3__project-title {
-        font-size: 0.8rem;
-    }
-
-    /* Page 8 - Partners Grid Responsive - Mobile */
-    .partners-page {
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .partners-page__container {
-        height: auto;
-        padding: 1.2rem 1rem;
-        overflow: visible;
-    }
-
-    .partners-page__title {
-        font-size: 1.3rem;
-        margin: 0 0 0.8rem 0;
-    }
-
-    .partners-page__grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.4rem;
-    }
-
-    .partners-page__logo-item {
-        aspect-ratio: auto;
-        padding: 0.3rem;
-        min-height: 3.5rem;
+        font-size: var(--fs-slide-body);
     }
 }
 
-/* Page 8 - Responsive Tablet */
+/* ============================================================
+   RESPONSIVE - PAGE 8 (Partners Grid)
+   ============================================================ */
+
 @media (max-width: 1024px) {
-    .partners-page__grid {
-        gap: 0.4rem;
+    .partners-page__container {
+        padding: var(--slide-pad-y) var(--slide-pad-x) 0.8rem var(--slide-pad-x);
     }
 
-    .partners-page__container {
-        padding: 1.2rem 1.2rem 0.8rem 1.2rem;
+    .partners-page__grid {
+        gap: var(--grid-gap-sm);
     }
 
     .partners-page__title {
@@ -1896,20 +1631,13 @@ img {
 }
 
 @media (max-width: 768px) {
-    .partners-page {
-        height: auto;
-        min-height: 100vh;
-    }
-
     .partners-page__container {
-        height: auto;
-        padding: 1.2rem 1rem;
-        overflow: visible;
+        padding: var(--slide-pad-y) var(--slide-pad-x);
     }
 
     .partners-page__grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 0.4rem;
+        gap: var(--grid-gap-sm);
     }
 
     .partners-page__title {
@@ -1921,5 +1649,27 @@ img {
         aspect-ratio: auto;
         padding: 0.3rem;
         min-height: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-page__container {
+        padding: var(--slide-pad-y) var(--slide-pad-x);
+    }
+
+    .partners-page__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--grid-gap-sm);
+    }
+
+    .partners-page__title {
+        font-size: 1.3rem;
+        margin: 0 0 0.8rem 0;
+    }
+
+    .partners-page__logo-item {
+        aspect-ratio: auto;
+        padding: 0.3rem;
+        min-height: 3.5rem;
     }
 }
