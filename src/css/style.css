@@ -1092,38 +1092,38 @@ img {
     padding: 0;
     height: 100vh;
     overflow: hidden;
+    overflow-y: hidden;
 }
 
 .page3__container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 70% 30%;
     gap: 0;
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg, #E8494B 0%, #FF8080 100%);
 }
 
 /* Colonne gauche - Texte */
 .page3__left {
-    background: #E8494B;
-    background: linear-gradient(135deg, #E8494B 0%, #FF8080 100%);
+    background: transparent;
     color: #ffffff;
     padding: 2rem 1.8rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .page3__header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .page3__header h2 {
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    margin: 0;
-    margin-bottom: 0.6rem;
+    margin: 0 0 0.6rem 0;
     text-transform: uppercase;
 }
 
@@ -1134,16 +1134,16 @@ img {
 }
 
 .page3__intro {
-    margin-bottom: 1.8rem;
+    margin-bottom: 0.8rem;
     line-height: 1.5;
 }
 
 .page3__intro p {
-    font-size: 0.8rem;
-    margin: 0 0 0.8rem 0;
+    font-size: 0.85rem;
+    margin: 0 0 0.6rem 0;
     font-weight: 400;
-    letter-spacing: 0.4px;
-    line-height: 1.5;
+    letter-spacing: 0.3px;
+    line-height: 1.6;
 }
 
 .page3__creations {
@@ -1151,75 +1151,78 @@ img {
 }
 
 .page3__section-title {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 1.2px;
-    margin: 1.5rem 0 1rem 0;
+    margin: 1rem 0 0.6rem 0;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
 }
 
 .page3__project {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.page3__creations-dev {
+    margin-top: 1.2rem;
 }
 
 .page3__project-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 0 0.3rem 0;
+    margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
-    color: #FFCCCC;
+    color: #ffffff;
 }
 
 .page3__project-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     margin: 0 0 0.5rem 0;
     font-weight: 400;
     font-style: italic;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .page3__project-meta {
-    font-size: 0.7rem;
-    margin: 0.2rem 0;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+    line-height: 1.5;
     font-weight: 400;
 }
 
 .page3__project--secondary {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    margin-left: 1rem;
-    padding-left: 1rem;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 .page3__project-title-small {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 0 0.3rem 0;
+    margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
-    color: #FFCCCC;
+    color: #ffffff;
 }
 
 .page3__project-link {
     display: inline-block;
     color: #ffffff;
-    text-decoration: none;
-    font-size: 0.75rem;
-    margin-top: 0.8rem;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    margin-top: 1rem;
     font-weight: 400;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.3px;
     transition: all 0.3s ease;
 }
 
 .page3__project-link:hover {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 /* Colonne droite - Galerie */
 .page3__right {
-    background-color: #ffffff;
+    background-color: transparent;
     padding: 0;
     display: block;
     width: 100%;
@@ -1230,50 +1233,30 @@ img {
 /* ============================================================
    PAGE 3 GALLERY - MASONRY LAYOUT (CSS COLUMNS)
    ============================================================
-   APPROCHE : CSS Columns pour masonry sans blanc
-   - Remplissage vertical optimal
+   APPROCHE : CSS Columns pour masonry dense sans blanc
+   - 3 colonnes pour remplissage optimal
    - Images redimensionnées proportionnellement
-   - Pas de gaps
-   - Recommandé pour 1 colonne visuelle (62% de largeur)
+   - Pas de tronquement : object-fit: contain
+   - Espacement minimal (1px) pour mur d'images cohérent
    ============================================================ */
 
 .page3__gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: auto;
-    grid-auto-rows: 140px;
-    grid-auto-flow: dense;
+    height: 100%;
+    background: transparent;
+    padding: 10px;
 }
 
 .page3__gallery-image {
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 20px);
+    height: auto;
+    max-height: 100%;
     object-fit: contain;
     display: block;
-    background-color: #f5f5f5;
-}
-
-/* Layout : grande - 2 petites - grande */
-.page3__gallery-image:nth-child(1) {
-    grid-column: span 2;
-    grid-row: span 1;
-}
-
-.page3__gallery-image:nth-child(2) {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.page3__gallery-image:nth-child(3) {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.page3__gallery-image:nth-child(4) {
-    grid-column: span 2;
-    grid-row: span 1;
+    margin: 10px;
 }
 
 /* Pour masonry multi-colonnes (optionnel, non utilisé ici) */
@@ -1305,10 +1288,229 @@ img {
 }
 */
 
+/* PAGE 4 - INVERSÉE (Image gauche, Texte droite) */
+.page3__container--inverted {
+    grid-template-columns: 30% 70%;
+}
+
+.page3__left--image {
+    background: transparent;
+    padding: 0;
+    overflow: hidden;
+}
+
+.page3__right--text {
+    background: transparent;
+    padding: 0;
+    display: flex;
+}
+
+.page3__right--text .page3__left {
+    flex: 1;
+    padding: 1.5rem 1.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.page3__creations-dev {
+    margin-top: 2rem;
+}
+
+/* ============================================================
+   PAGE 5 - ESPACES AUGMENTÉS (Image centrée)
+   ============================================================ */
+
+.page5 {
+    background-color: #ffffff;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.page5__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #E8494B 0%, #FF8080 100%);
+    position: relative;
+}
+
+.page5__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.page5__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.page5__badge {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.page5__image-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page5__image {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.page5__footer {
+    width: 100%;
+    padding: 2rem;
+    text-align: left;
+}
+
+.page5__subtitle {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* ============================================================
+   PAGE 6 - IMAGE GAUCHE 50% + TEXTE DROITE 50%
+   ============================================================ */
+
+.page6 {
+    background-color: #ffffff;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #E8494B 0%, #FF8080 100%);
+}
+
+.page6__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 2rem;
+    z-index: 10;
+}
+
+.page6__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 0.5rem;
+}
+
+.page6__badge {
+    background-color: #E8494B;
+    color: #ffffff;
+    padding: 0.8rem 1rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.page6__main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0;
+    flex: 1;
+    width: 100%;
+}
+
+.page6__image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.page6__image {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.page6__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.page6__section {
+    margin: 0;
+}
+
+.page6__section-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0 0 0.4rem 0;
+    letter-spacing: 0.5px;
+}
+
+.page6__section-text {
+    font-size: 0.75rem;
+    color: #ffffff;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .page3__container {
         grid-template-columns: 38% 62%;
+    }
+
+    .page3__container--inverted {
+        grid-template-columns: 40% 60% !important;
     }
 }
 
@@ -1318,14 +1520,33 @@ img {
         min-height: auto;
     }
 
+    .page3__container--inverted {
+        grid-template-columns: 1fr !important;
+    }
+
     .page3__left {
         min-height: auto;
         padding: 2rem 1.5rem;
     }
 
+    .page3__left--image {
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+
     .page3__right {
         min-height: auto;
         padding: 1.5rem;
+    }
+
+    .page3__right--text {
+        height: auto;
+    }
+
+    .page3__right--text .page3__left {
+        height: auto;
+        padding: 1.5rem;
+        overflow: visible;
     }
 
     .page3__gallery {
