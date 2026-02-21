@@ -464,7 +464,7 @@ img {
 .hero-page1__partners p {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #4A90E2;
+    color: #ffffff;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
@@ -532,7 +532,7 @@ img {
 .hero-page1__bottom-left a {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #4A90E2;
+    color: #ffffff;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
@@ -542,7 +542,7 @@ img {
 }
 
 .hero-page1__bottom-left a:hover {
-    color: #2E5FBE;
+    color: #f0f0f0;
 }
 
 /* Bottom Right: Social Links */
@@ -569,7 +569,7 @@ img {
 .hero-page1__bottom-right a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #4A90E2;
+    color: #ffffff;
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
     text-underline-offset: 5px;
@@ -577,7 +577,7 @@ img {
 }
 
 .hero-page1__bottom-right a:hover {
-    color: #2E5FBE;
+    color: #f0f0f0;
 }
 
 /* Responsive Breakpoints */
