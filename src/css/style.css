@@ -418,6 +418,128 @@ img {
 }
 
 /* ============================================================
+   16. TEAM SECTION
+   ============================================================ */
+
+.team {
+    background-color: var(--color-bg-dark);
+}
+
+.team__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team__subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    text-align: center;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-2xl);
+}
+
+.team__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+}
+
+.team__member {
+    text-align: center;
+    padding: var(--space-md);
+    background-color: var(--color-bg);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.team__member:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.team__photo {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: var(--space-md);
+    display: block;
+}
+
+.team__member h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+}
+
+.team__role {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xs);
+}
+
+/* ============================================================
+   17. GENERIC PAGE SECTION (Pages 3-62)
+   ============================================================ */
+
+.page {
+    padding: var(--space-2xl) var(--space-md);
+}
+
+.page__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page__container h2 {
+    margin-bottom: var(--space-lg);
+}
+
+.page__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.page__text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.page__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.page__image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.page__image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================================
+   18. EXPERIENCES SECTION
+   ============================================================ */
+
+.experiences {
+    background-color: var(--color-bg);
+}
+
+.experiences__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================================================
    11. ACCESSIBILITY
    ============================================================ */
 
