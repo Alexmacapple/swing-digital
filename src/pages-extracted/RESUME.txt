@@ -1,0 +1,139 @@
+╔════════════════════════════════════════════════════════════════════╗
+║                  EXTRACTION PDF - RÉSUMÉ RAPIDE                    ║
+║                  Swing Digital - Maquette Site                     ║
+╚════════════════════════════════════════════════════════════════════╝
+
+📊 RÉSULTATS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ 62 pages du PDF
+✓ 62 répertoires (page-1 à page-62)
+✓ 62 screenshots PNG (53 MB)
+✓ 62 fichiers texte Markdown (< 1 MB)
+✓ 220 images JPG extraites (7.5 MB)
+✓ Taille totale : ~68 MB
+
+✓ Taille originale : 5.5 MB
+✓ Extraction complète réussie ✨
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 FICHIERS À LIRE EN PRIORITÉ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. README.md
+   → Guide complet avec exemples
+   → Comment utiliser les fichiers extraits
+   → Cas d'utilisation
+   
+2. INDEX.md
+   → Table des matières interactive
+   → Liens directs vers chaque page
+   
+3. INVENTAIRE-IMAGES.md
+   → Liste détaillée de toutes les 220 images
+   → Tailles et localisations
+   → Organisé par page
+
+4. images-inventory.json
+   → Données structurées (format JSON)
+   → Pour traitement automatisé
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🗂️ STRUCTURE DES DOSSIERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+page-1/
+├── page-1-screenshot.png       (image de la page entière)
+├── page-1-image-1.jpg          (image 1 extraite)
+├── page-1-image-2.jpg          (image 2 extraite)
+└── texte-page-1.md             (contenu texte)
+
+(même structure pour page-2 à page-62)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📍 LOCALISATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/Users/alex/Claude/active/swing-digital/src/pages-extracted/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 COMMANDES RAPIDES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+# Ouvrir le répertoire dans Finder
+open /Users/alex/Claude/active/swing-digital/src/pages-extracted/
+
+# Consulter une page (ex: page 10)
+open /Users/alex/Claude/active/swing-digital/src/pages-extracted/page-10/
+
+# Lire le guide complet
+cat /Users/alex/Claude/active/swing-digital/src/pages-extracted/README.md
+
+# Voir l'inventaire des images
+cat /Users/alex/Claude/active/swing-digital/src/pages-extracted/INVENTAIRE-IMAGES.md
+
+# Afficher les données JSON
+cat /Users/alex/Claude/active/swing-digital/src/pages-extracted/images-inventory.json | jq .
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 CONTENU PAR FICHIER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+README.md                    → Guide d'utilisation complète
+INDEX.md                     → Table des matières (62 pages)
+INVENTAIRE-IMAGES.md         → Liste de 220 images avec tailles
+images-inventory.json        → Données structurées en JSON
+RAPPORT-EXTRACTION.txt       → Détails techniques (screenshots + texte)
+RAPPORT-IMAGES-EXTRAITES.md  → Rapport sur l'extraction d'images
+full_text.txt                → Texte complet non structuré
+RESUME.txt                   → Ce fichier
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 CONVENTIONS DE NOMMAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Screenshots   : page-{N}-screenshot.png
+              ex: page-1-screenshot.png
+
+Images        : page-{N}-image-{M}.jpg
+              ex: page-5-image-3.jpg (3e image de la page 5)
+
+Texte         : texte-page-{N}.md
+              ex: texte-page-10.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ PROCHAINES ÉTAPES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Lire README.md pour comprendre la structure
+2. Consulter INVENTAIRE-IMAGES.md pour voir toutes les images
+3. Sélectionner les images pertinentes pour le site
+4. Copier vers src/img/ du projet Swing Digital
+5. Optimiser les images pour le web
+6. Intégrer dans le HTML/CSS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STATUS : EXTRACTION COMPLÈTE ET RÉUSSIE
+
+Tous les fichiers sont :
+✓ Organisés par page
+✓ Nommés de manière cohérente
+✓ Documentés (rapports + inventaires)
+✓ Prêts pour intégration
+
+Date d'extraction : 21 février 2026
+Source PDF : maquette-site.pdf (5.5 MB)
+Outil : PyMuPDF + Poppler + macOS tools
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎨 Prêt pour intégration dans le site Swing Digital !
+

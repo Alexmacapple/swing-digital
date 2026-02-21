@@ -1,0 +1,660 @@
+%!Adobe-FontList 1.25
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/AdobeFnt25.lst
+FileLength:14425
+FileModTime:793240815
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:BrandonGrotesque-Black
+FamilyName:Brandon Grotesque
+StyleName:Black
+MenuName:Brandon Grotesque Black
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Brandon Grotesque Black
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Brandon_blk.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:90892
+FileModTime:792943319
+NameArray:0,Mac,4,Brandon Grotesque Black
+NameArray:0,Win,1,Brandon Grotesque Black
+NameArray:0,Win,16,Brandon Grotesque
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:BrandonGrotesque-LightItalic
+FamilyName:Brandon Grotesque
+StyleName:Light Italic
+MenuName:Brandon Grotesque Light
+StyleBits:1
+WeightClass:330
+WidthClass:5
+AngleClass:1
+FullName:Brandon Grotesque Light Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Brandon_light_it.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:78932
+FileModTime:792943320
+NameArray:0,Mac,4,Brandon Grotesque Light Italic
+NameArray:0,Win,1,Brandon Grotesque Light
+NameArray:0,Win,16,Brandon Grotesque
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:BrandonGrotesque-Regular
+FamilyName:Brandon Grotesque
+StyleName:Regular
+MenuName:Brandon Grotesque Regular
+StyleBits:0
+WeightClass:390
+WidthClass:5
+AngleClass:0
+FullName:Brandon Grotesque Regular
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Brandon_reg.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:86528
+FileModTime:767965792
+NameArray:0,Mac,4,Brandon Grotesque Regular
+NameArray:0,Win,1,Brandon Grotesque Regular
+NameArray:0,Win,16,Brandon Grotesque
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Fragen-Bold
+FamilyName:Fragen
+StyleName:Bold
+MenuName:Fragen
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Fragen Bold
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Fragen-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:237492
+FileModTime:792943320
+NameArray:0,Mac,4,Fragen Bold
+NameArray:0,Win,1,Fragen
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Fragen-BoldItalic
+FamilyName:Fragen
+StyleName:Bold Italic
+MenuName:Fragen
+StyleBits:3
+WeightClass:700
+WidthClass:5
+AngleClass:1
+FullName:Fragen Bold Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Fragen-BoldItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:239996
+FileModTime:792943322
+NameArray:0,Mac,4,Fragen Bold Italic
+NameArray:0,Win,1,Fragen
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Fragen-Regular
+FamilyName:Fragen
+StyleName:Regular
+MenuName:Fragen
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Fragen Regular
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Fragen-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:219580
+FileModTime:792943324
+NameArray:0,Mac,4,Fragen Regular
+NameArray:0,Win,1,Fragen
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Fragen-RegularItalic
+FamilyName:Fragen
+StyleName:Regular Italic
+MenuName:Fragen
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:Fragen Regular Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Fragen-RegularItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:218804
+FileModTime:792943321
+NameArray:0,Mac,4,Fragen Regular Italic
+NameArray:0,Win,1,Fragen
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:792943323
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Raleway-Bold
+FamilyName:Raleway
+StyleName:Bold
+MenuName:Raleway
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Raleway Bold
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Raleway-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:179244
+FileModTime:792943315
+NameArray:0,Mac,4,Raleway Bold
+NameArray:0,Win,1,Raleway
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Roboto-Bold
+FamilyName:Roboto
+StyleName:Bold
+MenuName:Roboto
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Roboto Bold
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/Roboto-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:117240
+FileModTime:792943320
+NameArray:0,Mac,18,Roboto Bold
+NameArray:0,Mac,4,Roboto Bold
+NameArray:0,Win,1,Roboto
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Walden-Black
+FamilyName:Walden
+StyleName:Black
+MenuName:Walden Black
+StyleBits:0
+WeightClass:900
+WidthClass:5
+AngleClass:0
+FullName:Walden Black
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/walden-black.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:172472
+FileModTime:792943319
+NameArray:0,Mac,4,Walden Black
+NameArray:0,Win,1,Walden Black
+NameArray:0,Win,16,Walden
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue
+FamilyName:Helvetica Neue
+StyleName:Regular
+MenuName:Helvetica Neue
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:80
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-Bold
+FamilyName:Helvetica Neue
+StyleName:Bold
+MenuName:Helvetica Neue
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue Bold
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:396
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Bold
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-BoldItalic
+FamilyName:Helvetica Neue
+StyleName:Bold Italic
+MenuName:Helvetica Neue
+StyleBits:3
+WeightClass:700
+WidthClass:5
+AngleClass:1
+FullName:Helvetica Neue Bold Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:1108
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Bold Italic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-CondensedBlack
+FamilyName:Helvetica Neue
+StyleName:Condensed Black
+MenuName:Helvetica Neue
+StyleBits:2
+WeightClass:900
+WidthClass:3
+AngleClass:0
+FullName:Helvetica Neue Condensed Black
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:3228
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Condensed Black
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-CondensedBold
+FamilyName:Helvetica Neue
+StyleName:Condensed Bold
+MenuName:Helvetica Neue
+StyleBits:2
+WeightClass:700
+WidthClass:3
+AngleClass:0
+FullName:Helvetica Neue Condensed Bold
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:1472
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Condensed Bold
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-Italic
+FamilyName:Helvetica Neue
+StyleName:Italic
+MenuName:Helvetica Neue
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:Helvetica Neue Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:744
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Italic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-Light
+FamilyName:Helvetica Neue
+StyleName:Light
+MenuName:Helvetica Neue
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue Light
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:2532
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Light
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-LightItalic
+FamilyName:Helvetica Neue
+StyleName:Light Italic
+MenuName:Helvetica Neue
+StyleBits:1
+WeightClass:300
+WidthClass:5
+AngleClass:1
+FullName:Helvetica Neue Light Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:2880
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Light Italic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-Medium
+FamilyName:Helvetica Neue
+StyleName:Medium
+MenuName:Helvetica Neue
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue Medium
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:3592
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Medium
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-MediumItalic
+FamilyName:Helvetica Neue
+StyleName:Medium Italic
+MenuName:Helvetica Neue
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue Medium Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:3940
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Medium Italic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-Thin
+FamilyName:Helvetica Neue
+StyleName:Thin
+MenuName:Helvetica Neue
+StyleBits:0
+WeightClass:200
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue Thin
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:4208
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Thin
+NameArray:0,Win,1,Helvetica Neue
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-ThinItalic
+FamilyName:Helvetica Neue
+StyleName:Thin Italic
+MenuName:Helvetica Neue
+StyleBits:0
+WeightClass:200
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue Thin Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:4524
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue Thin Italic
+NameArray:0,Win,1,Helvetica Neue
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-UltraLight
+FamilyName:Helvetica Neue
+StyleName:UltraLight
+MenuName:Helvetica Neue
+StyleBits:0
+WeightClass:100
+WidthClass:5
+AngleClass:0
+FullName:Helvetica Neue UltraLight
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:1836
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue UltraLight
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:HelveticaNeue-UltraLightItalic
+FamilyName:Helvetica Neue
+StyleName:UltraLight Italic
+MenuName:Helvetica Neue
+StyleBits:1
+WeightClass:100
+WidthClass:5
+AngleClass:1
+FullName:Helvetica Neue UltraLight Italic
+WritingScript:Roman
+OutlineFileName:/Users/sphyrasstephanie/Desktop/Site_19_02_26 copie /Document fonts/HelveticaNeue.ttc
+TTCOffset:2168
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:4472724
+FileModTime:762948362
+NameArray:0,Mac,4,Helvetica Neue UltraLight Italic
+%EndFont
+

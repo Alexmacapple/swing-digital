@@ -1,0 +1,18 @@
+# Memoire locale Claude
+claude.local.md
+*.local.md
+
+# Assets design originaux (trop volumineux pour git)
+design/
+*.psd
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Dossier Claude interne
+.claude/

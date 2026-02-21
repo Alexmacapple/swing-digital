@@ -1,0 +1,100 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    RAPPORT D'EXTRACTION PDF                                ║
+║                         swing-digital/maquette-site                        ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+DATE D'EXTRACTION   : 21 février 2026
+FICHIER SOURCE      : /Users/alex/Claude/active/swing-digital/src/maquette-site.pdf
+RÉPERTOIRE SORTIE  : /Users/alex/Claude/active/swing-digital/src/pages-extracted/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ RÉSULTATS D'EXTRACTION
+
+  Pages extraites          : 62/62 ✓
+  Répertoires créés       : 62 (page-1 à page-62)
+  Screenshots PNG         : 62 fichiers
+  Fichiers texte MD       : 62 fichiers
+  Images emboîtées        : 0 (aucune image trouvée dans le PDF)
+  
+  Taille PDF original     : 5,5 MB
+  Taille extraite         : ~60 MB (résolution haute)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📂 STRUCTURE CRÉÉE
+
+pages-extracted/
+├── page-1/
+│   ├── page-1-screenshot.png       (443 KB)
+│   └── texte-page-1.md             (693 B)
+├── page-2/
+│   ├── page-2-screenshot.png
+│   └── texte-page-2.md
+├── ... (page-3 à page-61)
+├── page-62/
+│   ├── page-62-screenshot.png
+│   └── texte-page-62.md
+├── INDEX.md                        (Table des matières + navigation)
+├── RAPPORT-EXTRACTION.txt          (Ce fichier)
+└── full_text.txt                   (Texte brut complet non structuré)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🛠️ OUTILS UTILISÉS
+
+  • pdftoppm    : Conversion des pages en images PNG haute résolution
+  • pdftotext   : Extraction du texte par page en format texte brut
+  • pdfimages   : Tentative d'extraction des images emboîtées (aucune trouvée)
+  • sips        : Compression/conversion d'images (macOS natif)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 FICHIERS IMPORTANTS
+
+  INDEX.md
+    → Table de matières interactive
+    → Liens vers chaque page
+    → Navigation facile entre pages
+
+  texte-page-N.md
+    → Contenu texte de chaque page
+    → Format Markdown (peut être édité)
+    → Respecte la mise en page originale avec -layout
+
+  page-N-screenshot.png
+    → Screenshot haute résolution de chaque page
+    → Format PNG (lossless)
+    → Prêt pour intégration web (nécessite compression)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ NOTES IMPORTANTES
+
+  1. Images PNG : Résolution élevée, pas optimisées pour le web
+     → À compresser avec ImageOptim ou tinypng avant mise en ligne
+  
+  2. Texte extrait : Issu de la reconnaissance OCR
+     → Vérifier la lisibilité pour pages complexes
+  
+  3. Images emboîtées : Aucune trouvée par pdfimages
+     → Le PDF contient peut-être des graphiques vectoriels non extractibles
+  
+  4. Hiérarchie : page-1 à page-62 (numérotation sans zéro à gauche)
+     → Pour cohérence avec la numérotation visuelle des pages
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 PROCHAINES ÉTAPES RECOMMANDÉES
+
+  □ Optimiser les images PNG pour le web (ImageOptim, TinyPNG)
+  □ Vérifier la qualité du texte extrait sur pages critiques
+  □ Intégrer les screenshots dans la documentation du projet
+  □ Archiver les fichiers PNG d'origine si espace est critique
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ Extraction réussie !
+📍 Répertoire : pages-extracted/
+🚀 Commencez par lire : INDEX.md
+

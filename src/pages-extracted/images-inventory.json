@@ -1,0 +1,1743 @@
+{
+  "metadata": {
+    "total_pages": 62,
+    "total_images": 220,
+    "pages_with_images": 59,
+    "total_size_mb": 7.5
+  },
+  "pages": {
+    "page_1": {
+      "page_number": 1,
+      "image_count": 2,
+      "total_size_kb": 53.1,
+      "images": [
+        {
+          "filename": "page-1-image-1.jpg",
+          "size_bytes": 6006,
+          "size_kb": 5.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-1/page-1-image-1.jpg"
+        },
+        {
+          "filename": "page-1-image-2.jpg",
+          "size_bytes": 48364,
+          "size_kb": 47.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-1/page-1-image-2.jpg"
+        }
+      ]
+    },
+    "page_10": {
+      "page_number": 10,
+      "image_count": 5,
+      "total_size_kb": 288.2,
+      "images": [
+        {
+          "filename": "page-10-image-1.jpg",
+          "size_bytes": 55439,
+          "size_kb": 54.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-10/page-10-image-1.jpg"
+        },
+        {
+          "filename": "page-10-image-2.jpg",
+          "size_bytes": 35368,
+          "size_kb": 34.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-10/page-10-image-2.jpg"
+        },
+        {
+          "filename": "page-10-image-3.jpg",
+          "size_bytes": 60758,
+          "size_kb": 59.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-10/page-10-image-3.jpg"
+        },
+        {
+          "filename": "page-10-image-4.jpg",
+          "size_bytes": 25752,
+          "size_kb": 25.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-10/page-10-image-4.jpg"
+        },
+        {
+          "filename": "page-10-image-5.jpg",
+          "size_bytes": 117971,
+          "size_kb": 115.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-10/page-10-image-5.jpg"
+        }
+      ]
+    },
+    "page_12": {
+      "page_number": 12,
+      "image_count": 13,
+      "total_size_kb": 193.0,
+      "images": [
+        {
+          "filename": "page-12-image-1.jpg",
+          "size_bytes": 122188,
+          "size_kb": 119.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-1.jpg"
+        },
+        {
+          "filename": "page-12-image-10.jpg",
+          "size_bytes": 1643,
+          "size_kb": 1.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-10.jpg"
+        },
+        {
+          "filename": "page-12-image-11.jpg",
+          "size_bytes": 3569,
+          "size_kb": 3.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-11.jpg"
+        },
+        {
+          "filename": "page-12-image-12.jpg",
+          "size_bytes": 1261,
+          "size_kb": 1.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-12.jpg"
+        },
+        {
+          "filename": "page-12-image-13.jpg",
+          "size_bytes": 2333,
+          "size_kb": 2.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-13.jpg"
+        },
+        {
+          "filename": "page-12-image-2.jpg",
+          "size_bytes": 50950,
+          "size_kb": 49.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-2.jpg"
+        },
+        {
+          "filename": "page-12-image-3.jpg",
+          "size_bytes": 2933,
+          "size_kb": 2.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-3.jpg"
+        },
+        {
+          "filename": "page-12-image-4.jpg",
+          "size_bytes": 2455,
+          "size_kb": 2.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-4.jpg"
+        },
+        {
+          "filename": "page-12-image-5.jpg",
+          "size_bytes": 2458,
+          "size_kb": 2.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-5.jpg"
+        },
+        {
+          "filename": "page-12-image-6.jpg",
+          "size_bytes": 2155,
+          "size_kb": 2.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-6.jpg"
+        },
+        {
+          "filename": "page-12-image-7.jpg",
+          "size_bytes": 2288,
+          "size_kb": 2.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-7.jpg"
+        },
+        {
+          "filename": "page-12-image-8.jpg",
+          "size_bytes": 1927,
+          "size_kb": 1.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-8.jpg"
+        },
+        {
+          "filename": "page-12-image-9.jpg",
+          "size_bytes": 1408,
+          "size_kb": 1.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-12/page-12-image-9.jpg"
+        }
+      ]
+    },
+    "page_13": {
+      "page_number": 13,
+      "image_count": 8,
+      "total_size_kb": 106.9,
+      "images": [
+        {
+          "filename": "page-13-image-1.jpg",
+          "size_bytes": 14313,
+          "size_kb": 14.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-1.jpg"
+        },
+        {
+          "filename": "page-13-image-2.jpg",
+          "size_bytes": 22582,
+          "size_kb": 22.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-2.jpg"
+        },
+        {
+          "filename": "page-13-image-3.jpg",
+          "size_bytes": 4914,
+          "size_kb": 4.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-3.jpg"
+        },
+        {
+          "filename": "page-13-image-4.jpg",
+          "size_bytes": 28073,
+          "size_kb": 27.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-4.jpg"
+        },
+        {
+          "filename": "page-13-image-5.jpg",
+          "size_bytes": 31393,
+          "size_kb": 30.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-5.jpg"
+        },
+        {
+          "filename": "page-13-image-6.jpg",
+          "size_bytes": 2399,
+          "size_kb": 2.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-6.jpg"
+        },
+        {
+          "filename": "page-13-image-7.jpg",
+          "size_bytes": 2524,
+          "size_kb": 2.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-7.jpg"
+        },
+        {
+          "filename": "page-13-image-8.jpg",
+          "size_bytes": 3129,
+          "size_kb": 3.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-13/page-13-image-8.jpg"
+        }
+      ]
+    },
+    "page_14": {
+      "page_number": 14,
+      "image_count": 3,
+      "total_size_kb": 139.2,
+      "images": [
+        {
+          "filename": "page-14-image-1.jpg",
+          "size_bytes": 15319,
+          "size_kb": 15.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-14/page-14-image-1.jpg"
+        },
+        {
+          "filename": "page-14-image-2.jpg",
+          "size_bytes": 57117,
+          "size_kb": 55.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-14/page-14-image-2.jpg"
+        },
+        {
+          "filename": "page-14-image-3.jpg",
+          "size_bytes": 70066,
+          "size_kb": 68.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-14/page-14-image-3.jpg"
+        }
+      ]
+    },
+    "page_15": {
+      "page_number": 15,
+      "image_count": 1,
+      "total_size_kb": 119.0,
+      "images": [
+        {
+          "filename": "page-15-image-1.jpg",
+          "size_bytes": 121855,
+          "size_kb": 119.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-15/page-15-image-1.jpg"
+        }
+      ]
+    },
+    "page_16": {
+      "page_number": 16,
+      "image_count": 2,
+      "total_size_kb": 117.9,
+      "images": [
+        {
+          "filename": "page-16-image-1.jpg",
+          "size_bytes": 94535,
+          "size_kb": 92.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-16/page-16-image-1.jpg"
+        },
+        {
+          "filename": "page-16-image-2.jpg",
+          "size_bytes": 26183,
+          "size_kb": 25.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-16/page-16-image-2.jpg"
+        }
+      ]
+    },
+    "page_17": {
+      "page_number": 17,
+      "image_count": 1,
+      "total_size_kb": 164.3,
+      "images": [
+        {
+          "filename": "page-17-image-1.jpg",
+          "size_bytes": 168203,
+          "size_kb": 164.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-17/page-17-image-1.jpg"
+        }
+      ]
+    },
+    "page_18": {
+      "page_number": 18,
+      "image_count": 2,
+      "total_size_kb": 112.8,
+      "images": [
+        {
+          "filename": "page-18-image-1.jpg",
+          "size_bytes": 76399,
+          "size_kb": 74.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-18/page-18-image-1.jpg"
+        },
+        {
+          "filename": "page-18-image-2.jpg",
+          "size_bytes": 39105,
+          "size_kb": 38.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-18/page-18-image-2.jpg"
+        }
+      ]
+    },
+    "page_2": {
+      "page_number": 2,
+      "image_count": 9,
+      "total_size_kb": 201.3,
+      "images": [
+        {
+          "filename": "page-2-image-1.jpg",
+          "size_bytes": 9977,
+          "size_kb": 9.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-1.jpg"
+        },
+        {
+          "filename": "page-2-image-2.jpg",
+          "size_bytes": 11546,
+          "size_kb": 11.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-2.jpg"
+        },
+        {
+          "filename": "page-2-image-3.jpg",
+          "size_bytes": 10895,
+          "size_kb": 10.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-3.jpg"
+        },
+        {
+          "filename": "page-2-image-4.jpg",
+          "size_bytes": 8958,
+          "size_kb": 8.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-4.jpg"
+        },
+        {
+          "filename": "page-2-image-5.jpg",
+          "size_bytes": 12753,
+          "size_kb": 12.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-5.jpg"
+        },
+        {
+          "filename": "page-2-image-6.jpg",
+          "size_bytes": 11458,
+          "size_kb": 11.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-6.jpg"
+        },
+        {
+          "filename": "page-2-image-7.jpg",
+          "size_bytes": 12308,
+          "size_kb": 12.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-7.jpg"
+        },
+        {
+          "filename": "page-2-image-8.jpg",
+          "size_bytes": 10324,
+          "size_kb": 10.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-8.jpg"
+        },
+        {
+          "filename": "page-2-image-9.jpg",
+          "size_bytes": 117971,
+          "size_kb": 115.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-2/page-2-image-9.jpg"
+        }
+      ]
+    },
+    "page_20": {
+      "page_number": 20,
+      "image_count": 2,
+      "total_size_kb": 146.1,
+      "images": [
+        {
+          "filename": "page-20-image-1.jpg",
+          "size_bytes": 53212,
+          "size_kb": 52.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-20/page-20-image-1.jpg"
+        },
+        {
+          "filename": "page-20-image-2.jpg",
+          "size_bytes": 96372,
+          "size_kb": 94.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-20/page-20-image-2.jpg"
+        }
+      ]
+    },
+    "page_21": {
+      "page_number": 21,
+      "image_count": 2,
+      "total_size_kb": 202.0,
+      "images": [
+        {
+          "filename": "page-21-image-1.jpg",
+          "size_bytes": 98626,
+          "size_kb": 96.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-21/page-21-image-1.jpg"
+        },
+        {
+          "filename": "page-21-image-2.jpg",
+          "size_bytes": 108256,
+          "size_kb": 105.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-21/page-21-image-2.jpg"
+        }
+      ]
+    },
+    "page_22": {
+      "page_number": 22,
+      "image_count": 2,
+      "total_size_kb": 184.5,
+      "images": [
+        {
+          "filename": "page-22-image-1.jpg",
+          "size_bytes": 75772,
+          "size_kb": 74.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-22/page-22-image-1.jpg"
+        },
+        {
+          "filename": "page-22-image-2.jpg",
+          "size_bytes": 113186,
+          "size_kb": 110.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-22/page-22-image-2.jpg"
+        }
+      ]
+    },
+    "page_23": {
+      "page_number": 23,
+      "image_count": 2,
+      "total_size_kb": 144.5,
+      "images": [
+        {
+          "filename": "page-23-image-1.jpg",
+          "size_bytes": 43726,
+          "size_kb": 42.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-23/page-23-image-1.jpg"
+        },
+        {
+          "filename": "page-23-image-2.jpg",
+          "size_bytes": 104224,
+          "size_kb": 101.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-23/page-23-image-2.jpg"
+        }
+      ]
+    },
+    "page_24": {
+      "page_number": 24,
+      "image_count": 12,
+      "total_size_kb": 86.1,
+      "images": [
+        {
+          "filename": "page-24-image-1.jpg",
+          "size_bytes": 9434,
+          "size_kb": 9.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-1.jpg"
+        },
+        {
+          "filename": "page-24-image-10.jpg",
+          "size_bytes": 2927,
+          "size_kb": 2.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-10.jpg"
+        },
+        {
+          "filename": "page-24-image-11.jpg",
+          "size_bytes": 2817,
+          "size_kb": 2.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-11.jpg"
+        },
+        {
+          "filename": "page-24-image-12.jpg",
+          "size_bytes": 2884,
+          "size_kb": 2.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-12.jpg"
+        },
+        {
+          "filename": "page-24-image-2.jpg",
+          "size_bytes": 15217,
+          "size_kb": 14.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-2.jpg"
+        },
+        {
+          "filename": "page-24-image-3.jpg",
+          "size_bytes": 10713,
+          "size_kb": 10.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-3.jpg"
+        },
+        {
+          "filename": "page-24-image-4.jpg",
+          "size_bytes": 9035,
+          "size_kb": 8.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-4.jpg"
+        },
+        {
+          "filename": "page-24-image-5.jpg",
+          "size_bytes": 9502,
+          "size_kb": 9.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-5.jpg"
+        },
+        {
+          "filename": "page-24-image-6.jpg",
+          "size_bytes": 16855,
+          "size_kb": 16.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-6.jpg"
+        },
+        {
+          "filename": "page-24-image-7.jpg",
+          "size_bytes": 2635,
+          "size_kb": 2.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-7.jpg"
+        },
+        {
+          "filename": "page-24-image-8.jpg",
+          "size_bytes": 2940,
+          "size_kb": 2.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-8.jpg"
+        },
+        {
+          "filename": "page-24-image-9.jpg",
+          "size_bytes": 2920,
+          "size_kb": 2.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-24/page-24-image-9.jpg"
+        }
+      ]
+    },
+    "page_25": {
+      "page_number": 25,
+      "image_count": 3,
+      "total_size_kb": 191.7,
+      "images": [
+        {
+          "filename": "page-25-image-1.jpg",
+          "size_bytes": 77397,
+          "size_kb": 75.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-25/page-25-image-1.jpg"
+        },
+        {
+          "filename": "page-25-image-2.jpg",
+          "size_bytes": 41064,
+          "size_kb": 40.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-25/page-25-image-2.jpg"
+        },
+        {
+          "filename": "page-25-image-3.jpg",
+          "size_bytes": 77816,
+          "size_kb": 76.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-25/page-25-image-3.jpg"
+        }
+      ]
+    },
+    "page_26": {
+      "page_number": 26,
+      "image_count": 1,
+      "total_size_kb": 185.0,
+      "images": [
+        {
+          "filename": "page-26-image-1.jpg",
+          "size_bytes": 189431,
+          "size_kb": 185.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-26/page-26-image-1.jpg"
+        }
+      ]
+    },
+    "page_27": {
+      "page_number": 27,
+      "image_count": 1,
+      "total_size_kb": 64.8,
+      "images": [
+        {
+          "filename": "page-27-image-1.jpg",
+          "size_bytes": 66400,
+          "size_kb": 64.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-27/page-27-image-1.jpg"
+        }
+      ]
+    },
+    "page_28": {
+      "page_number": 28,
+      "image_count": 1,
+      "total_size_kb": 89.4,
+      "images": [
+        {
+          "filename": "page-28-image-1.jpg",
+          "size_bytes": 91516,
+          "size_kb": 89.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-28/page-28-image-1.jpg"
+        }
+      ]
+    },
+    "page_29": {
+      "page_number": 29,
+      "image_count": 1,
+      "total_size_kb": 56.3,
+      "images": [
+        {
+          "filename": "page-29-image-1.jpg",
+          "size_bytes": 57669,
+          "size_kb": 56.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-29/page-29-image-1.jpg"
+        }
+      ]
+    },
+    "page_3": {
+      "page_number": 3,
+      "image_count": 5,
+      "total_size_kb": 278.9,
+      "images": [
+        {
+          "filename": "page-3-image-1.jpg",
+          "size_bytes": 16116,
+          "size_kb": 15.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-3/page-3-image-1.jpg"
+        },
+        {
+          "filename": "page-3-image-2.jpg",
+          "size_bytes": 75672,
+          "size_kb": 73.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-3/page-3-image-2.jpg"
+        },
+        {
+          "filename": "page-3-image-3.jpg",
+          "size_bytes": 18614,
+          "size_kb": 18.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-3/page-3-image-3.jpg"
+        },
+        {
+          "filename": "page-3-image-4.jpg",
+          "size_bytes": 32335,
+          "size_kb": 31.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-3/page-3-image-4.jpg"
+        },
+        {
+          "filename": "page-3-image-5.jpg",
+          "size_bytes": 142836,
+          "size_kb": 139.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-3/page-3-image-5.jpg"
+        }
+      ]
+    },
+    "page_30": {
+      "page_number": 30,
+      "image_count": 2,
+      "total_size_kb": 41.3,
+      "images": [
+        {
+          "filename": "page-30-image-1.jpg",
+          "size_bytes": 13255,
+          "size_kb": 12.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-30/page-30-image-1.jpg"
+        },
+        {
+          "filename": "page-30-image-2.jpg",
+          "size_bytes": 29081,
+          "size_kb": 28.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-30/page-30-image-2.jpg"
+        }
+      ]
+    },
+    "page_31": {
+      "page_number": 31,
+      "image_count": 2,
+      "total_size_kb": 124.4,
+      "images": [
+        {
+          "filename": "page-31-image-1.jpg",
+          "size_bytes": 86678,
+          "size_kb": 84.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-31/page-31-image-1.jpg"
+        },
+        {
+          "filename": "page-31-image-2.jpg",
+          "size_bytes": 40772,
+          "size_kb": 39.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-31/page-31-image-2.jpg"
+        }
+      ]
+    },
+    "page_32": {
+      "page_number": 32,
+      "image_count": 2,
+      "total_size_kb": 84.8,
+      "images": [
+        {
+          "filename": "page-32-image-1.jpg",
+          "size_bytes": 67560,
+          "size_kb": 66.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-32/page-32-image-1.jpg"
+        },
+        {
+          "filename": "page-32-image-2.jpg",
+          "size_bytes": 19214,
+          "size_kb": 18.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-32/page-32-image-2.jpg"
+        }
+      ]
+    },
+    "page_33": {
+      "page_number": 33,
+      "image_count": 2,
+      "total_size_kb": 114.9,
+      "images": [
+        {
+          "filename": "page-33-image-1.jpg",
+          "size_bytes": 49526,
+          "size_kb": 48.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-33/page-33-image-1.jpg"
+        },
+        {
+          "filename": "page-33-image-2.jpg",
+          "size_bytes": 68132,
+          "size_kb": 66.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-33/page-33-image-2.jpg"
+        }
+      ]
+    },
+    "page_34": {
+      "page_number": 34,
+      "image_count": 2,
+      "total_size_kb": 203.3,
+      "images": [
+        {
+          "filename": "page-34-image-1.jpg",
+          "size_bytes": 125783,
+          "size_kb": 122.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-34/page-34-image-1.jpg"
+        },
+        {
+          "filename": "page-34-image-2.jpg",
+          "size_bytes": 82389,
+          "size_kb": 80.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-34/page-34-image-2.jpg"
+        }
+      ]
+    },
+    "page_35": {
+      "page_number": 35,
+      "image_count": 1,
+      "total_size_kb": 52.8,
+      "images": [
+        {
+          "filename": "page-35-image-1.jpg",
+          "size_bytes": 54067,
+          "size_kb": 52.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-35/page-35-image-1.jpg"
+        }
+      ]
+    },
+    "page_36": {
+      "page_number": 36,
+      "image_count": 3,
+      "total_size_kb": 143.2,
+      "images": [
+        {
+          "filename": "page-36-image-1.jpg",
+          "size_bytes": 99561,
+          "size_kb": 97.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-36/page-36-image-1.jpg"
+        },
+        {
+          "filename": "page-36-image-2.jpg",
+          "size_bytes": 18066,
+          "size_kb": 17.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-36/page-36-image-2.jpg"
+        },
+        {
+          "filename": "page-36-image-3.jpg",
+          "size_bytes": 29108,
+          "size_kb": 28.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-36/page-36-image-3.jpg"
+        }
+      ]
+    },
+    "page_37": {
+      "page_number": 37,
+      "image_count": 1,
+      "total_size_kb": 41.9,
+      "images": [
+        {
+          "filename": "page-37-image-1.jpg",
+          "size_bytes": 42947,
+          "size_kb": 41.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-37/page-37-image-1.jpg"
+        }
+      ]
+    },
+    "page_38": {
+      "page_number": 38,
+      "image_count": 1,
+      "total_size_kb": 48.3,
+      "images": [
+        {
+          "filename": "page-38-image-1.jpg",
+          "size_bytes": 49454,
+          "size_kb": 48.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-38/page-38-image-1.jpg"
+        }
+      ]
+    },
+    "page_39": {
+      "page_number": 39,
+      "image_count": 1,
+      "total_size_kb": 15.2,
+      "images": [
+        {
+          "filename": "page-39-image-1.jpg",
+          "size_bytes": 15597,
+          "size_kb": 15.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-39/page-39-image-1.jpg"
+        }
+      ]
+    },
+    "page_4": {
+      "page_number": 4,
+      "image_count": 4,
+      "total_size_kb": 99.0,
+      "images": [
+        {
+          "filename": "page-4-image-1.jpg",
+          "size_bytes": 28946,
+          "size_kb": 28.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-4/page-4-image-1.jpg"
+        },
+        {
+          "filename": "page-4-image-2.jpg",
+          "size_bytes": 33510,
+          "size_kb": 32.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-4/page-4-image-2.jpg"
+        },
+        {
+          "filename": "page-4-image-3.jpg",
+          "size_bytes": 17073,
+          "size_kb": 16.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-4/page-4-image-3.jpg"
+        },
+        {
+          "filename": "page-4-image-4.jpg",
+          "size_bytes": 21827,
+          "size_kb": 21.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-4/page-4-image-4.jpg"
+        }
+      ]
+    },
+    "page_40": {
+      "page_number": 40,
+      "image_count": 1,
+      "total_size_kb": 60.9,
+      "images": [
+        {
+          "filename": "page-40-image-1.jpg",
+          "size_bytes": 62315,
+          "size_kb": 60.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-40/page-40-image-1.jpg"
+        }
+      ]
+    },
+    "page_41": {
+      "page_number": 41,
+      "image_count": 5,
+      "total_size_kb": 264.3,
+      "images": [
+        {
+          "filename": "page-41-image-1.jpg",
+          "size_bytes": 16367,
+          "size_kb": 16.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-41/page-41-image-1.jpg"
+        },
+        {
+          "filename": "page-41-image-2.jpg",
+          "size_bytes": 36739,
+          "size_kb": 35.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-41/page-41-image-2.jpg"
+        },
+        {
+          "filename": "page-41-image-3.jpg",
+          "size_bytes": 53161,
+          "size_kb": 51.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-41/page-41-image-3.jpg"
+        },
+        {
+          "filename": "page-41-image-4.jpg",
+          "size_bytes": 21467,
+          "size_kb": 21.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-41/page-41-image-4.jpg"
+        },
+        {
+          "filename": "page-41-image-5.jpg",
+          "size_bytes": 142836,
+          "size_kb": 139.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-41/page-41-image-5.jpg"
+        }
+      ]
+    },
+    "page_43": {
+      "page_number": 43,
+      "image_count": 8,
+      "total_size_kb": 187.4,
+      "images": [
+        {
+          "filename": "page-43-image-1.jpg",
+          "size_bytes": 175797,
+          "size_kb": 171.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-1.jpg"
+        },
+        {
+          "filename": "page-43-image-2.jpg",
+          "size_bytes": 2455,
+          "size_kb": 2.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-2.jpg"
+        },
+        {
+          "filename": "page-43-image-3.jpg",
+          "size_bytes": 2264,
+          "size_kb": 2.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-3.jpg"
+        },
+        {
+          "filename": "page-43-image-4.jpg",
+          "size_bytes": 3120,
+          "size_kb": 3.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-4.jpg"
+        },
+        {
+          "filename": "page-43-image-5.jpg",
+          "size_bytes": 1782,
+          "size_kb": 1.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-5.jpg"
+        },
+        {
+          "filename": "page-43-image-6.jpg",
+          "size_bytes": 1780,
+          "size_kb": 1.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-6.jpg"
+        },
+        {
+          "filename": "page-43-image-7.jpg",
+          "size_bytes": 2816,
+          "size_kb": 2.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-7.jpg"
+        },
+        {
+          "filename": "page-43-image-8.jpg",
+          "size_bytes": 1926,
+          "size_kb": 1.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-43/page-43-image-8.jpg"
+        }
+      ]
+    },
+    "page_44": {
+      "page_number": 44,
+      "image_count": 2,
+      "total_size_kb": 112.7,
+      "images": [
+        {
+          "filename": "page-44-image-1.jpg",
+          "size_bytes": 73379,
+          "size_kb": 71.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-44/page-44-image-1.jpg"
+        },
+        {
+          "filename": "page-44-image-2.jpg",
+          "size_bytes": 41938,
+          "size_kb": 41.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-44/page-44-image-2.jpg"
+        }
+      ]
+    },
+    "page_45": {
+      "page_number": 45,
+      "image_count": 2,
+      "total_size_kb": 1.9,
+      "images": [
+        {
+          "filename": "page-45-image-1.jpg",
+          "size_bytes": 981,
+          "size_kb": 1.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-45/page-45-image-1.jpg"
+        },
+        {
+          "filename": "page-45-image-2.jpg",
+          "size_bytes": 883,
+          "size_kb": 0.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-45/page-45-image-2.jpg"
+        }
+      ]
+    },
+    "page_46": {
+      "page_number": 46,
+      "image_count": 2,
+      "total_size_kb": 90.9,
+      "images": [
+        {
+          "filename": "page-46-image-1.jpg",
+          "size_bytes": 88720,
+          "size_kb": 86.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-46/page-46-image-1.jpg"
+        },
+        {
+          "filename": "page-46-image-2.jpg",
+          "size_bytes": 4418,
+          "size_kb": 4.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-46/page-46-image-2.jpg"
+        }
+      ]
+    },
+    "page_47": {
+      "page_number": 47,
+      "image_count": 8,
+      "total_size_kb": 118.0,
+      "images": [
+        {
+          "filename": "page-47-image-1.jpg",
+          "size_bytes": 64535,
+          "size_kb": 63.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-1.jpg"
+        },
+        {
+          "filename": "page-47-image-2.jpg",
+          "size_bytes": 23209,
+          "size_kb": 22.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-2.jpg"
+        },
+        {
+          "filename": "page-47-image-3.jpg",
+          "size_bytes": 19982,
+          "size_kb": 19.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-3.jpg"
+        },
+        {
+          "filename": "page-47-image-4.jpg",
+          "size_bytes": 4658,
+          "size_kb": 4.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-4.jpg"
+        },
+        {
+          "filename": "page-47-image-5.jpg",
+          "size_bytes": 1249,
+          "size_kb": 1.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-5.jpg"
+        },
+        {
+          "filename": "page-47-image-6.jpg",
+          "size_bytes": 2742,
+          "size_kb": 2.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-6.jpg"
+        },
+        {
+          "filename": "page-47-image-7.jpg",
+          "size_bytes": 2130,
+          "size_kb": 2.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-7.jpg"
+        },
+        {
+          "filename": "page-47-image-8.jpg",
+          "size_bytes": 2402,
+          "size_kb": 2.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-47/page-47-image-8.jpg"
+        }
+      ]
+    },
+    "page_48": {
+      "page_number": 48,
+      "image_count": 3,
+      "total_size_kb": 62.4,
+      "images": [
+        {
+          "filename": "page-48-image-1.jpg",
+          "size_bytes": 32706,
+          "size_kb": 31.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-48/page-48-image-1.jpg"
+        },
+        {
+          "filename": "page-48-image-2.jpg",
+          "size_bytes": 29188,
+          "size_kb": 28.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-48/page-48-image-2.jpg"
+        },
+        {
+          "filename": "page-48-image-3.jpg",
+          "size_bytes": 2033,
+          "size_kb": 2.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-48/page-48-image-3.jpg"
+        }
+      ]
+    },
+    "page_49": {
+      "page_number": 49,
+      "image_count": 7,
+      "total_size_kb": 112.3,
+      "images": [
+        {
+          "filename": "page-49-image-1.jpg",
+          "size_bytes": 1010,
+          "size_kb": 1.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-49/page-49-image-1.jpg"
+        },
+        {
+          "filename": "page-49-image-2.jpg",
+          "size_bytes": 848,
+          "size_kb": 0.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-49/page-49-image-2.jpg"
+        },
+        {
+          "filename": "page-49-image-3.jpg",
+          "size_bytes": 15610,
+          "size_kb": 15.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-49/page-49-image-3.jpg"
+        },
+        {
+          "filename": "page-49-image-4.jpg",
+          "size_bytes": 24296,
+          "size_kb": 23.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-49/page-49-image-4.jpg"
+        },
+        {
+          "filename": "page-49-image-5.jpg",
+          "size_bytes": 33606,
+          "size_kb": 32.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-49/page-49-image-5.jpg"
+        },
+        {
+          "filename": "page-49-image-6.jpg",
+          "size_bytes": 20669,
+          "size_kb": 20.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-49/page-49-image-6.jpg"
+        },
+        {
+          "filename": "page-49-image-7.jpg",
+          "size_bytes": 19007,
+          "size_kb": 18.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-49/page-49-image-7.jpg"
+        }
+      ]
+    },
+    "page_5": {
+      "page_number": 5,
+      "image_count": 1,
+      "total_size_kb": 109.2,
+      "images": [
+        {
+          "filename": "page-5-image-1.jpg",
+          "size_bytes": 111867,
+          "size_kb": 109.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-5/page-5-image-1.jpg"
+        }
+      ]
+    },
+    "page_50": {
+      "page_number": 50,
+      "image_count": 4,
+      "total_size_kb": 73.9,
+      "images": [
+        {
+          "filename": "page-50-image-1.jpg",
+          "size_bytes": 65860,
+          "size_kb": 64.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-50/page-50-image-1.jpg"
+        },
+        {
+          "filename": "page-50-image-2.jpg",
+          "size_bytes": 2865,
+          "size_kb": 2.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-50/page-50-image-2.jpg"
+        },
+        {
+          "filename": "page-50-image-3.jpg",
+          "size_bytes": 2935,
+          "size_kb": 2.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-50/page-50-image-3.jpg"
+        },
+        {
+          "filename": "page-50-image-4.jpg",
+          "size_bytes": 3991,
+          "size_kb": 3.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-50/page-50-image-4.jpg"
+        }
+      ]
+    },
+    "page_51": {
+      "page_number": 51,
+      "image_count": 1,
+      "total_size_kb": 23.5,
+      "images": [
+        {
+          "filename": "page-51-image-1.jpg",
+          "size_bytes": 24022,
+          "size_kb": 23.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-51/page-51-image-1.jpg"
+        }
+      ]
+    },
+    "page_52": {
+      "page_number": 52,
+      "image_count": 2,
+      "total_size_kb": 208.3,
+      "images": [
+        {
+          "filename": "page-52-image-1.jpg",
+          "size_bytes": 114360,
+          "size_kb": 111.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-52/page-52-image-1.jpg"
+        },
+        {
+          "filename": "page-52-image-2.jpg",
+          "size_bytes": 98956,
+          "size_kb": 96.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-52/page-52-image-2.jpg"
+        }
+      ]
+    },
+    "page_53": {
+      "page_number": 53,
+      "image_count": 5,
+      "total_size_kb": 137.5,
+      "images": [
+        {
+          "filename": "page-53-image-1.jpg",
+          "size_bytes": 2033,
+          "size_kb": 2.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-53/page-53-image-1.jpg"
+        },
+        {
+          "filename": "page-53-image-2.jpg",
+          "size_bytes": 2518,
+          "size_kb": 2.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-53/page-53-image-2.jpg"
+        },
+        {
+          "filename": "page-53-image-3.jpg",
+          "size_bytes": 2856,
+          "size_kb": 2.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-53/page-53-image-3.jpg"
+        },
+        {
+          "filename": "page-53-image-4.jpg",
+          "size_bytes": 131106,
+          "size_kb": 128.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-53/page-53-image-4.jpg"
+        },
+        {
+          "filename": "page-53-image-5.jpg",
+          "size_bytes": 2222,
+          "size_kb": 2.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-53/page-53-image-5.jpg"
+        }
+      ]
+    },
+    "page_54": {
+      "page_number": 54,
+      "image_count": 7,
+      "total_size_kb": 370.0,
+      "images": [
+        {
+          "filename": "page-54-image-1.jpg",
+          "size_bytes": 44206,
+          "size_kb": 43.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-54/page-54-image-1.jpg"
+        },
+        {
+          "filename": "page-54-image-2.jpg",
+          "size_bytes": 41721,
+          "size_kb": 40.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-54/page-54-image-2.jpg"
+        },
+        {
+          "filename": "page-54-image-3.jpg",
+          "size_bytes": 26417,
+          "size_kb": 25.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-54/page-54-image-3.jpg"
+        },
+        {
+          "filename": "page-54-image-4.jpg",
+          "size_bytes": 50933,
+          "size_kb": 49.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-54/page-54-image-4.jpg"
+        },
+        {
+          "filename": "page-54-image-5.jpg",
+          "size_bytes": 41039,
+          "size_kb": 40.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-54/page-54-image-5.jpg"
+        },
+        {
+          "filename": "page-54-image-6.jpg",
+          "size_bytes": 31787,
+          "size_kb": 31.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-54/page-54-image-6.jpg"
+        },
+        {
+          "filename": "page-54-image-7.jpg",
+          "size_bytes": 142836,
+          "size_kb": 139.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-54/page-54-image-7.jpg"
+        }
+      ]
+    },
+    "page_55": {
+      "page_number": 55,
+      "image_count": 3,
+      "total_size_kb": 83.0,
+      "images": [
+        {
+          "filename": "page-55-image-1.jpg",
+          "size_bytes": 2033,
+          "size_kb": 2.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-55/page-55-image-1.jpg"
+        },
+        {
+          "filename": "page-55-image-2.jpg",
+          "size_bytes": 2856,
+          "size_kb": 2.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-55/page-55-image-2.jpg"
+        },
+        {
+          "filename": "page-55-image-3.jpg",
+          "size_bytes": 80045,
+          "size_kb": 78.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-55/page-55-image-3.jpg"
+        }
+      ]
+    },
+    "page_56": {
+      "page_number": 56,
+      "image_count": 4,
+      "total_size_kb": 241.6,
+      "images": [
+        {
+          "filename": "page-56-image-1.jpg",
+          "size_bytes": 79001,
+          "size_kb": 77.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-56/page-56-image-1.jpg"
+        },
+        {
+          "filename": "page-56-image-2.jpg",
+          "size_bytes": 47038,
+          "size_kb": 45.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-56/page-56-image-2.jpg"
+        },
+        {
+          "filename": "page-56-image-3.jpg",
+          "size_bytes": 99873,
+          "size_kb": 97.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-56/page-56-image-3.jpg"
+        },
+        {
+          "filename": "page-56-image-4.jpg",
+          "size_bytes": 21571,
+          "size_kb": 21.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-56/page-56-image-4.jpg"
+        }
+      ]
+    },
+    "page_57": {
+      "page_number": 57,
+      "image_count": 2,
+      "total_size_kb": 138.9,
+      "images": [
+        {
+          "filename": "page-57-image-1.jpg",
+          "size_bytes": 25127,
+          "size_kb": 24.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-57/page-57-image-1.jpg"
+        },
+        {
+          "filename": "page-57-image-2.jpg",
+          "size_bytes": 117097,
+          "size_kb": 114.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-57/page-57-image-2.jpg"
+        }
+      ]
+    },
+    "page_58": {
+      "page_number": 58,
+      "image_count": 7,
+      "total_size_kb": 55.4,
+      "images": [
+        {
+          "filename": "page-58-image-1.jpg",
+          "size_bytes": 43035,
+          "size_kb": 42.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-58/page-58-image-1.jpg"
+        },
+        {
+          "filename": "page-58-image-2.jpg",
+          "size_bytes": 2041,
+          "size_kb": 2.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-58/page-58-image-2.jpg"
+        },
+        {
+          "filename": "page-58-image-3.jpg",
+          "size_bytes": 2864,
+          "size_kb": 2.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-58/page-58-image-3.jpg"
+        },
+        {
+          "filename": "page-58-image-4.jpg",
+          "size_bytes": 2386,
+          "size_kb": 2.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-58/page-58-image-4.jpg"
+        },
+        {
+          "filename": "page-58-image-5.jpg",
+          "size_bytes": 1146,
+          "size_kb": 1.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-58/page-58-image-5.jpg"
+        },
+        {
+          "filename": "page-58-image-6.jpg",
+          "size_bytes": 2563,
+          "size_kb": 2.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-58/page-58-image-6.jpg"
+        },
+        {
+          "filename": "page-58-image-7.jpg",
+          "size_bytes": 2720,
+          "size_kb": 2.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-58/page-58-image-7.jpg"
+        }
+      ]
+    },
+    "page_59": {
+      "page_number": 59,
+      "image_count": 7,
+      "total_size_kb": 88.4,
+      "images": [
+        {
+          "filename": "page-59-image-1.jpg",
+          "size_bytes": 57449,
+          "size_kb": 56.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-59/page-59-image-1.jpg"
+        },
+        {
+          "filename": "page-59-image-2.jpg",
+          "size_bytes": 22414,
+          "size_kb": 21.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-59/page-59-image-2.jpg"
+        },
+        {
+          "filename": "page-59-image-3.jpg",
+          "size_bytes": 1146,
+          "size_kb": 1.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-59/page-59-image-3.jpg"
+        },
+        {
+          "filename": "page-59-image-4.jpg",
+          "size_bytes": 2041,
+          "size_kb": 2.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-59/page-59-image-4.jpg"
+        },
+        {
+          "filename": "page-59-image-5.jpg",
+          "size_bytes": 2633,
+          "size_kb": 2.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-59/page-59-image-5.jpg"
+        },
+        {
+          "filename": "page-59-image-6.jpg",
+          "size_bytes": 2051,
+          "size_kb": 2.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-59/page-59-image-6.jpg"
+        },
+        {
+          "filename": "page-59-image-7.jpg",
+          "size_bytes": 2720,
+          "size_kb": 2.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-59/page-59-image-7.jpg"
+        }
+      ]
+    },
+    "page_6": {
+      "page_number": 6,
+      "image_count": 2,
+      "total_size_kb": 228.2,
+      "images": [
+        {
+          "filename": "page-6-image-1.jpg",
+          "size_bytes": 90822,
+          "size_kb": 88.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-6/page-6-image-1.jpg"
+        },
+        {
+          "filename": "page-6-image-2.jpg",
+          "size_bytes": 142836,
+          "size_kb": 139.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-6/page-6-image-2.jpg"
+        }
+      ]
+    },
+    "page_60": {
+      "page_number": 60,
+      "image_count": 5,
+      "total_size_kb": 78.9,
+      "images": [
+        {
+          "filename": "page-60-image-1.jpg",
+          "size_bytes": 862,
+          "size_kb": 0.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-60/page-60-image-1.jpg"
+        },
+        {
+          "filename": "page-60-image-2.jpg",
+          "size_bytes": 862,
+          "size_kb": 0.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-60/page-60-image-2.jpg"
+        },
+        {
+          "filename": "page-60-image-3.jpg",
+          "size_bytes": 862,
+          "size_kb": 0.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-60/page-60-image-3.jpg"
+        },
+        {
+          "filename": "page-60-image-4.jpg",
+          "size_bytes": 862,
+          "size_kb": 0.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-60/page-60-image-4.jpg"
+        },
+        {
+          "filename": "page-60-image-5.jpg",
+          "size_bytes": 77508,
+          "size_kb": 75.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-60/page-60-image-5.jpg"
+        }
+      ]
+    },
+    "page_61": {
+      "page_number": 61,
+      "image_count": 1,
+      "total_size_kb": 86.0,
+      "images": [
+        {
+          "filename": "page-61-image-1.jpg",
+          "size_bytes": 88058,
+          "size_kb": 86.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-61/page-61-image-1.jpg"
+        }
+      ]
+    },
+    "page_62": {
+      "page_number": 62,
+      "image_count": 2,
+      "total_size_kb": 143.1,
+      "images": [
+        {
+          "filename": "page-62-image-1.jpg",
+          "size_bytes": 6127,
+          "size_kb": 6.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-62/page-62-image-1.jpg"
+        },
+        {
+          "filename": "page-62-image-2.jpg",
+          "size_bytes": 140363,
+          "size_kb": 137.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-62/page-62-image-2.jpg"
+        }
+      ]
+    },
+    "page_7": {
+      "page_number": 7,
+      "image_count": 1,
+      "total_size_kb": 157.2,
+      "images": [
+        {
+          "filename": "page-7-image-1.jpg",
+          "size_bytes": 160957,
+          "size_kb": 157.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-7/page-7-image-1.jpg"
+        }
+      ]
+    },
+    "page_8": {
+      "page_number": 8,
+      "image_count": 24,
+      "total_size_kb": 125.5,
+      "images": [
+        {
+          "filename": "page-8-image-1.jpg",
+          "size_bytes": 6111,
+          "size_kb": 6.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-1.jpg"
+        },
+        {
+          "filename": "page-8-image-10.jpg",
+          "size_bytes": 2954,
+          "size_kb": 2.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-10.jpg"
+        },
+        {
+          "filename": "page-8-image-11.jpg",
+          "size_bytes": 5698,
+          "size_kb": 5.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-11.jpg"
+        },
+        {
+          "filename": "page-8-image-12.jpg",
+          "size_bytes": 4413,
+          "size_kb": 4.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-12.jpg"
+        },
+        {
+          "filename": "page-8-image-13.jpg",
+          "size_bytes": 4663,
+          "size_kb": 4.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-13.jpg"
+        },
+        {
+          "filename": "page-8-image-14.jpg",
+          "size_bytes": 9327,
+          "size_kb": 9.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-14.jpg"
+        },
+        {
+          "filename": "page-8-image-15.jpg",
+          "size_bytes": 8374,
+          "size_kb": 8.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-15.jpg"
+        },
+        {
+          "filename": "page-8-image-16.jpg",
+          "size_bytes": 3706,
+          "size_kb": 3.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-16.jpg"
+        },
+        {
+          "filename": "page-8-image-17.jpg",
+          "size_bytes": 3477,
+          "size_kb": 3.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-17.jpg"
+        },
+        {
+          "filename": "page-8-image-18.jpg",
+          "size_bytes": 9249,
+          "size_kb": 9.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-18.jpg"
+        },
+        {
+          "filename": "page-8-image-19.jpg",
+          "size_bytes": 2306,
+          "size_kb": 2.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-19.jpg"
+        },
+        {
+          "filename": "page-8-image-2.jpg",
+          "size_bytes": 5906,
+          "size_kb": 5.8,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-2.jpg"
+        },
+        {
+          "filename": "page-8-image-20.jpg",
+          "size_bytes": 8295,
+          "size_kb": 8.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-20.jpg"
+        },
+        {
+          "filename": "page-8-image-21.jpg",
+          "size_bytes": 5455,
+          "size_kb": 5.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-21.jpg"
+        },
+        {
+          "filename": "page-8-image-22.jpg",
+          "size_bytes": 5115,
+          "size_kb": 5.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-22.jpg"
+        },
+        {
+          "filename": "page-8-image-23.jpg",
+          "size_bytes": 6574,
+          "size_kb": 6.4,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-23.jpg"
+        },
+        {
+          "filename": "page-8-image-24.jpg",
+          "size_bytes": 880,
+          "size_kb": 0.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-24.jpg"
+        },
+        {
+          "filename": "page-8-image-3.jpg",
+          "size_bytes": 3013,
+          "size_kb": 2.9,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-3.jpg"
+        },
+        {
+          "filename": "page-8-image-4.jpg",
+          "size_bytes": 4095,
+          "size_kb": 4.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-4.jpg"
+        },
+        {
+          "filename": "page-8-image-5.jpg",
+          "size_bytes": 3121,
+          "size_kb": 3.0,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-5.jpg"
+        },
+        {
+          "filename": "page-8-image-6.jpg",
+          "size_bytes": 5441,
+          "size_kb": 5.3,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-6.jpg"
+        },
+        {
+          "filename": "page-8-image-7.jpg",
+          "size_bytes": 12340,
+          "size_kb": 12.1,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-7.jpg"
+        },
+        {
+          "filename": "page-8-image-8.jpg",
+          "size_bytes": 3266,
+          "size_kb": 3.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-8.jpg"
+        },
+        {
+          "filename": "page-8-image-9.jpg",
+          "size_bytes": 4597,
+          "size_kb": 4.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-8/page-8-image-9.jpg"
+        }
+      ]
+    },
+    "page_9": {
+      "page_number": 9,
+      "image_count": 5,
+      "total_size_kb": 231.6,
+      "images": [
+        {
+          "filename": "page-9-image-1.jpg",
+          "size_bytes": 27388,
+          "size_kb": 26.7,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-9/page-9-image-1.jpg"
+        },
+        {
+          "filename": "page-9-image-2.jpg",
+          "size_bytes": 37495,
+          "size_kb": 36.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-9/page-9-image-2.jpg"
+        },
+        {
+          "filename": "page-9-image-3.jpg",
+          "size_bytes": 28204,
+          "size_kb": 27.5,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-9/page-9-image-3.jpg"
+        },
+        {
+          "filename": "page-9-image-4.jpg",
+          "size_bytes": 26168,
+          "size_kb": 25.6,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-9/page-9-image-4.jpg"
+        },
+        {
+          "filename": "page-9-image-5.jpg",
+          "size_bytes": 117971,
+          "size_kb": 115.2,
+          "path": "/Users/alex/Claude/active/swing-digital/design/pages-extracted/page-9/page-9-image-5.jpg"
+        }
+      ]
+    }
+  }
+}
