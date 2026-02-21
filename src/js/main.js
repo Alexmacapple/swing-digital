@@ -194,27 +194,34 @@ function initVideoSound() {
 
 /**
  * Disclosure Toggle (W3C ARIA APG pattern)
+ * Ref: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
  */
 function initDisclosure() {
-    var buttons = document.querySelectorAll('[aria-expanded][aria-controls]');
+    var buttons = document.querySelectorAll('button[aria-expanded][aria-controls]');
 
-    buttons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var expanded = btn.getAttribute('aria-expanded') === 'true';
+    for (var i = 0; i < buttons.length; i++) {
+        (function(btn) {
             var targetId = btn.getAttribute('aria-controls');
             var target = document.getElementById(targetId);
 
             if (!target) return;
 
-            btn.setAttribute('aria-expanded', String(!expanded));
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
-            if (expanded) {
-                target.setAttribute('hidden', '');
-            } else {
-                target.removeAttribute('hidden');
-            }
-        });
-    });
+                if (isExpanded) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    target.hidden = true;
+                    btn.textContent = btn.dataset.labelShow || 'Voir les 8 citations presse';
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    target.hidden = false;
+                    btn.textContent = btn.dataset.labelHide || 'Masquer les citations presse';
+                }
+            });
+        })(buttons[i]);
+    }
 }
 
 // Export functions if needed

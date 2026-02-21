@@ -73,6 +73,7 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 10 | `page10` | `.page10` |
 | 11 | `page11` | `.page11` |
 | 12 | `page12` | `.page12` |
+| 13 | `page13` | `.page13` |
 
 ### Convention pour les nouvelles pages
 
@@ -583,7 +584,10 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
             <img src="..." alt="..." class="pageN__poster-image">
             <figcaption class="pageN__poster-caption">
                 <h2 id="pageN-title" class="sr-only">Titre</h2>
-                <button class="pageN__disclosure-btn" type="button" aria-expanded="false" aria-controls="pageN-quotes">
+                <button class="pageN__disclosure-btn" type="button"
+                        aria-expanded="false" aria-controls="pageN-quotes"
+                        data-label-show="Voir les citations"
+                        data-label-hide="Masquer les citations">
                     Voir les citations
                 </button>
                 <div id="pageN-quotes" class="pageN__quotes" hidden>
@@ -631,37 +635,126 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    overflow: hidden;  /* Contenir le contenu disclosure */
 }
 .pageN__poster-image {
-    max-height: 100%;
-    max-width: 50%;  /* Affiche centree, pas trop large */
+    flex: 1;
+    min-height: 0;  /* Permet a l'image de se reduire quand disclosure s'ouvre */
+    max-width: 50%;
     object-fit: contain;
+}
+.pageN__poster-caption {
+    flex-shrink: 0;
+    max-height: 40vh;   /* Limite la zone citations */
+    overflow-y: auto;   /* Scroll si necessaire */
 }
 .pageN__logos {
     background-color: var(--color-white);
-    padding: 0.8rem var(--slide-pad-x);
+    padding: 1rem var(--slide-pad-x);
 }
 .pageN__logos-bar {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);  /* 6 par ligne = 2 lignes pour 12 logos */
+    gap: 0.8rem 1.5rem;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-items: center;
 }
 .pageN__logo {
     height: 2.5rem;
     object-fit: contain;
+    mix-blend-mode: multiply;  /* Fond logo fusionne dans le blanc */
+}
+/* Modifier pour logos sur fond sombre necessitant inversion */
+.pageN__logo--invert {
+    filter: invert(1);
+    mix-blend-mode: normal;
 }
 ```
 
 **Notes** :
-- Le disclosure suit le pattern W3C ARIA APG : `aria-expanded` + `aria-controls` + `hidden`. Le JS toggle generique dans `main.js` gere tous les boutons disclosure.
+- **Disclosure** : pattern W3C ARIA APG (`aria-expanded` + `aria-controls` + `hidden`). Le JS generique dans `main.js` (`initDisclosure`) gere tous les boutons. Le texte du bouton change entre les deux etats via `data-label-show` / `data-label-hide`.
+- **Poster** : `overflow: hidden` sur le poster, `flex: 1; min-height: 0` sur l'image pour qu'elle se reduise quand les citations s'ouvrent. Caption avec `max-height: 40vh; overflow-y: auto`.
+- **Logos** : grille CSS `repeat(6, 1fr)` pour repartition equilibree sur 2 lignes. `mix-blend-mode: multiply` fusionne les fonds colores des JPG dans le blanc. Modifier `--invert` pour les logos sur fond sombre.
+- **Responsive mobile (768px)** : section passe en `height: auto; min-height: var(--section-height); overflow: visible`, caption sans max-height, grille logos en 4 colonnes puis 3 a 480px.
 - `<noscript>` fallback affiche les citations sans JS.
-- L'image de fond est assombrie (`opacity: 0.4`) sur fond `#000` pour le contraste texte blanc.
-- Les logos partenaires sont sur fond blanc pour visibilite.
-- Responsive : `max-width` de l'affiche augmente en mobile (50% → 85%), quotes passent en 1 colonne a 768px, logos wrap.
+- Preferer les versions `./img/partners/` des logos (PNG/SVG) aux JPG extraits du PDF quand disponibles.
 
 **Reference** : Page 12
+
+---
+
+### I. Bandeau de cartes numerotees
+
+**Description** : Titre section + rangee horizontale de N cartes. Chaque carte = image cover + numero decoratif en surimpression + zone texte avec fond colore (image gradient ou couleur solide).
+
+```css
+.pageN {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.pageN__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.pageN__cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+    flex: 1;
+    min-height: 0;
+}
+.pageN__card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.pageN__card-image-wrapper {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+}
+.pageN__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Exception : cartes bandeau dans conteneur fixe */
+    display: block;
+}
+.pageN__card-number {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.8rem;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 300;
+    color: var(--color-white);
+    line-height: 1;
+    font-style: italic;
+    opacity: 0.9;
+}
+.pageN__card-body {
+    padding: 0.8rem;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+}
+.pageN__card-title {
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-white);
+}
+```
+
+**Notes** :
+- Les cartes bandeau utilisent `object-fit: cover` (comme les portraits team, archetype D et archetype F) car les images doivent remplir uniformement la carte.
+- Les fonds de `card-body` sont soit une image gradient (`background-image` inline), soit une couleur solide (modifier `--dark`, `--pink`, etc.).
+- Les numeros sont decoratifs (`aria-hidden="true"`), en surimpression sur l'image.
+- **Responsive** : 768px passe en `repeat(3, 1fr)`, 480px en `repeat(2, 1fr)`.
+
+**Reference** : Page 13
 
 ---
 
@@ -678,6 +771,7 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
 | Image plein ecran (archetype D) | `object-fit: cover` | **Seule exception** : remplir le viewport |
 | Portrait carre (team) | `object-fit: cover` + `aspect-ratio` | Cadrage portrait dans format fixe |
 | Carte-projet (archetype F) | `object-fit: cover` | Remplir uniformement la carte |
+| Carte bandeau (archetype I) | `object-fit: cover` | Remplir uniformement la carte |
 | Logo / icone | `object-fit: contain` | Garder les proportions |
 
 ### Reference par page existante
@@ -695,6 +789,7 @@ Utilise pour : pages de presentation d'un projet avec affiche centree, citations
 | 10 | Cartes-projets | `cover` | Idem page 9 (archetype F sans header) |
 | 12 | Affiche poster | `contain` | Affiche centree sans recadrage (archetype H) |
 | 12 | Logos partenaires | `contain` | Proportions logos preservees |
+| 13 | Cartes images | `cover` | Remplir uniformement la carte (archetype I) |
 
 ### INTERDIT en responsive
 

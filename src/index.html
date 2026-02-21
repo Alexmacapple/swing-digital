@@ -539,7 +539,7 @@
                          class="page12__poster-image">
                     <figcaption class="page12__poster-caption">
                         <h2 id="page12-title" class="sr-only">L'Experience Monroe - Revue de presse</h2>
-                        <button class="page12__disclosure-btn" type="button" aria-expanded="false" aria-controls="page12-quotes">
+                        <button class="page12__disclosure-btn" type="button" aria-expanded="false" aria-controls="page12-quotes" data-label-show="Voir les 8 citations presse" data-label-hide="Masquer les citations presse">
                             Voir les 8 citations presse
                         </button>
                         <div id="page12-quotes" class="page12__quotes" hidden>
@@ -571,22 +571,105 @@
 
                 <div class="page12__logos" role="region" aria-label="Partenaires L'Experience Monroe">
                     <div class="page12__logos-bar">
-                        <img src="./img/pages/page-12/page-12-image-3.jpg" alt="Cerval" class="page12__logo">
+                        <img src="./img/pages/page-12/page-12-image-3.jpg" alt="Cerval" class="page12__logo page12__logo--invert">
                         <img src="./img/pages/page-12/page-12-image-13.jpg" alt="Prefet de la Region Ile-de-France" class="page12__logo">
-                        <img src="./img/pages/page-12/page-12-image-12.jpg" alt="CNC - Centre National du Cinema" class="page12__logo">
+                        <img src="./img/partners/cnc.png" alt="CNC - Centre National du Cinema" class="page12__logo">
                         <img src="./img/partners/ville-de-paris.svg" alt="Ville de Paris" class="page12__logo">
                         <img src="./img/partners/principe-actif.png" alt="Principe Actif" class="page12__logo">
-                        <img src="./img/pages/page-12/page-12-image-8.jpg" alt="Galerie Joseph" class="page12__logo">
-                        <img src="./img/pages/page-12/page-12-image-6.jpg" alt="Orange" class="page12__logo">
+                        <img src="./img/partners/galerie-joseph.png" alt="Galerie Joseph" class="page12__logo">
+                        <img src="./img/partners/orange.png" alt="Orange" class="page12__logo">
                         <img src="./img/pages/page-12/page-12-image-9.jpg" alt="Swing Digital" class="page12__logo">
                         <img src="./img/pages/page-12/page-12-image-10.jpg" alt="Disque vinyle - Partenaire" class="page12__logo">
-                        <img src="./img/pages/page-12/page-12-image-11.jpg" alt="Forum des Images" class="page12__logo">
+                        <img src="./img/partners/forum-images.png" alt="Forum des Images" class="page12__logo">
                         <img src="./img/pages/page-12/page-12-image-4.jpg" alt="SAS - Science Art Societe" class="page12__logo">
-                        <img src="./img/pages/page-12/page-12-image-5.jpg" alt="Morrison Hotel Gallery" class="page12__logo">
+                        <img src="./img/partners/morrison-hotel.jpg" alt="Morrison Hotel Gallery" class="page12__logo">
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ============================================================
+             PAGE 13 : L'EXPERIENCE MONROE - BANDEAU CARTES
+             ============================================================ -->
+        <section id="page-13" class="page13" aria-labelledby="page13-title">
+            <div class="page13__container">
+                <div class="page13__header">
+                    <span class="page13__arrow" aria-hidden="true">&#x2192;</span>
+                    <h2 id="page13-title">L'EXPERIENCE MONROE</h2>
+                </div>
+
+                <div class="page13__cards" role="region" aria-label="Volets de L'Experience Monroe">
+                    <!-- Carte 1 -->
+                    <article class="page13__card">
+                        <div class="page13__card-image-wrapper">
+                            <img src="./img/pages/page-13/page-13-image-1.jpg"
+                                 alt="Acteur sur scene devant projection de photographes, performance theatrale immersive avec eclairage dramatique et public en silhouette"
+                                 class="page13__card-image">
+                            <span class="page13__card-number" aria-hidden="true">1</span>
+                        </div>
+                        <div class="page13__card-body" style="background-image: url('./img/pages/page-13/page-13-image-6.jpg')">
+                            <h3 class="page13__card-title">PIECE MY STORY</h3>
+                            <p class="page13__card-subtitle">Confession inachevee</p>
+                        </div>
+                    </article>
+
+                    <!-- Carte 2 -->
+                    <article class="page13__card">
+                        <div class="page13__card-image-wrapper">
+                            <img src="./img/pages/page-13/page-13-image-2.jpg"
+                                 alt="Couverture du roman graphique Marilyn par Marilyn aux editions Robert Laffont, illustration stylisee en couleurs vives sur fond noir"
+                                 class="page13__card-image">
+                            <span class="page13__card-number" aria-hidden="true">2</span>
+                        </div>
+                        <div class="page13__card-body" style="background-image: url('./img/pages/page-13/page-13-image-7.jpg')">
+                            <h3 class="page13__card-title">ROMAN GRAPHIQUE</h3>
+                        </div>
+                    </article>
+
+                    <!-- Carte 3 -->
+                    <article class="page13__card">
+                        <div class="page13__card-image-wrapper">
+                            <img src="./img/pages/page-13/page-13-image-5.jpg"
+                                 alt="Espace d'installation multimedia avec projections lumineuses sur structures blanches geometriques, ambiance immersive bleue et violette"
+                                 class="page13__card-image">
+                            <span class="page13__card-number" aria-hidden="true">3</span>
+                        </div>
+                        <div class="page13__card-body" style="background-image: url('./img/pages/page-13/page-13-image-8.jpg')">
+                            <h3 class="page13__card-title">INSTALLATION</h3>
+                        </div>
+                    </article>
+
+                    <!-- Carte 4 -->
+                    <article class="page13__card">
+                        <div class="page13__card-image-wrapper">
+                            <img src="./img/pages/page-13/page-13-image-4.jpg"
+                                 alt="Silhouettes de visiteurs devant une projection XR immersive de Marilyn Monroe, experience interactive en realite etendue dans espace sombre"
+                                 class="page13__card-image">
+                            <span class="page13__card-number" aria-hidden="true">4</span>
+                        </div>
+                        <div class="page13__card-body page13__card-body--dark">
+                            <h3 class="page13__card-title">XR<br>MEMORY BOX</h3>
+                            <p class="page13__card-subtitle">(15 MN)</p>
+                        </div>
+                    </article>
+
+                    <!-- Carte 5 -->
+                    <article class="page13__card">
+                        <div class="page13__card-image-wrapper">
+                            <img src="./img/pages/page-13/page-13-image-3.jpg"
+                                 alt="Portrait stylise de Marilyn Monroe en teintes violettes et roses, illustration graphique pour la serie documentaire en six episodes"
+                                 class="page13__card-image">
+                            <span class="page13__card-number" aria-hidden="true">5</span>
+                        </div>
+                        <div class="page13__card-body page13__card-body--pink">
+                            <h3 class="page13__card-title">SERIE<br>MARILYN</h3>
+                            <p class="page13__card-subtitle">(6X52 MN)</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
     </main>
     <!-- Footer -->
     <footer class="footer">
