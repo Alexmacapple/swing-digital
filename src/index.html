@@ -16,17 +16,18 @@
 </head>
 <body>
     <!-- Header / Navigation -->
-    <header class="header" role="banner">
-        <nav class="navbar" aria-label="Navigation principale">
-            <div class="navbar__container">
-                <a href="#" class="navbar__logo" aria-current="page">
-                    <span>Swing Digital</span>
+    <header class="header header--hero" role="banner">
+        <nav class="navbar navbar--hero" aria-label="Navigation principale">
+            <div class="navbar__container navbar__container--hero">
+                <a href="#" class="navbar__logo navbar__logo--hero" aria-current="page">
+                    <span>SWING<br>DIGITAL</span>
                 </a>
-                <ul class="navbar__menu">
-                    <li><a href="#accueil" class="navbar__link">Accueil</a></li>
-                    <li><a href="#espaces" class="navbar__link">Espaces augmentés</a></li>
-                    <li><a href="#experiences" class="navbar__link">Expériences</a></li>
-                    <li><a href="#reservations" class="navbar__link">Réservations</a></li>
+                <ul class="navbar__menu navbar__menu--hero">
+                    <li><a href="#accueil" class="navbar__link navbar__link--hero-btn">Accueil</a></li>
+                    <li><a href="#espaces" class="navbar__link navbar__link--hero-btn">Espaces<br>augmentés</a></li>
+                    <li><a href="#experiences" class="navbar__link navbar__link--hero-btn">Expériences<br>Séries</a></li>
+                    <li><a href="#reservations" class="navbar__link navbar__link--hero-btn">Réservations</a></li>
+                    <li><a href="#" class="navbar__link navbar__link--lang">FR | EN</a></li>
                 </ul>
             </div>
         </nav>
@@ -35,13 +36,41 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
 
-        <!-- Section Accueil / Hero - Page 1 -->
-        <section id="accueil" class="section hero" aria-labelledby="hero-title">
-            <div class="hero__container">
-                <img src="./img/hero/swing-logo.jpg" alt="Logo de Swing Digital : texte blanc en majuscules sur fond noir, symbole graphique de la marque spécialisée en expériences immersives et réalité mixte" class="hero__logo">
-                <h1 id="hero-title">Créateurs d'Expériences Transmédia Immersives</h1>
-                <p class="hero__subtitle">#SPECTACLE VIVANT #RÉALITÉ MIXTE #STORYTELLING</p>
-                <img src="./img/hero/hero-featured-image.jpg" alt="Portrait artistique d'une femme enveloppée de tissu blanc fluide sur un fond rose corail dégradé. L'image symbolise les expériences sensorielles immersives et créatives proposées par Swing Digital" class="hero__featured-image">
+        <!-- Section Accueil / Hero - Page 1 (Redesigned) -->
+        <section id="accueil" class="section hero hero--redesigned" aria-labelledby="hero-title">
+            <div class="hero__background"></div>
+            <div class="hero__container hero__container--redesigned">
+                <!-- Hero Image - Full width positioned -->
+                <div class="hero__image-wrapper">
+                    <img src="./img/hero/hero-featured-image.jpg" alt="Portrait artistique d'une femme enveloppée de tissu blanc fluide sur un fond rose corail dégradé. L'image symbolise les expériences sensorielles immersives et créatives proposées par Swing Digital" class="hero__featured-image hero__featured-image--redesigned">
+                </div>
+
+                <!-- Top Left Content -->
+                <div class="hero__top-left">
+                    <p class="hero__partners-label">ILS NOUS ONT FAIT CONFIANCE</p>
+                </div>
+
+                <!-- Center Content -->
+                <div class="hero__center">
+                    <h1 id="hero-title" class="hero__title">Créateurs d'Expériences Transmédia Immersives</h1>
+                    <p class="hero__hashtags"># SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING</p>
+                </div>
+
+                <!-- Bottom Left Links -->
+                <div class="hero__bottom-left">
+                    <a href="#about" class="hero__link hero__link--about">QUI SOMMES NOUS ?</a>
+                    <a href="#contact" class="hero__link hero__link--contact">CONTACT</a>
+                </div>
+
+                <!-- Bottom Right Social -->
+                <div class="hero__bottom-right">
+                    <p class="hero__social-label">FOLLOW</p>
+                    <nav class="hero__social" aria-label="Réseaux sociaux">
+                        <a href="https://instagram.com" class="hero__social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://linkedin.com" class="hero__social-link" target="_blank" rel="noopener noreferrer">linkedin</a>
+                        <a href="https://x.com" class="hero__social-link" target="_blank" rel="noopener noreferrer">X</a>
+                    </nav>
+                </div>
             </div>
         </section>
 
