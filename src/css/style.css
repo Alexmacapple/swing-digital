@@ -59,12 +59,12 @@
     --color-brand: #E8494B;
     --color-brand-light: #F49C9E;
     --color-brand-pale: #FFB3A7;
-    --color-brand-alt: #FF8080;
+    --color-brand-alt: #CE3B3D;   /* WCAG AA : 4.86:1 sur blanc (was #FF8080, 2.43:1) */
     --color-brand-btn: #CE3B3D;   /* WCAG AA 4.86:1 sur blanc */
     --color-white: #ffffff;
 
     /* Gradients */
-    --gradient-brand: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-alt) 100%);
+    --gradient-brand: linear-gradient(135deg, #B93539 0%, var(--color-brand-alt) 100%); /* WCAG AA : 5.78:1 → 4.86:1 */
     --gradient-hero: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 50%, var(--color-brand-pale) 100%);
 
     /* Edge offset for absolute-positioned elements */
