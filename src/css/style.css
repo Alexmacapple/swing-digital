@@ -261,6 +261,7 @@ img {
     overflow: hidden;
     display: block; /* Important: not flex */
     background-color: var(--color-brand-btn); /* fallback a11y : fond sur div enfant invisible aux outils */
+    color: var(--color-white);
 }
 
 .hero-page1__background {
@@ -671,6 +672,7 @@ img {
     padding: var(--slide-pad-y) var(--slide-pad-x);
     min-height: var(--section-height);
     position: relative;
+    color: var(--color-white);
 }
 
 .team::before {
