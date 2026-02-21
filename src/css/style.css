@@ -490,14 +490,15 @@ img {
     line-height: 1.3;
 }
 
-/* Center: Hero Image (DOMINANT) */
+/* Center: Hero Image (DOMINANT - FULL PAGE) */
 .hero-page1__image {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90vh;
+    max-width: 95%;
+    max-height: 95vh;
+    min-height: 80vh;
     height: auto;
     width: auto;
     object-fit: contain;
