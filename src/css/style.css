@@ -1795,7 +1795,6 @@ img {
    ============================================================ */
 
 .page13 {
-    height: var(--section-height);
     overflow: hidden;
     background-color: var(--color-white);
 }
@@ -1830,7 +1829,9 @@ img {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.5rem;
-    max-height: 65vh;
+    height: fit-content;
+    max-height: 70vh;
+    align-content: start;
 }
 
 .page13__card {
@@ -1899,6 +1900,84 @@ img {
     margin: 0.2rem 0 0;
     color: var(--color-white);
     opacity: 0.9;
+}
+
+/* ============================================================
+   PAGE 14 : LA PIECE - Volet 1
+   ============================================================ */
+
+.page14 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+
+.page14__container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 100%;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+
+.page14__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 2rem;
+}
+
+.page14__number {
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 300;
+    font-style: italic;
+    color: #0e6469;
+    line-height: 1;
+}
+
+.page14__title {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 900;
+    color: #0e6469;
+    line-height: 1.6;
+    margin: 0.5rem 0 0;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.3rem;
+}
+
+.page14__actress-wrapper {
+    flex: 1;
+    min-height: 0;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.page14__actress {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom left;
+}
+
+.page14__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page14__figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
+
+.page14__cover {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
 }
 
 /* ============================================================
@@ -2448,7 +2527,8 @@ img {
     .page13 {
         height: auto;
         min-height: var(--section-height);
-        overflow: visible;
+        overflow: hidden;
+        display: flow-root;
     }
 
     .page13__cards {
@@ -2477,5 +2557,87 @@ img {
 
     .page13__card-title {
         font-size: 0.75rem;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE - PAGE 14 (La Piece - Volet 1)
+   ============================================================ */
+
+@media (max-width: 1024px) {
+    .page14__container {
+        grid-template-columns: 35% 65%;
+    }
+
+    .page14__number {
+        font-size: clamp(3rem, 6vw, 5rem);
+    }
+
+    .page14__title {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .page14 {
+        height: auto;
+        min-height: var(--section-height);
+        overflow: hidden;
+        display: flow-root;
+    }
+
+    .page14__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: auto;
+    }
+
+    .page14__left {
+        padding-top: 1rem;
+    }
+
+    .page14__number {
+        order: -2;
+    }
+
+    .page14__title {
+        order: -1;
+    }
+
+    .page14__actress-wrapper {
+        flex: none;
+        margin-top: 0;
+        overflow: visible;
+        order: 1;
+    }
+
+    .page14__actress {
+        width: 100%;
+        height: auto;
+        max-height: 25vh;
+    }
+
+    .page14__right {
+        order: 2;
+    }
+
+    .page14__figure {
+        height: auto;
+    }
+
+    .page14__cover {
+        max-height: 50vh;
+        filter: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .page14__number {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+    }
+
+    .page14__title {
+        font-size: clamp(1.5rem, 8vw, 2.2rem);
     }
 }
