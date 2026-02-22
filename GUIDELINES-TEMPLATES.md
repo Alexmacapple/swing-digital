@@ -42,6 +42,23 @@ Les pages avec grilles, texte long ou images multiples utilisent `min-height` po
 - Archetype D (image plein ecran) → image cover, pas de contenu textuel
 - Pages avec peu de contenu qui tient dans le viewport
 
+### Desktop - Pages sans `height` fixe (hauteur par contenu)
+
+Certaines pages adjacentes generent du vide blanc si elles ont `height: var(--section-height)` mais leur contenu ne remplit pas le viewport. Solution : supprimer la contrainte de hauteur et laisser le contenu determiner la taille.
+
+```css
+/* Page dont le contenu ne remplit pas 100vh */
+.pageN {
+    overflow: hidden;
+    background-color: var(--color-white);
+    /* PAS de height ni min-height → le contenu determine la hauteur */
+}
+```
+
+**Quand utiliser** : pages dont le contenu est naturellement plus court que 100vh et qui sont adjacentes a d'autres slides (le vide entre deux slides est le symptome).
+
+**Pages existantes sans `height` fixe** : 13 (bandeau cartes), 14 (deux colonnes)
+
 **Pages existantes utilisant `min-height` en mobile** : 2 (team), 3, 4 (creations), 8 (partenaires)
 
 ---
@@ -74,6 +91,8 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 11 | `page11` | `.page11` |
 | 12 | `page12` | `.page12` |
 | 13 | `page13` | `.page13` |
+| 14 | `page14` | `.page14` |
+| 15 | `full-image-page` | `.full-image-page` |
 
 ### Convention pour les nouvelles pages
 
@@ -339,6 +358,7 @@ Utilise pour : pages immersives, transitions visuelles.
 ```html
 <section id="page-N" class="full-image-page" aria-label="Description de la scene">
     <img src="..." alt="..." class="full-image-page__image">
+    <small class="full-image-page__credit">&copy; Nom du photographe</small>
 </section>
 ```
 
@@ -358,11 +378,21 @@ Utilise pour : pages immersives, transitions visuelles.
     object-fit: cover;  /* EXCEPTION UNIQUE : cover autorise ici */
     display: block;
 }
+.full-image-page__credit {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+}
 ```
 
-**Note** : C'est le SEUL archetype utilisant `object-fit: cover`. Tous les autres utilisent `object-fit: contain`.
+**Notes** :
+- C'est le SEUL archetype utilisant `object-fit: cover`. Tous les autres utilisent `object-fit: contain`.
+- Le `<small class="full-image-page__credit">` est optionnel (credit photographe). Position absolute bas-droite, blanc semi-transparent.
 
-**Reference** : Page 7
+**Reference** : Pages 7, 15
 
 ### E. Grille de logos / elements
 
@@ -826,6 +856,8 @@ Utilise pour : rangee horizontale de N cartes avec image cover, numero decoratif
 | 12 | Affiche poster | `contain` | Affiche centree sans recadrage (archetype H) |
 | 12 | Logos partenaires | `contain` | Proportions logos preservees |
 | 13 | Cartes images | `cover` | Remplir uniformement la carte (archetype I) |
+| 14 | Actrice + couverture livre | `contain` | Images completes sans recadrage |
+| 15 | Plein ecran + credit | `cover` | Exception archetype D |
 
 ### INTERDIT en responsive
 
@@ -1157,7 +1189,7 @@ Avant de valider une nouvelle page :
 - [ ] `aria-labelledby` sur la section
 
 ### Layout
-- [ ] `height: var(--section-height)` en desktop (pas `100vh` en dur)
+- [ ] `height: var(--section-height)` en desktop OU pas de `height` si contenu < 100vh (eviter vide blanc)
 - [ ] `min-height: var(--section-height)` en mobile si contenu dense
 - [ ] Variables couleurs utilisees (aucun hardcode)
 - [ ] Variables espacement utilisees (`--slide-pad-x/y`, `--grid-gap`)

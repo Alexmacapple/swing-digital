@@ -270,60 +270,56 @@ CONFIANCE</p>
             </div>
         </section>
 
-        <!-- Page 13 -->
-        <section id="page-13" class="section page page--13" aria-labelledby="page-13-title">
-            <div class="page__container">
-                <h2 id="page-13-title">Page 13</h2>
-                <div class="page__content">
-                    <p class="page__text">L’EXPÉRIENCE MONROE</p>
-                    <p class="page__text">1                          2                 3                           5
-                                                                 XR            SÉRIE
-PIÈCE MY STORY             ROMAN GRAPHIQUE   INSTALLATION   MEMORY BOX        MARILYN
-    Confession inachevée
-                                                              (15 MN)        (6X52 MN)</p>
-                    <div class="page__gallery" role="region" aria-label="Galerie d'images page 13">
-                        <img src="./img/pages/page-13/page-13-image-1.jpg" alt="Page 13, image 1. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-13/page-13-image-2.jpg" alt="Page 13, image 2. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-13/page-13-image-3.jpg" alt="Page 13, image 3. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-13/page-13-image-4.jpg" alt="Page 13, image 4. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-13/page-13-image-5.jpg" alt="Page 13, image 5. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-13/page-13-image-6.jpg" alt="Page 13, image 6. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-13/page-13-image-7.jpg" alt="Page 13, image 7. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-13/page-13-image-8.jpg" alt="Page 13, image 8. L’EXPÉRIENCE MONROE 1                          2                 3                           5 - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!--
+        ============================================================
+        PAGE 13 : L’EXPERIENCE MONROE - BANDEAU CARTES (INTEGREE)
+        ============================================================
+        Archetype : I (bandeau de cartes numerotees)
+        Classe : .page13
+        Layout : grille 5 colonnes, hauteur auto (pas de height fixe)
+        Cartes : 5 articles avec image cover + numero + zone texte
+        Images cover : 1,2,5 (cartes) + 6,7,8 (fonds gradient card-body)
+        Image 4 : carte XR Memory Box (fond sombre #1a2744)
+        Image 3 : carte Serie Marilyn (fond rose #B5364E, contraste 5.5:1)
+        Grille CSS : height:fit-content + max-height:70vh + align-content:start
+        Card-body : min-height:4.5rem + flexbox centre (harmonise)
+        RWD : 768px repeat(3,1fr) + flow-root, 480px repeat(2,1fr)
+        A11y : numeros aria-hidden, alt < 80 chars
+        Voir : index.html #page-13
+        ============================================================
+        -->
 
-        <!-- Page 14 -->
-        <section id="page-14" class="section page page--14" aria-labelledby="page-14-title">
-            <div class="page__container">
-                <h2 id="page-14-title">Page 14</h2>
-                <div class="page__content">
-                    <p class="page__text">1
-LA
-PIÈCE</p>
-                    <div class="page__gallery" role="region" aria-label="Galerie d'images page 14">
-                        <img src="./img/pages/page-14/page-14-image-1.jpg" alt="Page 14, image 1. 1 LA PIÈCE - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-14/page-14-image-2.jpg" alt="Page 14, image 2. 1 LA PIÈCE - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                        <img src="./img/pages/page-14/page-14-image-3.jpg" alt="Page 14, image 3. 1 LA PIÈCE - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!--
+        ============================================================
+        PAGE 14 : LA PIECE - VOLET 1 (INTEGREE)
+        ============================================================
+        Archetype : B (deux colonnes 40/60)
+        Classe : .page14
+        Layout : grid 40%/60%, fond blanc
+        Gauche : numero 1 (decoratif) + h3 "LA PIECE" underline + image actrice (contain)
+        Droite : figure > img couverture livre + figcaption sr-only
+        Couleurs : #0e6469 (titre + numero, 5.5:1 sur blanc)
+        Figure : aria-labelledby pointe vers span texte-only (pattern figcaption complexe)
+        RWD : 768px flex-column + order (titre avant images) + flow-root isolation
+              Images : width:100% height:auto (pas de troncature)
+              Actrice : max-height:25vh, Couverture : max-height:50vh
+        ATTENTION : pas de height/min-height fixe sur page13 (evite vide blanc entre slides)
+        Voir : index.html #page-14
+        ============================================================
+        -->
 
-        <!-- Page 15 -->
-        <section id="page-15" class="section page page--15" aria-labelledby="page-15-title">
-            <div class="page__container">
-                <h2 id="page-15-title">Page 15</h2>
-                <div class="page__content">
-                    <p class="page__text">© Joshua Greene</p>
-                    <div class="page__gallery" role="region" aria-label="Galerie d'images page 15">
-                        <img src="./img/pages/page-15/page-15-image-1.jpg" alt="Page 15, image 1. © Joshua Greene - Contenu visuel de la page Swing Digital présentant les services et expériences immersives proposées." class="page__image" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!--
+            ============================================================
+            PAGE 15 : Photo plein ecran (archetype D)
+            ============================================================
+            - Archetype D : image cover + credit photo overlay
+            - Credit : (c) Joshua Greene, positionne absolute bottom-right
+            - Classe generique .full-image-page__credit reutilisable
+            - Alt text court (< 80 chars) : scene descriptive
+            - Pas de h2 (page purement visuelle, aria-label sur section)
+            Voir : index.html #page-15
+            ============================================================
+        -->
 
         <!-- Page 16 -->
         <section id="page-16" class="section page page--16" aria-labelledby="page-16-title">

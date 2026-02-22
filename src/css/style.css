@@ -1305,6 +1305,15 @@ img {
     display: block;
 }
 
+.full-image-page__credit {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+}
+
 /* ============================================================
    PAGE 8 : PARTNERS LOGO GRID
    ============================================================ */
@@ -1907,7 +1916,6 @@ img {
    ============================================================ */
 
 .page14 {
-    height: var(--section-height);
     overflow: hidden;
     background-color: var(--color-white);
 }
@@ -1915,7 +1923,6 @@ img {
 .page14__container {
     display: grid;
     grid-template-columns: 40% 60%;
-    height: 100%;
     padding: var(--slide-pad-y) var(--slide-pad-x);
 }
 
@@ -1978,6 +1985,53 @@ img {
     max-height: 85%;
     object-fit: contain;
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* ============================================================
+   PAGE 16 : THE PLAY - Photos spectacle (overlap)
+   ============================================================ */
+
+.page16 {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+.page16__images {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+}
+
+.page16__image--main {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 65%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.page16__image--overlay {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    width: 40%;
+    height: 55%;
+    object-fit: cover;
+}
+
+.page16__credit {
+    text-align: center;
+    padding: 0.8rem;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
 }
 
 /* ============================================================
@@ -2639,5 +2693,31 @@ img {
 
     .page14__title {
         font-size: clamp(1.5rem, 8vw, 2.2rem);
+    }
+}
+
+/* ============================================================
+   RESPONSIVE - PAGE 16 (The Play - Photos spectacle)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .page16 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+
+    .page16__images {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: var(--slide-pad-y) var(--slide-pad-x) 0;
+    }
+
+    .page16__image--main,
+    .page16__image--overlay {
+        position: static;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }
