@@ -93,6 +93,13 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 13 | `page13` | `.page13` |
 | 14 | `page14` | `.page14` |
 | 15 | `full-image-page` | `.full-image-page` |
+| 16 | `page16` | `.page16` |
+| 17 | `full-image-page` | `.full-image-page` |
+| 18 | `page16` | `.page16` |
+| 19 | `page11` | `.page11` |
+| 20 | `page20` | `.page20` |
+| 21 | `page21` | `.page21` |
+| 22 | `page21` | `.page21` |
 
 ### Convention pour les nouvelles pages
 
@@ -188,7 +195,7 @@ var(--font-secondary)       /* Fragen - corps, sous-titres */
 
 ## 4. Archetypes de layout
 
-9 templates de base couvrent tous les cas de la maquette.
+10 templates de base couvrent tous les cas de la maquette.
 
 ### A. Hero (plein ecran, elements absolus)
 
@@ -392,7 +399,7 @@ Utilise pour : pages immersives, transitions visuelles.
 - C'est le SEUL archetype utilisant `object-fit: cover`. Tous les autres utilisent `object-fit: contain`.
 - Le `<small class="full-image-page__credit">` est optionnel (credit photographe). Position absolute bas-droite, blanc semi-transparent.
 
-**Reference** : Pages 7, 15
+**Reference** : Pages 7, 15, 17
 
 ### E. Grille de logos / elements
 
@@ -824,6 +831,48 @@ Utilise pour : rangee horizontale de N cartes avec image cover, numero decoratif
 
 ---
 
+### J. Double image pleine largeur
+
+Utilise pour : doubles planches de BD, diptyques photographiques, deux images cote a cote sans texte.
+
+```html
+<section id="page-N" class="page21" aria-labelledby="pageN-title">
+    <h2 id="pageN-title" class="sr-only">Description du contenu</h2>
+    <div class="page21__grid">
+        <img src="..." alt="..." class="page21__image">
+        <img src="..." alt="..." class="page21__image">
+    </div>
+</section>
+```
+
+```css
+.page21 {
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.page21__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: var(--section-height);
+}
+.page21__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+```
+
+**Notes** :
+- Les classes `.page21` sont reutilisables pour toutes les pages de ce type (pas de prefixe specifique).
+- `object-fit: contain` pour afficher les planches completes sans recadrage.
+- `h2` en `sr-only` car page purement visuelle.
+- **Responsive 768px** : grille passe en 1 colonne, images empilees, `height: auto`.
+
+**Reference** : Pages 21, 22
+
+---
+
 ## 5. Images
 
 ### Regle object-fit - UNIVERSELLE
@@ -858,6 +907,13 @@ Utilise pour : rangee horizontale de N cartes avec image cover, numero decoratif
 | 13 | Cartes images | `cover` | Remplir uniformement la carte (archetype I) |
 | 14 | Actrice + couverture livre | `contain` | Images completes sans recadrage |
 | 15 | Plein ecran + credit | `cover` | Exception archetype D |
+| 16 | Photos spectacle (overlap) | `cover` | Deux images superposees sur fond noir |
+| 17 | Plein ecran + credit | `cover` | Exception archetype D |
+| 18 | Photos spectacle (overlap) | `cover` | Meme pattern page 16 |
+| 19 | Video Vimeo plein ecran | -- | Archetype G (iframe) |
+| 20 | Couverture roman graphique | `contain` | Pattern page 14 + gradient fond |
+| 21 | Double planche BD | `contain` | Archetype J |
+| 22 | Double planche BD | `contain` | Archetype J |
 
 ### INTERDIT en responsive
 
@@ -1164,7 +1220,7 @@ Avant chaque commit, verifier le contraste des elements texte sur fond colore :
 | Code CSS commente | Pollution | Supprimer, git garde l'historique |
 | Sections CSS generiques inutilisees | CSS mort | Supprimer avant commit |
 | `object-fit: cover` en responsive | Recadrage non desire | `object-fit: contain` |
-| `object-fit: cover` (sauf archetypes D, F, I et portraits) | Recadrage non desire | `object-fit: contain` |
+| `object-fit: cover` (sauf archetypes D, F, I, page 16 et portraits) | Recadrage non desire | `object-fit: contain` |
 | `--color-brand` pour fond sous texte blanc | Contraste 3.83:1 insuffisant | `--color-brand-btn` (4.86:1) |
 | `height` fixe + `overflow: hidden` sur pages denses en mobile | Troncature du contenu | `min-height` + `overflow: visible` |
 | Font-size < 0.7rem en mobile | Illisible sur petit ecran | Minimum 0.7rem, preferer les variables `--fs-slide-*` |
@@ -1195,7 +1251,7 @@ Avant de valider une nouvelle page :
 - [ ] Variables espacement utilisees (`--slide-pad-x/y`, `--grid-gap`)
 
 ### Images
-- [ ] `object-fit: contain` sur toutes les images (sauf archetypes D, F, I et portraits)
+- [ ] `object-fit: contain` sur toutes les images (sauf archetypes D, F, I, page 16 et portraits)
 - [ ] `contain` maintenu en responsive mobile (pas de switch vers `cover`)
 - [ ] Alt text descriptif <= 80 caracteres sur chaque image
 
@@ -1231,7 +1287,7 @@ Pour chaque nouvelle page a integrer :
 
 1. **Consulter** la maquette : `src/pages-extracted/page-N/page-N-screenshot.png`
 2. **Lire** le texte exact : `src/pages-extracted/page-N/texte-page-N.md`
-3. **Identifier** l'archetype de layout (A-I ci-dessus)
+3. **Identifier** l'archetype de layout (A-J ci-dessus)
 4. **Ecrire** le HTML dans `index.html` (section apres la derniere)
 5. **Ecrire** le CSS dans `style.css` (section apres la derniere page)
 6. **Copier** les images dans `src/img/pages/page-N/`
