@@ -57,7 +57,7 @@ Certaines pages adjacentes generent du vide blanc si elles ont `height: var(--se
 
 **Quand utiliser** : pages dont le contenu est naturellement plus court que 100vh et qui sont adjacentes a d'autres slides (le vide entre deux slides est le symptome).
 
-**Pages existantes sans `height` fixe** : 13 (bandeau cartes), 14 (deux colonnes)
+**Pages existantes sans `height` fixe** : 13 (bandeau cartes), 14 (deux colonnes), 20, 23 (volets), 24 (bandeau 6 cartes)
 
 **Pages existantes utilisant `min-height` en mobile** : 2 (team), 3, 4 (creations), 8 (partenaires)
 
@@ -100,6 +100,8 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 20 | `page20` | `.page20` |
 | 21 | `page21` | `.page21` |
 | 22 | `page21` | `.page21` |
+| 23 | `page23` | `.page23` |
+| 24 | `page24` | `.page24` |
 
 ### Convention pour les nouvelles pages
 
@@ -827,7 +829,7 @@ Utilise pour : rangee horizontale de N cartes avec image cover, numero decoratif
 - **Contraste** : les fonds colores solides doivent atteindre 4.5:1 avec le texte blanc (ex: `#B5364E` au lieu de `#E8667E`).
 - **Responsive** : 768px passe en `repeat(3, 1fr)`, 480px en `repeat(2, 1fr)`.
 
-**Reference** : Page 13
+**Reference** : Pages 13, 24
 
 ---
 
@@ -914,6 +916,8 @@ Utilise pour : doubles planches de BD, diptyques photographiques, deux images co
 | 20 | Couverture roman graphique | `contain` | Pattern page 14 + gradient fond |
 | 21 | Double planche BD | `contain` | Archetype J |
 | 22 | Double planche BD | `contain` | Archetype J |
+| 23 | Installation + gradient fond | `contain` | Pattern page 20 (jaune) |
+| 24 | Bandeau 6 cartes A-F | `cover` | Pattern page 13 (jaune, 6 colonnes) |
 
 ### INTERDIT en responsive
 
