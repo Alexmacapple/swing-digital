@@ -1,111 +1,96 @@
 # Enseignements - Pages 1-3 Swing Digital
 
-**Objectif** : Optimiser l'intégration des pages 4-62 en appliquant les leçons des pages 1-3.
+**Objectif** : Optimiser l'integration des pages 4-62 en appliquant les lecons des pages 1-3.
 
 ---
 
-## 🎯 Typographie & Spacing
+## Typographie et Spacing
 
-- ✅ Calibrer les font-sizes **dès le départ** (+10-15% à chaque niveau hiérarchique)
-- ✅ **Line-height minimum 1.5-1.6** pour lisibilité (jamais 1.4)
-- ✅ Padding/margin **harmonisés** : multiples de 0.5rem ou 1rem
-- ✅ Underlines/séparateurs : **50px minimum** pour visibilité
-- ⚠️ Éviter les tailles < 0.75rem (trop petit)
-
----
-
-## 🖼️ Images & Proportions
-
-- ✅ **JAMAIS `object-fit: cover`** → toujours `object-fit: contain`
-- ✅ Préserver les aspect-ratios naturels des images
-- ✅ Pour galeries masonry : **CSS Columns** (flow naturel) > CSS Grid (spans rigides)
-- ✅ Si image unique + texte : utiliser flexbox + `justify-content: flex-end` pour alignment
-- ✅ Recadrage d'images physique : enlever les bordures/éléments incrustés du haut
+- Calibrer les font-sizes **des le depart** (+10-15% a chaque niveau hierarchique)
+- **Line-height minimum 1.5-1.6** pour lisibilite (jamais 1.4)
+- Padding/margin **harmonises** : multiples de 0.5rem ou 1rem
+- Underlines/separateurs : **50px minimum** pour visibilite
+- Eviter les tailles < 0.75rem (trop petit)
 
 ---
 
-## 🎨 Couleurs & Fonds
+## Images et Proportions
 
-- ✅ Gradients/backgrounds sur **conteneur parent** ONLY
-- ✅ Enfants : `background: transparent` pour voir le parent
-- ✅ Utiliser variables CSS pour couleurs (`:root`)
-- ✅ Texte blanc sur rose/corail : fort contraste ✅
-- ✅ Bordures : utiliser couleur principale ou gradient léger
-
----
-
-## 📐 Layout & Structure
-
-- ✅ Colonnes **50/50 rarement optimal**
-- ✅ Essayer **55/45 ou 60/40** pour meilleure balance texte+images
-- ✅ Flexbox > Grid pour alignements simples (centrage, alignment, distribution)
-- ✅ `padding-right` pour espacement à droite (poussage à droite)
-- ✅ Proportions inégales : toujours spécifier sur conteneur parent
+- **JAMAIS `object-fit: cover`** sauf archetypes D, F, I, page 16 et portraits
+- Preserver les aspect-ratios naturels des images
+- Pour galeries masonry : **CSS Columns** (flow naturel) > CSS Grid (spans rigides)
+- Si image unique + texte : utiliser flexbox + `justify-content: flex-end` pour alignment
+- Recadrage d'images physique : enlever les bordures/elements incrustes du haut
 
 ---
 
-## ♿ Accessibilité WCAG 2.2 AA
+## Couleurs et Fonds
 
-- ✅ **ALT text 125+ caractères** descriptifs et contextuels
-- ✅ Structure HTML sémantique **dès le départ** (section, h1-h6, aria-labels)
-- ✅ Contraste minimum **4.5:1** pour texte normal
-- ✅ Testée avec lecteur d'écran avant validation
-
----
-
-## 🚫 RÈGLE STRICTE : PAS DE SCROLL VERTICAL
-
-- ✅ Jamais `height: 100%` fixe sur les enfants
-- ✅ Utiliser `height: auto` ou `max-height`
-- ✅ Utiliser `overflow: hidden` sur le conteneur page
-- ✅ Réduire espacements/font-sizes si contenu trop gros
-- ✅ Utiliser flexbox plutôt que heights fixes
-- ⚠️ Pas de `overflow-y: auto` interne (jamais de scroll!)
+- Gradients/backgrounds sur **conteneur parent** ONLY
+- Enfants : `background: transparent` pour voir le parent
+- Utiliser variables CSS pour couleurs (`:root`)
+- Texte blanc sur fond rouge : utiliser `--color-brand-btn` (#CE3B3D, 4.86:1)
+- `--color-brand` (#E8494B) reserve aux fonds decoratifs sans texte dessus
 
 ---
 
-## ⚡ Process & Git
+## Layout et Structure
 
-1. ✅ Valider une page **100% terminée** avant passer à la suivante
-2. ✅ Itérer sur **CSS uniquement** (pas HTML) pendant refinement
-3. ✅ Screenshots réguliers pour comparer à maquette
-4. ✅ Commits par page ou groupe de 5 pages
-5. ✅ Tester scroll tracking et anchors (#page-N)
-
----
-
-## 🚀 Estimation Temps
-
-- **Page 1-2** : ~2-3 itérations, 1-2 commits
-- **Page 3+** : ~5-10 itérations (contenu complexe), 2-3 commits
-- **Pages simples** (liste, grille) : ~1 itération
-- **Pages avec galerie** : ~5-8 itérations (masonry, proportions)
+- Colonnes **50/50 rarement optimal**
+- Essayer **55/45 ou 60/40** pour meilleure balance texte+images
+- Flexbox > Grid pour alignements simples (centrage, alignment, distribution)
+- Pages dont le contenu < 100vh : supprimer `height` fixe (evite vide blanc entre slides)
+- Proportions inegales : toujours specifier sur conteneur parent
 
 ---
 
-## ✅ Checklist Page Terminée
+## Accessibilite WCAG 2.2 AA
 
-- [ ] Maquette 100% respectée
+- **ALT text maximum 80 caracteres** (outils signalent au-dela)
+- Structure HTML semantique **des le depart** (section, h1-h6, aria-labels)
+- Contraste minimum **4.5:1** pour texte normal, **3:1** pour texte large
+- `background-color` ET `color` couples sur chaque conteneur a fond colore
+- `background-color` explicite sur les elements texte (pas d'heritage implicite)
+- Jaune sur blanc : utiliser #7D5A00 (5.3:1), jamais de jaune vif
+
+---
+
+## Pas de scroll vertical
+
+- Jamais `height: 100%` fixe sur les enfants
+- Utiliser `height: auto` ou `max-height`
+- Utiliser `overflow: hidden` sur le conteneur page
+- Reduire espacements/font-sizes si contenu trop gros
+- Utiliser flexbox plutot que heights fixes
+- Pas de `overflow-y: auto` interne (jamais de scroll)
+
+---
+
+## Process et Git
+
+1. Valider une page **100% terminee** avant passer a la suivante
+2. Iterer sur **CSS uniquement** (pas HTML) pendant refinement
+3. Screenshots reguliers pour comparer a maquette
+4. Commits par page ou groupe de pages
+5. Tester scroll tracking et anchors (#page-N)
+6. Consulter GUIDELINES-TEMPLATES.md avant toute integration
+
+---
+
+## Checklist Page Terminee
+
+- [ ] Maquette 100% respectee
 - [ ] Texte identique (copie exacte)
-- [ ] Images intégrées correctement
-- [ ] Responsive testé (desktop, tablet, mobile)
-- [ ] Accessibilité WCAG 2.2 AA validée
-- [ ] ALT text complet (125+ chars)
-- [ ] Scroll tracking fonctionne
+- [ ] Images integrees correctement
+- [ ] Responsive teste (1200, 1024, 768, 480)
+- [ ] Accessibilite WCAG 2.2 AA validee
+- [ ] ALT text descriptif <= 80 caracteres
 - [ ] Pas de barre de scroll inutile
 - [ ] Typographie lisible
 - [ ] Contraste suffisant
-- [ ] Commit créé
+- [ ] Commit cree
 
 ---
 
-## 🎯 Priorisation
-
-**Pages prioritaires** : Pages avec galeries, grilles, ou layouts complexes
-**Pages rapides** : Pages texte simple, listes, descriptions
-**À valider d'abord** : Toutes les pages de type "portfolio" ou "showcase"
-
----
-
-**Dernière mise à jour** : 2026-02-21 (après pages 1-3)
+**Derniere mise a jour** : 2026-02-22 (apres pages 1-24)
 **Auteur** : Claude + Alex
