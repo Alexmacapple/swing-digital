@@ -20,3 +20,7 @@ Thumbs.db
 # Node modules
 node_modules/
 package-lock.json
+
+# Sources InDesign (trop volumineux)
+images-id/
+deliberations/
