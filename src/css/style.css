@@ -2188,6 +2188,92 @@ img {
 }
 
 /* ============================================================
+   PAGE 53 : TOULOUSE-LAUTREC - Réalité mixte/Théâtre
+   ============================================================ */
+
+.page53 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-brand);
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+.page53__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem var(--slide-pad-x);
+    color: var(--color-white);
+}
+.page53__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.3rem;
+}
+.page53__category {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    font-style: italic;
+    margin: 0;
+    opacity: 0.85;
+}
+.page53__description {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin: 0;
+    opacity: 0.9;
+}
+.page53__logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.page53__logo {
+    height: 2rem;
+    object-fit: contain;
+}
+.page53__right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.page53__poster {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.page53__badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--color-brand);
+    color: var(--color-white);
+    padding: 0.3rem 0.6rem;
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .page53 {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page53__right {
+        min-height: 50vh;
+    }
+}
+
+/* ============================================================
    PAGE 52 : MARILYN - Réalité mixte (concept art + lieu + specs)
    ============================================================ */
 
