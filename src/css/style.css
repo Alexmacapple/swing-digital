@@ -62,6 +62,8 @@
     --color-brand-alt: #CE3B3D;   /* WCAG AA : 4.86:1 sur blanc (was #FF8080, 2.43:1) */
     --color-brand-btn: #CE3B3D;   /* WCAG AA 4.86:1 sur blanc */
     --color-white: #ffffff;
+    --color-brand-gold: #F5C547;
+    --color-brand-gold-dark: #D4A843;
 
     /* Gradients */
     --gradient-brand: linear-gradient(135deg, #B93539 0%, var(--color-brand-alt) 100%); /* WCAG AA : 5.78:1 → 4.86:1 */
@@ -2139,6 +2141,199 @@ img {
     height: fit-content;
     max-height: 70vh;
     align-content: start;
+}
+
+/* ============================================================
+   PAGE 27 : IA MILTON GREENE - Image centree + titre + credit (archetype C)
+   ============================================================ */
+
+.page27 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.page27__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page27__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 900;
+    color: #5C4200;    /* WCAG AA sur blanc */
+    margin: 0 0 1rem 0;
+    flex-shrink: 0;
+}
+.page27__image-wrapper {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page27__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.page27__credit {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text);
+    margin: 0.5rem 0 0 0;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   PAGE 26 : PHOTOGRAPHIE MARILYN AU DINER - Image centree + credit (archetype C)
+   ============================================================ */
+
+.page26 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.page26__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page26__image-wrapper {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page26__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.page26__credit {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text);
+    margin: 0.5rem 0 0 0;
+}
+
+/* ============================================================
+   PAGE 25 : PHOTOGRAPHIES - Panoramique + galerie + categorie (archetype K)
+   ============================================================ */
+
+.page25 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-rows: 30% 1fr;
+}
+
+/* Bandeau panoramique */
+.page25__panoramic {
+    position: relative;
+    overflow: hidden;
+}
+.page25__panoramic-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page25__panoramic-credit {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+}
+
+/* Zone basse : galerie + categorie */
+.page25__bottom {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    overflow: hidden;
+}
+
+/* Galerie : deux images cote a cote */
+.page25__gallery {
+    overflow: hidden;
+}
+.page25__gallery-figure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 0.5rem;
+    height: 100%;
+    margin: 0;
+    padding: 1rem 1rem 0 0;
+    overflow: hidden;
+}
+.page25__gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page25__gallery-caption {
+    grid-column: 1 / -1;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text);
+    padding: 0.5rem 0;
+}
+
+/* Bloc categorie (fond dore + lettre decorative) */
+.page25__category {
+    background-color: var(--color-brand-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem var(--slide-pad-x);
+}
+.page25__category-letter {
+    font-family: var(--font-secondary);
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: #7D5A00;    /* 3.89:1 sur gold — OK grand texte WCAG AA */
+    opacity: 0.6;
+    line-height: 1;
+}
+.page25__category-title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 900;
+    color: #5C4200;    /* 5.80:1 sur gold — WCAG AA */
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+.page25__category-arrow {
+    margin-right: 0.5rem;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .page25__panoramic {
+        height: 25vh;
+    }
+    .page25__bottom {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .page25__gallery-figure {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .page25__category {
+        padding: 1.5rem var(--slide-pad-x);
+    }
 }
 
 /* ============================================================

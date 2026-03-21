@@ -873,6 +873,160 @@ Utilise pour : doubles planches de BD, diptyques photographiques, deux images co
 
 **Reference** : Pages 21, 22
 
+### K. Panoramique + galerie + categorie
+
+Utilise pour : pages de transition entre sections, avec photo panoramique en bandeau, deux images cote a cote, credits, et bloc de categorie avec lettre decorative.
+
+```html
+<section id="page-N" class="pageN" aria-labelledby="pageN-title">
+    <!-- Bandeau panoramique pleine largeur -->
+    <div class="pageN__panoramic">
+        <img src="..." alt="..." class="pageN__panoramic-image">
+        <small class="pageN__panoramic-credit">&copy; Credit photographe</small>
+    </div>
+
+    <!-- Zone basse : galerie + bloc categorie -->
+    <div class="pageN__bottom">
+        <!-- Galerie deux images cote a cote -->
+        <div class="pageN__gallery">
+            <figure class="pageN__gallery-figure">
+                <img src="..." alt="..." class="pageN__gallery-image">
+                <img src="..." alt="..." class="pageN__gallery-image">
+                <figcaption class="pageN__gallery-caption">Credit artiste</figcaption>
+            </figure>
+        </div>
+
+        <!-- Bloc categorie (lettre + titre) -->
+        <div class="pageN__category">
+            <span class="pageN__category-letter" aria-hidden="true">A</span>
+            <p class="pageN__category-title">
+                <span class="pageN__category-arrow" aria-hidden="true">&rarr;</span>
+                <span id="pageN-title">PHOTOGRAPHIES</span>
+            </p>
+        </div>
+    </div>
+</section>
+```
+
+```css
+.pageN {
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+
+/* Bandeau panoramique : ~30% de la hauteur */
+.pageN__panoramic {
+    position: relative;
+    height: 30vh;
+    overflow: hidden;
+}
+.pageN__panoramic-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Exception : bandeau panoramique pleine largeur */
+    display: block;
+}
+.pageN__panoramic-credit {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+}
+
+/* Zone basse : galerie + categorie */
+.pageN__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+}
+
+/* Galerie : deux images cote a cote */
+.pageN__gallery {
+    display: flex;
+    flex-direction: column;
+}
+.pageN__gallery-figure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    flex: 1;
+    min-height: 0;
+    margin: 0;
+    padding: 1rem;
+}
+.pageN__gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* Exception : images dans galerie a format fixe */
+    display: block;
+}
+.pageN__gallery-caption {
+    grid-column: 1 / -1;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text);
+}
+
+/* Bloc categorie (fond dore + lettre decorative) */
+.pageN__category {
+    background-color: var(--color-brand-gold, #F5C547);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem var(--slide-pad-x);
+}
+.pageN__category-letter {
+    font-family: var(--font-heading, serif);
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: var(--color-brand-gold-dark, #D4A843);
+    opacity: 0.5;
+    line-height: 1;
+}
+.pageN__category-title {
+    font-family: var(--font-heading, sans-serif);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 900;
+    color: var(--color-brand, #E8494B);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+.pageN__category-arrow {
+    margin-right: 0.5rem;
+}
+```
+
+**Responsive mobile (768px)** :
+
+```css
+@media (max-width: 768px) {
+    .pageN__panoramic {
+        height: 25vh;
+    }
+    .pageN__bottom {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .pageN__gallery-figure {
+        grid-template-columns: 1fr;
+    }
+    .pageN__category {
+        padding: 1.5rem var(--slide-pad-x);
+    }
+}
+```
+
+**Notes** :
+- `object-fit: cover` sur la panoramique et les images galerie (exception : bandeau et format fixe).
+- La galerie occupe environ la moitie gauche, le bloc categorie la moitie droite.
+- La lettre decorative est en `aria-hidden="true"` (purement visuelle).
+- Le fond dore utilise une variable CSS `--color-brand-gold` (a definir dans `:root` si absente).
+- La couleur du titre categorie reprend `--color-brand` (rouge/orange Swing Digital).
+
+**Reference** : Page 25
+
 ---
 
 ## 5. Images
