@@ -2188,6 +2188,378 @@ img {
 }
 
 /* ============================================================
+   PAGES 58-59 : RÉSERVATION EXPÉRIENCE XR
+   ============================================================ */
+
+.page58 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-brand);
+    color: var(--color-white);
+}
+.page58__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page58__banner {
+    text-align: center;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+.page58__banner-title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    background-color: #7B4FBF;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    margin: 0;
+}
+.page58__layout {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.page58__image-wrapper {
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    border-radius: 4px;
+}
+.page58__image {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+.page58__experience-title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 900;
+    margin: 0 0 0.5rem;
+}
+.page58__experience-desc {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 0 0.8rem;
+    opacity: 0.9;
+}
+.page58__duration {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-meta);
+    margin: 0 0 0.3rem;
+}
+.page58__langs {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    margin: 0 0 0.8rem;
+    opacity: 0.8;
+}
+.page58__tarifs-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-meta);
+    font-weight: 700;
+    margin: 0 0 0.3rem;
+}
+.page58__tarifs-list {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    padding-left: 1rem;
+    margin: 0 0 0.8rem;
+    line-height: 1.6;
+}
+.page58__reserve-btn,
+.page58__subscribe-btn {
+    display: inline-block;
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-small);
+    font-weight: 700;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+}
+.page58__coming-soon {
+    font-family: var(--font-primary);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 700;
+    margin: 1rem 0 0;
+    opacity: 0.7;
+}
+.page58__right {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.page58__newsletter-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-meta);
+    font-weight: 900;
+    margin: 0 0 0.3rem;
+}
+.page58__newsletter-text {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    font-style: italic;
+    margin: 0 0 0.5rem;
+}
+.page58__newsletter-list {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    padding-left: 1rem;
+    margin: 0 0 0.8rem;
+    line-height: 1.6;
+}
+.page58__subscribe-btn {
+    background-color: var(--color-brand-gold);
+    border-color: var(--color-brand-gold);
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .page58 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page58__layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   PAGE 60 : INFORMATIONS PRATIQUES
+   ============================================================ */
+
+.page60 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-brand);
+    color: var(--color-white);
+}
+.page60__layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100%;
+}
+.page60__text {
+    padding: 2rem var(--slide-pad-x);
+    overflow-y: auto;
+}
+.page60__section-title {
+    font-family: var(--font-primary);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 900;
+    font-style: italic;
+    margin: 1.5rem 0 0.5rem;
+    letter-spacing: 0.03em;
+}
+.page60__section-title:first-child {
+    margin-top: 0;
+}
+.page60__checklist,
+.page60__list {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    padding-left: 1.5rem;
+    margin: 0 0 0.8rem;
+    line-height: 1.6;
+}
+.page60__paragraph {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 0 0.5rem;
+}
+.page60__visual {
+    overflow: hidden;
+}
+.page60__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(1);
+}
+
+@media (max-width: 768px) {
+    .page60 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page60__layout {
+        grid-template-columns: 1fr;
+    }
+    .page60__visual {
+        min-height: 30vh;
+    }
+}
+
+/* ============================================================
+   PAGE 61 : VISITES PRIVÉES ET FAQ
+   ============================================================ */
+
+.page61 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.page61__container {
+    padding: 2rem var(--slide-pad-x);
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    overflow-y: auto;
+}
+.page61__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 900;
+    color: var(--color-brand);
+    margin: 0 0 0.5rem;
+}
+.page61__intro {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    color: #555;
+    margin: 0 0 0.8rem;
+}
+.page61__paragraph {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    color: #555;
+    line-height: 1.5;
+    margin: 0 0 0.8rem;
+}
+.page61__faq-title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 900;
+    color: var(--color-brand);
+    margin: 2rem 0 1rem;
+}
+.page61__faq {
+    margin: 0;
+}
+.page61__faq dt {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-body);
+    font-weight: 700;
+    color: #333;
+    margin: 0.8rem 0 0.2rem;
+}
+.page61__faq dd {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    color: #555;
+    margin: 0 0 0 1rem;
+}
+.page61__help {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+.page61__help-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-subtitle);
+    font-weight: 900;
+    color: var(--color-brand);
+    margin: 0 0 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .page61 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+}
+
+/* ============================================================
+   PAGE 62 : CONTACT
+   ============================================================ */
+
+.page62 {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+}
+.page62__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.page62__background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page62__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: var(--color-white);
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page62__brand {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-meta);
+    letter-spacing: 0.3em;
+    margin: 0 0 1.5rem;
+    opacity: 0.8;
+}
+.page62__title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-subtitle);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    margin: 0 0 1.5rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.page62__email {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-meta);
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+    margin-bottom: 2rem;
+}
+.page62__address {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: normal;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+.page62__logo {
+    height: 3rem;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .page62 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+}
+
+/* ============================================================
    PAGE 57 : XR POUR LES ENTREPRISES - Corporate
    ============================================================ */
 
