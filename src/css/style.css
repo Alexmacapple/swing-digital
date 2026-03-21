@@ -2188,6 +2188,91 @@ img {
 }
 
 /* ============================================================
+   PAGE 50 : MARILYN - Affiche spectacle
+   ============================================================ */
+
+.page50 {
+    position: relative;
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: #000;
+}
+.page50__background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.page50__background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page50__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    color: var(--color-white);
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page50__badge {
+    position: absolute;
+    top: var(--slide-pad-y);
+    right: var(--slide-pad-x);
+    background-color: var(--color-brand);
+    color: var(--color-white);
+    padding: 0.3rem 0.6rem;
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    border-radius: 2px;
+}
+.page50__title {
+    font-family: var(--font-secondary);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-style: italic;
+    font-weight: 400;
+    margin: 0 0 0.5rem;
+}
+.page50__subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    margin: 0 0 0.3rem;
+    opacity: 0.9;
+}
+.page50__credit {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-meta);
+    font-weight: 700;
+    margin: 0 0 0.2rem;
+}
+.page50__tags {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    margin: 0 0 1rem;
+    opacity: 0.8;
+}
+.page50__logos {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.page50__logo {
+    height: 1.8rem;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .page50 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+}
+
+/* ============================================================
    PAGE 49 : NI VUES NI CONNUES - Portraits de femmes
    ============================================================ */
 
