@@ -2188,6 +2188,337 @@ img {
 }
 
 /* ============================================================
+   PAGE 40 : XR 360 - Photo casque VR + bandeau specs
+   ============================================================ */
+
+.page40 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+}
+.page40__photo-wrapper {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.page40__photo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.page40__credit {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1.5rem;
+    font-size: 0.7rem;
+    color: rgba(100, 100, 100, 0.7);
+    letter-spacing: 0.02em;
+}
+.page40__info {
+    background-color: #3B3F72;
+    color: var(--color-white);
+    padding: 1.5rem var(--slide-pad-x);
+    flex-shrink: 0;
+}
+.page40__header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+.page40__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 900;
+    margin: 0;
+    color: var(--color-white);
+}
+.page40__badge {
+    font-family: var(--font-primary);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+}
+.page40__description {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 1rem;
+}
+.page40__specs {
+    display: flex;
+    gap: 3rem;
+}
+.page40__spec-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-small);
+    font-weight: 700;
+    color: #E8494B;
+    margin: 0 0 0.2rem;
+}
+.page40__spec-detail {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .page40 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page40__photo-wrapper {
+        min-height: 40vh;
+    }
+    .page40__specs {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* ============================================================
+   PAGE 39 : LA SERIE MARILYN - Numero 5 + photo portrait bleu
+   ============================================================ */
+
+.page39 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-columns: 40% 3% 57%;
+}
+.page39__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page39__number {
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 300;
+    color: #6B6FA0;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+.page39__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    color: #3B3F72;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    margin: 0;
+}
+.page39__subtitle {
+    font-family: var(--font-secondary);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: #6B6FA0;
+    margin: 0.2rem 0 0;
+}
+.page39__separator {
+    width: 2.5rem;
+    border: none;
+    border-top: 2px solid #3B3F72;
+    margin: 1.5rem 0;
+}
+.page39__description {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    color: #555;
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 280px;
+}
+.page39__stripe {
+    background-color: #6B6FA0;
+}
+.page39__right {
+    background-color: #4A4E82;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page39__photo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .page39 {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page39__stripe {
+        height: 4px;
+    }
+    .page39__right {
+        min-height: 50vh;
+    }
+}
+
+/* ============================================================
+   PAGE 38 : LE QUIZ MARILYN - Categorie F + mockup iPhone
+   ============================================================ */
+
+.page38 {
+    height: var(--section-height);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+.page38__left {
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page38__category {
+    margin-bottom: 2rem;
+}
+.page38__category-letter {
+    font-family: var(--font-secondary);
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: #7D5A00;
+    opacity: 0.6;
+    line-height: 1;
+}
+.page38__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    color: #5C4200;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin: 0;
+}
+.page38__subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    color: #5C4200;
+    margin: 0;
+}
+.page38__right {
+    background-color: #EBEBEB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+.page38__phone {
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .page38 {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page38__left {
+        padding: 2rem var(--slide-pad-x);
+    }
+    .page38__right {
+        min-height: 50vh;
+    }
+}
+
+/* ============================================================
+   PAGE 37 : L'ESTRADE MARILYN - Categorie E + photo visiteur
+   ============================================================ */
+
+.page37 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-brand-gold);
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+.page37__left {
+    display: flex;
+    align-items: center;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.page37__title-group {
+    display: flex;
+    flex-direction: column;
+}
+.page37__category-arrow {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: #5C4200;
+    margin: 0 0 0.3rem;
+}
+.page37__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 900;
+    color: #5C4200;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin: 0;
+}
+.page37__letter {
+    font-family: var(--font-secondary);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: #7D5A00;
+    opacity: 0.6;
+}
+.page37__right {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+.page37__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+.page37__credit {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .page37 {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page37__left {
+        padding: 2rem var(--slide-pad-x);
+    }
+    .page37__right {
+        min-height: 50vh;
+    }
+}
+
+/* ============================================================
    PAGE 36 : EXPERIENCES INTERACTIVES - Categorie E + galerie 3 photos
    ============================================================ */
 
