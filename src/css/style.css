@@ -2188,6 +2188,110 @@ img {
 }
 
 /* ============================================================
+   PAGE 48 : NI VUES NI CONNUES - Affiche série documentaire
+   ============================================================ */
+
+.page48 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: #1a2744;
+    display: flex;
+    flex-direction: column;
+}
+.page48__banner-top {
+    position: relative;
+    flex: 0 0 30%;
+    overflow: hidden;
+}
+.page48__banner-bottom {
+    position: relative;
+    flex: 0 0 25%;
+    overflow: hidden;
+}
+.page48__banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page48__badge {
+    position: absolute;
+    top: 1rem;
+    right: var(--slide-pad-x);
+    background-color: var(--color-brand);
+    color: var(--color-white);
+    padding: 0.3rem 0.6rem;
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    border-radius: 2px;
+}
+.page48__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    padding: 1rem var(--slide-pad-x);
+}
+.page48__title {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 0.5rem;
+}
+.page48__title strong {
+    font-weight: 900;
+}
+.page48__subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    margin: 0 0 0.3rem;
+    opacity: 0.85;
+}
+.page48__subtitle--bold {
+    font-weight: 700;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    opacity: 1;
+}
+.page48__tagline {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-meta);
+    font-style: italic;
+    color: var(--color-brand);
+    margin: 0.3rem 0 0;
+}
+.page48__logos {
+    position: absolute;
+    bottom: 1rem;
+    left: var(--slide-pad-x);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.page48__logo {
+    height: 1.8rem;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .page48 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page48__banner-top {
+        flex: 0 0 auto;
+        min-height: 20vh;
+    }
+    .page48__banner-bottom {
+        flex: 0 0 auto;
+        min-height: 15vh;
+    }
+}
+
+/* ============================================================
    PAGE 47 : DESSINE-MOI LE VENT - Détails + galerie + logos
    ============================================================ */
 
