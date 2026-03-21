@@ -1829,11 +1829,11 @@ img {
 }
 
 .page12__logos-bar {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0.8rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.2rem;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
 }
 
 .page12__logo {
@@ -2018,6 +2018,7 @@ img {
 }
 
 .page14__right {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2036,6 +2037,15 @@ img {
     max-height: 85%;
     object-fit: contain;
     filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+}
+
+.page14__gradient {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4vw;
+    background: url('../img/pages/page-14/page-14-image-2.jpg') center/cover;
 }
 
 /* ============================================================
