@@ -2140,9 +2140,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../img/pages/page-20/page-20-image-1.jpg');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(to right, var(--color-white) 0%, var(--color-white) 65%, #F0A0A0 85%, #E87070 100%);
 }
 
 .page20__figure {
@@ -2284,14 +2282,52 @@ img {
     gap: 2rem;
 }
 .page58__image-wrapper {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     overflow: hidden;
     border-radius: 4px;
+    position: relative;
+}
+.page58__image-wrapper--double {
+    display: flex;
+    gap: 0.5rem;
 }
 .page58__image {
     width: 100%;
     object-fit: contain;
     display: block;
+}
+.page58__image--half {
+    width: 50%;
+    object-fit: cover;
+}
+.page58__badge-new {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #E8C84A;
+    color: #333;
+    font-family: var(--font-primary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+}
+.page58__stars {
+    color: #E8C84A;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.1em;
+}
+.page58__reserve-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+.page58__reserve-label {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    color: #333;
 }
 .page58__experience-title {
     font-family: var(--font-primary);
@@ -2772,6 +2808,7 @@ img {
     letter-spacing: 0.03em;
     line-height: 1.5;
     margin: 0;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -3079,9 +3116,10 @@ img {
 }
 .page51__quotes {
     position: absolute;
-    bottom: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
     right: 2rem;
-    left: 2rem;
+    left: 50%;
     text-align: right;
 }
 .page51__quote {
@@ -3488,6 +3526,14 @@ img {
     line-height: 1.15;
     margin: 0 0 0.8rem;
 }
+.page46__vimeo-link {
+    display: inline-block;
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    text-decoration: underline;
+    margin-bottom: 0.8rem;
+}
 .page46__stores-image {
     height: 1.8rem;
     object-fit: contain;
@@ -3812,6 +3858,13 @@ img {
     margin: 0;
     color: #3B3F72;
 }
+.page40__badge {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300;
+    color: rgba(59, 63, 114, 0.4);
+    margin-left: 0.5rem;
+}
 .page40__info {
     background-color: #3B3F72;
     color: var(--color-white);
@@ -3985,6 +4038,21 @@ img {
     flex-direction: column;
     justify-content: center;
     padding: var(--slide-pad-y) var(--slide-pad-x);
+    position: relative;
+}
+.page38__left::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    background-color: #E8C84A;
+    z-index: 0;
+}
+.page38__left > * {
+    position: relative;
+    z-index: 1;
 }
 .page38__category {
     margin-bottom: 2rem;
@@ -4152,10 +4220,13 @@ img {
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-columns: 50% 25% 25%;
-    grid-template-rows: 1fr;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr;
     gap: 0.5rem;
     padding: 0.5rem var(--slide-pad-x) 1.5rem;
+}
+.page36__photo--large {
+    grid-row: 1 / -1;
 }
 .page36__photo {
     overflow: hidden;
@@ -4250,12 +4321,37 @@ img {
 }
 .page35__right {
     overflow: hidden;
+    position: relative;
 }
 .page35__photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+.page35__overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--color-white);
+}
+.page35__overlay-name {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    margin: 0 0 0.5rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.page35__overlay-desc {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {
@@ -4644,7 +4740,7 @@ img {
 }
 .page25__panoramic-credit {
     position: absolute;
-    bottom: 0.5rem;
+    top: 0.5rem;
     right: 1.5rem;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.7);
