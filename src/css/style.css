@@ -2188,6 +2188,54 @@ img {
 }
 
 /* ============================================================
+   PAGE 41 : EXPERIENCE XR - Trois bandes panoramiques
+   ============================================================ */
+
+.page41 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+.page41__strip {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+}
+.page41__strip--center {
+    flex: 0 0 auto;
+    height: 20%;
+    border-top: 3px solid #E84878;
+    border-bottom: 3px solid #E84878;
+}
+.page41__strip--center .page41__image {
+    width: 50%;
+    object-fit: cover;
+}
+.page41__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .page41 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page41__strip {
+        min-height: 20vh;
+    }
+    .page41__strip--center {
+        height: auto;
+        min-height: 15vh;
+    }
+}
+
+/* ============================================================
    PAGE 40 : XR 360 - Photo casque VR + bandeau specs
    ============================================================ */
 
