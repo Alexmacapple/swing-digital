@@ -2188,6 +2188,87 @@ img {
 }
 
 /* ============================================================
+   PAGE 51 : MARILYN - Réalité mixte/Théâtre (texte + photo)
+   ============================================================ */
+
+.page51 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.page51__left {
+    padding: 2rem var(--slide-pad-x);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.page51__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: #8B5E3C;
+    margin: 0 0 0.3rem;
+}
+.page51__category {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    color: #8B5E3C;
+    letter-spacing: 0.05em;
+    margin: 0 0 1.5rem;
+}
+.page51__description {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    color: #555;
+    line-height: 1.6;
+}
+.page51__description p {
+    margin: 0 0 1rem;
+}
+.page51__right {
+    position: relative;
+    overflow: hidden;
+}
+.page51__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page51__quotes {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    left: 2rem;
+    text-align: right;
+}
+.page51__quote {
+    font-family: var(--font-secondary);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-style: italic;
+    color: var(--color-white);
+    line-height: 1.3;
+    margin: 0 0 1rem;
+}
+.page51__quote strong {
+    color: #D4A043;
+}
+
+@media (max-width: 768px) {
+    .page51 {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page51__right {
+        min-height: 50vh;
+    }
+}
+
+/* ============================================================
    PAGE 50 : MARILYN - Affiche spectacle
    ============================================================ */
 
