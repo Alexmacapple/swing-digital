@@ -391,28 +391,31 @@ img {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 15;
-    max-width: 80%;
+    max-width: 90%;
+    width: max-content;
 }
 
 .hero-page1__title-group h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.15;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1rem 0;
     letter-spacing: -0.5px;
     font-family: var(--font-secondary);
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .hero-page1__hashtags {
-    font-size: clamp(0.95rem, 3vw, 1.4rem);
+    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
     font-weight: 400;
     color: var(--color-white);
     letter-spacing: 3px;
     margin: 0;
     text-transform: uppercase;
     line-height: 1.3;
+    white-space: nowrap;
 }
 
 /* Center: Hero Image (DOMINANT) */
@@ -697,8 +700,9 @@ img {
                 linear-gradient(90deg, #E84A7E 0%, #FF6B6B 50%, #FF9966 100%);
     background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
     background-blend-mode: multiply;
-    padding: var(--slide-pad-y) var(--slide-pad-x);
-    min-height: var(--section-height);
+    padding: 1rem var(--slide-pad-x);
+    height: var(--section-height);
+    overflow: hidden;
     position: relative;
     color: var(--color-white);
 }
@@ -726,7 +730,7 @@ img {
     color: var(--color-white);
     text-align: center;
     font-size: clamp(1.8rem, 5vw, 2.8rem);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
@@ -738,25 +742,26 @@ img {
     content: '';
     display: block;
     width: 80px;
-    height: 2px;
-    background-color: var(--color-white);
-    margin: 0.8rem auto 0;
+    height: 3px;
+    background-color: var(--color-brand-btn);
+    margin: 0.6rem auto 0;
 }
 
 .team__subtitle {
     color: var(--color-white);
     text-align: center;
     font-size: clamp(0.95rem, 2.5vw, 1.2rem);
-    margin-bottom: var(--space-2xl);
+    margin-bottom: 1.5rem;
     line-height: 1.6;
-    font-weight: 400;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .team__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--grid-gap);
-    margin-bottom: var(--space-2xl);
+    gap: 0.5rem;
+    margin-bottom: 0;
 }
 
 .team__member {
@@ -775,7 +780,7 @@ img {
 
 .team__member-image {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 0.85;
     object-fit: cover;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
@@ -786,7 +791,7 @@ img {
 }
 
 .team__member-info {
-    padding: 1.25rem 1rem;
+    padding: 0.6rem 0.5rem;
     text-align: center;
 }
 
@@ -899,7 +904,7 @@ img {
 
 .page3__container {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 50% 50%;
     gap: 0;
     width: 100%;
     height: 100%;
@@ -925,9 +930,9 @@ img {
 }
 
 .page3__header h2 {
-    font-size: 1.2rem; /* 19.2px >= 18.5px = large text WCAG (seuil 3:1) */
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 2px;
     margin: 0 0 0.6rem 0;
     text-transform: uppercase;
 }
@@ -1070,7 +1075,51 @@ img {
 
 /* PAGE 4 - INVERSÉE (Image gauche, Texte droite) */
 .page3__container--inverted {
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 50% 50%;
+}
+
+/* PAGE 4 : fond blanc côté texte, texte foncé */
+#page-4 .page3__container--inverted {
+    background: var(--color-white);
+}
+
+#page-4 .page3__right--text .page3__left {
+    background-color: var(--color-white);
+    color: #333;
+}
+
+#page-4 .page3__header h2 {
+    color: var(--color-brand-btn);
+}
+
+#page-4 .page3__header-underline {
+    background-color: var(--color-brand-btn);
+}
+
+#page-4 .page3__project-title {
+    color: #333;
+}
+
+#page-4 .page3__project-subtitle {
+    color: var(--color-brand);
+}
+
+#page-4 .page3__project-meta {
+    color: #444;
+    background-color: transparent;
+}
+
+#page-4 .page3__project-link {
+    color: #333;
+}
+
+#page-4 .page3__section-title {
+    color: var(--color-brand);
+    background-color: transparent;
+}
+
+#page-4 .page3__intro p {
+    color: #555;
 }
 
 .page3__left--image {
@@ -4843,7 +4892,7 @@ img {
    ============================================================ */
 @media (max-width: 1200px) {
     .page3__container {
-        grid-template-columns: 38% 62%;
+        grid-template-columns: 50% 50%;
     }
 
     .page3__container--inverted {
