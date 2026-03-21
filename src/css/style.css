@@ -2188,6 +2188,103 @@ img {
 }
 
 /* ============================================================
+   PAGE 52 : MARILYN - Réalité mixte (concept art + lieu + specs)
+   ============================================================ */
+
+.page52 {
+    height: var(--section-height);
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+.page52__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+}
+.page52__concept {
+    position: relative;
+    grid-row: 1 / -1;
+    overflow: hidden;
+}
+.page52__concept-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page52__overlay {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: var(--color-white);
+}
+.page52__title {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.3rem;
+}
+.page52__subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    margin: 0;
+    opacity: 0.9;
+}
+.page52__venue {
+    overflow: hidden;
+}
+.page52__venue-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.page52__specs {
+    padding: 1.5rem var(--slide-pad-x);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.page52__spec-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-meta);
+    font-weight: 900;
+    color: #333;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.3rem;
+}
+.page52__spec-text {
+    font-family: var(--font-secondary);
+    font-size: var(--fs-slide-small);
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .page52 {
+        height: auto;
+        min-height: var(--section-height);
+    }
+    .page52__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        height: auto;
+    }
+    .page52__concept {
+        min-height: 40vh;
+    }
+    .page52__venue {
+        min-height: 25vh;
+    }
+}
+
+/* ============================================================
    PAGE 51 : MARILYN - Réalité mixte/Théâtre (texte + photo)
    ============================================================ */
 
