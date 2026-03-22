@@ -801,7 +801,9 @@ a.page13__card--link:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-2xl) var(--space-md);
+    padding: var(--space-2xl) var(--slide-pad-x);
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .page-404__container {
@@ -821,7 +823,7 @@ a.page13__card--link:focus-visible {
 }
 
 .page-404__link {
-    color: var(--color-brand-btn);
+    color: var(--color-brand-pale);
     font-weight: 700;
 }
 
@@ -848,13 +850,13 @@ a.page13__card--link:focus-visible {
 }
 
 .page-404__sitemap-list a {
-    color: var(--color-gray-dark);
+    color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .page-404__sitemap-list a:hover {
-    color: var(--color-bg-red);
+    color: var(--color-brand-pale);
 }
 
 /* ============================================================
