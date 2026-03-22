@@ -3358,11 +3358,8 @@ section + section {
     gap: var(--space-md);
 }
 .page53__logo {
-    height: 2rem;
+    height: 2.5rem;
     object-fit: contain;
-    background-color: var(--color-white);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
 }
 .page53__right {
     position: relative;
@@ -3804,11 +3801,8 @@ section + section {
     gap: var(--space-sm);
 }
 .page48__logo {
-    height: 1.8rem;
+    height: 2.5rem;
     object-fit: contain;
-    background-color: var(--color-white);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
 }
 
 @media (max-width: 768px) {
