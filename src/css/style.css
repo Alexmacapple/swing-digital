@@ -862,7 +862,7 @@ a.page13__card--link:focus-visible {
 
 .sitemap-page {
     padding: var(--space-2xl) var(--slide-pad-x);
-    background-color: var(--color-brand-btn);
+    background-color: var(--color-black);
     color: var(--color-white);
 }
 
