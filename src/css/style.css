@@ -394,7 +394,7 @@ img {
     text-decoration: none;
     font-family: var(--font-primary);
     font-weight: 900;
-    font-size: 0.85rem;
+    font-size: 1rem;
     line-height: 1.1;
     letter-spacing: 0.05em;
     display: flex;
@@ -429,7 +429,7 @@ img {
     text-decoration: none;
     font-family: var(--font-primary);
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.05rem;
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
@@ -488,7 +488,7 @@ img {
     text-decoration: none;
     font-family: var(--font-primary);
     font-weight: 400;
-    font-size: 0.85rem;
+    font-size: 1rem;
     padding: 0.6rem 1.2rem;
     display: block;
     transition: background-color 0.2s ease;
@@ -633,7 +633,7 @@ img {
     max-width: var(--page-max-width);
     margin: 0 auto;
     font-family: var(--font-primary);
-    font-size: var(--fs-credit);
+    font-size: var(--fs-caption);
 }
 
 .breadcrumb__item {
