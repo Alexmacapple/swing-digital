@@ -4221,7 +4221,9 @@ section:hover [class*="__category"]::after {
     top: 1.5rem;
     left: 1.5rem;
     color: var(--color-white);
-    background-color: var(--color-black); /* a11y : fond explicite pour outils de contraste (texte sur image) */
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 4px;
 }
 .page52__title {
     font-family: var(--font-primary);
