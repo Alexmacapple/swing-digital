@@ -2248,8 +2248,8 @@ img {
    ============================================================ */
 
 .page58 {
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: var(--color-brand);
     color: var(--color-white);
 }
@@ -2431,8 +2431,8 @@ img {
    ============================================================ */
 
 .page60 {
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: var(--color-brand);
     color: var(--color-white);
 }
@@ -2506,8 +2506,8 @@ img {
    ============================================================ */
 
 .page61 {
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: var(--color-brand);
     display: grid;
     grid-template-columns: 50% 50%;
