@@ -2102,7 +2102,9 @@ section:hover [class*="__category"]::after {
    ============================================================ */
 
 .page5 {
-    background-color: var(--color-white);
+    background: var(--gradient-brand);
+    background-color: var(--color-brand-btn);
+    color: var(--color-white);
     padding: 0;
     min-height: var(--section-height);
     overflow: hidden;
