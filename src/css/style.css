@@ -389,8 +389,11 @@ img {
 }
 
 /* Logo texte */
-.site-header__logo span:not(.site-header__logo-pipe) {
+.site-header__logo-text {
     text-transform: uppercase;
+    display: inline-block;
+    max-width: 4.5em;
+    line-height: 1.1;
 }
 
 .site-header__logo {
