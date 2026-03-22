@@ -980,6 +980,62 @@ a.page13__card--link:focus-visible {
 }
 
 
+/* ============================================================
+   8g. PAGE MENTIONS LEGALES
+   ============================================================ */
+
+.mentions-legales {
+    padding: var(--space-2xl) var(--slide-pad-x);
+}
+
+.mentions-legales__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mentions-legales__container h2 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-title-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.mentions-legales__container h3 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-title);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.mentions-legales__container h4 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-subtitle);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xs);
+}
+
+.mentions-legales__container p {
+    line-height: 1.8;
+    margin-bottom: var(--space-sm);
+}
+
+.mentions-legales__container ul {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+    line-height: 1.8;
+}
+
+.mentions-legales__container a {
+    color: var(--color-bg-red);
+    text-underline-offset: 0.2em;
+}
+
+.mentions-legales__update {
+    margin-top: var(--space-2xl);
+    font-size: var(--fs-caption);
+    color: var(--color-gray-light);
+    font-style: italic;
+}
+
 /* RGAA 10.2 : majuscules visuelles via CSS (titres, noms, boutons uniquement) */
 .team__member-firstname,
 .team__member-info h3,
