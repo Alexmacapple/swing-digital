@@ -384,7 +384,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 var(--space-md);
+    padding: 0 var(--slide-pad-x);
     height: 100%;
 }
 
@@ -621,7 +621,7 @@ img {
 
 .breadcrumb {
     background-color: var(--color-brand-btn);
-    padding: 0.4rem var(--space-md);
+    padding: 0.4rem var(--slide-pad-x);
     margin-top: var(--header-height);
 }
 
