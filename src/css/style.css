@@ -194,15 +194,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: var(--fs-title-xl);
 }
 
 h2 {
-    font-size: 1.75rem;
+    font-size: var(--fs-title);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: var(--fs-title);
 }
 
 p {
@@ -312,7 +312,7 @@ img {
     gap: 0.6rem;
     min-height: 48px;
     font-family: var(--font-secondary);
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     text-decoration: none;
@@ -323,7 +323,7 @@ img {
 .hero-page1__logo a span:first-child,
 .hero-page1__logo a span:last-child {
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: var(--fs-subtitle);
 }
 
 .hero-page1__logo-text {
@@ -355,7 +355,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.75rem 1.2rem;
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -377,7 +377,7 @@ img {
     color: var(--color-white);
     padding: 0.5rem 0.8rem;
     min-height: 48px;
-    font-size: 0.7rem;
+    font-size: var(--fs-credit);
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
@@ -393,7 +393,7 @@ img {
 }
 
 .hero-page1__partners a {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-weight: 600;
     color: var(--color-white);
     text-decoration: underline;
@@ -416,7 +416,7 @@ img {
 }
 
 .hero-page1__title-group h1 {
-    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.15;
@@ -428,7 +428,7 @@ img {
 }
 
 .hero-page1__hashtags {
-    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
+    font-size: var(--fs-body);
     font-weight: 400;
     color: var(--color-white);
     letter-spacing: 3px;
@@ -464,7 +464,7 @@ img {
 }
 
 .hero-page1__bottom-left a {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-white);
     text-decoration: underline;
@@ -495,7 +495,7 @@ img {
 }
 
 .hero-page1__follow-label {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-white);
     letter-spacing: 1.5px;
@@ -504,7 +504,7 @@ img {
 }
 
 .hero-page1__bottom-right a {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 500;
     color: var(--color-white);
     text-decoration: underline;
@@ -749,7 +749,7 @@ img {
 .team__container h2 {
     color: var(--color-white);
     text-align: center;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-size: var(--fs-title-xl);
     margin-bottom: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -770,7 +770,7 @@ img {
 .team__subtitle {
     color: var(--color-white);
     text-align: center;
-    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    font-size: var(--fs-subtitle);
     margin-bottom: 1.5rem;
     line-height: 1.6;
     font-weight: 700;
@@ -817,7 +817,7 @@ img {
 
 .team__member-firstname {
     color: var(--color-white);
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     margin: 0;
     margin-bottom: 0.25rem;
     font-weight: 400;
@@ -827,7 +827,7 @@ img {
 
 .team__member-info h3 {
     color: var(--color-white);
-    font-size: clamp(0.95rem, 2.2vw, 1.2rem); /* 19.2px >= 18.5px = large text WCAG (seuil 3:1) */
+    font-size: var(--fs-subtitle); /* 19.2px >= 18.5px = large text WCAG (seuil 3:1) */
     font-weight: 700;
     margin: 0 0 0.5rem 0;
     text-transform: uppercase;
@@ -837,7 +837,7 @@ img {
 
 .team__member-role {
     color: var(--color-white);
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     margin: 0;
     margin-bottom: 0.3rem;
     font-weight: 400;
@@ -950,7 +950,7 @@ img {
 }
 
 .page3__header h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     letter-spacing: 2px;
     margin: 0 0 0.6rem 0;
@@ -969,7 +969,7 @@ img {
 }
 
 .page3__intro p {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     margin: 0 0 0.6rem 0;
     font-weight: 400;
     letter-spacing: 0.3px;
@@ -981,7 +981,7 @@ img {
 }
 
 .page3__section-title {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     letter-spacing: 1.2px;
     margin: 1rem 0 0.6rem 0;
@@ -999,7 +999,7 @@ img {
 }
 
 .page3__project-title {
-    font-size: 1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
@@ -1007,7 +1007,7 @@ img {
 }
 
 .page3__project-subtitle {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     margin: 0 0 0.5rem 0;
     font-weight: 400;
     font-style: italic;
@@ -1015,7 +1015,7 @@ img {
 }
 
 .page3__project-meta {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     margin: 0.3rem 0;
     line-height: 1.5;
     font-weight: 400;
@@ -1030,7 +1030,7 @@ img {
 }
 
 .page3__project-title-small {
-    font-size: 1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
@@ -1041,7 +1041,7 @@ img {
     display: inline-block;
     color: var(--color-white);
     text-decoration: underline;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     margin-top: 1rem;
     font-weight: 400;
     letter-spacing: 0.3px;
@@ -1202,7 +1202,7 @@ img {
 }
 
 .page5__title {
-    font-size: clamp(1.3rem, 5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.2;
@@ -1214,7 +1214,7 @@ img {
     background-color: var(--color-brand-btn); /* solide pour a11y (rgba non calculable sur gradient) */
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     letter-spacing: 0.5px;
@@ -1248,7 +1248,7 @@ img {
 
 .page5__subtitle {
     color: var(--color-white);
-    font-size: 1.1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 400;
     letter-spacing: 1px;
     margin: 0;
@@ -1279,7 +1279,7 @@ img {
 }
 
 .page6__title {
-    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.1;
@@ -1293,7 +1293,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     letter-spacing: 0.5px;
@@ -1338,7 +1338,7 @@ img {
 }
 
 .page6__section-title {
-    font-size: 1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.3;
@@ -1347,7 +1347,7 @@ img {
 }
 
 .page6__section-text {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     color: var(--color-white);
     line-height: 1.5;
     margin: 0;
@@ -1380,7 +1380,7 @@ img {
     position: absolute;
     bottom: 1rem;
     right: 1.5rem;
-    font-size: 0.75rem;
+    font-size: var(--fs-caption);
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.02em;
 }
@@ -1405,7 +1405,7 @@ img {
 
 .partners-page__title {
     font-family: var(--font-secondary);
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-white);
     margin: 0 0 1rem 0;
@@ -1483,7 +1483,7 @@ img {
 }
 
 .page9__hashtags p {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 400;
     font-style: italic;
     letter-spacing: 1px;
@@ -1495,7 +1495,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     line-height: 1.3;
@@ -1507,7 +1507,7 @@ img {
 }
 
 .page9__intro h2 {
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.5;
@@ -1546,7 +1546,7 @@ img {
     position: absolute;
     bottom: 1.5rem;
     left: 1.5rem;
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     text-decoration: underline;
@@ -1623,7 +1623,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     text-decoration: underline;
@@ -1756,7 +1756,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     line-height: 1.3;
@@ -1796,7 +1796,7 @@ img {
     color: var(--color-white);
     border: none;
     padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -1829,14 +1829,14 @@ img {
 }
 
 .page12__quotes-list p {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     margin: 0;
     color: var(--color-white);
 }
 
 .page12__quotes-list footer {
-    font-size: 0.75rem;
+    font-size: var(--fs-caption);
     color: var(--color-white);
     opacity: 0.8;
     margin: 0;
@@ -1893,12 +1893,12 @@ img {
 }
 
 .page13__arrow {
-    font-size: 2rem;
+    font-size: var(--fs-title-xl);
     color: var(--color-brand);
 }
 
 .page13__header h2 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: var(--fs-title-xl);
     font-weight: 800;
     color: var(--color-brand);
     margin: 0;
@@ -1936,7 +1936,7 @@ img {
     position: absolute;
     bottom: 0.5rem;
     left: 0.8rem;
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: var(--size-3xl);
     font-weight: 300;
     color: var(--color-white);
     line-height: 1;
@@ -1967,14 +1967,14 @@ img {
 }
 
 .page13__card-title {
-    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    font-size: var(--fs-body);
     font-weight: 700;
     margin: 0;
     color: var(--color-white);
 }
 
 .page13__card-subtitle {
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     margin: 0.2rem 0 0;
     color: var(--color-white);
@@ -2004,7 +2004,7 @@ img {
 }
 
 .page14__number {
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: var(--size-4xl);
     font-weight: 300;
     font-style: italic;
     color: #0e6469;
@@ -2012,7 +2012,7 @@ img {
 }
 
 .page14__title {
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     color: #0e6469;
     line-height: 1.6;
@@ -2107,7 +2107,7 @@ img {
 .page16__credit {
     text-align: center;
     padding: 0.8rem;
-    font-size: 0.75rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.02em;
@@ -2137,7 +2137,7 @@ img {
 }
 
 .page20__number {
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: var(--size-4xl);
     font-weight: 300;
     font-style: italic;
     color: var(--color-brand-btn);
@@ -2145,7 +2145,7 @@ img {
 }
 
 .page20__title {
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     color: var(--color-brand-btn);
     line-height: 1.6;
@@ -2204,7 +2204,7 @@ img {
 }
 
 .page24__header h2 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: var(--fs-title-xl);
     font-weight: 800;
     color: #7D5A00;
     margin: 0;
@@ -2236,7 +2236,7 @@ img {
 }
 .page27__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #D4A843;
     margin: 0 0 1rem 0;
@@ -2256,7 +2256,7 @@ img {
     display: block;
 }
 .page27__credit {
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     color: var(--color-text);
     margin: 0.5rem 0 0 0;
@@ -2286,7 +2286,7 @@ img {
 }
 .page58__banner-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     background-color: #7B4FBF;
     display: inline-block;
@@ -2326,14 +2326,14 @@ img {
     background-color: #E8C84A;
     color: #333;
     font-family: var(--font-primary);
-    font-size: 0.7rem;
+    font-size: var(--fs-credit);
     font-weight: 700;
     padding: 0.3rem 0.8rem;
     border-radius: 3px;
 }
 .page58__stars {
     color: #E8C84A;
-    font-size: 1rem;
+    font-size: var(--fs-subtitle);
     margin-bottom: 0.3rem;
     letter-spacing: 0.1em;
 }
@@ -2350,7 +2350,7 @@ img {
 }
 .page58__experience-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     margin: 0 0 0.5rem;
 }
@@ -2401,7 +2401,7 @@ img {
 }
 .page58__coming-soon {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     margin: 1rem 0 0;
     opacity: 0.7;
@@ -2467,7 +2467,7 @@ img {
 }
 .page60__section-title {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     font-style: italic;
     margin: 1.5rem 0 0.5rem;
@@ -2555,7 +2555,7 @@ img {
 }
 .page61__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: var(--color-white);
     margin: 0 0 0.5rem;
@@ -2576,7 +2576,7 @@ img {
 }
 .page61__faq-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     color: var(--color-white);
     margin: 1.5rem 0 0.8rem;
@@ -2736,7 +2736,7 @@ img {
 }
 .page57__main-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     letter-spacing: 0.1em;
     margin: 0;
@@ -2767,7 +2767,7 @@ img {
 }
 .page57__subtitle {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     margin: 0 0 1rem;
 }
@@ -2828,7 +2828,7 @@ img {
 }
 .page56__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     font-style: italic;
     color: var(--color-white);
@@ -2959,7 +2959,7 @@ img {
 }
 .page53__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     letter-spacing: 0.05em;
     margin: 0 0 0.3rem;
@@ -3059,7 +3059,7 @@ img {
 }
 .page52__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     font-style: italic;
     letter-spacing: 0.05em;
@@ -3141,7 +3141,7 @@ img {
 }
 .page51__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     letter-spacing: 0.1em;
     color: #8B5E3C;
@@ -3183,7 +3183,7 @@ img {
 }
 .page51__quote {
     font-family: var(--font-secondary);
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     font-style: italic;
     color: var(--color-white);
     line-height: 1.3;
@@ -3248,7 +3248,7 @@ img {
 }
 .page50__title {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-size: var(--size-3xl);
     font-style: italic;
     font-weight: 400;
     margin: 0 0 0.5rem;
@@ -3323,7 +3323,7 @@ img {
 }
 .page49__tagline {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     color: var(--color-brand);
     font-style: italic;
     margin: 0 0 0.3rem;
@@ -3398,7 +3398,7 @@ img {
 }
 .page48__title {
     font-family: var(--font-primary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 400;
     font-style: italic;
     margin: 0 0 0.5rem;
@@ -3414,7 +3414,7 @@ img {
 }
 .page48__subtitle--bold {
     font-weight: 700;
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     opacity: 1;
 }
 .page48__tagline {
@@ -3578,7 +3578,7 @@ img {
 }
 .page46__title {
     font-family: var(--font-secondary);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: var(--fs-title-xl);
     font-style: italic;
     font-weight: 400;
     color: var(--color-white);
@@ -3678,7 +3678,7 @@ img {
 }
 .page44__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     font-style: italic;
     margin: 0 0 0.8rem;
@@ -3770,7 +3770,7 @@ img {
 }
 .page43__award-title {
     font-family: var(--font-primary);
-    font-size: clamp(0.9rem, 2vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     letter-spacing: 0.1em;
     margin: 0 0 0.5rem;
@@ -3788,7 +3788,7 @@ img {
 }
 .page43__title {
     font-family: var(--font-primary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     font-style: italic;
     letter-spacing: 0.05em;
@@ -3912,14 +3912,14 @@ img {
 }
 .page40__title {
     font-family: var(--font-primary);
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     margin: 0;
     color: #3B3F72;
 }
 .page40__badge {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 300;
     color: rgba(59, 63, 114, 0.4);
     margin-left: 0.5rem;
@@ -3970,7 +3970,7 @@ img {
     position: absolute;
     bottom: 0.5rem;
     right: 1.5rem;
-    font-size: 0.7rem;
+    font-size: var(--fs-credit);
     color: rgba(100, 100, 100, 0.7);
     letter-spacing: 0.02em;
 }
@@ -4014,7 +4014,7 @@ img {
 }
 .page39__number {
     font-family: var(--font-primary);
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: var(--fs-hero);
     font-weight: 300;
     color: #6B6FA0;
     line-height: 1;
@@ -4022,7 +4022,7 @@ img {
 }
 .page39__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: var(--fs-title-xl);
     font-weight: 900;
     color: #3B3F72;
     text-transform: uppercase;
@@ -4032,7 +4032,7 @@ img {
 }
 .page39__subtitle {
     font-family: var(--font-secondary);
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     color: #6B6FA0;
     margin: 0.2rem 0 0;
 }
@@ -4118,14 +4118,14 @@ img {
 }
 .page38__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: var(--size-3xl);
     color: #7D5A00;
     opacity: 0.6;
     line-height: 1;
 }
 .page38__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.05em;
@@ -4188,13 +4188,13 @@ img {
     flex-direction: column;
 }
 .page37__category-arrow {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     color: #5C4200;
     margin: 0 0 0.3rem;
 }
 .page37__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.05em;
@@ -4204,7 +4204,7 @@ img {
 }
 .page37__letter {
     font-family: var(--font-secondary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--fs-hero);
     color: #7D5A00;
     opacity: 0.6;
 }
@@ -4223,7 +4223,7 @@ img {
     position: absolute;
     bottom: 1rem;
     right: 1.5rem;
-    font-size: 0.75rem;
+    font-size: var(--fs-caption);
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.02em;
 }
@@ -4261,14 +4261,14 @@ img {
 }
 .page36__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: var(--size-3xl);
     color: #7D5A00;
     opacity: 0.6;
     line-height: 1;
 }
 .page36__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4344,14 +4344,14 @@ img {
 }
 .page35__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: var(--size-3xl);
     color: #7D5A00;
     opacity: 0.6;
     line-height: 1;
 }
 .page35__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4394,7 +4394,7 @@ img {
 }
 .page35__overlay-name {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     letter-spacing: 0.3em;
     margin: 0 0 0.5rem;
@@ -4439,14 +4439,14 @@ img {
 }
 .page34__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: var(--size-3xl);
     color: #7D5A00;
     opacity: 0.6;
     line-height: 1;
 }
 .page34__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4528,14 +4528,14 @@ img {
 }
 .page33__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: var(--size-3xl);
     color: #7D5A00;
     opacity: 0.6;
     line-height: 1;
 }
 .page33__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4605,14 +4605,14 @@ img {
 }
 .page32__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: var(--fs-title);
     color: #7D5A00;
     opacity: 0.6;
     line-height: 1;
 }
 .page32__category-text {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4649,14 +4649,14 @@ img {
 }
 .page31__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: var(--size-4xl);
     color: #7D5A00;
     opacity: 0.6;
     line-height: 1;
 }
 .page31__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4764,7 +4764,7 @@ img {
     display: block;
 }
 .page26__credit {
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     color: var(--color-text);
     margin: 0.5rem 0 0 0;
@@ -4797,7 +4797,7 @@ img {
     position: absolute;
     top: 0.5rem;
     right: 1.5rem;
-    font-size: 0.75rem;
+    font-size: var(--fs-caption);
     color: rgba(255, 255, 255, 0.7);
     letter-spacing: 0.02em;
 }
@@ -4831,7 +4831,7 @@ img {
 }
 .page25__gallery-caption {
     grid-column: 1 / -1;
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     color: var(--color-text);
     padding: 0.5rem 0;
@@ -4847,14 +4847,14 @@ img {
 }
 .page25__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: var(--size-4xl);
     color: #7D5A00;    /* 3.89:1 sur gold — OK grand texte WCAG AA */
     opacity: 0.6;
     line-height: 1;
 }
 .page25__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;    /* 5.80:1 sur gold — WCAG AA */
     letter-spacing: 0.1em;
@@ -4923,7 +4923,7 @@ img {
     z-index: 2;
 }
 .page23__number {
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: var(--size-4xl);
     font-weight: 300;
     font-style: italic;
     color: #7D5A00;
@@ -4931,7 +4931,7 @@ img {
     display: block;
 }
 .page23__title {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: var(--fs-title-xl);
     font-weight: 900;
     color: #D4A843;
     line-height: 1.3;
