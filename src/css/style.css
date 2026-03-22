@@ -1088,6 +1088,7 @@ img {
     font-weight: 400;
     font-style: italic;
     line-height: 1.5;
+    text-shadow: var(--shadow-text);
 }
 
 .page3__project-meta {
@@ -1442,6 +1443,7 @@ img {
     width: 100%;
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste texte blanc sur image */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2709,6 +2711,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste texte blanc sur image */
 }
 .page62__background {
     position: absolute;
@@ -2740,6 +2743,7 @@ img {
     margin: 0 0 1.5rem;
 }
 .page62__title {
+    text-shadow: var(--shadow-text);
     font-family: var(--font-primary);
     font-size: var(--fs-slide-subtitle);
     font-weight: 400;
@@ -2749,6 +2753,7 @@ img {
     text-underline-offset: 4px;
 }
 .page62__email {
+    text-shadow: var(--shadow-text);
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     color: var(--color-white);
@@ -2757,6 +2762,7 @@ img {
     margin-bottom: 2rem;
 }
 .page62__address {
+    text-shadow: var(--shadow-text);
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     font-style: normal;
@@ -2893,6 +2899,7 @@ img {
 .page56 {
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-bg-red); /* a11y : fallback pour outils de contraste */
     background: linear-gradient(180deg, var(--color-bg-red) 0%, var(--color-red-mid) 100%);
     display: flex;
     flex-direction: column;
@@ -3031,6 +3038,7 @@ img {
     justify-content: space-between;
     padding: 2rem var(--slide-pad-x);
     color: var(--color-white);
+    background-color: inherit; /* a11y : herite du fond rouge parent pour outils de contraste */
 }
 .page53__title {
     font-family: var(--font-primary);
@@ -3046,6 +3054,7 @@ img {
     margin: 0;
 }
 .page53__description {
+    text-shadow: var(--shadow-text);
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     line-height: 1.5;
@@ -3145,6 +3154,7 @@ img {
     font-size: var(--fs-slide-body);
     font-style: italic;
     margin: 0;
+    text-shadow: var(--shadow-text);
 }
 .page52__venue {
     overflow: hidden;
@@ -3494,7 +3504,7 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     font-style: italic;
-    color: var(--color-red-light);
+    color: var(--color-bg-red); /* a11y : #BE2F31 ratio 5.77:1 au lieu de #F06060 3.21:1 */
     margin: 0.3rem 0 0;
 }
 .page48__logos {
@@ -4286,6 +4296,7 @@ img {
     display: block;
 }
 .page37__credit {
+    text-shadow: var(--shadow-text);
     position: absolute;
     bottom: 1rem;
     right: 1.5rem;
@@ -4850,6 +4861,7 @@ img {
 .page25__panoramic {
     position: relative;
     overflow: hidden;
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste credit blanc sur image */
 }
 .page25__panoramic-image {
     width: 100%;
