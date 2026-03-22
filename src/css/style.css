@@ -812,21 +812,13 @@ a.page13__card--link:focus-visible {
 }
 
 .sitemap-page__list a {
-    color: var(--color-gray-dark);
+    color: var(--color-black);
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .sitemap-page__list a:hover {
     color: var(--color-brand-btn);
-}
-
-.sitemap-page__list strong {
-    display: block;
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-2xs);
-    color: var(--color-gray-medium);
-    font-size: var(--fs-caption);
 }
 
 /* ============================================================
