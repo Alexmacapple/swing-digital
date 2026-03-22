@@ -88,7 +88,7 @@
     --color-indigo-light: #6B6FA0;
     --color-indigo-dark: #4A4E82;
     --color-violet: #7B4FBF;
-    --color-teal: #0e6469;
+    --color-teal: #2da1bc;          /* WCAG AA large text : 3.03:1 sur blanc */
     --color-brown: #8B5E3C;
     --color-text-gold-dark: #5C4800;
     --color-text-gold-darker: #5C4200;
@@ -272,8 +272,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-secondary);
-    font-weight: 700;
+    font-family: var(--font-primary);
+    font-weight: 900;
     line-height: 1.3;
     margin-bottom: var(--space-md);
     letter-spacing: -0.01em;
@@ -432,7 +432,7 @@ img {
     justify-content: center;
     gap: 0.6rem;
     min-height: 48px;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
@@ -543,7 +543,7 @@ img {
     line-height: 1.3;
     margin: 0 0 var(--space-sm) 0;
     letter-spacing: -0.5px;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -988,17 +988,7 @@ img {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
-/* Liens textuels : soulignement anime */
-a:not([class*="btn"]):not([class*="card"]):not([class*="nav"]):not([class*="logo"]) {
-    text-decoration-color: transparent;
-    text-decoration-line: underline;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color 0.3s ease, color 0.3s ease;
-}
-
-a:not([class*="btn"]):not([class*="card"]):not([class*="nav"]):not([class*="logo"]):hover {
-    text-decoration-color: currentColor;
-}
+/* Liens textuels : soulignement visible en permanence (RGAA 10.6) */
 
 /* Titres de categorie : barre doree animee */
 [class*="__category"] {
@@ -1102,6 +1092,7 @@ section + section {
 .team__container h2 {
     color: var(--color-white);
     text-align: center;
+    font-family: var(--font-primary);
     font-size: var(--fs-title-xl);
     margin-bottom: var(--space-sm-tight);
     text-transform: uppercase;
@@ -1174,7 +1165,7 @@ section + section {
     margin: 0;
     margin-bottom: 0.25rem;
     font-weight: 400;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     letter-spacing: 0.5px;
 }
 
@@ -1185,7 +1176,7 @@ section + section {
     margin: 0 0 var(--space-xs) 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
 }
 
 .team__member-role {
@@ -1559,7 +1550,7 @@ section + section {
 
 .page5__title {
     font-size: var(--fs-title);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--color-white);
     line-height: 1.3;
     margin: 0;
@@ -1636,7 +1627,7 @@ section + section {
 
 .page6__title {
     font-size: var(--fs-title);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--color-white);
     line-height: 1.3;
     margin: 0;
@@ -1695,7 +1686,7 @@ section + section {
 
 .page6__section-title {
     font-size: var(--fs-subtitle);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--color-white);
     line-height: 1.5;
     margin: 0 0 var(--space-xs) 0;
@@ -1761,9 +1752,9 @@ section + section {
 }
 
 .partners-page__title {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-title);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--color-white);
     margin: 0 0 var(--space-sm) 0;
     line-height: 1.3;
@@ -1841,12 +1832,16 @@ section + section {
     padding: var(--slide-pad-y) var(--slide-pad-x) 0;
 }
 
-.page9__hashtags p {
-    font-size: var(--fs-body);
-    font-weight: 400;
+.page9__hashtags h2 {
+    font-size: var(--fs-title);
+    font-weight: 900;
     letter-spacing: 1px;
     margin: 0;
     color: var(--color-white);
+    line-height: 1.3;
+    border-bottom: 2px solid var(--color-white);
+    padding-bottom: var(--space-xs);
+    display: inline-block;
 }
 
 .page9__badge {
@@ -1864,9 +1859,9 @@ section + section {
     padding: var(--slide-pad-y) var(--slide-pad-x);
 }
 
-.page9__intro h2 {
-    font-size: var(--fs-subtitle);
-    font-weight: 700;
+.page9__intro-text {
+    font-size: var(--fs-title);
+    font-weight: 400;
     color: var(--color-white);
     line-height: 1.7;
     margin: 0;
@@ -1903,15 +1898,16 @@ section + section {
 
 .page9__card-title {
     position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: var(--fs-subtitle);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 4px;
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
 
 /* ============================================================
@@ -1985,7 +1981,7 @@ section + section {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: var(--fs-subtitle);
-    font-weight: 700;
+    font-weight: 900;
     color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -2411,7 +2407,8 @@ section + section {
 
 .page14__actress {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 100%;
     object-fit: contain;
     object-position: bottom left;
 }
@@ -2721,7 +2718,7 @@ section + section {
     margin-top: var(--space-xs);
 }
 .page58__reserve-label {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-white);
 }
@@ -2732,18 +2729,18 @@ section + section {
     margin: 0 0 var(--space-xs);
 }
 .page58__experience-desc {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-sm-tight);
 }
 .page58__duration {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 var(--space-2xs);
 }
 .page58__langs {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     margin: 0 0 var(--space-sm-tight);
 }
@@ -2754,7 +2751,7 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page58__tarifs-list {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     padding-left: var(--space-sm);
     margin: 0 0 var(--space-sm-tight);
@@ -2791,12 +2788,12 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page58__newsletter-text {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     margin: 0 0 var(--space-xs);
 }
 .page58__newsletter-list {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     padding-left: var(--space-sm);
     margin: 0 0 var(--space-sm-tight);
@@ -2849,7 +2846,7 @@ section + section {
 }
 .page60__checklist,
 .page60__list {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     padding-left: 0;
     margin: 0 0 var(--space-sm-tight);
@@ -2861,7 +2858,7 @@ section + section {
     margin-right: var(--space-xs);
 }
 .page60__paragraph {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-xs);
@@ -2930,13 +2927,13 @@ section + section {
     margin: 0 0 var(--space-xs);
 }
 .page61__intro {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-white);
     margin: 0 0 var(--space-sm-tight);
 }
 .page61__paragraph {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-white);
     line-height: 1.7;
@@ -2960,7 +2957,7 @@ section + section {
     margin: 0.6rem 0 0.1rem;
 }
 .page61__faq dd {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-white);
     margin: 0 0 0 var(--space-sm);
@@ -3049,7 +3046,7 @@ section + section {
 }
 .page62__address {
     text-shadow: var(--shadow-text);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     font-style: normal;
     line-height: 1.7;
@@ -3126,7 +3123,7 @@ section + section {
     right: 0;
     background-color: var(--color-bg-red);
     padding: var(--space-2xs) 0.6rem;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     border-radius: 2px;
 }
@@ -3148,14 +3145,14 @@ section + section {
 }
 .page57__paragraph {
     background-color: var(--color-bg-red); /* a11y */
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-sm-tight);
 }
 .page57__tags {
     background-color: var(--color-bg-red); /* a11y */
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 var(--space-sm);
 }
@@ -3296,7 +3293,7 @@ section + section {
     flex-shrink: 0;
 }
 .page54__paragraph {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-xs);
@@ -3342,14 +3339,14 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page53__category {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     margin: 0;
 }
 .page53__description {
     background-color: inherit; /* a11y */
     text-shadow: var(--shadow-text);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     letter-spacing: 0.02em;
@@ -3388,7 +3385,7 @@ section + section {
     background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     border-radius: 2px;
 }
@@ -3446,7 +3443,7 @@ section + section {
     text-shadow: var(--shadow-text);
 }
 .page52__subtitle {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     margin: 0;
     text-shadow: var(--shadow-text);
@@ -3476,7 +3473,7 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page52__spec-text {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-gray-medium);
     line-height: 1.7;
@@ -3527,14 +3524,14 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page51__category {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-brown);
     letter-spacing: 0.05em;
     margin: 0 0 var(--space-md);
 }
 .page51__description {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-gray-medium);
     line-height: 1.7;
@@ -3562,7 +3559,7 @@ section + section {
     text-align: right;
 }
 .page51__quote {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-title);
     color: var(--color-white);
     line-height: 1.5;
@@ -3622,18 +3619,18 @@ section + section {
     background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     border-radius: 2px;
 }
 .page50__title {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-3xl);
     font-weight: 400;
     margin: 0 0 var(--space-xs);
 }
 .page50__subtitle {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     margin: 0 0 var(--space-2xs);
 }
@@ -3644,7 +3641,7 @@ section + section {
     margin: 0 0 0.2rem;
 }
 .page50__tags {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     margin: 0 0 var(--space-sm);
 }
@@ -3707,7 +3704,7 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page49__description {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-gray-medium);
     line-height: 1.7;
@@ -3759,7 +3756,7 @@ section + section {
     background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     border-radius: 2px;
 }
@@ -3783,7 +3780,7 @@ section + section {
     font-weight: 900;
 }
 .page48__subtitle {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     margin: 0 0 var(--space-2xs);
 }
@@ -3793,7 +3790,7 @@ section + section {
     opacity: 1;
 }
 .page48__tagline {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     color: var(--color-brand-light); /* a11y : #F49C9E ratio 7.12:1 sur fond navy #1a2744 */
     margin: var(--space-2xs) 0 0;
@@ -3854,13 +3851,13 @@ section + section {
     color: var(--color-white);
 }
 .page47__paragraph {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-sm-tight);
 }
 .page47__credit {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-white);
     margin: 0 0 var(--space-2xs);
@@ -3953,7 +3950,7 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page46__title {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-title-xl);
     font-weight: 400;
     color: var(--color-white);
@@ -3963,7 +3960,7 @@ section + section {
 .page46__vimeo-link {
     display: inline-block;
     color: var(--color-white);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     text-decoration: underline;
     margin-bottom: var(--space-sm-tight);
@@ -3977,7 +3974,7 @@ section + section {
     background-color: var(--color-brand-red-dark);
     color: var(--color-white);
     padding: 0.4rem var(--space-sm-tight);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     border-radius: 2px;
     flex-shrink: 0;
@@ -4058,17 +4055,17 @@ section + section {
     margin: 0 0 var(--space-sm-tight);
 }
 .page44__description {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     margin: 0 0 var(--space-sm);
 }
 .page44__tags {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 var(--space-sm);
 }
 .page44__awards {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     margin: 0;
 }
@@ -4129,7 +4126,7 @@ section + section {
     background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: 0.4rem var(--space-sm-tight);
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     border-radius: 2px;
 }
@@ -4145,7 +4142,7 @@ section + section {
     margin: 0 0 var(--space-xs);
 }
 .page43__award-text {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     letter-spacing: 0.15em;
     line-height: 1.7;
@@ -4162,7 +4159,7 @@ section + section {
     margin: 0 0 var(--space-2xs);
 }
 .page43__subtitle {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     letter-spacing: 0.1em;
     margin: 0;
@@ -4297,7 +4294,7 @@ section + section {
     flex-shrink: 0;
 }
 .page40__description {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-white);
     margin: 0 0 var(--space-sm);
@@ -4315,7 +4312,7 @@ section + section {
     margin: 0 0 0.2rem;
 }
 .page40__spec-detail {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-white);
     margin: 0;
@@ -4396,7 +4393,7 @@ section + section {
     margin: 0;
 }
 .page39__subtitle {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-title);
     color: var(--color-indigo-light);
     margin: 0.2rem 0 0;
@@ -4408,7 +4405,7 @@ section + section {
     margin: var(--space-md) 0;
 }
 .page39__description {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-gray-medium);
     line-height: 1.7;
@@ -4481,7 +4478,7 @@ section + section {
     margin-bottom: var(--space-lg);
 }
 .page38__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-3xl);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -4497,7 +4494,7 @@ section + section {
     margin: 0;
 }
 .page38__subtitle {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     color: var(--color-text-gold-darker);
     margin: 0;
@@ -4566,7 +4563,7 @@ section + section {
     margin: 0;
 }
 .page37__letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-hero);
     color: var(--color-text-gold-dark);
 }
@@ -4624,7 +4621,7 @@ section + section {
     gap: var(--space-sm);
 }
 .page36__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-3xl);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -4706,7 +4703,7 @@ section + section {
     padding: var(--space-md) var(--slide-pad-x);
 }
 .page35__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-3xl);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -4724,7 +4721,7 @@ section + section {
     padding: var(--space-sm) var(--slide-pad-x) var(--space-md);
 }
 .page35__caption-label {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-text-gold-darker);
     margin: 0;
@@ -4765,7 +4762,7 @@ section + section {
     text-shadow: 0 2px 8px var(--shadow-overlay-medium);
 }
 .page35__overlay-desc {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     margin: 0;
     text-shadow: 0 1px 4px var(--shadow-overlay-medium);
@@ -4801,7 +4798,7 @@ section + section {
     gap: var(--space-sm);
 }
 .page34__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-3xl);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -4838,7 +4835,7 @@ section + section {
     flex-shrink: 0;
 }
 .page34__caption-label {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-text-gold-darker);
     margin: 0;
@@ -4888,7 +4885,7 @@ section + section {
     padding: var(--space-md) var(--slide-pad-x);
 }
 .page33__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-3xl);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -5046,7 +5043,7 @@ section + section {
     padding: var(--space-sm-tight) var(--slide-pad-x);
 }
 .page32__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--fs-title);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -5089,7 +5086,7 @@ section + section {
     padding: var(--space-lg) var(--slide-pad-x);
 }
 .page31__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-4xl);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -5286,7 +5283,7 @@ section + section {
     padding: var(--space-lg) var(--slide-pad-x);
 }
 .page25__category-letter {
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: var(--size-4xl);
     color: var(--color-text-gold-dark);
     line-height: 1.3;
@@ -5752,11 +5749,11 @@ section + section {
    ============================================================ */
 
 @media (max-width: 1024px) {
-    .page9__hashtags p {
+    .page9__hashtags h2 {
         font-size: var(--fs-caption);
     }
 
-    .page9__intro h2 {
+    .page9__intro-text {
         font-size: var(--fs-body);
     }
 
@@ -5770,7 +5767,7 @@ section + section {
         padding: var(--slide-pad-y) var(--slide-pad-x) 0;
     }
 
-    .page9__hashtags p {
+    .page9__hashtags h2 {
         font-size: var(--fs-credit);
         letter-spacing: 0.5px;
     }
@@ -5784,7 +5781,7 @@ section + section {
         padding: var(--space-sm-tight) var(--slide-pad-x);
     }
 
-    .page9__intro h2 {
+    .page9__intro-text {
         font-size: var(--fs-caption);
         line-height: 1.7;
     }
@@ -5795,7 +5792,7 @@ section + section {
 }
 
 @media (max-width: 480px) {
-    .page9__hashtags p {
+    .page9__hashtags h2 {
         font-size: var(--fs-credit);
     }
 
@@ -5804,7 +5801,7 @@ section + section {
         padding: 0.4rem var(--space-xs);
     }
 
-    .page9__intro h2 {
+    .page9__intro-text {
         font-size: var(--fs-caption);
     }
 
