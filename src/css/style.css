@@ -3414,7 +3414,7 @@ section + section {
 
 .page62 {
     position: relative;
-    min-height: var(--section-height);
+    height: var(--section-height);
     overflow: hidden;
     background-color: var(--color-black); /* a11y : fond explicite pour contraste texte blanc sur image */
 }
