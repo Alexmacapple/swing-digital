@@ -698,10 +698,9 @@ a.page13__card--link:focus-visible {
 }
 
 .page58__reserve-notice {
-    font-size: var(--fs-caption);
+    font-size: var(--fs-body);
     color: var(--color-white);
     margin-top: var(--space-xs);
-    font-style: italic;
 }
 
 /* ============================================================
