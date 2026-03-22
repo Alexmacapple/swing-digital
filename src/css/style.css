@@ -270,7 +270,7 @@ body {
     line-height: 1.8;
     letter-spacing: 0.015em;
     color: var(--color-text);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     hanging-punctuation: first last;
 }
 
@@ -2182,7 +2182,7 @@ section:hover [class*="__category"]::after {
 }
 
 #page-4 .page3__right--text .page3__left {
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
 }
 
@@ -2501,7 +2501,7 @@ section:hover [class*="__category"]::after {
     position: relative;
     width: 100%;
     min-height: var(--section-height);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     padding: 0;
 }
 
@@ -2557,7 +2557,7 @@ section:hover [class*="__category"]::after {
     position: relative;
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
 }
 
 .page9__background {
@@ -2678,7 +2678,7 @@ section:hover [class*="__category"]::after {
     position: relative;
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
 }
 
 .page10__background {
@@ -2941,11 +2941,11 @@ section:hover [class*="__category"]::after {
 }
 
 .page12__disclosure-btn:hover {
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
 }
 
 .page12__disclosure-btn[aria-expanded="true"] {
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
 }
 
 .page12__quotes {
@@ -3609,7 +3609,7 @@ section:hover [class*="__category"]::after {
 .page60 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
 }
 .page60__layout {
@@ -3681,7 +3681,7 @@ section:hover [class*="__category"]::after {
 .page61 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -3701,7 +3701,7 @@ section:hover [class*="__category"]::after {
 }
 .page61__mail-link {
     color: var(--color-white);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     padding: 0.1rem 0.4rem;
     text-decoration: underline;
     font-weight: 700;
@@ -3912,7 +3912,7 @@ section:hover [class*="__category"]::after {
 .page57 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red); /* a11y : fallback pour outils de contraste */
+    background-color: var(--color-black); /* a11y : fallback pour outils de contraste */
     background: linear-gradient(135deg, var(--color-bg-red) 0%, var(--color-red-mid) 50%, var(--color-bg-red) 100%);
     position: relative;
 }
@@ -3944,7 +3944,7 @@ section:hover [class*="__category"]::after {
     background-color: inherit; /* a11y : herite fond rouge pour outils de contraste */
 }
 .page57__main-title {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-black); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
@@ -3961,7 +3961,7 @@ section:hover [class*="__category"]::after {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     padding: var(--space-2xs) 0.6rem;
     font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
@@ -3977,21 +3977,21 @@ section:hover [class*="__category"]::after {
     align-items: center;
 }
 .page57__subtitle {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-black); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
     margin: 0 0 var(--space-sm);
 }
 .page57__paragraph {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-black); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-sm-tight);
 }
 .page57__tags {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-black); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 var(--space-sm);
@@ -4004,7 +4004,7 @@ section:hover [class*="__category"]::after {
     border-radius: 4px;
 }
 .page57__cta {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-black); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 700;
@@ -4030,7 +4030,7 @@ section:hover [class*="__category"]::after {
 .page56 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red); /* a11y : fallback pour outils de contraste */
+    background-color: var(--color-black); /* a11y : fallback pour outils de contraste */
     background: linear-gradient(180deg, var(--color-bg-red) 0%, var(--color-red-mid) 100%);
     display: flex;
     flex-direction: column;
@@ -4070,7 +4070,7 @@ section:hover [class*="__category"]::after {
     display: flex;
     align-items: flex-end;
     padding-bottom: var(--space-sm);
-    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page56__bio p {
     font-family: var(--font-primary);
@@ -4103,7 +4103,7 @@ section:hover [class*="__category"]::after {
 .page54 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     display: flex;
     flex-direction: column;
 }
@@ -4158,7 +4158,7 @@ section:hover [class*="__category"]::after {
 .page53 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     display: grid;
     grid-template-columns: 45% 55%;
 }
@@ -4171,7 +4171,7 @@ section:hover [class*="__category"]::after {
     background-color: inherit; /* a11y : herite du fond rouge parent pour outils de contraste */
 }
 .page53__title {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-black); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--size-lg);
     font-weight: 900;
@@ -4219,7 +4219,7 @@ section:hover [class*="__category"]::after {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
     font-family: var(--font-primary);
@@ -4453,7 +4453,7 @@ section:hover [class*="__category"]::after {
     position: absolute;
     top: var(--slide-pad-y);
     right: var(--slide-pad-x);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
     font-family: var(--font-primary);
@@ -4590,7 +4590,7 @@ section:hover [class*="__category"]::after {
     position: absolute;
     top: 1rem;
     right: var(--slide-pad-x);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
     font-family: var(--font-primary);
@@ -4667,7 +4667,7 @@ section:hover [class*="__category"]::after {
 .page47 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     display: flex;
     flex-direction: column;
 }
@@ -4764,7 +4764,7 @@ section:hover [class*="__category"]::after {
 .page46 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     display: flex;
     flex-direction: column;
 }
@@ -4875,7 +4875,7 @@ section:hover [class*="__category"]::after {
     display: block;
 }
 .page44__text {
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
     padding: var(--space-lg) var(--slide-pad-x);
     display: flex;
@@ -4957,7 +4957,7 @@ section:hover [class*="__category"]::after {
     position: absolute;
     top: var(--slide-pad-y);
     right: var(--slide-pad-x);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
     padding: 0.4rem var(--space-sm-tight);
     font-family: var(--font-primary);
