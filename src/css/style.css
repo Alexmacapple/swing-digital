@@ -3926,7 +3926,7 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 300;
-    color: rgba(59, 63, 114, 0.4);
+    color: #6B6FA0;
     margin-left: 0.5rem;
 }
 .page40__info {
@@ -4124,8 +4124,7 @@ img {
 .page38__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #7D5A00;
-    opacity: 0.6;
+    color: #5C4800;
     line-height: 1;
 }
 .page38__title {
@@ -4267,8 +4266,7 @@ img {
 .page36__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #7D5A00;
-    opacity: 0.6;
+    color: #5C4800;
     line-height: 1;
 }
 .page36__category-title {
@@ -4350,8 +4348,7 @@ img {
 .page35__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #7D5A00;
-    opacity: 0.6;
+    color: #5C4800;
     line-height: 1;
 }
 .page35__category-title {
@@ -4445,8 +4442,7 @@ img {
 .page34__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #7D5A00;
-    opacity: 0.6;
+    color: #5C4800;
     line-height: 1;
 }
 .page34__category-title {
@@ -4534,8 +4530,7 @@ img {
 .page33__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #7D5A00;
-    opacity: 0.6;
+    color: #5C4800;
     line-height: 1;
 }
 .page33__category-title {
@@ -4611,8 +4606,7 @@ img {
 .page32__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--fs-title);
-    color: #7D5A00;
-    opacity: 0.6;
+    color: #5C4800;
     line-height: 1;
 }
 .page32__category-text {
@@ -4655,8 +4649,7 @@ img {
 .page31__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-4xl);
-    color: #7D5A00;
-    opacity: 0.6;
+    color: #5C4800;
     line-height: 1;
 }
 .page31__category-title {
