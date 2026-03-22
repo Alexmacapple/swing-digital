@@ -621,7 +621,7 @@ img {
 
 .breadcrumb {
     background-color: var(--color-brand-btn);
-    padding: 0.4rem var(--slide-pad-x);
+    padding: 0.4rem 0;
     margin-top: var(--header-height);
 }
 
@@ -635,6 +635,7 @@ img {
     padding: 0;
     max-width: var(--page-max-width);
     margin: 0 auto;
+    padding: 0 var(--slide-pad-x);
     font-family: var(--font-primary);
     font-size: var(--fs-caption);
 }
