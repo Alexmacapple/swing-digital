@@ -3826,8 +3826,6 @@ section:hover [class*="__category"]::after {
     font-weight: 400;
     letter-spacing: 0.2em;
     margin: 0 0 var(--space-md);
-    text-decoration: underline;
-    text-underline-offset: 4px;
 }
 .page62__email {
     text-shadow: var(--shadow-text);
