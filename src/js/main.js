@@ -612,18 +612,34 @@ function initContactVideo() {
         btn.classList.remove('page62__play-btn--playing');
     }
 
-    // Autoplay quand la section devient visible
+    // Lancer la video — immediatement si deja visible, sinon au scroll
+    var section = video.closest('section') || video;
+
+    function startVideo() {
+        video.play().then(function() {
+            setPlaying();
+        }).catch(function() {
+            // Autoplay bloque par le navigateur, le bouton reste disponible
+        });
+    }
+
+    // Verifier si la section est deja visible (navigation directe via ancre)
+    var rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        startVideo();
+    }
+
+    // Observer pour le scroll
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                video.play();
-                setPlaying();
+                startVideo();
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.1 });
 
-    observer.observe(video.closest('section') || video);
+    observer.observe(section);
 
     // Bouton play/pause
     btn.addEventListener('click', function() {
