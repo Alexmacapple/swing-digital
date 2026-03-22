@@ -1789,6 +1789,16 @@ section + section {
     background-color: var(--color-brand-btn); /* a11y : explicite pour les outils de contraste (4.86:1) */
 }
 
+.page3__project-meta a {
+    color: var(--color-white);
+    text-underline-offset: 0.2em;
+}
+
+.page3__project-meta a:hover {
+    color: var(--color-white);
+    text-decoration-thickness: 2px;
+}
+
 .page3__project--secondary {
     margin-top: 1.2rem;
     padding-top: 1.2rem;
