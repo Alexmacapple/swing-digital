@@ -3453,7 +3453,7 @@ section + section {
     position: absolute;
     bottom: var(--space-md);
     right: var(--space-md);
-    z-index: 2;
+    z-index: 10;
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid var(--color-white);
     border-radius: 50%;
@@ -3487,6 +3487,7 @@ section + section {
 .page62__container {
     position: relative;
     z-index: 2;
+    pointer-events: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3497,6 +3498,12 @@ section + section {
     padding: var(--slide-pad-y) var(--slide-pad-x);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
+.page62__container a,
+.page62__container button,
+.page62__container address {
+    pointer-events: auto;
+}
+
 .page62__brand {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
