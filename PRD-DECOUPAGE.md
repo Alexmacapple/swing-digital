@@ -674,6 +674,12 @@ Pas de redirection. Les anciennes ancres `#page-N` ne seront plus valides.
 | Toutes pages (breadcrumb) | Parents hiérarchiques | Fil d'Ariane | Navigation |
 | Toutes pages (menu) | 4 sections + dropdown | Menu principal | Navigation |
 
+### Liens CTA Réservation depuis les pages projet
+
+**Décision** : aucun CTA Réserver sur les pages projet pour l'instant. La navigation vers les réservations se fait via le menu principal uniquement.
+
+**À prévoir (post-découpage)** : ajouter des CTA Réserver sur les pages projet concernées (Toulouse-Lautrec, Marilyn, XR Corporate, Monroe) quand les liens de billetterie seront définis.
+
 ### Navigation entre sous-pages Monroe
 Pas de navigation directe entre sous-pages Monroe (pas de Précédent/Suivant). On navigue via :
 - Le breadcrumb (retour à `experience-monroe.html`)
