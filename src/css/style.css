@@ -644,17 +644,16 @@ img {
 .breadcrumb__item + .breadcrumb__item::before {
     content: ">";
     margin: 0 0.5rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-white);
 }
 
 .breadcrumb__link {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-white);
     text-decoration: none;
 }
 
 .breadcrumb__link:hover {
     text-decoration: underline;
-    color: var(--color-white);
 }
 
 .breadcrumb__link[aria-current="page"] {
