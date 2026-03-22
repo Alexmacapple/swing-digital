@@ -110,12 +110,23 @@
                     </div>
 
                     <div class="sitemap-page__right">
-                        <video class="sitemap-page__video"
-                               autoplay loop muted playsinline
-                               role="img"
-                               aria-label="Vidéo d'ambiance Swing Digital">
-                            <source src="video/hero.mp4" type="video/mp4">
-                        </video>
+                        <div class="sitemap-page__video-wrapper">
+                            <video id="sitemap-video" class="sitemap-page__video"
+                                   autoplay loop muted playsinline
+                                   role="img"
+                                   aria-label="Vidéo d'ambiance Swing Digital">
+                                <source src="video/hero.mp4" type="video/mp4">
+                            </video>
+                            <button id="sitemap-video-btn" class="sitemap-page__play-btn" type="button" aria-label="Mettre en pause la vidéo d'ambiance du plan du site">
+                                <svg class="sitemap-page__play-icon sitemap-page__play-icon--playing" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                                    <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                                    <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+                                </svg>
+                                <svg class="sitemap-page__play-icon sitemap-page__play-icon--paused" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                 </div>

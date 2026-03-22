@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initDisabledCTA();
     initHeaderSpacing();
     initContactVideo();
+    initSitemapVideo();
 });
 
 /**
@@ -624,6 +625,27 @@ function initContactVideo() {
         } else {
             video.pause();
             setPaused();
+        }
+    });
+}
+
+/**
+ * Video plan du site — play/pause
+ */
+function initSitemapVideo() {
+    var video = document.getElementById('sitemap-video');
+    var btn = document.getElementById('sitemap-video-btn');
+    if (!video || !btn) return;
+
+    btn.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            btn.classList.remove('sitemap-page__play-btn--paused');
+            btn.setAttribute('aria-label', 'Mettre en pause la vidéo d\'ambiance du plan du site');
+        } else {
+            video.pause();
+            btn.classList.add('sitemap-page__play-btn--paused');
+            btn.setAttribute('aria-label', 'Lancer la vidéo d\'ambiance du plan du site');
         }
     });
 }
