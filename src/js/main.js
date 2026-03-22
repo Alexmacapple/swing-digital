@@ -612,20 +612,9 @@ function initContactVideo() {
         btn.classList.remove('page62__play-btn--playing');
     }
 
-    // Synchroniser l'etat du bouton avec la video (autoplay dans le HTML)
-    // La video demarre via autoplay muted, on met a jour le bouton
-    video.addEventListener('playing', function() {
-        setPlaying();
-    });
-
-    video.addEventListener('pause', function() {
-        setPaused();
-    });
-
-    // Si la video joue deja (autoplay reussi)
-    if (!video.paused) {
-        setPlaying();
-    }
+    // Video en pause par defaut — ne demarre qu'au clic sur le bouton
+    video.pause();
+    setPaused();
 
     // Bouton play/pause
     btn.addEventListener('click', function() {
