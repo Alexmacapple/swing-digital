@@ -3458,13 +3458,13 @@ section + section {
     outline-offset: 2px;
 }
 
-/* Paused : triangle visible, barres masquees */
-.page62__play-btn[aria-pressed="false"] .page62__play-icon--playing { display: none; }
-.page62__play-btn[aria-pressed="false"] .page62__play-icon--paused { display: block; }
+/* Paused (defaut) : triangle visible, barres masquees */
+.page62__play-icon--playing { display: none; }
+.page62__play-icon--paused { display: block; }
 
 /* Playing : barres visibles, triangle masque */
-.page62__play-btn[aria-pressed="true"] .page62__play-icon--playing { display: block; }
-.page62__play-btn[aria-pressed="true"] .page62__play-icon--paused { display: none; }
+.page62__play-btn--playing .page62__play-icon--playing { display: block; }
+.page62__play-btn--playing .page62__play-icon--paused { display: none; }
 
 .page62__container {
     position: relative;

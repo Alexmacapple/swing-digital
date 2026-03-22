@@ -599,13 +599,25 @@ function initContactVideo() {
     var btn = document.getElementById('contact-video-btn');
     if (!video || !btn) return;
 
+    var labelPlay = 'Lancer la vidéo d\'ambiance de la section Contact';
+    var labelPause = 'Mettre en pause la vidéo d\'ambiance de la section Contact';
+
+    function setPlaying() {
+        btn.setAttribute('aria-label', labelPause);
+        btn.classList.add('page62__play-btn--playing');
+    }
+
+    function setPaused() {
+        btn.setAttribute('aria-label', labelPlay);
+        btn.classList.remove('page62__play-btn--playing');
+    }
+
     // Autoplay quand la section devient visible
     var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 video.play();
-                btn.setAttribute('aria-pressed', 'true');
-                btn.setAttribute('aria-label', 'Mettre en pause la vidéo');
+                setPlaying();
                 observer.unobserve(entry.target);
             }
         });
@@ -617,12 +629,10 @@ function initContactVideo() {
     btn.addEventListener('click', function() {
         if (video.paused) {
             video.play();
-            btn.setAttribute('aria-pressed', 'true');
-            btn.setAttribute('aria-label', 'Mettre en pause la vidéo');
+            setPlaying();
         } else {
             video.pause();
-            btn.setAttribute('aria-pressed', 'false');
-            btn.setAttribute('aria-label', 'Lancer la vidéo');
+            setPaused();
         }
     });
 }
