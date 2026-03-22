@@ -102,6 +102,40 @@ Chaque page a un prefixe unique. Les elements suivent la convention BEM.
 | 22 | `page21` | `.page21` |
 | 23 | `page23` | `.page23` |
 | 24 | `page24` | `.page24` |
+| 25 | `page25` | `.page25` |
+| 26 | `full-image-page` | `.full-image-page` |
+| 27-30 | `page27` | `.page27` |
+| 31 | `page31` | `.page31` |
+| 32 | `page32` | `.page32` |
+| 33 | `page33` | `.page33` |
+| 34 | `page34` | `.page34` |
+| 35 | `page35` | `.page35` |
+| 36 | `page36` | `.page36` |
+| 37 | `page37` | `.page37` |
+| 38 | `page38` | `.page38` |
+| 39 | `page39` | `.page39` |
+| 40 | `page40` | `.page40` |
+| 41 | `page41` | `.page41` |
+| 42 | `page11` | `.page11` (video) |
+| 43 | `page43` | `.page43` |
+| 44 | `page44` | `.page44` |
+| 45 | `page11` | `.page11` (video) |
+| 46 | `page46` | `.page46` |
+| 47 | `page47` | `.page47` |
+| 48 | `page48` | `.page48` |
+| 49 | `page49` | `.page49` |
+| 50 | `page50` | `.page50` |
+| 51 | `page51` | `.page51` |
+| 52 | `page52` | `.page52` |
+| 53 | `page53` | `.page53` |
+| 54 | `page54` | `.page54` |
+| 55 | `page53` | `.page53` (reutilise) |
+| 56 | `page56` | `.page56` |
+| 57 | `page57` | `.page57` |
+| 58-59 | `page58` | `.page58` (reservation) |
+| 60 | `page60` | `.page60` |
+| 61 | `page61` | `.page61` |
+| 62 | `page62` | `.page62` |
 
 ### Convention pour les nouvelles pages
 

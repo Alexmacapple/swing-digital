@@ -113,6 +113,13 @@ Brandon, Fragen, Raleway Bold, Roboto Bold, Walden Black
 
 Ce fichier contient les conventions etablies (archetypes, BEM, variables CSS, contraste WCAG AA, responsive, images, checklist) et doit etre consulte AVANT toute integration.
 
+## Enseignements LLM - OBLIGATOIRE
+
+**Avant toute modification, consulter** :
+`/Users/alex/Claude/active/swing-digital/ENSEIGNEMENTS-PAGES.md`
+
+Ce fichier contient les lecons apprises sur les 62 pages (images dupliquees, couleurs, layouts, audit de fidelite) et les erreurs recurrentes a eviter.
+
 ---
 
 ## Decisions
