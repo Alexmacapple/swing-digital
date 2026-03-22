@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initDisclosure();
     try { initVideoSound(); } catch (e) { console.warn('Video init:', e); }
     initPodcastPlayer();
+    initScrollReveal();
 });
 
 /**
@@ -254,6 +255,66 @@ function initPodcastPlayer() {
     });
 }
 
+/**
+ * Scroll Reveal — revelation progressive des elements au scroll
+ * Respecte prefers-reduced-motion via CSS
+ */
+function initScrollReveal() {
+    // Ne pas animer si l'utilisateur prefere le mouvement reduit
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Cibler les elements a reveler dans chaque section
+    var selectors = [
+        'h1', 'h2', 'h3',
+        '[class*="__title"]',
+        '[class*="__intro"]',
+        '[class*="__paragraph"]',
+        '[class*="__text"]',
+        '[class*="__description"]',
+        '[class*="__card"]',
+        '[class*="__image-wrapper"]',
+        '[class*="__photo"]',
+        'figure',
+        '[class*="__faq"]',
+        '[class*="__checklist"]',
+        '[class*="__list"]'
+    ].join(', ');
+
+    var elements = document.querySelectorAll('#main-content section > * ' + selectors.split(', ').join(', #main-content section > * '));
+
+    // Fallback : cibler les enfants directs de chaque section
+    if (elements.length === 0) {
+        document.querySelectorAll('#main-content section').forEach(function(section) {
+            var children = section.children;
+            for (var i = 0; i < children.length; i++) {
+                children[i].classList.add('reveal');
+            }
+        });
+    } else {
+        elements.forEach(function(el) {
+            // Ne pas ajouter sur les elements deja visibles (hero)
+            if (el.closest('#page-1')) return;
+            el.classList.add('reveal');
+        });
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal--visible');
+                observer.unobserve(entry.target); // Une seule fois
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+}
+
 // Export functions if needed
 window.SwingDigital = {
     initNavigation,
@@ -263,5 +324,6 @@ window.SwingDigital = {
     updateNavActive,
     initVideoSound,
     initDisclosure,
-    initPodcastPlayer
+    initPodcastPlayer,
+    initScrollReveal
 };
