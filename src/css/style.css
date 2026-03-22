@@ -1026,6 +1026,7 @@ a.page13__card--link:focus-visible {
 }
 
 .footer__copyright {
+    text-align: center;
     margin-bottom: var(--space-md);
 }
 
@@ -1034,6 +1035,7 @@ a.page13__card--link:focus-visible {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-lg);
     margin-bottom: var(--space-md);
     padding: 0;
