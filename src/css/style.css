@@ -74,7 +74,7 @@
 
     /* Gradients */
     --gradient-brand: linear-gradient(135deg, #B93539 0%, var(--color-brand-alt) 100%); /* WCAG AA : 5.78:1 → 4.86:1 */
-    --gradient-hero: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 50%, var(--color-brand-pale) 100%);
+    --gradient-hero: linear-gradient(135deg, #BE2F31 0%, #C44E4E 50%, #BE2F31 100%);
 
     /* Edge offset for absolute-positioned elements */
     --edge-offset: 20px;
@@ -3195,7 +3195,7 @@ img {
     margin: 0 0 1rem;
 }
 .page51__quote strong {
-    color: #D4A043;
+    color: var(--color-text-gold);
 }
 
 @media (max-width: 768px) {
@@ -3426,7 +3426,7 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     font-style: italic;
-    color: var(--color-brand);
+    color: var(--color-text-red);
     margin: 0.3rem 0 0;
 }
 .page48__logos {
