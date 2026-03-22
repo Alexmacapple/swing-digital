@@ -1876,6 +1876,15 @@ img {
     overflow-y: auto;
 }
 
+.page12__fig-legend {
+    display: block;
+    font-size: var(--fs-caption);
+    color: var(--color-white);
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+    text-shadow: var(--shadow-text);
+}
+
 .page12__disclosure-btn {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
