@@ -775,6 +775,8 @@ a.page13__card--link:focus-visible {
 
 .sitemap-page {
     padding: var(--space-2xl) var(--slide-pad-x);
+    background-color: var(--color-brand-btn);
+    color: var(--color-white);
 }
 
 .sitemap-page__container {
@@ -812,13 +814,13 @@ a.page13__card--link:focus-visible {
 }
 
 .sitemap-page__list a {
-    color: var(--color-black);
+    color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .sitemap-page__list a:hover {
-    color: var(--color-bg-red);
+    color: var(--color-brand-pale);
 }
 
 /* ============================================================
