@@ -622,6 +622,9 @@ img {
 .breadcrumb {
     background-color: var(--color-brand-btn);
     padding: 0.4rem 0;
+    position: sticky;
+    top: var(--header-height);
+    z-index: 999;
     margin-top: var(--header-height);
 }
 
