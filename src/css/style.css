@@ -567,6 +567,12 @@ img {
     position: relative;
 }
 
+.site-nav__submenu-separator {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 0.4rem 1.2rem;
+}
+
 /* Focus visible — outline minimum 2px, contraste 3:1 */
 .site-nav__link:focus-visible,
 .site-nav__btn:focus-visible,
