@@ -6847,3 +6847,107 @@ section:hover [class*="__category"]::after {
         max-width: 70%;
     }
 }
+
+/* ============================================================
+   RESPONSIVE MOBILE — Corrections RWD 375px-768px
+   ============================================================ */
+
+/* Page 6 : grille 50/50 -> colonne unique */
+@media (max-width: 768px) {
+    .page6__main {
+        grid-template-columns: 1fr;
+    }
+
+    .page6__header {
+        padding: var(--space-md) var(--slide-pad-x);
+    }
+}
+
+/* Pages 9/10 : grille 2x2 -> colonne unique sur mobile */
+@media (max-width: 600px) {
+    .page9__grid,
+    .page10__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+}
+
+/* Page 24 : grille categories -> 1 colonne sur petit mobile */
+@media (max-width: 480px) {
+    .page24__cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Menu hamburger : ajustements petit ecran */
+@media (max-width: 480px) {
+    .site-nav__link,
+    .site-nav__btn {
+        font-size: 1.1rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    .site-nav__submenu-link {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .site-header__logo {
+        font-size: 0.85rem;
+    }
+}
+
+/* Breadcrumb : ajustement petit ecran */
+@media (max-width: 480px) {
+    .breadcrumb__list {
+        font-size: var(--fs-credit);
+        padding: 0 var(--space-sm);
+    }
+
+    .breadcrumb__item + .breadcrumb__item::before {
+        margin: 0 0.3rem;
+    }
+}
+
+/* Footer : colonne sur petit ecran */
+@media (max-width: 480px) {
+    .footer__nav ul,
+    .footer__nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+}
+
+/* Hero page 1 : ajustements mobile */
+@media (max-width: 480px) {
+    .hero-page1__title-group h1 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+
+    .hero-page1__bottom-left,
+    .hero-page1__bottom-right {
+        font-size: var(--fs-credit);
+    }
+}
+
+/* Page 62 contact : bouton play repositionne */
+@media (max-width: 480px) {
+    .page62__play-btn {
+        bottom: var(--space-xs);
+        right: var(--space-xs);
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Pages projet : titres et textes ajustes */
+@media (max-width: 480px) {
+    .page3__container {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .page3__project-link {
+        font-size: var(--fs-caption);
+    }
+}
