@@ -359,7 +359,8 @@ img {
 .footer__container {
     max-width: var(--page-max-width);
     margin: 0 auto;
-    text-align: center;
+    text-align: right;
+    padding: 0 var(--slide-pad-x);
 }
 
 /* ============================================================
@@ -1026,7 +1027,6 @@ a.page13__card--link:focus-visible {
 }
 
 .footer__copyright {
-    text-align: center;
     margin-bottom: var(--space-md);
 }
 
@@ -1035,7 +1035,7 @@ a.page13__card--link:focus-visible {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
     gap: var(--space-lg);
     margin-bottom: var(--space-md);
     padding: 0;
