@@ -3200,7 +3200,7 @@ section:hover [class*="__category"]::after {
 .page58 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-black);
     color: var(--color-white);
 }
 .page58__container {
@@ -3343,7 +3343,7 @@ section:hover [class*="__category"]::after {
     align-items: flex-start;
 }
 .page58__newsletter {
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 0.08);
     padding: var(--space-lg);
     border-radius: 8px;
     width: 100%;
