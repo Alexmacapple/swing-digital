@@ -1,12 +1,14 @@
 # PRD : Découpage multi-pages - Swing Digital
 
+**Statut : TERMINE** (merge sur main, tag v4, branche decoupage supprimee)
+
 ## Contexte
 
-Le site est actuellement un single-page (`index.html`, 62 sections/pages). Le menu de navigation existe sur la page 1 mais n'est pas persistant.
+Le site etait un single-page (`index.html`, 62 sections/pages). Le menu de navigation existait sur la page 1 mais n'etait pas persistant.
 
-**Objectif** : Découper le site en plusieurs pages HTML avec navigation 3 niveaux, header/footer communs, fil d'Ariane, menu hamburger mobile, RGAA accessible.
+**Objectif** : Decouper le site en plusieurs pages HTML avec navigation 3 niveaux, header/footer communs, fil d'Ariane, menu hamburger mobile, RGAA accessible.
 
-**Branche** : `decoupage`
+**Resultat** : 24 pages HTML, navigation 3 niveaux, 0 violation axe-core, audit 83/100
 
 **Règle absolue** : Ne rien casser de l'existant. Découper et améliorer, jamais rétrograder. Chaque page après découpage doit être visuellement identique à la section correspondante dans le single-page actuel.
 

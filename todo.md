@@ -1,18 +1,28 @@
 # Swing Digital - Todo
 
-## En attente
+## Avant mise en production (bloquant)
 
-- [ ] Remplacer `https://DOMAINE/` par le vrai domaine dans canonical, OG, sitemap.xml et robots.txt (pre-prod)
-- [ ] Creer le fichier `img/favicon.ico` et decommenter la balise `<link rel="icon">` dans les 22 fichiers HTML
+- [ ] Remplacer `https://DOMAINE/` par le vrai domaine (canonical, OG, sitemap, robots)
+- [ ] Ajouter width/height sur les 124 images sans dimensions
+- [ ] Corriger les 2 boutons "Je m'inscris" (reservations.html)
+- [ ] Creer img/favicon.ico et decommenter la balise link
+- [ ] Configurer HTTPS + headers securite
+- [ ] Renseigner l'hebergeur dans mentions-legales.html
+
+## Ameliorations recommandees
+
+- [ ] Ajouter og:image sur chaque page
+- [ ] Optimiser les images (compression, WebP)
+- [ ] Test cross-browser (Chrome, Firefox, Safari)
+- [ ] Test lecteur d'ecran (VoiceOver, NVDA)
 
 ## Termine
 
-- [x] Phase 1 : Header persistant, footer, hamburger, dropdown, breadcrumb
-- [x] Phase 2 : Decoupe niveau 1 (espaces, experiences, reservations)
-- [x] Phase 3 : Decoupe niveau 2 (8 pages projet)
-- [x] Phase 4 : Decoupe niveau 3 (9 sous-pages Monroe)
-- [x] Phase 5 : 404, sitemap, robots, check-site.sh
-- [x] Audit PRD 83/83 points conformes
-- [x] Commentaires Page PDF N sur toutes les sections
-- [x] CTA Reservation converti en button aria-disabled
-- [x] Favicon commente (fichier inexistant)
+- [x] Phase 1-4 : Integration 62 pages
+- [x] Audit fidelite PDF
+- [x] Decoupe multi-pages (24 HTML)
+- [x] Navigation 3 niveaux
+- [x] Accessibilite RGAA (0 violation axe-core)
+- [x] Pages utilitaires (404, plan du site, mentions legales)
+- [x] Audit complet (83/100)
+- [x] Documentation a jour (CLAUDE, README, ROADMAP, GUIDELINES, ENSEIGNEMENTS)

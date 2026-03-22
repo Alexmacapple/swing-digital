@@ -1,149 +1,132 @@
-# Swing Digital - Mémoire Projet
+# Swing Digital - Memoire Projet
 
 **Projet** : swing-digital
-**Type** : Site vitrine statique (HTML/CSS/JS)
-**Description** : Refonte du site Swing Digital - espaces augmentés, expériences immersives
-**Date** : 2026-02-20
+**Type** : Site vitrine statique multi-pages (HTML/CSS/JS)
+**Description** : Site Swing Digital - espaces augmentes, experiences immersives
+**Date debut** : 2026-02-20
 **Auteur** : Alex
+**Depot** : git@github.com:Alexmacapple/swing-digital.git (SSH)
 
 ---
 
 ## Contexte
 
-Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés.
+Site vitrine pour Swing Digital, entreprise specialisee dans les experiences immersives et espaces augmentes. Site decoupe en 24 pages HTML avec navigation 3 niveaux.
 
-**Sections du site** :
-1. Accueil (présentation + logos partenaires)
-2. Espaces augmentés (description services)
-3. Expériences (portfolio 6 projets + scroll)
-4. Réservations (billetterie)
+**Architecture** : 4 niveaux de pages
+1. Accueil, Espaces augmentes, Reservations
+2. Experiences Series (rubrique 8 projets)
+3. Pages projet (Monroe, Voyage, Dessine, Ni vues, Marilyn, Toulouse-Lautrec, Charlotte Henschel, XR Corporate)
+4. Sous-pages Monroe (Piece, Roman Graphique, Installation, Photographie, Composition, Podcasts, Interviews, Experiences, Quiz)
 
-**Navigation** : Clic photo → page projet single-page
-
-**Référence visuelle** : https://www.atelierdaruma.com/
+**Pages utilitaires** : 404, Plan du site, Mentions legales
 
 ---
 
 ## Stack Technique
 
-- HTML5 sémantique
-- CSS3 (responsive, mobile-first)
-- JavaScript vanilla (animations)
+- HTML5 semantique (24 pages)
+- CSS3 responsive (variables, BEM, mobile-first, 6 breakpoints)
+- JavaScript vanilla (navigation, videos, animations)
 - Pas de framework ni bundler
-
----
 
 ## Polices
 
-Brandon, Fragen, Raleway Bold, Roboto Bold, Walden Black
+Brandon (blk, reg, light-it), Fragen (Bold), Raleway Bold
 
 ---
 
-## Extraction PDF Maquette
+## Structure du site
 
-**Source** : `/src/maquette-site.pdf` (5.5 MB, 62 pages)
-**Extraction** : `/src/pages-extracted/` (68 MB)
-
-**Structure par page** :
-- `page-N-screenshot.png` : capture haute résolution
-- `page-N-image-*.jpg` : images extraites
-- `texte-page-N.md` : texte exact
-
-**Statistiques** :
-- 62 pages extraites
-- 220 images JPG
-- 59 pages avec images
-
-**Fichiers de référence** : README.md, INDEX.md, INVENTAIRE-IMAGES.md, images-inventory.json
-
----
-
-## Accessibilité - WCAG 2.2 AA OBLIGATOIRE
-
-**Standards** :
-- Structure sémantique HTML5
-- Contraste 4.5:1 (texte), 3:1 (large)
-- Alt text 125+ caractères par image
-- Navigation clavier complète
-- Lecteurs d'écran : VoiceOver, NVDA, JAWS
-- Pas d'auto-play vidéo/son
-
-**Skills à utiliser** :
-- `/audit-accessibilite-web` : audit complet
-- `/fix-accessibilite` : corriger violations
-- `/screen-reader-testing` : valider lecteurs
-
----
-
-## Workflow d'Intégration - Mode YOLO STRICT
-
-**Intégrer les 62 pages du PDF dans le site HTML**
-
-### Contraintes Impératives
-
-1. **Couverture totale** : TOUTES les 62 pages (page-1 à page-62)
-2. **Fidélité absolue** : reproduire exactement les screenshots
-3. **Texte identique** : copier intégralement `texte-page-N.md`
-4. **Images identiques** : intégrer toutes les images dans le même ordre
-5. **Pas d'arrêt mi-page** : terminer complètement avant de passer à la suivante
-6. **Mode YOLO autonome** : aucune confirmation, continuer jusqu'au bout
-
-### Checklist par Page
-
-- [x] Screenshot consultée
-- [x] Texte copié exactement
-- [x] Toutes les images intégrées
-- [x] Alt text WCAG 2.2 AA rédigé
-- [x] Accessibilité validée
-- [x] Responsive testé
-- [x] Page HTML complète
-
-### Sources de Vérité
-
-- Maquettes : `/src/pages-extracted/page-N/page-N-screenshot.png`
-- Texte : `/src/pages-extracted/page-N/texte-page-N.md`
-- Images : `/src/pages-extracted/page-N/page-N-image-*.jpg`
+```
+src/
+├── index.html                    Accueil (pages 1,2,3,4,8,62)
+├── espaces-augmentes.html        Espaces augmentes (pages 5-7)
+├── experiences-series.html       Rubrique projets (pages 9-10)
+├── experience-monroe.html        Monroe entree (pages 11-13,24)
+├── monroe-piece.html             Piece My Story (pages 14-19)
+├── monroe-roman-graphique.html   Roman Graphique (pages 20-22)
+├── monroe-installation.html      Installation (page 23)
+├── monroe-photographie.html      Photographie (pages 25-26)
+├── monroe-composition.html       Composition (pages 27-32)
+├── monroe-podcasts.html          Podcasts (page 33)
+├── monroe-interviews.html        Interviews (pages 34-36)
+├── monroe-experiences.html       Experiences interactives (pages 37-39)
+├── monroe-quiz.html              Quiz Marilyn (pages 40-41)
+├── voyage-autour-de-moi.html     Voyage (pages 42-44)
+├── dessine-moi-le-vent.html      Dessine-moi le vent (pages 45-47)
+├── ni-vues-ni-connues.html       Ni vues ni connues (pages 48-49)
+├── marilyn.html                  Marilyn (pages 50-52)
+├── toulouse-lautrec.html         Toulouse-Lautrec (pages 53-54)
+├── charlotte-henschel.html       Charlotte Henschel (pages 55-56)
+├── xr-corporate.html             XR Corporate (page 57)
+├── reservations.html             Reservations (pages 58-61)
+├── 404.html                      Page introuvable
+├── plan-du-site.html             Plan du site
+├── mentions-legales.html         Mentions legales
+├── sitemap.xml                   Sitemap (23 pages)
+├── robots.txt                    Robots
+├── css/style.css                 Styles (158 KB)
+├── js/main.js                    Scripts (22 KB)
+├── img/                          Images par page
+├── fonts/                        Polices web
+└── video/                        hero.mp4, contact.mp4
+```
 
 ---
 
-## Guidelines Templates - OBLIGATOIRE
+## Composants communs (dupliques dans chaque page)
 
-**Lors de la creation ou modification de toute page/template du site, TOUJOURS suivre** :
-`/Users/alex/Claude/active/swing-digital/GUIDELINES-TEMPLATES.md`
+- **Header** : fixe, fond noir, logo texte, menu 4 sections, dropdown 8 projets, sous-menu Monroe (11 liens), hamburger mobile
+- **Fil d'Ariane** : sticky sous le header, fond noir, texte blanc
+- **Footer** : fond noir, copyright, liens (Equipe, Contact, Plan du site, Mentions legales)
+- **Skip link** : en dur dans le HTML, premier element du body
 
-Ce fichier contient les conventions etablies (archetypes, BEM, variables CSS, contraste WCAG AA, responsive, images, checklist) et doit etre consulte AVANT toute integration.
+---
 
-## Enseignements LLM - OBLIGATOIRE
+## Accessibilite - WCAG 2.2 AA / RGAA 4.1
 
-**Avant toute modification, consulter** :
-`/Users/alex/Claude/active/swing-digital/ENSEIGNEMENTS-PAGES.md`
-
-Ce fichier contient les lecons apprises sur les 62 pages (images dupliquees, couleurs, layouts, audit de fidelite) et les erreurs recurrentes a eviter.
+- 0 violation axe-core sur 23/24 pages
+- Navigation clavier complete (Tab, Escape, Arrow)
+- Disclosure pattern sur dropdown et hamburger
+- aria-current="page" sur lien actif et breadcrumb
+- h1 sur chaque page (sr-only si pas de titre visible)
+- Textes en casse normale, majuscules via CSS (RGAA 10.2)
+- prefers-reduced-motion respecte (CSS + JS)
+- Contraste conforme AA (blanc sur noir 21:1)
+- Intitules de liens explicites (RGAA 6.1)
+- Boutons video avec intitule identifiant le contenu
 
 ---
 
 ## Regles CSS strictes
 
-- **Zero couleur codee en dur** hors `:root` : toute couleur passe par `var(--...)`
-- 38 variables couleur + 7 variables ombre dans `:root`
-- Verification : `grep -n '#[0-9a-fA-F]' src/css/style.css | grep -v ':root' | grep -v '/\*'`
-- **Toute image** doit avoir `width`, `height`, et `loading="lazy"` (sauf hero)
-- Le hero a `fetchpriority="high"` et un `<link rel="preload">` dans `<head>`
+- Zero couleur codee en dur hors :root
+- 38+ variables couleur dans :root
+- BEM naming sur tous les composants
+- text-transform: uppercase pour les majuscules visuelles (pas dans le HTML)
+- Breakpoints : 480px, 600px, 768px, 1024px, 1200px, 1441px
 
 ## Branche de travail
 
-**Branche active** : `main`
-**Branches mergees** : `cosmetique`, `image`
-
-Toujours verifier la branche avant de commiter : `git branch --show-current`
+**Branche active** : main
+**Tags** : v1, v2, v3, v4 (decoupe multi-pages)
+**Branches mergees** : cosmetique, image, decoupage
 
 ---
 
 ## Decisions
 
-1. YOLO STRICT : intégrer les 62 pages séquentiellement, fidèles à la maquette
-2. Pas d'arrêt sur une page tant qu'elle n'est pas 100% terminée et validée
-3. Valider accessibilité WCAG 2.2 AA avant chaque intégration (utiliser `/audit-accessibilite-web`)
-4. Trier les images par catégorie (experiences, portfolio, etc.)
-5. Toulouse-Lautrec masqué pour l'instant - remettre avant prod
-6. Commits réguliers (par page ou groupe de 5 pages)
+1. Decoupe multi-pages (24 HTML) au lieu de single-page
+2. Header/footer fond noir (coherence, contraste 21:1)
+3. Navigation 3 niveaux (menu > dropdown > sous-menu Monroe)
+4. Breadcrumb sticky sous le header
+5. Pas de framework JS (vanilla uniquement)
+6. Chargement conditionnel Vimeo API (guard iframe)
+7. CTA Reservation en button aria-disabled (billetterie non definie)
+8. Video contact en pause par defaut (play au clic)
+
+---
+
+**Derniere mise a jour** : 2026-03-22
+**Version** : 3.0.0

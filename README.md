@@ -1,23 +1,23 @@
 # Swing Digital - Site vitrine
 
-Site vitrine pour Swing Digital, entreprise specialisee dans les experiences immersives et espaces augmentes.
+Site vitrine multi-pages pour Swing Digital, specialiste des experiences immersives et espaces augmentes.
 
-**62 pages integrees** depuis la maquette PDF, avec fidelite visuelle verifiee page par page.
+24 pages HTML decoupees depuis une maquette PDF de 62 pages, avec navigation 3 niveaux et accessibilite RGAA.
 
 ## Demarrage rapide
 
-Ouvrir `src/index.html` dans un navigateur, ou lancer un serveur local :
-
 ```bash
-npx serve src/
+cd src/
+python3 -m http.server 8080
+# Ouvrir http://localhost:8080/
 ```
 
 ## Stack technique
 
-- HTML5 semantique
+- HTML5 semantique (24 pages)
 - CSS3 responsive (variables, BEM, mobile-first)
-- JavaScript vanilla (scroll tracking, videos Vimeo, animations)
-- Polices : Brandon, Fragen, Raleway, Roboto, Walden
+- JavaScript vanilla (navigation, videos, animations)
+- Polices : Brandon, Fragen
 - Pas de framework ni bundler
 
 ## Structure du projet
@@ -25,75 +25,92 @@ npx serve src/
 ```
 swing-digital/
 ├── src/
-│   ├── index.html                  Site complet (62 pages/slides)
-│   ├── css/style.css               Styles (variables, BEM, responsive)
-│   ├── js/main.js                  Interactions (scroll, videos, nav)
-│   ├── img/
-│   │   ├── pages/page-1..62/       Images par page
-│   │   ├── partners/               Logos partenaires partages
-│   │   └── logos/                   Logos marque
+│   ├── index.html                  Accueil
+│   ├── espaces-augmentes.html      Espaces augmentes
+│   ├── experiences-series.html     Rubrique 8 projets
+│   ├── experience-monroe.html      L'Experience Monroe
+│   ├── monroe-*.html               9 sous-pages Monroe
+│   ├── voyage-autour-de-moi.html   Voyage autour de moi
+│   ├── dessine-moi-le-vent.html    Dessine-moi le vent
+│   ├── ni-vues-ni-connues.html     Ni vues ni connues
+│   ├── marilyn.html                Marilyn
+│   ├── toulouse-lautrec.html       Toulouse-Lautrec
+│   ├── charlotte-henschel.html     Charlotte Henschel
+│   ├── xr-corporate.html           XR Corporate
+│   ├── reservations.html           Reservations
+│   ├── 404.html                    Page introuvable
+│   ├── plan-du-site.html           Plan du site
+│   ├── mentions-legales.html       Mentions legales
+│   ├── sitemap.xml / robots.txt    SEO
+│   ├── css/style.css               Styles
+│   ├── js/main.js                  Scripts
+│   ├── img/                        Images par page
 │   ├── fonts/                      Polices web
-│   ├── maquette-site.pdf           Maquette PDF originale (62 pages)
-│   └── pages-extracted/            Extraction PDF (screenshots, textes, images)
+│   └── video/                      hero.mp4, contact.mp4
 │
-├── EXPORT_HD/                      Exports haute definition (JPG + PDF)
-│
-├── CLAUDE.md                       Memoire projet Claude
-├── GUIDELINES-TEMPLATES.md         Conventions CSS/HTML (archetypes, BEM, variables)
-├── ENSEIGNEMENTS-PAGES.md          Lecons apprises (erreurs, patterns, audit)
-├── ROADMAP.md                      Etat d'avancement et prochaines etapes
+├── CLAUDE.md                       Memoire projet
+├── GUIDELINES-TEMPLATES.md         Conventions CSS/HTML
+├── ENSEIGNEMENTS-PAGES.md          Lecons apprises
+├── PRD-DECOUPAGE.md                PRD decoupe (termine)
+├── ROADMAP.md                      Etat d'avancement
+├── AUDIT-COMPLET.md                Audit qualite (83/100)
+├── check-site.sh                   Script de validation
 └── README.md                       Ce fichier
 ```
 
-## Pages et sections
+## Architecture navigation
 
-Le site est compose de 62 slides/pages couvrant :
+```
+Accueil
+├── Espaces augmentes
+├── Experiences Series
+│   ├── L'Experience Monroe
+│   │   ├── 1. Piece My Story
+│   │   ├── 2. Roman Graphique
+│   │   ├── 3. Installation
+│   │   ├── 4. XR Memory Box (lien croise)
+│   │   ├── 5. Serie Marilyn (lien croise)
+│   │   ├── A. Photographie
+│   │   ├── B. Composition electroacoustique
+│   │   ├── C. Podcasts
+│   │   ├── D. Interviews
+│   │   ├── E. Experiences interactives
+│   │   └── F. Le Quiz Marilyn
+│   ├── Voyage autour de moi
+│   ├── Dessine-moi le vent
+│   ├── Ni vues ni connues
+│   ├── Marilyn
+│   ├── Toulouse-Lautrec
+│   ├── Charlotte Henschel
+│   └── XR Corporate
+└── Reservations
+```
 
-| Section | Pages | Contenu |
-|---------|-------|---------|
-| Accueil | 1-2 | Hero + equipe |
-| Creations | 3-4 | Portfolio projets |
-| Espaces augmentes | 5-8 | Services + partenaires |
-| L'Experience Monroe | 9-19 | Spectacle VR, The Play, video |
-| Le Roman Graphique | 20-22 | BD Marilyn |
-| Installation Interactive | 23-38 | Expo, photos, podcasts, quiz |
-| La Serie Marilyn | 39 | Presentation IA |
-| XR 360 | 40-41 | Experience VR immersive |
-| Voyage autour de moi | 42-44 | Documentaire ados |
-| Dessine-moi le vent | 45-47 | Livre RA enfants |
-| Ni vues Ni connues | 48-49 | Serie documentaire femmes |
-| Marilyn | 50-52 | Spectacle realite mixte |
-| Toulouse-Lautrec | 53-54 | Experience Montmartre |
-| Charlotte Henschel | 55-56 | Artiste peintre |
-| XR Entreprises | 57 | Offre corporate |
-| Reservations | 58-59 | Billetterie experiences |
-| Informations | 60-61 | Pratique, FAQ, visites privees |
-| Contact | 62 | Coordonnees |
+## Accessibilite (WCAG 2.2 AA / RGAA 4.1)
 
-## Sources de verite
-
-| Source | Chemin |
-|--------|--------|
-| Maquettes | `src/pages-extracted/page-N/page-N-screenshot.png` |
-| Texte | `src/pages-extracted/page-N/texte-page-N.md` |
-| Images | `src/pages-extracted/page-N/page-N-image-*.jpg` |
-| Export HD | `EXPORT_HD/EXPORT_JPG/Site_export_JPGN.jpg` |
-
-## Accessibilite (WCAG 2.2 AA)
-
-- Structure HTML5 semantique (sections, headings, aria-labels)
-- Alt text sur toutes les images
-- Contraste 4.5:1 texte normal, 3:1 texte large
-- Navigation clavier
-- Controles video accessibles (play/pause, son)
+- 0 violation axe-core sur 24 pages
+- Navigation clavier complete (Tab, Escape, fleches)
+- Menu dropdown disclosure pattern accessible
+- Fil d'Ariane WAI-ARIA APG breadcrumb
+- Skip link en dur dans le HTML
+- h1 sur chaque page
+- Textes en casse normale, majuscules via CSS (RGAA 10.2)
+- prefers-reduced-motion respecte
+- Contraste WCAG AA conforme
+- Intitules de liens explicites
 
 ## Documentation
 
-- `CLAUDE.md` : memoire projet et workflow d'integration
-- `GUIDELINES-TEMPLATES.md` : conventions CSS/HTML, archetypes de layout, table des classes
-- `ENSEIGNEMENTS-PAGES.md` : lecons apprises, erreurs recurrentes, methodologie d'audit
-- `ROADMAP.md` : etat d'avancement, phase 5 en cours
+| Fichier | Contenu |
+|---------|---------|
+| CLAUDE.md | Memoire projet, stack, composants, decisions |
+| GUIDELINES-TEMPLATES.md | Conventions CSS/HTML, archetypes, classes BEM |
+| ENSEIGNEMENTS-PAGES.md | Lecons apprises, erreurs recurrentes |
+| PRD-DECOUPAGE.md | PRD decoupe multi-pages (termine) |
+| ROADMAP.md | Phases, todo pre-prod, scores |
+| AUDIT-COMPLET.md | Audit technique, SEO, a11y, securite, UX |
 
 ---
 
 **Derniere mise a jour** : 2026-03-22
+**Version** : v4

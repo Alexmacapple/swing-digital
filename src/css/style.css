@@ -867,76 +867,14 @@ a.page13__card--link:focus-visible {
 }
 
 .sitemap-page__container {
-    max-width: var(--page-max-width);
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.sitemap-page__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
-    align-items: start;
-}
-
-.sitemap-page__right {
-    position: sticky;
-    top: calc(var(--header-height) + 3rem);
-}
-
-.sitemap-page__video-wrapper {
-    position: relative;
-}
-
-.sitemap-page__video {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-    display: block;
-}
-
-.sitemap-page__play-btn {
-    position: absolute;
-    bottom: var(--space-sm);
-    right: var(--space-sm);
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--color-white);
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: var(--color-white);
-    transition: background-color 0.2s ease;
-}
-
-.sitemap-page__play-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.sitemap-page__play-btn:focus-visible {
-    outline: 2px solid var(--color-white);
-    outline-offset: 2px;
-}
-
-/* Playing (defaut autoplay) : barres visibles, triangle masque */
-.sitemap-page__play-icon--paused { display: none; }
-.sitemap-page__play-icon--playing { display: block; }
-
-/* Paused : triangle visible, barres masquees */
-.sitemap-page__play-btn--paused .sitemap-page__play-icon--playing { display: none; }
-.sitemap-page__play-btn--paused .sitemap-page__play-icon--paused { display: block; }
-
-@media (max-width: 768px) {
-    .sitemap-page__content {
-        grid-template-columns: 1fr;
-    }
-
-    .sitemap-page__right {
-        position: static;
-    }
+.sitemap-page__container h1 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-title-xl);
+    margin-bottom: var(--space-xl);
 }
 
 .sitemap-page__container h1 {

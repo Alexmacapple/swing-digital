@@ -1,194 +1,132 @@
 # Enseignements - Swing Digital
 
-**Objectif** : Capitaliser les lecons des 62 pages pour eviter de repeter les memes erreurs.
+Lecons apprises sur les 62 pages et le decoupe multi-pages. Capitalisation pour eviter les erreurs recurrentes.
 
 ---
 
-## Typographie et Spacing
+## Phase 1-4 : Integration single-page
 
-- Calibrer les font-sizes **des le depart** (+10-15% a chaque niveau hierarchique)
-- **Line-height minimum 1.5-1.6** pour lisibilite (jamais 1.4)
-- Padding/margin **harmonises** : multiples de 0.5rem ou 1rem
-- Underlines/separateurs : **50px minimum** pour visibilite
-- Eviter les tailles < 0.75rem (trop petit)
-- `text-transform: uppercase` dans le CSS plutot que majuscules en dur dans le HTML (plus flexible)
+### Images et proportions
 
----
-
-## Images et Proportions
-
-- **JAMAIS `object-fit: cover`** sauf archetypes D, F, I, page 16 et portraits
+- Jamais `object-fit: cover` sauf archetypes hero, full-image et portraits
 - Preserver les aspect-ratios naturels des images
-- Pour galeries masonry : **CSS Columns** (flow naturel) > CSS Grid (spans rigides)
-- Si image unique + texte : utiliser flexbox + `justify-content: flex-end` pour alignment
-- Recadrage d'images physique : enlever les bordures/elements incrustes du haut
+- Toujours verifier les checksums MD5 apres copie d'images entre dossiers
+- Pages 18, 21, 22, 24, 31, 41, 50, 56, 60 avaient des images dupliquees
+- Les exports HD (EXPORT_HD/) sont des pages entieres, pas des images individuelles
 
-### Verification des images copiees (CRITIQUE)
+### Couleurs et contrastes
 
-- **Toujours verifier les checksums MD5** apres copie d'images entre dossiers
-- Les pages 18, 21, 22, 24, 31, 41, 50, 56, 60 avaient des **images dupliquees** (meme fichier copie sous 2 noms differents)
-- Commande de verification : `md5 -q fichier1.jpg fichier2.jpg` -- si les hash sont identiques, c'est un doublon
-- Apres toute copie en masse, lancer un script de verification : comparer les hash `src/pages-extracted/` vs `src/img/pages/` et signaler les DUPLICATE et MISSING
-- Les exports HD (`EXPORT_HD/EXPORT_JPG/`) sont des pages entieres, pas des images individuelles -- utiliser PIL/Pillow pour recouper si l'extraction PDF a echoue
+- Texte blanc sur fond rouge : utiliser --color-brand-btn (#CE3B3D, 4.86:1)
+- --color-brand (#E8494B) reserve aux decoratifs sans texte dessus
+- Fond noir vs blanc : verifier systematiquement sur les pages a photos
+- Toujours coupler background-color et color (ne jamais laisser du texte gris sur fond colore)
+- Le jaune dore maquette (#D4A843) n'est pas conforme WCAG AA sur blanc
 
----
+### Typographie
 
-## Couleurs et Fonds
-
-- Gradients/backgrounds sur **conteneur parent** ONLY
-- Enfants : `background: transparent` pour voir le parent
-- Utiliser variables CSS pour couleurs (`:root`)
-- Texte blanc sur fond rouge : utiliser `--color-brand-btn` (#CE3B3D, 4.86:1)
-- `--color-brand` (#E8494B) reserve aux fonds decoratifs sans texte dessus
-- **Fond noir vs blanc** : verifier systematiquement la couleur de fond des pages a photos superposees (pages 16/18 etaient en noir au lieu de blanc)
-- **Couleur texte sur fond colore** : toujours coupler `background-color` et `color` -- ne jamais laisser du texte gris fonce (#333) sur un fond rose/rouge (page 56, page 4)
-
-### Fidelite des couleurs vs WCAG
-
-- La maquette utilise du jaune dore vif (#D4A843) pour les titres. Le WCAG AA demande un ratio 4.5:1, ce qui impose #7D5A00 (brun fonce) sur fond blanc
-- **Decision prise** : privilegier la fidelite visuelle (#D4A843) sur le contraste WCAG pour les titres decoratifs. Le brun fonce denature trop le design
-- Pour les elements fonctionnels (boutons, liens, formulaires), garder le contraste WCAG AA
+- Body a 20px (augmente de 18px pour lisibilite)
+- Line-height minimum 1.5 pour le corps, 1.3 pour les titres
+- Echelle fluide clamp() pour toutes les tailles
+- text-transform uppercase pour les majuscules, jamais en dur dans le HTML (RGAA 10.2)
 
 ---
 
-## Layout et Structure
+## Phase 5 : Decoupe multi-pages
 
-- Colonnes **50/50 rarement optimal**
-- Essayer **55/45 ou 60/40** pour meilleure balance texte+images
-- Flexbox > Grid pour alignements simples (centrage, alignment, distribution)
-- Pages dont le contenu < 100vh : supprimer `height` fixe (evite vide blanc entre slides)
-- Proportions inegales : toujours specifier sur conteneur parent
+### Architecture
 
-### Patterns de layout recurrents
+- 24 pages HTML au lieu d'un single-page de 2240 lignes
+- Header/footer/breadcrumb dupliques dans chaque page (pas de include serveur)
+- Toute modification du header doit etre repliquee dans 24 fichiers (script Python ou sed)
+- Le script de generation Python est le moyen le plus fiable pour les modifications de masse
 
-- **Bande decorative verticale** (pages 23, 25, 31, 37, 38) : utiliser `position: absolute` ou `::before/::after` avec une largeur fixe (10-15%) et un z-index
-- **Photo plein cadre + texte overlay** (pages 23, 35, 50) : la photo en `position: relative` + `object-fit: cover`, le texte en `position: absolute` avec `text-shadow` pour lisibilite
-- **Layout 2 colonnes texte + photo** (pages 40, 52, 61) : grid avec proportions 38/62 ou 50/50 selon le contenu. Toujours verifier la maquette pour les proportions exactes
-- **Grille mosaique** (pages 36, 47, 54) : pour 3 images dont une grande, utiliser `grid-template-columns: 50% 50%` + `grid-row: 1 / -1` sur la grande image. Ne pas creer de colonnes inexistantes (grid-column: 3 dans une grille a 2 colonnes = bug silencieux)
+### Navigation 3 niveaux
 
----
+- Menu niveau 1 : 4 items (Accueil, Espaces, Experiences, Reservations)
+- Menu niveau 2 : dropdown 8 projets sous Experiences
+- Menu niveau 3 : sous-menu Monroe (5 volets + 6 categories, separateur visuel)
+- Pattern disclosure (button aria-expanded, pas de menubar)
+- Pas de aria-haspopup (reserve aux menus applicatifs)
+- Le dropdown s'ouvre au clic uniquement, pas au hover
 
-## Accessibilite WCAG 2.2 AA
+### Fil d'Ariane
 
-- **ALT text maximum 80 caracteres** (outils signalent au-dela)
-- Structure HTML semantique **des le depart** (section, h1-h6, aria-labels)
-- Contraste minimum **4.5:1** pour texte normal, **3:1** pour texte large
-- `background-color` ET `color` couples sur chaque conteneur a fond colore
-- `background-color` explicite sur les elements texte (pas d'heritage implicite)
+- Place entre header et main (pas dans le header)
+- Sticky sous le header (visible au scroll)
+- Liste ordonnee ol (pas ul)
+- Separateurs en CSS ::before (pas dans le HTML)
+- aria-current="page" sur le dernier lien
+- Sur les pages liees via liens croises (xr-corporate, marilyn), le breadcrumb montre la hierarchie cible, pas le parcours
 
----
+### Videos
 
-## Pas de scroll vertical
+- Hero video (page 1) : autoplay loop muted playsinline, role="img" pour autoriser aria-label
+- Video contact (page 62) : en pause par defaut, play au clic uniquement
+- Vimeo API : chargement conditionnel (guard iframe), pas de script en dur dans le HTML
+- Boutons play/pause : intitule explicite identifiant le contenu controle
 
-- Jamais `height: 100%` fixe sur les enfants
-- Utiliser `height: auto` ou `max-height`
-- Utiliser `overflow: hidden` sur le conteneur page
-- Reduire espacements/font-sizes si contenu trop gros
-- Utiliser flexbox plutot que heights fixes
-- Pas de `overflow-y: auto` interne (jamais de scroll)
+### SEO
 
----
+- Placeholder https://DOMAINE/ dans canonical, OG, sitemap, robots (a remplacer avant prod)
+- og:image manquante sur 23 pages (a ajouter)
+- Script de redirection des ancres orphelines (#page-N) dans main.js
 
-## Elements decoratifs et UI
+### Responsive et zoom
 
-- **Etoiles de notation** : utiliser des entites HTML `&#9733;` avec couleur #E8C84A
-- **Badges** (Nouveaute, nom de projet) : `position: absolute` dans un conteneur `position: relative`, fond dore ou rouge selon la maquette
-- **Boutons CTA** : verifier fond dore (#E8C84A) vs contour blanc -- la maquette fait autorite
-- **Coches/checkmarks** : utiliser des pseudo-elements `::before` avec emoji ou SVG, pas des puces standard
-- **Drapeaux** : les emojis Unicode ne sont pas toujours fideles aux images du PDF. Utiliser les images extraites si disponibles
-- **Bordures photos style polaroid** (page 36) : `border: 4px solid white` sur les photos secondaires
-
----
-
-## Audit de fidelite (methodologie)
-
-### Process d'audit
-
-1. **Lancer 4 agents en parallele** couvrant chacun 15-16 pages
-2. Chaque agent compare screenshot maquette + texte source + HTML + CSS
-3. Consolider les rapports, prioriser par impact visuel
-4. Corriger par lots thematiques (couleurs, layouts, images, textes)
-5. Commiter et pusher apres chaque lot
-6. Verifier visuellement les corrections cles dans le navigateur
-
-### Erreurs recurrentes detectees
-
-| Type d'erreur | Frequence | Exemple |
-|---------------|-----------|---------|
-| Images dupliquees (meme hash) | 9 pages | Pages 18, 21, 22, 24, 31, 41, 50, 56, 60 |
-| Fond de couleur incorrect | 4 pages | Pages 4, 16, 18, 56 |
-| Couleur de texte incorrecte | 5 pages | Pages 4, 27-30, 56 |
-| Layout incorrect (colonnes, proportions) | 6 pages | Pages 23, 35, 36, 40, 47, 61 |
-| Elements decoratifs manquants | 5 pages | Pages 35, 38, 57, 58, 59 |
-| Positionnement incorrect | 3 pages | Pages 9/10, 35, 51 |
-
-### Ce qui marche bien
-
-- Les archetypes de layout (GUIDELINES-TEMPLATES.md) sont fiables pour les pages standards
-- La reutilisation de classes CSS entre pages similaires (page16 pour 16+18, page58 pour 58+59) est efficace
-- Les variables CSS evitent les hardcodes et facilitent les corrections en masse
+- overflow: hidden casse le zoom 200% -> utiliser overflow-x: hidden ou overflow: visible
+- white-space: nowrap casse le zoom 200% -> ne jamais utiliser sur du texte
+- height fixe sur les sections -> utiliser min-height (sauf hero et full-image)
+- Le header en position fixed doit utiliser min-height (pas height) pour grandir au zoom
+- Les grilles doivent passer en colonne unique sous 600-768px
 
 ---
 
-## Performance Lighthouse
+## Erreurs recurrentes a eviter
 
-### Images : lazy loading et dimensions
+### Git et fichiers
 
-- **TOUJOURS** `loading="lazy"` sur toutes les images SAUF le hero (LCP)
-- Le hero doit avoir `fetchpriority="high"` et un `<link rel="preload">` dans le `<head>`
-- **TOUJOURS** `width` et `height` explicites sur chaque `<img>` pour eviter le CLS
-- Recuperer les dimensions natives avec `sips -g pixelWidth -g pixelHeight fichier.jpg`
-- Sans lazy loading, les 174 images (108 Mo) se chargent en parallele et tuent le LCP mobile (10.5s -> ~2-3s avec lazy)
+- Toujours verifier pwd + git rev-parse avant un commit
+- Les fichiers HTML sont dans src/ mais les commandes git s'executent depuis la racine
+- Le PDF maquette (104 MB) peut accidentellement etre stage (git add -A)
+- Utiliser sed -i '' (macOS) pas sed -i (Linux)
+- grep -P n'existe pas sur macOS, utiliser grep -E
 
-### Images : qualite d'extraction PDF
+### CSS
 
-- Les images extraites du PDF peuvent etre sous-echantillonnees (ex: page-21-image-1.jpg 558x739 au lieu de 1672x2216)
-- **Verifier la qualite** : si une image parait pixelisee, la re-extraire avec PyMuPDF (`fitz`) depuis le PDF source
-- Commande : `doc[page_index].get_images()` puis `doc.extract_image(xref)` pour obtenir l'image en resolution native
+- Variable circulaire detectee : --color-red-mid: var(--color-red-mid) (a corriger)
+- Les proprietes sur le body affectent tout le site (attention aux changements globaux)
+- Les z-index des overlays (::after) peuvent bloquer les clics sur les boutons
+- pointer-events: none sur un container necessite pointer-events: auto sur ses enfants interactifs
 
-### Variables CSS : zero couleur en dur
+### HTML
 
-- **REGLE** : aucune couleur codee en dur hors `:root`
-- Toute nouvelle couleur doit etre declaree comme variable dans `:root` puis referencee avec `var(--...)`
-- 38 variables couleur + 7 variables ombre definies dans `:root`
-- Verifier avec : `grep -n '#[0-9a-fA-F]' style.css | grep -v ':root' | grep -v '/\*'`
-- Les fallbacks `var(--color, #hex)` sont acceptables mais la valeur en dur seule ne l'est pas
+- Les balises article converties en a (cartes cliquables) necessite de retirer tous les </article>
+- Les commentaires HTML avec apostrophes cassent les heredocs bash
+- Les roles ARIA redondants (role="banner" sur header) generent des warnings W3C
 
-### RGAA : figures et legendes (critere 1.9)
+### Accessibilite
 
-- Les `<figure>` contenant des images avec `<figcaption>` doivent avoir `role="figure"` et `aria-label` correspondant au texte de la legende
-- Ne pas utiliser `aria-labelledby` avec un id sur le `<figcaption>` : preferer `aria-label` directement sur le `<figure>`
-
----
-
-## Process et Git
-
-1. Valider une page **100% terminee** avant passer a la suivante
-2. Iterer sur **CSS uniquement** (pas HTML) pendant refinement
-3. Screenshots reguliers pour comparer a maquette
-4. Commits par page ou groupe de pages
-5. Tester scroll tracking et anchors (#page-N)
-6. Consulter GUIDELINES-TEMPLATES.md avant toute integration
-7. **Verifier les images apres copie** (checksums MD5, pas de doublons)
-8. **Comparer le rendu navigateur vs la maquette PDF** pour chaque page modifiee
+- aria-label sur video necesssite role="img" (sinon warning ARIA)
+- Les lecteurs d'ecran epellent les mots en majuscules HTML -> text-transform CSS
+- Le contraste des liens au hover doit aussi etre conforme (pas seulement au repos)
+- Un h1 est obligatoire sur chaque page (sr-only si pas de titre visible)
+- Les boutons desactives utilisent aria-disabled="true" (pas disabled natif, pour rester dans le tab order)
 
 ---
 
-## Checklist Page Terminee
+## Scores audit (2026-03-22)
 
-- [ ] Maquette 100% respectee (comparaison visuelle screenshot vs PDF)
-- [ ] Texte identique (copie exacte, accents corrects)
-- [ ] Toutes les images integrees (verifier nombre et ordre)
-- [ ] Images non dupliquees (checksums differents)
-- [ ] Couleurs de fond et de texte conformes a la maquette
-- [ ] Elements decoratifs presents (badges, etoiles, bandes, overlays)
-- [ ] Responsive teste (1200, 1024, 768, 480)
-- [ ] Accessibilite WCAG 2.2 AA validee
-- [ ] ALT text descriptif <= 80 caracteres
-- [ ] Pas de barre de scroll inutile
-- [ ] Commit cree et pushe
+| Categorie | Score |
+|-----------|-------|
+| Accessibilite | 92/100 |
+| Bonnes pratiques | 90/100 |
+| UX | 88/100 |
+| Securite | 85/100 |
+| Technique | 78/100 |
+| SEO | 65/100 |
+| **Global** | **83/100** |
 
 ---
 
-**Derniere mise a jour** : 2026-03-22 (audit complet pages 1-62)
-**Auteur** : Claude + Alex
+**Derniere mise a jour** : 2026-03-22
+**Version** : 3.0.0
