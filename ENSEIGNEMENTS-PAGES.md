@@ -49,6 +49,10 @@ Leçons apprises sur les 62 pages et le découpé multi-pages. Capitalisation po
 - Pas de aria-haspopup (réservé aux menus applicatifs)
 - Le dropdown s'ouvre au clic uniquement, pas au hover
 
+### Badges de section supprimés
+
+Les badges de section (ex: `<div class="pageN__badge">Nom</div>`) ont été supprimés de toutes les pages projet. Ils étaient redondants avec le menu de navigation persistant et le fil d'Ariane. Pages concernées : Espaces augmentés (pages 5, 6), Expériences Séries (page 9), Expérience Monroe (page 12), Marilyn, Ni vues ni connues, Dessine-moi le vent, Voyage autour de moi, Toulouse-Lautrec, Charlotte Henschel, XR Corporate.
+
 ### Fil d'Ariane
 
 - Place entre header et main (pas dans le header)
