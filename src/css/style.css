@@ -1038,7 +1038,7 @@ a.page13__card--link:focus-visible {
 .mentions-legales__update {
     margin-top: var(--space-2xl);
     font-size: var(--fs-caption);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* RGAA 10.2 : majuscules visuelles via CSS (titres, noms, boutons uniquement) */
