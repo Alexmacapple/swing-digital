@@ -2798,6 +2798,7 @@ img {
 .page57 {
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-bg-red); /* a11y : fallback pour outils de contraste */
     background: linear-gradient(135deg, var(--color-bg-red) 0%, var(--color-red-mid) 50%, var(--color-bg-red) 100%);
     position: relative;
 }
@@ -2949,6 +2950,7 @@ img {
     display: flex;
     align-items: flex-end;
     padding-bottom: 1rem;
+    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page56__bio p {
     font-family: var(--font-primary);
@@ -3513,7 +3515,7 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     font-style: italic;
-    color: var(--color-bg-red); /* a11y : #BE2F31 ratio 5.77:1 au lieu de #F06060 3.21:1 */
+    color: var(--color-brand-light); /* a11y : #F49C9E ratio 7.12:1 sur fond navy #1a2744 */
     margin: 0.3rem 0 0;
 }
 .page48__logos {
