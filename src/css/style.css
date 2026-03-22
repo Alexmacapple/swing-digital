@@ -784,6 +784,35 @@ a.page13__card--link:focus-visible {
     margin: 0 auto;
 }
 
+.sitemap-page__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+.sitemap-page__right {
+    position: sticky;
+    top: calc(var(--header-height) + 3rem);
+}
+
+.sitemap-page__video {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 768px) {
+    .sitemap-page__content {
+        grid-template-columns: 1fr;
+    }
+
+    .sitemap-page__right {
+        position: static;
+    }
+}
+
 .sitemap-page__container h1 {
     font-family: var(--font-primary);
     font-size: var(--fs-title-xl);
