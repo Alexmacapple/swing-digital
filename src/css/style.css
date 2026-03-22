@@ -3340,18 +3340,18 @@ section:hover [class*="__category"]::after {
 }
 .page58__newsletter-title {
     font-family: var(--font-primary);
-    font-size: var(--fs-slide-meta);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     margin: 0 0 var(--space-2xs);
 }
 .page58__newsletter-text {
     font-family: var(--font-primary);
-    font-size: var(--fs-slide-small);
+    font-size: var(--fs-body);
     margin: 0 0 var(--space-xs);
 }
 .page58__newsletter-list {
     font-family: var(--font-primary);
-    font-size: var(--fs-slide-small);
+    font-size: var(--fs-body);
     padding-left: var(--space-sm);
     margin: 0 0 var(--space-sm-tight);
     line-height: 1.7;
