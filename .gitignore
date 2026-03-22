@@ -24,3 +24,6 @@ package-lock.json
 # Sources InDesign (trop volumineux)
 images-id/
 deliberations/
+node_modules/
+test-results/
+playwright-report/
