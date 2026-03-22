@@ -359,6 +359,7 @@ img {
 .footer__container {
     max-width: var(--page-max-width);
     margin: 0 auto;
+    padding: 0 var(--slide-pad-x);
 }
 
 /* ============================================================
@@ -1025,7 +1026,6 @@ a.page13__card--link:focus-visible {
 }
 
 .footer__copyright {
-    text-align: center;
     margin-bottom: var(--space-md);
 }
 
@@ -1033,7 +1033,7 @@ a.page13__card--link:focus-visible {
 .footer__nav-list {
     list-style: none;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     gap: var(--space-lg);
     margin-bottom: var(--space-md);
     padding: 0;
