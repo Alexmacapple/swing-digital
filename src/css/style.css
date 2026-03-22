@@ -1128,11 +1128,11 @@ img {
 }
 
 #page-4 .page3__project-subtitle {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-white);
 }
 
 #page-4 .page3__project-meta {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-white);
     background-color: transparent;
 }
 
