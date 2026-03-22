@@ -56,18 +56,25 @@
     --color-bg-dark: #f5f5f5;
 
     /* Swing Digital brand colors */
-    --color-brand: #E8494B;
+    --color-brand: #E8494B;           /* 3.83:1 — decoratif ou large text only */
     --color-brand-light: #F49C9E;
     --color-brand-pale: #FFB3A7;
-    --color-brand-alt: #CE3B3D;   /* WCAG AA : 4.86:1 sur blanc (was #FF8080, 2.43:1) */
-    --color-brand-btn: #CE3B3D;   /* WCAG AA 4.86:1 sur blanc */
+    --color-brand-alt: #CE3B3D;
+    --color-brand-btn: #CE3B3D;
     --color-white: #ffffff;
-    --color-brand-gold: #F5C547;
+    --color-brand-gold: #E8C84A;      /* 1.64:1 — decoratif uniquement */
     --color-brand-gold-dark: #D4A843;
+
+    /* === COULEURS RGAA CONFORMES === */
+    /* Texte sur fond blanc (ratio >= 4.5:1) */
+    --color-text-red:     #CE3B3D;    /* 4.86:1 */
+    --color-text-gold:    #7A6100;    /* 5.94:1 */
+    /* Fond portant du texte blanc (ratio >= 4.5:1) */
+    --color-bg-red:       #BE2F31;    /* 5.77:1 */;
 
     /* Gradients */
     --gradient-brand: linear-gradient(135deg, #B93539 0%, var(--color-brand-alt) 100%); /* WCAG AA : 5.78:1 → 4.86:1 */
-    --gradient-hero: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 50%, var(--color-brand-pale) 100%);
+    --gradient-hero: linear-gradient(135deg, #BE2F31 0%, #C44E4E 50%, #BE2F31 100%);
 
     /* Edge offset for absolute-positioned elements */
     --edge-offset: 20px;
@@ -96,12 +103,32 @@
     --slide-pad-x: 2rem;
     --slide-pad-y: 2rem;
 
-    /* Responsive font sizes for slides */
-    --fs-slide-title: clamp(1.5rem, 4vw, 2.5rem);
-    --fs-slide-subtitle: clamp(0.95rem, 2.5vw, 1.2rem);
-    --fs-slide-body: clamp(0.8rem, 1.5vw, 0.9rem);
-    --fs-slide-meta: clamp(0.7rem, 1.3vw, 0.85rem);
-    --fs-slide-small: 0.75rem;
+    /* === ECHELLE TYPOGRAPHIQUE (couche 1 : tailles) === */
+    --size-2xs: 0.8125rem;                          /* 13px — credits */
+    --size-xs:  clamp(0.875rem, 1.3vw, 1rem);       /* 14-16px — captions */
+    --size-sm:  clamp(1rem, 1.8vw, 1.125rem);        /* 16-18px — corps */
+    --size-md:  clamp(1.125rem, 2.5vw, 1.375rem);    /* 18-22px — sous-titres */
+    --size-lg:  clamp(1.5rem, 3vw, 2.2rem);           /* 24-35px — titres compacts */
+    --size-xl:  clamp(1.5rem, 3.5vw, 2.5rem);         /* 24-40px — titres standards */
+    --size-2xl: clamp(1.75rem, 4.5vw, 3.5rem);        /* 28-56px — titres prominents */
+    --size-3xl: clamp(2.5rem, 6vw, 5rem);              /* 40-80px — hero */
+    --size-4xl: clamp(4rem, 10vw, 8rem);               /* 64-128px — numeros geants */
+
+    /* === ROLES SEMANTIQUES (couche 2 : aliases) === */
+    --fs-hero:     var(--size-3xl);
+    --fs-title-xl: var(--size-2xl);
+    --fs-title:    var(--size-xl);
+    --fs-subtitle: var(--size-md);
+    --fs-body:     var(--size-sm);
+    --fs-caption:  var(--size-xs);
+    --fs-credit:   var(--size-2xs);
+
+    /* === RETROCOMPATIBILITE (anciennes variables) === */
+    --fs-slide-title:    var(--fs-title);
+    --fs-slide-subtitle: var(--fs-subtitle);
+    --fs-slide-body:     var(--fs-body);
+    --fs-slide-meta:     var(--fs-caption);
+    --fs-slide-small:    var(--fs-caption);
 
     /* Responsive grid gaps */
     --grid-gap: 1rem;
@@ -174,15 +201,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: var(--fs-title-xl);
 }
 
 h2 {
-    font-size: 1.75rem;
+    font-size: var(--fs-title);
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: var(--fs-title);
 }
 
 p {
@@ -292,7 +319,7 @@ img {
     gap: 0.6rem;
     min-height: 48px;
     font-family: var(--font-secondary);
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     text-decoration: none;
@@ -303,7 +330,7 @@ img {
 .hero-page1__logo a span:first-child,
 .hero-page1__logo a span:last-child {
     font-weight: 300;
-    font-size: 1.2em;
+    font-size: var(--fs-subtitle);
 }
 
 .hero-page1__logo-text {
@@ -335,7 +362,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.75rem 1.2rem;
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -357,7 +384,7 @@ img {
     color: var(--color-white);
     padding: 0.5rem 0.8rem;
     min-height: 48px;
-    font-size: 0.7rem;
+    font-size: var(--fs-credit);
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;
@@ -373,7 +400,7 @@ img {
 }
 
 .hero-page1__partners a {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-weight: 600;
     color: var(--color-white);
     text-decoration: underline;
@@ -396,7 +423,7 @@ img {
 }
 
 .hero-page1__title-group h1 {
-    font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.15;
@@ -408,7 +435,7 @@ img {
 }
 
 .hero-page1__hashtags {
-    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
+    font-size: var(--fs-body);
     font-weight: 400;
     color: var(--color-white);
     letter-spacing: 3px;
@@ -444,7 +471,7 @@ img {
 }
 
 .hero-page1__bottom-left a {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-white);
     text-decoration: underline;
@@ -475,7 +502,7 @@ img {
 }
 
 .hero-page1__follow-label {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-white);
     letter-spacing: 1.5px;
@@ -484,7 +511,7 @@ img {
 }
 
 .hero-page1__bottom-right a {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 500;
     color: var(--color-white);
     text-decoration: underline;
@@ -541,7 +568,7 @@ img {
     }
 
     .hero-page1__logo a {
-        font-size: 0.8rem;
+        font-size: var(--fs-caption);
     }
 
     .hero-page1__nav {
@@ -561,12 +588,12 @@ img {
 
     .hero-page1__nav-btn {
         padding: 0.25rem 0.4rem;
-        font-size: 0.5rem;
+        font-size: var(--fs-credit);
         min-width: auto;
     }
 
     .hero-page1__nav-lang {
-        font-size: 0.5rem;
+        font-size: var(--fs-credit);
         padding: 0.25rem 0.4rem;
     }
 
@@ -590,11 +617,11 @@ img {
     }
 
     .hero-page1__title-group h1 {
-        font-size: clamp(1.1rem, 5vw, 1.5rem);
+        font-size: var(--fs-subtitle);
     }
 
     .hero-page1__hashtags {
-        font-size: clamp(0.55rem, 2.5vw, 0.7rem);
+        font-size: var(--fs-credit);
     }
 
     .hero-page1__image {
@@ -620,7 +647,7 @@ img {
     }
 
     .hero-page1__bottom-left a {
-        font-size: 0.65rem;
+        font-size: var(--fs-credit);
         min-height: 44px;
     }
 
@@ -636,12 +663,12 @@ img {
     }
 
     .hero-page1__bottom-right a {
-        font-size: 0.65rem;
+        font-size: var(--fs-credit);
         min-height: 44px;
     }
 
     .hero-page1__follow-label {
-        font-size: 0.6rem;
+        font-size: var(--fs-credit);
         margin: 0 0 0.3rem 0;
     }
 }
@@ -665,6 +692,36 @@ img {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+    color: #000;
+    background: transparent;
+}
+
+/* === TEXT-SHADOW ACCESSIBILITE : contraste garanti sur background-image === */
+.full-image-page__credit,
+.hero-page1__title-group,
+.hero-page1__title-group h1,
+.hero-page1__title-group p,
+.hero-page1__links a,
+.hero-page1__social a,
+.hero-page1__hashtags,
+.page9__card-title,
+.page10__card-title,
+.page12__title-overlay,
+.page12__title-overlay h2,
+.page12__title-overlay p,
+.page23__overlay,
+.page23__number,
+.page23__title,
+.page35__overlay-name,
+.page35__overlay-desc,
+.page43__title,
+.page43__subtitle,
+.page43__award,
+.page50__title,
+.page50__subtitle,
+.page50__meta,
+.page57__cta {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .skip-link {
@@ -729,7 +786,7 @@ img {
 .team__container h2 {
     color: var(--color-white);
     text-align: center;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-size: var(--fs-title-xl);
     margin-bottom: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -750,7 +807,7 @@ img {
 .team__subtitle {
     color: var(--color-white);
     text-align: center;
-    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    font-size: var(--fs-subtitle);
     margin-bottom: 1.5rem;
     line-height: 1.6;
     font-weight: 700;
@@ -797,7 +854,7 @@ img {
 
 .team__member-firstname {
     color: var(--color-white);
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     margin: 0;
     margin-bottom: 0.25rem;
     font-weight: 400;
@@ -807,7 +864,7 @@ img {
 
 .team__member-info h3 {
     color: var(--color-white);
-    font-size: clamp(0.95rem, 2.2vw, 1.2rem); /* 19.2px >= 18.5px = large text WCAG (seuil 3:1) */
+    font-size: var(--fs-subtitle); /* 19.2px >= 18.5px = large text WCAG (seuil 3:1) */
     font-weight: 700;
     margin: 0 0 0.5rem 0;
     text-transform: uppercase;
@@ -817,7 +874,7 @@ img {
 
 .team__member-role {
     color: var(--color-white);
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     margin: 0;
     margin-bottom: 0.3rem;
     font-weight: 400;
@@ -840,12 +897,12 @@ img {
     }
 
     .team__container h2 {
-        font-size: 1.3rem;
+        font-size: var(--fs-subtitle);
         margin-bottom: 0.8rem;
     }
 
     .team__subtitle {
-        font-size: 0.85rem;
+        font-size: var(--fs-caption);
         margin-bottom: 1rem;
     }
 
@@ -854,11 +911,11 @@ img {
     }
 
     .team__member-info h3 {
-        font-size: 0.8rem;
+        font-size: var(--fs-caption);
     }
 
     .team__member-role {
-        font-size: 0.65rem;
+        font-size: var(--fs-credit);
     }
 }
 
@@ -869,12 +926,12 @@ img {
     }
 
     .team__container h2 {
-        font-size: 1.1rem;
+        font-size: var(--fs-subtitle);
         margin-bottom: 0.5rem;
     }
 
     .team__subtitle {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
         margin-bottom: 0.8rem;
     }
 
@@ -883,11 +940,11 @@ img {
     }
 
     .team__member-info h3 {
-        font-size: 0.7rem;
+        font-size: var(--fs-credit);
     }
 
     .team__member-role {
-        font-size: 0.6rem;
+        font-size: var(--fs-credit);
     }
 }
 
@@ -930,7 +987,7 @@ img {
 }
 
 .page3__header h2 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     letter-spacing: 2px;
     margin: 0 0 0.6rem 0;
@@ -949,7 +1006,7 @@ img {
 }
 
 .page3__intro p {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     margin: 0 0 0.6rem 0;
     font-weight: 400;
     letter-spacing: 0.3px;
@@ -961,7 +1018,7 @@ img {
 }
 
 .page3__section-title {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     letter-spacing: 1.2px;
     margin: 1rem 0 0.6rem 0;
@@ -979,7 +1036,7 @@ img {
 }
 
 .page3__project-title {
-    font-size: 1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
@@ -987,7 +1044,7 @@ img {
 }
 
 .page3__project-subtitle {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     margin: 0 0 0.5rem 0;
     font-weight: 400;
     font-style: italic;
@@ -995,7 +1052,7 @@ img {
 }
 
 .page3__project-meta {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     margin: 0.3rem 0;
     line-height: 1.5;
     font-weight: 400;
@@ -1010,7 +1067,7 @@ img {
 }
 
 .page3__project-title-small {
-    font-size: 1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
@@ -1021,7 +1078,7 @@ img {
     display: inline-block;
     color: var(--color-white);
     text-decoration: underline;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     margin-top: 1rem;
     font-weight: 400;
     letter-spacing: 0.3px;
@@ -1030,7 +1087,7 @@ img {
 }
 
 .page3__project-link:hover {
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 /* Colonne droite - Galerie */
@@ -1084,7 +1141,7 @@ img {
 }
 
 #page-4 .page3__right--text .page3__left {
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     color: var(--color-white);
 }
 
@@ -1097,29 +1154,30 @@ img {
 }
 
 #page-4 .page3__project-title {
-    color: #333;
+    color: var(--color-white);
 }
 
 #page-4 .page3__project-subtitle {
-    color: var(--color-brand);
+    color: var(--color-white);
 }
 
 #page-4 .page3__project-meta {
-    color: #444;
+    color: var(--color-white);
     background-color: transparent;
 }
 
 #page-4 .page3__project-link {
-    color: #333;
+    color: var(--color-white);
+    text-decoration: underline;
 }
 
 #page-4 .page3__section-title {
-    color: var(--color-brand);
+    color: var(--color-white);
     background-color: transparent;
 }
 
 #page-4 .page3__intro p {
-    color: #555;
+    color: var(--color-white);
 }
 
 .page3__left--image {
@@ -1182,7 +1240,7 @@ img {
 }
 
 .page5__title {
-    font-size: clamp(1.3rem, 5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.2;
@@ -1194,7 +1252,7 @@ img {
     background-color: var(--color-brand-btn); /* solide pour a11y (rgba non calculable sur gradient) */
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     letter-spacing: 0.5px;
@@ -1228,7 +1286,7 @@ img {
 
 .page5__subtitle {
     color: var(--color-white);
-    font-size: 1.1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 400;
     letter-spacing: 1px;
     margin: 0;
@@ -1259,7 +1317,7 @@ img {
 }
 
 .page6__title {
-    font-size: clamp(1.3rem, 4vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.1;
@@ -1273,7 +1331,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     letter-spacing: 0.5px;
@@ -1318,7 +1376,7 @@ img {
 }
 
 .page6__section-title {
-    font-size: 1rem;
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.3;
@@ -1327,7 +1385,7 @@ img {
 }
 
 .page6__section-text {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     color: var(--color-white);
     line-height: 1.5;
     margin: 0;
@@ -1360,9 +1418,10 @@ img {
     position: absolute;
     bottom: 1rem;
     right: 1.5rem;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--fs-caption);
+    color: var(--color-white);
     letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* ============================================================
@@ -1373,7 +1432,7 @@ img {
     position: relative;
     width: 100%;
     min-height: var(--section-height);
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     padding: 0;
 }
 
@@ -1385,7 +1444,7 @@ img {
 
 .partners-page__title {
     font-family: var(--font-secondary);
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     color: var(--color-white);
     margin: 0 0 1rem 0;
@@ -1428,6 +1487,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-bg-red);
 }
 
 .page9__background {
@@ -1463,7 +1523,7 @@ img {
 }
 
 .page9__hashtags p {
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 400;
     font-style: italic;
     letter-spacing: 1px;
@@ -1475,7 +1535,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     line-height: 1.3;
@@ -1487,7 +1547,7 @@ img {
 }
 
 .page9__intro h2 {
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     line-height: 1.5;
@@ -1509,6 +1569,7 @@ img {
     display: block;
     text-decoration: none;
     color: var(--color-white);
+    background-color: #333;
 }
 
 .page9__card:hover {
@@ -1526,7 +1587,7 @@ img {
     position: absolute;
     bottom: 1.5rem;
     left: 1.5rem;
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     text-decoration: underline;
@@ -1543,6 +1604,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-bg-red);
 }
 
 .page10__background {
@@ -1585,6 +1647,7 @@ img {
     display: block;
     text-decoration: none;
     color: var(--color-white);
+    background-color: #333;
 }
 
 .page10__card:hover {
@@ -1603,7 +1666,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     color: var(--color-white);
     text-decoration: underline;
@@ -1707,8 +1770,8 @@ img {
 
 .page12 {
     position: relative;
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: #000;
 }
 
@@ -1736,7 +1799,7 @@ img {
     background-color: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: var(--fs-body);
     font-weight: 700;
     text-align: center;
     line-height: 1.3;
@@ -1776,7 +1839,7 @@ img {
     color: var(--color-white);
     border: none;
     padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -1809,16 +1872,15 @@ img {
 }
 
 .page12__quotes-list p {
-    font-size: 0.85rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     margin: 0;
     color: var(--color-white);
 }
 
 .page12__quotes-list footer {
-    font-size: 0.75rem;
+    font-size: var(--fs-caption);
     color: var(--color-white);
-    opacity: 0.8;
     margin: 0;
 }
 
@@ -1873,12 +1935,12 @@ img {
 }
 
 .page13__arrow {
-    font-size: 2rem;
+    font-size: var(--fs-title-xl);
     color: var(--color-brand);
 }
 
 .page13__header h2 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: var(--fs-title-xl);
     font-weight: 800;
     color: var(--color-brand);
     margin: 0;
@@ -1916,12 +1978,12 @@ img {
     position: absolute;
     bottom: 0.5rem;
     left: 0.8rem;
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: var(--size-3xl);
     font-weight: 300;
     color: var(--color-white);
     line-height: 1;
     font-style: italic;
-    opacity: 0.9;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .page13__card-body {
@@ -1947,18 +2009,17 @@ img {
 }
 
 .page13__card-title {
-    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    font-size: var(--fs-body);
     font-weight: 700;
     margin: 0;
     color: var(--color-white);
 }
 
 .page13__card-subtitle {
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     margin: 0.2rem 0 0;
     color: var(--color-white);
-    opacity: 0.9;
 }
 
 /* ============================================================
@@ -1984,7 +2045,7 @@ img {
 }
 
 .page14__number {
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: var(--size-4xl);
     font-weight: 300;
     font-style: italic;
     color: #0e6469;
@@ -1992,7 +2053,7 @@ img {
 }
 
 .page14__title {
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     color: #0e6469;
     line-height: 1.6;
@@ -2087,9 +2148,9 @@ img {
 .page16__credit {
     text-align: center;
     padding: 0.8rem;
-    font-size: 0.75rem;
+    font-size: var(--fs-caption);
     font-style: italic;
-    color: rgba(255, 255, 255, 0.7);
+    color: #555;
     letter-spacing: 0.02em;
     flex-shrink: 0;
 }
@@ -2117,7 +2178,7 @@ img {
 }
 
 .page20__number {
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: var(--size-4xl);
     font-weight: 300;
     font-style: italic;
     color: var(--color-brand-btn);
@@ -2125,7 +2186,7 @@ img {
 }
 
 .page20__title {
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     color: var(--color-brand-btn);
     line-height: 1.6;
@@ -2180,13 +2241,13 @@ img {
 }
 
 .page24__header .page13__arrow {
-    color: #7D5A00;
+    color: var(--color-text-gold);
 }
 
 .page24__header h2 {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: var(--fs-title-xl);
     font-weight: 800;
-    color: #7D5A00;
+    color: var(--color-text-gold);
     margin: 0;
 }
 
@@ -2216,9 +2277,9 @@ img {
 }
 .page27__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
-    color: #D4A843;
+    color: var(--color-text-gold);
     margin: 0 0 1rem 0;
     flex-shrink: 0;
 }
@@ -2236,7 +2297,7 @@ img {
     display: block;
 }
 .page27__credit {
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     color: var(--color-text);
     margin: 0.5rem 0 0 0;
@@ -2248,9 +2309,9 @@ img {
    ============================================================ */
 
 .page58 {
-    height: var(--section-height);
-    overflow: hidden;
-    background-color: var(--color-brand);
+    min-height: var(--section-height);
+    overflow: visible;
+    background-color: var(--color-bg-red);
     color: var(--color-white);
 }
 .page58__container {
@@ -2266,7 +2327,7 @@ img {
 }
 .page58__banner-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     background-color: #7B4FBF;
     display: inline-block;
@@ -2306,14 +2367,14 @@ img {
     background-color: #E8C84A;
     color: #333;
     font-family: var(--font-primary);
-    font-size: 0.7rem;
+    font-size: var(--fs-credit);
     font-weight: 700;
     padding: 0.3rem 0.8rem;
     border-radius: 3px;
 }
 .page58__stars {
-    color: #E8C84A;
-    font-size: 1rem;
+    color: var(--color-white);
+    font-size: var(--fs-subtitle);
     margin-bottom: 0.3rem;
     letter-spacing: 0.1em;
 }
@@ -2326,11 +2387,11 @@ img {
 .page58__reserve-label {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
-    color: #333;
+    color: var(--color-white);
 }
 .page58__experience-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     margin: 0 0 0.5rem;
 }
@@ -2340,7 +2401,6 @@ img {
     font-style: italic;
     line-height: 1.5;
     margin: 0 0 0.8rem;
-    opacity: 0.9;
 }
 .page58__duration {
     font-family: var(--font-secondary);
@@ -2351,7 +2411,6 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
     margin: 0 0 0.8rem;
-    opacity: 0.8;
 }
 .page58__tarifs-title {
     font-family: var(--font-primary);
@@ -2381,10 +2440,9 @@ img {
 }
 .page58__coming-soon {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     font-weight: 700;
     margin: 1rem 0 0;
-    opacity: 0.7;
 }
 .page58__right {
     display: flex;
@@ -2431,9 +2489,9 @@ img {
    ============================================================ */
 
 .page60 {
-    height: var(--section-height);
-    overflow: hidden;
-    background-color: var(--color-brand);
+    min-height: var(--section-height);
+    overflow: visible;
+    background-color: var(--color-bg-red);
     color: var(--color-white);
 }
 .page60__layout {
@@ -2447,7 +2505,7 @@ img {
 }
 .page60__section-title {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     font-style: italic;
     margin: 1.5rem 0 0.5rem;
@@ -2506,9 +2564,9 @@ img {
    ============================================================ */
 
 .page61 {
-    height: var(--section-height);
-    overflow: hidden;
-    background-color: var(--color-brand);
+    min-height: var(--section-height);
+    overflow: visible;
+    background-color: var(--color-bg-red);
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -2528,14 +2586,14 @@ img {
 }
 .page61__mail-link {
     color: var(--color-white);
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     padding: 0.1rem 0.4rem;
     text-decoration: none;
     font-weight: 700;
 }
 .page61__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: var(--color-white);
     margin: 0 0 0.5rem;
@@ -2544,19 +2602,19 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     font-style: italic;
-    color: rgba(255,255,255,0.9);
+    color: var(--color-white);
     margin: 0 0 0.8rem;
 }
 .page61__paragraph {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
-    color: rgba(255,255,255,0.9);
+    color: var(--color-white);
     line-height: 1.5;
     margin: 0 0 0.8rem;
 }
 .page61__faq-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     color: var(--color-white);
     margin: 1.5rem 0 0.8rem;
@@ -2575,7 +2633,7 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     font-style: italic;
-    color: rgba(255,255,255,0.9);
+    color: var(--color-white);
     margin: 0 0 0 1rem;
 }
 .page61__help {
@@ -2639,7 +2697,6 @@ img {
     font-size: var(--fs-slide-meta);
     letter-spacing: 0.3em;
     margin: 0 0 1.5rem;
-    opacity: 0.8;
 }
 .page62__title {
     font-family: var(--font-primary);
@@ -2665,7 +2722,6 @@ img {
     line-height: 1.6;
     text-align: center;
     margin-bottom: 2rem;
-    opacity: 0.9;
 }
 .page62__logo {
     height: 3rem;
@@ -2686,7 +2742,7 @@ img {
 .page57 {
     height: var(--section-height);
     overflow: hidden;
-    background: linear-gradient(135deg, #E8494B 0%, #F5A0A0 50%, #E8494B 100%);
+    background: linear-gradient(135deg, #BE2F31 0%, #BE5050 50%, #BE2F31 100%);
     position: relative;
 }
 .page57::before {
@@ -2716,7 +2772,7 @@ img {
 }
 .page57__main-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     letter-spacing: 0.1em;
     margin: 0;
@@ -2731,7 +2787,7 @@ img {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     padding: 0.3rem 0.6rem;
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
@@ -2747,7 +2803,7 @@ img {
 }
 .page57__subtitle {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     margin: 0 0 1rem;
 }
@@ -2757,13 +2813,11 @@ img {
     font-style: italic;
     line-height: 1.5;
     margin: 0 0 0.8rem;
-    opacity: 0.9;
 }
 .page57__tags {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 1rem;
-    opacity: 0.8;
 }
 .page57__photo {
     max-width: 100%;
@@ -2798,7 +2852,7 @@ img {
 .page56 {
     height: var(--section-height);
     overflow: hidden;
-    background: linear-gradient(180deg, #E8494B 0%, #F5A0A0 100%);
+    background: linear-gradient(180deg, #BE2F31 0%, #BE5050 100%);
     display: flex;
     flex-direction: column;
 }
@@ -2808,7 +2862,7 @@ img {
 }
 .page56__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     font-style: italic;
     color: var(--color-white);
@@ -2870,7 +2924,7 @@ img {
 .page54 {
     height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     display: flex;
     flex-direction: column;
 }
@@ -2926,7 +2980,7 @@ img {
 .page53 {
     height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     display: grid;
     grid-template-columns: 45% 55%;
 }
@@ -2939,7 +2993,7 @@ img {
 }
 .page53__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     letter-spacing: 0.05em;
     margin: 0 0 0.3rem;
@@ -2949,7 +3003,6 @@ img {
     font-size: var(--fs-slide-small);
     font-style: italic;
     margin: 0;
-    opacity: 0.85;
 }
 .page53__description {
     font-family: var(--font-secondary);
@@ -2957,7 +3010,6 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     margin: 0;
-    opacity: 0.9;
 }
 .page53__logos {
     display: flex;
@@ -2986,7 +3038,7 @@ img {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: 0.3rem 0.6rem;
     font-family: var(--font-secondary);
@@ -3039,7 +3091,7 @@ img {
 }
 .page52__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     font-style: italic;
     letter-spacing: 0.05em;
@@ -3050,7 +3102,6 @@ img {
     font-size: var(--fs-slide-body);
     font-style: italic;
     margin: 0;
-    opacity: 0.9;
 }
 .page52__venue {
     overflow: hidden;
@@ -3121,7 +3172,7 @@ img {
 }
 .page51__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: var(--size-lg);
     font-weight: 900;
     letter-spacing: 0.1em;
     color: #8B5E3C;
@@ -3146,6 +3197,7 @@ img {
 .page51__right {
     position: relative;
     overflow: hidden;
+    background-color: #333;
 }
 .page51__photo {
     width: 100%;
@@ -3163,14 +3215,15 @@ img {
 }
 .page51__quote {
     font-family: var(--font-secondary);
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     font-style: italic;
     color: var(--color-white);
     line-height: 1.3;
     margin: 0 0 1rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 .page51__quote strong {
-    color: #D4A043;
+    color: #E8C84A;
 }
 
 @media (max-width: 768px) {
@@ -3219,7 +3272,7 @@ img {
     position: absolute;
     top: var(--slide-pad-y);
     right: var(--slide-pad-x);
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: 0.3rem 0.6rem;
     font-family: var(--font-secondary);
@@ -3228,7 +3281,7 @@ img {
 }
 .page50__title {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-size: var(--size-3xl);
     font-style: italic;
     font-weight: 400;
     margin: 0 0 0.5rem;
@@ -3238,7 +3291,6 @@ img {
     font-size: var(--fs-slide-body);
     font-style: italic;
     margin: 0 0 0.3rem;
-    opacity: 0.9;
 }
 .page50__credit {
     font-family: var(--font-primary);
@@ -3250,7 +3302,6 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
     margin: 0 0 1rem;
-    opacity: 0.8;
 }
 .page50__logos {
     display: flex;
@@ -3303,8 +3354,8 @@ img {
 }
 .page49__tagline {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2vw, 1.3rem);
-    color: var(--color-brand);
+    font-size: var(--fs-subtitle);
+    color: var(--color-text-red);    /* RGAA AA : 4.86:1 sur blanc (fs-subtitle sans bold) */
     font-style: italic;
     margin: 0 0 0.3rem;
 }
@@ -3359,7 +3410,7 @@ img {
     position: absolute;
     top: 1rem;
     right: var(--slide-pad-x);
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: 0.3rem 0.6rem;
     font-family: var(--font-secondary);
@@ -3378,7 +3429,7 @@ img {
 }
 .page48__title {
     font-family: var(--font-primary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 400;
     font-style: italic;
     margin: 0 0 0.5rem;
@@ -3390,18 +3441,17 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     margin: 0 0 0.3rem;
-    opacity: 0.85;
 }
 .page48__subtitle--bold {
     font-weight: 700;
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     opacity: 1;
 }
 .page48__tagline {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     font-style: italic;
-    color: var(--color-brand);
+    color: #F06060;
     margin: 0.3rem 0 0;
 }
 .page48__logos {
@@ -3437,9 +3487,9 @@ img {
    ============================================================ */
 
 .page47 {
-    height: var(--section-height);
-    overflow: hidden;
-    background-color: var(--color-brand);
+    min-height: var(--section-height);
+    overflow: visible;
+    background-color: var(--color-bg-red);
     display: flex;
     flex-direction: column;
 }
@@ -3537,7 +3587,7 @@ img {
 .page46 {
     height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     display: flex;
     flex-direction: column;
 }
@@ -3558,7 +3608,7 @@ img {
 }
 .page46__title {
     font-family: var(--font-secondary);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: var(--fs-title-xl);
     font-style: italic;
     font-weight: 400;
     color: var(--color-white);
@@ -3617,8 +3667,8 @@ img {
    ============================================================ */
 
 .page44 {
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: var(--color-white);
     display: flex;
     flex-direction: column;
@@ -3649,7 +3699,7 @@ img {
     display: block;
 }
 .page44__text {
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: 2rem var(--slide-pad-x);
     display: flex;
@@ -3658,7 +3708,7 @@ img {
 }
 .page44__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     font-style: italic;
     margin: 0 0 0.8rem;
@@ -3668,20 +3718,17 @@ img {
     font-size: var(--fs-slide-body);
     font-style: italic;
     margin: 0 0 1rem;
-    opacity: 0.9;
 }
 .page44__tags {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 1rem;
-    opacity: 0.85;
 }
 .page44__awards {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
     font-style: italic;
     margin: 0;
-    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -3737,7 +3784,7 @@ img {
     position: absolute;
     top: var(--slide-pad-y);
     right: var(--slide-pad-x);
-    background-color: var(--color-brand);
+    background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: 0.4rem 0.8rem;
     font-family: var(--font-secondary);
@@ -3750,7 +3797,7 @@ img {
 }
 .page43__award-title {
     font-family: var(--font-primary);
-    font-size: clamp(0.9rem, 2vw, 1.3rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     letter-spacing: 0.1em;
     margin: 0 0 0.5rem;
@@ -3761,14 +3808,13 @@ img {
     letter-spacing: 0.15em;
     line-height: 1.6;
     margin: 0;
-    opacity: 0.9;
 }
 .page43__title-group {
     text-align: center;
 }
 .page43__title {
     font-family: var(--font-primary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     font-style: italic;
     letter-spacing: 0.05em;
@@ -3779,7 +3825,6 @@ img {
     font-size: var(--fs-slide-meta);
     letter-spacing: 0.1em;
     margin: 0;
-    opacity: 0.8;
 }
 .page43__logos {
     background-color: var(--color-white);
@@ -3892,16 +3937,16 @@ img {
 }
 .page40__title {
     font-family: var(--font-primary);
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: var(--fs-hero);
     font-weight: 900;
     margin: 0;
     color: #3B3F72;
 }
 .page40__badge {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 300;
-    color: rgba(59, 63, 114, 0.4);
+    color: #6B6FA0;
     margin-left: 0.5rem;
 }
 .page40__info {
@@ -3914,7 +3959,7 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     font-style: italic;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--color-white);
     margin: 0 0 1rem;
 }
 .page40__specs {
@@ -3926,13 +3971,13 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     font-weight: 700;
-    color: #E8494B;
+    color: var(--color-white);
     margin: 0 0 0.2rem;
 }
 .page40__spec-detail {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--color-white);
     margin: 0;
     line-height: 1.4;
 }
@@ -3950,8 +3995,8 @@ img {
     position: absolute;
     bottom: 0.5rem;
     right: 1.5rem;
-    font-size: 0.7rem;
-    color: rgba(100, 100, 100, 0.7);
+    font-size: var(--fs-credit);
+    color: #767676;
     letter-spacing: 0.02em;
 }
 
@@ -3994,7 +4039,7 @@ img {
 }
 .page39__number {
     font-family: var(--font-primary);
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: var(--fs-hero);
     font-weight: 300;
     color: #6B6FA0;
     line-height: 1;
@@ -4002,7 +4047,7 @@ img {
 }
 .page39__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: var(--fs-title-xl);
     font-weight: 900;
     color: #3B3F72;
     text-transform: uppercase;
@@ -4012,7 +4057,7 @@ img {
 }
 .page39__subtitle {
     font-family: var(--font-secondary);
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     color: #6B6FA0;
     margin: 0.2rem 0 0;
 }
@@ -4098,14 +4143,13 @@ img {
 }
 .page38__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--size-3xl);
+    color: #5C4800;
     line-height: 1;
 }
 .page38__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.05em;
@@ -4168,13 +4212,13 @@ img {
     flex-direction: column;
 }
 .page37__category-arrow {
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: var(--fs-title);
     color: #5C4200;
     margin: 0 0 0.3rem;
 }
 .page37__title {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.05em;
@@ -4184,9 +4228,8 @@ img {
 }
 .page37__letter {
     font-family: var(--font-secondary);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--fs-hero);
+    color: #5C4800;
 }
 .page37__right {
     position: relative;
@@ -4203,9 +4246,10 @@ img {
     position: absolute;
     bottom: 1rem;
     right: 1.5rem;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--fs-caption);
+    color: var(--color-white);
     letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -4241,14 +4285,13 @@ img {
 }
 .page36__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--size-3xl);
+    color: #5C4800;
     line-height: 1;
 }
 .page36__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4324,14 +4367,13 @@ img {
 }
 .page35__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--size-3xl);
+    color: #5C4800;
     line-height: 1;
 }
 .page35__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4371,10 +4413,13 @@ img {
     left: 10%;
     text-align: left;
     color: var(--color-white);
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
 }
 .page35__overlay-name {
     font-family: var(--font-primary);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: var(--fs-title);
     font-weight: 700;
     letter-spacing: 0.3em;
     margin: 0 0 0.5rem;
@@ -4419,14 +4464,13 @@ img {
 }
 .page34__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--size-3xl);
+    color: #5C4800;
     line-height: 1;
 }
 .page34__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4508,14 +4552,13 @@ img {
 }
 .page33__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(3rem, 8vw, 5rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--size-3xl);
+    color: #5C4800;
     line-height: 1;
 }
 .page33__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4585,14 +4628,13 @@ img {
 }
 .page32__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--fs-title);
+    color: #5C4800;
     line-height: 1;
 }
 .page32__category-text {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4629,14 +4671,13 @@ img {
 }
 .page31__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(4rem, 10vw, 8rem);
-    color: #7D5A00;
-    opacity: 0.6;
+    font-size: var(--size-4xl);
+    color: #5C4800;
     line-height: 1;
 }
 .page31__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-size: var(--fs-subtitle);
     font-weight: 900;
     color: #5C4200;
     letter-spacing: 0.1em;
@@ -4744,7 +4785,7 @@ img {
     display: block;
 }
 .page26__credit {
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     color: var(--color-text);
     margin: 0.5rem 0 0 0;
@@ -4777,9 +4818,10 @@ img {
     position: absolute;
     top: 0.5rem;
     right: 1.5rem;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--fs-caption);
+    color: var(--color-white);
     letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Zone basse : galerie + categorie */
@@ -4811,7 +4853,7 @@ img {
 }
 .page25__gallery-caption {
     grid-column: 1 / -1;
-    font-size: 0.8rem;
+    font-size: var(--fs-caption);
     font-style: italic;
     color: var(--color-text);
     padding: 0.5rem 0;
@@ -4827,14 +4869,13 @@ img {
 }
 .page25__category-letter {
     font-family: var(--font-secondary);
-    font-size: clamp(4rem, 10vw, 8rem);
-    color: #7D5A00;    /* 3.89:1 sur gold — OK grand texte WCAG AA */
-    opacity: 0.6;
+    font-size: var(--size-4xl);
+    color: #5C4800;
     line-height: 1;
 }
 .page25__category-title {
     font-family: var(--font-primary);
-    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-size: var(--fs-title);
     font-weight: 900;
     color: #5C4200;    /* 5.80:1 sur gold — WCAG AA */
     letter-spacing: 0.1em;
@@ -4903,17 +4944,17 @@ img {
     z-index: 2;
 }
 .page23__number {
-    font-size: clamp(4rem, 8vw, 7rem);
+    font-size: var(--size-4xl);
     font-weight: 300;
     font-style: italic;
-    color: #7D5A00;
+    color: var(--color-text-gold);
     line-height: 1;
     display: block;
 }
 .page23__title {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: var(--fs-title-xl);
     font-weight: 900;
-    color: #D4A843;
+    color: var(--color-text-gold);
     line-height: 1.3;
     margin: 0.3rem 0 0;
     text-decoration: underline;
@@ -4961,12 +5002,12 @@ img {
     }
 
     .page5__title {
-        font-size: clamp(1.1rem, 4vw, 1.8rem);
+        font-size: var(--fs-subtitle);
     }
 
     .page5__badge {
         align-self: flex-start;
-        font-size: 0.55rem;
+        font-size: var(--fs-credit);
         padding: 0.4rem 0.6rem;
     }
 
@@ -4989,7 +5030,7 @@ img {
     }
 
     .page5__subtitle {
-        font-size: 0.65rem;
+        font-size: var(--fs-credit);
     }
 
     /* Page 6 - Grid empile */
@@ -5002,11 +5043,11 @@ img {
     }
 
     .page6__title {
-        font-size: clamp(1rem, 4vw, 1.5rem);
+        font-size: var(--fs-subtitle);
     }
 
     .page6__badge {
-        font-size: 0.55rem;
+        font-size: var(--fs-credit);
         padding: 0.4rem 0.6rem;
     }
 
@@ -5067,7 +5108,7 @@ img {
     }
 
     .page3__header h2 {
-        font-size: 1rem;
+        font-size: var(--fs-body);
         margin-bottom: 0.4rem;
     }
 
@@ -5080,13 +5121,13 @@ img {
     }
 
     .page3__intro p {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
         margin-bottom: 0.3rem;
         line-height: 1.4;
     }
 
     .page3__section-title {
-        font-size: 0.8rem;
+        font-size: var(--fs-caption);
         margin: 0.5rem 0 0.4rem 0;
     }
 
@@ -5095,23 +5136,23 @@ img {
     }
 
     .page3__project-title {
-        font-size: 0.85rem;
+        font-size: var(--fs-caption);
         margin-bottom: 0.2rem;
     }
 
     .page3__project-subtitle {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
         margin-bottom: 0.3rem;
     }
 
     .page3__project-meta {
-        font-size: 0.7rem;
+        font-size: var(--fs-credit);
         margin: 0.15rem 0;
         line-height: 1.3;
     }
 
     .page3__project-link {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
         margin-top: 0.5rem;
     }
 
@@ -5180,33 +5221,33 @@ img {
     }
 
     .page3__header h2 {
-        font-size: 1rem;
+        font-size: var(--fs-body);
     }
 
     .page3__intro p {
-        font-size: 0.8rem;
+        font-size: var(--fs-caption);
         line-height: 1.5;
     }
 
     .page3__section-title {
-        font-size: 0.85rem;
+        font-size: var(--fs-caption);
     }
 
     .page3__project-title {
-        font-size: 0.9rem;
+        font-size: var(--fs-body);
     }
 
     .page3__project-subtitle {
-        font-size: 0.8rem;
+        font-size: var(--fs-caption);
     }
 
     .page3__project-meta {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
         line-height: 1.4;
     }
 
     .page3__project-link {
-        font-size: 0.85rem;
+        font-size: var(--fs-caption);
     }
 }
 
@@ -5222,19 +5263,19 @@ img {
     }
 
     .page3__header h2 {
-        font-size: 0.9rem;
+        font-size: var(--fs-body);
     }
 
     .page3__intro p {
-        font-size: 0.78rem;
+        font-size: var(--fs-caption);
     }
 
     .page3__project-title {
-        font-size: 0.85rem;
+        font-size: var(--fs-caption);
     }
 
     .page3__project-meta {
-        font-size: 0.7rem;
+        font-size: var(--fs-credit);
     }
 }
 
@@ -5252,7 +5293,7 @@ img {
     }
 
     .partners-page__title {
-        font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        font-size: var(--fs-subtitle);
         margin: 0 0 0.8rem 0;
     }
 
@@ -5272,7 +5313,7 @@ img {
     }
 
     .partners-page__title {
-        font-size: 1.2rem;
+        font-size: var(--fs-subtitle);
         margin: 0 0 0.8rem 0;
     }
 }
@@ -5284,7 +5325,7 @@ img {
     }
 
     .partners-page__title {
-        font-size: 1.2rem;   /* >= 14pt bold (18.67px) = large text WCAG, seuil 3:1 */
+        font-size: var(--fs-subtitle);   /* >= 14pt bold (18.67px) = large text WCAG, seuil 3:1 */
         margin: 0 0 0.6rem 0;
     }
 }
@@ -5295,15 +5336,15 @@ img {
 
 @media (max-width: 1024px) {
     .page9__hashtags p {
-        font-size: 0.8rem;
+        font-size: var(--fs-caption);
     }
 
     .page9__intro h2 {
-        font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+        font-size: var(--fs-body);
     }
 
     .page9__card-title {
-        font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+        font-size: var(--fs-body);
     }
 }
 
@@ -5313,12 +5354,12 @@ img {
     }
 
     .page9__hashtags p {
-        font-size: 0.7rem;
+        font-size: var(--fs-credit);
         letter-spacing: 0.5px;
     }
 
     .page9__badge {
-        font-size: 0.7rem;
+        font-size: var(--fs-credit);
         padding: 0.5rem 0.7rem;
     }
 
@@ -5327,31 +5368,31 @@ img {
     }
 
     .page9__intro h2 {
-        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-size: var(--fs-caption);
         line-height: 1.4;
     }
 
     .page9__card-title {
-        font-size: clamp(0.8rem, 1.5vw, 1rem);
+        font-size: var(--fs-caption);
     }
 }
 
 @media (max-width: 480px) {
     .page9__hashtags p {
-        font-size: 0.65rem;
+        font-size: var(--fs-credit);
     }
 
     .page9__badge {
-        font-size: 0.6rem;
+        font-size: var(--fs-credit);
         padding: 0.4rem 0.5rem;
     }
 
     .page9__intro h2 {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
     }
 
     .page9__card-title {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
     }
 }
 
@@ -5361,19 +5402,19 @@ img {
 
 @media (max-width: 1024px) {
     .page10__card-title {
-        font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+        font-size: var(--fs-body);
     }
 }
 
 @media (max-width: 768px) {
     .page10__card-title {
-        font-size: clamp(0.8rem, 1.5vw, 1rem);
+        font-size: var(--fs-caption);
     }
 }
 
 @media (max-width: 480px) {
     .page10__card-title {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
     }
 }
 
@@ -5417,7 +5458,7 @@ img {
     }
 
     .page12__badge {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
         padding: 0.5rem 0.7rem;
     }
 
@@ -5446,16 +5487,16 @@ img {
     }
 
     .page12__disclosure-btn {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
         padding: 0.5rem 0.8rem;
     }
 
     .page12__quotes-list p {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
     }
 
     .page12__quotes-list footer {
-        font-size: 0.7rem;
+        font-size: var(--fs-credit);
     }
 
     .page12__logos-bar {
@@ -5474,7 +5515,7 @@ img {
 
 @media (max-width: 1024px) {
     .page13__header h2 {
-        font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+        font-size: var(--fs-title);
     }
 
     .page13__cards {
@@ -5482,7 +5523,7 @@ img {
     }
 
     .page13__card-number {
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: var(--size-3xl);
     }
 }
 
@@ -5515,11 +5556,11 @@ img {
     }
 
     .page13__card-number {
-        font-size: clamp(2rem, 10vw, 3rem);
+        font-size: var(--size-2xl);
     }
 
     .page13__card-title {
-        font-size: 0.75rem;
+        font-size: var(--fs-caption);
     }
 }
 
@@ -5533,11 +5574,11 @@ img {
     }
 
     .page14__number {
-        font-size: clamp(3rem, 6vw, 5rem);
+        font-size: var(--size-3xl);
     }
 
     .page14__title {
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-size: var(--fs-title-xl);
     }
 }
 
@@ -5597,11 +5638,11 @@ img {
 
 @media (max-width: 480px) {
     .page14__number {
-        font-size: clamp(2.5rem, 12vw, 4rem);
+        font-size: var(--size-2xl);
     }
 
     .page14__title {
-        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        font-size: var(--fs-title);
     }
 }
 
@@ -5650,7 +5691,7 @@ img {
 
 @media (max-width: 480px) {
     .page24__header h2 {
-        font-size: clamp(1.2rem, 5vw, 1.8rem);
+        font-size: var(--fs-title);
     }
 }
 
@@ -5669,11 +5710,11 @@ img {
 
 @media (max-width: 480px) {
     .page23__number {
-        font-size: clamp(2.5rem, 12vw, 4rem);
+        font-size: var(--size-2xl);
     }
 
     .page23__title {
-        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        font-size: var(--fs-title);
     }
 }
 
@@ -5720,11 +5761,11 @@ img {
 
 @media (max-width: 480px) {
     .page20__number {
-        font-size: clamp(2.5rem, 12vw, 4rem);
+        font-size: var(--size-2xl);
     }
 
     .page20__title {
-        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        font-size: var(--fs-title);
     }
 
     .page20__cover {
