@@ -315,7 +315,7 @@ a:hover {
 }
 
 a:focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-bg-red);
     outline-offset: 2px;
 }
 
@@ -766,7 +766,7 @@ a.page13__card--link:focus-visible {
 }
 
 .page-404__sitemap-list a:hover {
-    color: var(--color-brand-btn);
+    color: var(--color-bg-red);
 }
 
 /* ============================================================
@@ -818,7 +818,7 @@ a.page13__card--link:focus-visible {
 }
 
 .sitemap-page__list a:hover {
-    color: var(--color-brand-btn);
+    color: var(--color-bg-red);
 }
 
 /* ============================================================
@@ -865,7 +865,7 @@ a.page13__card--link:focus-visible {
 
 .footer__nav a:hover,
 .site-footer a:hover {
-    color: var(--color-accent);
+    color: var(--color-brand-pale);
 }
 
 /* ============================================================
