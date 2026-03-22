@@ -980,6 +980,53 @@ a.page13__card--link:focus-visible {
     color: rgba(255, 255, 255, 0.85);
 }
 
+/* ============================================================
+   8h. BOUTON RETOUR EN HAUT
+   ============================================================ */
+
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    z-index: 998;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
+}
+
+.back-to-top--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        bottom: var(--space-md);
+        right: var(--space-md);
+        width: 44px;
+        height: 44px;
+    }
+}
+
 /* RGAA 10.2 : majuscules visuelles via CSS (titres, noms, boutons uniquement) */
 .team__member-firstname,
 .team__member-info h3,

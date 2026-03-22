@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initDisabledCTA();
     initHeaderSpacing();
     initContactVideo();
+    initBackToTop();
     initSitemapVideo();
 });
 
@@ -686,6 +687,34 @@ function initSitemapVideo() {
             btn.classList.add('sitemap-page__play-btn--paused');
             btn.setAttribute('aria-label', 'Lancer la vidéo d\'ambiance du plan du site');
         }
+    });
+}
+
+/**
+ * Bouton retour en haut de page
+ * Cree en JS (degradation gracieuse : absent si JS desactive)
+ */
+function initBackToTop() {
+    var btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('aria-label', 'Retour en haut de page');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor"/></svg>';
+    document.body.appendChild(btn);
+
+    var visible = false;
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300 && !visible) {
+            btn.classList.add('back-to-top--visible');
+            visible = true;
+        } else if (window.scrollY <= 300 && visible) {
+            btn.classList.remove('back-to-top--visible');
+            visible = false;
+        }
+    });
+
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
