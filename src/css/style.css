@@ -666,6 +666,24 @@ img {
     outline-offset: 2px;
 }
 
+/* Cartes cliquables (pages 13/24) */
+a.page13__card--link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.page13__card--link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+a.page13__card--link:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+}
+
 /* ============================================================
    8d. SKIP LINK (amélioré)
    ============================================================ */
