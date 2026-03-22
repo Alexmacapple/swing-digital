@@ -56,14 +56,21 @@
     --color-bg-dark: #f5f5f5;
 
     /* Swing Digital brand colors */
-    --color-brand: #E8494B;
+    --color-brand: #E8494B;           /* 3.83:1 — decoratif ou large text only */
     --color-brand-light: #F49C9E;
     --color-brand-pale: #FFB3A7;
-    --color-brand-alt: #CE3B3D;   /* WCAG AA : 4.86:1 sur blanc (was #FF8080, 2.43:1) */
-    --color-brand-btn: #CE3B3D;   /* WCAG AA 4.86:1 sur blanc */
+    --color-brand-alt: #CE3B3D;
+    --color-brand-btn: #CE3B3D;
     --color-white: #ffffff;
-    --color-brand-gold: #F5C547;
+    --color-brand-gold: #E8C84A;      /* 1.64:1 — decoratif uniquement */
     --color-brand-gold-dark: #D4A843;
+
+    /* === COULEURS RGAA CONFORMES === */
+    /* Texte sur fond blanc (ratio >= 4.5:1) */
+    --color-text-red:     #CE3B3D;    /* 4.86:1 */
+    --color-text-gold:    #7A6100;    /* 5.94:1 */
+    /* Fond portant du texte blanc (ratio >= 4.5:1) */
+    --color-bg-red:       #BE2F31;    /* 5.77:1 */;
 
     /* Gradients */
     --gradient-brand: linear-gradient(135deg, #B93539 0%, var(--color-brand-alt) 100%); /* WCAG AA : 5.78:1 → 4.86:1 */
