@@ -648,6 +648,43 @@ Pas de redirection. Les anciennes ancres `#page-N` ne seront plus valides.
 
 ---
 
+## Maillage interne
+
+### Matrice de liens internes
+
+| Depuis | Vers | Lien | Type |
+|--------|------|------|------|
+| `index.html` (page 3) | `experience-monroe.html` | "[Voir le projet]" + titre "L'EXPÉRIENCE MONROE" | Lien projet |
+| `index.html` (page 4) | `voyage-autour-de-moi.html` | "[Voir le projet]" Voyage | Lien projet |
+| `index.html` (page 4) | `dessine-moi-le-vent.html` | "[Voir le projet]" Dessine | Lien projet |
+| `index.html` (page 3) | YouTube | "Galerie Joseph" × 2 | Lien externe |
+| `index.html` (page 1) | `#page-2` | "QUI SOMMES NOUS ?" | Ancre interne |
+| `index.html` (page 1) | `#page-8` | "ILS NOUS ONT FAIT CONFIANCE" | Ancre interne |
+| `index.html` (page 1) | mailto: | "CONTACT" | Externe |
+| `index.html` (page 1) | Instagram/LinkedIn/X | Réseaux sociaux | Externe |
+| `experiences-series.html` (page 9) | 4 pages projet | Vignettes 1-4 | Lien projet |
+| `experiences-series.html` (page 10) | 4 pages projet | Vignettes 5-8 | Lien projet |
+| `experience-monroe.html` (page 13) | 3 sous-pages monroe | Cartes volets 1-3 | Lien sous-page |
+| `experience-monroe.html` (page 13) | `xr-corporate.html` | Carte volet 4 (XR Memory Box) | Lien croisé |
+| `experience-monroe.html` (page 13) | `marilyn.html` | Carte volet 5 (Série Marilyn) | Lien croisé |
+| `experience-monroe.html` (page 24) | 6 sous-pages monroe | Cartes catégories A-F | Lien sous-page |
+| `reservations.html` (pages 58-59) | `#` | Boutons RÉSERVER (lien futur) | Placeholder |
+| Toutes pages (footer) | `index.html#page-2` | "Équipe" | Lien footer |
+| Toutes pages (footer) | mailto: | "Contact" | Lien footer |
+| Toutes pages (breadcrumb) | Parents hiérarchiques | Fil d'Ariane | Navigation |
+| Toutes pages (menu) | 4 sections + dropdown | Menu principal | Navigation |
+
+### Navigation entre sous-pages Monroe
+Pas de navigation directe entre sous-pages Monroe (pas de Précédent/Suivant). On navigue via :
+- Le breadcrumb (retour à `experience-monroe.html`)
+- Le menu principal (retour aux sections)
+
+### Liens vidéo conservés
+- Page 46 : lien Vimeo externe (Dessine-moi le vent) — conservé
+- Pages 11, 19, 42, 45 : iframes Vimeo intégrées — inchangées
+
+---
+
 ## Connus/Inconnus
 
 Tous résolus.
