@@ -96,12 +96,32 @@
     --slide-pad-x: 2rem;
     --slide-pad-y: 2rem;
 
-    /* Responsive font sizes for slides */
-    --fs-slide-title: clamp(1.5rem, 4vw, 2.5rem);
-    --fs-slide-subtitle: clamp(0.95rem, 2.5vw, 1.2rem);
-    --fs-slide-body: clamp(0.8rem, 1.5vw, 0.9rem);
-    --fs-slide-meta: clamp(0.7rem, 1.3vw, 0.85rem);
-    --fs-slide-small: 0.75rem;
+    /* === ECHELLE TYPOGRAPHIQUE (couche 1 : tailles) === */
+    --size-2xs: 0.8125rem;                          /* 13px — credits */
+    --size-xs:  clamp(0.875rem, 1.3vw, 1rem);       /* 14-16px — captions */
+    --size-sm:  clamp(1rem, 1.8vw, 1.125rem);        /* 16-18px — corps */
+    --size-md:  clamp(1.125rem, 2.5vw, 1.375rem);    /* 18-22px — sous-titres */
+    --size-lg:  clamp(1.5rem, 3vw, 2.2rem);           /* 24-35px — titres compacts */
+    --size-xl:  clamp(1.5rem, 3.5vw, 2.5rem);         /* 24-40px — titres standards */
+    --size-2xl: clamp(1.75rem, 4.5vw, 3.5rem);        /* 28-56px — titres prominents */
+    --size-3xl: clamp(2.5rem, 6vw, 5rem);              /* 40-80px — hero */
+    --size-4xl: clamp(4rem, 10vw, 8rem);               /* 64-128px — numeros geants */
+
+    /* === ROLES SEMANTIQUES (couche 2 : aliases) === */
+    --fs-hero:     var(--size-3xl);
+    --fs-title-xl: var(--size-2xl);
+    --fs-title:    var(--size-xl);
+    --fs-subtitle: var(--size-md);
+    --fs-body:     var(--size-sm);
+    --fs-caption:  var(--size-xs);
+    --fs-credit:   var(--size-2xs);
+
+    /* === RETROCOMPATIBILITE (anciennes variables) === */
+    --fs-slide-title:    var(--fs-title);
+    --fs-slide-subtitle: var(--fs-subtitle);
+    --fs-slide-body:     var(--fs-body);
+    --fs-slide-meta:     var(--fs-caption);
+    --fs-slide-small:    var(--fs-caption);
 
     /* Responsive grid gaps */
     --grid-gap: 1rem;
