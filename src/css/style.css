@@ -1057,7 +1057,7 @@ img {
 }
 
 .page3__project-link:hover {
-    opacity: 0.7;
+    opacity: 0.85;
 }
 
 /* Colonne droite - Galerie */
@@ -1124,29 +1124,30 @@ img {
 }
 
 #page-4 .page3__project-title {
-    color: #333;
+    color: var(--color-white);
 }
 
 #page-4 .page3__project-subtitle {
-    color: var(--color-brand);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 #page-4 .page3__project-meta {
-    color: #444;
+    color: rgba(255, 255, 255, 0.85);
     background-color: transparent;
 }
 
 #page-4 .page3__project-link {
-    color: #333;
+    color: var(--color-white);
+    text-decoration: underline;
 }
 
 #page-4 .page3__section-title {
-    color: var(--color-brand);
+    color: var(--color-white);
     background-color: transparent;
 }
 
 #page-4 .page3__intro p {
-    color: #555;
+    color: var(--color-white);
 }
 
 .page3__left--image {
@@ -2339,7 +2340,7 @@ img {
     border-radius: 3px;
 }
 .page58__stars {
-    color: #E8C84A;
+    color: var(--color-white);
     font-size: var(--fs-subtitle);
     margin-bottom: 0.3rem;
     letter-spacing: 0.1em;
@@ -2353,7 +2354,7 @@ img {
 .page58__reserve-label {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
-    color: #333;
+    color: var(--color-white);
 }
 .page58__experience-title {
     font-family: var(--font-primary);
@@ -2367,7 +2368,6 @@ img {
     font-style: italic;
     line-height: 1.5;
     margin: 0 0 0.8rem;
-    opacity: 0.9;
 }
 .page58__duration {
     font-family: var(--font-secondary);
@@ -2378,7 +2378,6 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
     margin: 0 0 0.8rem;
-    opacity: 0.8;
 }
 .page58__tarifs-title {
     font-family: var(--font-primary);
@@ -2411,7 +2410,6 @@ img {
     font-size: var(--fs-subtitle);
     font-weight: 700;
     margin: 1rem 0 0;
-    opacity: 0.7;
 }
 .page58__right {
     display: flex;
