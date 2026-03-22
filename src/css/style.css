@@ -684,6 +684,19 @@ a.page13__card--link:focus-visible {
     outline-offset: 2px;
 }
 
+/* CTA Reservation desactive (billetterie non definie) */
+.cta-reservation--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.page58__reserve-notice {
+    font-size: var(--fs-credit);
+    color: var(--color-gray-light);
+    margin-top: var(--space-xs);
+    font-style: italic;
+}
+
 /* ============================================================
    8e. PAGE 404
    ============================================================ */

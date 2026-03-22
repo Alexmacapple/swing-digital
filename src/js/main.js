@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollReveal();
     initHeroVideo();
     initAnchorRedirects();
+    initDisabledCTA();
 });
 
 /**
@@ -565,4 +566,16 @@ function initAnchorRedirects() {
     if (hash && anchorRedirects[hash]) {
         window.location.replace(anchorRedirects[hash]);
     }
+}
+
+/**
+ * CTA desactives (billetterie non definie)
+ * Bloque le clic sur les boutons aria-disabled="true"
+ */
+function initDisabledCTA() {
+    document.querySelectorAll('[aria-disabled="true"]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+        });
+    });
 }
