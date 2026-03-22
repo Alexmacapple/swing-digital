@@ -795,14 +795,16 @@ a.page13__card--link:focus-visible {
     padding: 0;
 }
 
-.footer__nav a {
+.footer__nav a,
+.site-footer a {
     color: var(--color-secondary);
     text-decoration: underline;
     text-decoration-color: currentColor;
     text-underline-offset: 0.25em;
 }
 
-.footer__nav a:hover {
+.footer__nav a:hover,
+.site-footer a:hover {
     color: var(--color-accent);
 }
 
