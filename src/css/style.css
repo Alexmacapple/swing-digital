@@ -1052,6 +1052,7 @@ img {
 
 .page3__creations {
     flex: 1;
+    background-color: inherit; /* a11y : herite du fond rouge parent pour outils de contraste */
 }
 
 .page3__section-title {
@@ -1078,6 +1079,7 @@ img {
     margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
     color: var(--color-white);
+    text-shadow: var(--shadow-text);
 }
 
 .page3__project-subtitle {
@@ -1109,6 +1111,7 @@ img {
     margin: 0 0 0.4rem 0;
     letter-spacing: 0.8px;
     color: var(--color-white);
+    text-shadow: var(--shadow-text);
 }
 
 .page3__project-link {
@@ -2002,6 +2005,7 @@ img {
     position: relative;
     flex: 1;
     min-height: 0;
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste numeros decoratifs sur image */
 }
 
 .page13__card-image {
@@ -3125,6 +3129,7 @@ img {
     top: 1.5rem;
     left: 1.5rem;
     color: var(--color-white);
+    background-color: var(--color-black); /* a11y : fond explicite pour outils de contraste (texte sur image) */
 }
 .page52__title {
     font-family: var(--font-primary);
@@ -3133,6 +3138,7 @@ img {
     font-style: italic;
     letter-spacing: 0.05em;
     margin: 0 0 0.3rem;
+    text-shadow: var(--shadow-text);
 }
 .page52__subtitle {
     font-family: var(--font-secondary);
