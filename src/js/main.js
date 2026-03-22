@@ -5,58 +5,237 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Swing Digital - Page chargée');
-
     // Initialize
-    initNavigation();
+    initNavActiveState();
+    initHamburger();
+    initDropdown();
     initAccessibility();
     initEventListeners();
     initScrollTracking();
     initDisclosure();
-    try { initVideoSound(); } catch (e) { console.warn('Video init:', e); }
+    initVimeoConditional();
     initPodcastPlayer();
     initScrollReveal();
     initHeroVideo();
+    initAnchorRedirects();
 });
 
 /**
- * Navigation Setup
+ * Etat actif du menu — lit data-section et data-page sur <body>
  */
-function initNavigation() {
-    const navLinks = document.querySelectorAll('.navbar__link');
+function initNavActiveState() {
+    var section = document.body.dataset.section;
+    if (!section) return;
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Update active state
-            navLinks.forEach(l => l.removeAttribute('aria-current'));
-            this.setAttribute('aria-current', 'page');
+    // Retirer tous les etats actifs
+    document.querySelectorAll('.site-nav__link, .site-nav__btn').forEach(function(el) {
+        el.classList.remove('site-nav__link--active', 'site-nav__btn--active');
+        el.removeAttribute('aria-current');
+    });
+
+    // Appliquer l'etat actif selon data-section
+    var sectionMap = {
+        'accueil': 'index.html',
+        'espaces': 'espaces-augmentes.html',
+        'reservations': 'reservations.html'
+    };
+
+    if (sectionMap[section]) {
+        var link = document.querySelector('.site-nav__link[href="' + sectionMap[section] + '"]');
+        if (link) {
+            link.classList.add('site-nav__link--active');
+            link.setAttribute('aria-current', 'page');
+        }
+    }
+
+    // Section experiences — activer le bouton dropdown
+    if (section === 'experiences') {
+        var btn = document.querySelector('.site-nav__btn[aria-controls="submenu-experiences"]');
+        if (btn) {
+            btn.classList.add('site-nav__btn--active');
+        }
+        // Activer le lien du sous-menu correspondant a data-page
+        var page = document.body.dataset.page;
+        if (page) {
+            document.querySelectorAll('.site-nav__submenu-link').forEach(function(link) {
+                var href = link.getAttribute('href');
+                // Comparer le href avec le fichier courant
+                if (window.location.pathname.endsWith(href) || window.location.href.endsWith(href)) {
+                    link.setAttribute('aria-current', 'page');
+                }
+            });
+        }
+    }
+}
+
+/**
+ * Menu hamburger mobile
+ * Toggle, focus trap, Escape, clic exterieur
+ */
+function initHamburger() {
+    var burger = document.querySelector('.site-nav__burger');
+    var menu = document.getElementById('main-menu');
+    if (!burger || !menu) return;
+
+    burger.addEventListener('click', function() {
+        var isOpen = burger.getAttribute('aria-expanded') === 'true';
+        toggleMenu(!isOpen);
+    });
+
+    // Fermeture Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
+            toggleMenu(false);
+            burger.focus();
+        }
+    });
+
+    // Clic exterieur ferme le menu
+    document.addEventListener('click', function(e) {
+        if (burger.getAttribute('aria-expanded') === 'true' &&
+            !menu.contains(e.target) && !burger.contains(e.target)) {
+            toggleMenu(false);
+        }
+    });
+
+    function toggleMenu(open) {
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        menu.classList.toggle('site-nav__list--open', open);
+
+        if (open) {
+            // Focus trap : premier lien focusable dans le menu
+            var firstLink = menu.querySelector('a, button');
+            if (firstLink) firstLink.focus();
+        }
+    }
+}
+
+/**
+ * Sous-menu dropdown Experiences Series
+ * Conforme AcceDe Web — clic uniquement, clavier complet
+ */
+function initDropdown() {
+    var buttons = document.querySelectorAll('.site-nav__btn[aria-controls]');
+
+    buttons.forEach(function(btn) {
+        var submenuId = btn.getAttribute('aria-controls');
+        var submenu = document.getElementById(submenuId);
+        if (!submenu) return;
+
+        // Clic toggle
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var isOpen = btn.getAttribute('aria-expanded') === 'true';
+            closeAllDropdowns();
+            if (!isOpen) {
+                openDropdown(btn, submenu);
+            }
+        });
+
+        // Clavier sur le bouton
+        btn.addEventListener('keydown', function(e) {
+            var items = submenu.querySelectorAll('.site-nav__submenu-link');
+            if (items.length === 0) return;
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (btn.getAttribute('aria-expanded') !== 'true') {
+                    openDropdown(btn, submenu);
+                }
+                items[0].focus();
+            }
+
+            if (e.key === 'Escape') {
+                closeDropdown(btn, submenu);
+                btn.focus();
+            }
+        });
+
+        // Clavier dans le sous-menu
+        submenu.addEventListener('keydown', function(e) {
+            var items = Array.from(submenu.querySelectorAll('.site-nav__submenu-link'));
+            var currentIndex = items.indexOf(document.activeElement);
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                var next = currentIndex + 1 < items.length ? currentIndex + 1 : 0;
+                items[next].focus();
+            }
+
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (currentIndex <= 0) {
+                    btn.focus();
+                } else {
+                    items[currentIndex - 1].focus();
+                }
+            }
+
+            if (e.key === 'Home') {
+                e.preventDefault();
+                items[0].focus();
+            }
+
+            if (e.key === 'End') {
+                e.preventDefault();
+                items[items.length - 1].focus();
+            }
+
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closeDropdown(btn, submenu);
+                btn.focus();
+            }
+        });
+
+        // Fermeture quand le focus quitte le sous-menu
+        submenu.addEventListener('focusout', function(e) {
+            // Verifier apres un tick que le focus n'est pas reste dans le sous-menu ou sur le bouton
+            setTimeout(function() {
+                if (!submenu.contains(document.activeElement) && document.activeElement !== btn) {
+                    closeDropdown(btn, submenu);
+                }
+            }, 0);
         });
     });
+
+    // Clic exterieur ferme les dropdowns
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.site-nav__item')) {
+            closeAllDropdowns();
+        }
+    });
+
+    function openDropdown(btn, submenu) {
+        btn.setAttribute('aria-expanded', 'true');
+        submenu.classList.add('site-nav__submenu--open');
+    }
+
+    function closeDropdown(btn, submenu) {
+        btn.setAttribute('aria-expanded', 'false');
+        submenu.classList.remove('site-nav__submenu--open');
+    }
+
+    function closeAllDropdowns() {
+        document.querySelectorAll('.site-nav__btn[aria-controls]').forEach(function(b) {
+            var s = document.getElementById(b.getAttribute('aria-controls'));
+            if (s) {
+                b.setAttribute('aria-expanded', 'false');
+                s.classList.remove('site-nav__submenu--open');
+            }
+        });
+    }
 }
 
 /**
  * Accessibility Setup
  */
 function initAccessibility() {
-    // Skip to main content link
-    addSkipLink();
-
-    // Focus management
+    // Skip link est maintenant en dur dans le HTML — plus besoin de addSkipLink()
     manageFocusOutline();
 }
 
-function addSkipLink() {
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.className = 'skip-link';
-    skipLink.textContent = 'Aller au contenu principal';
-
-    const body = document.body;
-    body.insertBefore(skipLink, body.firstChild);
-}
-
 function manageFocusOutline() {
-    // Show focus outline on keyboard navigation only
     document.addEventListener('keydown', function() {
         document.body.classList.add('keyboard-nav');
     });
@@ -67,93 +246,78 @@ function manageFocusOutline() {
 }
 
 /**
- * Event Listeners
+ * Event Listeners — smooth scroll pour ancres internes
  */
 function initEventListeners() {
-    // Smooth scroll (already in CSS, but JavaScript fallback)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && document.querySelector(href)) {
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({
-                    behavior: 'smooth'
-                });
+            var href = this.getAttribute('href');
+            if (href !== '#' && href.length > 1) {
+                var target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     });
 }
 
 /**
- * Scroll Tracking - Update URL anchor based on visible section
+ * Scroll Tracking — met a jour l'URL anchor selon la section visible
  */
 function initScrollTracking() {
-    const sections = document.querySelectorAll('section[id]');
-
+    var sections = document.querySelectorAll('section[id]');
     if (sections.length === 0) return;
 
-    // Intersection Observer options - detect when section enters viewport
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.3 // Trigger when 30% of section is visible
-    };
+    var visibleSections = new Map();
 
-    // Track which section has the most visibility
-    let visibleSections = new Map();
-
-    // Callback for intersection observer
-    const observerCallback = (entries) => {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                // Calculate intersection ratio and store it
                 visibleSections.set(entry.target.id, entry.intersectionRatio);
             } else {
                 visibleSections.delete(entry.target.id);
             }
         });
 
-        // Find the section with the highest intersection ratio
-        let currentSection = null;
-        let maxRatio = 0;
+        var currentSection = null;
+        var maxRatio = 0;
 
-        visibleSections.forEach((ratio, id) => {
+        visibleSections.forEach(function(ratio, id) {
             if (ratio > maxRatio) {
                 maxRatio = ratio;
                 currentSection = id;
             }
         });
 
-        // Update URL hash if a section is currently the most visible
-        if (currentSection && window.location.hash !== `#${currentSection}`) {
-            window.history.replaceState(null, '', `#${currentSection}`);
-            updateNavActive(currentSection);
+        if (currentSection && window.location.hash !== '#' + currentSection) {
+            window.history.replaceState(null, '', '#' + currentSection);
         }
-    };
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.3
+    });
 
-    // Create observer
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe all sections
-    sections.forEach(section => {
+    sections.forEach(function(section) {
         observer.observe(section);
     });
 }
 
 /**
- * Update navigation active state based on current section
+ * Chargement conditionnel de Vimeo Player API
+ * Charge le script uniquement si une iframe Vimeo est presente
  */
-function updateNavActive(currentSectionId) {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
+function initVimeoConditional() {
+    if (!document.querySelector('iframe[src*="vimeo"]')) return;
 
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === `#${currentSectionId}`) {
-            link.setAttribute('aria-current', 'page');
-        } else {
-            link.removeAttribute('aria-current');
-        }
-    });
+    var script = document.createElement('script');
+    script.src = 'https://player.vimeo.com/api/player.js';
+    script.onload = function() {
+        initVideoSound();
+    };
+    document.head.appendChild(script);
 }
 
 /**
@@ -198,9 +362,10 @@ function initVideoSound() {
 /**
  * Disclosure Toggle (W3C ARIA APG pattern)
  * Ref: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/
+ * Exclut les boutons du header (hamburger + dropdown geres separement)
  */
 function initDisclosure() {
-    var buttons = document.querySelectorAll('button[aria-expanded][aria-controls]');
+    var buttons = document.querySelectorAll('#main-content button[aria-expanded][aria-controls]');
 
     for (var i = 0; i < buttons.length; i++) {
         (function(btn) {
@@ -229,11 +394,10 @@ function initDisclosure() {
 
 /**
  * Podcast player - Page 33
- * Change la video dans l'iframe au clic sur un episode
  */
 function initPodcastPlayer() {
-    const player = document.getElementById('page33-player');
-    const episodes = document.querySelectorAll('.page33__episode');
+    var player = document.getElementById('page33-player');
+    var episodes = document.querySelectorAll('.page33__episode');
     if (!player || !episodes.length) return;
 
     episodes.forEach(function(ep) {
@@ -242,10 +406,8 @@ function initPodcastPlayer() {
         btn.addEventListener('click', function() {
             var vid = ep.dataset.vid;
             var title = ep.dataset.title;
-            // Mettre a jour l'iframe
             player.src = 'https://www.youtube.com/embed/' + vid + '?rel=0&autoplay=1';
             player.title = title;
-            // Mettre a jour l'etat actif
             episodes.forEach(function(e) {
                 e.classList.remove('page33__episode--active');
                 e.querySelector('.page33__episode-btn').removeAttribute('aria-current');
@@ -258,13 +420,11 @@ function initPodcastPlayer() {
 
 /**
  * Scroll Reveal — revelation progressive des elements au scroll
- * Respecte prefers-reduced-motion via CSS
+ * Respecte prefers-reduced-motion
  */
 function initScrollReveal() {
-    // Ne pas animer si l'utilisateur prefere le mouvement reduit
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Cibler les elements a reveler dans chaque section
     var selectors = [
         'h1', 'h2', 'h3',
         '[class*="__title"]',
@@ -283,7 +443,6 @@ function initScrollReveal() {
 
     var elements = document.querySelectorAll('#main-content section > * ' + selectors.split(', ').join(', #main-content section > * '));
 
-    // Fallback : cibler les enfants directs de chaque section
     if (elements.length === 0) {
         document.querySelectorAll('#main-content section').forEach(function(section) {
             var children = section.children;
@@ -293,7 +452,6 @@ function initScrollReveal() {
         });
     } else {
         elements.forEach(function(el) {
-            // Ne pas ajouter sur les elements deja visibles (hero)
             if (el.closest('#page-1')) return;
             el.classList.add('reveal');
         });
@@ -303,7 +461,7 @@ function initScrollReveal() {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal--visible');
-                observer.unobserve(entry.target); // Une seule fois
+                observer.unobserve(entry.target);
             }
         });
     }, {
@@ -337,16 +495,74 @@ function initHeroVideo() {
     });
 }
 
-// Export functions if needed
-window.SwingDigital = {
-    initNavigation,
-    initAccessibility,
-    initEventListeners,
-    initScrollTracking,
-    updateNavActive,
-    initVideoSound,
-    initDisclosure,
-    initPodcastPlayer,
-    initScrollReveal,
-    initHeroVideo
-};
+/**
+ * Redirection des ancres orphelines (ex-single-page)
+ * Execute uniquement sur index.html (guard data-page === 'accueil')
+ */
+function initAnchorRedirects() {
+    if (document.body.dataset.page !== 'accueil') return;
+
+    var anchorRedirects = {
+        'page-5': 'espaces-augmentes.html',
+        'page-6': 'espaces-augmentes.html',
+        'page-7': 'espaces-augmentes.html',
+        'page-9': 'experiences-series.html',
+        'page-10': 'experiences-series.html',
+        'page-11': 'experience-monroe.html',
+        'page-12': 'experience-monroe.html',
+        'page-13': 'experience-monroe.html',
+        'page-24': 'experience-monroe.html',
+        'page-14': 'monroe-piece.html',
+        'page-15': 'monroe-piece.html',
+        'page-16': 'monroe-piece.html',
+        'page-17': 'monroe-piece.html',
+        'page-18': 'monroe-piece.html',
+        'page-19': 'monroe-piece.html',
+        'page-20': 'monroe-roman-graphique.html',
+        'page-21': 'monroe-roman-graphique.html',
+        'page-22': 'monroe-roman-graphique.html',
+        'page-23': 'monroe-installation.html',
+        'page-25': 'monroe-photographie.html',
+        'page-26': 'monroe-photographie.html',
+        'page-27': 'monroe-composition.html',
+        'page-28': 'monroe-composition.html',
+        'page-29': 'monroe-composition.html',
+        'page-30': 'monroe-composition.html',
+        'page-31': 'monroe-composition.html',
+        'page-32': 'monroe-composition.html',
+        'page-33': 'monroe-podcasts.html',
+        'page-34': 'monroe-interviews.html',
+        'page-35': 'monroe-interviews.html',
+        'page-36': 'monroe-interviews.html',
+        'page-37': 'monroe-experiences.html',
+        'page-38': 'monroe-experiences.html',
+        'page-39': 'monroe-experiences.html',
+        'page-40': 'monroe-quiz.html',
+        'page-41': 'monroe-quiz.html',
+        'page-42': 'voyage-autour-de-moi.html',
+        'page-43': 'voyage-autour-de-moi.html',
+        'page-44': 'voyage-autour-de-moi.html',
+        'page-45': 'dessine-moi-le-vent.html',
+        'page-46': 'dessine-moi-le-vent.html',
+        'page-47': 'dessine-moi-le-vent.html',
+        'page-48': 'ni-vues-ni-connues.html',
+        'page-49': 'ni-vues-ni-connues.html',
+        'page-50': 'marilyn.html',
+        'page-51': 'marilyn.html',
+        'page-52': 'marilyn.html',
+        'page-53': 'toulouse-lautrec.html',
+        'page-54': 'toulouse-lautrec.html',
+        'page-55': 'charlotte-henschel.html',
+        'page-56': 'charlotte-henschel.html',
+        'page-57': 'xr-corporate.html',
+        'page-58': 'reservations.html',
+        'page-59': 'reservations.html',
+        'page-60': 'reservations.html',
+        'page-61': 'reservations.html'
+    };
+
+    var hash = window.location.hash.replace('#', '');
+    if (hash && anchorRedirects[hash]) {
+        window.location.replace(anchorRedirects[hash]);
+    }
+}

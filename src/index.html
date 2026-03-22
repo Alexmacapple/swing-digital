@@ -3,50 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Swing Digital - Créateurs d'expériences transmédia immersives">
-    <title>Swing Digital - Espaces Augmentés & Expériences Immersives</title>
+    <title>Swing Digital - Espaces augmentés, expériences immersives</title>
+    <meta name="description" content="Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant art, technologie et narration.">
+    <link rel="canonical" href="https://DOMAINE/index.html">
+    <meta property="og:title" content="Swing Digital - Espaces augmentés, expériences immersives">
+    <meta property="og:description" content="Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant art, technologie et narration.">
+    <meta property="og:image" content="img/hero/hero-featured-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://DOMAINE/index.html">
+    <link rel="icon" href="img/favicon.ico">
 
     <!-- Fonts -->
-    <link rel="preload" href="./fonts/Brandon_blk.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="./fonts/Brandon_reg.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="./fonts/Fragen-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/Brandon_blk.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/Brandon_reg.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/Fragen-Bold.otf" as="font" type="font/otf" crossorigin>
 
     <!-- LCP Video Preload -->
-    <link rel="preload" href="./video/hero.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="./img/hero/hero-featured-image.jpg" as="image">
+    <link rel="preload" href="video/hero.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="img/hero/hero-featured-image.jpg" as="image">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-section="accueil" data-page="accueil">
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Header persistant -->
+    <header role="banner" class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-header__logo" aria-label="Swing Digital - Accueil">
+                <span class="site-header__logo-pipe" aria-hidden="true">|</span>
+                <span>SWING<br>DIGITAL</span>
+                <span class="site-header__logo-pipe" aria-hidden="true">|</span>
+            </a>
+            <nav role="navigation" aria-label="Menu principal">
+                <button class="site-nav__burger" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Menu de navigation">
+                    <span class="site-nav__burger-icon" aria-hidden="true"></span>
+                </button>
+                <ul id="main-menu" class="site-nav__list">
+                    <li class="site-nav__item">
+                        <a href="index.html" class="site-nav__link site-nav__link--active" aria-current="page">Accueil</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="espaces-augmentes.html" class="site-nav__link">Espaces augmentés</a>
+                    </li>
+                    <li class="site-nav__item">
+                        <button type="button" class="site-nav__btn" aria-expanded="false" aria-controls="submenu-experiences">Expériences Séries <span class="site-nav__arrow" aria-hidden="true">&#9660;</span></button>
+                        <ul id="submenu-experiences" class="site-nav__submenu">
+                            <li><a href="experience-monroe.html" class="site-nav__submenu-link">L'Expérience Monroe</a></li>
+                            <li><a href="voyage-autour-de-moi.html" class="site-nav__submenu-link">Voyage autour de moi</a></li>
+                            <li><a href="dessine-moi-le-vent.html" class="site-nav__submenu-link">Dessine-moi le vent</a></li>
+                            <li><a href="ni-vues-ni-connues.html" class="site-nav__submenu-link">Ni vues ni connues</a></li>
+                            <li><a href="marilyn.html" class="site-nav__submenu-link">Marilyn</a></li>
+                            <li><a href="toulouse-lautrec.html" class="site-nav__submenu-link">Toulouse-Lautrec</a></li>
+                            <li><a href="charlotte-henschel.html" class="site-nav__submenu-link">Charlotte Henschel</a></li>
+                            <li><a href="xr-corporate.html" class="site-nav__submenu-link">XR Corporate</a></li>
+                        </ul>
+                    </li>
+                    <li class="site-nav__item">
+                        <a href="reservations.html" class="site-nav__link">Réservations</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Fil d'Ariane -->
+    <nav role="navigation" aria-label="Fil d'Ariane" class="breadcrumb">
+        <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link" aria-current="page">Accueil</a></li>
+        </ol>
+    </nav>
+
     <!-- Main Content -->
-    <main id="main-content">
+    <main role="main" id="main-content">
 
         <!-- Section Accueil / Hero - Page 1 (Exact Mockup) -->
         <section id="page-1" class="hero-page1" aria-labelledby="hero-title">
             <!-- Background gradient -->
             <div class="hero-page1__background"></div>
 
-            <!-- Logo (Top Left) -->
-            <div class="hero-page1__logo">
-                <a href="#" aria-current="page">
-                    <span aria-hidden="true">|</span>
+            <!-- Logo hero decoratif (conserve pour le visuel, le vrai logo est dans le header) -->
+            <div class="hero-page1__logo" aria-hidden="true">
+                <span>
+                    <span>|</span>
                     <span class="hero-page1__logo-text">SWING<br>DIGITAL</span>
-                    <span aria-hidden="true">|</span>
-                </a>
+                    <span>|</span>
+                </span>
             </div>
 
-            <!-- Navigation (Top Right) -->
-            <nav class="hero-page1__nav" aria-label="Navigation principale">
-                <ul class="hero-page1__nav-list">
-                    <li><a href="#page-1" class="hero-page1__nav-btn">Accueil</a></li>
-                    <li><a href="#page-2" class="hero-page1__nav-btn">Espaces<br>augmentés</a></li>
-                    <li><a href="#page-3" class="hero-page1__nav-btn">Expériences<br>Séries</a></li>
-                    <li><a href="#page-4" class="hero-page1__nav-btn">Réservations</a></li>
-                    <!-- Sélecteur langue désactivé : site FR uniquement pour l'instant -->
-                    <!-- <li><a href="#" class="hero-page1__nav-lang">FR | EN</a></li> -->
-                </ul>
-            </nav>
+            <!-- Ancien menu hero supprime — remplace par le header persistant -->
 
             <!-- Partners Label (Top Left, below logo) -->
             <div class="hero-page1__partners">
@@ -63,9 +109,9 @@
             <video id="hero-video"
                    class="hero-page1__video"
                    autoplay loop muted playsinline
-                   poster="./img/hero/hero-featured-image.jpg"
+                   poster="img/hero/hero-featured-image.jpg"
                    aria-label="Vidéo d'ambiance Swing Digital - expériences immersives">
-                <source src="./video/hero.mp4" type="video/mp4">
+                <source src="video/hero.mp4" type="video/mp4">
             </video>
             <!-- Controle son hero -->
             <button id="hero-sound-btn" class="hero-page1__sound-btn" type="button" aria-label="Activer le son" aria-pressed="false">
@@ -105,7 +151,7 @@
 
                     <!-- 1. STÉPHANIE SPHYRAS -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/stephanie.jpg" alt="STÉPHANIE SPHYRAS, Réalisatrice, Directrice Artistique" class="team__member-image"
+                        <img src="img/pages/page-2/stephanie.jpg" alt="STÉPHANIE SPHYRAS, Réalisatrice, Directrice Artistique" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">STÉPHANIE</p>
@@ -117,7 +163,7 @@
 
                     <!-- 2. ANSEAU DELASSALLE -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/anseau.jpg" alt="ANSEAU DELASSALLE, Auteur, Graphique" class="team__member-image"
+                        <img src="img/pages/page-2/anseau.jpg" alt="ANSEAU DELASSALLE, Auteur, Graphique" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">ANSEAU</p>
@@ -129,7 +175,7 @@
 
                     <!-- 3. BENOIT NGUYEN TAT -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/benoit.jpg" alt="BENOIT NGUYEN TAT, Metteur en scène, Directeur artistique" class="team__member-image"
+                        <img src="img/pages/page-2/benoit.jpg" alt="BENOIT NGUYEN TAT, Metteur en scène, Directeur artistique" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">BENOIT</p>
@@ -141,7 +187,7 @@
 
                     <!-- 4. MATHIEU BERTHONNET -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/mathieu.jpg" alt="MATHIEU BERTHONNET, Stratégie Digitale, Production" class="team__member-image"
+                        <img src="img/pages/page-2/mathieu.jpg" alt="MATHIEU BERTHONNET, Stratégie Digitale, Production" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">MATHIEU</p>
@@ -153,7 +199,7 @@
 
                     <!-- 5. JOSHUA GREENE -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/joshua.jpg" alt="JOSHUA GREENE, Photographe" class="team__member-image"
+                        <img src="img/pages/page-2/joshua.jpg" alt="JOSHUA GREENE, Photographe" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">JOSHUA</p>
@@ -164,7 +210,7 @@
 
                     <!-- 6. LAETITIA VIALLET -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/laetitia.jpg" alt="LAETITIA VIALLET, Chorégraphe" class="team__member-image"
+                        <img src="img/pages/page-2/laetitia.jpg" alt="LAETITIA VIALLET, Chorégraphe" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">LAETITIA</p>
@@ -175,7 +221,7 @@
 
                     <!-- 7. CLAIRE DE LA ROCHEFOUCAULT -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/claire.jpg" alt="CLAIRE DE LA ROCHEFOUCAULT, Production" class="team__member-image"
+                        <img src="img/pages/page-2/claire.jpg" alt="CLAIRE DE LA ROCHEFOUCAULT, Production" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">CLAIRE</p>
@@ -186,7 +232,7 @@
 
                     <!-- 8. SYLVIE LARDET -->
                     <div class="team__member">
-                        <img src="./img/pages/page-2/sylvie.jpg" alt="SYLVIE LARDET, Scénographe" class="team__member-image"
+                        <img src="img/pages/page-2/sylvie.jpg" alt="SYLVIE LARDET, Scénographe" class="team__member-image"
                      loading="lazy">
                         <div class="team__member-info">
                             <p class="team__member-firstname">SYLVIE</p>
@@ -238,7 +284,7 @@
                 <!-- Colonne droite : Galerie d'images -->
                 <div class="page3__right">
                     <div class="page3__gallery" role="region" aria-label="Collage des expériences Swing Digital">
-                        <img src="./img/pages/page-3/page-3-collage.png" alt="Collage des expériences immersives Swing Digital : VR, réalité mixte, spectacles" class="page3__gallery-image" width="807" height="1233"
+                        <img src="img/pages/page-3/page-3-collage.png" alt="Collage des expériences immersives Swing Digital : VR, réalité mixte, spectacles" class="page3__gallery-image" width="807" height="1233"
                      loading="lazy">
                     </div>
                 </div>
@@ -252,7 +298,7 @@
                 <!-- Colonne gauche : Image -->
                 <div class="page3__left page3__left--image">
                     <div class="page3__gallery" role="region" aria-label="Collage des créations Swing Digital - réalité virtuelle et augmentée">
-                        <img src="./img/pages/page-4/creations.png" alt="Créations Swing Digital : réalité virtuelle, augmentée et immersive" class="page3__gallery-image" width="747" height="1219"
+                        <img src="img/pages/page-4/creations.png" alt="Créations Swing Digital : réalité virtuelle, augmentée et immersive" class="page3__gallery-image" width="747" height="1219"
                      loading="lazy">
                     </div>
                 </div>
@@ -318,7 +364,7 @@
 
                 <!-- Image centrée -->
                 <div class="page5__image-wrapper">
-                    <img src="./img/pages/page-5/page-5-image-1.jpg" alt="Deux personnes avec casque VR observant Paris depuis une terrasse en hauteur" class="page5__image" width="3122" height="1366"
+                    <img src="img/pages/page-5/page-5-image-1.jpg" alt="Deux personnes avec casque VR observant Paris depuis une terrasse en hauteur" class="page5__image" width="3122" height="1366"
                      loading="lazy">
                 </div>
 
@@ -339,7 +385,7 @@
             <div class="page6__main">
                 <!-- Image gauche 50% -->
                 <div class="page6__image-wrapper">
-                    <img src="./img/pages/page-6/page-6-image-1.jpg" alt="Spectateurs en réalité mixte avec casques VR dans une galerie interactive" class="page6__image" width="800" height="450"
+                    <img src="img/pages/page-6/page-6-image-1.jpg" alt="Spectateurs en réalité mixte avec casques VR dans une galerie interactive" class="page6__image" width="800" height="450"
                      loading="lazy">
                 </div>
 
@@ -365,7 +411,7 @@
 
         <!-- Page 7 : Image full-width immersive -->
         <section id="page-7" class="full-image-page" aria-label="Expérience immersive - Galerie interactive">
-            <img src="./img/pages/page-7/page-7-image-1.jpg"
+            <img src="img/pages/page-7/page-7-image-1.jpg"
                  alt="Galerie interactive avec visiteurs explorant des installations en réalité mixte"
                  class="full-image-page__image"
                      loading="lazy">
@@ -379,105 +425,105 @@
                 <div class="partners-page__grid" role="region" aria-label="Logos des partenaires Swing Digital">
                     <!-- Row 1 -->
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/la-centrale.png" alt="La Centrale - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
+                        <img src="img/partners/la-centrale.png" alt="La Centrale - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/acumen.png" alt="Acumen - Partenaire Swing Digital" class="partners-page__logo" width="200" height="40"
+                        <img src="img/partners/acumen.png" alt="Acumen - Partenaire Swing Digital" class="partners-page__logo" width="200" height="40"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/the-archives.png" alt="The Archives - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
+                        <img src="img/partners/the-archives.png" alt="The Archives - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/saint-gratien.png" alt="Saint Gratien - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
+                        <img src="img/partners/saint-gratien.png" alt="Saint Gratien - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/charlie-chaplin.png" alt="Charlie Chaplin Centre Culturel - Partenaire Swing Digital" class="partners-page__logo" width="200" height="123"
+                        <img src="img/partners/charlie-chaplin.png" alt="Charlie Chaplin Centre Culturel - Partenaire Swing Digital" class="partners-page__logo" width="200" height="123"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/robert-laffont.png" alt="Robert Laffont - Partenaire Swing Digital" class="partners-page__logo" width="200" height="60"
+                        <img src="img/partners/robert-laffont.png" alt="Robert Laffont - Partenaire Swing Digital" class="partners-page__logo" width="200" height="60"
                      loading="lazy">
                     </div>
 
                     <!-- Row 2 -->
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/drac.png" alt="DRAC Île-de-France - Partenaire Swing Digital" class="partners-page__logo" width="200" height="257"
+                        <img src="img/partners/drac.png" alt="DRAC Île-de-France - Partenaire Swing Digital" class="partners-page__logo" width="200" height="257"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/cnc.png" alt="CNC - Centre National du Cinéma - Partenaire Swing Digital" class="partners-page__logo" width="200" height="61"
+                        <img src="img/partners/cnc.png" alt="CNC - Centre National du Cinéma - Partenaire Swing Digital" class="partners-page__logo" width="200" height="61"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/ville-de-paris.svg" alt="Ville de Paris - Partenaire Swing Digital" class="partners-page__logo" width="600" height="527"
+                        <img src="img/partners/ville-de-paris.svg" alt="Ville de Paris - Partenaire Swing Digital" class="partners-page__logo" width="600" height="527"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/galerie-joseph.png" alt="Galerie Joseph - Partenaire Swing Digital" class="partners-page__logo" width="200" height="68"
+                        <img src="img/partners/galerie-joseph.png" alt="Galerie Joseph - Partenaire Swing Digital" class="partners-page__logo" width="200" height="68"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/orange.png" alt="Orange - Partenaire Swing Digital" class="partners-page__logo" width="200" height="170"
+                        <img src="img/partners/orange.png" alt="Orange - Partenaire Swing Digital" class="partners-page__logo" width="200" height="170"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/principe-actif.png" alt="Principe Actif - Partenaire Swing Digital" class="partners-page__logo" width="200" height="41"
+                        <img src="img/partners/principe-actif.png" alt="Principe Actif - Partenaire Swing Digital" class="partners-page__logo" width="200" height="41"
                      loading="lazy">
                     </div>
 
                     <!-- Row 3 -->
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/epinay-sur-seine.png" alt="Épinay-sur-Seine - Partenaire Swing Digital" class="partners-page__logo" width="300" height="46"
+                        <img src="img/partners/epinay-sur-seine.png" alt="Épinay-sur-Seine - Partenaire Swing Digital" class="partners-page__logo" width="300" height="46"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/seine-saint-denis.jpg" alt="Seine-Saint-Denis - Partenaire Swing Digital" class="partners-page__logo" width="200" height="60"
+                        <img src="img/partners/seine-saint-denis.jpg" alt="Seine-Saint-Denis - Partenaire Swing Digital" class="partners-page__logo" width="200" height="60"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/forum-images.png" alt="Forum des Images - Partenaire Swing Digital" class="partners-page__logo" width="300" height="135"
+                        <img src="img/partners/forum-images.png" alt="Forum des Images - Partenaire Swing Digital" class="partners-page__logo" width="300" height="135"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/morrison-hotel.jpg" alt="Morrison Hotel Gallery - Partenaire Swing Digital" class="partners-page__logo" width="200" height="78"
+                        <img src="img/partners/morrison-hotel.jpg" alt="Morrison Hotel Gallery - Partenaire Swing Digital" class="partners-page__logo" width="200" height="78"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/onda.jpg" alt="Onda - Partenaire Swing Digital" class="partners-page__logo" width="200" height="172"
+                        <img src="img/partners/onda.jpg" alt="Onda - Partenaire Swing Digital" class="partners-page__logo" width="200" height="172"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/pixihead.png" alt="Pixihead - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
+                        <img src="img/partners/pixihead.png" alt="Pixihead - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
                      loading="lazy">
                     </div>
 
                     <!-- Row 4 -->
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/jean-legendre.jpg" alt="Espace Jean Legendre - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
+                        <img src="img/partners/jean-legendre.jpg" alt="Espace Jean Legendre - Partenaire Swing Digital" class="partners-page__logo" width="200" height="200"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/grand-est.jpg" alt="Grand Est - Partenaire Swing Digital" class="partners-page__logo" width="200" height="61"
+                        <img src="img/partners/grand-est.jpg" alt="Grand Est - Partenaire Swing Digital" class="partners-page__logo" width="200" height="61"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/ejt-labo.png" alt="Promenons-nous dans les bois - EJT-Labo - Partenaire Swing Digital" class="partners-page__logo" width="200" height="177"
+                        <img src="img/partners/ejt-labo.png" alt="Promenons-nous dans les bois - EJT-Labo - Partenaire Swing Digital" class="partners-page__logo" width="200" height="177"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/feu-vert.jpg" alt="Fondation Jeunesse Feu Vert - Partenaire Swing Digital" class="partners-page__logo" width="200" height="151"
+                        <img src="img/partners/feu-vert.jpg" alt="Fondation Jeunesse Feu Vert - Partenaire Swing Digital" class="partners-page__logo" width="200" height="151"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/fondation-vinci.jpg" alt="Fondation d'Entreprise Vinci pour la Cité - Partenaire Swing Digital" class="partners-page__logo" width="200" height="89"
+                        <img src="img/partners/fondation-vinci.jpg" alt="Fondation d'Entreprise Vinci pour la Cité - Partenaire Swing Digital" class="partners-page__logo" width="200" height="89"
                      loading="lazy">
                     </div>
                     <div class="partners-page__logo-item">
-                        <img src="./img/partners/pole-media.png" alt="Grand Paris Pôle Média - Partenaire Swing Digital" class="partners-page__logo" width="200" height="133"
+                        <img src="img/partners/pole-media.png" alt="Grand Paris Pôle Média - Partenaire Swing Digital" class="partners-page__logo" width="200" height="133"
                      loading="lazy">
                     </div>
                 </div>
@@ -506,22 +552,22 @@
                 <!-- Grid 2x2 cartes projets -->
                 <div class="page9__grid" role="region" aria-label="Projets Swing Digital">
                     <a href="#" class="page9__card">
-                        <img src="./img/pages/page-9/page-9-image-2.jpg" alt="Scène de la Buick 55 dans l'Expérience Monroe, spectacle immersif transmédia" class="page9__card-image"
+                        <img src="img/pages/page-9/page-9-image-2.jpg" alt="Scène de la Buick 55 dans l'Expérience Monroe, spectacle immersif transmédia" class="page9__card-image"
                      loading="lazy">
                         <h3 class="page9__card-title">L'EXPÉRIENCE MONROE</h3>
                     </a>
                     <a href="#" class="page9__card">
-                        <img src="./img/pages/page-9/page-9-image-1.jpg" alt="Personne lisant un livre dans le cadre du projet Voyage autour de moi" class="page9__card-image"
+                        <img src="img/pages/page-9/page-9-image-1.jpg" alt="Personne lisant un livre dans le cadre du projet Voyage autour de moi" class="page9__card-image"
                      loading="lazy">
                         <h3 class="page9__card-title">VOYAGE AUTOUR DE MOI</h3>
                     </a>
                     <a href="#" class="page9__card">
-                        <img src="./img/pages/page-9/page-9-image-3.jpg" alt="Enfant utilisant une tablette en réalité augmentée pour Dessine moi le vent" class="page9__card-image"
+                        <img src="img/pages/page-9/page-9-image-3.jpg" alt="Enfant utilisant une tablette en réalité augmentée pour Dessine moi le vent" class="page9__card-image"
                      loading="lazy">
                         <h3 class="page9__card-title">DESSINE MOI LE VENT</h3>
                     </a>
                     <a href="#" class="page9__card">
-                        <img src="./img/pages/page-9/page-9-image-4.jpg" alt="Deux femmes sur scène dans le spectacle documentaire Ni vues ni connues" class="page9__card-image"
+                        <img src="img/pages/page-9/page-9-image-4.jpg" alt="Deux femmes sur scène dans le spectacle documentaire Ni vues ni connues" class="page9__card-image"
                      loading="lazy">
                         <h3 class="page9__card-title">NI VUES NI CONNUES</h3>
                     </a>
@@ -538,22 +584,22 @@
 
                 <div class="page10__grid" role="region" aria-label="Projets en développement Swing Digital">
                     <a href="#" class="page10__card">
-                        <img src="./img/pages/page-10/page-10-image-2.jpg" alt="Installation immersive Marilyn avec silhouette et escalier en colimaçon" class="page10__card-image"
+                        <img src="img/pages/page-10/page-10-image-2.jpg" alt="Installation immersive Marilyn avec silhouette et escalier en colimaçon" class="page10__card-image"
                      loading="lazy">
                         <h3 class="page10__card-title">MARILYN</h3>
                     </a>
                     <a href="#" class="page10__card">
-                        <img src="./img/pages/page-10/page-10-image-1.jpg" alt="Homme avec casque VR déambulant dans les rues de Montmartre" class="page10__card-image"
+                        <img src="img/pages/page-10/page-10-image-1.jpg" alt="Homme avec casque VR déambulant dans les rues de Montmartre" class="page10__card-image"
                      loading="lazy">
                         <h3 class="page10__card-title">TOULOUSE LAUTREC</h3>
                     </a>
                     <a href="#" class="page10__card">
-                        <img src="./img/pages/page-10/page-10-image-3.jpg" alt="Jeune fille en tenue d'époque dans une ville historique avec tramway" class="page10__card-image"
+                        <img src="img/pages/page-10/page-10-image-3.jpg" alt="Jeune fille en tenue d'époque dans une ville historique avec tramway" class="page10__card-image"
                      loading="lazy">
                         <h3 class="page10__card-title">CHARLOTTE HENSCHEL</h3>
                     </a>
                     <a href="#" class="page10__card">
-                        <img src="./img/pages/page-10/page-10-image-4.jpg" alt="Deux hommes testant des casques de réalité virtuelle en entreprise" class="page10__card-image"
+                        <img src="img/pages/page-10/page-10-image-4.jpg" alt="Deux hommes testant des casques de réalité virtuelle en entreprise" class="page10__card-image"
                      loading="lazy">
                         <h3 class="page10__card-title">XR CORPORATE</h3>
                     </a>
@@ -601,7 +647,7 @@
                 <div class="page12__badge">Expérience<br>Monroe</div>
 
                 <figure class="page12__poster" aria-label="Affiche L'Expérience Monroe avec citations presse de 8 médias">
-                    <img src="./img/pages/page-12/page-12-image-2.jpg"
+                    <img src="img/pages/page-12/page-12-image-2.jpg"
                          alt="Affiche L'Expérience Monroe avec citations presse de 8 médias"
                          class="page12__poster-image"
                          width="1202" height="1695"
@@ -641,29 +687,29 @@
 
                 <div class="page12__logos" role="region" aria-label="Partenaires L'Expérience Monroe">
                     <div class="page12__logos-bar">
-                        <img src="./img/pages/page-12/page-12-image-3.jpg" alt="Cerval" class="page12__logo page12__logo--invert" width="372" height="149"
+                        <img src="img/pages/page-12/page-12-image-3.jpg" alt="Cerval" class="page12__logo page12__logo--invert" width="372" height="149"
                      loading="lazy">
-                        <img src="./img/pages/page-12/page-12-image-13.jpg" alt="Préfet de la Région Île-de-France" class="page12__logo" width="110" height="141"
+                        <img src="img/pages/page-12/page-12-image-13.jpg" alt="Préfet de la Région Île-de-France" class="page12__logo" width="110" height="141"
                      loading="lazy">
-                        <img src="./img/partners/cnc.png" alt="CNC - Centre National du Cinéma" class="page12__logo" width="200" height="61"
+                        <img src="img/partners/cnc.png" alt="CNC - Centre National du Cinéma" class="page12__logo" width="200" height="61"
                      loading="lazy">
-                        <img src="./img/partners/ville-de-paris.svg" alt="Ville de Paris" class="page12__logo" width="600" height="527"
+                        <img src="img/partners/ville-de-paris.svg" alt="Ville de Paris" class="page12__logo" width="600" height="527"
                      loading="lazy">
-                        <img src="./img/partners/principe-actif.png" alt="Principe Actif" class="page12__logo" width="200" height="41"
+                        <img src="img/partners/principe-actif.png" alt="Principe Actif" class="page12__logo" width="200" height="41"
                      loading="lazy">
-                        <img src="./img/partners/galerie-joseph.png" alt="Galerie Joseph" class="page12__logo" width="200" height="68"
+                        <img src="img/partners/galerie-joseph.png" alt="Galerie Joseph" class="page12__logo" width="200" height="68"
                      loading="lazy">
-                        <img src="./img/partners/orange.png" alt="Orange" class="page12__logo" width="200" height="170"
+                        <img src="img/partners/orange.png" alt="Orange" class="page12__logo" width="200" height="170"
                      loading="lazy">
-                        <img src="./img/pages/page-12/page-12-image-9.jpg" alt="Swing Digital" class="page12__logo" width="119" height="119"
+                        <img src="img/pages/page-12/page-12-image-9.jpg" alt="Swing Digital" class="page12__logo" width="119" height="119"
                      loading="lazy">
-                        <img src="./img/pages/page-12/page-12-image-10.jpg" alt="Disque vinyle - Partenaire" class="page12__logo" width="149" height="127"
+                        <img src="img/pages/page-12/page-12-image-10.jpg" alt="Disque vinyle - Partenaire" class="page12__logo" width="149" height="127"
                      loading="lazy">
-                        <img src="./img/partners/forum-images.png" alt="Forum des Images" class="page12__logo" width="300" height="135"
+                        <img src="img/partners/forum-images.png" alt="Forum des Images" class="page12__logo" width="300" height="135"
                      loading="lazy">
-                        <img src="./img/pages/page-12/page-12-image-4.jpg" alt="SAS - Science Art Société" class="page12__logo" width="187" height="102"
+                        <img src="img/pages/page-12/page-12-image-4.jpg" alt="SAS - Science Art Société" class="page12__logo" width="187" height="102"
                      loading="lazy">
-                        <img src="./img/partners/morrison-hotel.jpg" alt="Morrison Hotel Gallery" class="page12__logo" width="200" height="78"
+                        <img src="img/partners/morrison-hotel.jpg" alt="Morrison Hotel Gallery" class="page12__logo" width="200" height="78"
                      loading="lazy">
                     </div>
                 </div>
@@ -684,13 +730,13 @@
                     <!-- Carte 1 -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-13/page-13-image-1.jpg"
+                            <img src="img/pages/page-13/page-13-image-1.jpg"
                                  alt="Acteur sur scène devant projection de photographes et public en silhouette"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">1</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-13/page-13-image-6.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-13/page-13-image-6.jpg')">
                             <h3 class="page13__card-title">PIÈCE MY STORY</h3>
                             <p class="page13__card-subtitle">Confession inachevée</p>
                         </div>
@@ -699,13 +745,13 @@
                     <!-- Carte 2 -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-13/page-13-image-4.jpg"
+                            <img src="img/pages/page-13/page-13-image-4.jpg"
                                  alt="Couverture du roman graphique Marilyn par Marilyn, éditions Robert Laffont"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">2</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-13/page-13-image-7.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-13/page-13-image-7.jpg')">
                             <h3 class="page13__card-title">ROMAN GRAPHIQUE</h3>
                         </div>
                     </article>
@@ -713,13 +759,13 @@
                     <!-- Carte 3 -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-13/page-13-image-5.jpg"
+                            <img src="img/pages/page-13/page-13-image-5.jpg"
                                  alt="Installation multimédia avec projections sur structures blanches géométriques"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">3</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-13/page-13-image-8.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-13/page-13-image-8.jpg')">
                             <h3 class="page13__card-title">INSTALLATION</h3>
                         </div>
                     </article>
@@ -727,7 +773,7 @@
                     <!-- Carte 4 -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-13/page-13-image-2.jpg"
+                            <img src="img/pages/page-13/page-13-image-2.jpg"
                                  alt="Silhouettes de visiteurs devant projection XR immersive de Marilyn Monroe"
                                  class="page13__card-image"
                      loading="lazy">
@@ -742,7 +788,7 @@
                     <!-- Carte 5 -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-13/page-13-image-3.jpg"
+                            <img src="img/pages/page-13/page-13-image-3.jpg"
                                  alt="Portrait stylisé de Marilyn Monroe en teintes violettes et roses"
                                  class="page13__card-image"
                      loading="lazy">
@@ -766,7 +812,7 @@
                     <span class="page14__number" aria-hidden="true">1</span>
                     <h3 id="page14-title" class="page14__title">LA<br>PIÈCE</h3>
                     <div class="page14__actress-wrapper">
-                        <img src="./img/pages/page-14/page-14-image-1.jpg"
+                        <img src="img/pages/page-14/page-14-image-1.jpg"
                              alt="Actrice au micro en teinte turquoise, spectacle La Pièce"
                              class="page14__actress"
                              width="793" height="1001"
@@ -775,7 +821,7 @@
                 </div>
                 <div class="page14__right">
                     <figure class="page14__figure" aria-label="Marilyn Monroe, Confession inachevée - Pavillons Poche, éditions Robert Laffont">
-                        <img src="./img/pages/page-14/page-14-image-3.jpg"
+                        <img src="img/pages/page-14/page-14-image-3.jpg"
                              alt="Couverture du livre Marilyn Monroe Confession inachevée"
                              class="page14__cover"
                              width="1465" height="2150"
@@ -788,7 +834,7 @@
 
         <!-- Page 15 : Photo plein ecran Joshua Greene (archetype D) -->
         <section id="page-15" class="full-image-page" aria-label="Visiteur devant projection de photographes">
-            <img src="./img/pages/page-15/page-15-image-1.jpg"
+            <img src="img/pages/page-15/page-15-image-1.jpg"
                  alt="Visiteur devant projection géante de photographes en noir et blanc"
                  class="full-image-page__image"
                      loading="lazy">
@@ -799,12 +845,12 @@
         <section id="page-16" class="page16" aria-labelledby="page16-title">
             <h2 id="page16-title" class="sr-only">The Play</h2>
             <div class="page16__images">
-                <img src="./img/pages/page-16/page-16-image-1.jpg"
+                <img src="img/pages/page-16/page-16-image-1.jpg"
                      alt="Deux acteurs sur scène devant projection de champ de blé"
                      class="page16__image page16__image--main"
                      width="4972" height="2452"
                      loading="lazy">
-                <img src="./img/pages/page-16/page-16-image-2.jpg"
+                <img src="img/pages/page-16/page-16-image-2.jpg"
                      alt="Couple de spectateurs émerveillés dans fauteuils rouges"
                      class="page16__image page16__image--overlay"
                      width="1801" height="1218"
@@ -815,7 +861,7 @@
 
         <!-- Page 17 : The Play - Photo scene plein ecran (archetype D) -->
         <section id="page-17" class="full-image-page" aria-label="Scène de la pièce The Play">
-            <img src="./img/pages/page-17/page-17-image-1.jpg"
+            <img src="img/pages/page-17/page-17-image-1.jpg"
                  alt="Deux acteurs sur scène devant mur de portraits photographiques"
                  class="full-image-page__image"
                      loading="lazy">
@@ -826,12 +872,12 @@
         <section id="page-18" class="page16" aria-labelledby="page18-title">
             <h2 id="page18-title" class="sr-only">The Play - Scenes</h2>
             <div class="page16__images">
-                <img src="./img/pages/page-18/page-18-image-1.jpg"
+                <img src="img/pages/page-18/page-18-image-1.jpg"
                      alt="Silhouette d'homme dans couloir, actrice devant projections"
                      class="page16__image page16__image--main"
                      width="1126" height="659"
                      loading="lazy">
-                <img src="./img/pages/page-18/page-18-image-2.jpg"
+                <img src="img/pages/page-18/page-18-image-2.jpg"
                      alt="Actrice assise devant projection de portrait homme au chapeau"
                      class="page16__image page16__image--overlay"
                      width="655" height="437"
@@ -880,7 +926,7 @@
                 </div>
                 <div class="page20__right">
                     <figure class="page20__figure" aria-label="Marilyn Monroe Confession Inachevée, Sandrine Revel et Stéphanie Sphyras">
-                        <img src="./img/pages/page-20/page-20-image-2.jpg"
+                        <img src="img/pages/page-20/page-20-image-2.jpg"
                              alt="Couverture roman graphique Marilyn par Marilyn, Robert Laffont"
                              class="page20__cover"
                              width="1405" height="2074"
@@ -895,12 +941,12 @@
         <section id="page-21" class="page21" aria-labelledby="page21-title">
             <h2 id="page21-title" class="sr-only">Planches du roman graphique</h2>
             <div class="page21__grid">
-                <img src="./img/pages/page-21/page-21-image-1.jpg"
+                <img src="img/pages/page-21/page-21-image-1.jpg"
                      alt="Planche BD, dialogue entre Marilyn et son confident"
                      class="page21__image"
                      width="1672" height="2216"
                      loading="lazy">
-                <img src="./img/pages/page-21/page-21-image-2.jpg"
+                <img src="img/pages/page-21/page-21-image-2.jpg"
                      alt="Planche BD, Marilyn seule dans son appartement la nuit"
                      class="page21__image"
                      width="2539" height="3366"
@@ -912,12 +958,12 @@
         <section id="page-22" class="page21" aria-labelledby="page22-title">
             <h2 id="page22-title" class="sr-only">Planches du roman graphique - Hollywood</h2>
             <div class="page21__grid">
-                <img src="./img/pages/page-22/page-22-image-1.jpg"
+                <img src="img/pages/page-22/page-22-image-1.jpg"
                      alt="Planche BD, Marilyn a Hollywood, piscine et rencontres"
                      class="page21__image"
                      width="1604" height="2127"
                      loading="lazy">
-                <img src="./img/pages/page-22/page-22-image-2.jpg"
+                <img src="img/pages/page-22/page-22-image-2.jpg"
                      alt="Planche BD, Sunset Boulevard et vie nocturne hollywoodienne"
                      class="page21__image"
                      width="2539" height="3366"
@@ -928,7 +974,7 @@
         <!-- Page 23 : Installation Interactive - Volet 3 (pattern page 20/14) -->
         <section id="page-23" class="page23" aria-labelledby="page23-title">
             <div class="page23__gold-band" aria-hidden="true"></div>
-            <img src="./img/pages/page-23/page-23-image-2.jpg"
+            <img src="img/pages/page-23/page-23-image-2.jpg"
                  alt="Visiteurs sur podium dans galerie d'art avec photos de Marilyn"
                  class="page23__image"
                      loading="lazy">
@@ -950,13 +996,13 @@
                     <!-- Carte A -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-24/page-24-image-6.jpg"
+                            <img src="img/pages/page-24/page-24-image-6.jpg"
                                  alt="Marilyn Monroe attablée dans un diner américain"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">A</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-24/page-24-image-7.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-24/page-24-image-7.jpg')">
                             <h3 class="page13__card-title">PHOTOGRAPHIES</h3>
                         </div>
                     </article>
@@ -964,13 +1010,13 @@
                     <!-- Carte B -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-24/page-24-image-2.jpg"
+                            <img src="img/pages/page-24/page-24-image-2.jpg"
                                  alt="Portrait coloré et artistique de Marilyn Monroe"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">B</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-24/page-24-image-8.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-24/page-24-image-8.jpg')">
                             <h3 class="page13__card-title">COMPOSITION<br>ÉLECTROACOUSTIQUE</h3>
                         </div>
                     </article>
@@ -978,13 +1024,13 @@
                     <!-- Carte C -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-24/page-24-image-5.jpg"
+                            <img src="img/pages/page-24/page-24-image-5.jpg"
                                  alt="Femme âgée aux lunettes roses, témoignage"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">C</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-24/page-24-image-9.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-24/page-24-image-9.jpg')">
                             <h3 class="page13__card-title">PODCAST</h3>
                         </div>
                     </article>
@@ -992,13 +1038,13 @@
                     <!-- Carte D -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-24/page-24-image-3.jpg"
+                            <img src="img/pages/page-24/page-24-image-3.jpg"
                                  alt="Homme en kilt assis sur scene, performance"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">D</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-24/page-24-image-10.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-24/page-24-image-10.jpg')">
                             <h3 class="page13__card-title">INTERVIEWS</h3>
                         </div>
                     </article>
@@ -1006,13 +1052,13 @@
                     <!-- Carte E -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-24/page-24-image-1.jpg"
+                            <img src="img/pages/page-24/page-24-image-1.jpg"
                                  alt="Femme allongée parmi des ballons argentés"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">E</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-24/page-24-image-11.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-24/page-24-image-11.jpg')">
                             <h3 class="page13__card-title">EXPÉRIENCES<br>INTERACTIVES</h3>
                         </div>
                     </article>
@@ -1020,13 +1066,13 @@
                     <!-- Carte F -->
                     <article class="page13__card">
                         <div class="page13__card-image-wrapper">
-                            <img src="./img/pages/page-24/page-24-image-4.jpg"
+                            <img src="img/pages/page-24/page-24-image-4.jpg"
                                  alt="Smartphone affichant l'application Quiz Marilyn"
                                  class="page13__card-image"
                      loading="lazy">
                             <span class="page13__card-number" aria-hidden="true">F</span>
                         </div>
-                        <div class="page13__card-body" style="background-image: url('./img/pages/page-24/page-24-image-12.jpg')">
+                        <div class="page13__card-body" style="background-image: url('img/pages/page-24/page-24-image-12.jpg')">
                             <h3 class="page13__card-title">LE QUIZ<br>MARILYN</h3>
                         </div>
                     </article>
@@ -1039,7 +1085,7 @@
             <h3 class="sr-only">Photographies</h3>
             <!-- Bandeau panoramique pleine largeur -->
             <div class="page25__panoramic">
-                <img src="./img/pages/page-25/page-25-image-2.jpg"
+                <img src="img/pages/page-25/page-25-image-2.jpg"
                      alt="Vue panoramique de la galerie avec tableaux de Marilyn Monroe"
                      class="page25__panoramic-image"
                      loading="lazy">
@@ -1051,12 +1097,12 @@
                 <!-- Galerie deux images cote a cote -->
                 <div class="page25__gallery">
                     <figure class="page25__gallery-figure" aria-label="Création Sylvie Lardet - Swing Digital - Milton H. Greene © MHG IP Holdings LLC">
-                        <img src="./img/pages/page-25/page-25-image-1.jpg"
+                        <img src="img/pages/page-25/page-25-image-1.jpg"
                              alt="Marilyn Monroe assise dans l'herbe devant un mur de graffitis"
                              class="page25__gallery-image"
                              width="748" height="750"
                      loading="lazy">
-                        <img src="./img/pages/page-25/page-25-image-3.jpg"
+                        <img src="img/pages/page-25/page-25-image-3.jpg"
                              alt="Marilyn Monroe en robe blanche vue de dos devant le même mur de graffitis"
                              class="page25__gallery-image"
                              width="745" height="747"
@@ -1080,7 +1126,7 @@
         <section id="page-26" class="page26" aria-label="Photographie Marilyn Monroe au diner">
             <div class="page26__container">
                 <div class="page26__image-wrapper">
-                    <img src="./img/pages/page-26/page-26-image-1.jpg"
+                    <img src="img/pages/page-26/page-26-image-1.jpg"
                          alt="Marilyn Monroe attablée dans un diner, regard pensif"
                          class="page26__image"
                          width="1177" height="790"
@@ -1095,7 +1141,7 @@
             <div class="page27__container">
                 <h2 id="page27-title" class="page27__title">IA - MILTON GREENE</h2>
                 <div class="page27__image-wrapper">
-                    <img src="./img/pages/page-27/page-27-image-1.jpg"
+                    <img src="img/pages/page-27/page-27-image-1.jpg"
                          alt="Triptyque de portraits Marilyn par Milton Greene revisités par IA"
                          class="page27__image"
                          width="3677" height="2006"
@@ -1110,7 +1156,7 @@
             <div class="page27__container">
                 <h2 id="page28-title" class="page27__title">IA - MILTON GREENE</h2>
                 <div class="page27__image-wrapper">
-                    <img src="./img/pages/page-28/page-28-image-1.jpg"
+                    <img src="img/pages/page-28/page-28-image-1.jpg"
                          alt="Triptyque de portraits Marilyn revisités par IA, effets de matière"
                          class="page27__image"
                          width="3217" height="1964"
@@ -1125,7 +1171,7 @@
             <div class="page27__container">
                 <h2 id="page29-title" class="page27__title">IA - MILTON GREENE</h2>
                 <div class="page27__image-wrapper">
-                    <img src="./img/pages/page-29/page-29-image-1.jpg"
+                    <img src="img/pages/page-29/page-29-image-1.jpg"
                          alt="Triptyque noir et rouge, portraits sombres de Marilyn par IA"
                          class="page27__image"
                          width="3218" height="1981"
@@ -1141,7 +1187,7 @@
                 <h2 id="page30-title" class="page27__title">IA - MILTON GREENE</h2>
                 <div class="page30__grid">
                     <div class="page30__image-block">
-                        <img src="./img/pages/page-30/page-30-image-1.jpg"
+                        <img src="img/pages/page-30/page-30-image-1.jpg"
                              alt="Portrait de Marilyn Monroe sur fond rose, visage voilé de blanc"
                              class="page30__image"
                              width="1265" height="1265"
@@ -1149,7 +1195,7 @@
                         <p class="page27__credit">Casimir Hampe - Swing Digital - Milton H. Greene &copy; MHG IP Holdings LLC</p>
                     </div>
                     <div class="page30__image-block">
-                        <img src="./img/pages/page-30/page-30-image-2.jpg"
+                        <img src="img/pages/page-30/page-30-image-2.jpg"
                              alt="Portrait de Marilyn Monroe sur fond noir, bras levés, éclairage rouge dramatique"
                              class="page30__image"
                              width="422" height="422"
@@ -1174,11 +1220,11 @@
 
                 <!-- Deux images cote a cote -->
                 <div class="page31__gallery">
-                    <img src="./img/pages/page-31/page-31-image-2.jpg"
+                    <img src="img/pages/page-31/page-31-image-2.jpg"
                          alt="Homme assis sur un pouf blanc dans un espace d'exposition avec projection au sol"
                          class="page31__image"
                      loading="lazy">
-                    <img src="./img/pages/page-31/page-31-image-1.jpg"
+                    <img src="img/pages/page-31/page-31-image-1.jpg"
                          alt="Femme scannant un QR code parmi une grille de QR codes verts accroches au mur"
                          class="page31__image"
                      loading="lazy">
@@ -1191,7 +1237,7 @@
             <h3 class="sr-only">Installation interactive</h3>
             <!-- Image haute -->
             <div class="page32__top">
-                <img src="./img/pages/page-32/page-32-image-1.jpg"
+                <img src="img/pages/page-32/page-32-image-1.jpg"
                      alt="Deux jeunes jouant avec des ballons argentés parmi des sphères"
                      class="page32__image"
                      loading="lazy">
@@ -1204,7 +1250,7 @@
             </div>
             <!-- Image basse -->
             <div class="page32__bottom">
-                <img src="./img/pages/page-32/page-32-image-2.jpg"
+                <img src="img/pages/page-32/page-32-image-2.jpg"
                      alt="Enfant avec ballon argenté sur la tête, femme filmant à la tablette"
                      class="page32__image"
                      loading="lazy">
@@ -1237,7 +1283,7 @@
                         <ol class="page33__episodes" aria-label="Liste des épisodes du podcast">
                             <li class="page33__episode page33__episode--active" data-vid="0YDIZeBbYL0" data-title="DEVENIR MARILYN - Épisode 1 et 2">
                                 <button class="page33__episode-btn" aria-current="true">
-                                    <img src="./img/pages/page-33/podcast-01.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
+                                    <img src="img/pages/page-33/podcast-01.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
                                     <span class="page33__episode-info">
                                         <span class="page33__episode-title">Devenir Marilyn</span>
                                         <span class="page33__episode-meta">Épisodes 1-2 &middot; 3:34</span>
@@ -1246,7 +1292,7 @@
                             </li>
                             <li class="page33__episode" data-vid="iJjEmnqXWzU" data-title="UNE ICÔNE EN CORÉE - Épisode 3 et 4">
                                 <button class="page33__episode-btn">
-                                    <img src="./img/pages/page-33/podcast-02.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
+                                    <img src="img/pages/page-33/podcast-02.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
                                     <span class="page33__episode-info">
                                         <span class="page33__episode-title">Une icône en Corée</span>
                                         <span class="page33__episode-meta">Épisodes 3-4 &middot; 6:07</span>
@@ -1255,7 +1301,7 @@
                             </li>
                             <li class="page33__episode" data-vid="FD7Du_SD-QI" data-title="KENNEDY ET MOI - Épisode 4">
                                 <button class="page33__episode-btn">
-                                    <img src="./img/pages/page-33/podcast-03.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
+                                    <img src="img/pages/page-33/podcast-03.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
                                     <span class="page33__episode-info">
                                         <span class="page33__episode-title">Kennedy et moi</span>
                                         <span class="page33__episode-meta">Épisode 4 &middot; 2:06</span>
@@ -1264,7 +1310,7 @@
                             </li>
                             <li class="page33__episode" data-vid="rx0VDLfEbLU" data-title="MA MORT ET APRÈS - Épisode 5 et 6">
                                 <button class="page33__episode-btn">
-                                    <img src="./img/pages/page-33/podcast-04.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
+                                    <img src="img/pages/page-33/podcast-04.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
                                     <span class="page33__episode-info">
                                         <span class="page33__episode-title">Ma mort et après...</span>
                                         <span class="page33__episode-meta">Épisodes 5-6 &middot; 5:32</span>
@@ -1273,7 +1319,7 @@
                             </li>
                             <li class="page33__episode" data-vid="AB2Fb1wdHoo" data-title="The Archives - Joshua Greene">
                                 <button class="page33__episode-btn">
-                                    <img src="./img/pages/page-33/podcast-05.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
+                                    <img src="img/pages/page-33/podcast-05.jpg" alt="" class="page33__episode-thumb" width="320" height="180" loading="lazy">
                                     <span class="page33__episode-info">
                                         <span class="page33__episode-title">The Archives</span>
                                         <span class="page33__episode-meta">Joshua Greene &middot; 6:06</span>
@@ -1285,7 +1331,7 @@
                 </div>
                 <!-- Colonne droite : photo femme avec casque -->
                 <div class="page33__right">
-                    <img src="./img/pages/page-33/page-33-image-1.jpg"
+                    <img src="img/pages/page-33/page-33-image-1.jpg"
                          alt="Femme assise avec un casque audio, écoutant un podcast"
                          class="page33__photo"
                      loading="lazy">
@@ -1308,7 +1354,7 @@
             <!-- Interview 1 : Christelle Montagner -->
             <div class="page34__interview">
                 <div class="page34__photo-wrapper">
-                    <img src="./img/pages/page-34/page-34-image-2.jpg"
+                    <img src="img/pages/page-34/page-34-image-2.jpg"
                          alt="Interview studio de Christelle Montagner, filmée par une équipe"
                          class="page34__photo"
                      loading="lazy">
@@ -1322,7 +1368,7 @@
             <!-- Interview 2 : Adrien Gombeaud -->
             <div class="page34__interview">
                 <div class="page34__photo-wrapper">
-                    <img src="./img/pages/page-34/page-34-image-1.jpg"
+                    <img src="img/pages/page-34/page-34-image-1.jpg"
                          alt="Interview studio d'Adrien Gombeaud, filmé par des cameramen"
                          class="page34__photo"
                      loading="lazy">
@@ -1353,7 +1399,7 @@
             </div>
             <!-- Colonne droite : photo Amy Greene avec overlay texte -->
             <div class="page35__right">
-                <img src="./img/pages/page-35/page-35-image-1.jpg"
+                <img src="img/pages/page-35/page-35-image-1.jpg"
                      alt="Amy Greene, épouse du photographe Milton Greene, lunettes roses"
                      class="page35__photo"
                      loading="lazy">
@@ -1379,19 +1425,19 @@
             <!-- Galerie 3 photos -->
             <div class="page36__gallery" role="region" aria-label="Photos d'expériences interactives dans l'exposition">
                 <div class="page36__photo page36__photo--large">
-                    <img src="./img/pages/page-36/page-36-image-1.jpg"
+                    <img src="img/pages/page-36/page-36-image-1.jpg"
                          alt="Espace d'exposition avec estrades blanches et photo noir et blanc"
                          class="page36__photo-image"
                      loading="lazy">
                 </div>
                 <div class="page36__photo page36__photo--medium">
-                    <img src="./img/pages/page-36/page-36-image-3.jpg"
+                    <img src="img/pages/page-36/page-36-image-3.jpg"
                          alt="Visiteuse en robe jaune sur une plateforme interactive"
                          class="page36__photo-image"
                      loading="lazy">
                 </div>
                 <div class="page36__photo page36__photo--small">
-                    <img src="./img/pages/page-36/page-36-image-2.jpg"
+                    <img src="img/pages/page-36/page-36-image-2.jpg"
                          alt="Visiteuse sur un dispositif interactif devant une photographie"
                          class="page36__photo-image"
                      loading="lazy">
@@ -1413,7 +1459,7 @@
             </div>
             <!-- Colonne droite : photo -->
             <div class="page37__right">
-                <img src="./img/pages/page-37/page-37-image-1.jpg"
+                <img src="img/pages/page-37/page-37-image-1.jpg"
                      alt="Visiteur en kilt sur l'estrade Marilyn, soufflerie activée"
                      class="page37__photo"
                      loading="lazy">
@@ -1436,7 +1482,7 @@
             </div>
             <!-- Colonne droite : mockup iPhone -->
             <div class="page38__right">
-                <img src="./img/pages/page-38/page-38-image-1.jpg"
+                <img src="img/pages/page-38/page-38-image-1.jpg"
                      alt="iPhone affichant l'application Quiz Marilyn, score 10/100"
                      class="page38__phone"
                      width="2808" height="2905"
@@ -1458,7 +1504,7 @@
             <div class="page39__stripe" aria-hidden="true"></div>
             <!-- Colonne droite : photo -->
             <div class="page39__right">
-                <img src="./img/pages/page-39/page-39-image-1.jpg"
+                <img src="img/pages/page-39/page-39-image-1.jpg"
                      alt="Portrait de Marilyn Monroe en teinte bleue par Milton H. Greene"
                      class="page39__photo"
                      width="1492" height="2094"
@@ -1488,7 +1534,7 @@
                 </div>
             </div>
             <div class="page40__right">
-                <img src="./img/pages/page-40/page-40-image-1.jpg"
+                <img src="img/pages/page-40/page-40-image-1.jpg"
                      alt="Visiteuse avec casque VR Meta Quest devant des portraits roses"
                      class="page40__photo"
                      loading="lazy">
@@ -1500,23 +1546,23 @@
         <section id="page-41" class="page41" aria-labelledby="page41-title">
             <h2 id="page41-title" class="sr-only">Expérience de réalité virtuelle immersive</h2>
             <div class="page41__strip">
-                <img src="./img/pages/page-41/page-41-image-3.jpg"
+                <img src="img/pages/page-41/page-41-image-3.jpg"
                      alt="Scène VR : soldat sur un champ de bataille reconstitué en 3D"
                      class="page41__image"
                      loading="lazy">
             </div>
             <div class="page41__strip page41__strip--center">
-                <img src="./img/pages/page-41/page-41-image-1.jpg"
+                <img src="img/pages/page-41/page-41-image-1.jpg"
                      alt="Casque VR HTC Vive Focus 3 porté par une visiteuse"
                      class="page41__image"
                      loading="lazy">
-                <img src="./img/pages/page-41/page-41-image-4.jpg"
+                <img src="img/pages/page-41/page-41-image-4.jpg"
                      alt="Visiteuse avec casque VR et écouteurs, vue de profil"
                      class="page41__image"
                      loading="lazy">
             </div>
             <div class="page41__strip">
-                <img src="./img/pages/page-41/page-41-image-2.jpg"
+                <img src="img/pages/page-41/page-41-image-2.jpg"
                      alt="Scène VR immersive : soldats 3D sur un terrain de guerre"
                      class="page41__image"
                      loading="lazy">
@@ -1559,7 +1605,7 @@
         <!-- Page 43 : Voyage autour de moi - Affiche spectacle + logos partenaires -->
         <section id="page-43" class="page43" aria-labelledby="page43-title">
             <div class="page43__background">
-                <img src="./img/pages/page-43/page-43-image-1.jpg"
+                <img src="img/pages/page-43/page-43-image-1.jpg"
                      alt="Troupe Voyage autour de moi sur scène, vingtaine d'artistes"
                      class="page43__background-image"
                      loading="lazy">
@@ -1576,19 +1622,19 @@
                 </div>
                 <div class="page43__logos" role="region" aria-label="Partenaires Voyage autour de moi">
                     <div class="page43__logos-bar">
-                        <img src="./img/pages/page-43/page-43-image-2.jpg" alt="Principe Actif" class="page43__logo page43__logo--invert" width="335" height="71"
+                        <img src="img/pages/page-43/page-43-image-2.jpg" alt="Principe Actif" class="page43__logo page43__logo--invert" width="335" height="71"
                      loading="lazy">
-                        <img src="./img/partners/swing-digital.png" alt="Swing Digital" class="page43__logo page43__logo--invert" width="200" height="200"
+                        <img src="img/partners/swing-digital.png" alt="Swing Digital" class="page43__logo page43__logo--invert" width="200" height="200"
                      loading="lazy">
-                        <img src="./img/pages/page-43/page-43-image-3.jpg" alt="Jeunesse FeuVert" class="page43__logo" width="220" height="166"
+                        <img src="img/pages/page-43/page-43-image-3.jpg" alt="Jeunesse FeuVert" class="page43__logo" width="220" height="166"
                      loading="lazy">
-                        <img src="./img/pages/page-43/page-43-image-8.jpg" alt="Fondation d'entreprise Vinci pour la Cité" class="page43__logo" width="277" height="125"
+                        <img src="img/pages/page-43/page-43-image-8.jpg" alt="Fondation d'entreprise Vinci pour la Cité" class="page43__logo" width="277" height="125"
                      loading="lazy">
-                        <img src="./img/pages/page-43/page-43-image-4.jpg" alt="Seine-Saint-Denis - Le Département" class="page43__logo" width="277" height="84"
+                        <img src="img/pages/page-43/page-43-image-4.jpg" alt="Seine-Saint-Denis - Le Département" class="page43__logo" width="277" height="84"
                      loading="lazy">
-                        <img src="./img/pages/page-43/page-43-image-5.jpg" alt="Épinay-sur-Seine" class="page43__logo" width="93" height="14"
+                        <img src="img/pages/page-43/page-43-image-5.jpg" alt="Épinay-sur-Seine" class="page43__logo" width="93" height="14"
                      loading="lazy">
-                        <img src="./img/pages/page-43/page-43-image-7.jpg" alt="Pôle Média Grand Paris" class="page43__logo" width="275" height="137"
+                        <img src="img/pages/page-43/page-43-image-7.jpg" alt="Pôle Média Grand Paris" class="page43__logo" width="275" height="137"
                      loading="lazy">
                     </div>
                 </div>
@@ -1599,7 +1645,7 @@
         <section id="page-44" class="page44" aria-labelledby="page44-title">
             <!-- Photo panoramique pleine largeur en haut -->
             <div class="page44__panoramic">
-                <img src="./img/pages/page-44/page-44-image-1.jpg"
+                <img src="img/pages/page-44/page-44-image-1.jpg"
                      alt="Atelier participatif avec des adolescents assis en cercle"
                      class="page44__panoramic-image"
                      loading="lazy">
@@ -1613,7 +1659,7 @@
                     <p class="page44__awards">Prix de la diversité culturelle 2021<br>Lauréat Labo 2020 du Pôle média Grand Paris</p>
                 </div>
                 <div class="page44__photo">
-                    <img src="./img/pages/page-44/page-44-image-2.jpg"
+                    <img src="img/pages/page-44/page-44-image-2.jpg"
                          alt="Jeunes artistes sur scène lors de Voyage autour de moi"
                          class="page44__photo-image"
                      loading="lazy">
@@ -1663,7 +1709,7 @@
                     <h2 id="page46-title" class="page46__title">Dessine-moi<br>le vent</h2>
                     <a href="https://vimeo.com/250420667" class="page46__vimeo-link" target="_blank" rel="noopener">https://vimeo.com/250420667</a>
                     <div class="page46__stores">
-                        <img src="./img/pages/page-46/page-46-image-2.jpg" width="701" height="150"
+                        <img src="img/pages/page-46/page-46-image-2.jpg" width="701" height="150"
                              alt="Disponible sur l'App Store et Google Play"
                              class="page46__stores-image"
                      loading="lazy">
@@ -1673,7 +1719,7 @@
             </div>
             <!-- Image principale -->
             <div class="page46__visual">
-                <img src="./img/pages/page-46/page-46-image-1.jpg"
+                <img src="img/pages/page-46/page-46-image-1.jpg"
                      alt="Livre Dessine-moi le vent ouvert avec tablette iPad en RA"
                      class="page46__visual-image"
                      width="1046" height="477"
@@ -1695,15 +1741,15 @@
                 </div>
                 <!-- Colonne droite : galerie photos -->
                 <div class="page47__gallery">
-                    <img src="./img/pages/page-47/page-47-image-3.jpg"
+                    <img src="img/pages/page-47/page-47-image-3.jpg"
                          alt="Tablette avec l'application Dessine-moi le vent en RA"
                          class="page47__gallery-image"
                      loading="lazy">
-                    <img src="./img/pages/page-47/page-47-image-1.jpg"
+                    <img src="img/pages/page-47/page-47-image-1.jpg"
                          alt="Main d'enfant touchant une tablette avec jardin animé en RA"
                          class="page47__gallery-image page47__gallery-image--tall"
                      loading="lazy">
-                    <img src="./img/pages/page-47/page-47-image-2.jpg"
+                    <img src="img/pages/page-47/page-47-image-2.jpg"
                          alt="Enfants assistant au spectacle Dessine-moi le vent"
                          class="page47__gallery-image"
                      loading="lazy">
@@ -1712,15 +1758,15 @@
             <!-- Barre de logos partenaires -->
             <div class="page47__logos" role="region" aria-label="Partenaires Dessine-moi le vent">
                 <div class="page47__logos-bar">
-                    <img src="./img/pages/page-47/page-47-image-8.jpg" alt="Principe Actif" class="page47__logo" width="301" height="63"
+                    <img src="img/pages/page-47/page-47-image-8.jpg" alt="Principe Actif" class="page47__logo" width="301" height="63"
                      loading="lazy">
-                    <img src="./img/pages/page-47/page-47-image-6.jpg" alt="Région Grand Est" class="page47__logo" width="205" height="63"
+                    <img src="img/pages/page-47/page-47-image-6.jpg" alt="Région Grand Est" class="page47__logo" width="205" height="63"
                      loading="lazy">
-                    <img src="./img/pages/page-47/page-47-image-5.jpg" alt="CNC" class="page47__logo" width="240" height="74"
+                    <img src="img/pages/page-47/page-47-image-5.jpg" alt="CNC" class="page47__logo" width="240" height="74"
                      loading="lazy">
-                    <img src="./img/pages/page-47/page-47-image-4.jpg" alt="Maison du Théâtre et de la Danse" class="page47__logo" width="292" height="216"
+                    <img src="img/pages/page-47/page-47-image-4.jpg" alt="Maison du Théâtre et de la Danse" class="page47__logo" width="292" height="216"
                      loading="lazy">
-                    <img src="./img/pages/page-47/page-47-image-7.jpg" alt="Épinay-sur-Seine" class="page47__logo" width="353" height="55"
+                    <img src="img/pages/page-47/page-47-image-7.jpg" alt="Épinay-sur-Seine" class="page47__logo" width="353" height="55"
                      loading="lazy">
                 </div>
             </div>
@@ -1730,7 +1776,7 @@
         <section id="page-48" class="page48" aria-labelledby="page48-title">
             <!-- Bandeau haut : portraits -->
             <div class="page48__banner-top">
-                <img src="./img/pages/page-48/page-48-image-1.jpg"
+                <img src="img/pages/page-48/page-48-image-1.jpg"
                      alt="Trois silhouettes de femmes superposées en bleu, rouge et naturel"
                      class="page48__banner-image"
                      loading="lazy">
@@ -1745,14 +1791,14 @@
             </div>
             <!-- Bandeau bas : pieds + logos -->
             <div class="page48__banner-bottom">
-                <img src="./img/pages/page-48/page-48-image-2.jpg"
+                <img src="img/pages/page-48/page-48-image-2.jpg"
                      alt="Pieds de femmes en tenues d'époque sur un sol teinté de rouge et bleu"
                      class="page48__banner-image"
                      loading="lazy">
                 <div class="page48__logos">
-                    <img src="./img/partners/swing-digital-hd.png" alt="Swing Digital" class="page48__logo" width="350" height="298"
+                    <img src="img/partners/swing-digital-hd.png" alt="Swing Digital" class="page48__logo" width="350" height="298"
                      loading="lazy">
-                    <img src="./img/partners/principe-actif-hd.png" alt="Principe Actif" class="page48__logo" width="544" height="174"
+                    <img src="img/partners/principe-actif-hd.png" alt="Principe Actif" class="page48__logo" width="544" height="174"
                      loading="lazy">
                 </div>
             </div>
@@ -1764,31 +1810,31 @@
             <!-- Grille 5 portraits -->
             <div class="page49__portraits" role="region" aria-label="Cinq portraits de femmes en teintes tricolores">
                 <div class="page49__portrait">
-                    <img src="./img/pages/page-49/page-49-image-3.jpg"
+                    <img src="img/pages/page-49/page-49-image-3.jpg"
                          alt="Femme avec casque de chantier, bras croisés, teinte bleue"
                          class="page49__portrait-image"
                      loading="lazy">
                 </div>
                 <div class="page49__portrait">
-                    <img src="./img/pages/page-49/page-49-image-4.jpg"
+                    <img src="img/pages/page-49/page-49-image-4.jpg"
                          alt="Femme en bleu de travail, casque d'aviatrice, teintes bicolores"
                          class="page49__portrait-image"
                      loading="lazy">
                 </div>
                 <div class="page49__portrait">
-                    <img src="./img/pages/page-49/page-49-image-5.jpg"
+                    <img src="img/pages/page-49/page-49-image-5.jpg"
                          alt="Femme en gilet de sécurité orange, teintes tricolores"
                          class="page49__portrait-image"
                      loading="lazy">
                 </div>
                 <div class="page49__portrait">
-                    <img src="./img/pages/page-49/page-49-image-6.jpg"
+                    <img src="img/pages/page-49/page-49-image-6.jpg"
                          alt="Portrait d'une femme en blouse blanche, bras croisés, teintes bleu et rouge"
                          class="page49__portrait-image"
                      loading="lazy">
                 </div>
                 <div class="page49__portrait">
-                    <img src="./img/pages/page-49/page-49-image-7.jpg"
+                    <img src="img/pages/page-49/page-49-image-7.jpg"
                          alt="Femme en blouse blanche, lunettes de protection, tricolore"
                          class="page49__portrait-image"
                      loading="lazy">
@@ -1804,7 +1850,7 @@
         <!-- Page 50 : Marilyn - Affiche spectacle théâtre/réalité mixte -->
         <section id="page-50" class="page50" aria-labelledby="page50-title">
             <div class="page50__background">
-                <img src="./img/pages/page-50/page-50-image-1.jpg"
+                <img src="img/pages/page-50/page-50-image-1.jpg"
                      alt="Silhouettes de femmes derrière une vitre embuée, lumière dorée"
                      class="page50__background-image"
                      loading="lazy">
@@ -1818,11 +1864,11 @@
                     <p class="page50__tags">Théâtre / Réalité mixte</p>
                 </div>
                 <div class="page50__logos">
-                    <img src="./img/pages/page-50/page-50-image-4.jpg" alt="Morrison Hotel Gallery" class="page50__logo" width="143" height="56"
+                    <img src="img/pages/page-50/page-50-image-4.jpg" alt="Morrison Hotel Gallery" class="page50__logo" width="143" height="56"
                      loading="lazy">
-                    <img src="./img/pages/page-50/page-50-image-3.jpg" alt="Principe Actif" class="page50__logo" width="124" height="26"
+                    <img src="img/pages/page-50/page-50-image-3.jpg" alt="Principe Actif" class="page50__logo" width="124" height="26"
                      loading="lazy">
-                    <img src="./img/pages/page-50/page-50-image-2.jpg" alt="Swing Digital" class="page50__logo" width="113" height="76"
+                    <img src="img/pages/page-50/page-50-image-2.jpg" alt="Swing Digital" class="page50__logo" width="113" height="76"
                      loading="lazy">
                 </div>
             </div>
@@ -1841,7 +1887,7 @@
             </div>
             <!-- Colonne droite : photo + citations -->
             <div class="page51__right">
-                <img src="./img/pages/page-51/page-51-image-1.jpg"
+                <img src="img/pages/page-51/page-51-image-1.jpg"
                      alt="Silhouette floue d'une femme derrière une vitre embuée, sépia"
                      class="page51__photo"
                      loading="lazy">
@@ -1857,7 +1903,7 @@
             <div class="page52__grid">
                 <!-- Concept art avec titre overlay -->
                 <div class="page52__concept">
-                    <img src="./img/pages/page-52/page-52-image-1.jpg"
+                    <img src="img/pages/page-52/page-52-image-1.jpg"
                          alt="Concept art d'un hall d'hôtel en RM avec hologrammes"
                          class="page52__concept-image"
                      loading="lazy">
@@ -1868,7 +1914,7 @@
                 </div>
                 <!-- Photo du lieu -->
                 <div class="page52__venue">
-                    <img src="./img/pages/page-52/page-52-image-2.jpg"
+                    <img src="img/pages/page-52/page-52-image-2.jpg"
                          alt="Hall historique avec verrière, escalier en colimaçon"
                          class="page52__venue-image"
                      loading="lazy">
@@ -1897,17 +1943,17 @@
                 </div>
                 <p class="page53__description">DÉAMBULATION EN RÉALITÉ MIXTE DANS LE MONTMARTRE DE LA BELLE ÉPOQUE, SUR LES PAS DE TOULOUSE-LAUTREC ET DES FEMMES QUI ONT INSPIRÉ SON ŒUVRE : LA GOULUE, JANE AVRIL ET SUZANNE VALADON</p>
                 <div class="page53__logos">
-                    <img src="./img/pages/page-53/page-53-image-2.jpg" alt="Pixihead" class="page53__logo" width="315" height="347"
+                    <img src="img/pages/page-53/page-53-image-2.jpg" alt="Pixihead" class="page53__logo" width="315" height="347"
                      loading="lazy">
-                    <img src="./img/pages/page-53/page-53-principe-actif.jpg" alt="Principe Actif" class="page53__logo" width="421" height="149"
+                    <img src="img/pages/page-53/page-53-principe-actif.jpg" alt="Principe Actif" class="page53__logo" width="421" height="149"
                      loading="lazy">
-                    <img src="./img/pages/page-53/page-53-swing-digital.jpg" alt="Swing Digital" class="page53__logo" width="526" height="224"
+                    <img src="img/pages/page-53/page-53-swing-digital.jpg" alt="Swing Digital" class="page53__logo" width="526" height="224"
                      loading="lazy">
                 </div>
             </div>
             <!-- Colonne droite : affiche -->
             <div class="page53__right">
-                <img src="./img/pages/page-53/page-53-image-4.jpg"
+                <img src="img/pages/page-53/page-53-image-4.jpg"
                      alt="Affiche Toulouse-Lautrec : expérience VR au Moulin Rouge"
                      class="page53__poster"
                      width="848" height="1264"
@@ -1921,19 +1967,19 @@
             <h2 id="page54-title" class="sr-only">Toulouse-Lautrec - Visite immersive à Montmartre</h2>
             <!-- Mosaïque photos -->
             <div class="page54__mosaic" role="region" aria-label="Photos de la visite en réalité mixte à Montmartre">
-                <div class="page54__photo"><img src="./img/pages/page-54/page-54-image-1.jpg" alt="Visiteurs devant le Moulin Rouge avec hologrammes Belle Époque" class="page54__photo-image"
+                <div class="page54__photo"><img src="img/pages/page-54/page-54-image-1.jpg" alt="Visiteurs devant le Moulin Rouge avec hologrammes Belle Époque" class="page54__photo-image"
                      loading="lazy"></div>
-                <div class="page54__photo"><img src="./img/pages/page-54/page-54-image-2.jpg" alt="Rue de Montmartre avec projection RM d'une scène de bal XIXe" class="page54__photo-image"
+                <div class="page54__photo"><img src="img/pages/page-54/page-54-image-2.jpg" alt="Rue de Montmartre avec projection RM d'une scène de bal XIXe" class="page54__photo-image"
                      loading="lazy"></div>
-                <div class="page54__photo"><img src="./img/pages/page-54/page-54-image-3.jpg" alt="Cabaret reconstitué en RM avec danseurs de la Belle Époque" class="page54__photo-image"
+                <div class="page54__photo"><img src="img/pages/page-54/page-54-image-3.jpg" alt="Cabaret reconstitué en RM avec danseurs de la Belle Époque" class="page54__photo-image"
                      loading="lazy"></div>
-                <div class="page54__photo"><img src="./img/pages/page-54/page-54-image-4.jpg" alt="Vue historique en noir et blanc de Montmartre superposée au quartier actuel" class="page54__photo-image"
+                <div class="page54__photo"><img src="img/pages/page-54/page-54-image-4.jpg" alt="Vue historique en noir et blanc de Montmartre superposée au quartier actuel" class="page54__photo-image"
                      loading="lazy"></div>
-                <div class="page54__photo page54__photo--large"><img src="./img/pages/page-54/page-54-image-5.jpg" alt="Fresque Toulouse-Lautrec projetée en RM sur un café" class="page54__photo-image"
+                <div class="page54__photo page54__photo--large"><img src="img/pages/page-54/page-54-image-5.jpg" alt="Fresque Toulouse-Lautrec projetée en RM sur un café" class="page54__photo-image"
                      loading="lazy"></div>
-                <div class="page54__photo"><img src="./img/pages/page-54/page-54-image-6.jpg" alt="Personnage en costume d'époque, hologramme à Montmartre" class="page54__photo-image"
+                <div class="page54__photo"><img src="img/pages/page-54/page-54-image-6.jpg" alt="Personnage en costume d'époque, hologramme à Montmartre" class="page54__photo-image"
                      loading="lazy"></div>
-                <div class="page54__photo"><img src="./img/pages/page-54/page-54-image-7.jpg" alt="Visiteurs explorant Montmartre avec casques de RM" class="page54__photo-image"
+                <div class="page54__photo"><img src="img/pages/page-54/page-54-image-7.jpg" alt="Visiteurs explorant Montmartre avec casques de RM" class="page54__photo-image"
                      loading="lazy"></div>
             </div>
             <!-- Texte descriptif -->
@@ -1958,14 +2004,14 @@
                     <p>UN PARCOURS QUI FAIT ÉPROUVER CE BESOIN IRRÉPRESSIBLE DE CRÉER, QUEL QU'EN SOIT LE PRIX.</p>
                 </div>
                 <div class="page53__logos">
-                    <img src="./img/pages/page-55/page-55-principe-actif.jpg" alt="Principe Actif" class="page53__logo" width="421" height="149"
+                    <img src="img/pages/page-55/page-55-principe-actif.jpg" alt="Principe Actif" class="page53__logo" width="421" height="149"
                      loading="lazy">
-                    <img src="./img/pages/page-55/page-55-swing-digital.jpg" alt="Swing Digital" class="page53__logo" width="526" height="224"
+                    <img src="img/pages/page-55/page-55-swing-digital.jpg" alt="Swing Digital" class="page53__logo" width="526" height="224"
                      loading="lazy">
                 </div>
             </div>
             <div class="page53__right">
-                <img src="./img/pages/page-55/page-55-image-3.jpg"
+                <img src="img/pages/page-55/page-55-image-3.jpg"
                      alt="Affiche Charlotte Henschel, visage fragmenté en éclats colorés"
                      class="page53__poster"
                      width="848" height="1264"
@@ -1981,13 +2027,13 @@
             </div>
             <div class="page56__content">
                 <div class="page56__paintings" role="region" aria-label="Tableaux de Charlotte Henschel">
-                    <img src="./img/pages/page-56/page-56-image-4.jpg" alt="Tableau de Henschel : profil en lignes dorées sur fond noir" class="page56__painting"
+                    <img src="img/pages/page-56/page-56-image-4.jpg" alt="Tableau de Henschel : profil en lignes dorées sur fond noir" class="page56__painting"
                     width="430" height="521"
                      loading="lazy">
-                    <img src="./img/pages/page-56/page-56-image-2.jpg" alt="Tableau de Henschel : créature fantastique sur fond jaune vif" class="page56__painting"
+                    <img src="img/pages/page-56/page-56-image-2.jpg" alt="Tableau de Henschel : créature fantastique sur fond jaune vif" class="page56__painting"
                     width="287" height="443"
                      loading="lazy">
-                    <img src="./img/pages/page-56/page-56-image-3.jpg" alt="Tableau de Henschel : formes rouges et noires, croissant blanc" class="page56__painting"
+                    <img src="img/pages/page-56/page-56-image-3.jpg" alt="Tableau de Henschel : formes rouges et noires, croissant blanc" class="page56__painting"
                     width="464" height="587"
                      loading="lazy">
                 </div>
@@ -2013,7 +2059,7 @@
                         <p class="page57__paragraph">Intégration des nouveaux arrivants, révélation des talents cachés, team-building qui sort des sentiers battus.</p>
                     </div>
                     <div class="page57__visual">
-                        <img src="./img/pages/page-57/page-57-image-1.jpg"
+                        <img src="img/pages/page-57/page-57-image-1.jpg"
                              alt="Homme avec casque RM Meta Quest, mains en interaction"
                              class="page57__photo"
                              width="1277" height="1298"
@@ -2033,7 +2079,7 @@
                 <div class="page58__layout">
                     <div class="page58__left">
                         <div class="page58__image-wrapper">
-                            <img src="./img/pages/page-58/page-58-image-1.jpg"
+                            <img src="img/pages/page-58/page-58-image-1.jpg"
                                  alt="Montmartre XIXe et aujourd'hui en split-screen, Toulouse-Lautrec"
                                  class="page58__image"
                                  width="773" height="178"
@@ -2083,12 +2129,12 @@
                 <div class="page58__layout">
                     <div class="page58__left">
                         <div class="page58__image-wrapper page58__image-wrapper--double">
-                            <img src="./img/pages/page-59/page-59-image-1.jpg"
+                            <img src="img/pages/page-59/page-59-image-1.jpg"
                                  alt="Portrait sépia de Charlotte Henschel jeune, portant un chapeau et un collier"
                                  class="page58__image page58__image--half"
                                  width="1534" height="354"
                      loading="lazy">
-                            <img src="./img/pages/page-59/page-59-image-2.jpg"
+                            <img src="img/pages/page-59/page-59-image-2.jpg"
                                  alt="Tableau de Henschel : sphère rouge sur fond sombre"
                                  class="page58__image page58__image--half"
                                  width="482" height="247"
@@ -2147,7 +2193,7 @@
                     <p class="page60__paragraph">Après ce délai : aucun remboursement ni modification possible</p>
                 </div>
                 <div class="page60__visual">
-                    <img src="./img/pages/page-60/page-60-image-1.jpg"
+                    <img src="img/pages/page-60/page-60-image-1.jpg"
                          alt="Jeune garçon portant un casque de réalité mixte, souriant, en noir et blanc"
                          class="page60__photo"
                      loading="lazy">
@@ -2185,7 +2231,7 @@
                 </div>
             </div>
             <div class="page61__right">
-                <img src="./img/pages/page-61/page-61-image-1.jpg"
+                <img src="img/pages/page-61/page-61-image-1.jpg"
                      alt="Vue panoramique de Paris depuis Montmartre, visiteurs en VR"
                      class="page61__photo"
                      loading="lazy">
@@ -2195,7 +2241,7 @@
         <!-- Page 62 : Contact -->
         <section id="page-62" class="page62" aria-labelledby="page62-title">
             <div class="page62__background">
-                <img src="./img/pages/page-62/page-62-image-1.jpg"
+                <img src="img/pages/page-62/page-62-image-1.jpg"
                      alt="Fond abstrait dégradé rose et magenta avec lignes verticales lumineuses"
                      class="page62__background-image"
                      loading="lazy">
@@ -2210,7 +2256,7 @@
                     35-37 rue d'Artois<br>
                     75008 Paris
                 </address>
-                <img src="./img/pages/page-62/page-62-image-2.jpg"
+                <img src="img/pages/page-62/page-62-image-2.jpg"
                      alt="Logo Swing Digital"
                      class="page62__logo"
                      width="631" height="421"
@@ -2219,13 +2265,14 @@
         </section>
 
     </main>
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer role="contentinfo" class="site-footer footer">
         <div class="footer__container">
             <p class="footer__copyright">&copy; 2026 Swing Digital. Tous droits réservés.</p>
-            <nav class="footer__nav" aria-label="Navigation footer">
-                <ul>
-                    <li><a href="#page-2">Équipe</a></li>
+            <nav role="navigation" aria-label="Navigation secondaire">
+                <ul class="footer__nav-list">
+                    <li><a href="index.html#page-2">Équipe</a></li>
                     <li><a href="mailto:PRODUCTION@SWINGDIGITALPRODUCTION.COM">Contact</a></li>
                     <li><a href="#">Mentions légales</a></li>
                 </ul>
@@ -2234,7 +2281,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="https://player.vimeo.com/api/player.js"></script>
-    <script src="./js/main.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
