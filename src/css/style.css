@@ -986,6 +986,8 @@ a.page13__card--link:focus-visible {
 
 .mentions-legales {
     padding: var(--space-2xl) var(--slide-pad-x);
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .mentions-legales__container {
@@ -1025,15 +1027,18 @@ a.page13__card--link:focus-visible {
 }
 
 .mentions-legales__container a {
-    color: var(--color-bg-red);
+    color: var(--color-brand-pale);
     text-underline-offset: 0.2em;
+}
+
+.mentions-legales__container a:hover {
+    color: var(--color-white);
 }
 
 .mentions-legales__update {
     margin-top: var(--space-2xl);
     font-size: var(--fs-caption);
-    color: var(--color-gray-light);
-    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* RGAA 10.2 : majuscules visuelles via CSS (titres, noms, boutons uniquement) */
