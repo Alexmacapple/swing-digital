@@ -1419,8 +1419,9 @@ img {
     bottom: 1rem;
     right: 1.5rem;
     font-size: var(--fs-caption);
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-white);
     letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* ============================================================
@@ -3446,7 +3447,7 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     font-style: italic;
-    color: var(--color-text-red);
+    color: #F06060;
     margin: 0.3rem 0 0;
 }
 .page48__logos {
@@ -3991,7 +3992,7 @@ img {
     bottom: 0.5rem;
     right: 1.5rem;
     font-size: var(--fs-credit);
-    color: rgba(100, 100, 100, 0.7);
+    color: #767676;
     letter-spacing: 0.02em;
 }
 
@@ -4242,8 +4243,9 @@ img {
     bottom: 1rem;
     right: 1.5rem;
     font-size: var(--fs-caption);
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-white);
     letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -4407,6 +4409,9 @@ img {
     left: 10%;
     text-align: left;
     color: var(--color-white);
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
 }
 .page35__overlay-name {
     font-family: var(--font-primary);
@@ -4810,8 +4815,9 @@ img {
     top: 0.5rem;
     right: 1.5rem;
     font-size: var(--fs-caption);
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--color-white);
     letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Zone basse : galerie + categorie */
