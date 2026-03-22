@@ -1727,8 +1727,8 @@ img {
 
 .page12 {
     position: relative;
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: #000;
 }
 
@@ -3457,8 +3457,8 @@ img {
    ============================================================ */
 
 .page47 {
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: var(--color-brand);
     display: flex;
     flex-direction: column;
@@ -3637,8 +3637,8 @@ img {
    ============================================================ */
 
 .page44 {
-    height: var(--section-height);
-    overflow: hidden;
+    min-height: var(--section-height);
+    overflow: visible;
     background-color: var(--color-white);
     display: flex;
     flex-direction: column;
