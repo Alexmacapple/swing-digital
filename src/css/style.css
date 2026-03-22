@@ -892,31 +892,21 @@ a.page13__card--link:focus-visible {
 }
 
 
-/* RGAA 10.2 : majuscules visuelles via CSS, pas dans le HTML */
-.hero-page1__partners a,
-.hero-page1__hashtags,
-.hero-page1__follow-label,
-.hero-page1__bottom-left a,
+/* RGAA 10.2 : majuscules visuelles via CSS (titres, noms, boutons uniquement) */
 .team__member-firstname,
 .team__member-info h3,
 .page3__header h2,
 .page3__section-title,
 .page3__project-title,
 .page3__project-title-small,
-.page3__creations-dev .page3__section-title,
 .partners-page__title,
 .page5__title,
-.page5__subtitle,
-.page5__badge,
 .page6__title,
-.page6__badge,
 .page6__section-title,
 .page9__card-title,
 .page9__hashtags h2,
-.page9__badge,
 .page10__card-title,
 .page13__card-title,
-.page13__arrow,
 .page58__banner-title,
 .page58__experience-title,
 .page58__coming-soon,
