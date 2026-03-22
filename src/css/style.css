@@ -617,8 +617,8 @@ img {
    ============================================================ */
 
 .breadcrumb {
-    background-color: var(--color-gray-lightest);
-    padding: 0.6rem var(--space-md);
+    background-color: var(--color-brand-btn);
+    padding: 0.4rem var(--space-md);
     margin-top: var(--header-height);
 }
 
@@ -644,25 +644,26 @@ img {
 .breadcrumb__item + .breadcrumb__item::before {
     content: ">";
     margin: 0 0.5rem;
-    color: var(--color-gray-light);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .breadcrumb__link {
-    color: var(--color-gray-dark);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
 }
 
 .breadcrumb__link:hover {
     text-decoration: underline;
+    color: var(--color-white);
 }
 
 .breadcrumb__link[aria-current="page"] {
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--color-white);
 }
 
 .breadcrumb__link:focus-visible {
-    outline: 2px solid var(--color-brand-btn);
+    outline: 2px solid var(--color-white);
     outline-offset: 2px;
 }
 
