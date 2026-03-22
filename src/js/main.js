@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     try { initVideoSound(); } catch (e) { console.warn('Video init:', e); }
     initPodcastPlayer();
     initScrollReveal();
+    initHeroVideo();
 });
 
 /**
@@ -315,6 +316,27 @@ function initScrollReveal() {
     });
 }
 
+/**
+ * Hero Video - controle du son
+ */
+function initHeroVideo() {
+    var video = document.getElementById('hero-video');
+    var btn = document.getElementById('hero-sound-btn');
+    if (!video || !btn) return;
+
+    btn.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            btn.setAttribute('aria-pressed', 'true');
+            btn.setAttribute('aria-label', 'Couper le son');
+        } else {
+            video.muted = true;
+            btn.setAttribute('aria-pressed', 'false');
+            btn.setAttribute('aria-label', 'Activer le son');
+        }
+    });
+}
+
 // Export functions if needed
 window.SwingDigital = {
     initNavigation,
@@ -325,5 +347,6 @@ window.SwingDigital = {
     initVideoSound,
     initDisclosure,
     initPodcastPlayer,
-    initScrollReveal
+    initScrollReveal,
+    initHeroVideo
 };

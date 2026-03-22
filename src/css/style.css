@@ -413,9 +413,9 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-hero);
-    background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
-    z-index: 1;
+    background: linear-gradient(135deg, rgba(190, 47, 49, 0.45) 0%, rgba(196, 78, 78, 0.3) 50%, rgba(190, 47, 49, 0.45) 100%);
+    z-index: 3;
+    pointer-events: none;
 }
 
 /* Top Left: Logo */
@@ -559,18 +559,53 @@ img {
     white-space: nowrap;
 }
 
-/* Center: Hero Image (DOMINANT) */
-.hero-page1__image {
+/* Center: Hero Video (DOMINANT) */
+.hero-page1__video {
     position: absolute;
-    top: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+}
+
+/* Bouton son hero */
+.hero-page1__sound-btn {
+    position: absolute;
+    bottom: var(--edge-offset);
     left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 90%;
-    max-height: 90vh;
-    height: auto;
-    width: auto;
-    object-fit: contain;
-    z-index: 12;
+    transform: translateX(-50%);
+    z-index: 20;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-page1__sound-btn:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: translateX(-50%) scale(1.1);
+}
+
+/* Son off par defaut : icone off visible, on masquee */
+.hero-page1__sound-icon--on {
+    display: none;
+}
+
+/* Quand son actif (aria-pressed=true) : inverser */
+.hero-page1__sound-btn[aria-pressed="true"] .hero-page1__sound-icon--off {
+    display: none;
+}
+.hero-page1__sound-btn[aria-pressed="true"] .hero-page1__sound-icon--on {
+    display: block;
 }
 
 /* Bottom Left: Links */
@@ -646,11 +681,6 @@ img {
 
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
-    .hero-page1__image {
-        max-width: 85%;
-        max-height: 90vh;
-    }
-
     .hero-page1__title-group {
         max-width: 85%;
     }
@@ -740,15 +770,28 @@ img {
         font-size: var(--fs-credit);
     }
 
-    .hero-page1__image {
+    .hero-page1__video {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 55%;
-        max-height: 50%;
-        z-index: 1;
-        opacity: 0.35;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.4;
+    }
+
+    .hero-page1__sound-btn {
+        width: 40px;
+        height: 40px;
+        bottom: auto;
+        top: var(--edge-offset);
+        left: auto;
+        right: calc(var(--edge-offset) + 60px);
+        transform: none;
+    }
+
+    .hero-page1__sound-btn:hover {
+        transform: scale(1.1);
     }
 
     /* Footer : liens gauche, social droite */
