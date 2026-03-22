@@ -389,6 +389,10 @@ img {
 }
 
 /* Logo texte */
+.site-header__logo span:not(.site-header__logo-pipe) {
+    text-transform: uppercase;
+}
+
 .site-header__logo {
     color: var(--color-white);
     text-decoration: none;
