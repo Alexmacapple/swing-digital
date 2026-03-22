@@ -122,6 +122,16 @@ Ce fichier contient les lecons apprises sur les 62 pages (images dupliquees, cou
 
 ---
 
+## Branche de travail
+
+**Branche active** : `cosmetique` (creee depuis `main` au tag `v1`)
+**Objectif** : corrections cosmetiques, ajustements visuels, polissage
+**Main** : stable, ne pas merger sans validation
+
+Toujours verifier la branche avant de commiter : `git branch --show-current`
+
+---
+
 ## Decisions
 
 1. YOLO STRICT : intégrer les 62 pages séquentiellement, fidèles à la maquette
