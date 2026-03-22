@@ -3423,6 +3423,14 @@ section + section {
     inset: 0;
     z-index: 0;
 }
+
+.page62__background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
 .page62__background-image,
 .page62__background-video {
     width: 100%;
@@ -3468,7 +3476,7 @@ section + section {
 
 .page62__container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3477,6 +3485,7 @@ section + section {
     text-align: center;
     color: var(--color-white);
     padding: var(--slide-pad-y) var(--slide-pad-x);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 .page62__brand {
     font-family: var(--font-primary);
