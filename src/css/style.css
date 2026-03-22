@@ -2815,6 +2815,7 @@ img {
     z-index: 0;
 }
 .page57__container {
+    background-color: inherit; /* a11y */
     position: relative;
     z-index: 1;
     display: flex;
@@ -2830,6 +2831,7 @@ img {
     background-color: inherit; /* a11y : herite fond rouge pour outils de contraste */
 }
 .page57__main-title {
+    background-color: var(--color-bg-red); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
@@ -2853,6 +2855,7 @@ img {
     border-radius: 2px;
 }
 .page57__layout {
+    background-color: inherit; /* a11y */
     flex: 1;
     min-height: 0;
     display: grid;
@@ -2861,12 +2864,14 @@ img {
     align-items: center;
 }
 .page57__subtitle {
+    background-color: var(--color-bg-red); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
     margin: 0 0 1rem;
 }
 .page57__paragraph {
+    background-color: var(--color-bg-red); /* a11y */
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     font-style: italic;
@@ -2874,6 +2879,7 @@ img {
     margin: 0 0 0.8rem;
 }
 .page57__tags {
+    background-color: var(--color-bg-red); /* a11y */
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 1rem;
@@ -2886,6 +2892,7 @@ img {
     border-radius: 4px;
 }
 .page57__cta {
+    background-color: var(--color-bg-red); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 700;
@@ -3054,6 +3061,7 @@ img {
     background-color: inherit; /* a11y : herite du fond rouge parent pour outils de contraste */
 }
 .page53__title {
+    background-color: var(--color-bg-red); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--size-lg);
     font-weight: 900;
@@ -3067,6 +3075,7 @@ img {
     margin: 0;
 }
 .page53__description {
+    background-color: inherit; /* a11y */
     text-shadow: var(--shadow-text);
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
