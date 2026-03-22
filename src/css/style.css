@@ -1487,6 +1487,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-bg-red);
 }
 
 .page9__background {
@@ -1603,6 +1604,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
+    background-color: var(--color-bg-red);
 }
 
 .page10__background {
@@ -3221,7 +3223,7 @@ img {
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 .page51__quote strong {
-    color: var(--color-text-gold);
+    color: #E8C84A;
 }
 
 @media (max-width: 768px) {
