@@ -147,7 +147,7 @@
     /* === ECHELLE TYPOGRAPHIQUE (couche 1 : tailles) === */
     --size-2xs: 0.875rem;                            /* 14px — credits */
     --size-xs:  clamp(0.9375rem, 1.4vw, 1.125rem);  /* 15-18px — captions */
-    --size-sm:  clamp(1.125rem, 2vw, 1.3125rem);    /* 18-21px — corps */
+    --size-sm:  clamp(1.25rem, 2.2vw, 1.5rem);       /* 20-24px — corps */
     --size-md:  clamp(1.3125rem, 2.5vw, 1.5625rem); /* 21-25px — sous-titres */
     --size-lg:  clamp(1.5rem, 3vw, 2.2rem);          /* 24-35px — titres compacts */
     --size-xl:  clamp(1.5rem, 3.5vw, 2.5rem);        /* 24-40px — titres standards */
@@ -266,7 +266,7 @@ html {
 
 body {
     font-family: var(--font-primary);
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
     letter-spacing: 0.015em;
     color: var(--color-text);
