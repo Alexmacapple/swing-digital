@@ -1563,9 +1563,7 @@ section:hover [class*="__category"]::after {
 }
 
 /* Separateur entre sections : ligne fine */
-section + section {
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
+/* border entre sections supprime (causait une bande blanche visible) */
 
 /* Indicateur de scroll sur le hero */
 @keyframes scrollHint {
