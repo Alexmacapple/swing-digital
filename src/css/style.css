@@ -3430,6 +3430,42 @@ section + section {
     object-fit: cover;
     display: block;
 }
+/* Bouton play/pause video contact */
+.page62__play-btn {
+    position: absolute;
+    bottom: var(--space-md);
+    right: var(--space-md);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-white);
+    transition: background-color 0.2s ease;
+}
+
+.page62__play-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.page62__play-btn:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
+}
+
+/* Paused : triangle visible, barres masquees */
+.page62__play-btn[aria-pressed="false"] .page62__play-icon--playing { display: none; }
+.page62__play-btn[aria-pressed="false"] .page62__play-icon--paused { display: block; }
+
+/* Playing : barres visibles, triangle masque */
+.page62__play-btn[aria-pressed="true"] .page62__play-icon--playing { display: block; }
+.page62__play-btn[aria-pressed="true"] .page62__play-icon--paused { display: none; }
+
 .page62__container {
     position: relative;
     z-index: 1;

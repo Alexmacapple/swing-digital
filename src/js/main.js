@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnchorRedirects();
     initDisabledCTA();
     initHeaderSpacing();
+    initContactVideo();
 });
 
 /**
@@ -588,6 +589,42 @@ function initHeaderSpacing() {
 
     update();
     window.addEventListener('resize', update);
+}
+
+/**
+ * Video contact (page 62) — play/pause + autoplay au scroll
+ */
+function initContactVideo() {
+    var video = document.getElementById('contact-video');
+    var btn = document.getElementById('contact-video-btn');
+    if (!video || !btn) return;
+
+    // Autoplay quand la section devient visible
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                video.play();
+                btn.setAttribute('aria-pressed', 'true');
+                btn.setAttribute('aria-label', 'Mettre en pause la vidéo');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(video.closest('section') || video);
+
+    // Bouton play/pause
+    btn.addEventListener('click', function() {
+        if (video.paused) {
+            video.play();
+            btn.setAttribute('aria-pressed', 'true');
+            btn.setAttribute('aria-label', 'Mettre en pause la vidéo');
+        } else {
+            video.pause();
+            btn.setAttribute('aria-pressed', 'false');
+            btn.setAttribute('aria-label', 'Lancer la vidéo');
+        }
+    });
 }
 
 /**

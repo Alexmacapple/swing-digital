@@ -483,13 +483,22 @@
         <!-- Page PDF 62 -->
         <section id="page-62" class="page62" aria-labelledby="page62-title">
             <div class="page62__background">
-                <video class="page62__background-video"
-                       autoplay loop muted playsinline
+                <video id="contact-video" class="page62__background-video"
+                       loop muted playsinline
                        poster="img/pages/page-62/page-62-image-1.jpg"
                        aria-hidden="true">
                     <source src="video/contact.mp4" type="video/mp4">
                 </video>
             </div>
+            <button id="contact-video-btn" class="page62__play-btn" type="button" aria-label="Lancer la vidéo" aria-pressed="false">
+                <svg class="page62__play-icon page62__play-icon--paused" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                </svg>
+                <svg class="page62__play-icon page62__play-icon--playing" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                    <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+                </svg>
+            </button>
             <div class="page62__container">
                 <p class="page62__brand">S W I N G &nbsp; D I G I T A L &nbsp; PRODUCTION</p>
                 <h2 id="page62-title" class="page62__title">CONTACT</h2>
