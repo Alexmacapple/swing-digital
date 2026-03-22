@@ -442,8 +442,11 @@ img {
 }
 
 .site-nav__link:hover,
-.site-nav__btn:hover {
+.site-nav__link:focus,
+.site-nav__btn:hover,
+.site-nav__btn:focus {
     opacity: 0.85;
+    text-decoration: none;
 }
 
 /* Etat actif du menu — pas seulement la couleur (bordure + font-weight) */
@@ -496,6 +499,7 @@ img {
 .site-nav__submenu-link:hover,
 .site-nav__submenu-link:focus {
     background-color: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
 }
 
 .site-nav__submenu-link[aria-current="page"] {
