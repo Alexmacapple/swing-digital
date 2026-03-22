@@ -266,7 +266,7 @@ html {
 
 body {
     font-family: var(--font-primary);
-    font-size: 20px;
+    font-size: 125%; /* 20px = 125% de 16px base navigateur */
     line-height: 1.8;
     letter-spacing: 0.015em;
     color: var(--color-text);
@@ -1215,7 +1215,7 @@ a.page13__card--link:focus-visible {
 /* Top Left: Partners Label (below logo) */
 .hero-page1__partners {
     position: absolute;
-    top: 110px;
+    top: clamp(60px, 15vh, 120px);
     left: var(--edge-offset);
     z-index: 15;
 }
@@ -1752,10 +1752,10 @@ section:hover [class*="__category"]::after {
 .hero-page1::after {
     content: '';
     position: absolute;
-    bottom: 2rem;
+    bottom: clamp(0.5rem, 3vh, 2rem);
     left: 50%;
     width: 2px;
-    height: 32px;
+    height: clamp(16px, 4vh, 32px);
     background: var(--color-white);
     border-radius: 1px;
     animation: scrollHint 2s ease-in-out infinite;
@@ -2009,7 +2009,6 @@ section:hover [class*="__category"]::after {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow: hidden;
     min-height: 0;
 }
 
@@ -2787,8 +2786,8 @@ section:hover [class*="__category"]::after {
 
 .page11__controls {
     position: absolute;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: clamp(0.5rem, 3vw, 2rem);
+    right: clamp(0.5rem, 3vw, 2rem);
     z-index: 10;
     display: flex;
     gap: 0.75rem;
@@ -4394,7 +4393,7 @@ section:hover [class*="__category"]::after {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 2rem;
+    right: clamp(0.5rem, 3vw, 2rem);
     left: 50%;
     text-align: right;
 }
@@ -5247,7 +5246,7 @@ section:hover [class*="__category"]::after {
     color: var(--color-gray-medium);
     line-height: 1.7;
     margin: 0;
-    max-width: 280px;
+    max-width: min(280px, 85vw);
 }
 .page39__stripe {
     background-color: var(--color-indigo-light);
