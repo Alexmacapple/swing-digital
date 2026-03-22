@@ -685,8 +685,69 @@ a.page13__card--link:focus-visible {
 }
 
 /* ============================================================
-   8d. SKIP LINK (amélioré)
+   8e. PAGE 404
    ============================================================ */
+
+.page-404 {
+    min-height: var(--section-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2xl) var(--space-md);
+}
+
+.page-404__container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.page-404__title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-title-xl);
+    margin-bottom: var(--space-md);
+}
+
+.page-404__text {
+    font-size: var(--fs-body);
+    margin-bottom: var(--space-sm);
+}
+
+.page-404__link {
+    color: var(--color-brand-btn);
+    font-weight: 700;
+}
+
+.page-404__subtitle {
+    font-family: var(--font-primary);
+    font-size: var(--fs-subtitle);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+}
+
+.page-404__sitemap-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+.page-404__sitemap-list ul {
+    list-style: none;
+    padding-left: var(--space-md);
+}
+
+.page-404__sitemap-list li {
+    margin-bottom: var(--space-xs);
+}
+
+.page-404__sitemap-list a {
+    color: var(--color-gray-dark);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.page-404__sitemap-list a:hover {
+    color: var(--color-brand-btn);
+}
 
 /* ============================================================
    9. FOOTER
