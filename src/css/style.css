@@ -910,14 +910,13 @@ a.page13__card--link:focus-visible {
 }
 
 .sitemap-page__list a {
-    color: var(--color-white);
+    color: var(--color-brand-pale);
     text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .sitemap-page__list a:hover {
     color: var(--color-white);
-    text-decoration-thickness: 3px;
 }
 
 
