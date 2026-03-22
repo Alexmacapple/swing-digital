@@ -40,7 +40,7 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
 
 ---
 
-## 2. Archetypes de layout (7 types)
+## 2. Archétypes de layout (7 types)
 
 ### A. Hero fullscreen (pages 1, 11)
 
@@ -66,19 +66,19 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
 
 - height: var(--section-height), overflow hidden
 - Image object-fit cover
-- Pas de texte (sauf overlay decoratif)
+- Pas de texte (sauf overlay décoratif)
 
 ### E. Grille logos partenaires (page 8)
 
 - Grid 6 colonnes desktop, 4 tablette, 3 mobile
 - Logos centres, aspect-ratio variable
 
-### F. Grille equipe (page 2)
+### F. Grille équipe (page 2)
 
 - Grid 3 colonnes desktop, 2 tablette, 1 mobile
 - Carte image + infos texte
 
-### G. Page utilitaire texte (404, plan du site, mentions legales)
+### G. Page utilitaire texte (404, plan du site, mentions légales)
 
 - max-width 800px centre
 - Fond noir, texte blanc
@@ -107,7 +107,7 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
 --color-text-gold: #7A6100;     /* 5.94:1 */
 ```
 
-### Typographie (echelle fluide clamp)
+### Typographie (échelle fluide clamp)
 
 ```css
 --size-2xs: 0.875rem;                           /* 14px credits */
@@ -217,7 +217,7 @@ Exemples : .page5__title, .page13__card, .page58__reserve-btn
 
 ---
 
-## 6. Accessibilite
+## 6. Accessibilité
 
 ### Obligatoire sur chaque page
 
@@ -263,7 +263,7 @@ function initXxx() {
 
 ### Chargement conditionnel
 
-Vimeo API charge uniquement si iframe presente :
+Vimeo API charge uniquement si iframe présente :
 ```javascript
 if (!document.querySelector('iframe[src*="vimeo"]')) return;
 ```
@@ -279,21 +279,21 @@ if (!document.querySelector('iframe[src*="vimeo"]')) return;
 
 ## Checklist nouvelle page
 
-- [ ] Structure HTML type respectee (head, body, header, breadcrumb, main, footer)
+- [ ] Structure HTML type respectée (head, body, header, breadcrumb, main, footer)
 - [ ] data-section et data-page sur body
-- [ ] h1 present (sr-only si titre en visuel)
+- [ ] h1 présent (sr-only si titre en visuel)
 - [ ] Sections avec id et aria-labelledby
 - [ ] Breadcrumb correct avec aria-current="page"
-- [ ] Etat actif dans le menu (via JS initNavActiveState)
+- [ ] État actif dans le menu (via JS initNavActiveState)
 - [ ] Title et meta description uniques
 - [ ] Canonical et OG tags
 - [ ] Images avec alt, width, height, loading="lazy"
 - [ ] Textes en casse normale, uppercase via CSS
-- [ ] Contraste WCAG AA verifie
-- [ ] Responsive teste (480, 768, 1024px)
+- [ ] Contraste WCAG AA vérifié
+- [ ] Responsive testé (480, 768, 1024px)
 - [ ] Commentaire Page PDF N sur chaque section
 
 ---
 
-**Derniere mise a jour** : 2026-03-22
+**Dernière mise à jour** : 2026-03-22
 **Version** : 3.0.0 (reverse engineering v4)

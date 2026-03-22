@@ -1,31 +1,31 @@
-# Swing Digital - Memoire Projet
+# Swing Digital - Mémoire Projet
 
 **Projet** : swing-digital
 **Type** : Site vitrine statique multi-pages (HTML/CSS/JS)
-**Description** : Site Swing Digital - espaces augmentes, experiences immersives
-**Date debut** : 2026-02-20
+**Description** : Site Swing Digital - espaces augmentés, expériences immersives
+**Date début** : 2026-02-20
 **Auteur** : Alex
-**Depot** : git@github.com:Alexmacapple/swing-digital.git (SSH)
+**Dépôt** : git@github.com:Alexmacapple/swing-digital.git (SSH)
 
 ---
 
 ## Contexte
 
-Site vitrine pour Swing Digital, entreprise specialisee dans les experiences immersives et espaces augmentes. Site decoupe en 24 pages HTML avec navigation 3 niveaux.
+Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 24 pages HTML avec navigation 3 niveaux.
 
 **Architecture** : 4 niveaux de pages
-1. Accueil, Espaces augmentes, Reservations
+1. Accueil, Espaces augmentés, Reservations
 2. Experiences Series (rubrique 8 projets)
 3. Pages projet (Monroe, Voyage, Dessine, Ni vues, Marilyn, Toulouse-Lautrec, Charlotte Henschel, XR Corporate)
 4. Sous-pages Monroe (Piece, Roman Graphique, Installation, Photographie, Composition, Podcasts, Interviews, Experiences, Quiz)
 
-**Pages utilitaires** : 404, Plan du site, Mentions legales
+**Pages utilitaires** : 404, Plan du site, Mentions légales
 
 ---
 
 ## Stack Technique
 
-- HTML5 semantique (24 pages)
+- HTML5 sémantique (24 pages)
 - CSS3 responsive (variables, BEM, mobile-first, 6 breakpoints)
 - JavaScript vanilla (navigation, videos, animations)
 - Pas de framework ni bundler
@@ -75,19 +75,19 @@ src/
 
 ---
 
-## Composants communs (dupliques dans chaque page)
+## Composants communs (dupliqués dans chaque page)
 
 - **Header** : fixe, fond noir, logo texte, menu 4 sections, dropdown 8 projets, sous-menu Monroe (11 liens), hamburger mobile
 - **Fil d'Ariane** : sticky sous le header, fond noir, texte blanc
-- **Footer** : fond noir, copyright, liens (Equipe, Contact, Plan du site, Mentions legales)
-- **Skip link** : en dur dans le HTML, premier element du body
+- **Footer** : fond noir, copyright, liens (Équipe, Contact, Plan du site, Mentions légales)
+- **Skip link** : en dur dans le HTML, premier élément du body
 
 ---
 
-## Accessibilite - WCAG 2.2 AA / RGAA 4.1
+## Accessibilité - WCAG 2.2 AA / RGAA 4.1
 
 - 0 violation axe-core sur 23/24 pages
-- Navigation clavier complete (Tab, Escape, Arrow)
+- Navigation clavier complète (Tab, Escape, Arrow)
 - Disclosure pattern sur dropdown et hamburger
 - aria-current="page" sur lien actif et breadcrumb
 - h1 sur chaque page (sr-only si pas de titre visible)
@@ -110,23 +110,23 @@ src/
 ## Branche de travail
 
 **Branche active** : main
-**Tags** : v1, v2, v3, v4 (decoupe multi-pages)
-**Branches mergees** : cosmetique, image, decoupage
+**Tags** : v1, v2, v3, v4 (découpé multi-pages)
+**Branches mergées** : cosmétique, image, decoupage
 
 ---
 
 ## Decisions
 
-1. Decoupe multi-pages (24 HTML) au lieu de single-page
-2. Header/footer fond noir (coherence, contraste 21:1)
+1. Découpé multi-pages (24 HTML) au lieu de single-page
+2. Header/footer fond noir (cohérence, contraste 21:1)
 3. Navigation 3 niveaux (menu > dropdown > sous-menu Monroe)
 4. Breadcrumb sticky sous le header
 5. Pas de framework JS (vanilla uniquement)
 6. Chargement conditionnel Vimeo API (guard iframe)
-7. CTA Reservation en button aria-disabled (billetterie non definie)
-8. Video contact en pause par defaut (play au clic)
+7. CTA Reservation en button aria-disabled (billetterie non définie)
+8. Video contact en pause par défaut (play au clic)
 
 ---
 
-**Derniere mise a jour** : 2026-03-22
+**Dernière mise à jour** : 2026-03-22
 **Version** : 3.0.0

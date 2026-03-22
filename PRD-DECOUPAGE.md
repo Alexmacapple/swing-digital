@@ -1002,4 +1002,4 @@ Le breadcrumb ne reflète **pas** le parcours de navigation (pas « Monroe > XR 
 | 2026-03-22 | Placement du breadcrumb ? | Entre `</header>` et `<main>`, pas dans le header |
 | 2026-03-22 | Favicon ? | `<link rel="icon" href="img/favicon.ico">` sur toutes les pages |
 | 2026-03-22 | `prefers-reduced-motion` ? | Respecté — désactive scroll reveal et transitions (WCAG 2.3.3) |
-| 2026-03-22 | `robots.txt` ? | Oui — Allow all sauf 404.html, reference sitemap |
+| 2026-03-22 | `robots.txt` ? | Oui — Allow all sauf 404.html, référence sitemap |
