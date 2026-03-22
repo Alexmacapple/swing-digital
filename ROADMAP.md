@@ -2,7 +2,7 @@
 
 **Projet** : Site vitrine multi-pages Swing Digital
 **Début** : 2026-02-20
-**Statut** : Découpe terminée, pré-production
+**Statut** : Pré-production
 
 ---
 
@@ -18,22 +18,21 @@
 | 6. Accessibilité | WCAG 2.2 AA, RGAA 4.1, audit axe-core | Terminé (0 violation) |
 | 7. Pages utilitaires | 404, plan du site, mentions légales | Terminé |
 | 8. Nettoyage | Badges supprimés, traduction FR, accentuation | Terminé |
-| 9. UX | Footer 8 liens, bouton retour en haut | Terminé (v5) |
+| 9. UX | Footer 8 liens, bouton retour en haut | Terminé |
+| 10. SEO | Favicon, og:image, width/height images | Terminé |
+| 11. Zoom 200% | 7 corrections RGAA 10.4 / WCAG 1.4.4 | Terminé |
+| 12. Tests | Playwright 984 tests, 4 viewports | Terminé (v5) |
 
 ---
 
 ## Avant mise en production (bloquant)
 
 - [ ] Remplacer `https://DOMAINE/` par le domaine réel
-- [ ] Ajouter width/height sur les 124 images sans dimensions
-- [ ] Corriger les 2 boutons "Je m'inscris" (reservations.html)
-- [ ] Créer le favicon (img/favicon.ico)
 - [ ] Configurer HTTPS + headers sécurité
 - [ ] Renseigner l'hébergeur dans mentions-legales.html
 
 ## Améliorations recommandées
 
-- [ ] Ajouter og:image sur chaque page
 - [ ] Optimiser les images (compression, WebP)
 - [ ] Test cross-browser (Chrome, Firefox, Safari)
 - [ ] Test lecteur d'écran (VoiceOver, NVDA)
@@ -46,20 +45,6 @@
 - [ ] Analytics (respectueux RGPD)
 - [ ] Formulaire newsletter fonctionnel
 - [ ] Billetterie (liens Réserver)
-
----
-
-## Scores actuels (audit 2026-03-22)
-
-| Catégorie | Score |
-|-----------|-------|
-| Accessibilité | 92/100 |
-| Bonnes pratiques | 90/100 |
-| UX | 88/100 |
-| Sécurité | 85/100 |
-| Technique | 78/100 |
-| SEO | 65/100 |
-| **Global** | **83/100** |
 
 ---
 

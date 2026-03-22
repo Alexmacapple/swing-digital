@@ -12,65 +12,42 @@ python3 -m http.server 8080
 # Ouvrir http://localhost:8080/
 ```
 
+## Tests
+
+```bash
+npx playwright test
+# 984 tests sur 4 viewports (1920, 1024, 768, 375px)
+```
+
 ## Stack technique
 
 - HTML5 sémantique (24 pages)
 - CSS3 responsive (variables, BEM, mobile-first)
 - JavaScript vanilla (navigation, vidéos, animations)
+- Playwright (tests automatisés)
 - Polices : Brandon, Fragen
 - Pas de framework ni bundler
 
-## Architecture navigation
-
-```
-Accueil
-├── Espaces augmentés
-├── Expériences Séries
-│   ├── L'Expérience Monroe
-│   │   ├── 1. Pièce My Story
-│   │   ├── 2. Roman Graphique
-│   │   ├── 3. Installation
-│   │   ├── 4. XR Memory Box (lien croisé)
-│   │   ├── 5. Série Marilyn (lien croisé)
-│   │   ├── A. Photographie
-│   │   ├── B. Composition électroacoustique
-│   │   ├── C. Podcasts
-│   │   ├── D. Interviews
-│   │   ├── E. Expériences interactives
-│   │   └── F. Le Quiz Marilyn
-│   ├── Voyage autour de moi
-│   ├── Dessine-moi le vent
-│   ├── Ni vues ni connues
-│   ├── Marilyn
-│   ├── Toulouse-Lautrec
-│   ├── Charlotte Henschel
-│   └── XR Corporate
-└── Réservations
-```
-
 ## Fonctionnalités
 
-- Navigation 3 niveaux (menu, dropdown, sous-menu Monroe)
+- Navigation 3 niveaux (menu, dropdown, sous-menu Monroe 11 liens)
 - Fil d'Ariane sticky sous le header
 - Bouton retour en haut de page
 - Vidéo hero avec contrôle son
 - Vidéo contact avec play/pause
 - Footer 8 liens (responsive)
 - Page 404, plan du site, mentions légales
+- Favicon + Open Graph sur toutes les pages
 
 ## Accessibilité (WCAG 2.2 AA / RGAA 4.1)
 
 - 0 violation axe-core sur 24 pages
 - Navigation clavier complète (Tab, Escape, flèches)
-- Menu dropdown disclosure pattern accessible
-- Fil d'Ariane WAI-ARIA APG breadcrumb
-- Skip link en dur dans le HTML
-- h1 sur chaque page
+- Zoom 200% conforme (RGAA 10.4)
 - Textes en casse normale, majuscules via CSS (RGAA 10.2)
+- Intitulés de liens explicites (RGAA 6.1)
 - prefers-reduced-motion respecté
 - Contraste WCAG AA conforme
-- Intitulés de liens explicites
-- Bouton retour en haut accessible (aria-label, focus-visible, 48px)
 
 ## Documentation
 
@@ -80,7 +57,7 @@ Accueil
 | GUIDELINES-TEMPLATES.md | Conventions CSS/HTML, archétypes, classes BEM |
 | ENSEIGNEMENTS-PAGES.md | Leçons apprises, erreurs récurrentes |
 | PRD-DECOUPAGE.md | PRD découpe multi-pages (terminé) |
-| ROADMAP.md | Phases, todo pré-prod, scores |
+| ROADMAP.md | Phases, todo pré-prod |
 | AUDIT-COMPLET.md | Audit technique, SEO, a11y, sécurité, UX |
 
 ---
