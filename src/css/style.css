@@ -1084,16 +1084,16 @@ img {
 }
 
 #page-4 .page3__right--text .page3__left {
-    background-color: var(--color-white);
-    color: #333;
+    background-color: var(--color-brand);
+    color: var(--color-white);
 }
 
 #page-4 .page3__header h2 {
-    color: var(--color-brand-btn);
+    color: var(--color-white);
 }
 
 #page-4 .page3__header-underline {
-    background-color: var(--color-brand-btn);
+    background-color: var(--color-white);
 }
 
 #page-4 .page3__project-title {
@@ -1524,16 +1524,15 @@ img {
 
 .page9__card-title {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 1.5rem;
+    left: 1.5rem;
     font-size: clamp(1rem, 2vw, 1.4rem);
     font-weight: 700;
     color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 4px;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
 
 /* ============================================================
@@ -2056,7 +2055,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
 }
@@ -2219,7 +2218,7 @@ img {
     font-family: var(--font-primary);
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 900;
-    color: #5C4200;    /* WCAG AA sur blanc */
+    color: #D4A843;
     margin: 0 0 1rem 0;
     flex-shrink: 0;
 }
@@ -2373,8 +2372,9 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     font-weight: 700;
-    color: var(--color-white);
-    border: 2px solid var(--color-white);
+    color: #333;
+    background-color: var(--color-brand-gold, #E8C84A);
+    border: 2px solid var(--color-brand-gold, #E8C84A);
     padding: 0.4rem 1rem;
     text-decoration: none;
     letter-spacing: 0.05em;
@@ -2461,9 +2461,14 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     font-style: italic;
-    padding-left: 1.5rem;
+    padding-left: 0;
     margin: 0 0 0.8rem;
     line-height: 1.6;
+    list-style: none;
+}
+.page60__checklist li::before {
+    content: '✅';
+    margin-right: 0.5rem;
 }
 .page60__paragraph {
     font-family: var(--font-secondary);
@@ -2523,7 +2528,7 @@ img {
 }
 .page61__mail-link {
     color: var(--color-white);
-    background-color: rgba(255,255,255,0.2);
+    background-color: var(--color-brand);
     padding: 0.1rem 0.4rem;
     text-decoration: none;
     font-weight: 700;
@@ -2838,7 +2843,7 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 700;
-    color: #333;
+    color: var(--color-white);
     letter-spacing: 0.03em;
     line-height: 1.5;
     margin: 0;
@@ -3845,7 +3850,7 @@ img {
 .page41__image {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
 }
 
@@ -4272,14 +4277,11 @@ img {
     object-fit: cover;
     display: block;
 }
-.page36__photo--large {
-    grid-column: 1;
-}
-.page36__photo--medium {
-    grid-column: 2;
-}
+.page36__photo--medium,
 .page36__photo--small {
-    grid-column: 3;
+    grid-column: 2;
+    border: 4px solid var(--color-white);
+    border-radius: 4px;
 }
 
 @media (max-width: 768px) {
@@ -4365,10 +4367,9 @@ img {
 }
 .page35__overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    bottom: 15%;
+    left: 10%;
+    text-align: left;
     color: var(--color-white);
 }
 .page35__overlay-name {
