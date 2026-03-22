@@ -372,7 +372,7 @@ img {
     width: 100%;
     min-height: var(--header-height);
     z-index: 1000;
-    background-color: var(--color-brand-btn);
+    background-color: var(--color-black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -479,7 +479,7 @@ img {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--color-brand-btn);
+    background-color: var(--color-black);
     min-width: 240px;
     padding: 0.5rem 0;
     list-style: none;
@@ -558,7 +558,7 @@ img {
     position: absolute;
     left: 100%;
     top: 0;
-    background-color: var(--color-brand-btn);
+    background-color: var(--color-black);
     min-width: 220px;
     padding: 0.5rem 0;
     list-style: none;
@@ -656,7 +656,7 @@ img {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--color-brand-btn);
+        background-color: var(--color-black);
         flex-direction: column;
         padding: 1rem 0;
         box-shadow: var(--shadow-drop);
@@ -708,7 +708,7 @@ img {
    ============================================================ */
 
 .breadcrumb {
-    background-color: var(--color-brand-btn);
+    background-color: var(--color-black);
     padding: 0.4rem 0;
     position: sticky;
     top: var(--header-height);
