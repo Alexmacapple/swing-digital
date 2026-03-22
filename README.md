@@ -1,14 +1,8 @@
-# Swing Digital - Site web
+# Swing Digital - Site vitrine
 
 Site vitrine pour Swing Digital, entreprise specialisee dans les experiences immersives et espaces augmentes.
 
-## Structure
-
-```
-src/           Code source du site (HTML/CSS/JS)
-design/        Maquettes et assets originaux
-docs/          Documentation projet
-```
+**62 pages integrees** depuis la maquette PDF, avec fidelite visuelle verifiee page par page.
 
 ## Demarrage rapide
 
@@ -18,119 +12,88 @@ Ouvrir `src/index.html` dans un navigateur, ou lancer un serveur local :
 npx serve src/
 ```
 
-## Accessibilité (WCAG 2.2 AA)
+## Stack technique
 
-**Important** : Tous les assets et images intégrées doivent respecter les standards d'accessibilité WCAG 2.2 AA.
+- HTML5 semantique
+- CSS3 responsive (variables, BEM, mobile-first)
+- JavaScript vanilla (scroll tracking, videos Vimeo, animations)
+- Polices : Brandon, Fragen, Raleway, Roboto, Walden
+- Pas de framework ni bundler
 
-Utiliser les skills disponibles pour valider l'accessibilité :
-
-- `/audit-accessibilite-web` : Audit complet WCAG 2.2 avec tests automatises et manuels
-- `/fix-accessibilite` : Corrige les violations WCAG detectees
-- `/screen-reader-testing` : Valide l'accessibilité avec lecteurs d'écran (VoiceOver, NVDA, JAWS)
-
-Consulter `CLAUDE.md` pour les détails du dernier audit d'accessibilité.
-
-## Contenu du Répertoire src/
-
-### Extraction PDF Maquette (21 février 2026)
-
-Maquette complète extraite et organisée :
+## Structure du projet
 
 ```
-src/
-├── maquette-site.pdf           (5.5 MB, 62 pages - original)
+swing-digital/
+├── src/
+│   ├── index.html                  Site complet (62 pages/slides)
+│   ├── css/style.css               Styles (variables, BEM, responsive)
+│   ├── js/main.js                  Interactions (scroll, videos, nav)
+│   ├── img/
+│   │   ├── pages/page-1..62/       Images par page
+│   │   ├── partners/               Logos partenaires partages
+│   │   └── logos/                   Logos marque
+│   ├── fonts/                      Polices web
+│   ├── maquette-site.pdf           Maquette PDF originale (62 pages)
+│   └── pages-extracted/            Extraction PDF (screenshots, textes, images)
 │
-└── pages-extracted/            (68 MB - extraction complète)
-    ├── page-1/ ... page-62/    (62 répertoires)
-    │   ├── page-N-screenshot.png       (image page entière)
-    │   ├── page-N-image-1.jpg          (image 1 extraite)
-    │   ├── page-N-image-2.jpg          (image 2 extraite)
-    │   └── texte-page-N.md             (texte extrait)
-    │
-    ├── README.md                       (guide complet)
-    ├── INDEX.md                        (table des matières)
-    ├── INVENTAIRE-IMAGES.md            (liste 220 images)
-    ├── images-inventory.json           (données JSON)
-    ├── RAPPORT-EXTRACTION.txt          (rapport technique)
-    ├── RAPPORT-IMAGES-EXTRAITES.md     (rapport images)
-    ├── RESUME.txt                      (résumé rapide)
-    └── full_text.txt                   (texte complet)
+├── EXPORT_HD/                      Exports haute definition (JPG + PDF)
+│
+├── CLAUDE.md                       Memoire projet Claude
+├── GUIDELINES-TEMPLATES.md         Conventions CSS/HTML (archetypes, BEM, variables)
+├── ENSEIGNEMENTS-PAGES.md          Lecons apprises (erreurs, patterns, audit)
+├── ROADMAP.md                      Etat d'avancement et prochaines etapes
+└── README.md                       Ce fichier
 ```
 
-### Statistiques Extraction
+## Pages et sections
 
-| Element | Quantité |
-|---------|----------|
-| Pages PDF | 62 |
-| Screenshots PNG | 62 (53 MB) |
-| Fichiers texte | 62 (< 1 MB) |
-| Images extraites | 220 JPG (7.5 MB) |
-| Taille totale | ~68 MB |
+Le site est compose de 62 slides/pages couvrant :
 
-### Structure par Page
+| Section | Pages | Contenu |
+|---------|-------|---------|
+| Accueil | 1-2 | Hero + equipe |
+| Creations | 3-4 | Portfolio projets |
+| Espaces augmentes | 5-8 | Services + partenaires |
+| L'Experience Monroe | 9-19 | Spectacle VR, The Play, video |
+| Le Roman Graphique | 20-22 | BD Marilyn |
+| Installation Interactive | 23-38 | Expo, photos, podcasts, quiz |
+| La Serie Marilyn | 39 | Presentation IA |
+| XR 360 | 40-41 | Experience VR immersive |
+| Voyage autour de moi | 42-44 | Documentaire ados |
+| Dessine-moi le vent | 45-47 | Livre RA enfants |
+| Ni vues Ni connues | 48-49 | Serie documentaire femmes |
+| Marilyn | 50-52 | Spectacle realite mixte |
+| Toulouse-Lautrec | 53-54 | Experience Montmartre |
+| Charlotte Henschel | 55-56 | Artiste peintre |
+| XR Entreprises | 57 | Offre corporate |
+| Reservations | 58-59 | Billetterie experiences |
+| Informations | 60-61 | Pratique, FAQ, visites privees |
+| Contact | 62 | Coordonnees |
 
-Chaque répertoire `page-N/` contient :
-- `page-N-screenshot.png` : Image haute résolution de la page complète
-- `page-N-image-1.jpg`, `page-N-image-2.jpg`, etc. : Images extraites dans l'ordre d'apparition
-- `texte-page-N.md` : Contenu textuel au format Markdown
+## Sources de verite
 
-### Fichiers de Référence
+| Source | Chemin |
+|--------|--------|
+| Maquettes | `src/pages-extracted/page-N/page-N-screenshot.png` |
+| Texte | `src/pages-extracted/page-N/texte-page-N.md` |
+| Images | `src/pages-extracted/page-N/page-N-image-*.jpg` |
+| Export HD | `EXPORT_HD/EXPORT_JPG/Site_export_JPGN.jpg` |
 
-Pour naviguer et utiliser l'extraction :
+## Accessibilite (WCAG 2.2 AA)
 
-- **README.md** : Guide complet avec instructions d'utilisation
-- **INDEX.md** : Table des matières (liens directs vers chaque page)
-- **INVENTAIRE-IMAGES.md** : Liste détaillée des 220 images avec tailles et localisations
-- **images-inventory.json** : Données structurées (format JSON pour traitement automatisé)
-- **RESUME.txt** : Résumé rapide de l'extraction
-
-### Workflow d'Intégration - Mode YOLO STRICT
-
-**CONSIGNES IMPÉRATIVES - Ne pas dévier** :
-
-1. **Boucler sur TOUTES les pages** (page-1 à page-62)
-   - Ne pas sauter de pages
-   - Traiter dans l'ordre séquentiel
-
-2. **Fidélité absolue à la maquette**
-   - Respecter exactement la capture d'écran (page-N-screenshot.png)
-   - Reproduire la mise en page pixel-perfect
-   - Conserver l'ordre des éléments
-
-3. **Texte identique**
-   - Copier exactement le texte du fichier `texte-page-N.md`
-   - Même orthographe, même casse, même punctuation
-   - Aucune modification du contenu
-
-4. **Images identiques**
-   - Intégrer toutes les images extraites (page-N-image-1.jpg, image-2.jpg, etc.)
-   - Respecter l'ordre d'apparition dans la maquette
-   - Mêmes dimensions relatives
-   - Mêmes descriptions alt (basées sur le contenu)
-
-5. **Itération par page COMPLÈTE**
-   - NE PAS s'arrêter sur une page tant qu'elle n'est pas 100% terminée
-   - Valider accessibilité WCAG 2.2 AA avant de passer à la suivante
-   - Vérifier le responsive mobile
-
-6. **Mode YOLO - Autonome**
-   - Aucune confirmation demandée
-   - Aucun arrêt intermédiaire
-   - Continuer jusqu'à terminer TOUTES les 62 pages
-   - Commits réguliers à chaque page (ou groupe de 5 pages)
-
-### Utilisation des Images
-
-Pour intégrer les images dans le site :
-
-1. Consulter `src/pages-extracted/INVENTAIRE-IMAGES.md` pour identifier les images utiles
-2. Copier les images JPG vers `src/img/`
-3. Organiser par catégorie (experiences, portfolio, etc.)
-4. Optimiser pour le web (compression, redimensionnement)
-5. Référencer dans le HTML/CSS avec alt text WCAG 2.2 compliant
+- Structure HTML5 semantique (sections, headings, aria-labels)
+- Alt text sur toutes les images
+- Contraste 4.5:1 texte normal, 3:1 texte large
+- Navigation clavier
+- Controles video accessibles (play/pause, son)
 
 ## Documentation
 
-- [Brief projet](docs/BRIEF.md)
-- [Stack technique](docs/STACK.md)
-- [Extraction PDF](src/pages-extracted/README.md)
+- `CLAUDE.md` : memoire projet et workflow d'integration
+- `GUIDELINES-TEMPLATES.md` : conventions CSS/HTML, archetypes de layout, table des classes
+- `ENSEIGNEMENTS-PAGES.md` : lecons apprises, erreurs recurrentes, methodologie d'audit
+- `ROADMAP.md` : etat d'avancement, phase 5 en cours
+
+---
+
+**Derniere mise a jour** : 2026-03-22
