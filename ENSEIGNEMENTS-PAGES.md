@@ -130,6 +130,37 @@
 
 ---
 
+## Performance Lighthouse
+
+### Images : lazy loading et dimensions
+
+- **TOUJOURS** `loading="lazy"` sur toutes les images SAUF le hero (LCP)
+- Le hero doit avoir `fetchpriority="high"` et un `<link rel="preload">` dans le `<head>`
+- **TOUJOURS** `width` et `height` explicites sur chaque `<img>` pour eviter le CLS
+- Recuperer les dimensions natives avec `sips -g pixelWidth -g pixelHeight fichier.jpg`
+- Sans lazy loading, les 174 images (108 Mo) se chargent en parallele et tuent le LCP mobile (10.5s -> ~2-3s avec lazy)
+
+### Images : qualite d'extraction PDF
+
+- Les images extraites du PDF peuvent etre sous-echantillonnees (ex: page-21-image-1.jpg 558x739 au lieu de 1672x2216)
+- **Verifier la qualite** : si une image parait pixelisee, la re-extraire avec PyMuPDF (`fitz`) depuis le PDF source
+- Commande : `doc[page_index].get_images()` puis `doc.extract_image(xref)` pour obtenir l'image en resolution native
+
+### Variables CSS : zero couleur en dur
+
+- **REGLE** : aucune couleur codee en dur hors `:root`
+- Toute nouvelle couleur doit etre declaree comme variable dans `:root` puis referencee avec `var(--...)`
+- 38 variables couleur + 7 variables ombre definies dans `:root`
+- Verifier avec : `grep -n '#[0-9a-fA-F]' style.css | grep -v ':root' | grep -v '/\*'`
+- Les fallbacks `var(--color, #hex)` sont acceptables mais la valeur en dur seule ne l'est pas
+
+### RGAA : figures et legendes (critere 1.9)
+
+- Les `<figure>` contenant des images avec `<figcaption>` doivent avoir `role="figure"` et `aria-label` correspondant au texte de la legende
+- Ne pas utiliser `aria-labelledby` avec un id sur le `<figcaption>` : preferer `aria-label` directement sur le `<figure>`
+
+---
+
 ## Process et Git
 
 1. Valider une page **100% terminee** avant passer a la suivante

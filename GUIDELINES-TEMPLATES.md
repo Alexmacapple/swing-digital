@@ -179,18 +179,49 @@ La variable `--section-height` est definie dans `:root` puis surchargee :
 
 ### Couleurs
 
+**REGLE ABSOLUE : zero couleur codee en dur hors `:root`**. Toute couleur doit etre une variable CSS.
+
 ```css
 /* Marque */
-var(--color-brand)          /* #E8494B - rouge principal (fonds decoratifs, NON pour texte) */
-var(--color-brand-btn)      /* #CE3B3D - rouge conforme WCAG AA 4.86:1 sur blanc */
-var(--color-brand-light)    /* #F49C9E */
-var(--color-brand-pale)     /* #FFB3A7 */
-var(--color-brand-alt)      /* #CE3B3D - endpoint clair du gradient (etait #FF8080, non conforme) */
-var(--color-white)          /* #ffffff */
+var(--color-brand)              /* #E8494B - rouge decoratif, NON pour texte */
+var(--color-brand-btn)          /* #CE3B3D - rouge WCAG AA 4.86:1 */
+var(--color-brand-light)        /* #F49C9E */
+var(--color-brand-pale)         /* #FFB3A7 */
+var(--color-brand-alt)          /* #CE3B3D */
+var(--color-brand-gold)         /* #E8C84A - dore decoratif */
+var(--color-brand-pink)         /* #E84878 */
+var(--color-brand-red-btn)      /* #C23537 */
+var(--color-brand-rose)         /* #B5364E */
+var(--color-white)              /* #ffffff */
+
+/* Neutres */
+var(--color-black)              /* #000 */
+var(--color-gray-dark)          /* #333 */
+var(--color-gray-medium)        /* #555 */
+var(--color-gray-light)         /* #767676 */
+var(--color-gray-lightest)      /* #f0f0f0 */
+
+/* Thematiques */
+var(--color-bg-navy)            /* #1a2744 */
+var(--color-bg-red)             /* #BE2F31 - fond rouge WCAG 5.77:1 */
+var(--color-indigo)             /* #3B3F72 */
+var(--color-indigo-light)       /* #6B6FA0 */
+var(--color-teal)               /* #0e6469 */
+var(--color-violet)             /* #7B4FBF */
+var(--color-brown)              /* #8B5E3C */
+var(--color-text-gold-dark)     /* #5C4800 */
+var(--color-text-gold-darker)   /* #5C4200 */
+
+/* Ombres et overlays */
+var(--shadow-text)              /* 0 1px 4px rgba(0,0,0,0.7) */
+var(--shadow-card)              /* 0 4px 12px rgba(0,0,0,0.15) */
+var(--shadow-card-hover)        /* 0 8px 20px rgba(0,0,0,0.25) */
+var(--shadow-overlay-medium)    /* rgba(0,0,0,0.5) */
+var(--shadow-overlay-heavy)     /* rgba(0,0,0,0.7) */
 
 /* Gradients */
-var(--gradient-brand)       /* #B93539 (5.78:1) → #CE3B3D (4.86:1) - WCAG AA a tous les points */
-var(--gradient-hero)        /* rouge → rose pale 135deg (page 1 uniquement, texte large) */
+var(--gradient-brand)           /* #B93539 → #CE3B3D - WCAG AA */
+var(--gradient-hero)            /* rouge 135deg (page 1) */
 ```
 
 **Regle contraste WCAG AA** :
@@ -199,6 +230,8 @@ var(--gradient-hero)        /* rouge → rose pale 135deg (page 1 uniquement, te
 - `--gradient-brand` : les DEUX endpoints passent 4.5:1 (5.78:1 et 4.86:1)
 - Utiliser `--color-brand-btn` pour tout element texte blanc sur fond rouge (boutons, badges, tags)
 - Utiliser `--color-brand` uniquement pour les fonds decoratifs sans texte dessus (ex: partners-page)
+
+**Verification** : `grep -n '#[0-9a-fA-F]' style.css | grep -v ':root' | grep -v '/\*'` doit retourner 0 resultat
 
 ### Espacement responsive
 
@@ -1122,6 +1155,19 @@ Utilise pour : pages de transition entre sections, avec photo panoramique en ban
     object-fit: contain;  /* Desktop ET mobile */
 }
 ```
+
+### Performance images (Lighthouse)
+
+- **`loading="lazy"`** sur TOUTES les images sauf le hero (LCP)
+- **`width` et `height`** explicites sur CHAQUE `<img>` (evite le CLS)
+- Le hero doit avoir `fetchpriority="high"` + `<link rel="preload">` dans `<head>`
+- Dimensions natives : `sips -g pixelWidth -g pixelHeight fichier.jpg`
+- Re-extraction PDF si image pixelisee : `PyMuPDF` (`fitz`) → `doc[page].get_images()` → `doc.extract_image(xref)`
+
+### Figures et legendes (RGAA 1.9)
+
+- `<figure>` avec `<figcaption>` : ajouter `role="figure"` et `aria-label="texte de la legende"`
+- Preferer `aria-label` a `aria-labelledby` pour la conformite RGAA
 
 ### Alt text
 

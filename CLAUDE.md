@@ -122,11 +122,18 @@ Ce fichier contient les lecons apprises sur les 62 pages (images dupliquees, cou
 
 ---
 
+## Regles CSS strictes
+
+- **Zero couleur codee en dur** hors `:root` : toute couleur passe par `var(--...)`
+- 38 variables couleur + 7 variables ombre dans `:root`
+- Verification : `grep -n '#[0-9a-fA-F]' src/css/style.css | grep -v ':root' | grep -v '/\*'`
+- **Toute image** doit avoir `width`, `height`, et `loading="lazy"` (sauf hero)
+- Le hero a `fetchpriority="high"` et un `<link rel="preload">` dans `<head>`
+
 ## Branche de travail
 
-**Branche active** : `cosmetique` (creee depuis `main` au tag `v1`)
-**Objectif** : corrections cosmetiques, ajustements visuels, polissage
-**Main** : stable, ne pas merger sans validation
+**Branche active** : `main`
+**Branches mergees** : `cosmetique`, `image`
 
 Toujours verifier la branche avant de commiter : `git branch --show-current`
 
