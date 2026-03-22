@@ -770,6 +770,66 @@ a.page13__card--link:focus-visible {
 }
 
 /* ============================================================
+   8f. PAGE PLAN DU SITE
+   ============================================================ */
+
+.sitemap-page {
+    padding: var(--space-2xl) var(--slide-pad-x);
+}
+
+.sitemap-page__container {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+}
+
+.sitemap-page__container h1 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-title-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.sitemap-page__container h2 {
+    font-family: var(--font-primary);
+    font-size: var(--fs-title);
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.sitemap-page__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sitemap-page__list ul {
+    list-style: none;
+    padding-left: var(--space-lg);
+    margin-top: var(--space-xs);
+}
+
+.sitemap-page__list li {
+    margin-bottom: var(--space-xs);
+    line-height: 1.6;
+}
+
+.sitemap-page__list a {
+    color: var(--color-gray-dark);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.sitemap-page__list a:hover {
+    color: var(--color-brand-btn);
+}
+
+.sitemap-page__list strong {
+    display: block;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-2xs);
+    color: var(--color-gray-medium);
+    font-size: var(--fs-caption);
+}
+
+/* ============================================================
    9. FOOTER
    ============================================================ */
 
