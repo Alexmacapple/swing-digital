@@ -67,6 +67,46 @@
     /* Fond portant du texte blanc (ratio >= 4.5:1) */
     --color-bg-red:       #BE2F31;    /* 5.77:1 */;
 
+
+    /* --- Couleurs extraites (refactoring) --- */
+    --color-black: #000;
+    --color-gray-dark: #333;
+    --color-gray-medium: #555;
+    --color-gray-light: #767676;
+    --color-gray-lightest: #f0f0f0;
+    --color-bg-navy: #1a2744;
+    --color-brand-pink: #E84878;
+    --color-brand-pink-gradient: #E84A7E;
+    --color-brand-coral: #FF6B6B;
+    --color-brand-peach: #FF9966;
+    --color-brand-red-btn: #C23537;
+    --color-brand-red-dark: #c0392b;
+    --color-brand-rose: #B5364E;
+    --color-brand-rose-light: #F0A0A0;
+    --color-brand-rose-medium: #E87070;
+    --color-indigo: #3B3F72;
+    --color-indigo-light: #6B6FA0;
+    --color-indigo-dark: #4A4E82;
+    --color-violet: #7B4FBF;
+    --color-teal: #0e6469;
+    --color-brown: #8B5E3C;
+    --color-text-gold-dark: #5C4800;
+    --color-text-gold-darker: #5C4200;
+    --color-gold-gradient-start: #D4A843;
+    --color-gold-gradient-end: #C49A3A;
+    --color-bg-gold-light: #EBEBEB;
+    --color-red-light: #F06060;
+    --color-red-mid: var(--color-red-mid);
+    --shadow-overlay-light: rgba(0, 0, 0, 0.45);
+    --shadow-text: 0 1px 4px rgba(0, 0, 0, 0.7);
+    --shadow-overlay-medium: rgba(0, 0, 0, 0.5);
+    --shadow-overlay-heavy: rgba(0, 0, 0, 0.7);
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-card-hover: 0 8px 20px rgba(0, 0, 0, 0.25);
+    --shadow-drop: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-drop-heavy: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --border-white-subtle: rgba(255, 255, 255, 0.3);
+
     /* Gradients */
     --gradient-brand: linear-gradient(135deg, #B93539 0%, var(--color-brand-alt) 100%); /* WCAG AA : 5.78:1 → 4.86:1 */
     --gradient-hero: linear-gradient(135deg, #BE2F31 0%, #C44E4E 50%, #BE2F31 100%);
@@ -369,7 +409,7 @@ img {
 }
 
 .hero-page1__nav-btn:hover {
-    background-color: #C23537;
+    background-color: var(--color-brand-red-btn);
     transform: scale(1.05);
 }
 
@@ -483,7 +523,7 @@ img {
 }
 
 .hero-page1__bottom-left a:hover {
-    color: #f0f0f0;
+    color: var(--color-gray-lightest);
 }
 
 /* Bottom Right: Social Links */
@@ -522,7 +562,7 @@ img {
 }
 
 .hero-page1__bottom-right a:hover {
-    color: #f0f0f0;
+    color: var(--color-gray-lightest);
 }
 
 /* Responsive Breakpoints */
@@ -689,7 +729,7 @@ img {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-    color: #000;
+    color: var(--color-black);
     background: transparent;
 }
 
@@ -718,15 +758,15 @@ img {
 .page50__subtitle,
 .page50__meta,
 .page57__cta {
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow-text);
 }
 
 .skip-link {
     position: absolute;
     top: -40px;
     left: 0;
-    background: #000;
-    color: #fff;
+    background: var(--color-black);
+    color: var(--color-white);
     padding: 8px;
     z-index: 100;
 }
@@ -751,7 +791,7 @@ img {
 
 .section.team {
     background: url('../img/pages/page-2/page-2-image-9.jpg') center/cover,
-                linear-gradient(90deg, #E84A7E 0%, #FF6B6B 50%, #FF9966 100%);
+                linear-gradient(90deg, var(--color-brand-pink-gradient) 0%, var(--color-brand-coral) 50%, var(--color-brand-peach) 100%);
     background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
     background-blend-mode: multiply;
     padding: 1rem var(--slide-pad-x);
@@ -768,7 +808,7 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, rgba(232, 74, 123, 0.85) 0%, rgba(255, 107, 107, 0.85) 50%, rgba(255, 153, 102, 0.85) 100%);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--color-brand-pink-gradient) 85%, transparent) 0%, color-mix(in srgb, var(--color-brand-coral) 85%, transparent) 50%, color-mix(in srgb, var(--color-brand-peach) 85%, transparent) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -823,13 +863,13 @@ img {
     color: var(--color-white);
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-card);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team__member:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .team__member-image {
@@ -1418,7 +1458,7 @@ img {
     font-size: var(--fs-caption);
     color: var(--color-white);
     letter-spacing: 0.02em;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow-text);
 }
 
 /* ============================================================
@@ -1566,7 +1606,7 @@ img {
     display: block;
     text-decoration: none;
     color: var(--color-white);
-    background-color: #333;
+    background-color: var(--color-gray-dark);
 }
 
 .page9__card:hover {
@@ -1644,7 +1684,7 @@ img {
     display: block;
     text-decoration: none;
     color: var(--color-white);
-    background-color: #333;
+    background-color: var(--color-gray-dark);
 }
 
 .page10__card:hover {
@@ -1685,7 +1725,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--color-black);
 }
 
 .page11__video-wrapper {
@@ -1721,7 +1761,7 @@ img {
     height: 48px;
     border: 2px solid var(--color-white);
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--shadow-overlay-medium);
     color: var(--color-white);
     cursor: pointer;
     display: flex;
@@ -1732,7 +1772,7 @@ img {
 
 .page11__play-btn:hover,
 .page11__sound-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--shadow-overlay-heavy);
 }
 
 /* Play : aria-pressed=true → en lecture (icone pause visible) */
@@ -1769,7 +1809,7 @@ img {
     position: relative;
     min-height: var(--section-height);
     overflow: visible;
-    background-color: #000;
+    background-color: var(--color-black);
 }
 
 .page12__background {
@@ -1843,11 +1883,11 @@ img {
 }
 
 .page12__disclosure-btn:hover {
-    background-color: #B93539;
+    background-color: var(--color-bg-red);
 }
 
 .page12__disclosure-btn[aria-expanded="true"] {
-    background-color: #B93539;
+    background-color: var(--color-bg-red);
 }
 
 .page12__quotes {
@@ -1980,7 +2020,7 @@ img {
     color: var(--color-white);
     line-height: 1;
     font-style: italic;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow-text);
 }
 
 .page13__card-body {
@@ -1998,11 +2038,11 @@ img {
 }
 
 .page13__card-body--dark {
-    background-color: #1a2744;
+    background-color: var(--color-bg-navy);
 }
 
 .page13__card-body--pink {
-    background-color: #B5364E;
+    background-color: var(--color-brand-rose);
 }
 
 .page13__card-title {
@@ -2045,14 +2085,14 @@ img {
     font-size: var(--size-4xl);
     font-weight: 300;
     font-style: italic;
-    color: #0e6469;
+    color: var(--color-teal);
     line-height: 1;
 }
 
 .page14__title {
     font-size: var(--fs-hero);
     font-weight: 900;
-    color: #0e6469;
+    color: var(--color-teal);
     line-height: 1.6;
     margin: 0.5rem 0 0;
     text-decoration: underline;
@@ -2093,7 +2133,7 @@ img {
     max-width: 90%;
     max-height: 85%;
     object-fit: contain;
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(var(--shadow-drop));
 }
 
 .page14__gradient {
@@ -2147,7 +2187,7 @@ img {
     padding: 0.8rem;
     font-size: var(--fs-caption);
     font-style: italic;
-    color: #555;
+    color: var(--color-gray-medium);
     letter-spacing: 0.02em;
     flex-shrink: 0;
 }
@@ -2197,7 +2237,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, var(--color-white) 0%, var(--color-white) 65%, #F0A0A0 85%, #E87070 100%);
+    background: linear-gradient(to right, var(--color-white) 0%, var(--color-white) 65%, var(--color-brand-rose-light) 85%, var(--color-brand-rose-medium) 100%);
 }
 
 .page20__figure {
@@ -2212,7 +2252,7 @@ img {
     max-width: 65%;
     max-height: 80vh;
     object-fit: contain;
-    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(var(--shadow-drop-heavy));
 }
 
 /* ============================================================
@@ -2326,7 +2366,7 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    background-color: #7B4FBF;
+    background-color: var(--color-violet);
     display: inline-block;
     padding: 0.5rem 1.5rem;
     margin: 0;
@@ -2361,8 +2401,8 @@ img {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    background-color: #E8C84A;
-    color: #333;
+    background-color: var(--color-brand-gold);
+    color: var(--color-gray-dark);
     font-family: var(--font-primary);
     font-size: var(--fs-credit);
     font-weight: 700;
@@ -2428,9 +2468,9 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     font-weight: 700;
-    color: #333;
-    background-color: var(--color-brand-gold, #E8C84A);
-    border: 2px solid var(--color-brand-gold, #E8C84A);
+    color: var(--color-gray-dark);
+    background-color: var(--color-brand-gold, var(--color-brand-gold));
+    border: 2px solid var(--color-brand-gold, var(--color-brand-gold));
     padding: 0.4rem 1rem;
     text-decoration: none;
     letter-spacing: 0.05em;
@@ -2468,7 +2508,7 @@ img {
 .page58__subscribe-btn {
     background-color: var(--color-brand-gold);
     border-color: var(--color-brand-gold);
-    color: #333;
+    color: var(--color-gray-dark);
 }
 
 @media (max-width: 768px) {
@@ -2636,7 +2676,7 @@ img {
 .page61__help {
     margin-top: 1.5rem;
     padding-top: 0.8rem;
-    border-top: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid var(--border-white-subtle);
 }
 .page61__help-title {
     font-family: var(--font-primary);
@@ -2739,7 +2779,7 @@ img {
 .page57 {
     height: var(--section-height);
     overflow: hidden;
-    background: linear-gradient(135deg, #BE2F31 0%, #BE5050 50%, #BE2F31 100%);
+    background: linear-gradient(135deg, var(--color-bg-red) 0%, var(--color-red-mid) 50%, var(--color-bg-red) 100%);
     position: relative;
 }
 .page57::before {
@@ -2849,7 +2889,7 @@ img {
 .page56 {
     height: var(--section-height);
     overflow: hidden;
-    background: linear-gradient(180deg, #BE2F31 0%, #BE5050 100%);
+    background: linear-gradient(180deg, var(--color-bg-red) 0%, var(--color-red-mid) 100%);
     display: flex;
     flex-direction: column;
 }
@@ -3029,7 +3069,7 @@ img {
     max-height: 100%;
     object-fit: contain;
     display: block;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-drop-heavy);
 }
 .page53__badge {
     position: absolute;
@@ -3120,14 +3160,14 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 900;
-    color: #333;
+    color: var(--color-gray-dark);
     letter-spacing: 0.05em;
     margin: 0 0 0.3rem;
 }
 .page52__spec-text {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
-    color: #555;
+    color: var(--color-gray-medium);
     line-height: 1.4;
     margin: 0;
 }
@@ -3172,20 +3212,20 @@ img {
     font-size: var(--size-lg);
     font-weight: 900;
     letter-spacing: 0.1em;
-    color: #8B5E3C;
+    color: var(--color-brown);
     margin: 0 0 0.3rem;
 }
 .page51__category {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
-    color: #8B5E3C;
+    color: var(--color-brown);
     letter-spacing: 0.05em;
     margin: 0 0 1.5rem;
 }
 .page51__description {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
-    color: #555;
+    color: var(--color-gray-medium);
     line-height: 1.6;
 }
 .page51__description p {
@@ -3194,7 +3234,7 @@ img {
 .page51__right {
     position: relative;
     overflow: hidden;
-    background-color: #333;
+    background-color: var(--color-gray-dark);
 }
 .page51__photo {
     width: 100%;
@@ -3217,10 +3257,10 @@ img {
     color: var(--color-white);
     line-height: 1.3;
     margin: 0 0 1rem;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow-text);
 }
 .page51__quote strong {
-    color: #E8C84A;
+    color: var(--color-brand-gold);
 }
 
 @media (max-width: 768px) {
@@ -3242,7 +3282,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--color-black);
 }
 .page50__background {
     position: absolute;
@@ -3359,7 +3399,7 @@ img {
 .page49__description {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
-    color: #555;
+    color: var(--color-gray-medium);
     font-style: italic;
     line-height: 1.5;
     margin: 0;
@@ -3383,7 +3423,7 @@ img {
 .page48 {
     height: var(--section-height);
     overflow: hidden;
-    background-color: #1a2744;
+    background-color: var(--color-bg-navy);
     display: flex;
     flex-direction: column;
 }
@@ -3448,7 +3488,7 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-meta);
     font-style: italic;
-    color: #F06060;
+    color: var(--color-red-light);
     margin: 0.3rem 0 0;
 }
 .page48__logos {
@@ -3626,7 +3666,7 @@ img {
     display: block;
 }
 .page46__badge {
-    background-color: #c0392b;
+    background-color: var(--color-brand-red-dark);
     color: var(--color-white);
     padding: 0.4rem 0.8rem;
     font-family: var(--font-secondary);
@@ -3753,7 +3793,7 @@ img {
     position: relative;
     height: var(--section-height);
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--color-black);
 }
 .page43__background {
     position: absolute;
@@ -3869,7 +3909,7 @@ img {
 .page41 {
     height: var(--section-height);
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--color-black);
     display: flex;
     flex-direction: column;
 }
@@ -3882,8 +3922,8 @@ img {
 .page41__strip--center {
     flex: 0 0 auto;
     height: 20%;
-    border-top: 3px solid #E84878;
-    border-bottom: 3px solid #E84878;
+    border-top: 3px solid var(--color-brand-pink);
+    border-bottom: 3px solid var(--color-brand-pink);
 }
 .page41__strip--center .page41__image {
     width: 50%;
@@ -3937,17 +3977,17 @@ img {
     font-size: var(--fs-hero);
     font-weight: 900;
     margin: 0;
-    color: #3B3F72;
+    color: var(--color-indigo);
 }
 .page40__badge {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 300;
-    color: #6B6FA0;
+    color: var(--color-indigo-light);
     margin-left: 0.5rem;
 }
 .page40__info {
-    background-color: #3B3F72;
+    background-color: var(--color-indigo);
     color: var(--color-white);
     padding: 1.5rem var(--slide-pad-x);
     flex-shrink: 0;
@@ -3993,7 +4033,7 @@ img {
     bottom: 0.5rem;
     right: 1.5rem;
     font-size: var(--fs-credit);
-    color: #767676;
+    color: var(--color-gray-light);
     letter-spacing: 0.02em;
 }
 
@@ -4038,7 +4078,7 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-hero);
     font-weight: 300;
-    color: #6B6FA0;
+    color: var(--color-indigo-light);
     line-height: 1;
     margin-bottom: 0.3rem;
 }
@@ -4046,7 +4086,7 @@ img {
     font-family: var(--font-primary);
     font-size: var(--fs-title-xl);
     font-weight: 900;
-    color: #3B3F72;
+    color: var(--color-indigo);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 1.1;
@@ -4055,29 +4095,29 @@ img {
 .page39__subtitle {
     font-family: var(--font-secondary);
     font-size: var(--fs-title);
-    color: #6B6FA0;
+    color: var(--color-indigo-light);
     margin: 0.2rem 0 0;
 }
 .page39__separator {
     width: 2.5rem;
     border: none;
-    border-top: 2px solid #3B3F72;
+    border-top: 2px solid var(--color-indigo);
     margin: 1.5rem 0;
 }
 .page39__description {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
-    color: #555;
+    color: var(--color-gray-medium);
     font-style: italic;
     line-height: 1.5;
     margin: 0;
     max-width: 280px;
 }
 .page39__stripe {
-    background-color: #6B6FA0;
+    background-color: var(--color-indigo-light);
 }
 .page39__right {
-    background-color: #4A4E82;
+    background-color: var(--color-indigo-dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4128,7 +4168,7 @@ img {
     left: 0;
     right: 0;
     height: 35%;
-    background-color: #E8C84A;
+    background-color: var(--color-brand-gold);
     z-index: 0;
 }
 .page38__left > * {
@@ -4141,14 +4181,14 @@ img {
 .page38__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page38__title {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     line-height: 1.15;
@@ -4157,11 +4197,11 @@ img {
 .page38__subtitle {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     margin: 0;
 }
 .page38__right {
-    background-color: #EBEBEB;
+    background-color: var(--color-bg-gold-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4210,14 +4250,14 @@ img {
 }
 .page37__category-arrow {
     font-size: var(--fs-title);
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     margin: 0 0 0.3rem;
 }
 .page37__title {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.05em;
     text-transform: uppercase;
     line-height: 1.15;
@@ -4226,12 +4266,12 @@ img {
 .page37__letter {
     font-family: var(--font-secondary);
     font-size: var(--fs-hero);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
 }
 .page37__right {
     position: relative;
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--color-black);
 }
 .page37__photo {
     width: 100%;
@@ -4246,7 +4286,7 @@ img {
     font-size: var(--fs-caption);
     color: var(--color-white);
     letter-spacing: 0.02em;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow-text);
 }
 
 @media (max-width: 768px) {
@@ -4283,14 +4323,14 @@ img {
 .page36__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page36__category-title {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin: 0;
@@ -4365,14 +4405,14 @@ img {
 .page35__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page35__category-title {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin: 0;
@@ -4384,14 +4424,14 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
     font-style: italic;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     margin: 0;
 }
 .page35__caption-name {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 700;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     margin: 0;
 }
 .page35__right {
@@ -4410,7 +4450,7 @@ img {
     left: 10%;
     text-align: left;
     color: var(--color-white);
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: var(--shadow-overlay-light);
     padding: 1rem 1.5rem;
     border-radius: 4px;
 }
@@ -4420,14 +4460,14 @@ img {
     font-weight: 700;
     letter-spacing: 0.3em;
     margin: 0 0 0.5rem;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 8px var(--shadow-overlay-medium);
 }
 .page35__overlay-desc {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-body);
     font-style: italic;
     margin: 0;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 1px 4px var(--shadow-overlay-medium);
     line-height: 1.5;
 }
 
@@ -4448,7 +4488,7 @@ img {
 
 .page34 {
     overflow: hidden;
-    background-color: #000;
+    background-color: var(--color-black);
     display: flex;
     flex-direction: column;
 }
@@ -4462,14 +4502,14 @@ img {
 .page34__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page34__category-title {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin: 0;
@@ -4500,18 +4540,18 @@ img {
     font-family: var(--font-secondary);
     font-size: var(--fs-slide-small);
     font-style: italic;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     margin: 0;
 }
 .page34__caption-name {
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 700;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     margin: 0;
 }
 .page34__caption-name a {
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     text-decoration: underline;
 }
 
@@ -4550,14 +4590,14 @@ img {
 .page33__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-3xl);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page33__category-title {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin: 0;
@@ -4626,14 +4666,14 @@ img {
 .page32__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--fs-title);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page32__category-text {
     font-family: var(--font-primary);
     font-size: var(--fs-subtitle);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -4669,14 +4709,14 @@ img {
 .page31__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-4xl);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page31__category-title {
     font-family: var(--font-primary);
     font-size: var(--fs-subtitle);
     font-weight: 900;
-    color: #5C4200;
+    color: var(--color-text-gold-darker);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin: 0;
@@ -4818,7 +4858,7 @@ img {
     font-size: var(--fs-caption);
     color: var(--color-white);
     letter-spacing: 0.02em;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: var(--shadow-text);
 }
 
 /* Zone basse : galerie + categorie */
@@ -4867,14 +4907,14 @@ img {
 .page25__category-letter {
     font-family: var(--font-secondary);
     font-size: var(--size-4xl);
-    color: #5C4800;
+    color: var(--color-text-gold-dark);
     line-height: 1;
 }
 .page25__category-title {
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
-    color: #5C4200;    /* 5.80:1 sur gold — WCAG AA */
+    color: var(--color-text-gold-darker);    /* 5.80:1 sur gold — WCAG AA */
     letter-spacing: 0.1em;
     text-transform: uppercase;
     margin: 0;
@@ -4916,7 +4956,7 @@ img {
     left: 0;
     width: 12%;
     height: 100%;
-    background: linear-gradient(180deg, #D4A843 0%, #C49A3A 100%);
+    background: linear-gradient(180deg, var(--color-gold-gradient-start) 0%, var(--color-gold-gradient-end) 100%);
     z-index: 1;
 }
 .page23__gold-band::after {
@@ -4926,7 +4966,7 @@ img {
     left: 100%;
     width: 500%;
     height: 8%;
-    background: linear-gradient(90deg, #D4A843 0%, #C49A3A 50%, transparent 100%);
+    background: linear-gradient(90deg, var(--color-gold-gradient-start) 0%, var(--color-gold-gradient-end) 50%, transparent 100%);
 }
 .page23__image {
     width: 100%;
