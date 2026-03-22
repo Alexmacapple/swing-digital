@@ -3200,7 +3200,7 @@ section:hover [class*="__category"]::after {
 .page58 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-black);
+    background-color: var(--color-bg-red);
     color: var(--color-white);
 }
 .page58__container {
