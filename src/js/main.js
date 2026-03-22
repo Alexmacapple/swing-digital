@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollTracking();
     initDisclosure();
     try { initVideoSound(); } catch (e) { console.warn('Video init:', e); }
+    initPodcastPlayer();
 });
 
 /**
@@ -224,6 +225,35 @@ function initDisclosure() {
     }
 }
 
+/**
+ * Podcast player - Page 33
+ * Change la video dans l'iframe au clic sur un episode
+ */
+function initPodcastPlayer() {
+    const player = document.getElementById('page33-player');
+    const episodes = document.querySelectorAll('.page33__episode');
+    if (!player || !episodes.length) return;
+
+    episodes.forEach(function(ep) {
+        var btn = ep.querySelector('.page33__episode-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+            var vid = ep.dataset.vid;
+            var title = ep.dataset.title;
+            // Mettre a jour l'iframe
+            player.src = 'https://www.youtube.com/embed/' + vid + '?rel=0&autoplay=1';
+            player.title = title;
+            // Mettre a jour l'etat actif
+            episodes.forEach(function(e) {
+                e.classList.remove('page33__episode--active');
+                e.querySelector('.page33__episode-btn').removeAttribute('aria-current');
+            });
+            ep.classList.add('page33__episode--active');
+            btn.setAttribute('aria-current', 'true');
+        });
+    });
+}
+
 // Export functions if needed
 window.SwingDigital = {
     initNavigation,
@@ -232,5 +262,6 @@ window.SwingDigital = {
     initScrollTracking,
     updateNavActive,
     initVideoSound,
-    initDisclosure
+    initDisclosure,
+    initPodcastPlayer
 };
