@@ -2033,6 +2033,7 @@ img {
     font-size: var(--size-3xl);
     font-weight: 300;
     color: var(--color-white);
+    background-color: var(--color-black); /* a11y : fond explicite pour outils de contraste */
     line-height: 1;
     font-style: italic;
     text-shadow: var(--shadow-text);
@@ -2826,6 +2827,7 @@ img {
     text-align: center;
     position: relative;
     margin-bottom: 1rem;
+    background-color: inherit; /* a11y : herite fond rouge pour outils de contraste */
 }
 .page57__main-title {
     font-family: var(--font-primary);
