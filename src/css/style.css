@@ -3022,8 +3022,8 @@ section:hover [class*="__category"]::after {
 }
 
 .page13__card-body {
-    padding: var(--space-sm-tight);
-    min-height: 4.5rem;
+    padding: var(--space-sm);
+    min-height: 5.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3032,7 +3032,6 @@ section:hover [class*="__category"]::after {
     background-size: cover;
     background-position: center;
     color: var(--color-white);
-    flex-shrink: 0;
 }
 
 .page13__card-body--dark {
