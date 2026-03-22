@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeroVideo();
     initAnchorRedirects();
     initDisabledCTA();
+    initHeaderSpacing();
 });
 
 /**
@@ -566,6 +567,27 @@ function initAnchorRedirects() {
     if (hash && anchorRedirects[hash]) {
         window.location.replace(anchorRedirects[hash]);
     }
+}
+
+/**
+ * Ajuste dynamiquement le spacing sous le header fixe
+ * Necessaire pour le zoom 200% (RGAA 10.4 / WCAG 1.4.4)
+ */
+function initHeaderSpacing() {
+    var header = document.querySelector('.site-header');
+    var breadcrumb = document.querySelector('.breadcrumb');
+    if (!header) return;
+
+    function update() {
+        var h = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height-actual', h + 'px');
+        if (breadcrumb) {
+            breadcrumb.style.marginTop = h + 'px';
+        }
+    }
+
+    update();
+    window.addEventListener('resize', update);
 }
 
 /**
