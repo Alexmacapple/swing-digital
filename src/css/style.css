@@ -263,6 +263,17 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overscroll-behavior-y: none;
+}
+
+/* iOS : supprime le delay 300ms au tap et le flash bleu */
+a, button, [role="button"], input, select, textarea {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -2002,7 +2013,7 @@ section:hover [class*="__category"]::after {
 
 .page3__container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     gap: 0;
     width: 100%;
     height: 100%;
@@ -2185,7 +2196,7 @@ section:hover [class*="__category"]::after {
 
 /* PAGE 4 - INVERSÉE (Image gauche, Texte droite) */
 .page3__container--inverted {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* PAGE 4 : fond blanc côté texte, texte foncé */
@@ -3695,7 +3706,7 @@ section:hover [class*="__category"]::after {
     overflow: visible;
     background-color: var(--color-bg-red);
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
 }
 .page61__left {
     padding: var(--space-md) var(--slide-pad-x);
@@ -5485,7 +5496,7 @@ section:hover [class*="__category"]::after {
     flex: 1;
     min-height: 0;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: var(--space-xs);
     padding: var(--space-xs) var(--slide-pad-x) var(--space-md);
@@ -6337,7 +6348,7 @@ section:hover [class*="__category"]::after {
    ============================================================ */
 @media (max-width: 1200px) {
     .page3__container {
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 1fr 1fr;
     }
 
     .page3__container--inverted {
@@ -7136,5 +7147,17 @@ section:hover [class*="__category"]::after {
 
     .page3__project-link {
         font-size: var(--fs-caption);
+    }
+}
+
+/* ============================================================
+   iPhone SE / petits mobiles (< 480px) : mosaiques en 2 colonnes
+   ============================================================ */
+@media (max-width: 480px) {
+    .page49__portraits,
+    .page54__mosaic,
+    .page13__cards,
+    .partners-page__grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
