@@ -629,7 +629,11 @@ function initHeaderSpacing() {
     }
 
     update();
-    window.addEventListener('resize', update);
+    var resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(update, 100);
+    }, { passive: true });
 }
 
 /**
@@ -717,7 +721,7 @@ function initBackToTop() {
             btn.classList.remove('back-to-top--visible');
             visible = false;
         }
-    });
+    }, { passive: true });
 
     btn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
