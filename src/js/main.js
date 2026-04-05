@@ -622,10 +622,10 @@ function initHeaderSpacing() {
 
     function update() {
         var h = header.offsetHeight;
+        document.documentElement.style.setProperty('--header-height', h + 'px');
         document.documentElement.style.setProperty('--header-height-actual', h + 'px');
-        if (breadcrumb) {
-            breadcrumb.style.marginTop = h + 'px';
-        }
+        // Ne PAS écrire de style inline sur le breadcrumb — le CSS gère
+        // le margin-top via calc(var(--header-height) + var(--safe-top))
     }
 
     update();
@@ -660,7 +660,10 @@ function initContactVideo() {
     // Bouton play/pause
     btn.addEventListener('click', function() {
         if (video.paused) {
-            video.play();
+            var playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function() { /* iOS autoplay policy */ });
+            }
             setPlaying();
         } else {
             video.pause();
@@ -679,7 +682,10 @@ function initSitemapVideo() {
 
     btn.addEventListener('click', function() {
         if (video.paused) {
-            video.play();
+            var playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function() { /* iOS autoplay policy */ });
+            }
             btn.classList.remove('sitemap-page__play-btn--paused');
             btn.setAttribute('aria-label', 'Mettre en pause la vidéo d\'ambiance du plan du site');
         } else {

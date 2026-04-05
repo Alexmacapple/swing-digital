@@ -12,6 +12,7 @@
     src: url('../fonts/Brandon_blk.otf') format('opentype');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -19,6 +20,7 @@
     src: url('../fonts/Brandon_reg.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -26,6 +28,7 @@
     src: url('../fonts/Brandon_light_it.otf') format('opentype');
     font-weight: 300;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -33,6 +36,7 @@
     src: url('../fonts/Fragen-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 /* Fragen-BoldItalic : fichier absent, supprime pour eviter 404 */
@@ -1635,7 +1639,7 @@ a.page13__card--link:focus-visible {
     background: var(--color-brand-btn);
     color: var(--color-white);
     padding: 0.5rem 1rem;
-    z-index: 1001;
+    z-index: 1002;
     font-family: var(--font-primary);
     font-weight: 700;
     text-decoration: none;
@@ -7060,7 +7064,7 @@ section:hover [class*="__category"]::after {
 /* Page 24 : grille categories -> 1 colonne sur petit mobile */
 @media (max-width: 480px) {
     .page24__cards {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
     }
 }
 
