@@ -277,6 +277,13 @@ html {
 body {
     overscroll-behavior-y: none;
     overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge legacy */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 /* iOS : supprime le delay 300ms au tap et le flash bleu */
