@@ -516,6 +516,10 @@ img {
     margin: 0;
     box-shadow: var(--shadow-drop);
     z-index: 1001;
+    max-height: calc(100dvh - var(--header-height) - var(--safe-top) - 1rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .site-nav__submenu--open {
@@ -594,6 +598,10 @@ img {
     list-style: none;
     margin: 0;
     box-shadow: var(--shadow-drop);
+    max-height: calc(100dvh - var(--header-height) - var(--safe-top) - 1rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 .site-nav__submenu--level3.site-nav__submenu--open {
@@ -690,6 +698,10 @@ img {
         flex-direction: column;
         padding: 1rem 0;
         box-shadow: var(--shadow-drop);
+        max-height: calc(100dvh - var(--header-height) - var(--safe-top));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
     }
 
     .site-nav__list--open {
@@ -3820,7 +3832,8 @@ section:hover [class*="__category"]::after {
 
 .page62 {
     position: relative;
-    height: var(--section-height);
+    min-height: var(--section-height);
+    height: auto;
     overflow: hidden;
     background-color: var(--color-black); /* a11y : fond explicite pour contraste texte blanc sur image */
 }
@@ -5849,18 +5862,22 @@ section:hover [class*="__category"]::after {
 .page33__episode-info {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    flex: 1;
 }
 .page33__episode-title {
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: 0.95rem;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 .page33__episode-meta {
     font-family: var(--font-primary);
     font-size: 0.8rem;
     opacity: 0.7;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 .page33__right {
     overflow: hidden;
@@ -7179,8 +7196,8 @@ section:hover [class*="__category"]::after {
     .page62__play-btn {
         bottom: calc(var(--space-xs) + var(--safe-bottom));
         right: calc(var(--space-xs) + var(--safe-right));
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
     }
 }
 
