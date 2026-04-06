@@ -113,10 +113,14 @@
 
     /* Gradients */
     --gradient-brand: linear-gradient(135deg, #B93539 0%, var(--color-brand-alt) 100%); /* WCAG AA : 5.78:1 → 4.86:1 */
-    --gradient-hero: linear-gradient(135deg, #BE2F31 0%, #C44E4E 50%, #BE2F31 100%);
+    --gradient-hero: linear-gradient(135deg, var(--color-bg-red) 0%, var(--color-red-mid) 50%, var(--color-bg-red) 100%);
 
-    /* Edge offset for absolute-positioned elements */
+    /* Edge offset for absolute-positioned elements (safe-area aware) */
     --edge-offset: 20px;
+    --edge-top: calc(var(--edge-offset) + var(--safe-top));
+    --edge-bottom: calc(var(--edge-offset) + var(--safe-bottom));
+    --edge-left: calc(var(--edge-offset) + var(--safe-left));
+    --edge-right: calc(var(--edge-offset) + var(--safe-right));
 
     /* Section height : compense le header fixe, dvh pour mobile */
     --section-height: calc(100vh - var(--header-height));
@@ -1155,8 +1159,8 @@ a.page13__card--link:focus-visible {
 /* Top Left: Logo */
 .hero-page1__logo {
     position: absolute;
-    top: var(--edge-offset);
-    left: var(--edge-offset);
+    top: var(--edge-top);
+    left: var(--edge-left);
     z-index: 20;
 }
 
@@ -1192,8 +1196,8 @@ a.page13__card--link:focus-visible {
 /* Top Right: Navigation */
 .hero-page1__nav {
     position: absolute;
-    top: var(--edge-offset);
-    right: var(--edge-offset);
+    top: var(--edge-top);
+    right: var(--edge-right);
     z-index: 20;
 }
 
@@ -1342,8 +1346,8 @@ a.page13__card--link:focus-visible {
 /* Bottom Left: Links */
 .hero-page1__bottom-left {
     position: absolute;
-    bottom: var(--edge-offset);
-    left: var(--edge-offset);
+    bottom: var(--edge-bottom);
+    left: var(--edge-left);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
@@ -1374,8 +1378,8 @@ a.page13__card--link:focus-visible {
 /* Bottom Right: Social Links */
 .hero-page1__bottom-right {
     position: absolute;
-    bottom: var(--edge-offset);
-    right: var(--edge-offset);
+    bottom: var(--edge-bottom);
+    right: var(--edge-right);
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
@@ -1534,9 +1538,9 @@ a.page13__card--link:focus-visible {
         width: 40px;
         height: 40px;
         bottom: auto;
-        top: var(--edge-offset);
+        top: var(--edge-top);
         left: auto;
-        right: calc(var(--edge-offset) + 60px);
+        right: calc(var(--edge-right) + 60px);
         transform: none;
     }
 
@@ -1778,7 +1782,7 @@ section:hover [class*="__category"]::after {
 .hero-page1::after {
     content: '';
     position: absolute;
-    bottom: clamp(0.5rem, 3vh, 2rem);
+    bottom: calc(clamp(0.5rem, 3vh, 2rem) + var(--safe-bottom));
     left: 50%;
     width: 2px;
     height: clamp(16px, 4vh, 32px);
@@ -2513,8 +2517,8 @@ section:hover [class*="__category"]::after {
 
 .full-image-page__credit {
     position: absolute;
-    bottom: 1rem;
-    right: 1.5rem;
+    bottom: calc(1rem + var(--safe-bottom));
+    right: calc(1.5rem + var(--safe-right));
     font-size: var(--fs-caption);
     color: var(--color-white);
     letter-spacing: 0.02em;
@@ -2819,8 +2823,8 @@ section:hover [class*="__category"]::after {
 
 .page11__controls {
     position: absolute;
-    bottom: clamp(0.5rem, 3vw, 2rem);
-    right: clamp(0.5rem, 3vw, 2rem);
+    bottom: calc(clamp(0.5rem, 3vw, 2rem) + var(--safe-bottom));
+    right: calc(clamp(0.5rem, 3vw, 2rem) + var(--safe-right));
     z-index: 10;
     display: flex;
     gap: 0.75rem;
@@ -3033,7 +3037,6 @@ section:hover [class*="__category"]::after {
     max-width: 100%;
     object-fit: contain;
     display: block;
-    mix-blend-mode: multiply;
     mix-blend-mode: multiply;
 }
 
@@ -4256,8 +4259,8 @@ section:hover [class*="__category"]::after {
 }
 .page53__badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: calc(1rem + var(--safe-top));
+    right: calc(1rem + var(--safe-right));
     background-color: var(--color-bg-red);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
@@ -5209,8 +5212,8 @@ section:hover [class*="__category"]::after {
 }
 .page40__credit {
     position: absolute;
-    bottom: 0.5rem;
-    right: 1.5rem;
+    bottom: calc(0.5rem + var(--safe-bottom));
+    right: calc(1.5rem + var(--safe-right));
     font-size: var(--fs-credit);
     color: var(--color-gray-light);
     letter-spacing: 0.02em;
@@ -5458,10 +5461,9 @@ section:hover [class*="__category"]::after {
     display: block;
 }
 .page37__credit {
-    text-shadow: var(--shadow-text);
     position: absolute;
-    bottom: 1rem;
-    right: 1.5rem;
+    bottom: calc(1rem + var(--safe-bottom));
+    right: calc(1.5rem + var(--safe-right));
     font-size: var(--fs-caption);
     color: var(--color-white);
     letter-spacing: 0.02em;
@@ -6112,8 +6114,8 @@ section:hover [class*="__category"]::after {
 }
 .page25__panoramic-credit {
     position: absolute;
-    top: 0.5rem;
-    right: 1.5rem;
+    top: calc(0.5rem + var(--safe-top));
+    right: calc(1.5rem + var(--safe-right));
     font-size: var(--fs-caption);
     color: var(--color-white);
     letter-spacing: 0.02em;
