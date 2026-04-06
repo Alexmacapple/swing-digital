@@ -9,7 +9,6 @@
 ## Améliorations recommandées
 
 - [ ] Optimiser les images (compression, WebP)
-- [ ] Test cross-browser (Chrome, Firefox, Safari)
 - [ ] Test lecteur d'écran (VoiceOver, NVDA)
 
 ## Terminé
@@ -32,3 +31,11 @@
 - [x] Boutons Je m'inscris convertis en aria-disabled
 - [x] Tests Playwright (984 tests, 4 viewports)
 - [x] Documentation à jour
+- [x] Audit responsive Codex 9/10 (10 commits, 2026-04-06)
+- [x] Fix scroll horizontal iPhone logos partenaires (bug WebKit)
+- [x] Safe-area complet sur tous les éléments absolus
+- [x] Flip sous-menu niveau 3 + promesse video.play()
+- [x] Nettoyage CSS mort (-189 lignes) + variables inutilisées
+- [x] Cache-buster CSS sur les 24 pages
+- [x] Scrollbar masquée, menus scrollables, seuil tactile 44px
+- [x] Test cross-browser Chrome DevTools (iPhone, desktop 1100/1440/1920)

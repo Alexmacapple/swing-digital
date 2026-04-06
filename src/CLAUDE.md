@@ -89,7 +89,16 @@ Brandon (blk, reg, light-it), Fragen (Bold), Raleway Bold
 9. Badges de section supprimés (redondants avec navigation persistante)
 10. Textes traduits en français (page Voyage)
 
+11. Flip automatique sous-menu niveau 3 si debordement viewport
+12. Promesse video.play() geree pour compatibilite iOS
+
 ---
 
-**Dernière mise à jour** : 2026-03-23
-**Version** : 3.1.0
+## Qualite responsive et code (audit Codex 2026-04-06)
+
+**Score : 9/10** — Le 10/10 sera atteint quand le vrai domaine remplacera `DOMAINE` dans les 23 pages + sitemap.xml + robots.txt.
+
+---
+
+**Derniere mise a jour** : 2026-04-06
+**Version** : 4.0.0
