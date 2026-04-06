@@ -268,6 +268,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -2530,12 +2531,14 @@ section:hover [class*="__category"]::after {
     min-height: var(--section-height);
     background-color: var(--color-bg-red);
     padding: 0;
+    overflow-x: hidden;
 }
 
 .partners-page__container {
     display: flex;
     flex-direction: column;
     padding: var(--slide-pad-y) var(--slide-pad-x) var(--space-sm) var(--slide-pad-x);
+    min-width: 0;
 }
 
 .partners-page__title {
@@ -2550,10 +2553,14 @@ section:hover [class*="__category"]::after {
 
 .partners-page__grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    /* Safari surestime la largeur intrinseque quand grid + flex item + aspect-ratio.
+       minmax(0, 1fr) force les colonnes a se comprimer au viewport. */
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: var(--grid-gap-sm);
     flex: 1;
     align-content: start;
+    width: 100%;
+    min-width: 0;
 }
 
 .partners-page__logo-item {
@@ -2564,6 +2571,7 @@ section:hover [class*="__category"]::after {
     aspect-ratio: 1;
     padding: 0.35rem;
     border-radius: 2px;
+    min-width: 0;
 }
 
 .partners-page__logo {
@@ -6583,7 +6591,7 @@ section:hover [class*="__category"]::after {
     }
 
     .partners-page__grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: var(--grid-gap-sm);
     }
 
@@ -6594,13 +6602,32 @@ section:hover [class*="__category"]::after {
 }
 
 @media (max-width: 480px) {
+    .partners-page {
+        min-height: auto;
+        overflow-x: hidden;
+    }
+
+    .partners-page__container {
+        padding: var(--slide-pad-y) var(--slide-pad-x);
+    }
+
     .partners-page__grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--grid-gap-sm);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .partners-page__logo-item {
+        width: 2.8rem;
+        height: 2.8rem;
+        aspect-ratio: auto;
+        padding: 0.15rem;
+        flex: 0 0 auto;
     }
 
     .partners-page__title {
-        font-size: var(--fs-subtitle);   /* >= 14pt bold (18.67px) = large text WCAG, seuil 3:1 */
+        font-size: var(--fs-subtitle);
         margin: 0 0 0.6rem 0;
     }
 }
@@ -7160,8 +7187,8 @@ section:hover [class*="__category"]::after {
 @media (max-width: 480px) {
     .page49__portraits,
     .page54__mosaic,
-    .page13__cards,
-    .partners-page__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .page13__cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
 }
