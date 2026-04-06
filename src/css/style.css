@@ -608,6 +608,11 @@ img {
     display: block;
 }
 
+.site-nav__submenu--level3.site-nav__submenu--align-left {
+    left: auto;
+    right: 100%;
+}
+
 .site-nav__submenu-item--has-children {
     position: relative;
 }

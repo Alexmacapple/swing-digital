@@ -237,7 +237,14 @@ function initDropdown() {
                 sub.classList.remove('site-nav__submenu--open');
             } else {
                 toggle.setAttribute('aria-expanded', 'true');
+                sub.classList.remove('site-nav__submenu--align-left');
                 sub.classList.add('site-nav__submenu--open');
+                // Flip si le sous-menu deborde a droite du viewport
+                requestAnimationFrame(function() {
+                    if (sub.getBoundingClientRect().right > window.innerWidth - 16) {
+                        sub.classList.add('site-nav__submenu--align-left');
+                    }
+                });
             }
         });
 
@@ -666,9 +673,14 @@ function initContactVideo() {
         if (video.paused) {
             var playPromise = video.play();
             if (playPromise !== undefined) {
-                playPromise.catch(function() { /* iOS autoplay policy */ });
+                playPromise.then(function() {
+                    setPlaying();
+                }).catch(function() {
+                    setPaused(); /* iOS autoplay policy */
+                });
+            } else {
+                setPlaying();
             }
-            setPlaying();
         } else {
             video.pause();
             setPaused();
@@ -688,10 +700,17 @@ function initSitemapVideo() {
         if (video.paused) {
             var playPromise = video.play();
             if (playPromise !== undefined) {
-                playPromise.catch(function() { /* iOS autoplay policy */ });
+                playPromise.then(function() {
+                    btn.classList.remove('sitemap-page__play-btn--paused');
+                    btn.setAttribute('aria-label', 'Mettre en pause la vidéo d\'ambiance du plan du site');
+                }).catch(function() {
+                    btn.classList.add('sitemap-page__play-btn--paused');
+                    btn.setAttribute('aria-label', 'Lancer la vidéo d\'ambiance du plan du site');
+                });
+            } else {
+                btn.classList.remove('sitemap-page__play-btn--paused');
+                btn.setAttribute('aria-label', 'Mettre en pause la vidéo d\'ambiance du plan du site');
             }
-            btn.classList.remove('sitemap-page__play-btn--paused');
-            btn.setAttribute('aria-label', 'Mettre en pause la vidéo d\'ambiance du plan du site');
         } else {
             video.pause();
             btn.classList.add('sitemap-page__play-btn--paused');
