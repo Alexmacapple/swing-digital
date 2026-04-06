@@ -1046,8 +1046,8 @@ a.page13__card--link:focus-visible {
 
 @media (max-width: 480px) {
     .back-to-top {
-        bottom: var(--space-md);
-        right: var(--space-md);
+        bottom: calc(var(--space-md) + var(--safe-bottom));
+        right: calc(var(--space-md) + var(--safe-right));
         width: 44px;
         height: 44px;
     }
@@ -2953,6 +2953,7 @@ section:hover [class*="__category"]::after {
     margin-top: var(--space-sm-tight);
     max-height: 40vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .page12__fig-legend {
@@ -3655,6 +3656,7 @@ section:hover [class*="__category"]::after {
 .page60__text {
     padding: var(--space-lg) var(--slide-pad-x);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 .page60__section-title {
     font-family: var(--font-primary);
@@ -3723,6 +3725,7 @@ section:hover [class*="__category"]::after {
 .page61__left {
     padding: var(--space-md) var(--slide-pad-x);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     color: var(--color-white);
 }
 .page61__right {
@@ -4227,11 +4230,14 @@ section:hover [class*="__category"]::after {
 }
 .page53__logos {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: var(--space-md);
+    max-width: 100%;
 }
 .page53__logo {
     height: 2.5rem;
+    max-width: 100%;
     object-fit: contain;
 }
 .page53__right {
@@ -4671,12 +4677,16 @@ section:hover [class*="__category"]::after {
     position: absolute;
     bottom: 1rem;
     left: var(--slide-pad-x);
+    right: var(--slide-pad-x);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: var(--space-sm);
+    max-width: 100%;
 }
 .page48__logo {
     height: 2.5rem;
+    max-width: 100%;
     object-fit: contain;
 }
 
@@ -5798,6 +5808,7 @@ section:hover [class*="__category"]::after {
     padding: 0;
     flex: 1;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
@@ -6381,6 +6392,7 @@ section:hover [class*="__category"]::after {
     /* Scroll interne sur le texte si necessaire */
     .page3__left {
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         min-height: 0;
         overscroll-behavior: contain;
     }
