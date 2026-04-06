@@ -128,5 +128,21 @@ src/
 
 ---
 
-**Dernière mise à jour** : 2026-03-22
-**Version** : 3.0.0
+## Qualite responsive et code (audit Codex 2026-04-06)
+
+**Score : 9/10** — Le 10/10 sera atteint quand le vrai domaine remplacera `DOMAINE` dans les 23 pages + sitemap.xml + robots.txt.
+
+Corrections appliquees (9 commits) :
+- Fix scroll horizontal iPhone logos partenaires (bug WebKit grid + aspect-ratio + flex)
+- Safe-area complet sur tous les elements absolus (hero, back-to-top, bouton play, credits)
+- Scrollbar masquee, menus scrollables, seuil tactile 44px
+- Flip automatique sous-menu niveau 3 si debordement viewport
+- Promesse video.play() geree pour iOS
+- Nettoyage CSS mort (-189 lignes), variables inutilisees, doublons
+- Cache-buster CSS sur les 24 pages
+- Iframes Vimeo avec & echappes en &amp;
+
+---
+
+**Derniere mise a jour** : 2026-04-06
+**Version** : 4.0.0
