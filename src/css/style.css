@@ -100,7 +100,7 @@
     --color-gold-gradient-end: #C49A3A;
     --color-bg-gold-light: #EBEBEB;
     --color-red-light: #F06060;
-    --color-red-mid: var(--color-red-mid);
+    --color-red-mid: #D04848;
     --shadow-overlay-light: rgba(0, 0, 0, 0.45);
     --shadow-text: 0 1px 4px rgba(0, 0, 0, 0.7);
     --shadow-overlay-medium: rgba(0, 0, 0, 0.5);
@@ -3844,8 +3844,8 @@ section:hover [class*="__category"]::after {
 /* Bouton play/pause video contact */
 .page62__play-btn {
     position: absolute;
-    bottom: var(--space-md);
-    right: var(--space-md);
+    bottom: calc(var(--space-md) + var(--safe-bottom));
+    right: calc(var(--space-md) + var(--safe-right));
     z-index: 10;
     background: rgba(0, 0, 0, 0.5);
     border: 2px solid var(--color-white);
@@ -7175,8 +7175,8 @@ section:hover [class*="__category"]::after {
 /* Page 62 contact : bouton play repositionne */
 @media (max-width: 480px) {
     .page62__play-btn {
-        bottom: var(--space-xs);
-        right: var(--space-xs);
+        bottom: calc(var(--space-xs) + var(--safe-bottom));
+        right: calc(var(--space-xs) + var(--safe-right));
         width: 40px;
         height: 40px;
     }
