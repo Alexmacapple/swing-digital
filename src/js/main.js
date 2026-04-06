@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderSpacing();
     initContactVideo();
     initBackToTop();
-    initSitemapVideo();
 });
 
 /**
@@ -624,7 +623,6 @@ function initAnchorRedirects() {
  */
 function initHeaderSpacing() {
     var header = document.querySelector('.site-header');
-    var breadcrumb = document.querySelector('.breadcrumb');
     if (!header) return;
 
     function update() {
@@ -688,36 +686,6 @@ function initContactVideo() {
     });
 }
 
-/**
- * Video plan du site — play/pause
- */
-function initSitemapVideo() {
-    var video = document.getElementById('sitemap-video');
-    var btn = document.getElementById('sitemap-video-btn');
-    if (!video || !btn) return;
-
-    btn.addEventListener('click', function() {
-        if (video.paused) {
-            var playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    btn.classList.remove('sitemap-page__play-btn--paused');
-                    btn.setAttribute('aria-label', 'Mettre en pause la vidéo d\'ambiance du plan du site');
-                }).catch(function() {
-                    btn.classList.add('sitemap-page__play-btn--paused');
-                    btn.setAttribute('aria-label', 'Lancer la vidéo d\'ambiance du plan du site');
-                });
-            } else {
-                btn.classList.remove('sitemap-page__play-btn--paused');
-                btn.setAttribute('aria-label', 'Mettre en pause la vidéo d\'ambiance du plan du site');
-            }
-        } else {
-            video.pause();
-            btn.classList.add('sitemap-page__play-btn--paused');
-            btn.setAttribute('aria-label', 'Lancer la vidéo d\'ambiance du plan du site');
-        }
-    });
-}
 
 /**
  * Bouton retour en haut de page

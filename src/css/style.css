@@ -50,9 +50,6 @@
     --color-secondary: #fff;
     --color-accent: #ff6b6b;
     --color-text: #000;
-    --color-text-light: #666;
-    --color-bg: #fff;
-    --color-bg-dark: #f5f5f5;
 
     /* Swing Digital brand colors */
     --color-brand: #E8494B;           /* 3.83:1 — decoratif ou large text only */
@@ -62,7 +59,6 @@
     --color-brand-btn: #CE3B3D;
     --color-white: #ffffff;
     --color-brand-gold: #E8C84A;      /* 1.64:1 — decoratif uniquement */
-    --color-brand-gold-dark: #D4A843;
 
     /* === COULEURS RGAA CONFORMES === */
     /* Texte sur fond blanc (ratio >= 4.5:1) */
@@ -99,7 +95,6 @@
     --color-gold-gradient-start: #D4A843;
     --color-gold-gradient-end: #C49A3A;
     --color-bg-gold-light: #EBEBEB;
-    --color-red-light: #F06060;
     --color-red-mid: #D04848;
     --shadow-overlay-light: rgba(0, 0, 0, 0.45);
     --shadow-text: 0 1px 4px rgba(0, 0, 0, 0.7);
@@ -135,7 +130,6 @@
     --page-max-width: 1440px;
 
     --font-primary: 'Brandon', sans-serif;
-    --font-secondary: 'Fragen', sans-serif;
 
     --space-2xs: 0.3rem;
     --space-xs: 0.5rem;
@@ -146,11 +140,6 @@
     --space-xl: 3rem;
     --space-2xl: 4rem;
 
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1024px;
-    --breakpoint-xl: 1200px;
-    --breakpoint-xxl: 1441px;
 
     --transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 
@@ -179,7 +168,6 @@
     --fs-credit:   var(--size-2xs);
 
     /* === RETROCOMPATIBILITE (anciennes variables) === */
-    --fs-slide-title:    var(--fs-title);
     --fs-slide-subtitle: var(--fs-subtitle);
     --fs-slide-body:     var(--fs-body);
     --fs-slide-meta:     var(--fs-caption);
@@ -776,8 +764,6 @@ img {
     flex-wrap: wrap;
     align-items: center;
     gap: 0;
-    margin: 0;
-    padding: 0;
     max-width: var(--page-max-width);
     margin: 0 auto;
     padding: 0 var(--slide-pad-x);
@@ -880,37 +866,6 @@ a.page13__card--link:focus-visible {
     font-weight: 700;
 }
 
-.page-404__subtitle {
-    font-family: var(--font-primary);
-    font-size: var(--fs-subtitle);
-    margin-top: var(--space-2xl);
-    margin-bottom: var(--space-md);
-}
-
-.page-404__sitemap-list {
-    text-align: left;
-    list-style: none;
-    padding: 0;
-}
-
-.page-404__sitemap-list ul {
-    list-style: none;
-    padding-left: var(--space-md);
-}
-
-.page-404__sitemap-list li {
-    margin-bottom: var(--space-xs);
-}
-
-.page-404__sitemap-list a {
-    color: var(--color-white);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-}
-
-.page-404__sitemap-list a:hover {
-    color: var(--color-brand-pale);
-}
 
 /* ============================================================
    8f. PAGE PLAN DU SITE
@@ -1697,33 +1652,6 @@ a.page13__card--link:focus-visible {
 }
 
 /* Variantes de direction */
-.reveal--left {
-    transform: translateX(-2rem);
-}
-.reveal--left.reveal--visible {
-    transform: translateX(0);
-}
-
-.reveal--right {
-    transform: translateX(2rem);
-}
-.reveal--right.reveal--visible {
-    transform: translateX(0);
-}
-
-.reveal--scale {
-    transform: scale(0.95);
-}
-.reveal--scale.reveal--visible {
-    transform: scale(1);
-}
-
-/* Delais en cascade pour les groupes (listes, grilles) */
-.reveal--delay-1 { transition-delay: 0.1s; }
-.reveal--delay-2 { transition-delay: 0.2s; }
-.reveal--delay-3 { transition-delay: 0.3s; }
-.reveal--delay-4 { transition-delay: 0.4s; }
-.reveal--delay-5 { transition-delay: 0.5s; }
 
 /* ============================================================
    MICRO-INTERACTIONS
@@ -2941,20 +2869,6 @@ section:hover [class*="__category"]::after {
     color: var(--color-white);
 }
 
-.page12__badge {
-    position: absolute;
-    top: var(--slide-pad-y);
-    right: var(--slide-pad-x);
-    background-color: var(--color-brand-btn);
-    color: var(--color-white);
-    padding: var(--space-sm-tight) var(--space-sm);
-    font-size: var(--fs-body);
-    font-weight: 700;
-    text-align: center;
-    line-height: 1.5;
-    z-index: 5;
-}
-
 .page12__poster {
     flex: 1;
     min-height: 0;
@@ -3254,15 +3168,6 @@ section:hover [class*="__category"]::after {
     max-height: 85%;
     object-fit: contain;
     filter: drop-shadow(var(--shadow-drop));
-}
-
-.page14__gradient {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 4vw;
-    background: url('../img/pages/page-14/page-14-image-2.jpg') center/cover;
 }
 
 /* ============================================================
@@ -4021,16 +3926,6 @@ section:hover [class*="__category"]::after {
     border-top: 2px solid var(--color-white);
     margin: var(--space-sm-tight) auto;
 }
-.page57__badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: var(--color-bg-red);
-    padding: var(--space-2xs) 0.6rem;
-    font-family: var(--font-primary);
-    font-size: var(--fs-slide-small);
-    border-radius: 2px;
-}
 .page57__layout {
     background-color: inherit; /* a11y */
     flex: 1;
@@ -4518,17 +4413,6 @@ section:hover [class*="__category"]::after {
     color: var(--color-white);
     padding: var(--slide-pad-y) var(--slide-pad-x);
 }
-.page50__badge {
-    position: absolute;
-    top: var(--slide-pad-y);
-    right: var(--slide-pad-x);
-    background-color: var(--color-bg-red);
-    color: var(--color-white);
-    padding: var(--space-2xs) 0.6rem;
-    font-family: var(--font-primary);
-    font-size: var(--fs-slide-small);
-    border-radius: 2px;
-}
 .page50__title {
     font-family: var(--font-primary);
     font-size: var(--size-3xl);
@@ -4654,17 +4538,6 @@ section:hover [class*="__category"]::after {
     height: 100%;
     object-fit: cover;
     display: block;
-}
-.page48__badge {
-    position: absolute;
-    top: 1rem;
-    right: var(--slide-pad-x);
-    background-color: var(--color-bg-red);
-    color: var(--color-white);
-    padding: var(--space-2xs) 0.6rem;
-    font-family: var(--font-primary);
-    font-size: var(--fs-slide-small);
-    border-radius: 2px;
 }
 .page48__content {
     flex: 1;
@@ -4877,15 +4750,6 @@ section:hover [class*="__category"]::after {
     object-fit: contain;
     display: block;
 }
-.page46__badge {
-    background-color: var(--color-brand-red-dark);
-    color: var(--color-white);
-    padding: 0.4rem var(--space-sm-tight);
-    font-family: var(--font-primary);
-    font-size: var(--fs-slide-small);
-    border-radius: 2px;
-    flex-shrink: 0;
-}
 .page46__visual {
     flex: 1;
     min-height: 0;
@@ -5025,17 +4889,6 @@ section:hover [class*="__category"]::after {
     height: 100%;
     color: var(--color-white);
     padding: var(--slide-pad-y) var(--slide-pad-x);
-}
-.page43__badge {
-    position: absolute;
-    top: var(--slide-pad-y);
-    right: var(--slide-pad-x);
-    background-color: var(--color-bg-red);
-    color: var(--color-white);
-    padding: 0.4rem var(--space-sm-tight);
-    font-family: var(--font-primary);
-    font-size: var(--fs-slide-small);
-    border-radius: 2px;
 }
 .page43__awards {
     text-align: center;
@@ -6802,12 +6655,7 @@ section:hover [class*="__category"]::after {
         overflow-y: visible;
     }
 
-    .page12__badge {
-        font-size: var(--fs-caption);
-        padding: var(--space-xs) 0.7rem;
-    }
-
-    .page12__poster-image {
+        .page12__poster-image {
         max-width: 70%;
     }
 
