@@ -27,3 +27,9 @@ deliberations/
 node_modules/
 test-results/
 playwright-report/
+
+# Exports HD (275 Mo, videos et images)
+EXPORT_HD/
+
+# Tests visuels (resultats locaux)
+tests-visuels/

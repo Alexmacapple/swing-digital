@@ -39,3 +39,4 @@
 - [x] Cache-buster CSS sur les 24 pages
 - [x] Scrollbar masquée, menus scrollables, seuil tactile 44px
 - [x] Test cross-browser Chrome DevTools (iPhone, desktop 1100/1440/1920)
+- [x] Tests visuels PRD-091 : 65 sections testees (24 pages x sections), 65/65 PASS

@@ -76,6 +76,7 @@
     "is-wsl": "^2.2.0",
     "jpeg-js": "^0.4.4",
     "js-library-detector": "^6.7.0",
+    "js-yaml": "^4.1.1",
     "legacy-javascript": "^0.0.1",
     "lighthouse": "^13.0.3",
     "lighthouse-logger": "^2.0.2",
