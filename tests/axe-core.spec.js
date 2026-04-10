@@ -32,14 +32,15 @@ const PAGES = [
 ];
 
 test.describe('Accessibilité axe-core — 24 pages WCAG 2.2 AA', () => {
-    // Un seul projet suffit pour le scan statique (DOM identique sur tous les viewports)
-    test.skip(({ }, testInfo) => testInfo.project.name !== 'desktop-1920', 'Scan axe-core sur desktop-1920 uniquement');
-
     for (const url of PAGES) {
         const name = url === '/' ? 'index' : url.replace('/', '').replace('.html', '');
 
-        test(`${name} — 0 violation axe-core`, async ({ page }) => {
-            await page.goto(url, { waitUntil: 'domcontentloaded' });
+        test(`${name} — 0 violation axe-core`, async ({ page }, testInfo) => {
+            // Un seul projet suffit pour le scan statique (DOM identique sur tous les viewports)
+            test.skip(testInfo.project.name !== 'desktop-1920', 'Scan axe-core sur desktop-1920 uniquement');
+            // 'load' (et non 'domcontentloaded') pour eviter les flaky liees aux videos
+            // hero qui se chargent apres le DOMContentLoaded en concurrence multi-workers
+            await page.goto(url, { waitUntil: 'load' });
             await page.addScriptTag({ content: axe.source });
             const results = await page.evaluate(async () => {
                 // @ts-ignore — axe est attaché à window après addScriptTag

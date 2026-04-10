@@ -13,7 +13,7 @@ test.describe('Accessibilité', () => {
     test('dropdown — Escape ferme et remet le focus', async ({ page }) => {
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        test.skip(width < 1024, 'Desktop only (dropdown horizontal)');
+        test.skip(width <= 1024, 'Desktop only (dropdown horizontal, breakpoint > 1024px)');
         await page.goto('/');
         const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
         await btn.click();
@@ -27,7 +27,7 @@ test.describe('Accessibilité', () => {
     test('dropdown — navigation clavier flèches', async ({ page }) => {
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        test.skip(width < 1024, 'Desktop only (dropdown horizontal)');
+        test.skip(width <= 1024, 'Desktop only (dropdown horizontal, breakpoint > 1024px)');
         await page.goto('/');
         const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
         await btn.focus();
@@ -41,7 +41,7 @@ test.describe('Accessibilité', () => {
     test('hamburger — Escape ferme le menu mobile', async ({ page }) => {
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        test.skip(width >= 1024, 'Mobile only (hamburger)');
+        test.skip(width > 1024, 'Mobile only (hamburger, breakpoint <= 1024px)');
         await page.goto('/');
         const burger = page.locator('.site-nav__burger');
         await burger.click();

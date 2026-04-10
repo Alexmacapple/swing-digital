@@ -25,7 +25,7 @@ test.describe('Navigation', () => {
     test('menu principal — 4 liens visibles en desktop', async ({ page }) => {
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        test.skip(width < 1024, 'Desktop only');
+        test.skip(width <= 1024, 'Desktop only (breakpoint > 1024px)');
         await page.goto('/');
         const links = page.locator('.site-nav__list > .site-nav__item');
         await expect(links).toHaveCount(4);

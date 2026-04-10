@@ -5717,6 +5717,12 @@ section:hover [class*="__category"]::after {
     background-color: var(--color-brand-gold);
     color: var(--color-text-gold-darker);
 }
+/* Quand l'episode est actif, retablir l'opacite du meta pour preserver le
+   contraste WCAG AA (#5C4200 sur #E8C84A = 5.34:1, l'opacity 0.7 le degrade
+   a 3.12:1 et casse le critere 1.4.3) */
+.page33__episode--active .page33__episode-meta {
+    opacity: 1;
+}
 .page33__episode-thumb {
     width: 130px;
     height: 73px;

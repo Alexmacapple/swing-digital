@@ -10,6 +10,11 @@
 
 - [ ] Optimiser les images (compression, WebP)
 - [ ] Test lecteur d'écran (VoiceOver, NVDA)
+- [ ] **Audit a11y exhaustif (session dédiée)** : `CLAUDE.md` prétend « 0 violation axe-core sur 24 pages », mais le scan révèle au moins 2 vraies violations cachées par le timing JS des animations `.reveal` (IntersectionObserver + opacity:0)
+  - Confirmée : `index` `.page3__intro p` `#fcf2f2` sur `#ce3b3d` = 4.42:1 (manque 0.08, fix trivial → `#ffffff` = 4.85:1)
+  - Suspectée : `monroe-piece` `.page14__title` `var(--color-teal) #59b5ca` sur blanc = 2.36:1 (la couleur teal est probablement utilisée sur d'autres titres → potentiellement multiple violations)
+  - Méthode recommandée : `/audit-accessibilite-web` (skill dédié), pas le test Playwright qui reste fondamentalement flaky avec les animations scroll
+  - Mettre à jour `CLAUDE.md` après audit pour refléter l'état réel
 
 ## Terminé
 

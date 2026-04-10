@@ -34,7 +34,10 @@ module.exports = defineConfig({
         },
     ],
     webServer: {
-        command: 'python3 -m http.server 8080 --directory src',
+        // ThreadingHTTPServer multi-thread pour eviter les flaky multi-worker
+        // (le `python3 -m http.server` natif est mono-thread et sature sous
+        // la charge de 5 workers Playwright concurrents).
+        command: 'python3 scripts/serve-test.py 8080 src',
         port: 8080,
         reuseExistingServer: true,
     },
