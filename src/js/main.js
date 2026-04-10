@@ -61,11 +61,19 @@ function initNavActiveState() {
         // Activer le lien du sous-menu correspondant a data-page
         var page = document.body.dataset.page;
         if (page) {
+            // Comparer via URL pour eviter les faux positifs de suffixe
+            // (ex: foo.html comme suffixe de bar-foo.html)
+            var currentPath = window.location.pathname;
             document.querySelectorAll('.site-nav__submenu-link').forEach(function(link) {
                 var href = link.getAttribute('href');
-                // Comparer le href avec le fichier courant
-                if (window.location.pathname.endsWith(href) || window.location.href.endsWith(href)) {
-                    link.setAttribute('aria-current', 'page');
+                if (!href) return;
+                try {
+                    var resolved = new URL(href, window.location.href).pathname;
+                    if (resolved === currentPath) {
+                        link.setAttribute('aria-current', 'page');
+                    }
+                } catch (e) {
+                    // URL malformee : on ignore silencieusement ce lien
                 }
             });
         }

@@ -16,6 +16,8 @@ test.describe('Navigation', () => {
     for (const page of PAGES) {
         test(`${page.title} — charge sans erreur`, async ({ page: p }) => {
             const response = await p.goto(page.url);
+            expect(response, `Navigation vers ${page.url} a echoue (response null)`).not.toBeNull();
+            // @ts-ignore — garde verifiee ligne precedente
             expect(response.status()).toBe(200);
         });
     }

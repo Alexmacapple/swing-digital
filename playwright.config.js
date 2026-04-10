@@ -4,11 +4,12 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
     testDir: './tests',
     timeout: 30000,
-    retries: 0,
+    retries: process.env.CI ? 2 : 0,
     reporter: [['html', { open: 'never' }], ['list']],
     use: {
         baseURL: 'http://localhost:8080',
         screenshot: 'only-on-failure',
+        trace: 'retain-on-failure',
     },
     projects: [
         {
@@ -22,6 +23,10 @@ module.exports = defineConfig({
         {
             name: 'tablette-768',
             use: { viewport: { width: 768, height: 1024 } },
+        },
+        {
+            name: 'mobile-600',
+            use: { viewport: { width: 600, height: 900 } },
         },
         {
             name: 'mobile-375',
