@@ -11,47 +11,44 @@ test.describe('Accessibilité', () => {
     });
 
     test('dropdown — Escape ferme et remet le focus', async ({ page }) => {
-        await page.goto('/');
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        if (width > 1024) {
-            const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
-            await btn.click();
-            await expect(btn).toHaveAttribute('aria-expanded', 'true');
+        test.skip(width < 1024, 'Desktop only (dropdown horizontal)');
+        await page.goto('/');
+        const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
+        await btn.click();
+        await expect(btn).toHaveAttribute('aria-expanded', 'true');
 
-            await page.keyboard.press('Escape');
-            await expect(btn).toHaveAttribute('aria-expanded', 'false');
-            await expect(btn).toBeFocused();
-        }
+        await page.keyboard.press('Escape');
+        await expect(btn).toHaveAttribute('aria-expanded', 'false');
+        await expect(btn).toBeFocused();
     });
 
     test('dropdown — navigation clavier flèches', async ({ page }) => {
-        await page.goto('/');
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        if (width > 1024) {
-            const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
-            await btn.focus();
-            await page.keyboard.press('ArrowDown');
-            await expect(btn).toHaveAttribute('aria-expanded', 'true');
+        test.skip(width < 1024, 'Desktop only (dropdown horizontal)');
+        await page.goto('/');
+        const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
+        await btn.focus();
+        await page.keyboard.press('ArrowDown');
+        await expect(btn).toHaveAttribute('aria-expanded', 'true');
 
-            const firstLink = page.locator('#submenu-experiences .site-nav__submenu-link').first();
-            await expect(firstLink).toBeFocused();
-        }
+        const firstLink = page.locator('#submenu-experiences .site-nav__submenu-link').first();
+        await expect(firstLink).toBeFocused();
     });
 
     test('hamburger — Escape ferme le menu mobile', async ({ page }) => {
-        await page.goto('/');
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        if (width <= 1024) {
-            const burger = page.locator('.site-nav__burger');
-            await burger.click();
-            await expect(burger).toHaveAttribute('aria-expanded', 'true');
+        test.skip(width >= 1024, 'Mobile only (hamburger)');
+        await page.goto('/');
+        const burger = page.locator('.site-nav__burger');
+        await burger.click();
+        await expect(burger).toHaveAttribute('aria-expanded', 'true');
 
-            await page.keyboard.press('Escape');
-            await expect(burger).toHaveAttribute('aria-expanded', 'false');
-        }
+        await page.keyboard.press('Escape');
+        await expect(burger).toHaveAttribute('aria-expanded', 'false');
     });
 
     test('bouton retour en haut — apparaît au scroll', async ({ page }) => {

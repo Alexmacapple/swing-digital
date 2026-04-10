@@ -460,7 +460,8 @@ function initPodcastPlayer() {
             player.title = title;
             episodes.forEach(function(e) {
                 e.classList.remove('page33__episode--active');
-                e.querySelector('.page33__episode-btn').removeAttribute('aria-current');
+                var otherBtn = e.querySelector('.page33__episode-btn');
+                if (otherBtn) otherBtn.removeAttribute('aria-current');
             });
             ep.classList.add('page33__episode--active');
             btn.setAttribute('aria-current', 'true');

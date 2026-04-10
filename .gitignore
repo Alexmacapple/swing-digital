@@ -33,3 +33,6 @@ EXPORT_HD/
 
 # Tests visuels (resultats locaux)
 tests-visuels/
+
+# Audit de code (resultats locaux, generes par /sg-code-audit)
+.code-audit-results/

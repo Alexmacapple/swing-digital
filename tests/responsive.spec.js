@@ -26,36 +26,33 @@ test.describe('Responsive — pas de débordement horizontal', () => {
 
 test.describe('Responsive — grilles en colonne sur mobile', () => {
     test('page 9 grille — colonne unique sous 600px', async ({ page }) => {
-        await page.goto('/experiences-series.html');
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        if (width <= 600) {
-            const grid = page.locator('.page9__grid');
-            const columns = await grid.evaluate(el => getComputedStyle(el).gridTemplateColumns);
-            // Colonne unique = une seule valeur
-            expect(columns.split(' ').length).toBe(1);
-        }
+        test.skip(width > 600, 'Mobile only (<= 600px)');
+        await page.goto('/experiences-series.html');
+        const grid = page.locator('.page9__grid');
+        const columns = await grid.evaluate(el => getComputedStyle(el).gridTemplateColumns);
+        // Colonne unique = une seule valeur
+        expect(columns.split(' ').length).toBe(1);
     });
 
     test('page 6 grille — colonne unique sous 768px', async ({ page }) => {
-        await page.goto('/espaces-augmentes.html');
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        if (width <= 768) {
-            const grid = page.locator('.page6__main');
-            const columns = await grid.evaluate(el => getComputedStyle(el).gridTemplateColumns);
-            expect(columns.split(' ').length).toBe(1);
-        }
+        test.skip(width > 768, 'Mobile/tablette only (<= 768px)');
+        await page.goto('/espaces-augmentes.html');
+        const grid = page.locator('.page6__main');
+        const columns = await grid.evaluate(el => getComputedStyle(el).gridTemplateColumns);
+        expect(columns.split(' ').length).toBe(1);
     });
 
     test('footer — colonne sur mobile', async ({ page }) => {
-        await page.goto('/');
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        if (width <= 480) {
-            const nav = page.locator('.footer__nav-list');
-            const direction = await nav.evaluate(el => getComputedStyle(el).flexDirection);
-            expect(direction).toBe('column');
-        }
+        test.skip(width > 480, 'Mobile only (<= 480px)');
+        await page.goto('/');
+        const nav = page.locator('.footer__nav-list');
+        const direction = await nav.evaluate(el => getComputedStyle(el).flexDirection);
+        expect(direction).toBe('column');
     });
 });

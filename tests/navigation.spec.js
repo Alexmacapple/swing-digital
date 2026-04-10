@@ -21,13 +21,12 @@ test.describe('Navigation', () => {
     }
 
     test('menu principal — 4 liens visibles en desktop', async ({ page }) => {
-        await page.goto('/');
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        if (width > 1024) {
-            const links = page.locator('.site-nav__list > .site-nav__item');
-            await expect(links).toHaveCount(4);
-        }
+        test.skip(width < 1024, 'Desktop only');
+        await page.goto('/');
+        const links = page.locator('.site-nav__list > .site-nav__item');
+        await expect(links).toHaveCount(4);
     });
 
     test('hamburger — visible en mobile, caché en desktop', async ({ page }) => {
