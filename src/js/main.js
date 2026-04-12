@@ -440,6 +440,7 @@ function initDisclosure() {
                     btn.setAttribute('aria-expanded', 'false');
                     target.hidden = true;
                     btn.textContent = btn.dataset.labelShow || 'Voir les 8 citations presse';
+                    btn.focus();
                 } else {
                     btn.setAttribute('aria-expanded', 'true');
                     target.hidden = false;

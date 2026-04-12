@@ -7,12 +7,13 @@ Lit les fichiers texte et images de chaque page-N et génère les sections HTML.
 import os
 import re
 import json
+import sys
 from pathlib import Path
 from html import escape
 
 # Configuration
-PAGES_EXTRACTED = Path("/Users/alex/Claude/active/swing-digital/src/pages-extracted")
-OUTPUT_FILE = Path("/Users/alex/Claude/active/swing-digital/src/generated-pages.html")
+PAGES_EXTRACTED = Path(__file__).resolve().parent.parent / "src" / "pages-extracted"
+OUTPUT_FILE = Path(__file__).resolve().parent.parent / "src" / "generated-pages.html"
 
 def extract_page_number(path):
     """Extrait le numéro de page du chemin."""
@@ -123,6 +124,9 @@ def main():
     page_count = 0
 
     # Compter le nombre total de pages
+    if not PAGES_EXTRACTED.is_dir():
+        print(f"[ERREUR] Répertoire introuvable : {PAGES_EXTRACTED}")
+        sys.exit(1)
     max_page = max(
         (extract_page_number(d) for d in PAGES_EXTRACTED.iterdir() if d.is_dir()),
         default=0

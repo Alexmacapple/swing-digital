@@ -18,8 +18,17 @@ import os
 import sys
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
-port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
+try:
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
+except ValueError:
+    print(f"[ERREUR] Port invalide : {sys.argv[1]}")
+    sys.exit(1)
+
 directory = sys.argv[2] if len(sys.argv) > 2 else "src"
+
+if not os.path.isdir(directory):
+    print(f"[ERREUR] Répertoire introuvable : {directory}")
+    sys.exit(1)
 
 os.chdir(directory)
 print(f"Serving HTTP on 127.0.0.1 port {port} (http://127.0.0.1:{port}/) from {os.getcwd()}")

@@ -65,7 +65,7 @@
     --color-text-red:     #CE3B3D;    /* 4.86:1 */
     --color-text-gold:    #7A6100;    /* 5.94:1 */
     /* Fond portant du texte blanc (ratio >= 4.5:1) */
-    --color-bg-red:       #BE2F31;    /* 5.77:1 */;
+    --color-bg-red:       #BE2F31;    /* 5.77:1 */
 
 
     /* --- Couleurs extraites (refactoring) --- */
