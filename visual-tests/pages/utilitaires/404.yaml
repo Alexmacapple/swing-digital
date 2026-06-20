@@ -1,0 +1,15 @@
+name: "Page 404"
+description: "Page introuvable — erreur 404"
+priority: low
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/404.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Message d'erreur visible, lien retour accueil fonctionnel, navigation presente"
+    severity: critical
+    screenshot: "pages-utilitaires-404.png"

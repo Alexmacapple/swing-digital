@@ -1,0 +1,15 @@
+name: "Espaces augmentes"
+description: "Presentation des espaces augmentes Swing Digital"
+priority: high
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/espaces-augmentes.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Contenu visible, images chargees, navigation fonctionnelle, pas d'ecran blanc"
+    severity: critical
+    screenshot: "pages-espaces-augmentes.png"

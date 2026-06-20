@@ -1,0 +1,20 @@
+name: "recette-accueil"
+description: "Recorded session for recette-accueil"
+priority: medium
+requires_auth: true
+timeout: 60s
+tags: [recorded]
+source: recorded
+recorded_at: "2026-04-12T16:29:43.657Z"
+
+steps:
+  - action: open
+    url: "{base_url}/#page-3"
+  - action: open
+    url: "{base_url}/#page-4"
+  - action: open
+    url: "{base_url}/#page-8"
+  - action: open
+    url: "{base_url}/#page-62"
+  - action: screenshot
+    filename: "final.png"

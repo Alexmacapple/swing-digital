@@ -1,0 +1,15 @@
+name: "Monroe Interviews"
+description: "Interviews — sous-page Monroe"
+priority: medium
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/monroe-interviews.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Contenu visible, navigation fonctionnelle, breadcrumb correct"
+    severity: critical
+    screenshot: "pages-monroe-interviews.png"

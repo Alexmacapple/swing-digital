@@ -1,0 +1,15 @@
+name: "Monroe Piece"
+description: "Piece My Story — sous-page Monroe"
+priority: medium
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/monroe-piece.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Contenu visible, images chargees, navigation fonctionnelle, breadcrumb correct"
+    severity: critical
+    screenshot: "pages-monroe-piece.png"

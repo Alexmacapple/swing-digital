@@ -1,0 +1,15 @@
+name: "XR Corporate"
+description: "Projet XR Corporate"
+priority: medium
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/xr-corporate.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Contenu visible, images chargees, navigation fonctionnelle, breadcrumb correct"
+    severity: critical
+    screenshot: "pages-projets-xr-corporate.png"

@@ -1,0 +1,72 @@
+{
+  "action": "validate-and-fix",
+  "timestamp": "2026-04-12T16:42:04.670Z",
+  "tests": [
+    {
+      "test": "pages/reservations",
+      "annotations": [
+        {
+          "note": "pourquoi ce vide",
+          "severity": "critical",
+          "x1": 0.26265165598745754,
+          "y1": 0.5165895510534363,
+          "x2": 0.7651585371742564,
+          "y2": 0.5878528984609265
+        }
+      ],
+      "name": "Reservations",
+      "url": "http://localhost:3000/reservations.html",
+      "screenshot": "screenshots/pages-reservations.png",
+      "steps": [
+        {
+          "action": "open",
+          "url": "{base_url}/reservations.html"
+        },
+        {
+          "action": "llm-check",
+          "description": "Page loads and renders content",
+          "criteria": "Contenu reservations visible, boutons Je m'inscris presents (aria-disabled), video contact, footer",
+          "severity": "critical",
+          "screenshot": "pages-reservations.png"
+        }
+      ]
+    },
+    {
+      "test": "pages/projets/toulouse-lautrec",
+      "annotations": [
+        {
+          "note": "pas lisible contrast",
+          "severity": "critical",
+          "x1": 0.1814053635135991,
+          "y1": 0.1628783527825026,
+          "x2": 0.42148034079886354,
+          "y2": 0.30583883350361996
+        },
+        {
+          "note": "chelou les logos",
+          "severity": "critical",
+          "x1": 0.08449329880650884,
+          "y1": 0.3617619868935797,
+          "x2": 0.3771773308112034,
+          "y2": 0.529359497349371
+        }
+      ],
+      "name": "Toulouse-Lautrec",
+      "url": "http://localhost:3000/toulouse-lautrec.html",
+      "screenshot": "screenshots/pages-projets-toulouse-lautrec.png",
+      "steps": [
+        {
+          "action": "open",
+          "url": "{base_url}/toulouse-lautrec.html"
+        },
+        {
+          "action": "llm-check",
+          "description": "Page loads and renders content",
+          "criteria": "Contenu visible, images chargees, navigation fonctionnelle, breadcrumb correct",
+          "severity": "critical",
+          "screenshot": "pages-projets-toulouse-lautrec.png"
+        }
+      ]
+    }
+  ]
+}

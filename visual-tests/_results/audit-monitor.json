@@ -1,0 +1,207 @@
+{
+  "mode": "standard",
+  "round_count": 1,
+  "agent_count": 5,
+  "zones": [
+    {
+      "zone_id": "z01",
+      "paths": [
+        "src/index.html",
+        "src/espaces-augmentes.html",
+        "src/experiences-series.html",
+        "src/reservations.html",
+        "src/404.html",
+        "src/plan-du-site.html",
+        "src/mentions-legales.html"
+      ],
+      "file_count": 7
+    },
+    {
+      "zone_id": "z02",
+      "paths": [
+        "src/experience-monroe.html",
+        "src/monroe-piece.html",
+        "src/monroe-roman-graphique.html",
+        "src/monroe-installation.html",
+        "src/monroe-photographie.html",
+        "src/monroe-composition.html",
+        "src/monroe-podcasts.html",
+        "src/monroe-interviews.html",
+        "src/monroe-experiences.html",
+        "src/monroe-quiz.html"
+      ],
+      "file_count": 10
+    },
+    {
+      "zone_id": "z03",
+      "paths": [
+        "src/voyage-autour-de-moi.html",
+        "src/dessine-moi-le-vent.html",
+        "src/ni-vues-ni-connues.html",
+        "src/marilyn.html",
+        "src/toulouse-lautrec.html",
+        "src/charlotte-henschel.html",
+        "src/xr-corporate.html"
+      ],
+      "file_count": 7
+    },
+    {
+      "zone_id": "z04",
+      "paths": [
+        "src/css/style.css",
+        "src/js/main.js"
+      ],
+      "file_count": 2
+    },
+    {
+      "zone_id": "z05",
+      "paths": [
+        "scripts/",
+        "tests/",
+        "playwright.config.js"
+      ],
+      "file_count": 8
+    }
+  ],
+  "scope_mode": "full",
+  "timestamp": "2026-04-12T18:30:00Z",
+  "agents": {
+    "r1:z01": {
+      "zone_id": "z01",
+      "status": "completed",
+      "paths": [
+        "src/index.html",
+        "src/espaces-augmentes.html",
+        "src/experiences-series.html",
+        "src/reservations.html",
+        "src/404.html",
+        "src/plan-du-site.html",
+        "src/mentions-legales.html"
+      ],
+      "file_count": 7,
+      "agent_id": "r1:z01",
+      "round": 1,
+      "started_at": "2026-04-12T18:31:00Z",
+      "ended_at": "2026-04-12T18:32:00Z",
+      "duration_ms": 47608,
+      "tokens": {
+        "total": 91706,
+        "input": 55024,
+        "output": 36682
+      },
+      "estimated_cost_usd": 0.27,
+      "tool_uses": 12,
+      "bugs_found": 9,
+      "files_audited": 7
+    },
+    "r1:z02": {
+      "zone_id": "z02",
+      "status": "completed",
+      "paths": [
+        "src/experience-monroe.html",
+        "src/monroe-piece.html",
+        "src/monroe-roman-graphique.html",
+        "src/monroe-installation.html",
+        "src/monroe-photographie.html",
+        "src/monroe-composition.html",
+        "src/monroe-podcasts.html",
+        "src/monroe-interviews.html",
+        "src/monroe-experiences.html",
+        "src/monroe-quiz.html"
+      ],
+      "file_count": 10,
+      "agent_id": "r1:z02",
+      "round": 1,
+      "started_at": "2026-04-12T18:31:00Z",
+      "ended_at": "2026-04-12T18:33:05Z",
+      "duration_ms": 65010,
+      "tokens": {
+        "total": 104517,
+        "input": 62710,
+        "output": 41807
+      },
+      "estimated_cost_usd": 0.31,
+      "tool_uses": 16,
+      "bugs_found": 15,
+      "files_audited": 10
+    },
+    "r1:z03": {
+      "zone_id": "z03",
+      "status": "completed",
+      "paths": [
+        "src/voyage-autour-de-moi.html",
+        "src/dessine-moi-le-vent.html",
+        "src/ni-vues-ni-connues.html",
+        "src/marilyn.html",
+        "src/toulouse-lautrec.html",
+        "src/charlotte-henschel.html",
+        "src/xr-corporate.html"
+      ],
+      "file_count": 7,
+      "agent_id": "r1:z03",
+      "round": 1,
+      "started_at": "2026-04-12T18:31:00Z",
+      "ended_at": "2026-04-12T18:32:30Z",
+      "duration_ms": 39172,
+      "tokens": {
+        "total": 85280,
+        "input": 51168,
+        "output": 34112
+      },
+      "estimated_cost_usd": 0.25,
+      "tool_uses": 9,
+      "bugs_found": 15,
+      "files_audited": 7
+    },
+    "r1:z04": {
+      "zone_id": "z04",
+      "status": "completed",
+      "paths": [
+        "src/css/style.css",
+        "src/js/main.js"
+      ],
+      "file_count": 2,
+      "agent_id": "r1:z04",
+      "round": 1,
+      "started_at": "2026-04-12T18:31:00Z",
+      "ended_at": "2026-04-12T18:34:10Z",
+      "duration_ms": 70297,
+      "tokens": {
+        "total": 74345,
+        "input": 44607,
+        "output": 29738
+      },
+      "estimated_cost_usd": 0.22,
+      "tool_uses": 19,
+      "bugs_found": 10,
+      "files_audited": 2
+    },
+    "r1:z05": {
+      "zone_id": "z05",
+      "status": "completed",
+      "paths": [
+        "scripts/",
+        "tests/",
+        "playwright.config.js"
+      ],
+      "file_count": 8,
+      "agent_id": "r1:z05",
+      "round": 1,
+      "started_at": "2026-04-12T18:31:00Z",
+      "ended_at": "2026-04-12T18:33:30Z",
+      "duration_ms": 33283,
+      "tokens": {
+        "total": 59738,
+        "input": 35843,
+        "output": 23895
+      },
+      "estimated_cost_usd": 0.18,
+      "tool_uses": 10,
+      "bugs_found": 12,
+      "files_audited": 8
+    }
+  },
+  "status": "completed",
+  "started_at": "2026-04-12T18:30:00Z",
+  "completed_at": "2026-04-12T18:35:00Z"
+}

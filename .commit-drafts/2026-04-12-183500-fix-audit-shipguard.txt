@@ -1,0 +1,12 @@
+Correction de 7 bugs identifies par audit ShipGuard
+
+Corrections :
+- scripts/generate-pages.py : chemins absolus obsoletes remplaces par relatifs + guard repertoire
+- scripts/serve-test.py : validation port et repertoire avant demarrage
+- src/css/style.css : double point-virgule supprime (variable --color-bg-red)
+- src/js/main.js : restauration focus apres fermeture disclosure (WCAG 2.4.3)
+- src/monroe-photographie.html : h3 sr-only corrige en h2 (hierarchie headings)
+- src/monroe-interviews.html : titre sr-only corrige (Interviews au lieu de Experiences interactives)
+- tests/responsive.spec.js : tolerance scroll horizontal elargie de 1px a 3px
+
+Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>

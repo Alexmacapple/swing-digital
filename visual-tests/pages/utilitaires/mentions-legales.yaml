@@ -1,0 +1,15 @@
+name: "Mentions legales"
+description: "Mentions legales du site"
+priority: low
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/mentions-legales.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Contenu textuel visible, sections editeur et hebergeur presentes, navigation fonctionnelle"
+    severity: critical
+    screenshot: "pages-utilitaires-mentions-legales.png"

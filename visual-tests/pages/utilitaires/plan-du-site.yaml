@@ -1,0 +1,15 @@
+name: "Plan du site"
+description: "Plan du site — liste de tous les liens"
+priority: low
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/plan-du-site.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Liste des liens visible, tous les liens cliquables, structure hierarchique correcte"
+    severity: critical
+    screenshot: "pages-utilitaires-plan-du-site.png"

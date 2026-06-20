@@ -1,0 +1,15 @@
+name: "Accueil"
+description: "Page d'accueil Swing Digital — hero video, sections presentation, partenaires"
+priority: high
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/index.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Hero video visible, navigation 3 niveaux fonctionnelle, logos partenaires affiches, footer complet"
+    severity: critical
+    screenshot: "pages-index.png"

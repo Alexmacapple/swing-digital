@@ -1,0 +1,15 @@
+name: "Reservations"
+description: "Page de reservations avec CTA inscription"
+priority: high
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/reservations.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Contenu reservations visible, boutons Je m'inscris presents (aria-disabled), video contact, footer"
+    severity: critical
+    screenshot: "pages-reservations.png"

@@ -1,0 +1,15 @@
+name: "Experiences series"
+description: "Rubrique des 8 projets d'experiences immersives"
+priority: high
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/experiences-series.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Liste des projets visible, liens vers les pages projet fonctionnels, images chargees"
+    severity: critical
+    screenshot: "pages-experiences-series.png"

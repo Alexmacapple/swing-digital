@@ -1,0 +1,15 @@
+name: "Experience Monroe"
+description: "Page d'entree du projet Monroe — video Vimeo, navigation sous-pages"
+priority: high
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+
+steps:
+  - action: open
+    url: "{base_url}/experience-monroe.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Video Vimeo ou placeholder visible, sous-menu Monroe accessible, contenu charge"
+    severity: critical
+    screenshot: "pages-monroe-experience-monroe.png"
