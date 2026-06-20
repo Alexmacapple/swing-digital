@@ -160,6 +160,16 @@ test.describe('Lisibilité — blocs texte', () => {
         expect(blackItems).toEqual([]);
     });
 
+    test('Page 61 Réservations — le lien contactez-nous principal est blanc', async ({ page }) => {
+        await page.goto('/reservations.html#page-61');
+
+        const contactLink = page.locator('.page61__paragraph a', { hasText: 'Contactez-nous' });
+        await expect(contactLink).toHaveCount(1);
+
+        const linkColor = await contactLink.evaluate((element) => getComputedStyle(element).color);
+        expect(linkColor).toBe('rgb(255, 255, 255)');
+    });
+
     test('Plan du site — les liens de navigation principale sont blancs', async ({ page }) => {
         await page.goto('/plan-du-site.html');
 

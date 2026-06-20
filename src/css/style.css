@@ -3861,18 +3861,19 @@ section:hover [class*="__category"]::after {
     color: var(--color-white);
     margin: 0 0 0 var(--space-sm);
 }
-.page61__faq a,
-.page61__help a {
+.page61 a,
+.page61 a:visited {
     color: var(--color-white);
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 0.16em;
 }
-.page61__faq a:hover,
-.page61__faq a:focus-visible,
-.page61__help a:hover,
-.page61__help a:focus-visible {
+.page61 a:hover,
+.page61 a:focus-visible {
     color: var(--color-white);
+}
+.page61 a:focus-visible {
+    outline-color: var(--color-white);
 }
 .page61__help {
     margin-top: var(--space-md);
