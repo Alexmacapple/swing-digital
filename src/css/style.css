@@ -88,7 +88,7 @@
     --color-indigo-light: #6B6FA0;
     --color-indigo-dark: #4A4E82;
     --color-violet: #7B4FBF;
-    --color-teal: #2da1bc;          /* WCAG AA large text : 3.03:1 sur blanc */
+    --color-teal: #1a7387;          /* WCAG AA : 5.46:1 sur blanc */
     --color-brown: #8B5E3C;
     --color-text-gold-dark: #5C4800;
     --color-text-gold-darker: #5C4200;
@@ -831,6 +831,17 @@ a.page13__card--link:focus-visible {
     margin-top: var(--space-xs);
 }
 
+.page58__reserve-notice a,
+.page58__faq-link {
+    color: var(--color-white);
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+}
+
+#faq-reservations {
+    scroll-margin-top: calc(var(--header-height) + var(--space-lg));
+}
+
 /* ============================================================
    8e. PAGE 404
    ============================================================ */
@@ -853,15 +864,18 @@ a.page13__card--link:focus-visible {
 .page-404__title {
     font-family: var(--font-primary);
     font-size: var(--fs-title-xl);
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste texte blanc */
     margin-bottom: var(--space-md);
 }
 
 .page-404__text {
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste texte blanc */
     font-size: var(--fs-body);
     margin-bottom: var(--space-sm);
 }
 
 .page-404__link {
+    background-color: var(--color-black); /* a11y : fond explicite pour contraste lien */
     color: var(--color-brand-pale);
     font-weight: 700;
 }
@@ -1273,6 +1287,15 @@ a.page13__card--link:focus-visible {
     line-height: 1.5;
 }
 
+.hero-page1__summary {
+    max-width: 54rem;
+    margin: var(--space-sm) auto 0;
+    color: var(--color-white);
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.55;
+    letter-spacing: 0;
+}
+
 /* Center: Hero Video (DOMINANT) */
 .hero-page1__video {
     position: absolute;
@@ -1631,6 +1654,113 @@ a.page13__card--link:focus-visible {
 
 .skip-link:focus {
     top: 0;
+}
+
+/* ============================================================
+   COMPOSANT SEO/GEO : réponse directe et faits clés
+   ============================================================ */
+
+.seo-geo-panel {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: var(--space-2xl) var(--slide-pad-x);
+}
+
+.seo-geo-panel__inner {
+    width: min(100%, 1080px);
+    margin: 0 auto;
+}
+
+.seo-geo-panel__title {
+    max-width: 18ch;
+    margin-bottom: var(--space-md);
+    color: var(--color-black);
+    font-size: var(--fs-title);
+    letter-spacing: 0;
+}
+
+.seo-geo-panel__answer {
+    max-width: 72ch;
+    margin-bottom: var(--space-lg);
+    color: var(--color-gray-dark);
+    font-size: var(--fs-body);
+    line-height: 1.65;
+    letter-spacing: 0;
+}
+
+.seo-geo-panel__table {
+    width: 100%;
+    max-width: 960px;
+    border-collapse: collapse;
+    border-top: 2px solid var(--color-black);
+    border-bottom: 2px solid var(--color-black);
+    font-size: var(--fs-caption);
+    line-height: 1.55;
+}
+
+.seo-geo-panel__table caption {
+    margin-bottom: var(--space-sm);
+    color: var(--color-gray-dark);
+    font-weight: 700;
+    text-align: left;
+}
+
+.seo-geo-panel__table th,
+.seo-geo-panel__table td {
+    padding: var(--space-sm) var(--space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    vertical-align: top;
+}
+
+.seo-geo-panel__table th {
+    width: 28%;
+    color: var(--color-black);
+    font-weight: 900;
+    text-align: left;
+}
+
+.seo-geo-panel__table td {
+    color: var(--color-gray-dark);
+}
+
+.seo-geo-panel__table a {
+    color: var(--color-bg-red);
+    font-weight: 700;
+    text-decoration-thickness: 2px;
+}
+
+@media (max-width: 700px) {
+    .seo-geo-panel {
+        padding: var(--space-xl) var(--slide-pad-x);
+    }
+
+    .seo-geo-panel__title {
+        max-width: 100%;
+    }
+
+    .seo-geo-panel__table,
+    .seo-geo-panel__table tbody,
+    .seo-geo-panel__table tr,
+    .seo-geo-panel__table th,
+    .seo-geo-panel__table td {
+        display: block;
+        width: 100%;
+    }
+
+    .seo-geo-panel__table tr {
+        padding: var(--space-sm) 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .seo-geo-panel__table th,
+    .seo-geo-panel__table td {
+        padding: 0;
+        border-top: 0;
+    }
+
+    .seo-geo-panel__table th {
+        margin-bottom: var(--space-2xs);
+    }
 }
 
 /* ============================================================
@@ -3434,12 +3564,19 @@ section:hover [class*="__category"]::after {
     padding: var(--space-2xs) var(--space-sm);
     border-radius: 4px;
 }
-.page58__stars {
+.page58__status {
     color: var(--color-white);
-    font-size: var(--fs-title);
+    display: inline-block;
+    font-size: var(--fs-caption);
+    font-weight: 700;
     margin-bottom: var(--space-xs);
-    letter-spacing: 0.15em;
+    padding: 0.15rem 0.6rem;
+    border: 2px solid var(--color-white);
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
+
 .page58__reserve-row {
     display: flex;
     flex-wrap: wrap;
@@ -4629,18 +4766,24 @@ section:hover [class*="__category"]::after {
     flex-direction: column;
     justify-content: center;
     color: var(--color-white);
+    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page47__paragraph {
+    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-sm-tight);
 }
 .page47__credit {
+    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-white);
     margin: 0 0 var(--space-2xs);
+}
+.page47__credit strong {
+    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page47__gallery {
     display: grid;

@@ -68,6 +68,13 @@ test.describe('Accessibilité', () => {
         await expect(btn).toHaveAttribute('aria-disabled', 'true');
     });
 
+    test('FAQ Réservations — le lien d’accès cible la FAQ visible', async ({ page }) => {
+        await page.goto('/reservations.html');
+        await page.locator('.page58__faq-link').click();
+        await expect(page.locator('#faq-reservations')).toBeInViewport();
+        await expect.poll(() => page.evaluate(() => window.location.hash)).toBe('#faq-reservations');
+    });
+
     test('images — toutes ont un alt', async ({ page }) => {
         await page.goto('/');
         const images = page.locator('img:not([alt])');

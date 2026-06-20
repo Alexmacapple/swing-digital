@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /404.html
+Disallow: /generated-pages.html
+Disallow: /pages-extracted/
 
-Sitemap: https://DOMAINE/sitemap.xml
+Sitemap: https://swing.appmiweb.com/sitemap.xml

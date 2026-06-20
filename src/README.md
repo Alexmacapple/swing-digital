@@ -12,6 +12,37 @@ python3 -m http.server 8080
 # Ouvrir http://localhost:8080/
 ```
 
+## Build de production
+
+Ne pas déployer directement le dossier `src/` : il contient aussi des artefacts de travail exclus du crawl. Le dossier public à publier est `dist/`, généré par :
+
+```bash
+npm run build:prod
+```
+
+Avant la mise en production, renseigner le vrai domaine HTTPS et lancer les contrôles :
+
+Préproduction Appmiweb :
+
+```bash
+npm run appmiweb:set-base
+npm test
+npm run seo:check
+npm run build:prod
+npm run appmiweb:preflight
+```
+
+Production finale :
+
+```bash
+npm test
+npm run seo:set-base -- https://votre-domaine.fr
+SEO_BASE_URL=https://votre-domaine.fr npm run seo:check
+npm run prod:preflight -- https://votre-domaine.fr
+```
+
+Le preflight bloque la publication si des URL `localhost`, des placeholders légaux, des artefacts de travail ou des liens locaux cassés restent dans `dist/`.
+
 ## Stack technique
 
 - HTML5 sémantique (24 pages)
@@ -74,5 +105,5 @@ Accueil
 
 ---
 
-**Dernière mise à jour** : 2026-03-23
-**Version** : v4
+**Dernière mise à jour** : 2026-06-20
+**Version** : v5

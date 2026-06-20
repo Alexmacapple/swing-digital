@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
 });
 
+var manualAnchorHash = null;
+var manualAnchorUntil = 0;
+
 /**
  * Etat actif du menu — lit data-section et data-page sur <body>
  */
@@ -314,7 +317,10 @@ function initEventListeners() {
                 var target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    manualAnchorHash = href;
+                    manualAnchorUntil = Date.now() + 2500;
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    window.history.replaceState(null, '', href);
                 }
             }
         });
@@ -330,7 +336,39 @@ function initScrollTracking() {
 
     var visibleSections = new Map();
 
+    function isVisibleNonSectionAnchor(hash) {
+        if (!hash || /^#page-\d+$/.test(hash)) return false;
+
+        try {
+            var target = document.querySelector(hash);
+            if (!target || target.tagName.toLowerCase() === 'section') return false;
+
+            var rect = target.getBoundingClientRect();
+            return rect.top >= 0 && rect.top <= window.innerHeight;
+        } catch (e) {
+            return false;
+        }
+    }
+
     var observer = new IntersectionObserver(function(entries) {
+        if (manualAnchorHash && Date.now() < manualAnchorUntil) {
+            if (window.location.hash !== manualAnchorHash) {
+                window.history.replaceState(null, '', manualAnchorHash);
+            }
+            return;
+        }
+
+        if (manualAnchorHash && isVisibleNonSectionAnchor(manualAnchorHash)) {
+            if (window.location.hash !== manualAnchorHash) {
+                window.history.replaceState(null, '', manualAnchorHash);
+            }
+            return;
+        }
+
+        if (isVisibleNonSectionAnchor(window.location.hash)) return;
+
+        manualAnchorHash = null;
+
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 visibleSections.set(entry.target.id, entry.intersectionRatio);

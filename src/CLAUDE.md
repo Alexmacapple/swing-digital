@@ -96,9 +96,9 @@ Brandon (blk, reg, light-it), Fragen (Bold), Raleway Bold
 
 ## Qualite responsive et code (audit Codex 2026-04-06)
 
-**Score : 9/10** — Le 10/10 sera atteint quand le vrai domaine remplacera `DOMAINE` dans les 23 pages + sitemap.xml + robots.txt.
+**Note SEO/GEO 2026-06-20** — Les URL SEO publiques utilisent désormais la préproduction `https://swing.appmiweb.com`. Le prochain blocage SEO avant production finale est le choix du domaine définitif, puis la bascule des canonicals, Open Graph, sitemap et `llms.txt` vers ce domaine HTTPS.
 
 ---
 
-**Derniere mise a jour** : 2026-04-06
-**Version** : 4.0.0
+**Dernière mise à jour** : 2026-06-20
+**Version** : 4.1.0

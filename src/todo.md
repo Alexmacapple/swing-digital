@@ -2,16 +2,20 @@
 
 ## Avant mise en production (bloquant)
 
-- [ ] Remplacer `https://DOMAINE/` par le vrai domaine (canonical, OG, sitemap, robots)
+- [x] Remplacer l'ancien placeholder de domaine par le vrai domaine disponible actuellement (canonical, OG, sitemap, robots)
+- [x] Générer un dossier public `dist/` sans artefacts de travail
+- [x] Ajouter un preflight production bloquant sur domaine HTTPS, mentions légales, sitemap, robots, JSON-LD et liens locaux
 - [ ] Ajouter width/height sur les 124 images sans dimensions
 - [ ] Corriger les 2 boutons "Je m'inscris" (reservations.html)
 - [ ] Créer img/favicon.ico et décommenter la balise link
-- [ ] Configurer HTTPS + headers sécurité
+- [ ] Configurer HTTPS + headers sécurité, puis basculer les URL canoniques en HTTPS
+- [ ] Lancer la bascule SEO prod avec `npm run seo:set-base -- https://votre-domaine.fr`, avec le vrai domaine
+- [ ] Valider `SEO_BASE_URL=https://votre-domaine.fr npm run seo:check` puis `npm run prod:preflight -- https://votre-domaine.fr`
 - [ ] Renseigner l'hébergeur dans mentions-legales.html
 
 ## Améliorations recommandées
 
-- [ ] Ajouter og:image sur chaque page
+- [x] Ajouter og:image absolue sur chaque page indexable
 - [ ] Optimiser les images (compression, WebP)
 - [ ] Test cross-browser (Chrome, Firefox, Safari)
 - [ ] Test lecteur d'écran (VoiceOver, NVDA)

@@ -24,16 +24,19 @@
 
 ## Avant mise en production (bloquant)
 
-- [ ] Remplacer `https://DOMAINE/` par le domaine réel (canonical, OG, sitemap, robots)
+- [x] Remplacer l'ancien placeholder de domaine par le domaine réel disponible actuellement (canonical, OG, sitemap, robots)
+- [x] Ajouter un build `dist/` qui exclut les artefacts de travail (`generated-pages.html`, `pages-extracted/`, Markdown projet, PDF source)
+- [x] Ajouter un preflight production bloquant (`npm run prod:preflight -- https://votre-domaine.fr`)
 - [ ] Ajouter width/height sur les 124 images sans dimensions
 - [ ] Corriger les 2 boutons "Je m'inscris" (reservations.html)
 - [ ] Créer le favicon (img/favicon.ico)
-- [ ] Configurer HTTPS + headers sécurité (CSP, X-Frame-Options, HSTS)
+- [ ] Configurer HTTPS + headers sécurité (CSP, X-Frame-Options, HSTS), puis basculer les URL canoniques en HTTPS
+- [ ] Lancer `npm run seo:set-base -- https://votre-domaine.fr`, `SEO_BASE_URL=https://votre-domaine.fr npm run seo:check`, puis `npm run prod:preflight -- https://votre-domaine.fr`
 - [ ] Renseigner l'hébergeur dans mentions-legales.html
 
 ## Améliorations recommandées
 
-- [ ] Ajouter og:image sur chaque page (image représentative)
+- [x] Ajouter og:image absolue sur chaque page indexable (image représentative)
 - [ ] Optimiser les images (compression, WebP avec fallback)
 - [ ] Ajouter fetchpriority="high" sur le preload hero
 - [ ] Corriger la variable CSS circulaire (--color-red-mid)
@@ -66,4 +69,4 @@
 
 ---
 
-**Dernière mise à jour** : 2026-03-23
+**Dernière mise à jour** : 2026-06-20

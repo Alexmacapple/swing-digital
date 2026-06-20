@@ -153,7 +153,14 @@
     "@playwright/test": "^1.58.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright test",
+    "build:prod": "node scripts/build-prod.js",
+    "prod:preflight": "node scripts/prod-preflight.js",
+    "appmiweb:set-base": "node scripts/update-seo-base.js https://swing.appmiweb.com",
+    "appmiweb:preflight": "node scripts/prod-preflight.js --preprod https://swing.appmiweb.com",
+    "seo:check": "npx playwright test tests/seo-geo.spec.js --project=desktop-1920",
+    "seo:set-base": "node scripts/update-seo-base.js",
+    "seo:check-prod": "node scripts/check-prod-seo-base.js"
   },
   "repository": {
     "type": "git",
