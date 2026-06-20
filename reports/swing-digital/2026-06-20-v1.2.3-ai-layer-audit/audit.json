@@ -1,0 +1,577 @@
+{
+  "site": "swing.appmiweb.com",
+  "audited_url": "https://swing.appmiweb.com/",
+  "report_language": "fr",
+  "generated_at": "2026-06-20T21:44:59.046307+00:00",
+  "summary": {
+    "headline": "Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai.",
+    "description": "La préproduction Swing Digital est nettement plus propre côté Search/Crawl après purge : 8 artefacts sur 9 sont désormais fermés. Le dernier HTTP 200 sur /maquette-site.pdf vient du cache Cloudflare du chemin exact ; l’origine répond déjà 404 avec cache-buster. La couche IA dispose de /llms.txt, mais pas encore de /for-ai, /for-ai.json ni /for-ai.txt ; le rapport génère donc un pack prêt à publier.",
+    "status": "partial",
+    "readiness": "Origine purgée, en attente de purge Cloudflare pour valider Search/Crawl à 9/10",
+    "biggest_blocker": "Cache Cloudflare encore HIT sur /maquette-site.pdf",
+    "fastest_win": "Purger l’URL https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare, puis relancer npm run appmiweb:search-crawl.",
+    "data_confidence": "high",
+    "decision": "Ne pas monter le score officiel Search/Crawl à 9/10 tant que le chemin exact /maquette-site.pdf reste servi par le cache Cloudflare ; l’origine est déjà purgée."
+  },
+  "executive_brief": [
+    "Le workflow v1.2.3 fonctionne : audit visuel, responsive study, Design Watch, cohortes et pack IA téléchargeable.",
+    "La purge a eu un effet concret : les anciens fichiers de travail sont majoritairement fermés en 404.",
+    "Le dernier écart sur /maquette-site.pdf est maintenant un cache Cloudflare : le chemin exact est HIT, la version avec cache-buster est 404.",
+    "La couche IA est partielle : /llms.txt est en 200, les endpoints /for-ai restent absents."
+  ],
+  "metrics": [
+    {
+      "label": "Pages sitemap contrôlées",
+      "value": "23/23",
+      "detail": "Pages en 200 avec canonical et Open Graph cohérents dans le contrôle public."
+    },
+    {
+      "label": "Artefacts non publics restants",
+      "value": "1/9",
+      "detail": "/maquette-site.pdf reste visible uniquement via cache Cloudflare HIT sur le chemin exact ; l’origine cache-bustée répond 404. Temps restant estimé au dernier contrôle : 11124 s."
+    },
+    {
+      "label": "Images OG contrôlées",
+      "value": "21/21",
+      "detail": "Les images Open Graph échantillonnées répondent en image."
+    },
+    {
+      "label": "Images homepage",
+      "value": "34/34",
+      "detail": "Toutes les images HTML de la homepage répondent ; les vidéos sont exclues de ce décompte."
+    },
+    {
+      "label": "Couche IA existante",
+      "value": "1/4",
+      "detail": "/llms.txt existe ; /for-ai, /for-ai.json et /for-ai.txt manquent."
+    },
+    {
+      "label": "Données propriétaires",
+      "value": "Non fournies",
+      "detail": "Aucun export GSC, GA4, Bing Webmaster, logs serveur ou outil de citations IA."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Search/Crawl",
+      "score": 8.5,
+      "max": 10,
+      "note": "Très nette amélioration après purge ; origine 404 pour le PDF avec cache-buster, mais Cloudflare sert encore le chemin exact en HIT."
+    },
+    {
+      "label": "Couche IA téléchargeable",
+      "score": 7,
+      "max": 10,
+      "note": "/llms.txt est public ; le pack v1.2.3 comble /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld."
+    },
+    {
+      "label": "Design Watch",
+      "score": 7,
+      "max": 10,
+      "note": "Direction artistique forte et sujet clair, avec hero mobile trop haut et liens sociaux au bord droit."
+    },
+    {
+      "label": "Responsive",
+      "score": 7,
+      "max": 10,
+      "note": "Aucun overflow ; avertissement sur images non chargées au rendu initial, contredit par le contrôle HTTP des images."
+    },
+    {
+      "label": "GEO/Citation",
+      "score": 7,
+      "max": 10,
+      "note": "Base structurée solide, mais citations IA et sources externes non mesurées."
+    },
+    {
+      "label": "Measurement",
+      "score": 2,
+      "max": 10,
+      "note": "Les données privées de performance ne sont pas disponibles dans cet audit."
+    },
+    {
+      "label": "Workflow skill v1.2.3",
+      "score": 9,
+      "max": 10,
+      "note": "Le workflow ajoute le pack IA et l’onglet Téléchargements aux livrables visuels."
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P0",
+      "title": "Dernier blocage Search/Crawl : cache Cloudflare du PDF",
+      "observed": [
+        "/maquette-site.pdf répond encore en HTTP 200 sur le chemin exact, avec cf-cache-status HIT.",
+        "/maquette-site.pdf?bust=... répond en HTTP 404 avec cf-cache-status MISS.",
+        "Les autres chemins interdits testés répondent désormais en 404 : /generated-pages.html, /pages-extracted/, /README.md, /CLAUDE.md, /ROADMAP.md, /todo.md, /.htaccess et /.DS_Store."
+      ],
+      "inferred": [
+        "L’origine Appmiweb ne sert plus le PDF sur une URL non cachée.",
+        "Le 200 restant est un objet CDN Cloudflare ancien, pas un fichier encore présent dans le livrable source."
+      ],
+      "recommended": [
+        "Purger spécifiquement https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare.",
+        "Relancer npm run appmiweb:search-crawl après purge CDN effective.",
+        "Ne monter Search/Crawl à 9/10 qu’après disparition du HTTP 200 sur le chemin exact."
+      ],
+      "evidence": [
+        {
+          "label": "Chemin exact Cloudflare",
+          "url": "https://swing.appmiweb.com/maquette-site.pdf",
+          "status": 200,
+          "cache": "cf-cache-status HIT"
+        },
+        {
+          "label": "URL cache-bustée origine",
+          "url": "https://swing.appmiweb.com/maquette-site.pdf?bust=...",
+          "status": 404,
+          "cache": "cf-cache-status MISS"
+        },
+        {
+          "label": "Diagnostic cache Cloudflare",
+          "path": "cloudflare-cache-diagnostic.json",
+          "status": "cache_only_blocker"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Couche IA partielle : /for-ai absent",
+      "observed": [
+        "/llms.txt répond en HTTP 200 et mentionne la base canonique.",
+        "/for-ai répond en HTTP 404.",
+        "/for-ai.json répond en HTTP 404.",
+        "/for-ai.txt répond en HTTP 404."
+      ],
+      "inferred": [
+        "Les agents disposent d’un index llms.txt, mais pas encore d’une page ou d’un JSON compact explicitement conçus pour l’extraction et la citation.",
+        "Le nouveau pack v1.2.3 est utile et actionnable pour combler cette couche sans inventer de métriques."
+      ],
+      "recommended": [
+        "Publier les fichiers du pack IA généré : /llms.txt si mise à jour souhaitée, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld.",
+        "Vérifier que le contenu publié ne contredit pas les pages visibles.",
+        "Ne pas présenter llms.txt ou /for-ai comme un facteur de ranking Google garanti."
+      ],
+      "evidence": [
+        {
+          "label": "/llms.txt",
+          "url": "https://swing.appmiweb.com/llms.txt",
+          "status": 200,
+          "content_type": "text/plain"
+        },
+        {
+          "label": "/for-ai",
+          "url": "https://swing.appmiweb.com/for-ai",
+          "status": 404,
+          "content_type": "text/html;charset=utf-8"
+        },
+        {
+          "label": "/for-ai.json",
+          "url": "https://swing.appmiweb.com/for-ai.json",
+          "status": 404,
+          "content_type": "text/html;charset=utf-8"
+        },
+        {
+          "label": "/for-ai.txt",
+          "url": "https://swing.appmiweb.com/for-ai.txt",
+          "status": 404,
+          "content_type": "text/html;charset=utf-8"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Avertissement responsive lié au chargement initial des images",
+      "observed": [
+        "Desktop et mobile n’ont pas de débordement horizontal.",
+        "Le H1, le titre, le viewport meta et le texte visible sont détectés.",
+        "Chrome fallback signale 26 images non chargées au moment de la mesure initiale.",
+        "Le contrôle HTTP séparé confirme 34/34 images HTML de homepage accessibles en image."
+      ],
+      "inferred": [
+        "L’avertissement est probablement lié au lazy-load, à la fenêtre de capture ou au rendu initial, pas à des assets image cassés.",
+        "La prochaine amélioration du script devrait distinguer image hors écran lazy-load et image réellement cassée."
+      ],
+      "recommended": [
+        "Conserver le statut responsive en warning, pas failed.",
+        "Ajouter dans un prochain chantier une passe scroll/lazy-load avant de compter les images manquantes.",
+        "Continuer à croiser le rendu navigateur avec un contrôle HTTP des images."
+      ],
+      "evidence": [
+        {
+          "label": "Responsive study",
+          "path": "responsive-study.json",
+          "status": "warning"
+        },
+        {
+          "label": "Homepage image status",
+          "path": "homepage-image-status.json",
+          "status": "34/34 images OK"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Hero mobile très haut avant les preuves de confiance",
+      "observed": [
+        "La capture mobile affiche logo, menu, H1, tags et texte principal sans débordement horizontal.",
+        "Le premier écran reste dominé par le hero sombre et vertical.",
+        "La section “Qui sommes-nous ?” apparaît en bas de capture seulement après une forte hauteur de hero.",
+        "Les liens sociaux latéraux apparaissent au bord droit sur mobile."
+      ],
+      "inferred": [
+        "Le message principal est clair, mais l’accès aux preuves, projets et signaux de confiance arrive tard sur mobile.",
+        "Les liens sociaux au bord droit peuvent créer une tension visuelle sur petits écrans."
+      ],
+      "recommended": [
+        "Tester une hauteur de hero mobile plus compacte.",
+        "Faire remonter plus tôt une preuve ou un lien vers les projets.",
+        "Repositionner ou simplifier les liens sociaux latéraux sur mobile."
+      ],
+      "evidence": [
+        {
+          "label": "Capture mobile homepage",
+          "path": "site-screenshots/mobile.png",
+          "status": "observed"
+        }
+      ]
+    }
+  ],
+  "analysis_cohorts": [
+    {
+      "name": "Search / crawl",
+      "score": "8.5/10",
+      "status": "partial",
+      "what_it_checks": "Sitemap, HTTP 200, canonicals, robots.txt, llms.txt, OG et artefacts publics.",
+      "verdict": "La purge a fortement amélioré l’hygiène publique ; le dernier blocage est un cache Cloudflare stale sur /maquette-site.pdf.",
+      "evidence": "23/23 pages sitemap OK ; 1 objet interdit reste servi par cache Cloudflare HIT, mais l’origine cache-bustée répond 404.",
+      "next_action": "Purger /maquette-site.pdf dans Cloudflare puis relancer npm run appmiweb:search-crawl."
+    },
+    {
+      "name": "AI layer package",
+      "score": "7/10",
+      "status": "generated",
+      "what_it_checks": "Présence de /llms.txt, /for-ai, /for-ai.json, /for-ai.txt et JSON-LD aligné.",
+      "verdict": "La couche IA publique est partielle ; le pack v1.2.3 fournit les fichiers manquants.",
+      "evidence": "/llms.txt 200 ; /for-ai, /for-ai.json et /for-ai.txt 404.",
+      "next_action": "Publier le contenu de ai-layer-package.zip après revue humaine."
+    },
+    {
+      "name": "Design Watch",
+      "score": "7/10",
+      "status": "partial",
+      "what_it_checks": "Première impression, hiérarchie, confiance, lisibilité mobile et adéquation sujet.",
+      "verdict": "Identité immersive forte, mais premier parcours mobile encore trop vertical.",
+      "evidence": "Captures desktop et mobile du site audité.",
+      "next_action": "Réduire ou rythmer le hero mobile et rapprocher les preuves."
+    },
+    {
+      "name": "Responsive dynamique",
+      "score": "7/10",
+      "status": "warning",
+      "what_it_checks": "Overflow, viewport, title, H1, texte visible et images chargées.",
+      "verdict": "Rendu exploitable sans overflow ; alerte images à interpréter comme lazy-load probable.",
+      "evidence": "responsive-study.json + homepage-image-status.json.",
+      "next_action": "Ajouter une passe scroll/lazy-load dans le contrôle responsive futur."
+    },
+    {
+      "name": "Measurement owner",
+      "score": "2/10",
+      "status": "missing",
+      "what_it_checks": "GSC, GA4, Bing Webmaster, logs et citations IA.",
+      "verdict": "Données propriétaires absentes de cet audit.",
+      "evidence": "Aucun export ou accès privé fourni.",
+      "next_action": "Préparer la matrice de mesure pour le domaine final."
+    },
+    {
+      "name": "Skillpack quality v1.2.3",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Respect du contrat visual HTML audit v1.2.3, y compris pack IA téléchargeable.",
+      "verdict": "Le workflow produit les livrables attendus ; le rapport doit maintenant être validé dans le navigateur.",
+      "evidence": "Dossier reports/swing-digital/2026-06-20-v1.2.3-ai-layer-audit/.",
+      "next_action": "Servir le rapport et capturer son UI desktop/mobile."
+    }
+  ],
+  "design_watch": {
+    "score": "7/10",
+    "verdict": "Identité forte et lisible, mais premier parcours mobile à resserrer.",
+    "summary": "Le premier écran rend Swing Digital identifiable et cohérent avec les expériences immersives. La version mobile reste très verticale : le visiteur ou un agent doit descendre avant d’atteindre les preuves, projets ou signaux de confiance.",
+    "confidence": "high",
+    "observed": [
+      "Desktop : logo, navigation, hero visuel, H1 et proposition de valeur visibles dans la capture.",
+      "Mobile : logo, menu hamburger, H1, tags et texte descriptif visibles sans débordement horizontal.",
+      "Mobile : le hero sombre occupe l’essentiel de la capture avant la section “Qui sommes-nous ?”.",
+      "Mobile : les liens sociaux apparaissent très près du bord droit."
+    ],
+    "inferred": [
+      "La marque est mémorisable et cohérente avec l’univers immersif culturel.",
+      "La profondeur verticale du hero peut retarder l’accès aux preuves et aux projets.",
+      "Les liens sociaux latéraux peuvent gêner la lecture sur petits écrans."
+    ],
+    "recommended": [
+      "Tester une hauteur mobile plus compacte du hero.",
+      "Faire apparaître un signal de preuve ou un accès projet plus tôt.",
+      "Évaluer un placement différent des liens sociaux sur mobile."
+    ]
+  },
+  "responsive_study": {
+    "url": "https://swing.appmiweb.com/",
+    "generated_at": "2026-06-20T21:41:11.462Z",
+    "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+    "summary": {
+      "status": "warning",
+      "verdict": "Homepage renders on tested viewports, but browser evidence found issues to review."
+    },
+    "viewports": [
+      {
+        "label": "Desktop",
+        "viewport": "1440x1800",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 1440,
+          "innerHeight": 1800,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false,
+          "documentHeight": 10839,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 2897,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi"
+        }
+      },
+      {
+        "label": "Mobile",
+        "viewport": "390x1400",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 390,
+          "innerHeight": 1400,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false,
+          "documentHeight": 7631,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 2809,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva"
+        }
+      }
+    ]
+  },
+  "site_visual_evidence": [
+    {
+      "label": "Desktop screenshot",
+      "path": "desktop.png",
+      "viewport": "1440x1800",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 1440px"
+      ]
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "mobile.png",
+      "viewport": "390x1400",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 390px"
+      ]
+    }
+  ],
+  "screenshot_status": {
+    "status": "available",
+    "method": "Chrome DevTools fallback",
+    "desktop": "site-screenshots/desktop.png",
+    "mobile": "site-screenshots/mobile.png"
+  },
+  "technical_checks": [
+    {
+      "label": "Homepage",
+      "observed": "HTTP 200, title, H1, description, canonical et JSON-LD détectés.",
+      "status": "ok"
+    },
+    {
+      "label": "robots.txt",
+      "observed": "HTTP 200, sitemap déclaré, anciens chemins de travail désavoués.",
+      "status": "ok"
+    },
+    {
+      "label": "sitemap.xml",
+      "observed": "23 URL contrôlées depuis le sitemap.",
+      "status": "ok"
+    },
+    {
+      "label": "llms.txt",
+      "observed": "/llms.txt HTTP 200, base canonique mentionnée.",
+      "status": "ok"
+    },
+    {
+      "label": "for-ai",
+      "observed": "/for-ai, /for-ai.json et /for-ai.txt répondent 404.",
+      "status": "missing"
+    },
+    {
+      "label": "Artefact public",
+      "observed": "/maquette-site.pdf répond HTTP 200 en cache Cloudflare HIT ; l’URL cache-bustée répond 404. Temps restant estimé au dernier contrôle : 11124 s.",
+      "status": "cache_only"
+    },
+    {
+      "label": "Images homepage",
+      "observed": "34/34 images répondent correctement.",
+      "status": "ok"
+    }
+  ],
+  "public_measurements": [
+    {
+      "source": "Contrôle public Search/Crawl local",
+      "access": "public",
+      "metric": "Sitemap, pages, OG images, artefacts interdits",
+      "limit": "Ne mesure pas impressions, clics, ranking ou conversions."
+    },
+    {
+      "source": "Chrome DevTools fallback",
+      "access": "local_runtime",
+      "metric": "Captures desktop/mobile et étude responsive",
+      "limit": "Alerte images sensible au lazy-load et au timing de rendu."
+    },
+    {
+      "source": "Données propriétaires",
+      "access": "not_available",
+      "metric": "GSC, GA4, Bing Webmaster, logs, citations IA",
+      "limit": "Non fournies dans cet audit."
+    }
+  ],
+  "action_plan": [
+    {
+      "when": "Jour 1",
+      "action": "Purger https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare.",
+      "outcome": "Le dernier HTTP 200 cache-only disparaît et Search/Crawl peut être relancé."
+    },
+    {
+      "when": "Jour 1",
+      "action": "Publier /for-ai, /for-ai.json et /for-ai.txt depuis ai-layer-package.zip après revue.",
+      "outcome": "Couche IA complète et téléchargeable alignée avec v1.2.3."
+    },
+    {
+      "when": "Jour 2",
+      "action": "Compacter le hero mobile ou rapprocher les preuves/projets.",
+      "outcome": "Meilleure lisibilité du premier parcours mobile et Design Watch potentiellement plus proche de 8/10."
+    },
+    {
+      "when": "Jour 3",
+      "action": "Préparer les accès ou exports GSC/GA4/Bing/logs pour le domaine final.",
+      "outcome": "Mesure SEO/GEO réelle au lieu d’un audit public seul."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Homepage",
+      "url": "https://swing.appmiweb.com/"
+    },
+    {
+      "label": "robots.txt",
+      "url": "https://swing.appmiweb.com/robots.txt"
+    },
+    {
+      "label": "sitemap.xml",
+      "url": "https://swing.appmiweb.com/sitemap.xml"
+    },
+    {
+      "label": "llms.txt",
+      "url": "https://swing.appmiweb.com/llms.txt"
+    },
+    {
+      "label": "for-ai",
+      "url": "https://swing.appmiweb.com/for-ai"
+    },
+    {
+      "label": "Search/Crawl evidence",
+      "path": "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json"
+    },
+    {
+      "label": "Desktop screenshot",
+      "path": "site-screenshots/desktop.png"
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "site-screenshots/mobile.png"
+    },
+    {
+      "label": "Responsive study",
+      "path": "responsive-study.json"
+    },
+    {
+      "label": "Homepage image status",
+      "path": "homepage-image-status.json"
+    },
+    {
+      "label": "Diagnostic cache Cloudflare PDF",
+      "path": "cloudflare-cache-diagnostic.json"
+    }
+  ],
+  "ai_layer_package": {
+    "status": "generated",
+    "path": "ai-layer-package",
+    "zip_path": "ai-layer-package.zip",
+    "files": [
+      {
+        "label": "llms.txt",
+        "path": "ai-layer-package/llms.txt",
+        "purpose": "Site-level AI assistant index"
+      },
+      {
+        "label": "/for-ai",
+        "path": "ai-layer-package/for-ai/index.html",
+        "purpose": "Agent-readable page context"
+      },
+      {
+        "label": "/for-ai.json",
+        "path": "ai-layer-package/for-ai.json",
+        "purpose": "Structured facts, limits, and citation guidance"
+      },
+      {
+        "label": "/for-ai.txt",
+        "path": "ai-layer-package/for-ai.txt",
+        "purpose": "Compact plain-text context for agents"
+      },
+      {
+        "label": "schema-webpage.jsonld",
+        "path": "ai-layer-package/schema-webpage.jsonld",
+        "purpose": "Schema.org WebPage JSON-LD draft"
+      },
+      {
+        "label": "AI_LAYER_INSTALL.md",
+        "path": "ai-layer-package/AI_LAYER_INSTALL.md",
+        "purpose": "Owner publishing checklist"
+      },
+      {
+        "label": "manifest.json",
+        "path": "ai-layer-package/manifest.json",
+        "purpose": "Package file inventory"
+      }
+    ]
+  }
+}

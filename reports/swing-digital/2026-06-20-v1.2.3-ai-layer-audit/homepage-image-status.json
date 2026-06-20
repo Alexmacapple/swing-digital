@@ -1,0 +1,295 @@
+{
+  "generated_at": "2026-06-20T21:42:14.701Z",
+  "source": "https://swing.appmiweb.com/",
+  "image_count": 34,
+  "ok_count": 34,
+  "failed": [],
+  "ignored_media": [
+    {
+      "url": "https://swing.appmiweb.com/video/hero.mp4",
+      "status": 200,
+      "contentType": "video/mp4",
+      "bytes": 1248924
+    },
+    {
+      "url": "https://swing.appmiweb.com/video/contact.mp4",
+      "status": 200,
+      "contentType": "video/mp4",
+      "bytes": 1516967
+    }
+  ],
+  "checks": [
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/stephanie.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 66974,
+      "ok": true,
+      "elapsedMs": 60
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/anseau.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 91582,
+      "ok": true,
+      "elapsedMs": 14
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/benoit.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 110579,
+      "ok": true,
+      "elapsedMs": 20
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/mathieu.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 57997,
+      "ok": true,
+      "elapsedMs": 22
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/joshua.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 91217,
+      "ok": true,
+      "elapsedMs": 16
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/laetitia.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 55673,
+      "ok": true,
+      "elapsedMs": 14
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/claire.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 87554,
+      "ok": true,
+      "elapsedMs": 20
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-2/sylvie.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 69787,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-3/page-3-collage.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 1061153,
+      "ok": true,
+      "elapsedMs": 42
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/pages/page-4/creations.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 757576,
+      "ok": true,
+      "elapsedMs": 34
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 11653,
+      "ok": true,
+      "elapsedMs": 14
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/acumen.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 3041,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/the-archives.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 6516,
+      "ok": true,
+      "elapsedMs": 16
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 12463,
+      "ok": true,
+      "elapsedMs": 16
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 4529,
+      "ok": true,
+      "elapsedMs": 97
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 11913,
+      "ok": true,
+      "elapsedMs": 16
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/drac.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 8505,
+      "ok": true,
+      "elapsedMs": 19
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/cnc.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 3143,
+      "ok": true,
+      "elapsedMs": 14
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 0,
+      "ok": true,
+      "elapsedMs": 17
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 5315,
+      "ok": true,
+      "elapsedMs": 18
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/orange.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 4485,
+      "ok": true,
+      "elapsedMs": 17
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 5347,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 2683,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 4488,
+      "ok": true,
+      "elapsedMs": 20
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/forum-images.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 14341,
+      "ok": true,
+      "elapsedMs": 18
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 4719,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/onda.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 4748,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/pixihead.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 3307,
+      "ok": true,
+      "elapsedMs": 17
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 6078,
+      "ok": true,
+      "elapsedMs": 16
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 6437,
+      "ok": true,
+      "elapsedMs": 14
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 14076,
+      "ok": true,
+      "elapsedMs": 19
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 10190,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 3512,
+      "ok": true,
+      "elapsedMs": 15
+    },
+    {
+      "url": "https://swing.appmiweb.com/img/partners/pole-media.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 7887,
+      "ok": true,
+      "elapsedMs": 15
+    }
+  ]
+}

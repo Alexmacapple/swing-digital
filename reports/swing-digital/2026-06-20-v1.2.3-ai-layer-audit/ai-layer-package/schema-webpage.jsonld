@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai.",
+  "url": "https://swing.appmiweb.com/",
+  "description": "Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai.",
+  "isBasedOn": [
+    "https://swing.appmiweb.com/",
+    "https://swing.appmiweb.com/robots.txt",
+    "https://swing.appmiweb.com/sitemap.xml",
+    "https://swing.appmiweb.com/llms.txt",
+    "https://swing.appmiweb.com/for-ai",
+    "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
+    "site-screenshots/desktop.png",
+    "site-screenshots/mobile.png",
+    "responsive-study.json",
+    "homepage-image-status.json",
+    "cloudflare-cache-diagnostic.json"
+  ]
+}

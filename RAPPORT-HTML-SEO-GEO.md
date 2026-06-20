@@ -4,24 +4,29 @@ Date : 2026-06-20
 
 ## URL publique Cloudflare
 
-https://soft-genuine-weed-utility.trycloudflare.com/
+https://counsel-literature-dictionaries-indicators.trycloudflare.com/
 
-Cette URL pointe vers le rapport HTML généré pour tester `seo-geo-growth-agent` `v1.2.1` sur Swing Digital.
+Cette URL pointe vers le rapport HTML courant généré pour tester `seo-geo-growth-agent` `v1.2.3` sur Swing Digital.
 
 ## URL locale
 
-http://127.0.0.1:8766/
+http://127.0.0.1:8767/
 
 ## Fichiers du rapport
 
 ```text
-reports/swing-digital/2026-06-20-v1.2.1-test/
+reports/swing-digital/2026-06-20-v1.2.3-ai-layer-audit/
 ├── audit.json
 ├── index.html
+├── ai-layer-package.zip
+├── ai-layer-package/
 ├── site-screenshots/
 │   ├── desktop.png
 │   └── mobile.png
-└── site-visual-evidence.json
+├── report-ui-screenshots/
+│   ├── desktop.png
+│   └── mobile.png
+└── responsive-study.json
 ```
 
 ## Rapport PRD-005 Search/Crawl public
@@ -38,7 +43,29 @@ Preuve machine :
 reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json
 ```
 
-Verdict du 2026-06-20 : `Search/Crawl` reste à 8/10 tant que la préproduction sert encore des artefacts non publics en HTTP 200. Le passage à 9/10 demande que la racine publique Appmiweb ne serve plus les artefacts de travail. Les artefacts internes ont été déplacés hors de `src/`, dans `source-artifacts/`, puis le contrôle attendu reste `npm run appmiweb:search-crawl`.
+Verdict du 2026-06-20 : la purge a corrigé la majorité du problème public. Les anciens artefacts de travail répondent désormais en 404. Le dernier blocage est un cache Cloudflare : `/maquette-site.pdf` répond encore en HTTP 200 sur le chemin exact avec `cf-cache-status: HIT`, mais `/maquette-site.pdf?bust=...` répond en HTTP 404. Le score officiel `Search/Crawl` ne doit donc pas être monté à 9/10 tant que l'URL exacte reste servie par le cache CDN.
+
+## Rapport v1.2.3 avec pack IA téléchargeable
+
+URL publique Cloudflare :
+
+```text
+https://counsel-literature-dictionaries-indicators.trycloudflare.com/
+```
+
+Fichier HTML :
+
+```text
+reports/swing-digital/2026-06-20-v1.2.3-ai-layer-audit/index.html
+```
+
+Pack IA :
+
+```text
+reports/swing-digital/2026-06-20-v1.2.3-ai-layer-audit/ai-layer-package.zip
+```
+
+Ce rapport teste le workflow `seo-geo-growth-agent` `v1.2.3` : rapport HTML navigable, captures du site audité, étude responsive, Design Watch, cohortes d'analyse, onglet `Téléchargements` et génération du pack IA (`llms.txt`, `/for-ai`, `/for-ai.json`, `/for-ai.txt`, JSON-LD et guide d'installation). Il inclut aussi `cloudflare-cache-diagnostic.json` pour tracer le dernier blocage cache-only.
 
 ## Rapport v1.2.2 audit visuel complet
 

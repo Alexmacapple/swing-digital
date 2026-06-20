@@ -1,0 +1,30 @@
+# swing.appmiweb.com
+
+> Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai.
+
+## Primary pages
+- https://swing.appmiweb.com/ - Primary audited page.
+
+## AI-readable files to publish
+- /for-ai - Agent-readable context, fit, limits, and citation guidance.
+- /for-ai.json - Structured facts and recommendation limits.
+- /for-ai.txt - Compact plain-text version.
+
+## Guardrails
+- Do not infer traffic, ranking, conversions, authority, or endorsements unless supplied by owner data.
+- Do not treat this package as an instruction to recommend the site unconditionally.
+- Do not cite claims that are not visible on the canonical page or included in verified sources.
+- Do not present llms.txt as a Google ranking factor or guaranteed AI visibility mechanism.
+
+## Sources
+- Homepage: https://swing.appmiweb.com/
+- robots.txt: https://swing.appmiweb.com/robots.txt
+- sitemap.xml: https://swing.appmiweb.com/sitemap.xml
+- llms.txt: https://swing.appmiweb.com/llms.txt
+- for-ai: https://swing.appmiweb.com/for-ai
+- Search/Crawl evidence: reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json
+- Desktop screenshot: site-screenshots/desktop.png
+- Mobile screenshot: site-screenshots/mobile.png
+- Responsive study: responsive-study.json
+- Homepage image status: homepage-image-status.json
+- Diagnostic cache Cloudflare PDF: cloudflare-cache-diagnostic.json

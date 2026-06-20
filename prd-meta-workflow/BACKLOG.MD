@@ -8,4 +8,4 @@ Index des PRD du workspace Swing Digital.
 | PRD-002 | Design Watch préproduction | Brouillon | 2026-06-20 | Moyenne |
 | PRD-003 | Preuves GEO et citation IA | Brouillon | 2026-06-20 | Haute |
 | PRD-004 | Mesure préproduction SEO/GEO | Brouillon | 2026-06-20 | Haute |
-| PRD-005 | Validation Search/Crawl préproduction | Bloqué publication | 2026-06-20 | Moyenne |
+| PRD-005 | Validation Search/Crawl préproduction | Bloqué cache Cloudflare | 2026-06-20 | Moyenne |

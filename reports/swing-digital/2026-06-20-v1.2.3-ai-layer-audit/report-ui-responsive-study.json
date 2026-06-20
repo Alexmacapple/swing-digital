@@ -1,0 +1,61 @@
+{
+  "url": "http://127.0.0.1:8767/",
+  "generated_at": "2026-06-20T21:47:01.625Z",
+  "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+  "summary": {
+    "status": "pass",
+    "verdict": "Homepage responds correctly on tested mobile and desktop viewports."
+  },
+  "viewports": [
+    {
+      "label": "Desktop",
+      "viewport": "1440x1800",
+      "status": "pass",
+      "issues": [],
+      "metrics": {
+        "title": "Audit SEO/GEO — swing.appmiweb.com",
+        "innerWidth": 1440,
+        "innerHeight": 1800,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "horizontalOverflow": false,
+        "documentHeight": 2110,
+        "hasViewportMeta": true,
+        "h1Count": 1,
+        "h1Text": [
+          "Audit SEO/GEO — swing.appmiweb.com"
+        ],
+        "navLinkCount": 0,
+        "imageCount": 0,
+        "missingImages": 0,
+        "visibleTextLength": 3889,
+        "textSample": "AUDIT SEO/GEO Audit SEO/GEO — swing.appmiweb.com Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai. Statut partiel Confiance high Généré 20 juin 2026, 23:44 Vue générale Visuel Constats Technique Action"
+      }
+    },
+    {
+      "label": "Mobile",
+      "viewport": "390x1400",
+      "status": "pass",
+      "issues": [],
+      "metrics": {
+        "title": "Audit SEO/GEO — swing.appmiweb.com",
+        "innerWidth": 390,
+        "innerHeight": 1400,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "horizontalOverflow": false,
+        "documentHeight": 4694,
+        "hasViewportMeta": true,
+        "h1Count": 1,
+        "h1Text": [
+          "Audit SEO/GEO — swing.appmiweb.com"
+        ],
+        "navLinkCount": 0,
+        "imageCount": 0,
+        "missingImages": 0,
+        "visibleTextLength": 3889,
+        "textSample": "AUDIT SEO/GEO Audit SEO/GEO — swing.appmiweb.com Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai. Statut partiel Confiance high Généré 20 juin 2026, 23:44 Vue générale Visuel Constats Technique Action"
+      }
+    }
+  ]
+}

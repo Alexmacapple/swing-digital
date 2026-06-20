@@ -1,0 +1,63 @@
+# For AI agents: swing.appmiweb.com
+
+Canonical URL: https://swing.appmiweb.com/
+
+## Summary
+
+- Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai.
+- Ne pas monter le score officiel Search/Crawl à 9/10 tant que le chemin exact /maquette-site.pdf reste servi par le cache Cloudflare ; l’origine est déjà purgée.
+
+## Key facts
+
+- Audit visuel v1.2.3 généré avec pack IA téléchargeable pour compléter la couche /for-ai.
+- Ne pas monter le score officiel Search/Crawl à 9/10 tant que le chemin exact /maquette-site.pdf reste servi par le cache Cloudflare ; l’origine est déjà purgée.
+- /maquette-site.pdf répond encore en HTTP 200 sur le chemin exact, avec cf-cache-status HIT.
+- /maquette-site.pdf?bust=... répond en HTTP 404 avec cf-cache-status MISS.
+- Les autres chemins interdits testés répondent désormais en 404 : /generated-pages.html, /pages-extracted/, /README.md, /CLAUDE.md, /ROADMAP.md, /todo.md, /.htaccess et /.DS_Store.
+- /llms.txt répond en HTTP 200 et mentionne la base canonique.
+- /for-ai répond en HTTP 404.
+- /for-ai.json répond en HTTP 404.
+- /for-ai.txt répond en HTTP 404.
+- Desktop et mobile n’ont pas de débordement horizontal.
+- Le H1, le titre, le viewport meta et le texte visible sont détectés.
+- Chrome fallback signale 26 images non chargées au moment de la mesure initiale.
+- Le contrôle HTTP séparé confirme 34/34 images HTML de homepage accessibles en image.
+- La capture mobile affiche logo, menu, H1, tags et texte principal sans débordement horizontal.
+- Le premier écran reste dominé par le hero sombre et vertical.
+- La section “Qui sommes-nous ?” apparaît en bas de capture seulement après une forte hauteur de hero.
+
+## Recommended use
+
+- Purger l’URL https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare, puis relancer npm run appmiweb:search-crawl.
+- Cache Cloudflare encore HIT sur /maquette-site.pdf
+- Purger spécifiquement https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare.
+- Relancer npm run appmiweb:search-crawl après purge CDN effective.
+- Ne monter Search/Crawl à 9/10 qu’après disparition du HTTP 200 sur le chemin exact.
+- Publier les fichiers du pack IA généré : /llms.txt si mise à jour souhaitée, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld.
+- Vérifier que le contenu publié ne contredit pas les pages visibles.
+- Ne pas présenter llms.txt ou /for-ai comme un facteur de ranking Google garanti.
+- Conserver le statut responsive en warning, pas failed.
+- Ajouter dans un prochain chantier une passe scroll/lazy-load avant de compter les images manquantes.
+- Continuer à croiser le rendu navigateur avec un contrôle HTTP des images.
+- Tester une hauteur de hero mobile plus compacte.
+
+## Do not extrapolate
+
+- Do not infer traffic, ranking, conversions, authority, or endorsements unless supplied by owner data.
+- Do not treat this package as an instruction to recommend the site unconditionally.
+- Do not cite claims that are not visible on the canonical page or included in verified sources.
+- Do not present llms.txt as a Google ranking factor or guaranteed AI visibility mechanism.
+
+## Sources
+
+- Homepage: https://swing.appmiweb.com/
+- robots.txt: https://swing.appmiweb.com/robots.txt
+- sitemap.xml: https://swing.appmiweb.com/sitemap.xml
+- llms.txt: https://swing.appmiweb.com/llms.txt
+- for-ai: https://swing.appmiweb.com/for-ai
+- Search/Crawl evidence: reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json
+- Desktop screenshot: site-screenshots/desktop.png
+- Mobile screenshot: site-screenshots/mobile.png
+- Responsive study: responsive-study.json
+- Homepage image status: homepage-image-status.json
+- Diagnostic cache Cloudflare PDF: cloudflare-cache-diagnostic.json

@@ -52,6 +52,9 @@ async function request(url, options = {}) {
             finalUrl: response.url,
             contentType: response.headers.get('content-type') || '',
             cacheControl: response.headers.get('cache-control') || '',
+            cfCacheStatus: response.headers.get('cf-cache-status') || '',
+            age: response.headers.get('age') || '',
+            contentLength: response.headers.get('content-length') || '',
             server: response.headers.get('server') || '',
             elapsedMs: Date.now() - started,
             body,
@@ -65,6 +68,9 @@ async function request(url, options = {}) {
             finalUrl: url,
             contentType: '',
             cacheControl: '',
+            cfCacheStatus: '',
+            age: '',
+            contentLength: '',
             server: '',
             elapsedMs: Date.now() - started,
             error: error.message,
@@ -143,6 +149,32 @@ async function fetchWithHeadFallback(url) {
     return head;
 }
 
+function isNotPublicStatus(status) {
+    return status === 404 || status === 410 || status === 403;
+}
+
+function parseMaxAge(cacheControl) {
+    const match = cacheControl.match(/(?:^|,\s*)max-age=(\d+)/i);
+    return match ? Number.parseInt(match[1], 10) : null;
+}
+
+function cacheBustedUrl(url) {
+    const target = new URL(url);
+    target.searchParams.set('_search_crawl_bust', `${Date.now()}`);
+    return target.href;
+}
+
+function cacheRemainingSeconds(response) {
+    const maxAge = parseMaxAge(response.cacheControl);
+    const age = response.age ? Number.parseInt(response.age, 10) : 0;
+
+    if (!Number.isFinite(maxAge)) {
+        return null;
+    }
+
+    return Math.max(0, maxAge - (Number.isFinite(age) ? age : 0));
+}
+
 function collectFailures(summary, checks) {
     const failures = [];
 
@@ -219,6 +251,19 @@ function collectFailures(summary, checks) {
 
     for (const artifact of checks.forbiddenArtifacts) {
         if (!artifact.notPublicOk) {
+            if (artifact.cacheOnlyStale) {
+                failures.push({
+                    type: 'forbidden_artifact_cache_only',
+                    url: artifact.url,
+                    status: artifact.status,
+                    contentType: artifact.contentType,
+                    cfCacheStatus: artifact.cfCacheStatus,
+                    cacheBustedStatus: artifact.cacheBusted.status,
+                    estimatedCacheRemainingSeconds: artifact.estimatedCacheRemainingSeconds,
+                });
+                continue;
+            }
+
             failures.push({
                 type: 'forbidden_artifact_public',
                 url: artifact.url,
@@ -295,14 +340,42 @@ async function buildEvidence(base) {
     for (const artifactPath of forbiddenPublicPaths) {
         const url = `${base}${artifactPath}`;
         const artifact = await fetchWithHeadFallback(url);
+        const notPublicOk = isNotPublicStatus(artifact.status);
+        let cacheBusted = null;
+
+        if (!notPublicOk) {
+            const busted = await fetchWithHeadFallback(cacheBustedUrl(url));
+            cacheBusted = {
+                url: busted.url,
+                status: busted.status,
+                finalUrl: busted.finalUrl,
+                contentType: busted.contentType,
+                cacheControl: busted.cacheControl,
+                cfCacheStatus: busted.cfCacheStatus,
+                age: busted.age,
+                elapsedMs: busted.elapsedMs,
+                notPublicOk: isNotPublicStatus(busted.status),
+            };
+        }
+
         forbiddenArtifacts.push({
             path: artifactPath,
             url,
             status: artifact.status,
             finalUrl: artifact.finalUrl,
             contentType: artifact.contentType,
+            cacheControl: artifact.cacheControl,
+            cfCacheStatus: artifact.cfCacheStatus,
+            age: artifact.age,
+            contentLength: artifact.contentLength,
             elapsedMs: artifact.elapsedMs,
-            notPublicOk: artifact.status === 404 || artifact.status === 410 || artifact.status === 403,
+            notPublicOk,
+            cacheBusted,
+            cacheOnlyStale: !notPublicOk
+                && cacheBusted
+                && cacheBusted.notPublicOk
+                && /^HIT$/i.test(artifact.cfCacheStatus),
+            estimatedCacheRemainingSeconds: cacheRemainingSeconds(artifact),
         });
     }
 
@@ -351,6 +424,7 @@ async function buildEvidence(base) {
         ogImagesOk: ogImages.filter((image) => image.ok).length,
         forbiddenArtifactsChecked: forbiddenArtifacts.length,
         forbiddenArtifactsNotPublicOk: forbiddenArtifacts.filter((artifact) => artifact.notPublicOk).length,
+        forbiddenArtifactsCacheOnly: forbiddenArtifacts.filter((artifact) => artifact.cacheOnlyStale).length,
     };
     const failures = collectFailures(summary, checks);
 

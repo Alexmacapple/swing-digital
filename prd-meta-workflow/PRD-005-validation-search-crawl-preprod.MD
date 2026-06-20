@@ -1,6 +1,6 @@
 # PRD-005 : Validation Search/Crawl préproduction
 
-**Statut** : Bloqué côté publication préproduction
+**Statut** : Bloqué cache Cloudflare
 **Date** : 2026-06-20
 **Auteur** : Alex
 **Source** : rapport HTML SEO/GEO v1.2.1 et tests SEO/GEO existants
@@ -101,7 +101,9 @@ Résultat observé :
 - Canonicals : 23/23 cohérentes avec `https://swing.appmiweb.com`.
 - Open Graph : 23/23 `og:url` cohérents, 21/21 images Open Graph servies en 200.
 - `robots.txt` et `llms.txt` publics répondent en 200.
-- Blocage : 8 artefacts non publics répondent encore en HTTP 200 sur la préproduction.
+- Blocage initial : 8 artefacts non publics répondaient encore en HTTP 200 sur la préproduction.
+- État après purge : 8 artefacts sur 9 répondent désormais en 404.
+- Blocage restant : `/maquette-site.pdf` répond encore en HTTP 200 sur le chemin exact avec `cf-cache-status: HIT`, mais l'URL cache-bustée répond en HTTP 404. L'origine est donc purgée ; le dernier écart est un cache Cloudflare.
 
 Artefacts publics à purger côté hébergement :
 
@@ -115,9 +117,9 @@ Artefacts publics à purger côté hébergement :
 - `/.htaccess`
 - `/.DS_Store`
 
-Diagnostic : le problème n'est pas dans le build local, car `dist/` exclut déjà ces artefacts. La préproduction publique sert probablement un ancien contenu, un répertoire source non filtré ou une racine d'hébergement qui n'est pas strictement `dist/`.
+Diagnostic : le problème initial n'était pas dans le build local, car `dist/` excluait déjà ces artefacts. Après déplacement des artefacts internes hors de `src/`, la préproduction ne sert plus les anciens Markdown, `generated-pages.html`, `pages-extracted/`, `.htaccess` ni `.DS_Store`. Le seul HTTP 200 restant est un objet CDN Cloudflare sur `/maquette-site.pdf`.
 
-Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que ces artefacts restent publics. Les artefacts internes ont été déplacés hors de `src/`, dans `source-artifacts/`, pour que la racine publique Appmiweb ne les reçoive plus si elle déploie `src/`. Après purge ou redéploiement, relancer `npm run appmiweb:search-crawl`.
+Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que l'URL exacte `/maquette-site.pdf` reste servie par Cloudflare. Sans accès purge Cloudflare, attendre l'expiration du cache puis relancer `npm run appmiweb:search-crawl`. Le script distingue maintenant ce cas avec `forbidden_artifact_cache_only`.
 
 ---
 
@@ -130,7 +132,8 @@ Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que c
 5. Tester les images Open Graph déclarées.
 6. Vérifier `robots.txt` et `llms.txt` publics.
 7. Purger les artefacts non publics côté hébergement si le contrôle public les expose.
-8. Régénérer le rapport HTML avec les preuves publiques.
+8. Si l'origine répond 404 mais que Cloudflare répond encore 200, attendre l'expiration du cache ou purger l'URL dans Cloudflare.
+9. Régénérer le rapport HTML avec les preuves publiques.
 
 ---
 
@@ -151,3 +154,4 @@ Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que c
 | Date | Auteur | Changement |
 |------|--------|------------|
 | 2026-06-20 | Alex + Codex | Création du PRD |
+| 2026-06-20 | Alex + Codex | Mise à jour du statut : origine purgée, blocage restant limité au cache Cloudflare de `/maquette-site.pdf` |

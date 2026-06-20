@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-20T22:00:15.356Z",
+  "source_evidence": "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
+  "url": "https://swing.appmiweb.com/maquette-site.pdf",
+  "exact_url": {
+    "status": 200,
+    "content_type": "application/pdf",
+    "cf_cache_status": "HIT",
+    "cache_control": "max-age=14400",
+    "age_seconds": 3276,
+    "content_length": 104587432
+  },
+  "cache_busted_url": {
+    "url": "https://swing.appmiweb.com/maquette-site.pdf?_search_crawl_bust=1781992783626",
+    "status": 404,
+    "cf_cache_status": "MISS",
+    "note": "La même URL avec query string retourne 404, ce qui indique que l’origine ne sert plus le PDF."
+  },
+  "estimated_cache_remaining_seconds": 11124,
+  "conclusion": "Origine purgée ; le dernier HTTP 200 observé est un objet CDN Cloudflare en cache sur le chemin exact.",
+  "next_action": "Attendre l’expiration du cache Cloudflare ou purger spécifiquement https://swing.appmiweb.com/maquette-site.pdf si un accès zone/API devient disponible."
+}
