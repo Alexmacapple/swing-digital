@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-06-21
+
+- Création du PRD-006 : fiabilisation de l'audit responsive lazy-load sans modifier le site public.
+
 ## 2026-06-20
 
 - Création des PRD préproduction issus du rapport HTML SEO/GEO : Design Watch, preuves GEO/citation IA, mesure préproduction et validation Search/Crawl.
