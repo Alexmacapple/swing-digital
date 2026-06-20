@@ -1,20 +1,36 @@
 {
-  "generated_at": "2026-06-20T22:47:36.718Z",
+  "generated_at": "2026-06-20T23:20:04.806Z",
   "url": "http://127.0.0.1:8768/",
   "desktop": {
     "title": "Audit SEO/GEO — swing.appmiweb.com",
-    "bodyText": "AUDIT SEO/GEO\n\nAudit SEO/GEO — swing.appmiweb.com\n\nAudit SEO/GEO public régénéré après PRD-002 : Design Watch progresse, Search/Crawl reste limité par un cache Cloudflare stale.\n\nStatut\npartiel\nConfiance\nhigh\nGénéré\n21 juin 2026, 00:45\nVue générale\nVisuel\nConstats\nTechnique\nActions\nTéléchargements\nSources\n\nCOCKPIT D’AUDIT\n\nAudit SEO/GEO public régénéré après PRD-002 : Design Watch progresse, Search/Crawl reste limité par un cache Cloudflare stale.\n\nValider PRD-002 côté Design Watch local/public, mais ne pas déclarer Search/Crawl 9/10 tant que le chemin PDF exact reste en HTTP 200 via cache.\n\nP",
-    "hasCloudflare": true,
+    "bodyText": "AUDIT SEO/GEO\n\nAudit SEO/GEO — swing.appmiweb.com\n\nAudit SEO/GEO public régénéré après PRD-002, PRD-004 et PRD-005 : Design Watch progresse, Measurement est préparé, Search/Crawl est validé.\n\nStatut\npartiel\nConfiance\nhigh\nGénéré\n21 juin 2026, 01:19\nVue générale\nVisuel\nConstats\nTechnique\nActions\nTéléchargements\nSources\n\nCOCKPIT D’AUDIT\n\nAudit SEO/GEO public régénéré après PRD-002, PRD-004 et PRD-005 : Design Watch progresse, Measurement est préparé, Search/Crawl est validé.\n\nValider PRD-002, PRD-004 et PRD-005 côté préproduction, sans déclarer de trafic, conversions ou citations IA observées.\n\nPoints ouverts: 5\nP0: 0\nP1: 2\nPreuves visuelles: 2\nSources publiques: 14\nSignal de préparation\n7.9/10\nSCORE\nSearch/Crawl\n90%\nCouche IA publique\n90%\nDesign Watch\n80%\nResponsive dynamique\n80%\nURL SITEMAP CONTRÔLÉES\n24\n\nToutes les URL du sitemap public ont été vérifiées.\n\nPAGES HTTP 200\n24/24\n\nPages sitemap accessibles publiquement.\n\nCANONICALS OK\n24/24\n\nCanonicals alignés sur https://swing.appmiweb.com.\n\nOG URL OK\n24/24\n\nOpen Graph URL alignées.\n\nOG IMAGES OK\n21/21\n\nImages sociales contrôlées en HTTP.\n\nROBOTS.TXT\n200\n\nrobots.txt public et sitemap déclaré.\n\nLLMS.TXT\n200\n\nllms.txt public et aligné avec la base canonique.\n\nCOUCHE IA PUBLIQUE\n5/5\n\n/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent.\n\nTESTS SEO LOCAUX\n12/12\n\nnpm run seo:check passé après ajout du cont",
+    "hasMeasurement": true,
+    "hasMeasurementScore": true,
+    "hasSearchCrawlNine": true,
+    "hasZeroGap": true,
+    "hasOldCloudflareBlocker": false,
     "hasDesignWatch": true,
-    "hasDownloads": true
+    "hasDownloads": true,
+    "scrollWidth": 1440,
+    "innerWidth": 1440,
+    "scrollHeight": 2561,
+    "innerHeight": 1100,
+    "horizontalOverflow": false
   },
   "mobile": {
     "title": "Audit SEO/GEO — swing.appmiweb.com",
-    "bodyText": "AUDIT SEO/GEO\n\nAudit SEO/GEO — swing.appmiweb.com\n\nAudit SEO/GEO public régénéré après PRD-002 : Design Watch progresse, Search/Crawl reste limité par un cache Cloudflare stale.\n\nStatut\npartiel\nConfiance\nhigh\nGénéré\n21 juin 2026, 00:45\nVue générale\nVisuel\nConstats\nTechnique\nActions\nTéléchargements\nSources\n\nCOCKPIT D’AUDIT\n\nAudit SEO/GEO public régénéré après PRD-002 : Design Watch progresse, Search/Crawl reste limité par un cache Cloudflare stale.\n\nValider PRD-002 côté Design Watch local/public, mais ne pas déclarer Search/Crawl 9/10 tant que le chemin PDF exact reste en HTTP 200 via cache.\n\nP",
-    "hasCloudflare": true,
+    "bodyText": "AUDIT SEO/GEO\n\nAudit SEO/GEO — swing.appmiweb.com\n\nAudit SEO/GEO public régénéré après PRD-002, PRD-004 et PRD-005 : Design Watch progresse, Measurement est préparé, Search/Crawl est validé.\n\nStatut\npartiel\nConfiance\nhigh\nGénéré\n21 juin 2026, 01:19\nVue générale\nVisuel\nConstats\nTechnique\nActions\nTéléchargements\nSources\n\nCOCKPIT D’AUDIT\n\nAudit SEO/GEO public régénéré après PRD-002, PRD-004 et PRD-005 : Design Watch progresse, Measurement est préparé, Search/Crawl est validé.\n\nValider PRD-002, PRD-004 et PRD-005 côté préproduction, sans déclarer de trafic, conversions ou citations IA observées.\n\nPoints ouverts: 5\nP0: 0\nP1: 2\nPreuves visuelles: 2\nSources publiques: 14\nSignal de préparation\n7.9/10\nSCORE\nSearch/Crawl\n90%\nCouche IA publique\n90%\nDesign Watch\n80%\nResponsive dynamique\n80%\nURL SITEMAP CONTRÔLÉES\n24\n\nToutes les URL du sitemap public ont été vérifiées.\n\nPAGES HTTP 200\n24/24\n\nPages sitemap accessibles publiquement.\n\nCANONICALS OK\n24/24\n\nCanonicals alignés sur https://swing.appmiweb.com.\n\nOG URL OK\n24/24\n\nOpen Graph URL alignées.\n\nOG IMAGES OK\n21/21\n\nImages sociales contrôlées en HTTP.\n\nROBOTS.TXT\n200\n\nrobots.txt public et sitemap déclaré.\n\nLLMS.TXT\n200\n\nllms.txt public et aligné avec la base canonique.\n\nCOUCHE IA PUBLIQUE\n5/5\n\n/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent.\n\nTESTS SEO LOCAUX\n12/12\n\nnpm run seo:check passé après ajout du cont",
+    "hasMeasurement": true,
+    "hasMeasurementScore": true,
+    "hasSearchCrawlNine": true,
+    "hasZeroGap": true,
+    "hasOldCloudflareBlocker": false,
     "hasDesignWatch": true,
+    "hasDownloads": true,
     "scrollWidth": 390,
     "innerWidth": 390,
+    "scrollHeight": 5823,
+    "innerHeight": 844,
     "horizontalOverflow": false
   }
 }

@@ -1,6 +1,6 @@
 # PRD-004 : Mesure préproduction SEO/GEO
 
-**Statut** : Brouillon
+**Statut** : Validé localement
 **Date** : 2026-06-20
 **Auteur** : Alex
 **Source** : rapport HTML SEO/GEO v1.2.1 et PRD-001
@@ -90,6 +90,38 @@ Retenir l'Option A. La préproduction doit documenter et tester la préparation,
 
 ---
 
+## Résultat du 2026-06-21
+
+Changements livrés :
+
+- création de `docs/SEO-GEO-MEASUREMENT-MATRIX.csv` comme source de vérité des événements ;
+- création de `docs/SEO-GEO-MEASUREMENT-PLAN.md` pour séparer préproduction, production finale et mesure IA ;
+- ajout d'un contrôle `seo:check` qui vérifie au moins 5 événements, les champs obligatoires, les sélecteurs HTML réels et l'absence de tag GA4/GTM en préproduction ;
+- maintien explicite de toutes les métriques en `unknown` tant qu'aucun accès propriétaire n'est fourni.
+
+Événements préparés :
+
+- vue accueil ;
+- clic CTA `Découvrir les expériences` ;
+- clic contact accueil ;
+- clic Instagram ;
+- ouverture du menu mobile ;
+- clic réservation désactivée, documenté comme non-conversion ;
+- clic newsletter désactivée, documenté comme non-conversion ;
+- clic FAQ réservations ;
+- clic contact visite privée ou groupe.
+
+Preuves locales :
+
+- `npx playwright test tests/seo-geo.spec.js --project=desktop-1920` : 12 tests passés ;
+- le contrôle vérifie les sélecteurs depuis les pages réelles servies par Playwright ;
+- aucun tag GA4 ou GTM n'est installé dans les fichiers publics ;
+- rapport `reports/swing-digital/2026-06-21-seo-geo-audit-public/index.html` régénéré avec `Measurement` à 5,5/10 en readiness préproduction.
+
+Verdict : le chantier est validé localement. Le score `Measurement` peut être remonté en readiness préproduction, sans déclarer de trafic, CTR, positions, citations IA ou conversions observées.
+
+---
+
 ## Plan d'implémentation
 
 1. Créer une matrice des événements de conversion attendus.
@@ -116,3 +148,4 @@ Retenir l'Option A. La préproduction doit documenter et tester la préparation,
 | Date | Auteur | Changement |
 |------|--------|------------|
 | 2026-06-20 | Alex + Codex | Création du PRD |
+| 2026-06-21 | Alex + Codex | Ajout de la matrice de mesure, du plan préproduction et du test SEO/GEO associé |

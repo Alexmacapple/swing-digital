@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://player.vimeo.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; media-src 'self'; frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self' https://player.vimeo.com; object-src 'none'; base-uri 'self'; form-action 'self'; worker-src 'none'; upgrade-insecure-requests">
     <title>Podcasts - L'Expérience Monroe - Swing Digital</title>
     <meta name="description" content="Podcasts de L'Expérience Monroe : épisodes, entretiens et coulisses sonores pour prolonger le récit immersif consacré à Marilyn Monroe.">
     <link rel="canonical" href="https://swing.appmiweb.com/monroe-podcasts.html">
@@ -18,11 +19,6 @@
     <meta name="twitter:description" content="Podcasts de L'Expérience Monroe : épisodes, entretiens et coulisses sonores pour prolonger le récit immersif consacré à Marilyn Monroe.">
     <meta name="twitter:image" content="https://swing.appmiweb.com/img/pages/page-33/page-33-image-1.jpg">
     <link rel="icon" href="img/favicon.ico">
-
-    <!-- Fonts -->
-    <link rel="preload" href="fonts/Brandon_blk.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="fonts/Brandon_reg.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="fonts/Fragen-Bold.otf" as="font" type="font/otf" crossorigin>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css?v=20260621-0033">
@@ -203,8 +199,7 @@
                                     src="https://www.youtube.com/embed/0YDIZeBbYL0?rel=0"
                                     title="DEVENIR MARILYN - Épisode 1 et 2"
                                     class="page33__playlist-iframe"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                                     loading="lazy"></iframe>
                         </div>
                         <ol class="page33__episodes" aria-label="Liste des épisodes du podcast">

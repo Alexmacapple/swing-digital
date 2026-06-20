@@ -1,6 +1,6 @@
 # PRD-002 : Design Watch préproduction
 
-**Statut** : Validé localement
+**Statut** : Validé public
 **Date** : 2026-06-20
 **Auteur** : Alex
 **Source** : rapport HTML SEO/GEO v1.2.1 et captures desktop/mobile
@@ -131,7 +131,16 @@ Preuves locales :
 - `npm run appmiweb:preflight` : OK, avec les 3 avertissements préproduction déjà connus sur mentions légales et réservations ;
 - captures finales : `reports/swing-digital/2026-06-21-prd-002-design-watch/hero-desktop-1920.png` et `reports/swing-digital/2026-06-21-prd-002-design-watch/hero-mobile-375.png`.
 
-Verdict : le chantier est validé localement. La montée officielle de `Design Watch` vers 8/10 reste à confirmer par un nouveau rapport HTML SEO/GEO généré sur la version publiée.
+Verdict : le chantier est validé localement.
+
+Confirmation rapport SEO/GEO public :
+
+- rapport courant : `http://127.0.0.1:8768/` ;
+- `Design Watch` est classé à 8/10 ;
+- les captures publiques montrent le signal de confiance, le CTA et l'absence de débordement horizontal ;
+- le rapport ne classe plus l'ajustement mobile comme point bloquant.
+
+Le chantier est donc validé public côté rapport SEO/GEO. Les optimisations restantes du hero mobile relèvent d'un chantier ultérieur de conversion ou d'ergonomie, pas du correctif PRD-002 initial.
 
 ---
 
@@ -141,3 +150,4 @@ Verdict : le chantier est validé localement. La montée officielle de `Design W
 |------|--------|------------|
 | 2026-06-20 | Alex + Codex | Création du PRD |
 | 2026-06-21 | Alex + Codex | Implémentation et validation locale du signal de confiance, du CTA et de la marge sociale mobile |
+| 2026-06-21 | Alex + Codex | Confirmation publique par le rapport SEO/GEO courant : `Design Watch` à 8/10 |

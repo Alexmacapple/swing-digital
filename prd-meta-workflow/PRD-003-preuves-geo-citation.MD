@@ -118,7 +118,7 @@ Preuves publiques :
 - `https://swing.appmiweb.com/for-ai.json` répond en HTTP 200, avec 5 faits citables et 3 limites de non-extrapolation ;
 - `https://swing.appmiweb.com/for-ai.txt` répond en HTTP 200 ;
 - `https://swing.appmiweb.com/schema-webpage.jsonld` répond en HTTP 200 ;
-- `npm run appmiweb:search-crawl` contrôle désormais 24 URL sitemap, dont `/for-ai`, avec 24 pages en HTTP 200 et 24 canonicals cohérentes. L'échec restant appartient à PRD-005 : cache Cloudflare HIT sur `/maquette-site.pdf`.
+- `npm run appmiweb:search-crawl` contrôle désormais 24 URL sitemap, dont `/for-ai`, avec 24 pages en HTTP 200, 24 canonicals cohérentes et 0 écart public après validation PRD-005.
 
 ---
 

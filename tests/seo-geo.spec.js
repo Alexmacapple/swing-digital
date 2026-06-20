@@ -24,6 +24,9 @@ function listFiles(dir, baseDir = dir) {
 const PUBLIC_TEXT_FILES = listFiles(SRC_DIR)
     .filter((file) => PUBLIC_TEXT_EXTENSIONS.has(path.extname(file)))
     .sort();
+const PUBLIC_HTML_FILES = PUBLIC_TEXT_FILES
+    .filter((file) => file.endsWith('.html'))
+    .sort();
 const INDEXABLE_HTML = PUBLIC_TEXT_FILES
     .filter((file) => file.endsWith('.html'))
     .filter((file) => !['404.html', 'generated-pages.html'].includes(file))
@@ -34,6 +37,7 @@ const STRATEGIC_DIRECT_ANSWER_PAGES = [
     'experience-monroe.html',
     'reservations.html',
 ];
+const MEASUREMENT_MATRIX = path.join(__dirname, '..', 'docs', 'SEO-GEO-MEASUREMENT-MATRIX.csv');
 
 const canonicalFor = (file) => {
     if (file === 'index.html') {
@@ -50,6 +54,16 @@ const canonicalFor = (file) => {
 const extract = (pattern, text) => {
     const match = text.match(pattern);
     return match ? match[1] : '';
+};
+
+const parseMeasurementMatrix = () => {
+    const lines = fs.readFileSync(MEASUREMENT_MATRIX, 'utf8').trim().split(/\r?\n/);
+    const headers = lines.shift().split(',');
+
+    return lines.map((line) => {
+        const values = line.split(',');
+        return Object.fromEntries(headers.map((header, index) => [header, values[index] || '']));
+    });
 };
 
 test.describe('SEO/GEO technique', () => {
@@ -163,6 +177,50 @@ test.describe('SEO/GEO technique', () => {
         }
     });
 
+    test('les pages publiques gardent une CSP statique et une console sans avertissements HTML évitables', async () => {
+        const requiredDirectives = [
+            "default-src 'self'",
+            "script-src 'self' 'unsafe-inline' https://player.vimeo.com",
+            "style-src 'self' 'unsafe-inline'",
+            "font-src 'self' data:",
+            'frame-src https://player.vimeo.com https://www.youtube.com https://www.youtube-nocookie.com',
+            "object-src 'none'",
+            "base-uri 'self'",
+            "form-action 'self'",
+        ];
+        const supportedPreloadAs = new Set([
+            'audio',
+            'document',
+            'embed',
+            'fetch',
+            'font',
+            'image',
+            'object',
+            'script',
+            'style',
+            'track',
+            'worker',
+        ]);
+
+        for (const file of PUBLIC_HTML_FILES) {
+            const html = fs.readFileSync(path.join(SRC_DIR, file), 'utf8');
+            const csp = extract(/<meta http-equiv="Content-Security-Policy" content="([^"]+)">/, html);
+            const preloadAsValues = [...html.matchAll(/<link\b[^>]*\brel="preload"[^>]*\bas="([^"]+)"/g)]
+                .map((match) => match[1]);
+
+            expect(csp, `${file} doit déclarer une CSP statique`).not.toBe('');
+            for (const directive of requiredDirectives) {
+                expect(csp, `${file} CSP doit contenir ${directive}`).toContain(directive);
+            }
+
+            expect(html, `${file} ne doit pas précharger toutes les polices par défaut`).not.toContain('rel="preload" href="fonts/');
+            expect(html, `${file} ne doit pas doubler fullscreen entre allow et allowfullscreen`).not.toContain('allowfullscreen');
+            for (const asValue of preloadAsValues) {
+                expect(supportedPreloadAs.has(asValue), `${file} preload as="${asValue}" doit être supporté par Chrome`).toBe(true);
+            }
+        }
+    });
+
     test('les pages stratégiques ont une réponse directe et un tableau de faits visibles', async () => {
         for (const file of STRATEGIC_DIRECT_ANSWER_PAGES) {
             const html = fs.readFileSync(path.join(SRC_DIR, file), 'utf8');
@@ -182,6 +240,42 @@ test.describe('SEO/GEO technique', () => {
 
             expect(wordCount, file).toBeGreaterThanOrEqual(35);
             expect(wordCount, file).toBeLessThanOrEqual(95);
+        }
+    });
+
+    test('la matrice de mesure préproduction garde des événements traçables sans inventer de métriques', async ({ page }) => {
+        const events = parseMeasurementMatrix();
+        const requiredFields = [
+            'event_name',
+            'page_path',
+            'selector',
+            'trigger',
+            'preprod_status',
+            'prod_activation',
+            'tool_target',
+            'metric_status',
+        ];
+
+        expect(events.length).toBeGreaterThanOrEqual(5);
+
+        for (const event of events) {
+            for (const field of requiredFields) {
+                expect(event[field], `${event.event_name} doit renseigner ${field}`).not.toBe('');
+            }
+
+            expect(event.metric_status, `${event.event_name} ne doit pas inventer de métrique`).toBe('unknown');
+            expect(event.prod_activation, `${event.event_name} doit différer la collecte au domaine final`).toMatch(/^(activate_on_final_domain|activate_when_booking_active|activate_when_newsletter_active)$/);
+
+            await page.goto(`/${event.page_path}`);
+            await expect(page.locator(event.selector).first(), `${event.event_name} selector ${event.selector}`).toHaveCount(1);
+        }
+
+        for (const file of PUBLIC_TEXT_FILES) {
+            const content = fs.readFileSync(path.join(SRC_DIR, file), 'utf8');
+
+            expect(content, `${file} ne doit pas charger Google Tag Manager en préproduction`).not.toContain('googletagmanager.com');
+            expect(content, `${file} ne doit pas contenir un ID GTM en préproduction`).not.toMatch(/\bGTM-[A-Z0-9]+\b/);
+            expect(content, `${file} ne doit pas contenir un ID GA4 en préproduction`).not.toMatch(/\bG-[A-Z0-9]{6,}\b/);
         }
     });
 

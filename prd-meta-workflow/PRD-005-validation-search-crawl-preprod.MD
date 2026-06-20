@@ -1,7 +1,7 @@
 # PRD-005 : Validation Search/Crawl préproduction
 
-**Statut** : Bloqué cache Cloudflare
-**Date** : 2026-06-20
+**Statut** : Validé public
+**Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : rapport HTML SEO/GEO v1.2.1 et tests SEO/GEO existants
 
@@ -102,10 +102,10 @@ Résultat observé :
 - Open Graph : 23/23 `og:url` cohérents, 21/21 images Open Graph servies en 200.
 - `robots.txt` et `llms.txt` publics répondent en 200.
 - Blocage initial : 8 artefacts non publics répondaient encore en HTTP 200 sur la préproduction.
-- État après purge : 8 artefacts sur 9 répondent désormais en 404.
-- Blocage restant : `/maquette-site.pdf` répond encore en HTTP 200 sur le chemin exact avec `cf-cache-status: HIT`, mais l'URL cache-bustée répond en HTTP 404. L'origine est donc purgée ; le dernier écart est un cache Cloudflare.
+- État intermédiaire après purge : 8 artefacts sur 9 répondaient en 404 ; `/maquette-site.pdf` restait servi en cache Cloudflare sur le chemin exact.
+- État final du 2026-06-21 : les 9 artefacts interdits sont non publics, avec 0 écart Search/Crawl et 0 artefact cache-only.
 
-Artefacts publics à purger côté hébergement :
+Artefacts interdits contrôlés côté hébergement :
 
 - `/generated-pages.html`
 - `/pages-extracted/`
@@ -117,13 +117,13 @@ Artefacts publics à purger côté hébergement :
 - `/.htaccess`
 - `/.DS_Store`
 
-Diagnostic : le problème initial n'était pas dans le build local, car `dist/` excluait déjà ces artefacts. Après déplacement des artefacts internes hors de `src/`, la préproduction ne sert plus les anciens Markdown, `generated-pages.html`, `pages-extracted/`, `.htaccess` ni `.DS_Store`. Le seul HTTP 200 restant est un objet CDN Cloudflare sur `/maquette-site.pdf`.
+Diagnostic : le problème initial n'était pas dans le build local, car `dist/` excluait déjà ces artefacts. Après déplacement des artefacts internes hors de `src/`, la préproduction ne sert plus les anciens Markdown, `generated-pages.html`, `pages-extracted/`, `.htaccess`, `.DS_Store` ni `/maquette-site.pdf`.
 
-Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que l'URL exacte `/maquette-site.pdf` reste servie par Cloudflare. Sans accès purge Cloudflare, attendre l'expiration du cache puis relancer `npm run appmiweb:search-crawl`. Le script distingue maintenant ce cas avec `forbidden_artifact_cache_only`.
+Conclusion : la note `Search/Crawl` peut être remontée à 9/10 dans le rapport régénéré. La preuve publique du 2026-06-21 confirme 24 URL sitemap en HTTP 200, 24 canonicals cohérentes, 24 `og:url` cohérentes, 21 images Open Graph contrôlées en HTTP 200 et 9 artefacts interdits non publics.
 
-Relance du 2026-06-21 : le contrôle public reste en échec sur le même écart cache-only. `/maquette-site.pdf` répond encore en HTTP 200 avec `cf-cache-status: HIT`, tandis que l'URL cache-bustée répond en HTTP 404. La preuve machine a été régénérée dans `reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json`.
+Relance validante du 2026-06-21 : `npm run appmiweb:search-crawl` termine avec `Search/Crawl public : 0 écart(s), 24 URL sitemap contrôlée(s)`. La preuve machine a été régénérée dans `reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json`.
 
-Règle de repli : quand Cloudflare fausse l'audit par cache, basculer les contrôles de contenu Swing Digital sur une URL locale servie depuis `dist/`, par exemple `http://127.0.0.1:8771/` avec `python3 scripts/serve-test.py 8771 dist`. Ce repli valide le site généré et les endpoints IA sans dépendre du CDN. Il ne remplace pas la validation publique Search/Crawl, qui reste nécessaire pour monter officiellement la note à 9/10.
+Règle de repli : quand Cloudflare fausse un audit futur par cache, basculer les contrôles de contenu Swing Digital sur une URL locale servie depuis `dist/`, par exemple `http://127.0.0.1:8771/` avec `python3 scripts/serve-test.py 8771 dist`. Ce repli valide le site généré et les endpoints IA sans dépendre du CDN. Il ne remplace pas la validation publique Search/Crawl, obtenue pour PRD-005.
 
 ---
 
@@ -161,3 +161,4 @@ Règle de repli : quand Cloudflare fausse l'audit par cache, basculer les contr�
 | 2026-06-20 | Alex + Codex | Mise à jour du statut : origine purgée, blocage restant limité au cache Cloudflare de `/maquette-site.pdf` |
 | 2026-06-21 | Alex + Codex | Relance du contrôle public : échec inchangé, typé cache-only |
 | 2026-06-21 | Alex + Codex | Ajout de la règle de repli local `dist/` quand Cloudflare fausse l'audit |
+| 2026-06-21 | Alex + Codex | Validation publique finale : 0 écart Search/Crawl, 24 URL sitemap contrôlées |

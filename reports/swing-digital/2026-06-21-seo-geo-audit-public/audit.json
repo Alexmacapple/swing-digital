@@ -2,22 +2,22 @@
   "site": "swing.appmiweb.com",
   "audited_url": "https://swing.appmiweb.com/",
   "report_language": "fr",
-  "generated_at": "2026-06-20T22:45:34.089Z",
+  "generated_at": "2026-06-20T23:19:42.919Z",
   "summary": {
-    "headline": "Audit SEO/GEO public régénéré après PRD-002 : Design Watch progresse, Search/Crawl reste limité par un cache Cloudflare stale.",
-    "description": "La préproduction Swing Digital expose maintenant la couche IA publique complète et le hero d’accueil contient un signal de confiance visible avec un CTA clair. Les 24 URL sitemap répondent 200 avec canonical, OG URL et OG image cohérents. Le seul écart Search/Crawl public observé vient de /maquette-site.pdf encore servi par Cloudflare en HIT alors que l’URL cache-bustée répond déjà 404.",
+    "headline": "Audit SEO/GEO public régénéré après PRD-002, PRD-004 et PRD-005 : Design Watch progresse, Measurement est préparé, Search/Crawl est validé.",
+    "description": "La préproduction Swing Digital expose la couche IA publique complète, un hero plus décisionnel, une matrice de mesure préproduction testée et une surface Search/Crawl publique sans écart. Les 24 URL sitemap répondent 200 avec canonical, OG URL et OG image cohérents. Les métriques propriétaires restent inconnues, mais les événements de conversion sont nommés et vérifiés côté sélecteurs.",
     "status": "partial",
-    "readiness": "Préproduction SEO/GEO solide, validation Search/Crawl publique encore bloquée par cache Cloudflare.",
-    "biggest_blocker": "Cloudflare sert encore /maquette-site.pdf depuis le cache sur le chemin exact.",
-    "fastest_win": "Purger précisément https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare, puis relancer npm run appmiweb:search-crawl.",
+    "readiness": "Préproduction SEO/GEO solide : Search/Crawl public validé, Design Watch amélioré et mesure préparée. Les limites restantes relèvent de la production finale et des données propriétaires.",
+    "biggest_blocker": "PRD-001 reste dépendant du domaine final, de l’hébergeur légal, du scénario Réservations, de GSC, GA4/GTM et Bing Webmaster.",
+    "fastest_win": "Traiter les mentions légales hébergeur et le scénario Réservations pour supprimer les avertissements préproduction restants.",
     "data_confidence": "high",
-    "decision": "Valider PRD-002 côté Design Watch local/public, mais ne pas déclarer Search/Crawl 9/10 tant que le chemin PDF exact reste en HTTP 200 via cache."
+    "decision": "Valider PRD-002, PRD-004 et PRD-005 côté préproduction, sans déclarer de trafic, conversions ou citations IA observées."
   },
   "executive_brief": [
-    "Design Watch passe de 7/10 à 8/10 sur les preuves publiques : proposition de valeur, signal de confiance et CTA sont visibles dans le premier écran desktop/mobile.",
-    "Search/Crawl reste à 8,5/10 : le code et l’origine sont propres, mais un ancien PDF reste exposé par cache Cloudflare sur le chemin exact.",
-    "La couche IA est désormais publique : /llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent.",
-    "Les mesures propriétaires restent absentes : aucun export GSC, GA4, Bing Webmaster, logs ou citations IA n’a été fourni à l’audit."
+    "Design Watch reste à 8/10 sur les preuves publiques : proposition de valeur, signal de confiance et CTA sont visibles dans le premier écran desktop/mobile.",
+    "Measurement passe de 2/10 à 5,5/10 en readiness préproduction : 9 événements sont nommés, leurs sélecteurs sont vérifiés et aucun tag de production n’est installé.",
+    "Search/Crawl passe à 9/10 : la relance publique confirme 0 écart, 24 URL sitemap contrôlées et 9 artefacts interdits non publics.",
+    "Les métriques réelles restent inconnues : aucun export GSC, GA4, Bing Webmaster, logs ou citations IA n’a été fourni à l’audit."
   ],
   "metrics": [
     {
@@ -62,8 +62,8 @@
     },
     {
       "label": "Tests SEO locaux",
-      "value": "10/10",
-      "detail": "npm run seo:check passé."
+      "value": "12/12",
+      "detail": "npm run seo:check passé après ajout du contrôle CSP/preload/iframe."
     },
     {
       "label": "Preflight préprod",
@@ -72,16 +72,26 @@
     },
     {
       "label": "Artefacts interdits",
-      "value": "8/9",
-      "detail": "Un artefact reste cache-only stale sur Cloudflare."
+      "value": "9/9",
+      "detail": "Tous les artefacts interdits contrôlés sont non publics."
+    },
+    {
+      "label": "Événements mesure préparés",
+      "value": "9/9",
+      "detail": "Événements nommés avec page, sélecteur, déclencheur, statut et condition d’activation."
+    },
+    {
+      "label": "Métriques propriétaires",
+      "value": "unknown",
+      "detail": "Aucun trafic, CTR, position, citation IA ou conversion observé sans accès GSC/GA4/Bing/logs."
     }
   ],
   "scorecards": [
     {
       "label": "Search/Crawl",
-      "score": 8.5,
+      "score": 9,
       "max": 10,
-      "note": "24 URL sitemap OK, robots/llms/canonicals/OG OK ; dernier écart sur /maquette-site.pdf servi par cache Cloudflare HIT."
+      "note": "24 URL sitemap OK, robots/llms/canonicals/OG OK ; 9 artefacts interdits contrôlés et non publics."
     },
     {
       "label": "Couche IA publique",
@@ -109,43 +119,39 @@
     },
     {
       "label": "Measurement",
-      "score": 2,
+      "score": 5.5,
       "max": 10,
-      "note": "GSC, GA4, Bing Webmaster, logs et suivi citations IA non fournis dans cet audit."
+      "note": "Matrice et sélecteurs de mesure prêts en préproduction ; données GSC, GA4, Bing, logs et citations IA toujours inconnues."
     },
     {
       "label": "Readiness globale",
-      "score": 8,
+      "score": 8.4,
       "max": 10,
-      "note": "Préproduction publiable côté structure et lisibilité ; cache Cloudflare et mesure restent les limites."
+      "note": "Préproduction mature côté structure, lisibilité, crawl public et mesure ; limites restantes sur production finale et données propriétaires."
     }
   ],
   "findings": [
     {
-      "priority": "P1",
-      "title": "Cache Cloudflare stale sur /maquette-site.pdf",
+      "priority": "P2",
+      "title": "Search/Crawl public validé après relance PRD-005",
       "observed": [
-        "https://swing.appmiweb.com/maquette-site.pdf répond encore 200 avec cf-cache-status HIT.",
-        "La variante cache-bustée répond 404, ce qui indique que l’origine est déjà purgée.",
-        "Durée estimée restante au moment du contrôle : environ 2,4 h."
+        "npm run appmiweb:search-crawl termine avec 0 écart public.",
+        "24 URL sitemap sont contrôlées et répondent en HTTP 200.",
+        "Les 9 artefacts interdits contrôlés, dont /maquette-site.pdf, sont non publics."
       ],
       "inferred": [
-        "Le code publié n’expose plus le PDF comme fichier d’origine, mais l’ancien objet peut encore être récupéré via son URL exacte.",
-        "Le score Search/Crawl ne doit pas être remonté officiellement tant que l’URL exacte ne répond pas 404/410/403."
+        "Le blocage Cloudflare précédent n’est plus confirmé par la preuve publique courante.",
+        "Le score Search/Crawl peut être remonté officiellement à 9/10 pour la préproduction Appmiweb."
       ],
       "recommended": [
-        "Purger précisément l’URL Cloudflare https://swing.appmiweb.com/maquette-site.pdf.",
-        "Relancer le contrôle public Search/Crawl après purge ou expiration du cache.",
-        "Conserver la preuve cache-bustée 404 comme distinction origine/cache."
+        "Conserver npm run appmiweb:search-crawl comme contrôle avant publication.",
+        "Relancer le même contrôle sur le domaine final lors du go-live.",
+        "Ne pas extrapoler cette validation aux métriques propriétaires ou aux citations IA réelles."
       ],
       "evidence": [
         {
           "label": "Preuve Search/Crawl",
           "path": "search-crawl-public-evidence.json"
-        },
-        {
-          "label": "URL cache-bustée",
-          "url": "https://swing.appmiweb.com/maquette-site.pdf?_search_crawl_bust=..."
         }
       ]
     },
@@ -162,7 +168,7 @@
         "Le hero mobile reste très vertical, mais ce n’est plus un blocage Design Watch prioritaire."
       ],
       "recommended": [
-        "Confirmer le passage officiel à 8/10 dans le prochain rapport après purge Cloudflare.",
+        "Conserver le score Design Watch à 8/10 dans le rapport courant.",
         "Sur un chantier ultérieur, tester une version mobile plus compacte pour faire remonter plus tôt “Qui sommes-nous ?”."
       ],
       "evidence": [
@@ -238,23 +244,34 @@
     },
     {
       "priority": "P1",
-      "title": "Mesure propriétaire absente",
+      "title": "Mesure préproduction préparée sans données propriétaires",
       "observed": [
-        "Aucun export GSC, GA4, Bing Webmaster, logs serveur ou outil de visibilité IA n’a été fourni.",
-        "Les tests publics ne mesurent pas impressions, clics, CTR, positions, citations ou conversions."
+        "docs/SEO-GEO-MEASUREMENT-MATRIX.csv liste 9 événements avec nom, page, sélecteur, déclencheur, statut et condition d’activation.",
+        "docs/SEO-GEO-MEASUREMENT-PLAN.md sépare préproduction, domaine final et mesure IA.",
+        "Le test SEO/GEO vérifie que chaque sélecteur pointe vers un élément HTML réel.",
+        "Aucun tag GA4 ou GTM n’est installé dans les fichiers publics."
       ],
       "inferred": [
-        "Le rapport peut valider la readiness technique et visuelle, pas la performance SEO/GEO réelle.",
-        "La décision go-live SEO reste incomplète sans instrumentation."
+        "La note Measurement peut monter en readiness préproduction, car la collecte est préparée et testable.",
+        "La performance réelle reste inconnue tant que GSC, GA4/GTM, Bing Webmaster, logs et citations IA ne sont pas fournis."
       ],
       "recommended": [
-        "Activer GSC, GA4/GTM, Bing Webmaster et suivi des sources IA au domaine final.",
-        "Créer une mesure hebdomadaire : indexation, requêtes, clics, referrals IA, citations observées."
+        "Activer la collecte seulement au domaine final ou dans une propriété préproduction explicitement séparée.",
+        "Créer les événements selon la matrice et vérifier le mode debug avant campagne.",
+        "Ne marquer comme conversions que les parcours réellement actifs : contact, réservation ouverte ou newsletter active."
       ],
       "evidence": [
         {
-          "label": "PRD-001",
-          "path": "prd-meta-workflow/PRD-001-seo-geo-production.MD"
+          "label": "Matrice de mesure",
+          "path": "../../docs/SEO-GEO-MEASUREMENT-MATRIX.csv"
+        },
+        {
+          "label": "Plan de mesure",
+          "path": "../../docs/SEO-GEO-MEASUREMENT-PLAN.md"
+        },
+        {
+          "label": "Preuve readiness",
+          "path": "measurement-readiness-evidence.json"
         }
       ]
     }
@@ -262,12 +279,12 @@
   "analysis_cohorts": [
     {
       "name": "Search / crawl",
-      "score": "8.5/10",
-      "status": "partial",
+      "score": "9/10",
+      "status": "ok",
       "what_it_checks": "Sitemap, robots.txt, HTTP 200, canonicals, Open Graph, llms.txt et artefacts interdits.",
-      "verdict": "La surface publique est saine, sauf un ancien PDF encore servi par cache Cloudflare.",
-      "evidence": "24/24 pages sitemap en 200 ; 24 canonicals OK ; 24 OG URL OK ; 21/21 OG images OK ; 1 artefact cache-only stale.",
-      "next_action": "Purger /maquette-site.pdf dans Cloudflare puis relancer npm run appmiweb:search-crawl."
+      "verdict": "La surface publique Appmiweb est saine sur le périmètre Search/Crawl préproduction.",
+      "evidence": "24/24 pages sitemap en 200 ; 24 canonicals OK ; 24 OG URL OK ; 21/21 OG images OK ; 9/9 artefacts interdits non publics.",
+      "next_action": "Relancer le contrôle sur le domaine final au go-live."
     },
     {
       "name": "AI citation",
@@ -294,7 +311,7 @@
       "what_it_checks": "Première impression, hiérarchie, confiance, clarté du CTA et lisibilité mobile.",
       "verdict": "Le PRD-002 améliore nettement la décision en premier écran.",
       "evidence": "Captures desktop/mobile publiques avec signal de confiance et CTA visibles.",
-      "next_action": "Après purge Cloudflare, générer un rapport de validation finale et archiver le score officiel."
+      "next_action": "Tester ensuite une version mobile plus compacte si l’objectif devient de faire apparaître plus tôt le bloc “Qui sommes-nous ?”."
     },
     {
       "name": "Responsive dynamique",
@@ -307,19 +324,19 @@
     },
     {
       "name": "Measurement owner",
-      "score": "2/10",
-      "status": "missing",
-      "what_it_checks": "GSC, GA4, Bing Webmaster, logs et suivi des citations IA.",
-      "verdict": "La mesure métier et SEO/GEO réelle n’est pas encore branchée.",
-      "evidence": "Aucun export privé fourni dans le tour courant.",
-      "next_action": "Traiter PRD-001/PRD-004 au domaine final."
+      "score": "5.5/10",
+      "status": "partial",
+      "what_it_checks": "Préparation des événements, sélecteurs, séparation préproduction/production, GSC, GA4/GTM, Bing, logs et citations IA.",
+      "verdict": "La mesure est prête côté plan et sélecteurs, mais aucune donnée propriétaire n’est encore observée.",
+      "evidence": "9 événements dans docs/SEO-GEO-MEASUREMENT-MATRIX.csv ; test SEO/GEO passé avec 11 réussites ; métriques maintenues unknown.",
+      "next_action": "Activer GSC, GA4/GTM, Bing Webmaster et le suivi sources IA au domaine final."
     },
     {
       "name": "Skillpack quality v1.2.3",
       "score": "9/10",
       "status": "ok",
       "what_it_checks": "Respect du contrat audit visuel : audit.json, HTML, captures, responsive, Design Watch, cohortes, couche IA.",
-      "verdict": "Le livrable suit le workflow v1.2.3 et différencie preuve, inférence et recommandation.",
+      "verdict": "Le livrable suit le workflow v1.2.3 et intègre les preuves Search/Crawl, Design Watch, Measurement et couche IA.",
       "evidence": "Dossier reports/swing-digital/2026-06-21-seo-geo-audit-public/.",
       "next_action": "Servir le rapport localement et valider son rendu navigateur."
     }
@@ -441,7 +458,7 @@
   },
   "technical_checks": {
     "search_crawl_public": {
-      "generatedAt": "2026-06-20T22:41:11.460Z",
+      "generatedAt": "2026-06-20T23:19:23.852Z",
       "base": "https://swing.appmiweb.com",
       "sitemapUrlCount": 24,
       "sitemapStatusOk": true,
@@ -456,23 +473,13 @@
       "ogImagesChecked": 21,
       "ogImagesOk": 21,
       "forbiddenArtifactsChecked": 9,
-      "forbiddenArtifactsNotPublicOk": 8,
-      "forbiddenArtifactsCacheOnly": 1
+      "forbiddenArtifactsNotPublicOk": 9,
+      "forbiddenArtifactsCacheOnly": 0
     },
-    "search_crawl_failures": [
-      {
-        "type": "forbidden_artifact_cache_only",
-        "url": "https://swing.appmiweb.com/maquette-site.pdf",
-        "status": 200,
-        "contentType": "application/pdf",
-        "cfCacheStatus": "HIT",
-        "cacheBustedStatus": 404,
-        "estimatedCacheRemainingSeconds": 8637
-      }
-    ],
+    "search_crawl_failures": [],
     "seo_check": {
       "status": "passed",
-      "passed": 10,
+      "passed": 12,
       "command": "npm run seo:check"
     },
     "build_prod": {
@@ -530,9 +537,156 @@
       },
       "unresolved_http_checks": [],
       "interpretation": "Les images non chargées dans le DOM sont des images lazy/visuelles différées dont les URLs répondent 200 en HTTP."
+    },
+    "measurement_readiness": {
+      "generated_at": "2026-06-20T22:58:31.356Z",
+      "source_matrix": "docs/SEO-GEO-MEASUREMENT-MATRIX.csv",
+      "source_plan": "docs/SEO-GEO-MEASUREMENT-PLAN.md",
+      "status": "prepared_not_installed",
+      "event_count": 9,
+      "metric_statuses": [
+        "unknown"
+      ],
+      "production_activation_modes": [
+        "activate_on_final_domain",
+        "activate_when_booking_active",
+        "activate_when_newsletter_active"
+      ],
+      "tested_command": "npx playwright test tests/seo-geo.spec.js --project=desktop-1920",
+      "tested_result": "11 passed",
+      "guardrails": [
+        "No GA4 or GTM tag installed in preproduction files.",
+        "All event metrics remain unknown until proprietary data exists.",
+        "Disabled booking and newsletter buttons are documented as non-conversions."
+      ],
+      "events": [
+        {
+          "event_name": "page_view_home",
+          "page_path": "index.html",
+          "selector": "body[data-section=\"accueil\"]",
+          "trigger": "page_view",
+          "preprod_status": "documented",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "page_view_visible_in_realtime",
+          "metric_status": "unknown",
+          "notes": "no_tag_installed_in_preprod"
+        },
+        {
+          "event_name": "click_hero_experiences",
+          "page_path": "index.html",
+          "selector": ".hero-page1__cta",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "event_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "primary_discovery_cta"
+        },
+        {
+          "event_name": "click_contact_home",
+          "page_path": "index.html",
+          "selector": ".hero-page1__bottom-left a[href=\"mailto:production@swingdigitalproduction.com\"]",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "email_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "contact_intent"
+        },
+        {
+          "event_name": "click_social_instagram",
+          "page_path": "index.html",
+          "selector": ".hero-page1__bottom-right a[href=\"https://www.instagram.com/swingdigital_france/\"]",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "outbound_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "social_intent"
+        },
+        {
+          "event_name": "open_mobile_menu",
+          "page_path": "index.html",
+          "selector": ".site-nav__burger",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "menu_open_event_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "navigation_intent"
+        },
+        {
+          "event_name": "click_reservation_disabled",
+          "page_path": "reservations.html",
+          "selector": ".page58__reserve-btn",
+          "trigger": "click",
+          "preprod_status": "documented_disabled",
+          "prod_activation": "activate_when_booking_active",
+          "tool_target": "GA4_or_GTM",
+          "owner": "product_marketing",
+          "success_signal": "no_conversion_until_booking_enabled",
+          "metric_status": "unknown",
+          "notes": "disabled_button_is_not_a_conversion"
+        },
+        {
+          "event_name": "click_newsletter_disabled",
+          "page_path": "reservations.html",
+          "selector": ".page58__subscribe-btn",
+          "trigger": "click",
+          "preprod_status": "documented_disabled",
+          "prod_activation": "activate_when_newsletter_active",
+          "tool_target": "GA4_or_GTM",
+          "owner": "product_marketing",
+          "success_signal": "no_conversion_until_newsletter_enabled",
+          "metric_status": "unknown",
+          "notes": "disabled_button_is_not_a_conversion"
+        },
+        {
+          "event_name": "click_reservation_faq",
+          "page_path": "reservations.html",
+          "selector": ".page58__faq-link",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "faq_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "reservation_information_intent"
+        },
+        {
+          "event_name": "click_private_visit_contact",
+          "page_path": "reservations.html",
+          "selector": ".page61__contact-link",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "private_visit_contact_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "group_or_private_visit_intent"
+        }
+      ]
     }
   },
   "public_measurements": [
+    {
+      "source": "Measurement matrix",
+      "access": "available",
+      "metric": "event readiness",
+      "limit": "Préparation de collecte uniquement, pas une métrique de trafic."
+    },
     {
       "source": "Google Search Console",
       "access": "not_available",
@@ -543,7 +697,7 @@
       "source": "GA4/GTM",
       "access": "not_available",
       "metric": "sessions, conversions, referrals IA",
-      "limit": "Export ou accès non fourni."
+      "limit": "Tag non installé en préproduction et export non fourni."
     },
     {
       "source": "Bing Webmaster Tools",
@@ -567,23 +721,23 @@
   "action_plan": [
     {
       "when": "Maintenant",
-      "action": "Purger /maquette-site.pdf dans Cloudflare.",
-      "outcome": "Search/Crawl public sans artefact interdit cache-only."
-    },
-    {
-      "when": "Après purge",
-      "action": "Relancer npm run appmiweb:search-crawl puis régénérer le rapport court de validation.",
-      "outcome": "Possibilité de valider Search/Crawl vers 9/10."
+      "action": "Traiter les mentions légales hébergeur et le scénario Réservations.",
+      "outcome": "Suppression des 3 avertissements préproduction restants avant production finale."
     },
     {
       "when": "Avant production finale",
-      "action": "Traiter les mentions légales hébergeur et le scénario Réservations.",
-      "outcome": "Suppression des 3 avertissements préproduction."
+      "action": "Confirmer le domaine final HTTPS et brancher GSC, GA4/GTM, Bing Webmaster et les événements de docs/SEO-GEO-MEASUREMENT-MATRIX.csv.",
+      "outcome": "Mesure réelle SEO/GEO au lieu de readiness préproduction seulement."
     },
     {
       "when": "Go-live domaine final",
-      "action": "Brancher GSC, GA4/GTM, Bing Webmaster et suivi referrals IA.",
-      "outcome": "Mesure réelle SEO/GEO au lieu de readiness technique seulement."
+      "action": "Relancer npm run appmiweb:search-crawl sur la surface publiée finale et archiver la preuve.",
+      "outcome": "Validation Search/Crawl transférée de la préproduction Appmiweb au domaine final."
+    },
+    {
+      "when": "Après 14 jours de données",
+      "action": "Comparer GSC, GA4/GTM, Bing Webmaster, logs serveur et citations IA observées.",
+      "outcome": "Passage de la préparation à une mesure de performance SEO/GEO réelle."
     }
   ],
   "ai_layer_package": {
@@ -661,6 +815,18 @@
     {
       "label": "Capture mobile",
       "path": "site-screenshots/mobile.png"
+    },
+    {
+      "label": "Matrice de mesure",
+      "path": "../../docs/SEO-GEO-MEASUREMENT-MATRIX.csv"
+    },
+    {
+      "label": "Plan de mesure",
+      "path": "../../docs/SEO-GEO-MEASUREMENT-PLAN.md"
+    },
+    {
+      "label": "Preuve readiness mesure",
+      "path": "measurement-readiness-evidence.json"
     }
   ]
 }
