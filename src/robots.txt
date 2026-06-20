@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /for-ai
+Allow: /for-ai.json
+Allow: /for-ai.txt
+Allow: /schema-webpage.jsonld
 Disallow: /404.html
 Disallow: /generated-pages.html
 Disallow: /pages-extracted/

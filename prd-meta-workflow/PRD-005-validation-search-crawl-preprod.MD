@@ -121,6 +121,10 @@ Diagnostic : le problème initial n'était pas dans le build local, car `dist/` 
 
 Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que l'URL exacte `/maquette-site.pdf` reste servie par Cloudflare. Sans accès purge Cloudflare, attendre l'expiration du cache puis relancer `npm run appmiweb:search-crawl`. Le script distingue maintenant ce cas avec `forbidden_artifact_cache_only`.
 
+Relance du 2026-06-21 : le contrôle public reste en échec sur le même écart cache-only. `/maquette-site.pdf` répond encore en HTTP 200 avec `cf-cache-status: HIT`, tandis que l'URL cache-bustée répond en HTTP 404. La preuve machine a été régénérée dans `reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json`.
+
+Règle de repli : quand Cloudflare fausse l'audit par cache, basculer les contrôles de contenu Swing Digital sur une URL locale servie depuis `dist/`, par exemple `http://127.0.0.1:8771/` avec `python3 scripts/serve-test.py 8771 dist`. Ce repli valide le site généré et les endpoints IA sans dépendre du CDN. Il ne remplace pas la validation publique Search/Crawl, qui reste nécessaire pour monter officiellement la note à 9/10.
+
 ---
 
 ## Plan d'implémentation
@@ -155,3 +159,5 @@ Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que l
 |------|--------|------------|
 | 2026-06-20 | Alex + Codex | Création du PRD |
 | 2026-06-20 | Alex + Codex | Mise à jour du statut : origine purgée, blocage restant limité au cache Cloudflare de `/maquette-site.pdf` |
+| 2026-06-21 | Alex + Codex | Relance du contrôle public : échec inchangé, typé cache-only |
+| 2026-06-21 | Alex + Codex | Ajout de la règle de repli local `dist/` quand Cloudflare fausse l'audit |

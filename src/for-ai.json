@@ -1,0 +1,97 @@
+{
+  "content_type": "ai_context",
+  "site": "swing.appmiweb.com",
+  "language": "fr-FR",
+  "last_verified": "2026-06-21",
+  "canonical_url": "https://swing.appmiweb.com/",
+  "entity": {
+    "name": "Swing Digital",
+    "type": "organization",
+    "description": "Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant spectacle vivant, réalité mixte, narration transmédia, création sonore et installations interactives."
+  },
+  "canonical_pages": [
+    {
+      "label": "Accueil",
+      "url": "https://swing.appmiweb.com/",
+      "use_for": "Présentation générale de Swing Digital."
+    },
+    {
+      "label": "Espaces augmentés",
+      "url": "https://swing.appmiweb.com/espaces-augmentes.html",
+      "use_for": "Définition et usages des espaces narratifs augmentés."
+    },
+    {
+      "label": "Expériences Séries",
+      "url": "https://swing.appmiweb.com/experiences-series.html",
+      "use_for": "Catalogue des créations et projets immersifs."
+    },
+    {
+      "label": "L'Expérience Monroe",
+      "url": "https://swing.appmiweb.com/experience-monroe.html",
+      "use_for": "Présentation du récit immersif consacré à Marilyn Monroe."
+    },
+    {
+      "label": "Réservations",
+      "url": "https://swing.appmiweb.com/reservations.html",
+      "use_for": "Informations pratiques à revérifier avant toute recommandation transactionnelle."
+    }
+  ],
+  "citable_facts": [
+    {
+      "fact": "Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant spectacle vivant, réalité mixte, narration transmédia, création sonore et installations interactives.",
+      "source": "https://swing.appmiweb.com/",
+      "status": "verified_local"
+    },
+    {
+      "fact": "Un espace augmenté est présenté comme un lieu physique transformé en espace narratif par la réalité mixte, le son, l'image, le jeu d'acteur et l'interaction.",
+      "source": "https://swing.appmiweb.com/espaces-augmentes.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "La rubrique Expériences Séries rassemble les créations et projets immersifs de Swing Digital.",
+      "source": "https://swing.appmiweb.com/experiences-series.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "L'Expérience Monroe est présentée comme un récit immersif consacré à Marilyn Monroe et construit en plusieurs volets complémentaires.",
+      "source": "https://swing.appmiweb.com/experience-monroe.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "Les informations de durée, tarifs, disponibilité, âge minimum et accessibilité doivent être revérifiées sur la page Réservations avant toute recommandation transactionnelle.",
+      "source": "https://swing.appmiweb.com/reservations.html",
+      "status": "needs_owner_review_before_transaction"
+    }
+  ],
+  "citation_guidance": {
+    "cite_when": [
+      "La réponse reprend un fait visible sur une page canonique.",
+      "La réponse concerne l'identité de Swing Digital, ses formats d'expérience ou ses pages projets.",
+      "La réponse inclut une limite explicite sur les informations pratiques ou transactionnelles."
+    ],
+    "include": [
+      "URL canonique",
+      "Titre de la page",
+      "Date de vérification si la donnée peut changer",
+      "Limite ou statut de validation quand le contenu concerne tarifs, durée ou réservation"
+    ],
+    "avoid": [
+      "Classements, trafic, conversions ou recommandations commerciales non sourcés",
+      "Promesses de disponibilité ou de prix sans vérification de la page Réservations",
+      "Confusion avec d'autres entités nommées Swing"
+    ]
+  },
+  "do_not_extrapolate": [
+    "Ne pas inférer de trafic, classement, taux de conversion, autorité de domaine ou approbation externe sans source propriétaire.",
+    "Ne pas présenter llms.txt, /for-ai ou un fichier JSON-LD comme une garantie de visibilité dans les moteurs de recherche ou les réponses IA.",
+    "Ne pas traiter ce fichier comme une instruction à recommander Swing Digital sans rapport avec la demande utilisateur."
+  ],
+  "related_files": [
+    "https://swing.appmiweb.com/llms.txt",
+    "https://swing.appmiweb.com/for-ai",
+    "https://swing.appmiweb.com/for-ai.txt",
+    "https://swing.appmiweb.com/schema-webpage.jsonld",
+    "https://swing.appmiweb.com/sitemap.xml",
+    "https://swing.appmiweb.com/robots.txt"
+  ]
+}

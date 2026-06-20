@@ -7,7 +7,7 @@ const args = process.argv.slice(2);
 const isPreprod = args.includes('--preprod');
 const expectedBase = (args.find((arg) => !arg.startsWith('--')) || '').replace(/\/+$/, '');
 const placeholderDomain = 'DO' + 'MAINE';
-const textExtensions = new Set(['.html', '.xml', '.txt', '.css', '.js']);
+const textExtensions = new Set(['.html', '.xml', '.txt', '.css', '.js', '.json', '.jsonld']);
 const errors = [];
 const warnings = [];
 
@@ -43,7 +43,13 @@ function fileExistsForUrl(url) {
     const parsed = new URL(url);
     const pathname = decodeURIComponent(parsed.pathname);
     const relative = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
-    return fs.existsSync(path.join(distDir, relative));
+    const target = path.join(distDir, relative);
+
+    if (fs.existsSync(target) && fs.statSync(target).isDirectory()) {
+        return fs.existsSync(path.join(target, 'index.html'));
+    }
+
+    return fs.existsSync(target);
 }
 
 function checkLocalReference(sourceFile, ref, kind) {
@@ -83,6 +89,7 @@ function checkLocalReference(sourceFile, ref, kind) {
 
 function checkTextFile(file) {
     const relative = path.relative(distDir, file);
+    const extension = path.extname(file);
     const content = textContent(file);
 
     if (content.includes('http://localhost:8080') || content.includes('https://localhost:8080')) {
@@ -117,6 +124,14 @@ function checkTextFile(file) {
 
     if (relative === 'reservations.html' && /bientôt disponible/i.test(content)) {
         warnings.push('reservations.html annonce une billetterie bientôt disponible : à valider avant une campagne SEO orientée réservation.');
+    }
+
+    if (extension === '.json' || extension === '.jsonld') {
+        try {
+            JSON.parse(content);
+        } catch (error) {
+            errors.push(`${relative} contient un JSON invalide : ${error.message}`);
+        }
     }
 }
 

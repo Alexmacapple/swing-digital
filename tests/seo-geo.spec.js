@@ -7,7 +7,24 @@ const { buildProd, distDir } = require('../scripts/build-prod');
 const BASE_URL = (process.env.SEO_BASE_URL || 'https://swing.appmiweb.com').replace(/\/+$/, '');
 const PLACEHOLDER_DOMAIN = 'DO' + 'MAINE';
 const SRC_DIR = path.join(__dirname, '..', 'src');
-const INDEXABLE_HTML = fs.readdirSync(SRC_DIR)
+const PUBLIC_TEXT_EXTENSIONS = new Set(['.html', '.xml', '.txt', '.json', '.jsonld']);
+
+function listFiles(dir, baseDir = dir) {
+    return fs.readdirSync(dir, { withFileTypes: true }).flatMap((dirent) => {
+        const absolute = path.join(dir, dirent.name);
+
+        if (dirent.isDirectory()) {
+            return listFiles(absolute, baseDir);
+        }
+
+        return dirent.isFile() ? [path.relative(baseDir, absolute).replaceAll(path.sep, '/')] : [];
+    });
+}
+
+const PUBLIC_TEXT_FILES = listFiles(SRC_DIR)
+    .filter((file) => PUBLIC_TEXT_EXTENSIONS.has(path.extname(file)))
+    .sort();
+const INDEXABLE_HTML = PUBLIC_TEXT_FILES
     .filter((file) => file.endsWith('.html'))
     .filter((file) => !['404.html', 'generated-pages.html'].includes(file))
     .sort();
@@ -18,7 +35,17 @@ const STRATEGIC_DIRECT_ANSWER_PAGES = [
     'reservations.html',
 ];
 
-const canonicalFor = (file) => (file === 'index.html' ? `${BASE_URL}/` : `${BASE_URL}/${file}`);
+const canonicalFor = (file) => {
+    if (file === 'index.html') {
+        return `${BASE_URL}/`;
+    }
+
+    if (file.endsWith('/index.html')) {
+        return `${BASE_URL}/${file.replace(/\/index\.html$/, '')}`;
+    }
+
+    return `${BASE_URL}/${file}`;
+};
 
 const extract = (pattern, text) => {
     const match = text.match(pattern);
@@ -31,12 +58,8 @@ test.describe('SEO/GEO technique', () => {
     });
 
     test('aucun placeholder de domaine ne reste dans les fichiers publics', async () => {
-        const files = fs.readdirSync(SRC_DIR)
-            .filter((file) => /\.(html|xml|txt)$/.test(file))
-            .map((file) => path.join(SRC_DIR, file));
-
-        for (const file of files) {
-            const content = fs.readFileSync(file, 'utf8');
+        for (const file of PUBLIC_TEXT_FILES) {
+            const content = fs.readFileSync(path.join(SRC_DIR, file), 'utf8');
             expect(content, file).not.toContain(PLACEHOLDER_DOMAIN);
         }
     });
@@ -103,9 +126,28 @@ test.describe('SEO/GEO technique', () => {
         const robots = fs.readFileSync(path.join(SRC_DIR, 'robots.txt'), 'utf8');
 
         expect(robots).toContain(`Sitemap: ${BASE_URL}/sitemap.xml`);
+        expect(robots).toContain('Allow: /for-ai');
+        expect(robots).toContain('Allow: /for-ai.json');
+        expect(robots).toContain('Allow: /for-ai.txt');
         expect(robots).toContain('Disallow: /404.html');
         expect(robots).toContain('Disallow: /generated-pages.html');
         expect(robots).toContain('Disallow: /pages-extracted/');
+    });
+
+    test('la couche IA publique expose des formats cohérents', async () => {
+        const llms = fs.readFileSync(path.join(SRC_DIR, 'llms.txt'), 'utf8');
+        const forAiHtml = fs.readFileSync(path.join(SRC_DIR, 'for-ai/index.html'), 'utf8');
+        const forAiJson = JSON.parse(fs.readFileSync(path.join(SRC_DIR, 'for-ai.json'), 'utf8'));
+        const schema = JSON.parse(fs.readFileSync(path.join(SRC_DIR, 'schema-webpage.jsonld'), 'utf8'));
+
+        expect(llms).toContain(`${BASE_URL}/for-ai`);
+        expect(llms).toContain(`${BASE_URL}/for-ai.json`);
+        expect(llms).toContain(`${BASE_URL}/for-ai.txt`);
+        expect(forAiHtml).toContain('Contexte IA pour agents');
+        expect(forAiJson.canonical_url).toBe(`${BASE_URL}/`);
+        expect(forAiJson.do_not_extrapolate.length).toBeGreaterThanOrEqual(3);
+        expect(schema['@context']).toBe('https://schema.org');
+        expect(schema['@graph'].some((item) => item['@id'] === `${BASE_URL}/for-ai#webpage`)).toBe(true);
     });
 
     test('les liens internes et assets HTML restent relatifs quand le SEO autorise une URL relative', async () => {
@@ -150,6 +192,10 @@ test.describe('SEO/GEO technique', () => {
         expect(fs.existsSync(path.join(distDir, 'sitemap.xml'))).toBe(true);
         expect(fs.existsSync(path.join(distDir, 'robots.txt'))).toBe(true);
         expect(fs.existsSync(path.join(distDir, 'llms.txt'))).toBe(true);
+        expect(fs.existsSync(path.join(distDir, 'for-ai/index.html'))).toBe(true);
+        expect(fs.existsSync(path.join(distDir, 'for-ai.json'))).toBe(true);
+        expect(fs.existsSync(path.join(distDir, 'for-ai.txt'))).toBe(true);
+        expect(fs.existsSync(path.join(distDir, 'schema-webpage.jsonld'))).toBe(true);
 
         expect(fs.existsSync(path.join(distDir, 'generated-pages.html'))).toBe(false);
         expect(fs.existsSync(path.join(distDir, 'pages-extracted'))).toBe(false);

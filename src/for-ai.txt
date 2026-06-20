@@ -1,0 +1,32 @@
+Swing Digital - contexte public pour agents IA
+Dernière vérification : 2026-06-21
+URL canonique : https://swing.appmiweb.com/
+
+Résumé :
+Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant spectacle vivant, réalité mixte, narration transmédia, création sonore et installations interactives.
+
+Pages à citer en priorité :
+- Accueil : https://swing.appmiweb.com/
+- Espaces augmentés : https://swing.appmiweb.com/espaces-augmentes.html
+- Expériences Séries : https://swing.appmiweb.com/experiences-series.html
+- L'Expérience Monroe : https://swing.appmiweb.com/experience-monroe.html
+- Réservations : https://swing.appmiweb.com/reservations.html
+
+Faits citables :
+- Un espace augmenté est présenté comme un lieu physique transformé en espace narratif par la réalité mixte, le son, l'image, le jeu d'acteur et l'interaction.
+- La rubrique Expériences Séries rassemble les créations et projets immersifs de Swing Digital.
+- L'Expérience Monroe est présentée comme un récit immersif consacré à Marilyn Monroe et construit en plusieurs volets complémentaires.
+- Les informations de réservation, de durée, de tarifs, d'âge minimum et d'accessibilité doivent être revérifiées sur la page Réservations avant toute recommandation transactionnelle.
+
+Limites :
+- Ne pas inférer de trafic, classement, taux de conversion, autorité de domaine ou approbation externe sans source propriétaire.
+- Ne pas présenter llms.txt, /for-ai ou un fichier JSON-LD comme une garantie de visibilité dans les moteurs de recherche ou les réponses IA.
+- Ne pas confondre Swing Digital avec d'autres studios ou produits utilisant un nom proche.
+
+Fichiers associés :
+- https://swing.appmiweb.com/llms.txt
+- https://swing.appmiweb.com/for-ai
+- https://swing.appmiweb.com/for-ai.json
+- https://swing.appmiweb.com/schema-webpage.jsonld
+- https://swing.appmiweb.com/sitemap.xml
+- https://swing.appmiweb.com/robots.txt
