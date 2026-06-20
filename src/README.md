@@ -20,6 +20,24 @@ Ne pas déployer directement le dossier `src/` : il contient aussi des artefacts
 npm run build:prod
 ```
 
+### Cache CSS
+
+Les pages chargent la feuille de style avec un cache-buster explicite :
+
+```html
+<link rel="stylesheet" href="css/style.css?v=AAAAMMJJ">
+```
+
+À chaque modification de `src/css/style.css` destinée à être visible sur `swing.appmiweb.com`, incrémenter cette version dans toutes les pages HTML sources, puis lancer `npm run build:prod`. Sans ce changement, Safari, certains navigateurs mobiles ou un cache intermédiaire peuvent continuer à servir l'ancienne CSS.
+
+Vérification rapide :
+
+```bash
+rg -n "style\.css\?v=" src dist
+```
+
+La version doit être identique dans `src/` et `dist/`, et différente de la version précédemment publiée.
+
 Avant la mise en production, renseigner le vrai domaine HTTPS et lancer les contrôles :
 
 Préproduction Appmiweb :

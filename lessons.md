@@ -11,10 +11,18 @@
 
 ### Cache navigateur et debugging CSS
 
-- **Symptome** : les corrections CSS n'apparaissaient pas sur iPhone
-- **Cause** : Safari cache agressivement le CSS. Le `?v=param` sur la page HTML ne force PAS le rechargement du CSS lie par `<link>`
-- **Solution** : ajouter un cache-buster directement sur le lien CSS (`css/style.css?v=20260406`)
-- **Lecon** : toujours cache-buster le CSS, pas le HTML
+- **Symptôme** : les corrections CSS n'apparaissaient pas sur iPhone
+- **Cause** : Safari cache agressivement le CSS. Le `?v=param` sur la page HTML ne force PAS le rechargement du CSS lié par `<link>`
+- **Solution** : ajouter un cache-buster directement sur le lien CSS (`css/style.css?v=AAAAMMJJ`)
+- **Leçon** : toujours cache-buster le CSS, pas le HTML
+
+### Procédure cache CSS après modification visuelle
+
+- **Quand l'utiliser** : dès qu'une correction CSS doit être visible sur `swing.appmiweb.com`, surtout sur Safari/iPhone ou après plusieurs retours « je ne vois pas la modification ».
+- **À modifier** : incrémenter la version du lien CSS dans toutes les pages HTML sources, par exemple `css/style.css?v=20260620-2140`. Cette version doit changer quand `src/css/style.css` change.
+- **À ne pas faire** : ne pas compter sur un rechargement simple, ni sur un paramètre ajouté à l'URL de la page HTML. Le cache concerne la ressource liée par `<link rel="stylesheet">`.
+- **À valider** : après `npm run build:prod`, vérifier dans les logs serveur ou l'inspecteur réseau que la page demande bien `/css/style.css?v=<nouvelle-version>`.
+- **Commande utile** : `rg -n "style\.css\?v=" src dist` pour vérifier que `src/` et `dist/` pointent vers la même version.
 
 ### overflow-x: hidden cree overflow-y: auto
 
