@@ -13,7 +13,7 @@ Checklist de go-live : `docs/SEO-GEO-PROD-CHECKLIST.md`.
 - Aucune donnée GSC, GA4, Bing Webmaster Tools, outil de rang, logs serveur ou outil de visibilité IA n'a été fournie.
 - Les pages de réservation utilisent de vrais boutons et libellés accessibles, mais les actions de billetterie et newsletter sont explicitement indiquées comme bientôt disponibles.
 - La page Réservations contient une FAQ visible en HTML.
-- Le dépôt contient aussi des contenus de travail (`generated-pages.html`, `pages-extracted/`) qui ne doivent pas être publiés ; la production doit utiliser `dist/`, pas `src/`.
+- Le dépôt contient aussi des contenus de travail dans `source-artifacts/` (`generated-pages.html`, `pages-extracted/`) qui ne doivent pas être publiés ; la production doit utiliser `dist/`, pas `src/`.
 
 ## Inféré
 
@@ -66,7 +66,7 @@ Checklist de go-live : `docs/SEO-GEO-PROD-CHECKLIST.md`.
 | P0 | Garde-fou production | Ajout de `npm run prod:preflight -- https://votre-domaine.fr` pour bloquer une prod avec `localhost`, sitemap/robots hors domaine, liens cassés, JSON-LD invalide ou mentions légales incomplètes. |
 | P1 | Références locales | Contrôle des assets locaux HTML/CSS dans le preflight de production. |
 | P1 | Accessibilité agent-friendly | Stabilisation du scan axe en `prefers-reduced-motion: reduce` et ajout de fonds explicites sur les textes signalés par axe. |
-| P1 | Documentation de déploiement | Mise à jour de `src/README.md`, `src/ROADMAP.md` et `src/todo.md` pour indiquer que seul `dist/` doit être publié. |
+| P1 | Documentation de déploiement | Mise à jour des documents de projet pour indiquer que seul `dist/` doit être publié. |
 
 ## Corrections de cinquième passe préproduction Appmiweb
 

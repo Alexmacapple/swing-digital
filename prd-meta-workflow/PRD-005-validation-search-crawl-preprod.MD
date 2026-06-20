@@ -112,11 +112,12 @@ Artefacts publics à purger côté hébergement :
 - `/CLAUDE.md`
 - `/ROADMAP.md`
 - `/todo.md`
+- `/.htaccess`
 - `/.DS_Store`
 
 Diagnostic : le problème n'est pas dans le build local, car `dist/` exclut déjà ces artefacts. La préproduction publique sert probablement un ancien contenu, un répertoire source non filtré ou une racine d'hébergement qui n'est pas strictement `dist/`.
 
-Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que ces artefacts restent publics. Après purge et republication de `dist/` uniquement, relancer `npm run appmiweb:search-crawl`.
+Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que ces artefacts restent publics. Les artefacts internes ont été déplacés hors de `src/`, dans `source-artifacts/`, pour que la racine publique Appmiweb ne les reçoive plus si elle déploie `src/`. Après purge ou redéploiement, relancer `npm run appmiweb:search-crawl`.
 
 ---
 

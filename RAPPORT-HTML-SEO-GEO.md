@@ -38,7 +38,23 @@ Preuve machine :
 reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json
 ```
 
-Verdict du 2026-06-20 : `Search/Crawl` reste à 8/10 tant que la préproduction sert encore des artefacts non publics en HTTP 200. Le passage à 9/10 demande une purge côté hébergement, puis une republication stricte de `dist/` et un nouveau passage de `npm run appmiweb:search-crawl`.
+Verdict du 2026-06-20 : `Search/Crawl` reste à 8/10 tant que la préproduction sert encore des artefacts non publics en HTTP 200. Le passage à 9/10 demande que la racine publique Appmiweb ne serve plus les artefacts de travail. Les artefacts internes ont été déplacés hors de `src/`, dans `source-artifacts/`, puis le contrôle attendu reste `npm run appmiweb:search-crawl`.
+
+## Rapport v1.2.2 audit visuel complet
+
+URL locale :
+
+```text
+http://127.0.0.1:8767/
+```
+
+Fichier HTML :
+
+```text
+reports/swing-digital/2026-06-20-v1.2.2-visual-audit/index.html
+```
+
+Ce rapport teste le workflow `seo-geo-growth-agent` `v1.2.2` : rapport HTML navigable, `report_language=fr`, captures du site audité, étude responsive dynamique, Design Watch, cohortes d'analyse et captures desktop/mobile du rapport lui-même.
 
 ## Note
 

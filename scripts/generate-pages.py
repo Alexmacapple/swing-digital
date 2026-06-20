@@ -12,8 +12,8 @@ from pathlib import Path
 from html import escape
 
 # Configuration
-PAGES_EXTRACTED = Path(__file__).resolve().parent.parent / "src" / "pages-extracted"
-OUTPUT_FILE = Path(__file__).resolve().parent.parent / "src" / "generated-pages.html"
+PAGES_EXTRACTED = Path(__file__).resolve().parent.parent / "source-artifacts" / "pages-extracted"
+OUTPUT_FILE = Path(__file__).resolve().parent.parent / "source-artifacts" / "generated-pages.html"
 
 def extract_page_number(path):
     """Extrait le numéro de page du chemin."""

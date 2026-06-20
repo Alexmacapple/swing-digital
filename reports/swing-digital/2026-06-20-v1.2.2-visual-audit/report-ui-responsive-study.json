@@ -1,0 +1,61 @@
+{
+  "url": "http://127.0.0.1:8767/",
+  "generated_at": "2026-06-20T21:25:21.041Z",
+  "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+  "summary": {
+    "status": "pass",
+    "verdict": "Homepage responds correctly on tested mobile and desktop viewports."
+  },
+  "viewports": [
+    {
+      "label": "Desktop",
+      "viewport": "1440x1800",
+      "status": "pass",
+      "issues": [],
+      "metrics": {
+        "title": "Audit SEO/GEO — https://swing.appmiweb.com/",
+        "innerWidth": 1440,
+        "innerHeight": 1800,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "horizontalOverflow": false,
+        "documentHeight": 2125,
+        "hasViewportMeta": true,
+        "h1Count": 1,
+        "h1Text": [
+          "Audit SEO/GEO — https://swing.appmiweb.com/"
+        ],
+        "navLinkCount": 0,
+        "imageCount": 0,
+        "missingImages": 0,
+        "visibleTextLength": 3817,
+        "textSample": "AUDIT SEO/GEO Audit SEO/GEO — https://swing.appmiweb.com/ Audit visuel v1.2.2 généré : le workflow produit bien rapport HTML, captures, responsive, Design Watch et cohortes. Statut partiel Confiance high Généré 20 juin 2026, 23:24 Vue génér"
+      }
+    },
+    {
+      "label": "Mobile",
+      "viewport": "390x1400",
+      "status": "pass",
+      "issues": [],
+      "metrics": {
+        "title": "Audit SEO/GEO — https://swing.appmiweb.com/",
+        "innerWidth": 390,
+        "innerHeight": 1400,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "horizontalOverflow": false,
+        "documentHeight": 4526,
+        "hasViewportMeta": true,
+        "h1Count": 1,
+        "h1Text": [
+          "Audit SEO/GEO — https://swing.appmiweb.com/"
+        ],
+        "navLinkCount": 0,
+        "imageCount": 0,
+        "missingImages": 0,
+        "visibleTextLength": 3817,
+        "textSample": "AUDIT SEO/GEO Audit SEO/GEO — https://swing.appmiweb.com/ Audit visuel v1.2.2 généré : le workflow produit bien rapport HTML, captures, responsive, Design Watch et cohortes. Statut partiel Confiance high Généré 20 juin 2026, 23:24 Vue génér"
+      }
+    }
+  ]
+}

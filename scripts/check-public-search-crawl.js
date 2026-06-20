@@ -10,6 +10,7 @@ const forbiddenPublicPaths = [
     '/CLAUDE.md',
     '/ROADMAP.md',
     '/todo.md',
+    '/.htaccess',
     '/.DS_Store',
 ];
 

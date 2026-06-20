@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-06-20T21:16:10.210Z",
+    "generatedAt": "2026-06-20T21:32:37.808Z",
     "base": "https://swing.appmiweb.com",
     "sitemapUrlCount": 23,
     "sitemapStatusOk": true,
@@ -14,7 +14,7 @@
     "pagesWithOgImage": 23,
     "ogImagesChecked": 21,
     "ogImagesOk": 21,
-    "forbiddenArtifactsChecked": 8,
+    "forbiddenArtifactsChecked": 9,
     "forbiddenArtifactsNotPublicOk": 0
   },
   "checks": {
@@ -49,7 +49,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/",
         "contentType": "text/html",
-        "elapsedMs": 39,
+        "elapsedMs": 34,
         "title": "Swing Digital - Espaces augmentés, expériences immersives",
         "canonical": "https://swing.appmiweb.com/",
         "canonicalOk": true,
@@ -68,7 +68,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/espaces-augmentes.html",
         "contentType": "text/html",
-        "elapsedMs": 31,
+        "elapsedMs": 29,
         "title": "Espaces augmentés et réalité mixte - Swing Digital",
         "canonical": "https://swing.appmiweb.com/espaces-augmentes.html",
         "canonicalOk": true,
@@ -87,7 +87,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/experiences-series.html",
         "contentType": "text/html",
-        "elapsedMs": 30,
+        "elapsedMs": 119,
         "title": "Expériences immersives et séries XR - Swing Digital",
         "canonical": "https://swing.appmiweb.com/experiences-series.html",
         "canonicalOk": true,
@@ -106,7 +106,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/reservations.html",
         "contentType": "text/html",
-        "elapsedMs": 32,
+        "elapsedMs": 28,
         "title": "Réservations expériences XR - Swing Digital",
         "canonical": "https://swing.appmiweb.com/reservations.html",
         "canonicalOk": true,
@@ -125,7 +125,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/experience-monroe.html",
         "contentType": "text/html",
-        "elapsedMs": 34,
+        "elapsedMs": 32,
         "title": "L'Expérience Monroe immersive - Swing Digital",
         "canonical": "https://swing.appmiweb.com/experience-monroe.html",
         "canonicalOk": true,
@@ -144,7 +144,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/voyage-autour-de-moi.html",
         "contentType": "text/html",
-        "elapsedMs": 35,
+        "elapsedMs": 30,
         "title": "Voyage autour de moi - Swing Digital",
         "canonical": "https://swing.appmiweb.com/voyage-autour-de-moi.html",
         "canonicalOk": true,
@@ -182,7 +182,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/ni-vues-ni-connues.html",
         "contentType": "text/html",
-        "elapsedMs": 31,
+        "elapsedMs": 27,
         "title": "Ni vues ni connues - Swing Digital",
         "canonical": "https://swing.appmiweb.com/ni-vues-ni-connues.html",
         "canonicalOk": true,
@@ -201,7 +201,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/marilyn.html",
         "contentType": "text/html",
-        "elapsedMs": 121,
+        "elapsedMs": 30,
         "title": "Marilyn, théâtre et réalité mixte - Swing Digital",
         "canonical": "https://swing.appmiweb.com/marilyn.html",
         "canonicalOk": true,
@@ -220,7 +220,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/toulouse-lautrec.html",
         "contentType": "text/html",
-        "elapsedMs": 38,
+        "elapsedMs": 27,
         "title": "Toulouse-Lautrec - Swing Digital",
         "canonical": "https://swing.appmiweb.com/toulouse-lautrec.html",
         "canonicalOk": true,
@@ -239,7 +239,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/charlotte-henschel.html",
         "contentType": "text/html",
-        "elapsedMs": 35,
+        "elapsedMs": 27,
         "title": "Charlotte Henschel - Swing Digital",
         "canonical": "https://swing.appmiweb.com/charlotte-henschel.html",
         "canonicalOk": true,
@@ -258,7 +258,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/xr-corporate.html",
         "contentType": "text/html",
-        "elapsedMs": 26,
+        "elapsedMs": 27,
         "title": "XR Corporate et réalité étendue - Swing Digital",
         "canonical": "https://swing.appmiweb.com/xr-corporate.html",
         "canonicalOk": true,
@@ -277,7 +277,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-piece.html",
         "contentType": "text/html",
-        "elapsedMs": 34,
+        "elapsedMs": 31,
         "title": "Pièce My Story - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-piece.html",
         "canonicalOk": true,
@@ -296,7 +296,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-roman-graphique.html",
         "contentType": "text/html",
-        "elapsedMs": 31,
+        "elapsedMs": 32,
         "title": "Roman Graphique - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-roman-graphique.html",
         "canonicalOk": true,
@@ -315,7 +315,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-installation.html",
         "contentType": "text/html",
-        "elapsedMs": 27,
+        "elapsedMs": 25,
         "title": "Installation - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-installation.html",
         "canonicalOk": true,
@@ -334,7 +334,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-photographie.html",
         "contentType": "text/html",
-        "elapsedMs": 30,
+        "elapsedMs": 26,
         "title": "Photographie - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-photographie.html",
         "canonicalOk": true,
@@ -353,7 +353,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-composition.html",
         "contentType": "text/html",
-        "elapsedMs": 30,
+        "elapsedMs": 28,
         "title": "Composition électroacoustique - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-composition.html",
         "canonicalOk": true,
@@ -372,7 +372,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-podcasts.html",
         "contentType": "text/html",
-        "elapsedMs": 31,
+        "elapsedMs": 119,
         "title": "Podcasts - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-podcasts.html",
         "canonicalOk": true,
@@ -391,7 +391,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-interviews.html",
         "contentType": "text/html",
-        "elapsedMs": 29,
+        "elapsedMs": 27,
         "title": "Interviews - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-interviews.html",
         "canonicalOk": true,
@@ -410,7 +410,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-experiences.html",
         "contentType": "text/html",
-        "elapsedMs": 35,
+        "elapsedMs": 29,
         "title": "Expériences interactives - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-experiences.html",
         "canonicalOk": true,
@@ -429,7 +429,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/monroe-quiz.html",
         "contentType": "text/html",
-        "elapsedMs": 30,
+        "elapsedMs": 26,
         "title": "Le Quiz Marilyn - L'Expérience Monroe - Swing Digital",
         "canonical": "https://swing.appmiweb.com/monroe-quiz.html",
         "canonicalOk": true,
@@ -448,7 +448,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/mentions-legales.html",
         "contentType": "text/html",
-        "elapsedMs": 30,
+        "elapsedMs": 29,
         "title": "Mentions légales - Swing Digital",
         "canonical": "https://swing.appmiweb.com/mentions-legales.html",
         "canonicalOk": true,
@@ -467,7 +467,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/plan-du-site.html",
         "contentType": "text/html",
-        "elapsedMs": 114,
+        "elapsedMs": 25,
         "title": "Plan du site et pages clés - Swing Digital",
         "canonical": "https://swing.appmiweb.com/plan-du-site.html",
         "canonicalOk": true,
@@ -487,7 +487,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/hero/hero-featured-image.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 18,
+        "elapsedMs": 17,
         "ok": true
       },
       {
@@ -495,7 +495,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-12/page-12-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 55,
+        "elapsedMs": 46,
         "ok": true
       },
       {
@@ -503,7 +503,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-14/page-14-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 54,
+        "elapsedMs": 57,
         "ok": true
       },
       {
@@ -511,7 +511,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-20/page-20-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 54,
+        "elapsedMs": 46,
         "ok": true
       },
       {
@@ -519,7 +519,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-23/page-23-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 53,
+        "elapsedMs": 51,
         "ok": true
       },
       {
@@ -527,7 +527,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-25/page-25-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 50,
+        "elapsedMs": 48,
         "ok": true
       },
       {
@@ -535,7 +535,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-27/page-27-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 51,
+        "elapsedMs": 147,
         "ok": true
       },
       {
@@ -543,7 +543,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-33/page-33-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 57,
+        "elapsedMs": 64,
         "ok": true
       },
       {
@@ -551,7 +551,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-34/page-34-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 142,
+        "elapsedMs": 69,
         "ok": true
       },
       {
@@ -559,7 +559,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-37/page-37-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 63,
+        "elapsedMs": 50,
         "ok": true
       },
       {
@@ -567,7 +567,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-40/page-40-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 53,
+        "elapsedMs": 62,
         "ok": true
       },
       {
@@ -575,7 +575,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-43/page-43-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 58,
+        "elapsedMs": 55,
         "ok": true
       },
       {
@@ -583,7 +583,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-46/page-46-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 47,
+        "elapsedMs": 50,
         "ok": true
       },
       {
@@ -591,7 +591,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-48/page-48-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 48,
+        "elapsedMs": 131,
         "ok": true
       },
       {
@@ -599,7 +599,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-5/page-5-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 56,
+        "elapsedMs": 51,
         "ok": true
       },
       {
@@ -607,7 +607,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-50/page-50-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 46,
+        "elapsedMs": 47,
         "ok": true
       },
       {
@@ -615,7 +615,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-53/page-53-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 131,
+        "elapsedMs": 63,
         "ok": true
       },
       {
@@ -623,7 +623,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-55/page-55-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 69,
+        "elapsedMs": 54,
         "ok": true
       },
       {
@@ -631,7 +631,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-57/page-57-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 58,
+        "elapsedMs": 64,
         "ok": true
       },
       {
@@ -639,7 +639,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-58/page-58-image-1.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 78,
+        "elapsedMs": 56,
         "ok": true
       },
       {
@@ -647,7 +647,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/img/pages/page-9/page-9-image-2.jpg",
         "contentType": "image/jpeg",
-        "elapsedMs": 57,
+        "elapsedMs": 52,
         "ok": true
       }
     ],
@@ -658,7 +658,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/generated-pages.html",
         "contentType": "text/html",
-        "elapsedMs": 116,
+        "elapsedMs": 149,
         "notPublicOk": false
       },
       {
@@ -667,7 +667,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/pages-extracted/",
         "contentType": "text/html; charset=utf-8",
-        "elapsedMs": 162,
+        "elapsedMs": 68,
         "notPublicOk": false
       },
       {
@@ -676,7 +676,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/maquette-site.pdf",
         "contentType": "application/pdf",
-        "elapsedMs": 49,
+        "elapsedMs": 63,
         "notPublicOk": false
       },
       {
@@ -685,7 +685,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/README.md",
         "contentType": "text/markdown",
-        "elapsedMs": 76,
+        "elapsedMs": 68,
         "notPublicOk": false
       },
       {
@@ -694,7 +694,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/CLAUDE.md",
         "contentType": "text/markdown",
-        "elapsedMs": 68,
+        "elapsedMs": 71,
         "notPublicOk": false
       },
       {
@@ -703,7 +703,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/ROADMAP.md",
         "contentType": "text/markdown",
-        "elapsedMs": 74,
+        "elapsedMs": 62,
         "notPublicOk": false
       },
       {
@@ -712,7 +712,16 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/todo.md",
         "contentType": "text/markdown",
-        "elapsedMs": 77,
+        "elapsedMs": 61,
+        "notPublicOk": false
+      },
+      {
+        "path": "/.htaccess",
+        "url": "https://swing.appmiweb.com/.htaccess",
+        "status": 200,
+        "finalUrl": "https://swing.appmiweb.com/.htaccess",
+        "contentType": "application/octet-stream",
+        "elapsedMs": 159,
         "notPublicOk": false
       },
       {
@@ -721,7 +730,7 @@
         "status": 200,
         "finalUrl": "https://swing.appmiweb.com/.DS_Store",
         "contentType": "application/octet-stream",
-        "elapsedMs": 62,
+        "elapsedMs": 74,
         "notPublicOk": false
       }
     ]
@@ -768,6 +777,12 @@
       "url": "https://swing.appmiweb.com/todo.md",
       "status": 200,
       "contentType": "text/markdown"
+    },
+    {
+      "type": "forbidden_artifact_public",
+      "url": "https://swing.appmiweb.com/.htaccess",
+      "status": 200,
+      "contentType": "application/octet-stream"
     },
     {
       "type": "forbidden_artifact_public",

@@ -62,9 +62,9 @@ Site du meme domaine pour inspiration : https://www.atelierdaruma.com/
 
 ## Assets
 
-- Maquette PDF : `src/maquette-site.pdf` (5.5 MB, 62 pages)
+- Maquette PDF : `source-artifacts/maquette-site.pdf` (62 pages)
 - Export HD : `EXPORT_HD/EXPORT_JPG/` (62 JPG haute definition)
-- Images extraites : `src/pages-extracted/` (220 images)
+- Images extraites : `source-artifacts/pages-extracted/` (220 images)
 - Polices : Brandon, Fragen, Raleway, Roboto, Walden
 
 ---

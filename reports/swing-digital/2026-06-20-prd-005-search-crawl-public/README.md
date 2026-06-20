@@ -29,9 +29,10 @@ Les chemins suivants répondent publiquement en HTTP 200 :
 - `/CLAUDE.md`
 - `/ROADMAP.md`
 - `/todo.md`
+- `/.htaccess`
 - `/.DS_Store`
 
-Ces fichiers ne sont pas présents dans `dist/` après build. Le problème est donc côté publication préproduction : ancien contenu non purgé, racine serveur incorrecte ou envoi d'un répertoire non filtré.
+Ces fichiers ne sont pas présents dans `dist/` après build. Le problème est donc côté publication préproduction : ancien contenu non purgé, racine serveur incorrecte ou envoi d'un répertoire non filtré. Les artefacts internes ont été déplacés hors de `src/`, dans `source-artifacts/`, pour éviter leur redéploiement si Appmiweb publie `src/`.
 
 ## Action attendue
 

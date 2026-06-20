@@ -1,0 +1,469 @@
+{
+  "site": "https://swing.appmiweb.com/",
+  "report_language": "fr",
+  "generated_at": "2026-06-20T21:24:04.308Z",
+  "summary": {
+    "headline": "Audit visuel v1.2.2 généré : le workflow produit bien rapport HTML, captures, responsive, Design Watch et cohortes.",
+    "description": "La préproduction Swing Digital est crawlable et visuellement exploitable, mais le passage Search/Crawl à 9/10 reste bloqué par des artefacts non publics servis en HTTP 200.",
+    "status": "partial",
+    "readiness": "Prêt pour revue visuelle, bloqué côté hygiène de publication",
+    "biggest_blocker": "8 artefacts non publics restent accessibles publiquement",
+    "fastest_win": "Purger la racine Appmiweb puis republier uniquement dist/",
+    "data_confidence": "high",
+    "decision": "Utiliser le rapport v1.2.2 comme preuve de workflow et maintenir Search/Crawl à 8/10 tant que la purge hébergement n’est pas faite."
+  },
+  "metrics": [
+    {
+      "label": "URL sitemap publiques",
+      "value": "23/23",
+      "detail": "Toutes les URL du sitemap répondent en HTTP 200."
+    },
+    {
+      "label": "Canonicals cohérentes",
+      "value": "23/23",
+      "detail": "Les canonicals pointent vers la préproduction Appmiweb attendue."
+    },
+    {
+      "label": "Images OG",
+      "value": "21/21",
+      "detail": "Toutes les images Open Graph uniques testées répondent en image."
+    },
+    {
+      "label": "Artefacts non publics",
+      "value": "8/8",
+      "detail": "Tous les artefacts testés sont encore servis en HTTP 200."
+    },
+    {
+      "label": "Images homepage",
+      "value": "34/34",
+      "detail": "Les URLs d’images déclarées dans la homepage répondent correctement."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Search/Crawl",
+      "score": 8,
+      "max": 10,
+      "note": "Pages, canonicals, sitemap, robots, llms et OG sont bons ; le score reste bloqué par les artefacts non publics."
+    },
+    {
+      "label": "Design Watch",
+      "score": 7,
+      "max": 10,
+      "note": "Identité forte et message clair, avec tension mobile sur la hauteur du hero et les liens sociaux à droite."
+    },
+    {
+      "label": "Responsive",
+      "score": 7,
+      "max": 10,
+      "note": "Pas de débordement horizontal, H1 et viewport OK ; alerte à investiguer sur images initialement non chargées dans Chrome fallback."
+    },
+    {
+      "label": "GEO/Citation",
+      "score": 7,
+      "max": 10,
+      "note": "llms.txt, réponses directes et données structurées existent ; les preuves éditoriales externes et citations IA restent à mesurer."
+    },
+    {
+      "label": "Measurement",
+      "score": 2,
+      "max": 10,
+      "note": "Aucun accès GSC, GA4, Bing Webmaster, logs ou outil de citation IA n’est disponible dans cet audit."
+    },
+    {
+      "label": "Workflow skill v1.2.2",
+      "score": 9,
+      "max": 10,
+      "note": "Le workflow a produit audit.json, index.html, captures site, responsive_study, design_watch, cohorts et sortie française."
+    }
+  ],
+  "executive_brief": [
+    "Le nouveau contrat v1.2.2 est vérifié sur Swing Digital : l’audit ne se limite pas au chat et produit un livrable HTML navigable.",
+    "Les captures desktop et mobile du site audité sont présentes, avec une étude responsive dynamique générée par Chrome DevTools fallback.",
+    "Le rapport est localisé en français via report_language=fr et l’audit contient Design Watch, responsive_study et analysis_cohorts.",
+    "Le blocage opérationnel reste inchangé : la préproduction Appmiweb sert encore des artefacts non publics en HTTP 200."
+  ],
+  "findings": [
+    {
+      "priority": "P0",
+      "title": "Artefacts non publics encore servis par la préproduction",
+      "observed": [
+        "/generated-pages.html répond en HTTP 200.",
+        "/pages-extracted/ répond en HTTP 200.",
+        "/maquette-site.pdf répond en HTTP 200.",
+        "/README.md répond en HTTP 200.",
+        "/CLAUDE.md répond en HTTP 200.",
+        "/ROADMAP.md répond en HTTP 200.",
+        "/todo.md répond en HTTP 200.",
+        "/.DS_Store répond en HTTP 200."
+      ],
+      "inferred": [
+        "La racine Appmiweb contient encore un ancien contenu, un dossier source non filtré ou des fichiers non purgés.",
+        "La présence de ces fichiers affaiblit l’hygiène Search/Crawl même si les pages du sitemap sont conformes."
+      ],
+      "recommended": [
+        "Purger les artefacts côté hébergement.",
+        "Republier uniquement le contenu de dist/.",
+        "Relancer npm run appmiweb:search-crawl avant de classer Search/Crawl à 9/10."
+      ],
+      "evidence": [
+        {
+          "label": "Preuve Search/Crawl publique",
+          "path": "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
+          "status": "failed"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Étude responsive dynamique en avertissement",
+      "observed": [
+        "Desktop : overflow horizontal absent, H1 détecté, viewport meta présent.",
+        "Mobile : overflow horizontal absent, H1 détecté, viewport meta présent.",
+        "Le script Chrome fallback signale 26 images non chargées au moment de la mesure initiale.",
+        "Un contrôle HTTP séparé confirme que les 34 URLs d’images de la homepage répondent correctement en image."
+      ],
+      "inferred": [
+        "L’alerte images est probablement liée au rendu initial ou au lazy-load, pas à des assets publics cassés.",
+        "Le workflow v1.2.2 détecte utilement une tension de rendu à qualifier avant décision UX ou performance."
+      ],
+      "recommended": [
+        "Améliorer la mesure en scrollant la page ou en distinguant images lazy hors écran et images réellement cassées.",
+        "Conserver la vérification HTTP des images comme preuve complémentaire."
+      ],
+      "evidence": [
+        {
+          "label": "Responsive study",
+          "path": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/responsive-study.json",
+          "status": "warning"
+        },
+        {
+          "label": "Homepage image status",
+          "path": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/homepage-image-status.json",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Hero mobile très haut avant le contenu secondaire",
+      "observed": [
+        "La capture mobile montre le logo, le menu, le H1, les tags et le texte principal sans débordement horizontal.",
+        "Le bloc hero occupe une grande hauteur avant la section “Qui sommes-nous ?”.",
+        "Les liens sociaux à droite apparaissent près du bord inférieur droit sur mobile."
+      ],
+      "inferred": [
+        "Le message principal est clair, mais la profondeur du hero peut ralentir l’accès aux preuves, aux projets et au contenu de confiance.",
+        "Les liens sociaux peuvent créer une tension visuelle sur petits écrans."
+      ],
+      "recommended": [
+        "Tester une hauteur mobile plus compacte ou un ancrage plus tôt vers les preuves/projets.",
+        "Repositionner ou masquer les liens sociaux latéraux sur mobile si la priorité est la lecture du premier parcours."
+      ],
+      "evidence": [
+        {
+          "label": "Capture mobile homepage",
+          "path": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/site-screenshots/mobile.png",
+          "status": "observed"
+        }
+      ]
+    }
+  ],
+  "analysis_cohorts": [
+    {
+      "name": "Search / crawl",
+      "score": "8/10",
+      "status": "partial",
+      "what_it_checks": "Sitemap, HTTP 200, canonicals, robots.txt, llms.txt, OG et artefacts publics.",
+      "verdict": "Les pages indexables sont propres, mais la publication expose encore des artefacts non publics.",
+      "evidence": "23/23 pages en 200 ; 8 artefacts publics en 200.",
+      "next_action": "Purger Appmiweb et relancer npm run appmiweb:search-crawl."
+    },
+    {
+      "name": "Design Watch",
+      "score": "7/10",
+      "status": "partial",
+      "what_it_checks": "Première impression, hiérarchie, confiance, lisibilité mobile et adéquation sujet.",
+      "verdict": "Identité distinctive et message clair, avec friction mobile sur la hauteur du premier écran.",
+      "evidence": "Captures desktop et mobile du site audité.",
+      "next_action": "Tester un hero mobile plus compact et une présentation plus rapide des preuves/projets."
+    },
+    {
+      "name": "Responsive dynamique",
+      "score": "7/10",
+      "status": "warning",
+      "what_it_checks": "Overflow, viewport, title, H1, texte visible, images chargées.",
+      "verdict": "Rendu mobile/desktop exploitable sans overflow, mais alerte images à qualifier.",
+      "evidence": "responsive-study.json + homepage-image-status.json.",
+      "next_action": "Distinguer lazy-load attendu et vraie image cassée dans une prochaine version du script."
+    },
+    {
+      "name": "AI citation",
+      "score": "7/10",
+      "status": "partial",
+      "what_it_checks": "Extractibilité, llms.txt, réponses directes, données structurées et limites de preuve.",
+      "verdict": "La base est présente, mais les citations IA et sources externes ne sont pas mesurées.",
+      "evidence": "llms.txt public 200, pages sitemap 200, données structurées locales déjà validées par préflight.",
+      "next_action": "Ajouter un protocole de tests citations IA et sources éditoriales publiques."
+    },
+    {
+      "name": "Measurement owner",
+      "score": "2/10",
+      "status": "missing",
+      "what_it_checks": "GSC, GA4, Bing Webmaster, logs et citations IA.",
+      "verdict": "Données propriétaires absentes de cet audit.",
+      "evidence": "Aucun export ou accès privé fourni.",
+      "next_action": "Décider si la mesure doit attendre le domaine final ou être préparée en préproduction."
+    },
+    {
+      "name": "Skillpack quality v1.2.2",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Respect du contrat visual HTML audit : audit.json, index.html, captures, responsive, Design Watch, cohorts, français.",
+      "verdict": "Le workflow produit les livrables attendus ; reste à vérifier l’UI du rapport généré au navigateur.",
+      "evidence": "Dossier reports/swing-digital/2026-06-20-v1.2.2-visual-audit/.",
+      "next_action": "Servir le rapport localement et capturer le rapport lui-même en desktop/mobile."
+    }
+  ],
+  "design_watch": {
+    "score": "7/10",
+    "verdict": "Identité forte et lisible, mais premier parcours mobile à resserrer.",
+    "summary": "Le premier écran explique clairement Swing Digital et installe une direction artistique cohérente avec l’immersion culturelle. Sur mobile, la hauteur du hero et les liens sociaux latéraux créent une friction avant les preuves et contenus de confiance.",
+    "confidence": "high",
+    "observed": [
+      "Desktop : logo, navigation, hero visuel, H1 et proposition de valeur visibles dans la capture.",
+      "Mobile : logo, menu hamburger, H1, tags et texte descriptif visibles sans débordement horizontal.",
+      "Mobile : la section “Qui sommes-nous ?” apparaît seulement en bas de capture après un hero très haut.",
+      "Mobile : les liens sociaux latéraux apparaissent près du bord droit."
+    ],
+    "inferred": [
+      "La marque est mémorisable et cohérente avec le sujet des expériences immersives.",
+      "La densité verticale du hero mobile peut retarder l’accès aux signaux de confiance et aux projets.",
+      "Les liens sociaux latéraux peuvent distraire ou fragiliser la lisibilité sur petits écrans."
+    ],
+    "recommended": [
+      "Tester une version mobile du hero avec hauteur réduite ou ancre plus rapide vers les projets/preuves.",
+      "Évaluer le repositionnement des liens sociaux sur mobile.",
+      "Conserver la direction artistique du hero, qui soutient bien le positionnement immersif."
+    ]
+  },
+  "responsive_study": {
+    "url": "https://swing.appmiweb.com/",
+    "generated_at": "2026-06-20T21:21:03.551Z",
+    "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+    "summary": {
+      "status": "warning",
+      "verdict": "Homepage renders on tested viewports, but browser evidence found issues to review."
+    },
+    "viewports": [
+      {
+        "label": "Desktop",
+        "viewport": "1440x1800",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 1440,
+          "innerHeight": 1800,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false,
+          "documentHeight": 10839,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 2897,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi"
+        }
+      },
+      {
+        "label": "Mobile",
+        "viewport": "390x1400",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 390,
+          "innerHeight": 1400,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false,
+          "documentHeight": 7631,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 2809,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva"
+        }
+      }
+    ]
+  },
+  "screenshot_status": {
+    "status": "available",
+    "method": "Chrome DevTools fallback",
+    "desktop": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/site-screenshots/desktop.png",
+    "mobile": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/site-screenshots/mobile.png",
+    "note": "Captures du site audité, pas du rapport généré."
+  },
+  "site_visual_evidence": [
+    {
+      "label": "Homepage desktop",
+      "path": "site-screenshots/desktop.png",
+      "viewport": "1440x1800",
+      "notes": [
+        "Hero visuel affiché.",
+        "H1 visible.",
+        "Navigation desktop visible.",
+        "Aucun débordement horizontal détecté."
+      ]
+    },
+    {
+      "label": "Homepage mobile",
+      "path": "site-screenshots/mobile.png",
+      "viewport": "390x1400",
+      "notes": [
+        "Logo, menu, H1 et texte principal visibles.",
+        "Aucun débordement horizontal détecté.",
+        "Hero très haut avant contenu secondaire.",
+        "Liens sociaux latéraux proches du bord droit."
+      ]
+    }
+  ],
+  "public_measurements": [
+    {
+      "label": "Préflight dist/",
+      "status": "passed",
+      "value": "439 fichiers publics validés ; 3 avertissements préproduction."
+    },
+    {
+      "label": "Search/Crawl public",
+      "status": "failed",
+      "value": "8 artefacts publics en HTTP 200."
+    },
+    {
+      "label": "Responsive study",
+      "status": "warning",
+      "value": "Homepage renders on tested viewports, but browser evidence found issues to review."
+    },
+    {
+      "label": "Images homepage HTTP",
+      "status": "passed",
+      "value": "34/34 images OK."
+    }
+  ],
+  "technical_checks": [
+    {
+      "area": "Contrat v1.2.2",
+      "status": "passed",
+      "observed": "audit.json, index.html, captures site, responsive_study, design_watch, analysis_cohorts et report_language sont produits.",
+      "implication": "Le workflow ne finit pas en simple réponse chat."
+    },
+    {
+      "area": "Préflight Appmiweb",
+      "status": "passed",
+      "observed": "npm run appmiweb:preflight termine avec code 0 et 3 avertissements non bloquants.",
+      "implication": "Le build local dist/ reste propre."
+    },
+    {
+      "area": "Search/Crawl public",
+      "status": "failed",
+      "observed": "8 artefacts non publics répondent en HTTP 200.",
+      "implication": "Blocage du 9/10 tant que l’hébergement n’est pas purgé."
+    },
+    {
+      "area": "Captures du site",
+      "status": "passed",
+      "observed": "desktop.png et mobile.png générés.",
+      "implication": "Design Watch peut s’appuyer sur des preuves visuelles."
+    },
+    {
+      "area": "Responsive dynamique",
+      "status": "warning",
+      "observed": "Homepage renders on tested viewports, but browser evidence found issues to review.",
+      "implication": "Le rendu est exploitable mais l’alerte images doit être qualifiée."
+    },
+    {
+      "area": "Images de la homepage",
+      "status": "passed",
+      "observed": "34/34 URLs d’images répondent en image.",
+      "implication": "Le signal missingImages du rendu initial ne prouve pas des fichiers image cassés."
+    }
+  ],
+  "action_plan": [
+    {
+      "when": "Maintenant",
+      "owner": "Hébergement",
+      "action": "Purger les artefacts publics Appmiweb.",
+      "outcome": "Les 8 chemins interdits répondent en 404, 410 ou 403."
+    },
+    {
+      "when": "Après purge",
+      "owner": "SEO/GEO",
+      "action": "Relancer npm run appmiweb:search-crawl.",
+      "outcome": "0 failure dans la preuve Search/Crawl publique."
+    },
+    {
+      "when": "Ensuite",
+      "owner": "UX",
+      "action": "Tester une variante hero mobile plus compacte.",
+      "outcome": "Accès plus rapide aux preuves/projets sans perdre l’identité visuelle."
+    },
+    {
+      "when": "Skill v1.2.2",
+      "owner": "Skillpack",
+      "action": "Améliorer la distinction lazy-load vs image cassée dans responsive_study.",
+      "outcome": "Moins de faux avertissements dans les prochains audits."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Préproduction auditée",
+      "url": "https://swing.appmiweb.com/",
+      "status": "checked"
+    },
+    {
+      "label": "Evidence Search/Crawl PRD-005",
+      "path": "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
+      "status": "failed"
+    },
+    {
+      "label": "Capture desktop",
+      "path": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/site-screenshots/desktop.png",
+      "status": "available"
+    },
+    {
+      "label": "Capture mobile",
+      "path": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/site-screenshots/mobile.png",
+      "status": "available"
+    },
+    {
+      "label": "Étude responsive",
+      "path": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/responsive-study.json",
+      "status": "warning"
+    },
+    {
+      "label": "Images homepage",
+      "path": "reports/swing-digital/2026-06-20-v1.2.2-visual-audit/homepage-image-status.json",
+      "status": "passed"
+    },
+    {
+      "label": "Runbook visual HTML audit v1.2.2",
+      "path": "/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/runbooks/visual-html-audit.md",
+      "status": "used"
+    }
+  ]
+}
