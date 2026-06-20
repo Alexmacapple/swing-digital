@@ -15,6 +15,7 @@ const STRATEGIC_DIRECT_ANSWER_PAGES = [
     'espaces-augmentes.html',
     'experiences-series.html',
     'experience-monroe.html',
+    'reservations.html',
 ];
 
 const canonicalFor = (file) => (file === 'index.html' ? `${BASE_URL}/` : `${BASE_URL}/${file}`);
@@ -56,6 +57,35 @@ test.describe('SEO/GEO technique', () => {
             const parsed = JSON.parse(jsonLd);
             expect(parsed['@context'], file).toBe('https://schema.org');
             expect(Array.isArray(parsed['@graph']), file).toBe(true);
+        }
+    });
+
+    test('les titres et descriptions des pages indexables sont assez explicites', async () => {
+        for (const file of INDEXABLE_HTML) {
+            const html = fs.readFileSync(path.join(SRC_DIR, file), 'utf8');
+            const title = extract(/<title>([\s\S]*?)<\/title>/, html).replace(/\s+/g, ' ').trim();
+            const description = extract(/<meta name="description" content="([^"]+)">/, html).replace(/\s+/g, ' ').trim();
+            const ogDescription = extract(/<meta property="og:description" content="([^"]+)">/, html).replace(/\s+/g, ' ').trim();
+            const twitterDescription = extract(/<meta name="twitter:description" content="([^"]+)">/, html).replace(/\s+/g, ' ').trim();
+            const jsonLd = extract(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/, html);
+            const webPage = JSON.parse(jsonLd)['@graph'].find((entity) => entity['@type'] === 'WebPage');
+
+            expect(title.length, `${file} title: ${title}`).toBeGreaterThanOrEqual(30);
+            expect(title.length, `${file} title: ${title}`).toBeLessThanOrEqual(70);
+            expect(description.length, `${file} description: ${description}`).toBeGreaterThanOrEqual(90);
+            expect(description.length, `${file} description: ${description}`).toBeLessThanOrEqual(180);
+            expect(ogDescription, file).toBe(description);
+            expect(twitterDescription, file).toBe(description);
+            expect(webPage.description, file).toBe(description);
+        }
+    });
+
+    test('les pages indexables exposent une hiérarchie h1 puis h2', async () => {
+        for (const file of INDEXABLE_HTML) {
+            const html = fs.readFileSync(path.join(SRC_DIR, file), 'utf8');
+
+            expect(html, `${file} doit contenir un h1`).toMatch(/<h1\b[\s\S]*?<\/h1>/);
+            expect(html, `${file} doit contenir au moins un h2`).toMatch(/<h2\b[\s\S]*?<\/h2>/);
         }
     });
 
