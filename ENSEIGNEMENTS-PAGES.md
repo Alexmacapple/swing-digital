@@ -71,9 +71,19 @@ Les badges de section (ex: `<div class="pageN__badge">Nom</div>`) ont été supp
 
 ### SEO
 
-- Placeholder https://DOMAINE/ dans canonical, OG, sitemap, robots (à remplacer avant prod)
-- og:image manquante sur 23 pages (à ajouter)
+- Le placeholder `https://DOMAINE/` était le bon choix en phase découpage, mais il ne doit jamais rester dans une préproduction publique.
+- État 2026-06-20 : préproduction alignée sur `https://swing.appmiweb.com`.
+- Le domaine final doit être basculé avec `npm run seo:set-base -- https://domaine-final`, puis vérifié avec `SEO_BASE_URL=https://domaine-final npm run seo:check`.
+- Les pages indexables doivent garder canonical, Open Graph, Twitter Card, JSON-LD, sitemap et robots cohérents sur la même base HTTPS.
+- `llms.txt` est utile comme carte optionnelle pour agents IA, mais ne doit pas être présenté comme un facteur de classement Google.
 - Script de redirection des ancres orphelines (#page-N) dans main.js
+
+### SEO/GEO et production
+
+- Les chantiers GSC, GA4/GTM, Bing Webmaster Tools, sources IA, politique crawlers IA et LCP final dépendent du domaine final.
+- Ne pas mélanger les données de préproduction avec les métriques de production.
+- Les crawlers IA doivent être séparés par usage : recherche/citation, fetch utilisateur, entraînement modèle.
+- Ne jamais inventer de métriques de trafic, rang, CTR, conversion ou citation IA.
 
 ### Responsive et zoom
 
@@ -133,4 +143,5 @@ Les badges de section (ex: `<div class="pageN__badge">Nom</div>`) ont été supp
 ---
 
 **Dernière mise à jour** : 2026-03-22
-**Version** : 3.0.0
+**Mise à jour complémentaire** : 2026-06-20
+**Version** : 4.0.0

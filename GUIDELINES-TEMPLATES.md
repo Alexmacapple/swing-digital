@@ -14,15 +14,16 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Titre] - Swing Digital</title>
     <meta name="description" content="[Description]">
-    <link rel="canonical" href="https://DOMAINE/[page].html">
+    <link rel="canonical" href="https://swing.appmiweb.com/[page].html">
     <meta property="og:title" content="[Titre] - Swing Digital">
     <meta property="og:description" content="[Description]">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://DOMAINE/[page].html">
+    <meta property="og:url" content="https://swing.appmiweb.com/[page].html">
     <link rel="preload" href="fonts/Brandon_blk.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="fonts/Brandon_reg.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="fonts/Fragen-Bold.otf" as="font" type="font/otf" crossorigin>
     <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">...</script>
 </head>
 <body data-section="[section]" data-page="[page]">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
@@ -248,7 +249,46 @@ Exemples : .page5__title, .page13__card, .page58__reserve-btn
 
 ---
 
-## 7. JavaScript
+## 7. SEO/GEO
+
+### Obligatoire sur les pages indexables
+
+- `title` unique entre 30 et 70 caractères.
+- `meta description` unique entre 90 et 180 caractères.
+- `canonical` absolue sur la base SEO active.
+- `og:url` identique à la canonical.
+- `og:image` absolue.
+- `og:site_name`, `og:locale` et Twitter Card.
+- JSON-LD `Organization`, `WebSite`, `WebPage` et `BreadcrumbList` quand applicable.
+- Liens internes et assets en relatif quand une URL absolue n'est pas nécessaire.
+
+### Pages stratégiques GEO
+
+Les pages à intention claire doivent contenir :
+
+- une réponse directe visible ;
+- un tableau de faits extractible ;
+- des claims visibles et suivis dans `docs/SEO-GEO-CLAIM-LEDGER.csv` ;
+- une FAQ visible et `FAQPage` uniquement si les questions sont présentes sur la page.
+
+### Base URL
+
+Préproduction actuelle :
+
+```text
+https://swing.appmiweb.com
+```
+
+Production finale :
+
+```bash
+npm run seo:set-base -- https://domaine-final
+SEO_BASE_URL=https://domaine-final npm run seo:check
+```
+
+---
+
+## 8. JavaScript
 
 ### Fonctions et guards
 
@@ -287,6 +327,8 @@ if (!document.querySelector('iframe[src*="vimeo"]')) return;
 - [ ] État actif dans le menu (via JS initNavActiveState)
 - [ ] Title et meta description uniques
 - [ ] Canonical et OG tags
+- [ ] JSON-LD cohérent avec le contenu visible
+- [ ] Si page stratégique : réponse directe et tableau de faits
 - [ ] Images avec alt, width, height, loading="lazy"
 - [ ] Textes en casse normale, uppercase via CSS
 - [ ] Contraste WCAG AA vérifié
@@ -295,5 +337,5 @@ if (!document.querySelector('iframe[src*="vimeo"]')) return;
 
 ---
 
-**Dernière mise à jour** : 2026-03-22
-**Version** : 3.0.0 (reverse engineering v4)
+**Dernière mise à jour** : 2026-06-20
+**Version** : 4.0.0 (préproduction SEO/GEO)

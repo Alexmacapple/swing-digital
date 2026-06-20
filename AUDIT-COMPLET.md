@@ -4,6 +4,26 @@ Date : 22 mars 2026
 Scope : 24 pages HTML, 1 CSS, 1 JS, sitemap, robots.txt
 Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 
+> Mise à jour 2026-06-20 : ce document est conservé comme audit historique. L'état courant est documenté dans `docs/SEO-GEO-AUDIT.md`, `docs/SEO-GEO-PROD-CHECKLIST.md` et `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
+
+---
+
+## État courant au 2026-06-20
+
+| Zone | État actuel |
+|------|-------------|
+| Préproduction | `https://swing.appmiweb.com` validée techniquement |
+| URL publiques | 23 URL du sitemap vérifiées en HTTP 200 |
+| Canonicals | Cohérents sur la préproduction Appmiweb |
+| Sitemap / robots / llms | Présents et servis en 200 |
+| Données structurées | JSON-LD présent sur les pages indexables |
+| Tests SEO/GEO | `npm run seo:check` : 9/9 passés |
+| Suite Playwright | `npm test` : 1 301 passés, 154 ignorés |
+| Lighthouse accueil | SEO 100, accessibilité 100, bonnes pratiques 100, performance 89, LCP 3,8 s |
+| Lighthouse Réservations | SEO 100, accessibilité 100, bonnes pratiques 100, performance 97, LCP 2,4 s |
+
+Les anciens points « `https://DOMAINE/` », `og:image` manquante, favicon absent, dimensions d'images et boutons `href="#"` ont été traités dans l'état préproduction actuel. Les blocages restants concernent la production finale : domaine final HTTPS, hébergeur légal, scénario Réservations, mesure GSC/GA4/Bing/IA, optimisation LCP de l'accueil et politique crawlers IA.
+
 ---
 
 ## 1. Accessibilité (WCAG 2.2 AA / RGAA 4.1)
@@ -52,10 +72,10 @@ Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 - Textes en casse normale, majuscules via text-transform CSS (RGAA 10.2)
 - prefers-reduced-motion respecte (CSS + JS guard)
 - Contraste texte/fond conforme AA sur toutes les pages
-- Boutons video : intitule explicite identifiant le contenu controle
-- CTA reservation : button aria-disabled (pas a href)
+- Boutons vidéo : intitulé explicite identifiant le contenu contrôlé
+- CTA réservation : button aria-disabled (pas a href)
 
-### Points a vérifier manuellement
+### Points à vérifier manuellement
 
 - Navigation clavier complète (Tab, Shift+Tab, Enter, Escape)
 - Lecteur d'écran (VoiceOver/NVDA) sur le menu 3 niveaux
@@ -165,9 +185,9 @@ Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 - Navigation 3 niveaux cohérente et accessible
 - Fil d'Ariane sticky (visible au scroll)
 - Header fixe avec menu persistant
-- Video hero avec controle son
-- Video contact avec play/pause
-- Plan du site avec video d'ambiance
+- Vidéo hero avec contrôle son
+- Vidéo contact avec play/pause
+- Plan du site avec vidéo d'ambiance
 - Footer avec liens utiles (équipe, contact, plan, mentions)
 
 ### A corriger
@@ -224,7 +244,7 @@ Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 
 ---
 
-## Resume des actions par priorité
+## Résumé des actions par priorité
 
 ### Avant mise en production (bloquant)
 
@@ -265,3 +285,11 @@ Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 ### Note globale : 83/100
 
 **Le site est fonctionnel et largement accessible.** Les points bloquants avant mise en production sont le domaine réel (SEO), les dimensions d'images (performance) et les 2 boutons cassés (UX). L'architecture multi-pages avec navigation 3 niveaux et accessibilité RGAA est solide.
+
+---
+
+## Addendum SEO/GEO 2026-06-20
+
+La note historique 83/100 ne reflète plus l'état courant. L'audit SEO/GEO de préproduction a ajouté les canonicals Appmiweb, Open Graph/Twitter, sitemap, robots, `llms.txt`, JSON-LD, blocs de réponse directe, tableaux extractibles et FAQ Réservations.
+
+Avant production finale, suivre `docs/SEO-GEO-PROD-CHECKLIST.md` et `prd-meta-workflow/PRD-001-seo-geo-production.MD`.

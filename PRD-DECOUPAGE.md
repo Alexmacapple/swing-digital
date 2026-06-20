@@ -2,6 +2,17 @@
 
 **Statut : TERMINE** (merge sur main, tag v4, branche decoupage supprimee)
 
+> Mise à jour 2026-06-20 : ce PRD décrit la décision historique de découpage multi-pages. L'état courant ajoute une préproduction SEO/GEO sur `https://swing.appmiweb.com`, un build public `dist/` et le PRD-001 pour les chantiers de production.
+
+## État courant au 2026-06-20
+
+- Les 24 pages HTML existent toujours dans `src/`.
+- Les 23 pages indexables sont présentes dans `sitemap.xml`.
+- La préproduction Appmiweb sert les 23 URL du sitemap en HTTP 200.
+- Les canonicals, Open Graph, sitemap, robots et `llms.txt` pointent vers `https://swing.appmiweb.com`.
+- La production finale nécessite une bascule via `npm run seo:set-base -- https://domaine-final`.
+- Les chantiers GSC, GA4/GTM, Bing Webmaster Tools, LCP final et politique crawlers IA sont cadrés dans `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
+
 ## Contexte
 
 Le site etait un single-page (`index.html`, 62 sections/pages). Le menu de navigation existait sur la page 1 mais n'etait pas persistant.

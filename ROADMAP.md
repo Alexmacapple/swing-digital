@@ -2,7 +2,7 @@
 
 **Projet** : Site vitrine multi-pages Swing Digital
 **Début** : 2026-02-20
-**Statut** : Pré-production
+**Statut** : Préproduction Appmiweb validée techniquement, production finale en attente
 
 ---
 
@@ -21,31 +21,40 @@
 | 9. UX | Footer 8 liens, bouton retour en haut | Terminé |
 | 10. SEO | Favicon, og:image, width/height images | Terminé |
 | 11. Zoom 200% | 7 corrections RGAA 10.4 / WCAG 1.4.4 | Terminé |
-| 12. Tests | Playwright 984 tests, 4 viewports | Terminé (v5) |
+| 12. Tests | Playwright : dernier run observé 1 301 passés, 154 ignorés | Terminé |
+| 13. SEO/GEO préproduction | Canonicals Appmiweb, sitemap, robots, `llms.txt`, JSON-LD, FAQ, réponses directes | Terminé |
+| 14. Packaging production | `npm run build:prod`, `dist/` public, preflight Appmiweb | Terminé |
+| 15. PRD production SEO/GEO | PRD-001 : mesure, LCP, politique crawlers IA | Terminé |
 
 ---
 
 ## Avant mise en production (bloquant)
 
-- [ ] Remplacer `https://DOMAINE/` par le domaine réel
-- [ ] Configurer HTTPS + headers sécurité
-- [ ] Renseigner l'hébergeur dans mentions-legales.html
+- [ ] Choisir le domaine final HTTPS.
+- [ ] Basculer les canonicals, Open Graph, sitemap, robots et `llms.txt` vers le domaine final.
+- [ ] Configurer HTTPS + redirections HTTP vers HTTPS.
+- [ ] Renseigner l'hébergeur dans `mentions-legales.html`.
+- [ ] Décider le scénario Réservations : billetterie active ou lancement informatif avec contact.
+- [ ] Exécuter `npm test`, `npm run seo:check`, `npm run build:prod` et `npm run prod:preflight -- https://domaine-final`.
 
 ## Améliorations recommandées
 
-- [ ] Optimiser les images (compression, WebP)
-- [ ] Test cross-browser (Chrome, Firefox, Safari)
-- [ ] Test lecteur d'écran (VoiceOver, NVDA)
+- [ ] Optimiser le LCP de l'accueil sur le domaine final.
+- [ ] Installer GSC, GA4 ou GTM, Bing Webmaster Tools et suivi des sources IA.
+- [ ] Décider la politique crawlers IA : recherche/citation, fetch utilisateur, entraînement.
+- [ ] Optimiser les images (compression, WebP/AVIF avec fallback).
+- [ ] Test cross-browser final (Chrome, Firefox, Safari).
+- [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 
 ## Optionnel (post-lancement)
 
 - [ ] Navigation inter-projets (Précédent/Suivant)
 - [ ] Responsive images (srcset/picture)
 - [ ] Content-Security-Policy headers
-- [ ] Analytics (respectueux RGPD)
+- [ ] Reporting SEO/GEO post-lancement à J+14.
 - [ ] Formulaire newsletter fonctionnel
 - [ ] Billetterie (liens Réserver)
 
 ---
 
-**Dernière mise à jour** : 2026-03-23
+**Dernière mise à jour** : 2026-06-20

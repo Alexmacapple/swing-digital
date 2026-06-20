@@ -1,5 +1,36 @@
 # Swing Digital - Lecons apprises
 
+## Session 2026-06-20 : préproduction SEO/GEO et PRD production
+
+### Préproduction vs production finale
+
+- `https://swing.appmiweb.com` est une préproduction techniquement validée, pas nécessairement le domaine canonique final.
+- Ne pas installer la mesure définitive sur une URL temporaire si le domaine final change ensuite.
+- Le domaine final doit être basculé avec `npm run seo:set-base -- https://domaine-final`, puis contrôlé par `SEO_BASE_URL=https://domaine-final npm run seo:check`.
+
+### Mesure SEO/GEO
+
+- GSC, GA4/GTM, Bing Webmaster Tools et sources IA sont des chantiers de go-live, pas des corrections préproduction urgentes.
+- Les métriques doivent rester séparées : GSC, Bing, GA4, logs serveur et tests manuels IA ne mesurent pas la même chose.
+- Toujours marquer `unknown` ou `requires data` quand aucune donnée n'est observée.
+
+### LCP accueil
+
+- La vidéo hero peut concurrencer le LCP si elle est préchargée trop tôt.
+- Le LCP doit être jugé sur le domaine final, avec Lighthouse et Core Web Vitals réels.
+- Objectif de production : LCP accueil inférieur ou égal à 2,5 s, sauf exception artistique documentée.
+
+### Crawlers IA
+
+- Ne pas écrire une règle générique « AI bots ».
+- Séparer recherche/citation, fetch utilisateur, entraînement modèle et recherche traditionnelle.
+- `robots.txt` n'est pas une protection de contenu privé.
+
+### PRD
+
+- Le PRD de référence est `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
+- Les tâches GSC/GA4/Bing/IA, LCP et crawlers IA sont volontairement différées jusqu'au contexte production.
+
 ## Session 2026-04-06 : audit responsive et nettoyage (10 commits)
 
 ### Bug WebKit grid + aspect-ratio + flex

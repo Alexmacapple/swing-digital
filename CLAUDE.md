@@ -6,12 +6,13 @@
 **Date début** : 2026-02-20
 **Auteur** : Alex
 **Dépôt** : git@github.com:Alexmacapple/swing-digital.git (SSH)
+**Préproduction** : https://swing.appmiweb.com
 
 ---
 
 ## Contexte
 
-Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 24 pages HTML avec navigation 3 niveaux.
+Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 24 pages HTML avec navigation 3 niveaux. La préproduction Appmiweb est techniquement validée ; la production finale attend le domaine HTTPS définitif, les mentions légales hébergeur et le scénario Réservations.
 
 **Architecture** : 4 niveaux de pages
 1. Accueil, Espaces augmentés, Reservations
@@ -66,6 +67,7 @@ src/
 ├── mentions-legales.html         Mentions legales
 ├── sitemap.xml                   Sitemap (23 pages)
 ├── robots.txt                    Robots
+├── llms.txt                      Carte optionnelle pour agents IA
 ├── css/style.css                 Styles (158 KB)
 ├── js/main.js                    Scripts (22 KB)
 ├── img/                          Images par page
@@ -86,7 +88,7 @@ src/
 
 ## Accessibilité - WCAG 2.2 AA / RGAA 4.1
 
-- 0 violation axe-core sur 23/24 pages
+- 0 violation axe-core observée dans la suite Playwright actuelle
 - Navigation clavier complète (Tab, Escape, Arrow)
 - Disclosure pattern sur dropdown et hamburger
 - aria-current="page" sur lien actif et breadcrumb
@@ -99,7 +101,7 @@ src/
 
 ---
 
-## Regles CSS strictes
+## Règles CSS strictes
 
 - Zero couleur codee en dur hors :root
 - 38+ variables couleur dans :root
@@ -112,6 +114,21 @@ src/
 **Branche active** : main
 **Tags** : v1, v2, v3, v4 (découpé multi-pages)
 **Branches mergées** : cosmétique, image, decoupage
+
+## Commandes de validation actuelles
+
+```bash
+npm test
+npm run seo:check
+npm run build:prod
+npm run appmiweb:preflight
+```
+
+Derniers résultats observés :
+
+- `npm test` : 1 301 tests passés, 154 ignorés.
+- `npm run seo:check` : 9/9 tests passés.
+- `npm run appmiweb:preflight` : OK avec avertissements attendus sur mentions légales, CTA Réservations et billetterie.
 
 ---
 
@@ -128,9 +145,9 @@ src/
 
 ---
 
-## Qualite responsive et code (audit Codex 2026-04-06)
+## Qualité responsive et code (audit Codex 2026-04-06)
 
-**Score : 9/10** — Le 10/10 sera atteint quand le vrai domaine remplacera `DOMAINE` dans les 23 pages + sitemap.xml + robots.txt.
+**Score historique : 9/10**. Le placeholder `DOMAINE` a depuis été remplacé en préproduction par `https://swing.appmiweb.com`. Le 10/10 production finale dépend maintenant du domaine final, des mentions légales hébergeur, du scénario Réservations, de la mesure SEO/GEO et du LCP accueil.
 
 Corrections appliquees (9 commits) :
 - Fix scroll horizontal iPhone logos partenaires (bug WebKit grid + aspect-ratio + flex)
@@ -144,5 +161,18 @@ Corrections appliquees (9 commits) :
 
 ---
 
-**Derniere mise a jour** : 2026-04-06
-**Version** : 4.0.0
+## SEO/GEO production
+
+Le PRD de référence est `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
+
+Décision actuelle :
+
+1. Ne pas installer la mesure définitive sur une URL de préproduction si le domaine final change.
+2. Activer GSC, GA4/GTM, Bing Webmaster Tools et le suivi sources IA au go-live.
+3. Optimiser le LCP de l'accueil sur le domaine final.
+4. Publier une politique crawlers IA propriétaire après décision explicite.
+
+---
+
+**Dernière mise a jour** : 2026-06-20
+**Version** : 6.0.0 préproduction SEO/GEO

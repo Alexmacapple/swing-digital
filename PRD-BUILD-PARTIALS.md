@@ -5,13 +5,28 @@
 **Auteur** : Alex
 **Projet** : Swing Digital
 
+> Mise à jour 2026-06-20 : ce PRD reste une proposition historique de factorisation HTML. Le projet dispose désormais d'un packaging de production via `scripts/build-prod.js`, d'un dossier public `dist/` et d'un PRD séparé pour la production SEO/GEO : `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
+
+---
+
+## État courant au 2026-06-20
+
+- Le build de production actuel ne repose pas sur des partials HTML.
+- `npm run build:prod` génère `dist/` en excluant les artefacts de travail.
+- `npm run appmiweb:preflight` valide la préproduction Appmiweb.
+- La suite Playwright observée passe avec 1 301 tests et 154 ignorés.
+- Les placeholders SEO `DOMAINE` sont remplacés en préproduction par `https://swing.appmiweb.com`.
+- La production finale devra utiliser `npm run seo:set-base -- https://domaine-final`.
+
+Ce PRD ne doit donc pas être utilisé comme checklist de production. Il reste utile pour une future réduction de duplication HTML.
+
 ---
 
 ## Contexte
 
 Le site Swing Digital est composé de 24 pages HTML statiques partageant un header (59 lignes), un footer (17 lignes) et un bloc head (~15 lignes) identiques. Ces composants sont aujourd'hui copiés-collés dans chaque fichier. Toute modification (ajout d'un lien de navigation, correction d'un texte, nouveau projet dans le dropdown) doit être répliquée manuellement 24 fois.
 
-Le site dispose de 984 tests Playwright sur 4 viewports et d'une conformité WCAG 2.2 AA validée. Toute solution doit préserver ces acquis.
+Au moment de rédaction de ce PRD, le site disposait de 984 tests Playwright sur 4 viewports et d'une conformité WCAG 2.2 AA validée. Toute solution doit préserver ces acquis ainsi que les contrôles SEO/GEO ajoutés depuis.
 
 ## Problème
 
@@ -234,7 +249,7 @@ Points validés par inspection du code (2026-03-23) :
 | Critère | Méthode de vérification |
 |---------|------------------------|
 | HTML final identique | `diff` entre `dist/` et ancien `src/` (aucune différence) |
-| 984 tests passent | `npx playwright test` sans échec |
+| Suite Playwright complète passe | `npm test` sans échec bloquant |
 | 0 violation axe-core | Tests accessibilité existants |
 | Pas de régression visuelle | Inspection manuelle des pages clés (accueil, Monroe, réservations) |
 | Build rapide | < 1 seconde pour 24 pages |
