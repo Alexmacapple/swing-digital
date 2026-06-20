@@ -1,0 +1,251 @@
+{
+  "generated_at": "2026-06-20T21:10:58.112Z",
+  "site": "Swing Digital - préproduction Appmiweb",
+  "summary": {
+    "status": "bloqué pour 9/10 public",
+    "headline": "Search/Crawl public validé sur les pages, bloqué par des artefacts non publics",
+    "decision": "Ne pas monter Search/Crawl à 9/10 tant que la préproduction sert des fichiers de travail en HTTP 200.",
+    "data_confidence": "haute sur les contrôles exécutés le 2026-06-20",
+    "biggest_blocker": "8 artefacts non publics servis par la préproduction",
+    "fastest_win": "Purger la racine Appmiweb puis republier uniquement dist/"
+  },
+  "metrics": [
+    {
+      "label": "URL sitemap",
+      "value": "23/23",
+      "detail": "Toutes les URL du sitemap public répondent en 200."
+    },
+    {
+      "label": "Canonicals",
+      "value": "23/23",
+      "detail": "Toutes les canonicals pointent vers la préproduction Appmiweb attendue."
+    },
+    {
+      "label": "Open Graph",
+      "value": "23/23",
+      "detail": "Tous les og:url sont cohérents avec les URL sitemap."
+    },
+    {
+      "label": "Images OG",
+      "value": "21/21",
+      "detail": "Toutes les images Open Graph uniques répondent en 200 avec un type image."
+    },
+    {
+      "label": "Artefacts publics",
+      "value": "8/8",
+      "detail": "Tous les artefacts testés répondent publiquement en 200 : blocage de publication."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Search/Crawl",
+      "score": 8,
+      "max": 10,
+      "note": "Les signaux crawlables sont bons, mais la publication expose encore des artefacts non publics. Le 9/10 est conditionné à une purge serveur et une republication stricte de dist/."
+    }
+  ],
+  "executive_brief": [
+    "Le sitemap public, les pages, les canonicals, les og:url, les images Open Graph, robots.txt et llms.txt sont conformes sur la préproduction Appmiweb.",
+    "Le build local dist/ est propre : npm run appmiweb:preflight valide 439 fichiers publics avec seulement 3 avertissements de préproduction.",
+    "La préproduction publique sert encore des artefacts de travail en HTTP 200 ; c’est un problème de publication ou de purge côté hébergement, pas un défaut HTML des pages sitemap.",
+    "La prochaine action utile est opérationnelle : purger la racine Appmiweb et republier uniquement dist/, puis relancer npm run appmiweb:search-crawl."
+  ],
+  "findings": [
+    {
+      "priority": "P0",
+      "title": "Artefacts non publics servis par la préproduction",
+      "observed": [
+        "/generated-pages.html répond en HTTP 200.",
+        "/pages-extracted/ répond en HTTP 200.",
+        "/maquette-site.pdf répond en HTTP 200.",
+        "/README.md répond en HTTP 200.",
+        "/CLAUDE.md répond en HTTP 200.",
+        "/ROADMAP.md répond en HTTP 200.",
+        "/todo.md répond en HTTP 200.",
+        "/.DS_Store répond en HTTP 200."
+      ],
+      "inferred": [
+        "La racine Appmiweb contient probablement un ancien dépôt complet, un répertoire source non filtré ou des fichiers non purgés.",
+        "robots.txt ne suffit pas : un chemin disallow reste accessible si le fichier est servi en 200."
+      ],
+      "recommended": [
+        "Supprimer ces artefacts côté hébergement.",
+        "Republier uniquement le contenu de dist/.",
+        "Relancer npm run appmiweb:search-crawl avant de remonter la note Search/Crawl."
+      ],
+      "evidence": [
+        {
+          "label": "Preuve JSON",
+          "path": "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
+          "status": "failed"
+        },
+        {
+          "label": "Préflight dist/",
+          "command": "npm run appmiweb:preflight",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Signaux sitemap et pages conformes",
+      "observed": [
+        "23 URL sitemap contrôlées.",
+        "23 pages répondent en HTTP 200.",
+        "23 canonicals sont cohérentes.",
+        "23 og:url sont cohérents.",
+        "21 images Open Graph uniques répondent en 200."
+      ],
+      "inferred": [
+        "Le socle Search/Crawl des pages indexables est assez solide pour viser 9/10 après correction de publication."
+      ],
+      "recommended": [
+        "Conserver ces contrôles publics comme garde-fou avant chaque validation préproduction ou production."
+      ],
+      "evidence": [
+        {
+          "label": "Sitemap public",
+          "url": "https://swing.appmiweb.com/sitemap.xml",
+          "status": "passed"
+        },
+        {
+          "label": "robots.txt public",
+          "url": "https://swing.appmiweb.com/robots.txt",
+          "status": "passed"
+        },
+        {
+          "label": "llms.txt public",
+          "url": "https://swing.appmiweb.com/llms.txt",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "analysis_cohorts": [
+    {
+      "label": "Pages indexables",
+      "status": "passed",
+      "count": 23,
+      "insight": "Les URL sitemap, canonicals et og:url sont cohérents sur la cible publique."
+    },
+    {
+      "label": "Assets Open Graph",
+      "status": "passed",
+      "count": 21,
+      "insight": "Les images sociales uniques sont disponibles publiquement."
+    },
+    {
+      "label": "Hygiène de publication",
+      "status": "failed",
+      "count": 8,
+      "insight": "La préproduction sert encore des artefacts exclus du build dist/."
+    }
+  ],
+  "technical_checks": [
+    {
+      "area": "Préflight dist/",
+      "status": "passed",
+      "observed": "439 fichiers publics validés dans dist/ ; 3 avertissements non bloquants de préproduction.",
+      "implication": "Le build local est propre et exclut les artefacts de travail."
+    },
+    {
+      "area": "robots.txt",
+      "status": "passed",
+      "observed": "robots.txt répond en 200 et déclare le sitemap Appmiweb.",
+      "implication": "Signal crawl public cohérent."
+    },
+    {
+      "area": "sitemap.xml",
+      "status": "passed",
+      "observed": "23 URL publiques listées.",
+      "implication": "Périmètre de crawl stable pour le contrôle public."
+    },
+    {
+      "area": "llms.txt",
+      "status": "passed",
+      "observed": "llms.txt répond en 200 sans recopie de son contenu dans le rapport.",
+      "implication": "Ressource agents disponible ; données de contact non dupliquées dans la preuve."
+    },
+    {
+      "area": "Artefacts publics",
+      "status": "failed",
+      "observed": "8 artefact(s) non public(s) répondent en 200.",
+      "implication": "Blocage du passage à 9/10 tant que la publication n’est pas nettoyée."
+    }
+  ],
+  "public_measurements": [
+    {
+      "label": "Sitemap",
+      "status": "ok",
+      "value": "23 URL"
+    },
+    {
+      "label": "Pages HTTP 200",
+      "status": "ok",
+      "value": "23/23"
+    },
+    {
+      "label": "Canonicals",
+      "status": "ok",
+      "value": "23/23"
+    },
+    {
+      "label": "Images OG",
+      "status": "ok",
+      "value": "21/21"
+    },
+    {
+      "label": "Artefacts non publics",
+      "status": "failed",
+      "value": "8"
+    }
+  ],
+  "action_plan": [
+    {
+      "priority": "P0",
+      "owner": "Hébergement",
+      "action": "Purger les artefacts publics listés sur Appmiweb.",
+      "proof": "Les 8 chemins doivent répondre en 404, 410 ou 403."
+    },
+    {
+      "priority": "P0",
+      "owner": "Publication",
+      "action": "Republier uniquement le contenu de dist/.",
+      "proof": "Aucun fichier Markdown, PDF source, .DS_Store, generated-pages.html ou pages-extracted/ ne doit être servi."
+    },
+    {
+      "priority": "P1",
+      "owner": "SEO/GEO",
+      "action": "Relancer npm run appmiweb:search-crawl.",
+      "proof": "Le script termine avec code 0 et un JSON sans failures."
+    },
+    {
+      "priority": "P1",
+      "owner": "Rapport",
+      "action": "Régénérer le rapport HTML SEO/GEO après correction.",
+      "proof": "Search/Crawl peut alors être classé à 9/10 si les autres signaux restent verts."
+    }
+  ],
+  "sources": [
+    {
+      "label": "PRD-005",
+      "path": "prd-meta-workflow/PRD-005-validation-search-crawl-preprod.MD",
+      "status": "updated"
+    },
+    {
+      "label": "Preuve JSON publique",
+      "path": "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
+      "status": "failed"
+    },
+    {
+      "label": "Script de contrôle public",
+      "path": "scripts/check-public-search-crawl.js",
+      "status": "added"
+    },
+    {
+      "label": "Préproduction Appmiweb",
+      "url": "https://swing.appmiweb.com",
+      "status": "checked"
+    }
+  ]
+}

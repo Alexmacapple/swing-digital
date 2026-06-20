@@ -158,6 +158,7 @@
     "prod:preflight": "node scripts/prod-preflight.js",
     "appmiweb:set-base": "node scripts/update-seo-base.js https://swing.appmiweb.com",
     "appmiweb:preflight": "node scripts/prod-preflight.js --preprod https://swing.appmiweb.com",
+    "appmiweb:search-crawl": "node scripts/check-public-search-crawl.js https://swing.appmiweb.com --out reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
     "seo:check": "npx playwright test tests/seo-geo.spec.js --project=desktop-1920",
     "seo:set-base": "node scripts/update-seo-base.js",
     "seo:check-prod": "node scripts/check-prod-seo-base.js"

@@ -1,6 +1,6 @@
 # PRD-005 : Validation Search/Crawl préproduction
 
-**Statut** : Brouillon
+**Statut** : Bloqué côté publication préproduction
 **Date** : 2026-06-20
 **Auteur** : Alex
 **Source** : rapport HTML SEO/GEO v1.2.1 et tests SEO/GEO existants
@@ -90,6 +90,36 @@ Retenir l'Option A. La préproduction Appmiweb doit être validée publiquement,
 
 ---
 
+## Résultat d'exécution du 2026-06-20
+
+Le contrôle public est créé via `npm run appmiweb:search-crawl`.
+
+Résultat observé :
+
+- `npm run appmiweb:preflight` passe : `dist/` contient 439 fichiers publics validés, avec 3 avertissements non bloquants de préproduction.
+- `sitemap.xml` public : 23 URL contrôlées, 23 réponses HTTP 200.
+- Canonicals : 23/23 cohérentes avec `https://swing.appmiweb.com`.
+- Open Graph : 23/23 `og:url` cohérents, 21/21 images Open Graph servies en 200.
+- `robots.txt` et `llms.txt` publics répondent en 200.
+- Blocage : 8 artefacts non publics répondent encore en HTTP 200 sur la préproduction.
+
+Artefacts publics à purger côté hébergement :
+
+- `/generated-pages.html`
+- `/pages-extracted/`
+- `/maquette-site.pdf`
+- `/README.md`
+- `/CLAUDE.md`
+- `/ROADMAP.md`
+- `/todo.md`
+- `/.DS_Store`
+
+Diagnostic : le problème n'est pas dans le build local, car `dist/` exclut déjà ces artefacts. La préproduction publique sert probablement un ancien contenu, un répertoire source non filtré ou une racine d'hébergement qui n'est pas strictement `dist/`.
+
+Conclusion : la note `Search/Crawl` ne doit pas être montée à 9/10 tant que ces artefacts restent publics. Après purge et republication de `dist/` uniquement, relancer `npm run appmiweb:search-crawl`.
+
+---
+
 ## Plan d'implémentation
 
 1. Exécuter `npm run appmiweb:preflight`.
@@ -98,7 +128,8 @@ Retenir l'Option A. La préproduction Appmiweb doit être validée publiquement,
 4. Vérifier que chaque canonical reste cohérent avec Appmiweb.
 5. Tester les images Open Graph déclarées.
 6. Vérifier `robots.txt` et `llms.txt` publics.
-7. Régénérer le rapport HTML avec les preuves publiques.
+7. Purger les artefacts non publics côté hébergement si le contrôle public les expose.
+8. Régénérer le rapport HTML avec les preuves publiques.
 
 ---
 

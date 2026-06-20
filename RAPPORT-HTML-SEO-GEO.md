@@ -24,6 +24,22 @@ reports/swing-digital/2026-06-20-v1.2.1-test/
 └── site-visual-evidence.json
 ```
 
+## Rapport PRD-005 Search/Crawl public
+
+Fichier HTML :
+
+```text
+reports/swing-digital/2026-06-20-prd-005-search-crawl-public/index.html
+```
+
+Preuve machine :
+
+```text
+reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json
+```
+
+Verdict du 2026-06-20 : `Search/Crawl` reste à 8/10 tant que la préproduction sert encore des artefacts non publics en HTTP 200. Le passage à 9/10 demande une purge côté hébergement, puis une republication stricte de `dist/` et un nouveau passage de `npm run appmiweb:search-crawl`.
+
 ## Note
 
 L'URL Cloudflare est un quick tunnel temporaire. Elle reste disponible seulement tant que le processus `cloudflared` correspondant tourne.
