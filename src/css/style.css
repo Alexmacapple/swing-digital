@@ -1508,7 +1508,7 @@ a.page13__card--link:focus-visible {
 
 @media (max-width: 768px) {
     .hero-page1 {
-        height: max(640px, calc(var(--section-height) - 72px));
+        height: max(640px, calc(var(--section-height) - 96px));
         min-height: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1596,7 +1596,7 @@ a.page13__card--link:focus-visible {
 
     .hero-page1__summary {
         font-size: 0.95rem;
-        line-height: 1.52;
+        line-height: 1.6;
         margin-top: var(--space-xs);
     }
 
@@ -7377,7 +7377,7 @@ section:hover [class*="__category"]::after {
 /* Hero page 1 : ajustements mobile */
 @media (max-width: 480px) {
     .hero-page1 {
-        height: max(620px, calc(var(--section-height) - 72px));
+        height: max(620px, calc(var(--section-height) - 96px));
         padding: 0.9rem 1rem;
     }
 
@@ -7388,7 +7388,7 @@ section:hover [class*="__category"]::after {
 
     .hero-page1__summary {
         font-size: 0.84rem;
-        line-height: 1.45;
+        line-height: 1.6;
     }
 
     .hero-page1__trust {
