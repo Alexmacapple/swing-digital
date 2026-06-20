@@ -1,0 +1,666 @@
+{
+  "site": "swing.appmiweb.com",
+  "audited_url": "https://swing.appmiweb.com/",
+  "report_language": "fr",
+  "generated_at": "2026-06-20T22:45:34.089Z",
+  "summary": {
+    "headline": "Audit SEO/GEO public régénéré après PRD-002 : Design Watch progresse, Search/Crawl reste limité par un cache Cloudflare stale.",
+    "description": "La préproduction Swing Digital expose maintenant la couche IA publique complète et le hero d’accueil contient un signal de confiance visible avec un CTA clair. Les 24 URL sitemap répondent 200 avec canonical, OG URL et OG image cohérents. Le seul écart Search/Crawl public observé vient de /maquette-site.pdf encore servi par Cloudflare en HIT alors que l’URL cache-bustée répond déjà 404.",
+    "status": "partial",
+    "readiness": "Préproduction SEO/GEO solide, validation Search/Crawl publique encore bloquée par cache Cloudflare.",
+    "biggest_blocker": "Cloudflare sert encore /maquette-site.pdf depuis le cache sur le chemin exact.",
+    "fastest_win": "Purger précisément https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare, puis relancer npm run appmiweb:search-crawl.",
+    "data_confidence": "high",
+    "decision": "Valider PRD-002 côté Design Watch local/public, mais ne pas déclarer Search/Crawl 9/10 tant que le chemin PDF exact reste en HTTP 200 via cache."
+  },
+  "executive_brief": [
+    "Design Watch passe de 7/10 à 8/10 sur les preuves publiques : proposition de valeur, signal de confiance et CTA sont visibles dans le premier écran desktop/mobile.",
+    "Search/Crawl reste à 8,5/10 : le code et l’origine sont propres, mais un ancien PDF reste exposé par cache Cloudflare sur le chemin exact.",
+    "La couche IA est désormais publique : /llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent.",
+    "Les mesures propriétaires restent absentes : aucun export GSC, GA4, Bing Webmaster, logs ou citations IA n’a été fourni à l’audit."
+  ],
+  "metrics": [
+    {
+      "label": "URL sitemap contrôlées",
+      "value": "24",
+      "detail": "Toutes les URL du sitemap public ont été vérifiées."
+    },
+    {
+      "label": "Pages HTTP 200",
+      "value": "24/24",
+      "detail": "Pages sitemap accessibles publiquement."
+    },
+    {
+      "label": "Canonicals OK",
+      "value": "24/24",
+      "detail": "Canonicals alignés sur https://swing.appmiweb.com."
+    },
+    {
+      "label": "OG URL OK",
+      "value": "24/24",
+      "detail": "Open Graph URL alignées."
+    },
+    {
+      "label": "OG images OK",
+      "value": "21/21",
+      "detail": "Images sociales contrôlées en HTTP."
+    },
+    {
+      "label": "robots.txt",
+      "value": "200",
+      "detail": "robots.txt public et sitemap déclaré."
+    },
+    {
+      "label": "llms.txt",
+      "value": "200",
+      "detail": "llms.txt public et aligné avec la base canonique."
+    },
+    {
+      "label": "Couche IA publique",
+      "value": "5/5",
+      "detail": "/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent."
+    },
+    {
+      "label": "Tests SEO locaux",
+      "value": "10/10",
+      "detail": "npm run seo:check passé."
+    },
+    {
+      "label": "Preflight préprod",
+      "value": "OK",
+      "detail": "443 fichiers publics validés ; 3 avertissements préproduction non bloquants."
+    },
+    {
+      "label": "Artefacts interdits",
+      "value": "8/9",
+      "detail": "Un artefact reste cache-only stale sur Cloudflare."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Search/Crawl",
+      "score": 8.5,
+      "max": 10,
+      "note": "24 URL sitemap OK, robots/llms/canonicals/OG OK ; dernier écart sur /maquette-site.pdf servi par cache Cloudflare HIT."
+    },
+    {
+      "label": "Couche IA publique",
+      "score": 9,
+      "max": 10,
+      "note": "Les endpoints IA principaux sont publiés et accessibles ; il reste à valider leur usage réel par citations IA."
+    },
+    {
+      "label": "Design Watch",
+      "score": 8,
+      "max": 10,
+      "note": "PRD-002 visible publiquement : preuve de confiance et CTA dans le hero, lisibles desktop/mobile."
+    },
+    {
+      "label": "Responsive dynamique",
+      "score": 8,
+      "max": 10,
+      "note": "Aucun overflow mobile/desktop ; avertissement initial sur images lazy, mais les URLs contrôlées répondent 200."
+    },
+    {
+      "label": "GEO/Citation",
+      "score": 7.5,
+      "max": 10,
+      "note": "Base d’extraction solide avec faits visibles et couche IA ; citations réelles non encore mesurées."
+    },
+    {
+      "label": "Measurement",
+      "score": 2,
+      "max": 10,
+      "note": "GSC, GA4, Bing Webmaster, logs et suivi citations IA non fournis dans cet audit."
+    },
+    {
+      "label": "Readiness globale",
+      "score": 8,
+      "max": 10,
+      "note": "Préproduction publiable côté structure et lisibilité ; cache Cloudflare et mesure restent les limites."
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "title": "Cache Cloudflare stale sur /maquette-site.pdf",
+      "observed": [
+        "https://swing.appmiweb.com/maquette-site.pdf répond encore 200 avec cf-cache-status HIT.",
+        "La variante cache-bustée répond 404, ce qui indique que l’origine est déjà purgée.",
+        "Durée estimée restante au moment du contrôle : environ 2,4 h."
+      ],
+      "inferred": [
+        "Le code publié n’expose plus le PDF comme fichier d’origine, mais l’ancien objet peut encore être récupéré via son URL exacte.",
+        "Le score Search/Crawl ne doit pas être remonté officiellement tant que l’URL exacte ne répond pas 404/410/403."
+      ],
+      "recommended": [
+        "Purger précisément l’URL Cloudflare https://swing.appmiweb.com/maquette-site.pdf.",
+        "Relancer le contrôle public Search/Crawl après purge ou expiration du cache.",
+        "Conserver la preuve cache-bustée 404 comme distinction origine/cache."
+      ],
+      "evidence": [
+        {
+          "label": "Preuve Search/Crawl",
+          "path": "search-crawl-public-evidence.json"
+        },
+        {
+          "label": "URL cache-bustée",
+          "url": "https://swing.appmiweb.com/maquette-site.pdf?_search_crawl_bust=..."
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Design Watch amélioré par le PRD-002",
+      "observed": [
+        "La capture desktop montre le H1, la proposition de valeur, le signal de confiance et le CTA Découvrir les expériences dans le hero.",
+        "La capture mobile montre le H1, les tags, la description, les soutiens et le CTA sans débordement horizontal.",
+        "Les liens sociaux mobile disposent maintenant d’une marge visible à droite."
+      ],
+      "inferred": [
+        "La première impression est plus orientée décision : le visiteur comprend plus vite qui fait confiance à Swing Digital et où cliquer ensuite.",
+        "Le hero mobile reste très vertical, mais ce n’est plus un blocage Design Watch prioritaire."
+      ],
+      "recommended": [
+        "Confirmer le passage officiel à 8/10 dans le prochain rapport après purge Cloudflare.",
+        "Sur un chantier ultérieur, tester une version mobile plus compacte pour faire remonter plus tôt “Qui sommes-nous ?”."
+      ],
+      "evidence": [
+        {
+          "label": "Capture desktop",
+          "path": "site-screenshots/desktop.png"
+        },
+        {
+          "label": "Capture mobile",
+          "path": "site-screenshots/mobile.png"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Couche IA publique disponible",
+      "observed": [
+        "/llms.txt répond 200.",
+        "/for-ai et /for-ai/ répondent 200.",
+        "/for-ai.json répond 200 en application/json.",
+        "/for-ai.txt répond 200.",
+        "/schema-webpage.jsonld répond 200."
+      ],
+      "inferred": [
+        "Les agents et moteurs de réponse disposent d’un point d’entrée lisible par machine en plus du HTML classique.",
+        "La visibilité IA réelle reste inconnue sans mesures de citation ou logs de bots."
+      ],
+      "recommended": [
+        "Ajouter ces endpoints aux contrôles récurrents Search/Crawl.",
+        "Mesurer ensuite les citations ChatGPT/Perplexity/Claude et les referrals IA."
+      ],
+      "evidence": [
+        {
+          "label": "for-ai",
+          "url": "https://swing.appmiweb.com/for-ai/"
+        },
+        {
+          "label": "for-ai.json",
+          "url": "https://swing.appmiweb.com/for-ai.json"
+        },
+        {
+          "label": "llms.txt",
+          "url": "https://swing.appmiweb.com/llms.txt"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Avertissement responsive sur images lazy à interpréter prudemment",
+      "observed": [
+        "Le script responsive détecte 26 images non chargées au rendu initial desktop/mobile.",
+        "Une passe scroll + HEAD a contrôlé les images partenaires non résolues : les URL testées répondent 200 avec un type image.",
+        "Aucun overflow horizontal n’est détecté en desktop ou mobile."
+      ],
+      "inferred": [
+        "L’alerte est probablement liée au lazy-loading et au timing de capture plutôt qu’à des URLs cassées.",
+        "Le workflow de capture gagnerait à intégrer une passe scroll/lazy-load avant de scorer les images."
+      ],
+      "recommended": [
+        "Garder l’avertissement dans le rapport, mais ne pas le classer comme bug public bloquant.",
+        "Faire évoluer le script de capture si ce faux positif gêne les prochains audits."
+      ],
+      "evidence": [
+        {
+          "label": "Étude responsive",
+          "path": "responsive-study.json"
+        },
+        {
+          "label": "Contrôle images",
+          "path": "homepage-image-status.json"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Mesure propriétaire absente",
+      "observed": [
+        "Aucun export GSC, GA4, Bing Webmaster, logs serveur ou outil de visibilité IA n’a été fourni.",
+        "Les tests publics ne mesurent pas impressions, clics, CTR, positions, citations ou conversions."
+      ],
+      "inferred": [
+        "Le rapport peut valider la readiness technique et visuelle, pas la performance SEO/GEO réelle.",
+        "La décision go-live SEO reste incomplète sans instrumentation."
+      ],
+      "recommended": [
+        "Activer GSC, GA4/GTM, Bing Webmaster et suivi des sources IA au domaine final.",
+        "Créer une mesure hebdomadaire : indexation, requêtes, clics, referrals IA, citations observées."
+      ],
+      "evidence": [
+        {
+          "label": "PRD-001",
+          "path": "prd-meta-workflow/PRD-001-seo-geo-production.MD"
+        }
+      ]
+    }
+  ],
+  "analysis_cohorts": [
+    {
+      "name": "Search / crawl",
+      "score": "8.5/10",
+      "status": "partial",
+      "what_it_checks": "Sitemap, robots.txt, HTTP 200, canonicals, Open Graph, llms.txt et artefacts interdits.",
+      "verdict": "La surface publique est saine, sauf un ancien PDF encore servi par cache Cloudflare.",
+      "evidence": "24/24 pages sitemap en 200 ; 24 canonicals OK ; 24 OG URL OK ; 21/21 OG images OK ; 1 artefact cache-only stale.",
+      "next_action": "Purger /maquette-site.pdf dans Cloudflare puis relancer npm run appmiweb:search-crawl."
+    },
+    {
+      "name": "AI citation",
+      "score": "7.5/10",
+      "status": "partial",
+      "what_it_checks": "Lisibilité par moteurs de réponse, endpoints IA, faits visibles et limites de citation.",
+      "verdict": "La couche IA est disponible ; les citations réelles restent non mesurées.",
+      "evidence": "/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent publiquement.",
+      "next_action": "Lancer un panel de requêtes ChatGPT/Perplexity/Claude et conserver les citations observées."
+    },
+    {
+      "name": "Browser agent",
+      "score": "8/10",
+      "status": "ok",
+      "what_it_checks": "Structure DOM, H1, texte visible, CTA, navigation et absence d’overflow.",
+      "verdict": "La page d’accueil est compréhensible par un agent navigateur sur desktop et mobile.",
+      "evidence": "H1 unique, title présent, texte visible, CTA explicite, aucun overflow horizontal.",
+      "next_action": "Tester ensuite le parcours Réservations quand le scénario transactionnel sera défini."
+    },
+    {
+      "name": "Design Watch",
+      "score": "8/10",
+      "status": "ok",
+      "what_it_checks": "Première impression, hiérarchie, confiance, clarté du CTA et lisibilité mobile.",
+      "verdict": "Le PRD-002 améliore nettement la décision en premier écran.",
+      "evidence": "Captures desktop/mobile publiques avec signal de confiance et CTA visibles.",
+      "next_action": "Après purge Cloudflare, générer un rapport de validation finale et archiver le score officiel."
+    },
+    {
+      "name": "Responsive dynamique",
+      "score": "8/10",
+      "status": "warning",
+      "what_it_checks": "Viewport, overflow, H1, texte visible, images et hauteur documentaire.",
+      "verdict": "Rendu responsive exploitable ; alerte images initiale à classer comme timing lazy-load.",
+      "evidence": "responsive-study.json + homepage-image-status.json.",
+      "next_action": "Ajouter une passe scroll au script de capture pour réduire les faux positifs image."
+    },
+    {
+      "name": "Measurement owner",
+      "score": "2/10",
+      "status": "missing",
+      "what_it_checks": "GSC, GA4, Bing Webmaster, logs et suivi des citations IA.",
+      "verdict": "La mesure métier et SEO/GEO réelle n’est pas encore branchée.",
+      "evidence": "Aucun export privé fourni dans le tour courant.",
+      "next_action": "Traiter PRD-001/PRD-004 au domaine final."
+    },
+    {
+      "name": "Skillpack quality v1.2.3",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Respect du contrat audit visuel : audit.json, HTML, captures, responsive, Design Watch, cohortes, couche IA.",
+      "verdict": "Le livrable suit le workflow v1.2.3 et différencie preuve, inférence et recommandation.",
+      "evidence": "Dossier reports/swing-digital/2026-06-21-seo-geo-audit-public/.",
+      "next_action": "Servir le rapport localement et valider son rendu navigateur."
+    }
+  ],
+  "design_watch": {
+    "score": "8/10",
+    "verdict": "Première impression plus décisionnelle après PRD-002.",
+    "summary": "Le hero public présente maintenant Swing Digital, ses soutiens et un CTA clair dans le premier écran. La direction artistique reste immersive et cohérente. La principale limite restante est la hauteur mobile du hero, qui retarde encore l’accès aux sections suivantes.",
+    "confidence": "high",
+    "observed": [
+      "Desktop : H1, proposition de valeur, soutiens CNC/DRAC/Ville de Paris/ONDA et CTA sont visibles dans la capture.",
+      "Mobile : H1, tags, résumé, signal de confiance et CTA sont lisibles sans débordement horizontal.",
+      "Mobile : les liens sociaux ont une marge droite visible.",
+      "Le bouton son reste visible et ne masque pas le H1."
+    ],
+    "inferred": [
+      "La preuve de confiance aide à comprendre la crédibilité du studio avant scroll.",
+      "Le CTA “Découvrir les expériences” clarifie mieux le prochain clic que l’état précédent.",
+      "Le hero mobile conserve une forte profondeur verticale qui peut retarder l’exploration."
+    ],
+    "recommended": [
+      "Conserver le signal de confiance et le CTA en premier écran.",
+      "Ne pas réintroduire de métrique non prouvée dans le hero.",
+      "Tester plus tard une version mobile plus compacte si le rapport de conversion ou les heatmaps le justifient."
+    ]
+  },
+  "responsive_study": {
+    "url": "https://swing.appmiweb.com/",
+    "generated_at": "2026-06-20T22:41:40.465Z",
+    "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+    "summary": {
+      "status": "warning",
+      "verdict": "Homepage renders on tested viewports, but browser evidence found issues to review."
+    },
+    "viewports": [
+      {
+        "label": "Desktop",
+        "viewport": "1440x1800",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 1440,
+          "innerHeight": 1800,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false,
+          "documentHeight": 10839,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 3028,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi"
+        }
+      },
+      {
+        "label": "Mobile",
+        "viewport": "390x1400",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 390,
+          "innerHeight": 1400,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false,
+          "documentHeight": 7631,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 2940,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva"
+        }
+      }
+    ]
+  },
+  "site_visual_evidence": [
+    {
+      "label": "Desktop screenshot",
+      "path": "site-screenshots/desktop.png",
+      "viewport": "1440x1800",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 1440px"
+      ]
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "site-screenshots/mobile.png",
+      "viewport": "390x1400",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 390px"
+      ]
+    }
+  ],
+  "screenshot_status": {
+    "status": "captured",
+    "method": "Playwright via capture_site_screenshots.mjs",
+    "desktop": "site-screenshots/desktop.png",
+    "mobile": "site-screenshots/mobile.png"
+  },
+  "technical_checks": {
+    "search_crawl_public": {
+      "generatedAt": "2026-06-20T22:41:11.460Z",
+      "base": "https://swing.appmiweb.com",
+      "sitemapUrlCount": 24,
+      "sitemapStatusOk": true,
+      "robotsStatusOk": true,
+      "robotsDeclaresSitemap": true,
+      "llmsStatusOk": true,
+      "llmsMentionsCanonicalBase": true,
+      "pages200": 24,
+      "pagesCanonicalOk": 24,
+      "pagesOgUrlOk": 24,
+      "pagesWithOgImage": 24,
+      "ogImagesChecked": 21,
+      "ogImagesOk": 21,
+      "forbiddenArtifactsChecked": 9,
+      "forbiddenArtifactsNotPublicOk": 8,
+      "forbiddenArtifactsCacheOnly": 1
+    },
+    "search_crawl_failures": [
+      {
+        "type": "forbidden_artifact_cache_only",
+        "url": "https://swing.appmiweb.com/maquette-site.pdf",
+        "status": 200,
+        "contentType": "application/pdf",
+        "cfCacheStatus": "HIT",
+        "cacheBustedStatus": 404,
+        "estimatedCacheRemainingSeconds": 8637
+      }
+    ],
+    "seo_check": {
+      "status": "passed",
+      "passed": 10,
+      "command": "npm run seo:check"
+    },
+    "build_prod": {
+      "status": "passed",
+      "files": 443,
+      "excluded_artifacts": 3,
+      "command": "npm run build:prod"
+    },
+    "appmiweb_preflight": {
+      "status": "passed_with_warnings",
+      "files": 443,
+      "warnings": 3,
+      "command": "npm run appmiweb:preflight"
+    },
+    "ai_public_endpoints": [
+      {
+        "path": "/llms.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/for-ai/",
+        "status": 200,
+        "content_type": "text/html"
+      },
+      {
+        "path": "/for-ai.json",
+        "status": 200,
+        "content_type": "application/json"
+      },
+      {
+        "path": "/for-ai.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/schema-webpage.jsonld",
+        "status": 200,
+        "content_type": "application/octet-stream"
+      }
+    ],
+    "homepage_image_status": {
+      "generated_at": "2026-06-20T22:43:24.770Z",
+      "url": "https://swing.appmiweb.com/",
+      "method": "Playwright viewport 1440x1800, initial load, scroll pass, then HEAD on unresolved lazy images",
+      "initial": {
+        "imageCount": 34,
+        "missingImages": 25,
+        "lazyImages": 34
+      },
+      "after_scroll": {
+        "imageCount": 34,
+        "missingImages": 0,
+        "missing": []
+      },
+      "unresolved_http_checks": [],
+      "interpretation": "Les images non chargées dans le DOM sont des images lazy/visuelles différées dont les URLs répondent 200 en HTTP."
+    }
+  },
+  "public_measurements": [
+    {
+      "source": "Google Search Console",
+      "access": "not_available",
+      "metric": "impressions, clicks, CTR, positions",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "GA4/GTM",
+      "access": "not_available",
+      "metric": "sessions, conversions, referrals IA",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "Bing Webmaster Tools",
+      "access": "not_available",
+      "metric": "indexation, clics, performance Bing/AI",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "Server logs",
+      "access": "not_available",
+      "metric": "hits bots Google/Bing/AI",
+      "limit": "Logs non fournis."
+    },
+    {
+      "source": "Manual public audit",
+      "access": "available",
+      "metric": "crawl, canonicals, OG, endpoints IA, captures",
+      "limit": "Ne mesure pas le trafic ni les citations réelles."
+    }
+  ],
+  "action_plan": [
+    {
+      "when": "Maintenant",
+      "action": "Purger /maquette-site.pdf dans Cloudflare.",
+      "outcome": "Search/Crawl public sans artefact interdit cache-only."
+    },
+    {
+      "when": "Après purge",
+      "action": "Relancer npm run appmiweb:search-crawl puis régénérer le rapport court de validation.",
+      "outcome": "Possibilité de valider Search/Crawl vers 9/10."
+    },
+    {
+      "when": "Avant production finale",
+      "action": "Traiter les mentions légales hébergeur et le scénario Réservations.",
+      "outcome": "Suppression des 3 avertissements préproduction."
+    },
+    {
+      "when": "Go-live domaine final",
+      "action": "Brancher GSC, GA4/GTM, Bing Webmaster et suivi referrals IA.",
+      "outcome": "Mesure réelle SEO/GEO au lieu de readiness technique seulement."
+    }
+  ],
+  "ai_layer_package": {
+    "status": "already_public",
+    "note": "Aucun ZIP généré dans ce rapport : la couche IA est déjà publiée sur la préproduction.",
+    "files": [
+      {
+        "label": "llms.txt",
+        "path": "https://swing.appmiweb.com/llms.txt",
+        "purpose": "Index public lisible par agents."
+      },
+      {
+        "label": "/for-ai",
+        "path": "https://swing.appmiweb.com/for-ai/",
+        "purpose": "Page HTML de contexte agent-readable."
+      },
+      {
+        "label": "/for-ai.json",
+        "path": "https://swing.appmiweb.com/for-ai.json",
+        "purpose": "Faits structurés et consignes de citation."
+      },
+      {
+        "label": "/for-ai.txt",
+        "path": "https://swing.appmiweb.com/for-ai.txt",
+        "purpose": "Contexte texte compact pour agents."
+      },
+      {
+        "label": "schema-webpage.jsonld",
+        "path": "https://swing.appmiweb.com/schema-webpage.jsonld",
+        "purpose": "JSON-LD WebPage public."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "label": "Accueil public audité",
+      "url": "https://swing.appmiweb.com/"
+    },
+    {
+      "label": "robots.txt",
+      "url": "https://swing.appmiweb.com/robots.txt"
+    },
+    {
+      "label": "sitemap.xml",
+      "url": "https://swing.appmiweb.com/sitemap.xml"
+    },
+    {
+      "label": "llms.txt",
+      "url": "https://swing.appmiweb.com/llms.txt"
+    },
+    {
+      "label": "for-ai",
+      "url": "https://swing.appmiweb.com/for-ai/"
+    },
+    {
+      "label": "Preuve Search/Crawl",
+      "path": "search-crawl-public-evidence.json"
+    },
+    {
+      "label": "Étude responsive",
+      "path": "responsive-study.json"
+    },
+    {
+      "label": "Preuve visuelle site",
+      "path": "site-visual-evidence.json"
+    },
+    {
+      "label": "Contrôle images homepage",
+      "path": "homepage-image-status.json"
+    },
+    {
+      "label": "Capture desktop",
+      "path": "site-screenshots/desktop.png"
+    },
+    {
+      "label": "Capture mobile",
+      "path": "site-screenshots/mobile.png"
+    }
+  ]
+}

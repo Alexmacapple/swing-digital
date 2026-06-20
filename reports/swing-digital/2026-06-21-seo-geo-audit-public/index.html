@@ -1,0 +1,2026 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEO/GEO Audit Report</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #161719;
+      --muted: #62666d;
+      --faint: #8b9098;
+      --line: #e1e5ec;
+      --paper: #f6f7f9;
+      --panel: #ffffff;
+      --soft: #f0f3f7;
+      --blue: #135dd8;
+      --blue-soft: #edf4ff;
+      --red: #b42318;
+      --red-soft: #fff1f0;
+      --amber: #a15c07;
+      --amber-soft: #fff7e6;
+      --green: #067647;
+      --green-soft: #ecfdf3;
+      --forest: #03251e;
+      --mint: #2ee66b;
+      --violet: #6d5dfc;
+      --rose: #ef476f;
+      --shadow: 0 1px 2px rgba(16, 24, 40, .06);
+      --shadow-strong: 0 16px 50px rgba(16, 24, 40, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #ffffff 0, #ffffff 118px, var(--paper) 118px),
+        var(--paper);
+      font-size: 14px;
+      line-height: 1.48;
+    }
+    a { color: var(--blue); overflow-wrap: anywhere; text-underline-offset: 3px; }
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: var(--soft);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+      overflow-wrap: anywhere;
+    }
+    .wrap { width: calc(100% - 36px); max-width: 1180px; margin: 0 auto; }
+    header {
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      background: var(--forest);
+      color: #fff;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 28px;
+      align-items: end;
+      padding: 34px 0 28px;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--mint);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      font-size: 32px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+    .subtitle {
+      max-width: 780px;
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, .74);
+      font-size: 15px;
+    }
+    .meta-box {
+      justify-self: end;
+      width: 100%;
+      padding: 13px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      box-shadow: none;
+      backdrop-filter: blur(10px);
+    }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+    .meta-row:last-child { border-bottom: 0; }
+    .meta-row span:first-child { color: rgba(255,255,255,.62); }
+    .tab-shell {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 247, 249, .88);
+      backdrop-filter: blur(14px);
+    }
+    .tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 9px 0;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      flex: 0 0 auto;
+      border-color: transparent;
+      background: transparent;
+      color: #344054;
+    }
+    .tab[aria-selected="true"] {
+      color: #fff;
+      background: var(--forest);
+      border-color: var(--forest);
+      box-shadow: 0 8px 24px rgba(3, 37, 30, .18);
+    }
+    main { padding: 22px 0 56px; }
+    .tab-panel {
+      animation: riseIn .32s ease both;
+    }
+    section { margin: 16px 0; }
+    .panel, .metric, .finding, .visual-card, .score-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .panel { padding: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid.sidebar { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; }
+    .metric {
+      padding: 15px;
+      min-height: 96px;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric:before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--mint), var(--blue), var(--violet));
+    }
+    .metric strong { display: block; margin-bottom: 5px; font-size: 19px; line-height: 1.12; }
+    .metric span { color: var(--muted); font-size: 12px; font-weight: 750; text-transform: uppercase; }
+    .metric p { margin-top: 7px; }
+    .score-card { padding: 14px; }
+    .score-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .score-card strong { font-size: 24px; line-height: 1; }
+    .score-card progress { width: 100%; height: 7px; margin: 10px 0 6px; accent-color: var(--blue); }
+    h2 { margin: 0 0 12px; font-size: 18px; line-height: 1.2; letter-spacing: 0; }
+    h3 { margin: 0 0 7px; font-size: 15px; line-height: 1.3; letter-spacing: 0; }
+    p { margin: 0 0 10px; overflow-wrap: anywhere; }
+    ul, ol { margin: 8px 0 0; padding-left: 20px; }
+    li { margin: 5px 0; overflow-wrap: anywhere; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .p0, .missing, .critical, .failed, .error { color: var(--red); background: var(--red-soft); }
+    .p1, .partial, .warning, .medium { color: var(--amber); background: var(--amber-soft); }
+    .p2, .ok, .pass, .passed, .good, .public { color: var(--green); background: var(--green-soft); }
+    .unknown, .owner_only, .private { color: #344054; background: var(--soft); }
+    .finding {
+      border-left: 4px solid var(--blue);
+      padding: 14px 16px;
+      margin: 10px 0;
+    }
+    .finding.p0-border { border-left-color: var(--red); }
+    .finding.p1-border { border-left-color: var(--amber); }
+    .finding.p2-border { border-left-color: var(--green); }
+    .label {
+      display: block;
+      margin-top: 10px;
+      color: #344054;
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0 0 10px;
+    }
+    .toolbar h2 { margin: 0 8px 0 0; }
+    button {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 750;
+      padding: 7px 10px;
+    }
+    button.active { color: #fff; background: var(--blue); border-color: var(--blue); }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; table-layout: fixed; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+    th { color: #344054; background: var(--soft); font-weight: 850; }
+    tr:last-child td { border-bottom: 0; }
+    .verdict {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .verdict-score {
+      display: inline-flex;
+      min-width: 68px;
+      min-height: 68px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 20px;
+      font-weight: 850;
+    }
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .visual-card { overflow: hidden; }
+    .visual-card img {
+      display: block;
+      width: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      object-position: top center;
+      background: var(--soft);
+      border-bottom: 1px solid var(--line);
+    }
+    .visual-card div { padding: 12px; }
+    .screenshot-missing { padding: 18px; color: var(--muted); background: var(--soft); border-bottom: 1px solid var(--line); }
+    .small { color: var(--muted); font-size: 12px; }
+    .empty { color: var(--muted); font-style: italic; }
+    .callout {
+      border-left: 4px solid var(--blue);
+      background: #fbfdff;
+      padding: 12px 14px;
+      border-radius: 7px;
+    }
+    .overview-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 18px;
+      align-items: stretch;
+      overflow: hidden;
+      border-radius: 8px;
+      padding: 22px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 16%, rgba(46, 230, 107, .22), transparent 28%),
+        linear-gradient(135deg, var(--forest), #091827 62%, #11123a);
+      box-shadow: var(--shadow-strong);
+    }
+    .overview-stage h2 {
+      max-width: 760px;
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 26px;
+      line-height: 1.08;
+    }
+    .overview-stage p { color: rgba(255,255,255,.76); }
+    .overview-stage .section-kicker {
+      margin: 0 0 8px;
+      color: var(--mint);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    .overview-stage .proof-pill {
+      color: #fff;
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.16);
+    }
+    .signal-panel {
+      min-height: 280px;
+      padding: 17px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+    }
+    .signal-panel h3 { color: #fff; }
+    .signal-ring {
+      --score: 0;
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 148px;
+      aspect-ratio: 1;
+      margin: 6px auto 18px;
+      border-radius: 50%;
+      background:
+        conic-gradient(var(--mint) calc(var(--score) * 1%), rgba(255,255,255,.16) 0),
+        rgba(255,255,255,.08);
+      animation: signalPop .72s ease both;
+    }
+    .signal-ring::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 50%;
+      background: #071d1a;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+    }
+    .signal-value {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 2px;
+      place-items: center;
+      color: #fff;
+      font-weight: 850;
+      font-size: 30px;
+      line-height: 1;
+    }
+    .signal-value span {
+      color: rgba(255,255,255,.62);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .signal-bars { display: grid; gap: 10px; }
+    .signal-bar {
+      display: grid;
+      grid-template-columns: minmax(92px, .5fr) minmax(0, 1fr) auto;
+      gap: 9px;
+      align-items: center;
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+    }
+    .signal-track {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+    }
+    .signal-fill {
+      width: var(--bar);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--mint), #8ec5ff);
+      animation: growX .9s ease both;
+      transform-origin: left;
+    }
+    .cohort-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .cohort-card {
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cohort-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .cohort-score {
+      min-width: 54px;
+      text-align: right;
+      color: var(--forest);
+      font-size: 22px;
+      font-weight: 850;
+      line-height: 1;
+    }
+    .cohort-card h3 { font-size: 16px; }
+    .cohort-card .next {
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+    .proof-strip {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .proof-pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 750;
+      color: #344054;
+    }
+    .download-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ffffff, #f1fbf5);
+    }
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border-radius: 7px;
+      color: #fff;
+      background: var(--forest);
+      font-weight: 850;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .download-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .download-card {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+    .download-card strong { display: block; margin-bottom: 4px; }
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes signalPop {
+      from { opacity: 0; transform: scale(.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes growX {
+      from { transform: scaleX(.05); }
+      to { transform: scaleX(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    @media (max-width: 900px) {
+      .hero, .overview-stage, .grid, .grid.two, .grid.four, .grid.sidebar, .visual-grid, .cohort-grid, .download-list, .download-hero { grid-template-columns: 1fr; }
+      .meta-box { justify-self: stretch; }
+      .download-button { justify-self: start; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: calc(100% - 28px); }
+      .hero { padding: 22px 0 18px; }
+      h1 { font-size: 24px; line-height: 1.1; }
+      .overview-stage h2 { font-size: 22px; line-height: 1.12; }
+      .subtitle { font-size: 14px; }
+      .panel { padding: 15px; }
+      th { display: none; }
+      td { display: block; width: 100%; padding: 8px 0; }
+      tr { display: block; padding: 9px 0; border-bottom: 1px solid var(--line); }
+      .visual-card img { max-height: 360px; }
+      .cohort-card { min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow" id="eyebrow"></p>
+        <h1 id="headline"></h1>
+        <p class="subtitle" id="subtitle"></p>
+      </div>
+      <aside class="meta-box" id="report-meta"></aside>
+    </div>
+  </header>
+  <nav class="tab-shell" aria-label="Report pages">
+    <div class="wrap tabs" id="tabs"></div>
+  </nav>
+  <main class="wrap" id="app"></main>
+  <script id="audit-data" type="application/json">{
+  "site": "swing.appmiweb.com",
+  "audited_url": "https://swing.appmiweb.com/",
+  "report_language": "fr",
+  "generated_at": "2026-06-20T22:45:34.089Z",
+  "summary": {
+    "headline": "Audit SEO/GEO public régénéré après PRD-002 : Design Watch progresse, Search/Crawl reste limité par un cache Cloudflare stale.",
+    "description": "La préproduction Swing Digital expose maintenant la couche IA publique complète et le hero d’accueil contient un signal de confiance visible avec un CTA clair. Les 24 URL sitemap répondent 200 avec canonical, OG URL et OG image cohérents. Le seul écart Search/Crawl public observé vient de /maquette-site.pdf encore servi par Cloudflare en HIT alors que l’URL cache-bustée répond déjà 404.",
+    "status": "partial",
+    "readiness": "Préproduction SEO/GEO solide, validation Search/Crawl publique encore bloquée par cache Cloudflare.",
+    "biggest_blocker": "Cloudflare sert encore /maquette-site.pdf depuis le cache sur le chemin exact.",
+    "fastest_win": "Purger précisément https://swing.appmiweb.com/maquette-site.pdf dans Cloudflare, puis relancer npm run appmiweb:search-crawl.",
+    "data_confidence": "high",
+    "decision": "Valider PRD-002 côté Design Watch local/public, mais ne pas déclarer Search/Crawl 9/10 tant que le chemin PDF exact reste en HTTP 200 via cache."
+  },
+  "executive_brief": [
+    "Design Watch passe de 7/10 à 8/10 sur les preuves publiques : proposition de valeur, signal de confiance et CTA sont visibles dans le premier écran desktop/mobile.",
+    "Search/Crawl reste à 8,5/10 : le code et l’origine sont propres, mais un ancien PDF reste exposé par cache Cloudflare sur le chemin exact.",
+    "La couche IA est désormais publique : /llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent.",
+    "Les mesures propriétaires restent absentes : aucun export GSC, GA4, Bing Webmaster, logs ou citations IA n’a été fourni à l’audit."
+  ],
+  "metrics": [
+    {
+      "label": "URL sitemap contrôlées",
+      "value": "24",
+      "detail": "Toutes les URL du sitemap public ont été vérifiées."
+    },
+    {
+      "label": "Pages HTTP 200",
+      "value": "24/24",
+      "detail": "Pages sitemap accessibles publiquement."
+    },
+    {
+      "label": "Canonicals OK",
+      "value": "24/24",
+      "detail": "Canonicals alignés sur https://swing.appmiweb.com."
+    },
+    {
+      "label": "OG URL OK",
+      "value": "24/24",
+      "detail": "Open Graph URL alignées."
+    },
+    {
+      "label": "OG images OK",
+      "value": "21/21",
+      "detail": "Images sociales contrôlées en HTTP."
+    },
+    {
+      "label": "robots.txt",
+      "value": "200",
+      "detail": "robots.txt public et sitemap déclaré."
+    },
+    {
+      "label": "llms.txt",
+      "value": "200",
+      "detail": "llms.txt public et aligné avec la base canonique."
+    },
+    {
+      "label": "Couche IA publique",
+      "value": "5/5",
+      "detail": "/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent."
+    },
+    {
+      "label": "Tests SEO locaux",
+      "value": "10/10",
+      "detail": "npm run seo:check passé."
+    },
+    {
+      "label": "Preflight préprod",
+      "value": "OK",
+      "detail": "443 fichiers publics validés ; 3 avertissements préproduction non bloquants."
+    },
+    {
+      "label": "Artefacts interdits",
+      "value": "8/9",
+      "detail": "Un artefact reste cache-only stale sur Cloudflare."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Search/Crawl",
+      "score": 8.5,
+      "max": 10,
+      "note": "24 URL sitemap OK, robots/llms/canonicals/OG OK ; dernier écart sur /maquette-site.pdf servi par cache Cloudflare HIT."
+    },
+    {
+      "label": "Couche IA publique",
+      "score": 9,
+      "max": 10,
+      "note": "Les endpoints IA principaux sont publiés et accessibles ; il reste à valider leur usage réel par citations IA."
+    },
+    {
+      "label": "Design Watch",
+      "score": 8,
+      "max": 10,
+      "note": "PRD-002 visible publiquement : preuve de confiance et CTA dans le hero, lisibles desktop/mobile."
+    },
+    {
+      "label": "Responsive dynamique",
+      "score": 8,
+      "max": 10,
+      "note": "Aucun overflow mobile/desktop ; avertissement initial sur images lazy, mais les URLs contrôlées répondent 200."
+    },
+    {
+      "label": "GEO/Citation",
+      "score": 7.5,
+      "max": 10,
+      "note": "Base d’extraction solide avec faits visibles et couche IA ; citations réelles non encore mesurées."
+    },
+    {
+      "label": "Measurement",
+      "score": 2,
+      "max": 10,
+      "note": "GSC, GA4, Bing Webmaster, logs et suivi citations IA non fournis dans cet audit."
+    },
+    {
+      "label": "Readiness globale",
+      "score": 8,
+      "max": 10,
+      "note": "Préproduction publiable côté structure et lisibilité ; cache Cloudflare et mesure restent les limites."
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "title": "Cache Cloudflare stale sur /maquette-site.pdf",
+      "observed": [
+        "https://swing.appmiweb.com/maquette-site.pdf répond encore 200 avec cf-cache-status HIT.",
+        "La variante cache-bustée répond 404, ce qui indique que l’origine est déjà purgée.",
+        "Durée estimée restante au moment du contrôle : environ 2,4 h."
+      ],
+      "inferred": [
+        "Le code publié n’expose plus le PDF comme fichier d’origine, mais l’ancien objet peut encore être récupéré via son URL exacte.",
+        "Le score Search/Crawl ne doit pas être remonté officiellement tant que l’URL exacte ne répond pas 404/410/403."
+      ],
+      "recommended": [
+        "Purger précisément l’URL Cloudflare https://swing.appmiweb.com/maquette-site.pdf.",
+        "Relancer le contrôle public Search/Crawl après purge ou expiration du cache.",
+        "Conserver la preuve cache-bustée 404 comme distinction origine/cache."
+      ],
+      "evidence": [
+        {
+          "label": "Preuve Search/Crawl",
+          "path": "search-crawl-public-evidence.json"
+        },
+        {
+          "label": "URL cache-bustée",
+          "url": "https://swing.appmiweb.com/maquette-site.pdf?_search_crawl_bust=..."
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Design Watch amélioré par le PRD-002",
+      "observed": [
+        "La capture desktop montre le H1, la proposition de valeur, le signal de confiance et le CTA Découvrir les expériences dans le hero.",
+        "La capture mobile montre le H1, les tags, la description, les soutiens et le CTA sans débordement horizontal.",
+        "Les liens sociaux mobile disposent maintenant d’une marge visible à droite."
+      ],
+      "inferred": [
+        "La première impression est plus orientée décision : le visiteur comprend plus vite qui fait confiance à Swing Digital et où cliquer ensuite.",
+        "Le hero mobile reste très vertical, mais ce n’est plus un blocage Design Watch prioritaire."
+      ],
+      "recommended": [
+        "Confirmer le passage officiel à 8/10 dans le prochain rapport après purge Cloudflare.",
+        "Sur un chantier ultérieur, tester une version mobile plus compacte pour faire remonter plus tôt “Qui sommes-nous ?”."
+      ],
+      "evidence": [
+        {
+          "label": "Capture desktop",
+          "path": "site-screenshots/desktop.png"
+        },
+        {
+          "label": "Capture mobile",
+          "path": "site-screenshots/mobile.png"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Couche IA publique disponible",
+      "observed": [
+        "/llms.txt répond 200.",
+        "/for-ai et /for-ai/ répondent 200.",
+        "/for-ai.json répond 200 en application/json.",
+        "/for-ai.txt répond 200.",
+        "/schema-webpage.jsonld répond 200."
+      ],
+      "inferred": [
+        "Les agents et moteurs de réponse disposent d’un point d’entrée lisible par machine en plus du HTML classique.",
+        "La visibilité IA réelle reste inconnue sans mesures de citation ou logs de bots."
+      ],
+      "recommended": [
+        "Ajouter ces endpoints aux contrôles récurrents Search/Crawl.",
+        "Mesurer ensuite les citations ChatGPT/Perplexity/Claude et les referrals IA."
+      ],
+      "evidence": [
+        {
+          "label": "for-ai",
+          "url": "https://swing.appmiweb.com/for-ai/"
+        },
+        {
+          "label": "for-ai.json",
+          "url": "https://swing.appmiweb.com/for-ai.json"
+        },
+        {
+          "label": "llms.txt",
+          "url": "https://swing.appmiweb.com/llms.txt"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Avertissement responsive sur images lazy à interpréter prudemment",
+      "observed": [
+        "Le script responsive détecte 26 images non chargées au rendu initial desktop/mobile.",
+        "Une passe scroll + HEAD a contrôlé les images partenaires non résolues : les URL testées répondent 200 avec un type image.",
+        "Aucun overflow horizontal n’est détecté en desktop ou mobile."
+      ],
+      "inferred": [
+        "L’alerte est probablement liée au lazy-loading et au timing de capture plutôt qu’à des URLs cassées.",
+        "Le workflow de capture gagnerait à intégrer une passe scroll/lazy-load avant de scorer les images."
+      ],
+      "recommended": [
+        "Garder l’avertissement dans le rapport, mais ne pas le classer comme bug public bloquant.",
+        "Faire évoluer le script de capture si ce faux positif gêne les prochains audits."
+      ],
+      "evidence": [
+        {
+          "label": "Étude responsive",
+          "path": "responsive-study.json"
+        },
+        {
+          "label": "Contrôle images",
+          "path": "homepage-image-status.json"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Mesure propriétaire absente",
+      "observed": [
+        "Aucun export GSC, GA4, Bing Webmaster, logs serveur ou outil de visibilité IA n’a été fourni.",
+        "Les tests publics ne mesurent pas impressions, clics, CTR, positions, citations ou conversions."
+      ],
+      "inferred": [
+        "Le rapport peut valider la readiness technique et visuelle, pas la performance SEO/GEO réelle.",
+        "La décision go-live SEO reste incomplète sans instrumentation."
+      ],
+      "recommended": [
+        "Activer GSC, GA4/GTM, Bing Webmaster et suivi des sources IA au domaine final.",
+        "Créer une mesure hebdomadaire : indexation, requêtes, clics, referrals IA, citations observées."
+      ],
+      "evidence": [
+        {
+          "label": "PRD-001",
+          "path": "prd-meta-workflow/PRD-001-seo-geo-production.MD"
+        }
+      ]
+    }
+  ],
+  "analysis_cohorts": [
+    {
+      "name": "Search / crawl",
+      "score": "8.5/10",
+      "status": "partial",
+      "what_it_checks": "Sitemap, robots.txt, HTTP 200, canonicals, Open Graph, llms.txt et artefacts interdits.",
+      "verdict": "La surface publique est saine, sauf un ancien PDF encore servi par cache Cloudflare.",
+      "evidence": "24/24 pages sitemap en 200 ; 24 canonicals OK ; 24 OG URL OK ; 21/21 OG images OK ; 1 artefact cache-only stale.",
+      "next_action": "Purger /maquette-site.pdf dans Cloudflare puis relancer npm run appmiweb:search-crawl."
+    },
+    {
+      "name": "AI citation",
+      "score": "7.5/10",
+      "status": "partial",
+      "what_it_checks": "Lisibilité par moteurs de réponse, endpoints IA, faits visibles et limites de citation.",
+      "verdict": "La couche IA est disponible ; les citations réelles restent non mesurées.",
+      "evidence": "/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld répondent publiquement.",
+      "next_action": "Lancer un panel de requêtes ChatGPT/Perplexity/Claude et conserver les citations observées."
+    },
+    {
+      "name": "Browser agent",
+      "score": "8/10",
+      "status": "ok",
+      "what_it_checks": "Structure DOM, H1, texte visible, CTA, navigation et absence d’overflow.",
+      "verdict": "La page d’accueil est compréhensible par un agent navigateur sur desktop et mobile.",
+      "evidence": "H1 unique, title présent, texte visible, CTA explicite, aucun overflow horizontal.",
+      "next_action": "Tester ensuite le parcours Réservations quand le scénario transactionnel sera défini."
+    },
+    {
+      "name": "Design Watch",
+      "score": "8/10",
+      "status": "ok",
+      "what_it_checks": "Première impression, hiérarchie, confiance, clarté du CTA et lisibilité mobile.",
+      "verdict": "Le PRD-002 améliore nettement la décision en premier écran.",
+      "evidence": "Captures desktop/mobile publiques avec signal de confiance et CTA visibles.",
+      "next_action": "Après purge Cloudflare, générer un rapport de validation finale et archiver le score officiel."
+    },
+    {
+      "name": "Responsive dynamique",
+      "score": "8/10",
+      "status": "warning",
+      "what_it_checks": "Viewport, overflow, H1, texte visible, images et hauteur documentaire.",
+      "verdict": "Rendu responsive exploitable ; alerte images initiale à classer comme timing lazy-load.",
+      "evidence": "responsive-study.json + homepage-image-status.json.",
+      "next_action": "Ajouter une passe scroll au script de capture pour réduire les faux positifs image."
+    },
+    {
+      "name": "Measurement owner",
+      "score": "2/10",
+      "status": "missing",
+      "what_it_checks": "GSC, GA4, Bing Webmaster, logs et suivi des citations IA.",
+      "verdict": "La mesure métier et SEO/GEO réelle n’est pas encore branchée.",
+      "evidence": "Aucun export privé fourni dans le tour courant.",
+      "next_action": "Traiter PRD-001/PRD-004 au domaine final."
+    },
+    {
+      "name": "Skillpack quality v1.2.3",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Respect du contrat audit visuel : audit.json, HTML, captures, responsive, Design Watch, cohortes, couche IA.",
+      "verdict": "Le livrable suit le workflow v1.2.3 et différencie preuve, inférence et recommandation.",
+      "evidence": "Dossier reports/swing-digital/2026-06-21-seo-geo-audit-public/.",
+      "next_action": "Servir le rapport localement et valider son rendu navigateur."
+    }
+  ],
+  "design_watch": {
+    "score": "8/10",
+    "verdict": "Première impression plus décisionnelle après PRD-002.",
+    "summary": "Le hero public présente maintenant Swing Digital, ses soutiens et un CTA clair dans le premier écran. La direction artistique reste immersive et cohérente. La principale limite restante est la hauteur mobile du hero, qui retarde encore l’accès aux sections suivantes.",
+    "confidence": "high",
+    "observed": [
+      "Desktop : H1, proposition de valeur, soutiens CNC/DRAC/Ville de Paris/ONDA et CTA sont visibles dans la capture.",
+      "Mobile : H1, tags, résumé, signal de confiance et CTA sont lisibles sans débordement horizontal.",
+      "Mobile : les liens sociaux ont une marge droite visible.",
+      "Le bouton son reste visible et ne masque pas le H1."
+    ],
+    "inferred": [
+      "La preuve de confiance aide à comprendre la crédibilité du studio avant scroll.",
+      "Le CTA “Découvrir les expériences” clarifie mieux le prochain clic que l’état précédent.",
+      "Le hero mobile conserve une forte profondeur verticale qui peut retarder l’exploration."
+    ],
+    "recommended": [
+      "Conserver le signal de confiance et le CTA en premier écran.",
+      "Ne pas réintroduire de métrique non prouvée dans le hero.",
+      "Tester plus tard une version mobile plus compacte si le rapport de conversion ou les heatmaps le justifient."
+    ]
+  },
+  "responsive_study": {
+    "url": "https://swing.appmiweb.com/",
+    "generated_at": "2026-06-20T22:41:40.465Z",
+    "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+    "summary": {
+      "status": "warning",
+      "verdict": "Homepage renders on tested viewports, but browser evidence found issues to review."
+    },
+    "viewports": [
+      {
+        "label": "Desktop",
+        "viewport": "1440x1800",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 1440,
+          "innerHeight": 1800,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false,
+          "documentHeight": 10839,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 3028,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi"
+        }
+      },
+      {
+        "label": "Mobile",
+        "viewport": "390x1400",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 390,
+          "innerHeight": 1400,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false,
+          "documentHeight": 7631,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 2940,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva"
+        }
+      }
+    ]
+  },
+  "site_visual_evidence": [
+    {
+      "label": "Desktop screenshot",
+      "path": "site-screenshots/desktop.png",
+      "viewport": "1440x1800",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 1440px"
+      ]
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "site-screenshots/mobile.png",
+      "viewport": "390x1400",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 390px"
+      ]
+    }
+  ],
+  "screenshot_status": {
+    "status": "captured",
+    "method": "Playwright via capture_site_screenshots.mjs",
+    "desktop": "site-screenshots/desktop.png",
+    "mobile": "site-screenshots/mobile.png"
+  },
+  "technical_checks": {
+    "search_crawl_public": {
+      "generatedAt": "2026-06-20T22:41:11.460Z",
+      "base": "https://swing.appmiweb.com",
+      "sitemapUrlCount": 24,
+      "sitemapStatusOk": true,
+      "robotsStatusOk": true,
+      "robotsDeclaresSitemap": true,
+      "llmsStatusOk": true,
+      "llmsMentionsCanonicalBase": true,
+      "pages200": 24,
+      "pagesCanonicalOk": 24,
+      "pagesOgUrlOk": 24,
+      "pagesWithOgImage": 24,
+      "ogImagesChecked": 21,
+      "ogImagesOk": 21,
+      "forbiddenArtifactsChecked": 9,
+      "forbiddenArtifactsNotPublicOk": 8,
+      "forbiddenArtifactsCacheOnly": 1
+    },
+    "search_crawl_failures": [
+      {
+        "type": "forbidden_artifact_cache_only",
+        "url": "https://swing.appmiweb.com/maquette-site.pdf",
+        "status": 200,
+        "contentType": "application/pdf",
+        "cfCacheStatus": "HIT",
+        "cacheBustedStatus": 404,
+        "estimatedCacheRemainingSeconds": 8637
+      }
+    ],
+    "seo_check": {
+      "status": "passed",
+      "passed": 10,
+      "command": "npm run seo:check"
+    },
+    "build_prod": {
+      "status": "passed",
+      "files": 443,
+      "excluded_artifacts": 3,
+      "command": "npm run build:prod"
+    },
+    "appmiweb_preflight": {
+      "status": "passed_with_warnings",
+      "files": 443,
+      "warnings": 3,
+      "command": "npm run appmiweb:preflight"
+    },
+    "ai_public_endpoints": [
+      {
+        "path": "/llms.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/for-ai/",
+        "status": 200,
+        "content_type": "text/html"
+      },
+      {
+        "path": "/for-ai.json",
+        "status": 200,
+        "content_type": "application/json"
+      },
+      {
+        "path": "/for-ai.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/schema-webpage.jsonld",
+        "status": 200,
+        "content_type": "application/octet-stream"
+      }
+    ],
+    "homepage_image_status": {
+      "generated_at": "2026-06-20T22:43:24.770Z",
+      "url": "https://swing.appmiweb.com/",
+      "method": "Playwright viewport 1440x1800, initial load, scroll pass, then HEAD on unresolved lazy images",
+      "initial": {
+        "imageCount": 34,
+        "missingImages": 25,
+        "lazyImages": 34
+      },
+      "after_scroll": {
+        "imageCount": 34,
+        "missingImages": 0,
+        "missing": []
+      },
+      "unresolved_http_checks": [],
+      "interpretation": "Les images non chargées dans le DOM sont des images lazy/visuelles différées dont les URLs répondent 200 en HTTP."
+    }
+  },
+  "public_measurements": [
+    {
+      "source": "Google Search Console",
+      "access": "not_available",
+      "metric": "impressions, clicks, CTR, positions",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "GA4/GTM",
+      "access": "not_available",
+      "metric": "sessions, conversions, referrals IA",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "Bing Webmaster Tools",
+      "access": "not_available",
+      "metric": "indexation, clics, performance Bing/AI",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "Server logs",
+      "access": "not_available",
+      "metric": "hits bots Google/Bing/AI",
+      "limit": "Logs non fournis."
+    },
+    {
+      "source": "Manual public audit",
+      "access": "available",
+      "metric": "crawl, canonicals, OG, endpoints IA, captures",
+      "limit": "Ne mesure pas le trafic ni les citations réelles."
+    }
+  ],
+  "action_plan": [
+    {
+      "when": "Maintenant",
+      "action": "Purger /maquette-site.pdf dans Cloudflare.",
+      "outcome": "Search/Crawl public sans artefact interdit cache-only."
+    },
+    {
+      "when": "Après purge",
+      "action": "Relancer npm run appmiweb:search-crawl puis régénérer le rapport court de validation.",
+      "outcome": "Possibilité de valider Search/Crawl vers 9/10."
+    },
+    {
+      "when": "Avant production finale",
+      "action": "Traiter les mentions légales hébergeur et le scénario Réservations.",
+      "outcome": "Suppression des 3 avertissements préproduction."
+    },
+    {
+      "when": "Go-live domaine final",
+      "action": "Brancher GSC, GA4/GTM, Bing Webmaster et suivi referrals IA.",
+      "outcome": "Mesure réelle SEO/GEO au lieu de readiness technique seulement."
+    }
+  ],
+  "ai_layer_package": {
+    "status": "already_public",
+    "note": "Aucun ZIP généré dans ce rapport : la couche IA est déjà publiée sur la préproduction.",
+    "files": [
+      {
+        "label": "llms.txt",
+        "path": "https://swing.appmiweb.com/llms.txt",
+        "purpose": "Index public lisible par agents."
+      },
+      {
+        "label": "/for-ai",
+        "path": "https://swing.appmiweb.com/for-ai/",
+        "purpose": "Page HTML de contexte agent-readable."
+      },
+      {
+        "label": "/for-ai.json",
+        "path": "https://swing.appmiweb.com/for-ai.json",
+        "purpose": "Faits structurés et consignes de citation."
+      },
+      {
+        "label": "/for-ai.txt",
+        "path": "https://swing.appmiweb.com/for-ai.txt",
+        "purpose": "Contexte texte compact pour agents."
+      },
+      {
+        "label": "schema-webpage.jsonld",
+        "path": "https://swing.appmiweb.com/schema-webpage.jsonld",
+        "purpose": "JSON-LD WebPage public."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "label": "Accueil public audité",
+      "url": "https://swing.appmiweb.com/"
+    },
+    {
+      "label": "robots.txt",
+      "url": "https://swing.appmiweb.com/robots.txt"
+    },
+    {
+      "label": "sitemap.xml",
+      "url": "https://swing.appmiweb.com/sitemap.xml"
+    },
+    {
+      "label": "llms.txt",
+      "url": "https://swing.appmiweb.com/llms.txt"
+    },
+    {
+      "label": "for-ai",
+      "url": "https://swing.appmiweb.com/for-ai/"
+    },
+    {
+      "label": "Preuve Search/Crawl",
+      "path": "search-crawl-public-evidence.json"
+    },
+    {
+      "label": "Étude responsive",
+      "path": "responsive-study.json"
+    },
+    {
+      "label": "Preuve visuelle site",
+      "path": "site-visual-evidence.json"
+    },
+    {
+      "label": "Contrôle images homepage",
+      "path": "homepage-image-status.json"
+    },
+    {
+      "label": "Capture desktop",
+      "path": "site-screenshots/desktop.png"
+    },
+    {
+      "label": "Capture mobile",
+      "path": "site-screenshots/mobile.png"
+    }
+  ]
+}</script>
+  <script>
+    const audit = JSON.parse(document.getElementById('audit-data').textContent);
+    const app = document.getElementById('app');
+    const priorityState = { value: 'all' };
+    const uiState = { tab: 'overview' };
+    const reportLanguage = normalizeLanguage(audit.report_language || audit.language || audit.locale || 'en');
+    const i18n = {
+      en: {
+        noData: 'No data provided.',
+        eyebrow: 'SEO/GEO audit',
+        overview: 'Overview',
+        visual: 'Visual',
+        findingsTab: 'Findings',
+        technical: 'Technical',
+        actions: 'Actions',
+        sources: 'Sources',
+        downloads: 'Downloads',
+        auditCockpit: 'Audit cockpit',
+        auditCockpitCopy: 'A fast executive view of what the site needs before deeper SEO/GEO work.',
+        readinessSignal: 'Readiness signal',
+        reviewedEvidence: 'Reviewed evidence',
+        openIssues: 'Open issues',
+        visualProof: 'Visual proof',
+        publicSources: 'Public sources',
+        topCohorts: 'Top cohorts',
+        fallbackSubtitle: 'Evidence-led audit for search engines, AI answer engines, and browser agents.',
+        status: 'Status',
+        confidence: 'Confidence',
+        generated: 'Generated',
+        unknown: 'unknown',
+        unknownSite: 'unknown site',
+        defaultStatusDetail: 'Overall readiness from supplied evidence.',
+        biggestBlocker: 'Biggest blocker',
+        biggestBlockerDetail: 'Highest-impact issue found.',
+        fastestWin: 'Fastest win',
+        fastestWinDetail: 'Best next action.',
+        executiveBrief: 'Executive brief',
+        fallbackDecision: 'Prioritize evidence-led fixes before content scale.',
+        missingAnalytics: 'Missing analytics or logs are marked unknown. Data confidence:',
+        readinessScores: 'Readiness scores',
+        score: 'Score',
+        analysisCohorts: 'Analysis cohorts',
+        cohort: 'Cohort',
+        verdict: 'Verdict',
+        nextAction: 'Next action',
+        noScreenshots: 'No site screenshots supplied.',
+        responsiveStudy: 'Responsive study',
+        noResponsiveStudy: 'No responsive study supplied.',
+        method: 'Method',
+        issue: 'Issue',
+        issues: 'Issues',
+        result: 'Result',
+        pageTitle: 'Page title',
+        h1: 'H1',
+        horizontalOverflow: 'Horizontal overflow',
+        yes: 'yes',
+        no: 'no',
+        documentWidth: 'Document width',
+        documentHeight: 'Document height',
+        missingImages: 'Missing images',
+        siteScreenshot: 'Site screenshot',
+        screenshotFile: 'Screenshot file:',
+        viewport: 'Viewport',
+        designWatch: 'Design Watch',
+        visualUnavailable: 'Visual verdict unavailable',
+        noVisual: 'No visual analysis supplied.',
+        observedScreenshots: 'Observed from screenshots',
+        implication: 'Implication',
+        recommended: 'Recommended',
+        evidence: 'Evidence',
+        noEvidence: 'No evidence links provided.',
+        label: 'Label',
+        source: 'Source',
+        statusNote: 'Status / note',
+        access: 'Access',
+        all: 'All',
+        priorityFindings: 'Priority findings',
+        untitledFinding: 'Untitled finding',
+        observed: 'Observed',
+        inferred: 'Inferred',
+        noFindings: 'No findings match this filter.',
+        technicalSnapshot: 'Technical snapshot',
+        area: 'Area',
+        observedEvidence: 'Observed evidence',
+        measurementAccess: 'Measurement access',
+        metric: 'Metric',
+        limit: 'Limit',
+        noMeasurement: 'No measurement access checks supplied.',
+        actionPlan: 'Action plan',
+        noActionPlan: 'No action plan supplied.',
+        when: 'When',
+        action: 'Action',
+        expectedEvidence: 'Expected evidence',
+        sourcesConsulted: 'Sources consulted',
+        noSources: 'No source list supplied.',
+        aiLayerPackage: 'AI layer package',
+        aiLayerPackageCopy: 'Ready-to-publish files for llms.txt, /for-ai, structured JSON, plain text, and JSON-LD when the audited site is missing an AI-readable layer.',
+        downloadZip: 'Download ZIP',
+        generatedFiles: 'Generated files',
+        file: 'File',
+        purpose: 'Purpose',
+        noDownloads: 'No downloadable AI layer package supplied.'
+      },
+      fr: {
+        noData: 'Aucune donnée fournie.',
+        eyebrow: 'Audit SEO/GEO',
+        overview: 'Vue générale',
+        visual: 'Visuel',
+        findingsTab: 'Constats',
+        technical: 'Technique',
+        actions: 'Actions',
+        sources: 'Sources',
+        downloads: 'Téléchargements',
+        auditCockpit: 'Cockpit d’audit',
+        auditCockpitCopy: 'Vue dirigeant rapide de ce que le site doit corriger avant d’aller plus loin en SEO/GEO.',
+        readinessSignal: 'Signal de préparation',
+        reviewedEvidence: 'Preuves revues',
+        openIssues: 'Points ouverts',
+        visualProof: 'Preuves visuelles',
+        publicSources: 'Sources publiques',
+        topCohorts: 'Cohortes clés',
+        fallbackSubtitle: 'Audit fondé sur des preuves pour les moteurs de recherche, les moteurs de réponse IA et les agents navigateur.',
+        status: 'Statut',
+        confidence: 'Confiance',
+        generated: 'Généré',
+        unknown: 'inconnu',
+        unknownSite: 'site inconnu',
+        defaultStatusDetail: 'Niveau de préparation global d’après les preuves fournies.',
+        biggestBlocker: 'Blocage principal',
+        biggestBlockerDetail: 'Problème avec le plus fort impact.',
+        fastestWin: 'Gain rapide',
+        fastestWinDetail: 'Meilleure prochaine action.',
+        executiveBrief: 'Synthèse exécutive',
+        fallbackDecision: 'Prioriser les corrections fondées sur des preuves avant de produire plus de contenu.',
+        missingAnalytics: 'Les analytics ou logs manquants sont marqués inconnus. Niveau de confiance :',
+        readinessScores: 'Scores de préparation',
+        score: 'Score',
+        analysisCohorts: 'Cohortes d’analyse',
+        cohort: 'Cohorte',
+        verdict: 'Verdict',
+        nextAction: 'Prochaine action',
+        noScreenshots: 'Aucune capture du site fournie.',
+        responsiveStudy: 'Étude responsive',
+        noResponsiveStudy: 'Aucune étude responsive fournie.',
+        method: 'Méthode',
+        issue: 'Point à corriger',
+        issues: 'Points à corriger',
+        result: 'Résultat',
+        pageTitle: 'Titre de page',
+        h1: 'H1',
+        horizontalOverflow: 'Débordement horizontal',
+        yes: 'oui',
+        no: 'non',
+        documentWidth: 'Largeur du document',
+        documentHeight: 'Hauteur du document',
+        missingImages: 'Images manquantes',
+        siteScreenshot: 'Capture du site',
+        screenshotFile: 'Fichier de capture :',
+        viewport: 'Viewport',
+        designWatch: 'Design Watch',
+        visualUnavailable: 'Verdict visuel indisponible',
+        noVisual: 'Aucune analyse visuelle fournie.',
+        observedScreenshots: 'Observé dans les captures',
+        implication: 'Implication',
+        recommended: 'Recommandé',
+        evidence: 'Preuves',
+        noEvidence: 'Aucun lien de preuve fourni.',
+        label: 'Libellé',
+        source: 'Source',
+        statusNote: 'Statut / note',
+        access: 'Accès',
+        all: 'Tout',
+        priorityFindings: 'Constats prioritaires',
+        untitledFinding: 'Constat sans titre',
+        observed: 'Observé',
+        inferred: 'Inféré',
+        noFindings: 'Aucun constat ne correspond à ce filtre.',
+        technicalSnapshot: 'Instantané technique',
+        area: 'Zone',
+        observedEvidence: 'Preuve observée',
+        measurementAccess: 'Accès aux mesures',
+        metric: 'Métrique',
+        limit: 'Limite',
+        noMeasurement: 'Aucun contrôle d’accès aux mesures fourni.',
+        actionPlan: 'Plan d’action',
+        noActionPlan: 'Aucun plan d’action fourni.',
+        when: 'Quand',
+        action: 'Action',
+        expectedEvidence: 'Preuve attendue',
+        sourcesConsulted: 'Sources consultées',
+        noSources: 'Aucune liste de sources fournie.',
+        aiLayerPackage: 'Pack couche IA',
+        aiLayerPackageCopy: 'Fichiers prêts à publier pour llms.txt, /for-ai, JSON structuré, texte compact et JSON-LD quand le site audité n’a pas encore de couche lisible par IA.',
+        downloadZip: 'Télécharger le ZIP',
+        generatedFiles: 'Fichiers générés',
+        file: 'Fichier',
+        purpose: 'Rôle',
+        noDownloads: 'Aucun pack couche IA téléchargeable fourni.'
+      }
+    };
+
+    function normalizeLanguage(value) {
+      const normalized = String(value || '').toLowerCase();
+      if (normalized.startsWith('fr')) return 'fr';
+      return 'en';
+    }
+
+    function t(key) {
+      return (i18n[reportLanguage] && i18n[reportLanguage][key]) || i18n.en[key] || key;
+    }
+
+    function text(value, fallback = '') {
+      if (value === undefined || value === null || value === '') return fallback;
+      return String(value);
+    }
+
+    function formatDateTime(value) {
+      if (!value) return t('unknown');
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return text(value, t('unknown'));
+      return new Intl.DateTimeFormat(reportLanguage === 'fr' ? 'fr-FR' : 'en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }).format(date);
+    }
+
+    function asArray(value) {
+      if (Array.isArray(value)) return value;
+      if (value === undefined || value === null || value === '') return [];
+      return [value];
+    }
+
+    function displayStatus(value) {
+      const raw = text(value, t('unknown'));
+      const normalized = raw.toLowerCase().replaceAll(' ', '_');
+      const labels = {
+        fr: {
+          partial: 'partiel',
+          missing: 'absent',
+          warning: 'à vérifier',
+          unknown: 'inconnu',
+          ok: 'ok',
+          pass: 'ok',
+          passed: 'ok',
+          good: 'bon',
+          failed: 'échec',
+          error: 'erreur',
+          critical: 'critique',
+          medium: 'moyen',
+          public: 'public',
+          private: 'privé',
+          owner_only: 'propriétaire',
+          owner_only_free: 'propriétaire',
+          public_partial: 'public partiel',
+          public_if_enough_traffic: 'public si trafic suffisant'
+        },
+        en: {}
+      };
+      return labels[reportLanguage]?.[normalized] || raw;
+    }
+
+    function displayMethod(value) {
+      const raw = text(value, '');
+      if (reportLanguage === 'fr' && raw.toLowerCase().includes('chrome devtools fallback')) {
+        return 'Fallback Chrome DevTools ; Agent Browser à privilégier quand disponible';
+      }
+      return raw;
+    }
+
+    function el(tag, attrs = {}, children = []) {
+      const node = document.createElement(tag);
+      for (const [key, value] of Object.entries(attrs)) {
+        if (key === 'class') node.className = value;
+        else if (key === 'text') node.textContent = value;
+        else if (key === 'html') node.innerHTML = value;
+        else if (key === 'href') {
+          node.href = value;
+          node.rel = 'noopener noreferrer';
+        } else if (key === 'src') node.src = value;
+        else if (value !== undefined && value !== null) node.setAttribute(key, value);
+      }
+      for (const child of children) {
+        if (child === undefined || child === null) continue;
+        node.append(child.nodeType ? child : document.createTextNode(String(child)));
+      }
+      return node;
+    }
+
+    function list(items) {
+      const values = asArray(items);
+      if (!values.length) return el('p', { class: 'empty', text: t('noData') });
+      return el('ul', {}, values.map(item => el('li', { text: text(item) })));
+    }
+
+    function badge(value) {
+      const normalized = text(value, 'unknown').toLowerCase().replaceAll(' ', '_');
+      let klass = `badge ${normalized}`;
+      if (['p0', 'error', 'missing', 'failed', 'critical'].includes(normalized)) klass = 'badge p0';
+      if (['p1', 'warning', 'partial', 'medium'].includes(normalized)) klass = 'badge p1';
+      if (['p2', 'ok', 'pass', 'passed', 'good', 'public'].includes(normalized)) klass = 'badge p2';
+      if (['owner_only', 'owner_only_free', 'public_if_enough_traffic', 'public_partial', 'unknown'].includes(normalized)) klass = `badge ${normalized}`;
+      return el('span', { class: klass, text: displayStatus(value) });
+    }
+
+    function section(title, children, className = 'panel') {
+      return el('section', { class: className }, [el('h2', { text: title }), ...children]);
+    }
+
+    function metaRow(label, value) {
+      return el('div', { class: 'meta-row' }, [el('span', { text: label }), el('strong', { text: text(value, 'unknown') })]);
+    }
+
+    function scoreNumber(value) {
+      if (value === undefined || value === null || value === '') return null;
+      if (typeof value === 'number' && Number.isFinite(value)) return value;
+      const match = String(value).match(/([0-9]+(?:\.[0-9]+)?)/);
+      if (!match) return null;
+      return Number(match[1]);
+    }
+
+    function scoreMax(value, fallback = 10) {
+      const slash = String(value || '').match(/\/\s*([0-9]+(?:\.[0-9]+)?)/);
+      return slash ? Number(slash[1]) : fallback;
+    }
+
+    function readinessScore() {
+      const scorecards = Array.isArray(audit.scorecards) ? audit.scorecards : [];
+      const normalized = scorecards
+        .map(item => {
+          const score = scoreNumber(item.score);
+          const max = Number(item.max || scoreMax(item.score));
+          if (score === null || !max) return null;
+          return Math.max(0, Math.min(10, (score / max) * 10));
+        })
+        .filter(value => value !== null);
+      if (normalized.length) {
+        return normalized.reduce((sum, value) => sum + value, 0) / normalized.length;
+      }
+      const visualScore = scoreNumber(audit.design_watch?.score || audit.first_impression?.score);
+      if (visualScore !== null) {
+        return Math.max(0, Math.min(10, (visualScore / scoreMax(audit.design_watch?.score || audit.first_impression?.score)) * 10));
+      }
+      return 0;
+    }
+
+    function findingCounts() {
+      const findings = Array.isArray(audit.findings) ? audit.findings : [];
+      return {
+        total: findings.length,
+        p0: findings.filter(item => text(item.priority).toUpperCase() === 'P0').length,
+        p1: findings.filter(item => text(item.priority).toUpperCase() === 'P1').length,
+        p2: findings.filter(item => text(item.priority).toUpperCase() === 'P2').length
+      };
+    }
+
+    function evidenceCount() {
+      return [
+        ...(Array.isArray(audit.site_visual_evidence) ? audit.site_visual_evidence : []),
+        ...(Array.isArray(audit.visual_evidence) ? audit.visual_evidence : []),
+        ...(Array.isArray(audit.sources) ? audit.sources : [])
+      ].length;
+    }
+
+    function tabs() {
+      return [
+        { id: 'overview', label: t('overview') },
+        { id: 'visual', label: t('visual') },
+        { id: 'findings', label: t('findingsTab') },
+        { id: 'technical', label: t('technical') },
+        { id: 'actions', label: t('actions') },
+        { id: 'downloads', label: t('downloads') },
+        { id: 'sources', label: t('sources') }
+      ];
+    }
+
+    function renderTabs() {
+      const container = document.getElementById('tabs');
+      container.replaceChildren(...tabs().map(tab => {
+        const button = el('button', {
+          class: 'tab',
+          role: 'tab',
+          'aria-selected': String(uiState.tab === tab.id),
+          text: tab.label
+        });
+        button.addEventListener('click', () => {
+          uiState.tab = tab.id;
+          render();
+        });
+        return button;
+      }));
+    }
+
+    function renderHeader() {
+      const generated = text(audit.generated_at, new Date().toISOString());
+      const site = text(audit.site, t('unknownSite'));
+      document.documentElement.lang = reportLanguage;
+      document.title = `Audit SEO/GEO — ${site}`;
+      document.getElementById('eyebrow').textContent = t('eyebrow');
+      document.getElementById('headline').textContent = `Audit SEO/GEO — ${site}`;
+      document.getElementById('subtitle').textContent = text(
+        audit.summary?.headline,
+        t('fallbackSubtitle')
+      );
+      document.getElementById('report-meta').replaceChildren(
+        metaRow(t('status'), displayStatus(audit.summary?.status)),
+        metaRow(t('confidence'), text(audit.summary?.data_confidence, t('unknown'))),
+        metaRow(t('generated'), formatDateTime(generated))
+      );
+    }
+
+    function renderMetrics() {
+      const metrics = Array.isArray(audit.metrics) ? audit.metrics : [];
+      const defaults = [
+        { label: t('status'), value: text(audit.summary?.status, t('unknown')), detail: t('defaultStatusDetail') },
+        { label: t('biggestBlocker'), value: text(audit.summary?.biggest_blocker, t('unknown')), detail: t('biggestBlockerDetail') },
+        { label: t('fastestWin'), value: text(audit.summary?.fastest_win, t('unknown')), detail: t('fastestWinDetail') }
+      ];
+      return el('section', { class: 'grid' }, (metrics.length ? metrics : defaults).map(metric =>
+        el('div', { class: 'metric' }, [
+          el('span', { text: text(metric.label, '') }),
+          el('strong', { text: text(metric.value, 'unknown') }),
+          metric.detail ? el('p', { class: 'small', text: metric.detail }) : null
+        ])
+      ));
+    }
+
+    function renderExecutiveBrief() {
+      const brief = asArray(audit.executive_brief);
+      return section(t('executiveBrief'), [
+        el('p', { text: text(audit.summary?.decision, audit.summary?.headline || t('fallbackDecision')) }),
+        brief.length ? el('div', { class: 'callout' }, [list(brief)]) : null,
+        el('p', { class: 'small', text: `${t('missingAnalytics')} ${text(audit.summary?.data_confidence, t('unknown'))}.` })
+      ].filter(Boolean));
+    }
+
+    function renderScorecards() {
+      const scorecards = Array.isArray(audit.scorecards) ? audit.scorecards : [];
+      if (!scorecards.length) return null;
+      return section(t('readinessScores'), [
+        el('div', { class: 'grid four' }, scorecards.map(scorecard => {
+          const score = Number(scorecard.score ?? 0);
+          const max = Number(scorecard.max ?? 10) || 10;
+          const clamped = Math.max(0, Math.min(score, max));
+          return el('article', { class: 'score-card' }, [
+            el('div', { class: 'score-top' }, [
+              el('span', { class: 'small', text: text(scorecard.label, t('score')) }),
+              el('strong', { text: `${clamped}/${max}` })
+            ]),
+            el('progress', { value: clamped, max }),
+            el('p', { class: 'small', text: text(scorecard.note, '') })
+          ]);
+        }))
+      ]);
+    }
+
+    function renderSignalPanel() {
+      const score = readinessScore();
+      const scoreText = score ? score.toFixed(score % 1 ? 1 : 0) : '0';
+      const percent = Math.max(0, Math.min(100, Math.round(score * 10)));
+      const scorecards = Array.isArray(audit.scorecards) ? audit.scorecards : [];
+      const bars = (scorecards.length ? scorecards : [
+        { label: t('status'), score: score, max: 10, note: text(audit.summary?.status, t('unknown')) }
+      ]).slice(0, 4);
+      return el('aside', { class: 'signal-panel' }, [
+        el('h3', { text: t('readinessSignal') }),
+        el('div', { class: 'signal-ring', style: `--score:${percent}` }, [
+          el('div', { class: 'signal-value' }, [
+            `${scoreText}/10`,
+            el('span', { text: t('score') })
+          ])
+        ]),
+        el('div', { class: 'signal-bars' }, bars.map(item => {
+          const value = scoreNumber(item.score);
+          const max = Number(item.max || scoreMax(item.score));
+          const barPercent = value === null || !max ? percent : Math.max(0, Math.min(100, Math.round((value / max) * 100)));
+          return el('div', { class: 'signal-bar' }, [
+            el('span', { text: text(item.label, t('score')) }),
+            el('div', { class: 'signal-track' }, [
+              el('div', { class: 'signal-fill', style: `--bar:${barPercent}%` })
+            ]),
+            el('strong', { text: `${Math.round(barPercent)}%` })
+          ]);
+        }))
+      ]);
+    }
+
+    function renderOverviewStage() {
+      const counts = findingCounts();
+      const screenshots = [
+        ...(Array.isArray(audit.site_visual_evidence) ? audit.site_visual_evidence : []),
+        ...(Array.isArray(audit.visual_evidence) ? audit.visual_evidence : [])
+      ].length;
+      return el('section', { class: 'overview-stage' }, [
+        el('div', {}, [
+          el('p', { class: 'section-kicker', text: t('auditCockpit') }),
+          el('h2', { text: text(audit.summary?.headline || audit.summary?.decision, t('auditCockpitCopy')) }),
+          el('p', { text: text(audit.summary?.decision, t('auditCockpitCopy')) }),
+          el('div', { class: 'proof-strip' }, [
+            el('span', { class: 'proof-pill', text: `${t('openIssues')}: ${counts.total}` }),
+            el('span', { class: 'proof-pill', text: `P0: ${counts.p0}` }),
+            el('span', { class: 'proof-pill', text: `P1: ${counts.p1}` }),
+            el('span', { class: 'proof-pill', text: `${t('visualProof')}: ${screenshots}` }),
+            el('span', { class: 'proof-pill', text: `${t('publicSources')}: ${Array.isArray(audit.sources) ? audit.sources.length : 0}` })
+          ])
+        ]),
+        renderSignalPanel()
+      ]);
+    }
+
+    function renderOverviewPage() {
+      return [
+        renderOverviewStage(),
+        renderMetrics(),
+        renderScorecards(),
+        cohortCards(3) ? section(t('topCohorts'), [cohortCards(3)]) : null,
+        renderExecutiveBrief()
+      ].filter(Boolean);
+    }
+
+    function cohortCards(limit = null) {
+      const cohorts = Array.isArray(audit.analysis_cohorts || audit.cohorts)
+        ? (audit.analysis_cohorts || audit.cohorts)
+        : [];
+      const visible = limit ? cohorts.slice(0, limit) : cohorts;
+      if (!visible.length) return null;
+      return el('div', { class: 'cohort-grid' }, visible.map(item =>
+        el('article', { class: 'cohort-card' }, [
+          el('div', { class: 'cohort-head' }, [
+            el('div', {}, [
+              el('h3', { text: text(item.name, t('cohort')) }),
+              item.status ? badge(item.status) : null,
+              item.what_it_checks ? el('p', { class: 'small', text: text(item.what_it_checks) }) : null
+            ]),
+            el('div', { class: 'cohort-score', text: text(item.score, 'n/a') })
+          ]),
+          item.verdict ? el('p', { text: text(item.verdict, '') }) : null,
+          item.evidence ? el('p', { class: 'small', text: text(item.evidence) }) : null,
+          el('div', { class: 'next' }, [
+            el('span', { class: 'label', text: t('nextAction') }),
+            el('p', { text: text(item.next_action, '') })
+          ])
+        ].filter(Boolean))
+      ));
+    }
+
+    function renderCohorts() {
+      const cards = cohortCards();
+      if (!cards) return null;
+      return section(t('analysisCohorts'), [cards]);
+    }
+
+    function visualCards(items) {
+      const visuals = Array.isArray(items) ? items : [];
+      if (!visuals.length) return el('p', { class: 'empty', text: t('noScreenshots') });
+      return el('div', { class: 'visual-grid' }, visuals.map(item => {
+        const image = item.path ? el('img', { src: item.path, alt: text(item.label, t('siteScreenshot')) }) : null;
+        if (image) {
+          image.addEventListener('error', () => {
+            image.replaceWith(el('div', { class: 'screenshot-missing', text: `${t('screenshotFile')} ${item.path}` }));
+          });
+        }
+        return el('article', { class: 'visual-card' }, [
+          image,
+          el('div', {}, [
+            el('h3', { text: text(item.label, t('siteScreenshot')) }),
+            el('p', { class: 'small', text: `${t('viewport')}: ${text(item.viewport, t('unknown'))}` }),
+            list(item.notes)
+          ])
+        ]);
+      }));
+    }
+
+    function renderFirstImpression() {
+      const first = audit.design_watch || audit.first_impression || audit.visual_verdict || {};
+      const visuals = audit.site_visual_evidence || audit.visual_evidence || [];
+      if (!Object.keys(first).length && !visuals.length) return null;
+      return section(t('designWatch'), [
+        el('div', { class: 'grid sidebar' }, [
+          el('article', { class: 'panel' }, [
+            el('div', { class: 'verdict' }, [
+              el('div', { class: 'verdict-score', text: text(first.score, 'n/a') }),
+              el('div', {}, [
+                el('h3', { text: text(first.verdict, t('visualUnavailable')) }),
+                el('p', { text: text(first.summary, t('noVisual')) }),
+                first.confidence ? badge(`${t('confidence').toLowerCase()}: ${first.confidence}`) : null
+              ])
+            ]),
+            el('span', { class: 'label', text: t('observedScreenshots') }),
+            list(first.observed),
+            el('span', { class: 'label', text: t('implication') }),
+            list(first.inferred || first.implications),
+            el('span', { class: 'label', text: t('recommended') }),
+            list(first.recommended)
+          ]),
+          visualCards(visuals)
+        ])
+      ]);
+    }
+
+    function renderResponsiveStudy() {
+      const study = audit.responsive_study || audit.dynamic_responsive_study || null;
+      if (!study) return section(t('responsiveStudy'), [el('p', { class: 'empty', text: t('noResponsiveStudy') })]);
+      const viewports = Array.isArray(study.viewports) ? study.viewports : [];
+      const summary = study.summary || {};
+      return section(t('responsiveStudy'), [
+        el('div', { class: 'callout' }, [
+          el('p', {}, [
+            summary.status ? badge(summary.status) : null,
+            ' ',
+            text(summary.verdict, '')
+          ]),
+          study.method ? el('p', { class: 'small', text: `${t('method')}: ${displayMethod(study.method)}` }) : null
+        ]),
+        viewports.length ? el('table', {}, [
+          el('thead', {}, [el('tr', {}, [
+            el('th', { text: t('viewport') }),
+            el('th', { text: t('result') }),
+            el('th', { text: t('observedEvidence') }),
+            el('th', { text: t('issues') })
+          ])]),
+          el('tbody', {}, viewports.map(item => {
+            const metrics = item.metrics || {};
+            const observed = [
+              `${t('pageTitle')}: ${text(metrics.title, t('unknown'))}`,
+              `${t('h1')}: ${asArray(metrics.h1Text).join(' | ') || t('unknown')}`,
+              `${t('horizontalOverflow')}: ${metrics.horizontalOverflow ? t('yes') : t('no')}`,
+              `${t('documentWidth')}: ${text(metrics.scrollWidth, t('unknown'))}px`,
+              `${t('documentHeight')}: ${text(metrics.documentHeight, t('unknown'))}px`,
+              `${t('missingImages')}: ${text(metrics.missingImages, '0')}`
+            ];
+            return el('tr', {}, [
+              el('td', { text: text(item.viewport || item.label, '') }),
+              el('td', {}, [badge(text(item.status, t('unknown')))]),
+              el('td', {}, [list(observed)]),
+              el('td', {}, [list(item.issues)])
+            ]);
+          }))
+        ]) : el('p', { class: 'empty', text: t('noData') })
+      ]);
+    }
+
+    function evidenceTable(items) {
+      const values = Array.isArray(items) ? items : [];
+      if (!values.length) return el('p', { class: 'empty', text: t('noEvidence') });
+      const rows = values.map(item => el('tr', {}, [
+        el('td', {}, [text(item.label, t('evidence'))]),
+        el('td', {}, item.url ? [el('a', { href: item.url, text: item.url })] : [text(item.path || item.value || '')]),
+        el('td', {}, [item.status ? badge(item.status) : text(item.note || '')])
+      ]));
+      return el('table', {}, [
+        el('thead', {}, [el('tr', {}, [el('th', { text: t('label') }), el('th', { text: t('source') }), el('th', { text: t('statusNote') })])]),
+        el('tbody', {}, rows)
+      ]);
+    }
+
+    function renderFindings() {
+      const findings = Array.isArray(audit.findings) ? audit.findings : [];
+      const buttons = ['all', 'P0', 'P1', 'P2'].map(value => {
+        const button = el('button', { text: value === 'all' ? t('all') : value });
+        button.classList.toggle('active', priorityState.value === value);
+        button.addEventListener('click', () => {
+          priorityState.value = value;
+          render();
+        });
+        return button;
+      });
+      const filtered = findings.filter(f => priorityState.value === 'all' || text(f.priority).toUpperCase() === priorityState.value);
+      return el('section', {}, [
+        el('div', { class: 'toolbar' }, [el('h2', { text: t('priorityFindings') }), ...buttons]),
+        ...(filtered.length ? filtered.map(finding => {
+          const priority = text(finding.priority, 'P1').toUpperCase();
+          return el('article', { class: `finding ${priority.toLowerCase()}-border` }, [
+            el('h3', {}, [badge(priority), ' ', text(finding.title, t('untitledFinding'))]),
+            el('span', { class: 'label', text: t('observed') }),
+            list(finding.observed),
+            el('span', { class: 'label', text: t('inferred') }),
+            list(finding.inferred),
+            el('span', { class: 'label', text: t('recommended') }),
+            list(finding.recommended),
+            finding.evidence ? el('details', {}, [el('summary', { text: t('evidence') }), evidenceTable(finding.evidence)]) : null
+          ]);
+        }) : [el('p', { class: 'empty', text: t('noFindings') })])
+      ]);
+    }
+
+    function renderTechnicalSnapshot() {
+      const checks = Array.isArray(audit.technical_checks) ? audit.technical_checks : [];
+      if (!checks.length) return null;
+      return section(t('technicalSnapshot'), [
+        el('table', {}, [
+          el('thead', {}, [el('tr', {}, [
+            el('th', { text: t('area') }),
+            el('th', { text: t('status') }),
+            el('th', { text: t('observedEvidence') }),
+            el('th', { text: t('implication') })
+          ])]),
+          el('tbody', {}, checks.map(item => el('tr', {}, [
+            el('td', { text: text(item.area, '') }),
+            el('td', {}, [badge(text(item.status, 'unknown'))]),
+            el('td', { text: text(item.observed, '') }),
+            el('td', { text: text(item.implication, '') })
+          ])))
+        ])
+      ]);
+    }
+
+    function renderPublicMeasurements() {
+      const measurements = Array.isArray(audit.public_measurements) ? audit.public_measurements : [];
+      if (!measurements.length) return section(t('measurementAccess'), [
+        el('p', { class: 'empty', text: t('noMeasurement') })
+      ]);
+      const rows = measurements.map(item => el('tr', {}, [
+        el('td', { text: text(item.source, '') }),
+        el('td', {}, [badge(text(item.access, 'unknown'))]),
+        el('td', { text: text(item.metric, '') }),
+        el('td', { text: text(item.limit, '') })
+      ]));
+      return section(t('measurementAccess'), [
+        el('table', {}, [
+          el('thead', {}, [el('tr', {}, [
+            el('th', { text: t('source') }),
+            el('th', { text: t('access') }),
+            el('th', { text: t('metric') }),
+            el('th', { text: t('limit') })
+          ])]),
+          el('tbody', {}, rows)
+        ])
+      ]);
+    }
+
+    function renderActionPlan() {
+      const actions = Array.isArray(audit.action_plan) ? audit.action_plan : [];
+      if (!actions.length) return section(t('actionPlan'), [el('p', { class: 'empty', text: t('noActionPlan') })]);
+      const rows = actions.map(item => el('tr', {}, [
+        el('td', { text: text(item.when || item.day || item.priority, '') }),
+        el('td', { text: text(item.action, '') }),
+        el('td', { text: text(item.outcome || item.metric, '') })
+      ]));
+      return section(t('actionPlan'), [
+        el('table', {}, [
+          el('thead', {}, [el('tr', {}, [el('th', { text: t('when') }), el('th', { text: t('action') }), el('th', { text: t('expectedEvidence') })])]),
+          el('tbody', {}, rows)
+        ])
+      ]);
+    }
+
+    function renderSources() {
+      const sources = Array.isArray(audit.sources) ? audit.sources : [];
+      return section(t('sourcesConsulted'), [
+        sources.length ? el('ul', {}, sources.map(source =>
+          el('li', {}, [source.url ? el('a', { href: source.url, text: text(source.label, source.url) }) : text(source.label || source)])
+        )) : el('p', { class: 'empty', text: t('noSources') })
+      ]);
+    }
+
+    function renderAiLayerPackage() {
+      const packageData = audit.ai_layer_package || null;
+      if (!packageData) {
+        return section(t('aiLayerPackage'), [el('p', { class: 'empty', text: t('noDownloads') })]);
+      }
+      const files = Array.isArray(packageData.files) ? packageData.files : [];
+      return section(t('aiLayerPackage'), [
+        el('div', { class: 'download-hero' }, [
+          el('div', {}, [
+            el('h3', { text: t('aiLayerPackage') }),
+            el('p', { text: t('aiLayerPackageCopy') }),
+            packageData.status ? badge(packageData.status) : null
+          ].filter(Boolean)),
+          packageData.zip_path ? el('a', { class: 'download-button', href: packageData.zip_path, text: t('downloadZip') }) : null
+        ].filter(Boolean)),
+        el('h3', { text: t('generatedFiles') }),
+        files.length ? el('div', { class: 'download-list' }, files.map(item =>
+          el('article', { class: 'download-card' }, [
+            el('strong', {}, [
+              item.path ? el('a', { href: item.path, text: text(item.label, item.path) }) : text(item.label, t('file'))
+            ]),
+            el('p', { class: 'small', text: text(item.path, '') }),
+            el('p', { text: text(item.purpose, '') })
+          ])
+        )) : el('p', { class: 'empty', text: t('noData') })
+      ]);
+    }
+
+    function renderVisualPage() {
+      return [
+        renderFirstImpression(),
+        renderResponsiveStudy()
+      ].filter(Boolean);
+    }
+
+    function renderFindingsPage() {
+      return [renderFindings()];
+    }
+
+    function renderTechnicalPage() {
+      return [
+        renderTechnicalSnapshot(),
+        renderPublicMeasurements()
+      ].filter(Boolean);
+    }
+
+    function renderActionsPage() {
+      return [
+        renderActionPlan(),
+        renderCohorts()
+      ].filter(Boolean);
+    }
+
+    function renderSourcesPage() {
+      return [renderSources()];
+    }
+
+    function renderDownloadsPage() {
+      return [renderAiLayerPackage()];
+    }
+
+    function activePage() {
+      if (uiState.tab === 'visual') return renderVisualPage();
+      if (uiState.tab === 'findings') return renderFindingsPage();
+      if (uiState.tab === 'technical') return renderTechnicalPage();
+      if (uiState.tab === 'actions') return renderActionsPage();
+      if (uiState.tab === 'downloads') return renderDownloadsPage();
+      if (uiState.tab === 'sources') return renderSourcesPage();
+      return renderOverviewPage();
+    }
+
+    function render() {
+      renderTabs();
+      app.replaceChildren(el('div', { class: 'tab-panel', role: 'tabpanel' }, activePage()));
+    }
+
+    renderHeader();
+    render();
+  </script>
+</body>
+</html>

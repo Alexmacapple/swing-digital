@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-06-20T22:43:24.770Z",
+  "url": "https://swing.appmiweb.com/",
+  "method": "Playwright viewport 1440x1800, initial load, scroll pass, then HEAD on unresolved lazy images",
+  "initial": {
+    "imageCount": 34,
+    "missingImages": 25,
+    "lazyImages": 34
+  },
+  "after_scroll": {
+    "imageCount": 34,
+    "missingImages": 0,
+    "missing": []
+  },
+  "unresolved_http_checks": [],
+  "interpretation": "Les images non chargées dans le DOM sont des images lazy/visuelles différées dont les URLs répondent 200 en HTTP."
+}

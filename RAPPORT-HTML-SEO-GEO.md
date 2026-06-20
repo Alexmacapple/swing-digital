@@ -1,33 +1,54 @@
 # Rapport HTML SEO/GEO
 
-Date : 2026-06-20
+Date : 2026-06-21
 
-## URL publique Cloudflare
+## URL locale du rapport courant
+
+http://127.0.0.1:8768/
+
+Cette URL pointe vers le rapport SEO/GEO public régénéré après le chantier PRD-002.
+
+## URL publique Cloudflare précédente
 
 https://counsel-literature-dictionaries-indicators.trycloudflare.com/
 
-Cette URL pointe vers le rapport HTML courant généré pour tester `seo-geo-growth-agent` `v1.2.3` sur Swing Digital.
-
-## URL locale
-
-http://127.0.0.1:8767/
+Cette URL pointe vers l'ancien rapport HTML `v1.2.3` du 2026-06-20, pas vers le rapport courant.
 
 ## Fichiers du rapport
 
 ```text
-reports/swing-digital/2026-06-20-v1.2.3-ai-layer-audit/
+reports/swing-digital/2026-06-21-seo-geo-audit-public/
 ├── audit.json
 ├── index.html
-├── ai-layer-package.zip
-├── ai-layer-package/
+├── search-crawl-public-evidence.json
+├── responsive-study.json
+├── homepage-image-status.json
+├── site-visual-evidence.json
+├── report-ui-visual-evidence.json
 ├── site-screenshots/
 │   ├── desktop.png
 │   └── mobile.png
-├── report-ui-screenshots/
-│   ├── desktop.png
-│   └── mobile.png
-└── responsive-study.json
+├── report-ui-desktop.png
+└── report-ui-mobile.png
 ```
+
+## Rapport régénéré SEO/GEO public du 2026-06-21
+
+URL locale :
+
+```text
+http://127.0.0.1:8768/
+```
+
+Fichier HTML :
+
+```text
+reports/swing-digital/2026-06-21-seo-geo-audit-public/index.html
+```
+
+Verdict : le chantier PRD-002 est visible dans le rapport public. `Design Watch` passe à 8/10 grâce au signal de confiance, au CTA visible et à la marge mobile des liens sociaux. La couche IA est publique (`/llms.txt`, `/for-ai`, `/for-ai.json`, `/for-ai.txt`, `schema-webpage.jsonld`). `Search/Crawl` reste à 8,5/10 à cause de `/maquette-site.pdf` encore servi par le cache Cloudflare sur le chemin exact, alors que la variante cache-bustée répond en 404.
+
+Validation du rapport : `npm run seo:check` passe avec 10 réussites ; `npm run build:prod` passe avec 443 fichiers copiés ; `npm run appmiweb:preflight` passe avec 3 avertissements préproduction non bloquants ; le rapport local `8768` a été contrôlé en desktop et mobile sans overflow.
 
 ## Rapport PRD-005 Search/Crawl public
 
