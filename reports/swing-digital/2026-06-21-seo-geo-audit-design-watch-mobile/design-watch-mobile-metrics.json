@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-06-20T23:46:10.753Z",
+  "url": "https://swing.appmiweb.com/#page-1",
+  "viewport": "390x844",
+  "cssHref": [
+    "https://swing.appmiweb.com/css/style.css?v=20260621-0145"
+  ],
+  "hero": {
+    "x": 0,
+    "y": 102.15625,
+    "width": 390,
+    "height": 688,
+    "top": 102.15625,
+    "right": 390,
+    "bottom": 790.15625,
+    "left": 0
+  },
+  "team": {
+    "x": 0,
+    "y": 790.15625,
+    "width": 390,
+    "height": 1173.765625,
+    "top": 790.15625,
+    "right": 390,
+    "bottom": 1963.921875,
+    "left": 0
+  },
+  "teamPreviewPx": 53.84375,
+  "horizontalOverflow": false,
+  "cta": {
+    "x": 52.640625,
+    "y": 473.78125,
+    "width": 231,
+    "height": 42,
+    "top": 473.78125,
+    "right": 283.640625,
+    "bottom": 515.78125,
+    "left": 52.640625
+  },
+  "trust": {
+    "x": 25.59375,
+    "y": 428.203125,
+    "width": 285.109375,
+    "height": 40.78125,
+    "top": 428.203125,
+    "right": 310.703125,
+    "bottom": 468.984375,
+    "left": 25.59375
+  },
+  "social": {
+    "x": 195,
+    "y": 613.78125,
+    "width": 179,
+    "height": 161.984375,
+    "top": 613.78125,
+    "right": 374,
+    "bottom": 775.765625,
+    "left": 195
+  },
+  "bottomLeft": {
+    "x": 16,
+    "y": 682.96875,
+    "width": 179,
+    "height": 92.796875,
+    "top": 682.96875,
+    "right": 195,
+    "bottom": 775.765625,
+    "left": 16
+  },
+  "computed": {
+    "heroHeight": "688px",
+    "heroMinHeight": "0px",
+    "gridTemplateAreas": "\"content content\" \"links social\"",
+    "sectionHeight": "calc(100dvh - 60px)"
+  }
+}

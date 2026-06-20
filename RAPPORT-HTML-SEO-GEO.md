@@ -4,9 +4,33 @@ Date : 2026-06-21
 
 ## URL locale du rapport courant
 
-http://127.0.0.1:8768/
+http://127.0.0.1:8769/
 
-Cette URL pointe vers le rapport SEO/GEO public régénéré après les chantiers PRD-002, PRD-004 et PRD-005.
+Cette URL pointe vers le rapport SEO/GEO public régénéré après correction du cache CSS Design Watch mobile.
+
+## Rapport courant du 2026-06-21 — Design Watch mobile public
+
+Fichier HTML :
+
+```text
+reports/swing-digital/2026-06-21-seo-geo-audit-design-watch-mobile/index.html
+```
+
+Verdict : le rapport confirme l’amélioration publique du chantier Design Watch mobile après bump CSS `20260621-0145`. À 390×844, le hero mobile mesure 688 px, `min-height` vaut 0 px et “Qui sommes-nous ?” apparaît sur environ 54 px dans le premier écran. Design Watch progresse donc de 8/10 à 8,5/10.
+
+Comparaison avec le rapport précédent `8768` :
+
+- `Search/Crawl` reste à 9/10 avec 0 écart public et 24 URL sitemap contrôlées ;
+- `Design Watch` passe de 8/10 à 8,5/10 grâce à l’aperçu mobile de “Qui sommes-nous ?” ;
+- `Responsive dynamique` reste à 8/10 avec warning lazy-load non bloquant ;
+- `Measurement` reste à 5,5/10, car la mesure réelle attend toujours la production finale ;
+- la prochaine priorité utile devient `GEO/Citation`, avec un panel ChatGPT, Perplexity et Claude.
+
+Le rapport précédent reste utile comme baseline :
+
+```text
+reports/swing-digital/2026-06-21-seo-geo-audit-public/index.html
+```
 
 ## URL publique Cloudflare précédente
 

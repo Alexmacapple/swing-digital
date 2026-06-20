@@ -1,0 +1,65 @@
+{
+  "url": "https://swing.appmiweb.com/",
+  "generated_at": "2026-06-20T23:45:32.324Z",
+  "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+  "summary": {
+    "status": "warning",
+    "verdict": "Homepage renders on tested viewports, but browser evidence found issues to review."
+  },
+  "viewports": [
+    {
+      "label": "Desktop",
+      "viewport": "1440x1800",
+      "status": "warning",
+      "issues": [
+        "26 image(s) did not load."
+      ],
+      "metrics": {
+        "title": "Swing Digital - Espaces augmentés, expériences immersives",
+        "innerWidth": 1440,
+        "innerHeight": 1800,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440,
+        "horizontalOverflow": false,
+        "documentHeight": 10839,
+        "hasViewportMeta": true,
+        "h1Count": 1,
+        "h1Text": [
+          "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+        ],
+        "navLinkCount": 32,
+        "imageCount": 34,
+        "missingImages": 26,
+        "visibleTextLength": 3028,
+        "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi"
+      }
+    },
+    {
+      "label": "Mobile",
+      "viewport": "390x1400",
+      "status": "warning",
+      "issues": [
+        "26 image(s) did not load."
+      ],
+      "metrics": {
+        "title": "Swing Digital - Espaces augmentés, expériences immersives",
+        "innerWidth": 390,
+        "innerHeight": 1400,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "horizontalOverflow": false,
+        "documentHeight": 7535,
+        "hasViewportMeta": true,
+        "h1Count": 1,
+        "h1Text": [
+          "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+        ],
+        "navLinkCount": 32,
+        "imageCount": 34,
+        "missingImages": 26,
+        "visibleTextLength": 2940,
+        "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva"
+      }
+    }
+  ]
+}

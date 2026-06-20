@@ -1,0 +1,996 @@
+{
+  "site": "swing.appmiweb.com",
+  "audited_url": "https://swing.appmiweb.com/",
+  "report_language": "fr",
+  "generated_at": "2026-06-20T23:48:21.922643Z",
+  "summary": {
+    "headline": "Audit SEO/GEO public régénéré après correction du cache CSS : Design Watch mobile progresse, Search/Crawl reste validé et la mesure demeure en readiness préproduction.",
+    "description": "Rapport généré après bump de version CSS vers 20260621-0145 pour forcer la préproduction à servir le hero mobile compact. Les captures du site audité, l’étude responsive, la mesure mobile 390x844 et le contrôle Search/Crawl public sont intégrés comme preuves.",
+    "status": "partial",
+    "biggest_blocker": "Les données propriétaires et la production finale restent absentes : GSC, GA4/GTM, Bing Webmaster, logs, citations IA réelles, hébergeur légal et scénario Réservations.",
+    "fastest_win": "Lancer le panel GEO/Citation ChatGPT, Perplexity et Claude pour vérifier les citations réelles maintenant que la base crawl, couche IA et Design Watch est solide.",
+    "data_confidence": "high",
+    "decision": "Clore PRD-002 côté préproduction publique : l’amélioration mobile est visible après cache-busting, puis prioriser GEO/Citation sans attendre la mise en production finale."
+  },
+  "executive_brief": [
+    "Design Watch passe de 8/10 à 8,5/10 : la préproduction publique charge maintenant style.css?v=20260621-0145 et laisse apparaître environ 54 px de “Qui sommes-nous ?” dans le premier écran mobile 390x844.",
+    "Search/Crawl reste à 9/10 : la relance publique confirme 0 écart, 24 URL sitemap contrôlées et 9 artefacts interdits non publics.",
+    "Responsive dynamique reste à 8/10 avec warning : aucun overflow mobile/desktop, mais l’alerte images lazy-load reste à interpréter avec le contrôle HTTP complémentaire.",
+    "Measurement reste à 5,5/10 : les événements et sélecteurs sont prêts, mais aucune donnée GSC, GA4, Bing, logs, citation IA ou conversion n’est observée."
+  ],
+  "metrics": [
+    {
+      "label": "URL sitemap contrôlées",
+      "value": "24",
+      "detail": "Toutes les URL du sitemap public ont été vérifiées."
+    },
+    {
+      "label": "Pages HTTP 200",
+      "value": "24/24",
+      "detail": "Pages sitemap accessibles publiquement."
+    },
+    {
+      "label": "Écarts Search/Crawl",
+      "value": "0",
+      "detail": "Relance npm run appmiweb:search-crawl après correction cache-busting."
+    },
+    {
+      "label": "Artefacts interdits non publics",
+      "value": "9/9",
+      "detail": "Inclut les chemins de travail déjà problématiques en cache."
+    },
+    {
+      "label": "CSS public chargé",
+      "value": "20260621-0145",
+      "detail": "La page publique charge la nouvelle URL versionnée style.css?v=20260621-0145."
+    },
+    {
+      "label": "Aperçu “Qui sommes-nous ?” mobile",
+      "value": "53.8px",
+      "detail": "Mesure Playwright 390x844 : début de la section équipe visible dans le premier écran."
+    },
+    {
+      "label": "Hero mobile public",
+      "value": "688px",
+      "detail": "Hero compacté ; min-height calculé à 0px sur la règle mobile."
+    },
+    {
+      "label": "Overflow horizontal",
+      "value": "0",
+      "detail": "Aucun overflow détecté dans les captures et mesures responsive."
+    },
+    {
+      "label": "Événements de mesure prêts",
+      "value": "9",
+      "detail": "Événements documentés dans la matrice préproduction."
+    },
+    {
+      "label": "Données propriétaires",
+      "value": "unknown",
+      "detail": "GSC, GA4/GTM, Bing Webmaster, logs, citations IA et conversions non fournis."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Search/Crawl",
+      "score": 9,
+      "max": 10,
+      "note": "24 URL sitemap OK, robots/llms/canonicals/OG OK ; 9 artefacts interdits contrôlés et non publics."
+    },
+    {
+      "label": "Couche IA publique",
+      "score": 9,
+      "max": 10,
+      "note": "Endpoints IA publiés et accessibles ; citations réelles non encore mesurées."
+    },
+    {
+      "label": "Design Watch",
+      "score": 8.5,
+      "max": 10,
+      "note": "Hero mobile compact confirmé publiquement : CTA, confiance et amorce de “Qui sommes-nous ?” visibles."
+    },
+    {
+      "label": "Responsive dynamique",
+      "score": 8,
+      "max": 10,
+      "note": "Aucun overflow mobile/desktop ; warning lazy-load toujours à classer comme timing de capture."
+    },
+    {
+      "label": "GEO/Citation",
+      "score": 7.5,
+      "max": 10,
+      "note": "Base d’extraction solide avec faits visibles et couche IA ; panel de citations réel non lancé."
+    },
+    {
+      "label": "Measurement",
+      "score": 5.5,
+      "max": 10,
+      "note": "Matrice et sélecteurs prêts en préproduction ; données propriétaires toujours inconnues."
+    },
+    {
+      "label": "Readiness globale",
+      "score": 8.5,
+      "max": 10,
+      "note": "Préproduction robuste côté crawl, couche IA et Design Watch ; prod finale et mesure réelle restent hors périmètre."
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "title": "Design Watch mobile amélioré et confirmé publiquement",
+      "observed": [
+        "La page publique charge https://swing.appmiweb.com/css/style.css?v=20260621-0145 après correction du cache-busting.",
+        "À 390x844, le hero mesure 688 px, contre 784 px avec l’ancienne URL CSS cache HIT.",
+        "La section “Qui sommes-nous ?” apparaît sur environ 53,8 px dans le premier écran mobile.",
+        "Le CTA, le signal de confiance, les liens bas de hero et les liens sociaux restent visibles sans débordement horizontal."
+      ],
+      "inferred": [
+        "Le chantier PRD-002 est désormais visible sur la préproduction publique, pas seulement en local.",
+        "La première impression est plus orientée décision : l’utilisateur voit plus tôt la suite éditoriale “Qui sommes-nous ?”.",
+        "Le gain justifie une progression de Design Watch à 8,5/10, mais pas 9/10 car la mesure réelle et les citations IA restent hors audit."
+      ],
+      "recommended": [
+        "Clore le chantier Design Watch mobile côté préproduction, sauf ajustement visuel demandé après revue humaine.",
+        "Conserver le bump de version CSS à chaque changement visuel publié derrière Cloudflare.",
+        "Prioriser ensuite GEO/Citation avec un panel de requêtes ChatGPT, Perplexity et Claude."
+      ],
+      "evidence": [
+        {
+          "label": "Mesure mobile Design Watch",
+          "path": "design-watch-mobile-metrics.json"
+        },
+        {
+          "label": "Capture mobile du site audité",
+          "path": "site-screenshots/mobile.png"
+        },
+        {
+          "label": "Capture desktop du site audité",
+          "path": "site-screenshots/desktop.png"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Search/Crawl public reste validé après relance",
+      "observed": [
+        "npm run appmiweb:search-crawl termine avec 0 écart public.",
+        "24 URL sitemap sont contrôlées et répondent en HTTP 200.",
+        "Les 9 artefacts interdits contrôlés sont non publics."
+      ],
+      "inferred": [
+        "La correction de cache-busting n’a pas dégradé le crawl public.",
+        "Le score Search/Crawl reste à 9/10 pour la préproduction Appmiweb."
+      ],
+      "recommended": [
+        "Relancer le même contrôle après chaque purge CDN ou publication Appmiweb.",
+        "Rejouer le contrôle sur le domaine final HTTPS avant production."
+      ],
+      "evidence": [
+        {
+          "label": "Preuve Search/Crawl",
+          "path": "search-crawl-public-evidence.json"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Avertissement responsive images lazy-load non bloquant",
+      "observed": [
+        "L’étude responsive ne détecte aucun overflow horizontal sur desktop ou mobile.",
+        "Le script de capture signale encore des images lazy non chargées au premier rendu.",
+        "Le contrôle HTTP complémentaire vérifie 24 URLs restantes en HTTP 200."
+      ],
+      "inferred": [
+        "L’alerte reste liée au timing de capture et au lazy-loading, pas à des images cassées confirmées.",
+        "Le script d’audit peut encore être amélioré pour scroller et attendre plus finement les images différées."
+      ],
+      "recommended": [
+        "Garder Responsive dynamique à 8/10 warning.",
+        "Traiter plus tard l’amélioration du script d’audit lazy-load, non bloquante pour la préproduction."
+      ],
+      "evidence": [
+        {
+          "label": "Étude responsive",
+          "path": "responsive-study.json"
+        },
+        {
+          "label": "Contrôle images lazy-load",
+          "path": "homepage-image-status.json"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Mesure réelle encore absente, volontairement non traitée avant production",
+      "observed": [
+        "La matrice de mesure liste 9 événements prêts en préproduction.",
+        "Aucun tag GA4/GTM n’est installé en préproduction.",
+        "Aucun export GSC, Bing Webmaster, logs, citation IA ou conversion n’est disponible."
+      ],
+      "inferred": [
+        "Measurement reste un score de préparation, pas un score de performance réelle.",
+        "Ce blocage est attendu tant que la mise en production finale n’est pas décidée."
+      ],
+      "recommended": [
+        "Ne pas lancer le chantier tracking réel tant que la production finale n’est pas prête.",
+        "Conserver la documentation des événements pour activation future."
+      ],
+      "evidence": [
+        {
+          "label": "Preuve Measurement",
+          "path": "measurement-readiness-evidence.json"
+        }
+      ]
+    }
+  ],
+  "analysis_cohorts": [
+    {
+      "name": "Search / crawl",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Crawl public, sitemap, robots.txt, canonicals, Open Graph, artefacts interdits.",
+      "verdict": "La surface publique Appmiweb reste saine après la correction de cache CSS.",
+      "evidence": "search-crawl-public-evidence.json : 0 écart, 24 URL sitemap contrôlées.",
+      "next_action": "Relancer sur le domaine final HTTPS avant production."
+    },
+    {
+      "name": "AI citation",
+      "score": "7.5/10",
+      "status": "partial",
+      "what_it_checks": "Faits extractibles, couche IA, limites et préparation aux citations.",
+      "verdict": "La base est solide mais les citations réelles ne sont pas encore mesurées.",
+      "evidence": "/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld publics.",
+      "next_action": "Lancer le panel de requêtes ChatGPT, Perplexity et Claude."
+    },
+    {
+      "name": "Browser agent",
+      "score": "8/10",
+      "status": "ok",
+      "what_it_checks": "Compréhension du premier écran et chemins d’action visibles.",
+      "verdict": "Le CTA, le signal de confiance et la suite de page sont plus lisibles sur mobile.",
+      "evidence": "design-watch-mobile-metrics.json et captures site.",
+      "next_action": "Surveiller les flows Réservations quand le scénario transactionnel sera décidé."
+    },
+    {
+      "name": "Design Watch",
+      "score": "8.5/10",
+      "status": "ok",
+      "what_it_checks": "Première impression, hiérarchie, confiance, lisibilité mobile.",
+      "verdict": "Le chantier mobile a bien remonté “Qui sommes-nous ?” dans le premier écran.",
+      "evidence": "teamPreviewPx = 53,8 px à 390x844 avec style.css?v=20260621-0145.",
+      "next_action": "Clore PRD-002 et passer à GEO/Citation."
+    },
+    {
+      "name": "Responsive dynamique",
+      "score": "8/10",
+      "status": "warning",
+      "what_it_checks": "Overflow, images, H1, title, viewport, texte visible.",
+      "verdict": "Rendu exploitable ; warning lazy-load non bloquant.",
+      "evidence": "responsive-study.json + homepage-image-status.json.",
+      "next_action": "Améliorer plus tard le script d’audit lazy-load si l’on veut réduire les faux warnings."
+    },
+    {
+      "name": "Measurement owner",
+      "score": "5.5/10",
+      "status": "partial",
+      "what_it_checks": "Préparation GSC, GA4/GTM, Bing, logs, citations IA et conversions.",
+      "verdict": "La mesure est prête côté plan, mais aucune donnée propriétaire n’est observée.",
+      "evidence": "measurement-readiness-evidence.json.",
+      "next_action": "Attendre la décision de production finale pour brancher les outils réels."
+    },
+    {
+      "name": "Skillpack quality v1.2.3",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Livrables audit.json, HTML, captures, responsive, Design Watch, cohortes, couche IA.",
+      "verdict": "Le livrable suit le workflow attendu et sépare preuves site et captures rapport.",
+      "evidence": "Dossier reports/swing-digital/2026-06-21-seo-geo-audit-design-watch-mobile/.",
+      "next_action": "Servir le rapport et capturer son UI desktop/mobile."
+    }
+  ],
+  "design_watch": {
+    "score": "8.5/10",
+    "verdict": "Première impression mobile plus décisionnelle après cache-busting public.",
+    "summary": "Le hero mobile reste dense, mais la version publique corrigée réduit la hauteur du premier écran et fait apparaître “Qui sommes-nous ?” sans supprimer le contenu existant.",
+    "confidence": "high",
+    "observed": [
+      "style.css?v=20260621-0145 est chargé par la préproduction publique.",
+      "À 390x844, le hero mesure 688 px et la section “Qui sommes-nous ?” apparaît sur 53,8 px.",
+      "Aucun overflow horizontal détecté.",
+      "Le CTA Découvrir les expériences et le signal de confiance restent visibles."
+    ],
+    "inferred": [
+      "La compréhension de la suite éditoriale est meilleure au premier contact mobile.",
+      "Le score progresse, mais les preuves de citations IA et de conversion restent nécessaires pour dépasser durablement 8,5/10."
+    ],
+    "recommended": [
+      "Ne plus prioriser Design Watch mobile en préproduction tant que la revue humaine ne demande pas un autre ajustement.",
+      "Prioriser GEO/Citation pour obtenir une preuve externe de visibilité IA."
+    ]
+  },
+  "responsive_study": {
+    "url": "https://swing.appmiweb.com/",
+    "generated_at": "2026-06-20T23:45:32.324Z",
+    "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+    "summary": {
+      "status": "warning",
+      "verdict": "Homepage renders on tested viewports, but browser evidence found issues to review."
+    },
+    "viewports": [
+      {
+        "label": "Desktop",
+        "viewport": "1440x1800",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 1440,
+          "innerHeight": 1800,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false,
+          "documentHeight": 10839,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 3028,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi"
+        }
+      },
+      {
+        "label": "Mobile",
+        "viewport": "390x1400",
+        "status": "warning",
+        "issues": [
+          "26 image(s) did not load."
+        ],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 390,
+          "innerHeight": 1400,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false,
+          "documentHeight": 7535,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 26,
+          "visibleTextLength": 2940,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva"
+        }
+      }
+    ]
+  },
+  "site_visual_evidence": [
+    {
+      "label": "Desktop screenshot",
+      "path": "site-screenshots/desktop.png",
+      "viewport": "1440x1800",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 1440px"
+      ]
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "site-screenshots/mobile.png",
+      "viewport": "390x1400",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 390px"
+      ]
+    }
+  ],
+  "screenshot_status": {
+    "status": "captured",
+    "method": "Playwright via capture_site_screenshots.mjs",
+    "desktop": "site-screenshots/desktop.png",
+    "mobile": "site-screenshots/mobile.png"
+  },
+  "technical_checks": {
+    "search_crawl_public": {
+      "generatedAt": "2026-06-20T23:45:31.396Z",
+      "base": "https://swing.appmiweb.com",
+      "sitemapUrlCount": 24,
+      "sitemapStatusOk": true,
+      "robotsStatusOk": true,
+      "robotsDeclaresSitemap": true,
+      "llmsStatusOk": true,
+      "llmsMentionsCanonicalBase": true,
+      "pages200": 24,
+      "pagesCanonicalOk": 24,
+      "pagesOgUrlOk": 24,
+      "pagesWithOgImage": 24,
+      "ogImagesChecked": 21,
+      "ogImagesOk": 21,
+      "forbiddenArtifactsChecked": 9,
+      "forbiddenArtifactsNotPublicOk": 9,
+      "forbiddenArtifactsCacheOnly": 0
+    },
+    "search_crawl_failures": [],
+    "seo_check": {
+      "status": "passed",
+      "passed": 12,
+      "command": "npm run seo:check"
+    },
+    "build_prod": {
+      "status": "passed",
+      "files": 443,
+      "excluded_artifacts": 3,
+      "command": "npm run build:prod"
+    },
+    "appmiweb_preflight": {
+      "status": "passed_with_warnings",
+      "files": 443,
+      "warnings": 3,
+      "command": "npm run appmiweb:preflight"
+    },
+    "ai_public_endpoints": [
+      {
+        "path": "/llms.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/for-ai/",
+        "status": 200,
+        "content_type": "text/html"
+      },
+      {
+        "path": "/for-ai.json",
+        "status": 200,
+        "content_type": "application/json"
+      },
+      {
+        "path": "/for-ai.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/schema-webpage.jsonld",
+        "status": 200,
+        "content_type": "application/octet-stream"
+      }
+    ],
+    "homepage_image_status": {
+      "generated_at": "2026-06-20T23:46:15.409Z",
+      "url": "https://swing.appmiweb.com/",
+      "method": "Playwright viewport 1440x1800, initial load, scroll pass, then HEAD on unresolved lazy images",
+      "initial": {
+        "imageCount": 34,
+        "missingImages": 25,
+        "lazyImages": 34
+      },
+      "after_scroll": {
+        "imageCount": 34,
+        "missingImages": 24
+      },
+      "unresolved_http_checks": [
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/svg+xml"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        }
+      ],
+      "interpretation": "Les images non chargées dans le DOM sont des images lazy/visuelles différées dont les URLs répondent 200 en HTTP."
+    },
+    "measurement_readiness": {
+      "generated_at": "2026-06-20T22:58:31.356Z",
+      "source_matrix": "docs/SEO-GEO-MEASUREMENT-MATRIX.csv",
+      "source_plan": "docs/SEO-GEO-MEASUREMENT-PLAN.md",
+      "status": "prepared_not_installed",
+      "event_count": 9,
+      "metric_statuses": [
+        "unknown"
+      ],
+      "production_activation_modes": [
+        "activate_on_final_domain",
+        "activate_when_booking_active",
+        "activate_when_newsletter_active"
+      ],
+      "tested_command": "npx playwright test tests/seo-geo.spec.js --project=desktop-1920",
+      "tested_result": "11 passed",
+      "guardrails": [
+        "No GA4 or GTM tag installed in preproduction files.",
+        "All event metrics remain unknown until proprietary data exists.",
+        "Disabled booking and newsletter buttons are documented as non-conversions."
+      ],
+      "events": [
+        {
+          "event_name": "page_view_home",
+          "page_path": "index.html",
+          "selector": "body[data-section=\"accueil\"]",
+          "trigger": "page_view",
+          "preprod_status": "documented",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "page_view_visible_in_realtime",
+          "metric_status": "unknown",
+          "notes": "no_tag_installed_in_preprod"
+        },
+        {
+          "event_name": "click_hero_experiences",
+          "page_path": "index.html",
+          "selector": ".hero-page1__cta",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "event_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "primary_discovery_cta"
+        },
+        {
+          "event_name": "click_contact_home",
+          "page_path": "index.html",
+          "selector": ".hero-page1__bottom-left a[href=\"mailto:production@swingdigitalproduction.com\"]",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "email_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "contact_intent"
+        },
+        {
+          "event_name": "click_social_instagram",
+          "page_path": "index.html",
+          "selector": ".hero-page1__bottom-right a[href=\"https://www.instagram.com/swingdigital_france/\"]",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "outbound_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "social_intent"
+        },
+        {
+          "event_name": "open_mobile_menu",
+          "page_path": "index.html",
+          "selector": ".site-nav__burger",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "menu_open_event_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "navigation_intent"
+        },
+        {
+          "event_name": "click_reservation_disabled",
+          "page_path": "reservations.html",
+          "selector": ".page58__reserve-btn",
+          "trigger": "click",
+          "preprod_status": "documented_disabled",
+          "prod_activation": "activate_when_booking_active",
+          "tool_target": "GA4_or_GTM",
+          "owner": "product_marketing",
+          "success_signal": "no_conversion_until_booking_enabled",
+          "metric_status": "unknown",
+          "notes": "disabled_button_is_not_a_conversion"
+        },
+        {
+          "event_name": "click_newsletter_disabled",
+          "page_path": "reservations.html",
+          "selector": ".page58__subscribe-btn",
+          "trigger": "click",
+          "preprod_status": "documented_disabled",
+          "prod_activation": "activate_when_newsletter_active",
+          "tool_target": "GA4_or_GTM",
+          "owner": "product_marketing",
+          "success_signal": "no_conversion_until_newsletter_enabled",
+          "metric_status": "unknown",
+          "notes": "disabled_button_is_not_a_conversion"
+        },
+        {
+          "event_name": "click_reservation_faq",
+          "page_path": "reservations.html",
+          "selector": ".page58__faq-link",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "faq_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "reservation_information_intent"
+        },
+        {
+          "event_name": "click_private_visit_contact",
+          "page_path": "reservations.html",
+          "selector": ".page61__contact-link",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "private_visit_contact_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "group_or_private_visit_intent"
+        }
+      ]
+    },
+    "design_watch_mobile_metrics": {
+      "generated_at": "2026-06-20T23:46:10.753Z",
+      "url": "https://swing.appmiweb.com/#page-1",
+      "viewport": "390x844",
+      "cssHref": [
+        "https://swing.appmiweb.com/css/style.css?v=20260621-0145"
+      ],
+      "hero": {
+        "x": 0,
+        "y": 102.15625,
+        "width": 390,
+        "height": 688,
+        "top": 102.15625,
+        "right": 390,
+        "bottom": 790.15625,
+        "left": 0
+      },
+      "team": {
+        "x": 0,
+        "y": 790.15625,
+        "width": 390,
+        "height": 1173.765625,
+        "top": 790.15625,
+        "right": 390,
+        "bottom": 1963.921875,
+        "left": 0
+      },
+      "teamPreviewPx": 53.84375,
+      "horizontalOverflow": false,
+      "cta": {
+        "x": 52.640625,
+        "y": 473.78125,
+        "width": 231,
+        "height": 42,
+        "top": 473.78125,
+        "right": 283.640625,
+        "bottom": 515.78125,
+        "left": 52.640625
+      },
+      "trust": {
+        "x": 25.59375,
+        "y": 428.203125,
+        "width": 285.109375,
+        "height": 40.78125,
+        "top": 428.203125,
+        "right": 310.703125,
+        "bottom": 468.984375,
+        "left": 25.59375
+      },
+      "social": {
+        "x": 195,
+        "y": 613.78125,
+        "width": 179,
+        "height": 161.984375,
+        "top": 613.78125,
+        "right": 374,
+        "bottom": 775.765625,
+        "left": 195
+      },
+      "bottomLeft": {
+        "x": 16,
+        "y": 682.96875,
+        "width": 179,
+        "height": 92.796875,
+        "top": 682.96875,
+        "right": 195,
+        "bottom": 775.765625,
+        "left": 16
+      },
+      "computed": {
+        "heroHeight": "688px",
+        "heroMinHeight": "0px",
+        "gridTemplateAreas": "\"content content\" \"links social\"",
+        "sectionHeight": "calc(100dvh - 60px)"
+      }
+    },
+    "report_ui_quality": {
+      "status": "passed",
+      "report_url": "http://127.0.0.1:8769/",
+      "desktop_overflow": false,
+      "mobile_overflow": false,
+      "console_errors": 0,
+      "screenshots": [
+        "report-ui-desktop.png",
+        "report-ui-mobile.png"
+      ]
+    }
+  },
+  "public_measurements": [
+    {
+      "source": "Measurement matrix",
+      "access": "available",
+      "metric": "event readiness",
+      "limit": "Préparation de collecte uniquement, pas une métrique de trafic."
+    },
+    {
+      "source": "Google Search Console",
+      "access": "not_available",
+      "metric": "impressions, clicks, CTR, positions",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "GA4/GTM",
+      "access": "not_available",
+      "metric": "sessions, conversions, referrals IA",
+      "limit": "Tag non installé en préproduction et export non fourni."
+    },
+    {
+      "source": "Bing Webmaster Tools",
+      "access": "not_available",
+      "metric": "indexation, clics, performance Bing/AI",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "Server logs",
+      "access": "not_available",
+      "metric": "hits bots Google/Bing/AI",
+      "limit": "Logs non fournis."
+    },
+    {
+      "source": "Manual public audit",
+      "access": "available",
+      "metric": "crawl, canonicals, OG, endpoints IA, captures",
+      "limit": "Ne mesure pas le trafic ni les citations réelles."
+    }
+  ],
+  "action_plan": [
+    {
+      "when": "Maintenant",
+      "action": "Lancer le panel GEO/Citation ChatGPT, Perplexity et Claude.",
+      "outcome": "Passer d’une readiness GEO à une preuve de citations ou de non-citations réelles."
+    },
+    {
+      "when": "Préproduction continue",
+      "action": "Conserver le contrôle npm run appmiweb:search-crawl après chaque publication ou purge.",
+      "outcome": "Éviter le retour d’un artefact public ou d’un cache CSS obsolète."
+    },
+    {
+      "when": "Avant production finale",
+      "action": "Compléter hébergeur légal, domaine final HTTPS, GSC, GA4/GTM, Bing Webmaster et scénario Réservations.",
+      "outcome": "Lever les blocages P1 dépendants de la mise en production."
+    },
+    {
+      "when": "Plus tard",
+      "action": "Améliorer le script responsive pour traiter plus finement les images lazy-load.",
+      "outcome": "Réduire les warnings non bloquants dans les rapports futurs."
+    }
+  ],
+  "ai_layer_package": {
+    "status": "already_public",
+    "note": "Aucun ZIP généré dans ce rapport : la couche IA est déjà publiée sur la préproduction.",
+    "files": [
+      {
+        "label": "llms.txt",
+        "path": "https://swing.appmiweb.com/llms.txt",
+        "purpose": "Index public lisible par agents."
+      },
+      {
+        "label": "/for-ai",
+        "path": "https://swing.appmiweb.com/for-ai/",
+        "purpose": "Page HTML de contexte agent-readable."
+      },
+      {
+        "label": "/for-ai.json",
+        "path": "https://swing.appmiweb.com/for-ai.json",
+        "purpose": "Faits structurés et consignes de citation."
+      },
+      {
+        "label": "/for-ai.txt",
+        "path": "https://swing.appmiweb.com/for-ai.txt",
+        "purpose": "Contexte texte compact pour agents."
+      },
+      {
+        "label": "schema-webpage.jsonld",
+        "path": "https://swing.appmiweb.com/schema-webpage.jsonld",
+        "purpose": "JSON-LD WebPage public."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "label": "Accueil public audité",
+      "url": "https://swing.appmiweb.com/"
+    },
+    {
+      "label": "CSS public versionné",
+      "url": "https://swing.appmiweb.com/css/style.css?v=20260621-0145"
+    },
+    {
+      "label": "robots.txt",
+      "url": "https://swing.appmiweb.com/robots.txt"
+    },
+    {
+      "label": "sitemap.xml",
+      "url": "https://swing.appmiweb.com/sitemap.xml"
+    },
+    {
+      "label": "llms.txt",
+      "url": "https://swing.appmiweb.com/llms.txt"
+    },
+    {
+      "label": "for-ai",
+      "url": "https://swing.appmiweb.com/for-ai/"
+    },
+    {
+      "label": "Search/Crawl evidence",
+      "path": "search-crawl-public-evidence.json"
+    },
+    {
+      "label": "Design Watch mobile metrics",
+      "path": "design-watch-mobile-metrics.json"
+    },
+    {
+      "label": "Desktop screenshot",
+      "path": "site-screenshots/desktop.png"
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "site-screenshots/mobile.png"
+    },
+    {
+      "label": "Responsive study",
+      "path": "responsive-study.json"
+    },
+    {
+      "label": "Homepage image lazy-load status",
+      "path": "homepage-image-status.json"
+    },
+    {
+      "label": "Measurement readiness evidence",
+      "path": "measurement-readiness-evidence.json"
+    },
+    {
+      "label": "Tests locaux",
+      "path": "npm run seo:check, npm run build:prod, npm run appmiweb:preflight"
+    },
+    {
+      "label": "Capture UI rapport desktop",
+      "path": "report-ui-desktop.png"
+    },
+    {
+      "label": "Capture UI rapport mobile",
+      "path": "report-ui-mobile.png"
+    },
+    {
+      "label": "Preuve QA UI rapport",
+      "path": "report-ui-visual-evidence.json"
+    }
+  ]
+}

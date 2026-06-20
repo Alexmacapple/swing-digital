@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-06-20T22:58:31.356Z",
+  "source_matrix": "docs/SEO-GEO-MEASUREMENT-MATRIX.csv",
+  "source_plan": "docs/SEO-GEO-MEASUREMENT-PLAN.md",
+  "status": "prepared_not_installed",
+  "event_count": 9,
+  "metric_statuses": [
+    "unknown"
+  ],
+  "production_activation_modes": [
+    "activate_on_final_domain",
+    "activate_when_booking_active",
+    "activate_when_newsletter_active"
+  ],
+  "tested_command": "npx playwright test tests/seo-geo.spec.js --project=desktop-1920",
+  "tested_result": "11 passed",
+  "guardrails": [
+    "No GA4 or GTM tag installed in preproduction files.",
+    "All event metrics remain unknown until proprietary data exists.",
+    "Disabled booking and newsletter buttons are documented as non-conversions."
+  ],
+  "events": [
+    {
+      "event_name": "page_view_home",
+      "page_path": "index.html",
+      "selector": "body[data-section=\"accueil\"]",
+      "trigger": "page_view",
+      "preprod_status": "documented",
+      "prod_activation": "activate_on_final_domain",
+      "tool_target": "GA4_or_GTM",
+      "owner": "marketing_tech",
+      "success_signal": "page_view_visible_in_realtime",
+      "metric_status": "unknown",
+      "notes": "no_tag_installed_in_preprod"
+    },
+    {
+      "event_name": "click_hero_experiences",
+      "page_path": "index.html",
+      "selector": ".hero-page1__cta",
+      "trigger": "click",
+      "preprod_status": "trackable",
+      "prod_activation": "activate_on_final_domain",
+      "tool_target": "GA4_or_GTM",
+      "owner": "marketing_tech",
+      "success_signal": "event_visible_in_debug_view",
+      "metric_status": "unknown",
+      "notes": "primary_discovery_cta"
+    },
+    {
+      "event_name": "click_contact_home",
+      "page_path": "index.html",
+      "selector": ".hero-page1__bottom-left a[href=\"mailto:production@swingdigitalproduction.com\"]",
+      "trigger": "click",
+      "preprod_status": "trackable",
+      "prod_activation": "activate_on_final_domain",
+      "tool_target": "GA4_or_GTM",
+      "owner": "marketing_tech",
+      "success_signal": "email_click_visible_in_debug_view",
+      "metric_status": "unknown",
+      "notes": "contact_intent"
+    },
+    {
+      "event_name": "click_social_instagram",
+      "page_path": "index.html",
+      "selector": ".hero-page1__bottom-right a[href=\"https://www.instagram.com/swingdigital_france/\"]",
+      "trigger": "click",
+      "preprod_status": "trackable",
+      "prod_activation": "activate_on_final_domain",
+      "tool_target": "GA4_or_GTM",
+      "owner": "marketing_tech",
+      "success_signal": "outbound_click_visible_in_debug_view",
+      "metric_status": "unknown",
+      "notes": "social_intent"
+    },
+    {
+      "event_name": "open_mobile_menu",
+      "page_path": "index.html",
+      "selector": ".site-nav__burger",
+      "trigger": "click",
+      "preprod_status": "trackable",
+      "prod_activation": "activate_on_final_domain",
+      "tool_target": "GA4_or_GTM",
+      "owner": "marketing_tech",
+      "success_signal": "menu_open_event_visible_in_debug_view",
+      "metric_status": "unknown",
+      "notes": "navigation_intent"
+    },
+    {
+      "event_name": "click_reservation_disabled",
+      "page_path": "reservations.html",
+      "selector": ".page58__reserve-btn",
+      "trigger": "click",
+      "preprod_status": "documented_disabled",
+      "prod_activation": "activate_when_booking_active",
+      "tool_target": "GA4_or_GTM",
+      "owner": "product_marketing",
+      "success_signal": "no_conversion_until_booking_enabled",
+      "metric_status": "unknown",
+      "notes": "disabled_button_is_not_a_conversion"
+    },
+    {
+      "event_name": "click_newsletter_disabled",
+      "page_path": "reservations.html",
+      "selector": ".page58__subscribe-btn",
+      "trigger": "click",
+      "preprod_status": "documented_disabled",
+      "prod_activation": "activate_when_newsletter_active",
+      "tool_target": "GA4_or_GTM",
+      "owner": "product_marketing",
+      "success_signal": "no_conversion_until_newsletter_enabled",
+      "metric_status": "unknown",
+      "notes": "disabled_button_is_not_a_conversion"
+    },
+    {
+      "event_name": "click_reservation_faq",
+      "page_path": "reservations.html",
+      "selector": ".page58__faq-link",
+      "trigger": "click",
+      "preprod_status": "trackable",
+      "prod_activation": "activate_on_final_domain",
+      "tool_target": "GA4_or_GTM",
+      "owner": "marketing_tech",
+      "success_signal": "faq_click_visible_in_debug_view",
+      "metric_status": "unknown",
+      "notes": "reservation_information_intent"
+    },
+    {
+      "event_name": "click_private_visit_contact",
+      "page_path": "reservations.html",
+      "selector": ".page61__contact-link",
+      "trigger": "click",
+      "preprod_status": "trackable",
+      "prod_activation": "activate_on_final_domain",
+      "tool_target": "GA4_or_GTM",
+      "owner": "marketing_tech",
+      "success_signal": "private_visit_contact_visible_in_debug_view",
+      "metric_status": "unknown",
+      "notes": "group_or_private_visit_intent"
+    }
+  ]
+}

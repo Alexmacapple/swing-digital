@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-06-20T23:50:45.227Z",
+  "reportUrl": "http://127.0.0.1:8769/",
+  "results": [
+    {
+      "label": "desktop",
+      "status": 200,
+      "screenshot": "reports/swing-digital/2026-06-21-seo-geo-audit-design-watch-mobile/report-ui-desktop.png",
+      "metrics": {
+        "title": "Audit SEO/GEO — swing.appmiweb.com",
+        "h1": "Audit SEO/GEO — swing.appmiweb.com",
+        "scrollWidth": 1440,
+        "innerWidth": 1440,
+        "horizontalOverflow": false,
+        "visibleTextLength": 4626
+      },
+      "console": []
+    },
+    {
+      "label": "mobile",
+      "status": 200,
+      "screenshot": "reports/swing-digital/2026-06-21-seo-geo-audit-design-watch-mobile/report-ui-mobile.png",
+      "metrics": {
+        "title": "Audit SEO/GEO — swing.appmiweb.com",
+        "h1": "Audit SEO/GEO — swing.appmiweb.com",
+        "scrollWidth": 390,
+        "innerWidth": 390,
+        "horizontalOverflow": false,
+        "visibleTextLength": 4626
+      },
+      "console": []
+    }
+  ]
+}

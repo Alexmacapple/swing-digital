@@ -1,0 +1,460 @@
+{
+  "generated_at": "2026-06-20T23:46:15.409Z",
+  "url": "https://swing.appmiweb.com/",
+  "method": "Playwright viewport 1440x1800, initial load, scroll pass, then HEAD on unresolved lazy images",
+  "initial": {
+    "imageCount": 34,
+    "missingImages": 25,
+    "lazyImages": 34,
+    "missing": [
+      {
+        "src": "https://swing.appmiweb.com/img/pages/page-4/creations.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Créations Swing Digital : réalité virtuelle, augmentée et immersive"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "La Centrale - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/acumen.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Acumen - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/the-archives.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "The Archives - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Saint Gratien - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Charlie Chaplin Centre Culturel - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Robert Laffont - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/drac.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "DRAC Île-de-France - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/cnc.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "CNC - Centre National du Cinéma - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Ville de Paris - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Galerie Joseph - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/orange.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Orange - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Principe Actif - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Épinay-sur-Seine - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Seine-Saint-Denis - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/forum-images.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Forum des Images - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Morrison Hotel Gallery - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/onda.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Onda - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/pixihead.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Pixihead - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Espace Jean Legendre - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Grand Est - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Promenons-nous dans les bois - EJT-Labo - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Fondation Jeunesse Feu Vert - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Fondation d'Entreprise Vinci pour la Cité - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/pole-media.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Grand Paris Pôle Média - Partenaire Swing Digital"
+      }
+    ]
+  },
+  "after_scroll": {
+    "imageCount": 34,
+    "missingImages": 24,
+    "lazyImages": 34,
+    "missing": [
+      {
+        "src": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "La Centrale - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/acumen.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Acumen - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/the-archives.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "The Archives - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Saint Gratien - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Charlie Chaplin Centre Culturel - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Robert Laffont - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/drac.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "DRAC Île-de-France - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/cnc.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "CNC - Centre National du Cinéma - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Ville de Paris - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Galerie Joseph - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/orange.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Orange - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Principe Actif - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Épinay-sur-Seine - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Seine-Saint-Denis - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/forum-images.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Forum des Images - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Morrison Hotel Gallery - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/onda.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Onda - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/pixihead.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Pixihead - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Espace Jean Legendre - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Grand Est - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Promenons-nous dans les bois - EJT-Labo - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Fondation Jeunesse Feu Vert - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Fondation d'Entreprise Vinci pour la Cité - Partenaire Swing Digital"
+      },
+      {
+        "src": "https://swing.appmiweb.com/img/partners/pole-media.png",
+        "loading": "lazy",
+        "visible": true,
+        "alt": "Grand Paris Pôle Média - Partenaire Swing Digital"
+      }
+    ]
+  },
+  "unresolved_http_checks": [
+    {
+      "src": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/acumen.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/the-archives.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/drac.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/cnc.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/svg+xml"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/orange.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/forum-images.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/onda.jpg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/pixihead.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/jpeg"
+    },
+    {
+      "src": "https://swing.appmiweb.com/img/partners/pole-media.png",
+      "status": 200,
+      "ok": true,
+      "contentType": "image/png"
+    }
+  ],
+  "interpretation": "Les images non chargées dans le DOM sont des images lazy/visuelles différées dont les URLs répondent 200 en HTTP."
+}
