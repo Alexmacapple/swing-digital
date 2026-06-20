@@ -121,8 +121,10 @@ test.describe('Lisibilité — blocs texte', () => {
             const titleRect = section.querySelector('.hero-page1__title-group h1').getBoundingClientRect();
             const trustRect = section.querySelector('.hero-page1__trust').getBoundingClientRect();
             const ctaRect = section.querySelector('.hero-page1__cta').getBoundingClientRect();
+            const bottomLeftRect = section.querySelector('.hero-page1__bottom-left').getBoundingClientRect();
             const socialRect = section.querySelector('.hero-page1__bottom-right').getBoundingClientRect();
             const chromeRect = document.querySelector('.breadcrumb').getBoundingClientRect();
+            const teamRect = document.querySelector('#page-2').getBoundingClientRect();
 
             return {
                 viewportWidth: window.innerWidth,
@@ -131,14 +133,20 @@ test.describe('Lisibilité — blocs texte', () => {
                 chromeBottom: chromeRect.bottom,
                 trustVisible: trustRect.top >= 0 && trustRect.bottom <= window.innerHeight,
                 ctaVisible: ctaRect.top >= 0 && ctaRect.bottom <= window.innerHeight,
+                bottomLeftAboveTeam: bottomLeftRect.bottom <= teamRect.top,
+                socialAboveTeam: socialRect.bottom <= teamRect.top,
                 socialRightMargin: window.innerWidth - socialRect.right,
+                teamPreviewPx: Math.max(0, window.innerHeight - teamRect.top),
             };
         });
 
         expect(heroStatus.titleTop).toBeGreaterThanOrEqual(heroStatus.chromeBottom + 8);
         expect(heroStatus.trustVisible).toBe(true);
         expect(heroStatus.ctaVisible).toBe(true);
+        expect(heroStatus.bottomLeftAboveTeam).toBe(true);
+        expect(heroStatus.socialAboveTeam).toBe(true);
         expect(heroStatus.socialRightMargin).toBeGreaterThanOrEqual(16);
+        expect(heroStatus.teamPreviewPx).toBeGreaterThanOrEqual(48);
     });
 
     test('page 56 Charlotte Henschel — la bio garde une respiration interne', async ({ page }) => {
