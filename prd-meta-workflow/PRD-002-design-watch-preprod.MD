@@ -1,6 +1,6 @@
 # PRD-002 : Design Watch préproduction
 
-**Statut** : Brouillon
+**Statut** : Validé localement
 **Date** : 2026-06-20
 **Auteur** : Alex
 **Source** : rapport HTML SEO/GEO v1.2.1 et captures desktop/mobile
@@ -111,8 +111,33 @@ Retenir l'Option A. Le chantier doit améliorer la preuve visuelle et la stabili
 
 ---
 
+## Résultat du 2026-06-21
+
+Changements livrés côté source :
+
+- ajout d'un signal de confiance court dans le hero d'accueil, limité aux soutiens et lieux de diffusion déjà visibles dans le site ;
+- ajout d'un CTA principal `Découvrir les expériences` vers `experiences-series.html` ;
+- ajout d'une marge mobile sur les liens sociaux pour éviter l'effet de bord droit ;
+- ajout d'un `scroll-margin-top` sur le hero pour éviter que l'ancre `#page-1` masque le titre sous le header et le fil d'Ariane ;
+- mise à jour du cache-buster CSS des 24 pages HTML vers `style.css?v=20260621-0033` pour éviter un rendu public avec ancien CSS ;
+- extension des tests responsive pour vérifier la preuve de confiance, le CTA, la marge sociale et la visibilité du H1 sous l'en-tête.
+
+Preuves locales :
+
+- `npx playwright test tests/responsive.spec.js --project=mobile-375 --project=mobile-600 --project=desktop-1920` : 61 tests passés, 5 ignorés ;
+- `npm test` : 1 304 tests passés, 161 ignorés ;
+- `npm run seo:check` : 10 tests passés ;
+- `npm run build:prod` : build production OK, 443 fichiers copiés dans `dist/` ;
+- `npm run appmiweb:preflight` : OK, avec les 3 avertissements préproduction déjà connus sur mentions légales et réservations ;
+- captures finales : `reports/swing-digital/2026-06-21-prd-002-design-watch/hero-desktop-1920.png` et `reports/swing-digital/2026-06-21-prd-002-design-watch/hero-mobile-375.png`.
+
+Verdict : le chantier est validé localement. La montée officielle de `Design Watch` vers 8/10 reste à confirmer par un nouveau rapport HTML SEO/GEO généré sur la version publiée.
+
+---
+
 ## Changelog
 
 | Date | Auteur | Changement |
 |------|--------|------------|
 | 2026-06-20 | Alex + Codex | Création du PRD |
+| 2026-06-21 | Alex + Codex | Implémentation et validation locale du signal de confiance, du CTA et de la marge sociale mobile |

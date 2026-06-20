@@ -66,9 +66,13 @@ test.describe('Lisibilité — blocs texte', () => {
             const titleGroup = section.querySelector('.hero-page1__title-group');
             const hashtags = section.querySelector('.hero-page1__hashtags');
             const summary = section.querySelector('.hero-page1__summary');
+            const trust = section.querySelector('.hero-page1__trust');
+            const cta = section.querySelector('.hero-page1__cta');
             const titleGroupStyle = getComputedStyle(titleGroup, '::before');
             const hashtagsStyle = getComputedStyle(hashtags);
             const summaryStyle = getComputedStyle(summary);
+            const trustStyle = getComputedStyle(trust);
+            const ctaStyle = getComputedStyle(cta);
 
             return {
                 overlayBackground: getComputedStyle(background).backgroundImage,
@@ -80,6 +84,12 @@ test.describe('Lisibilité — blocs texte', () => {
                 summaryTextShadow: summaryStyle.textShadow,
                 summaryLineHeight: parseFloat(summaryStyle.lineHeight),
                 summaryFontSize: parseFloat(summaryStyle.fontSize),
+                trustText: trust.textContent.trim(),
+                trustDisplay: trustStyle.display,
+                trustTextShadow: trustStyle.textShadow,
+                ctaText: cta.textContent.trim(),
+                ctaDisplay: ctaStyle.display,
+                ctaMinHeight: parseFloat(ctaStyle.minHeight),
             };
         });
 
@@ -91,6 +101,44 @@ test.describe('Lisibilité — blocs texte', () => {
         expect(readability.summaryWeight).toBeGreaterThanOrEqual(700);
         expect(readability.summaryTextShadow).not.toBe('none');
         expect(readability.summaryLineHeight / readability.summaryFontSize).toBeGreaterThanOrEqual(1.6);
+        expect(readability.trustText).toContain('CNC');
+        expect(readability.trustText).toContain('Forum des images');
+        expect(readability.trustDisplay).not.toBe('none');
+        expect(readability.trustTextShadow).not.toBe('none');
+        expect(readability.ctaText).toBe('Découvrir les expériences');
+        expect(readability.ctaDisplay).toContain('flex');
+        expect(readability.ctaMinHeight).toBeGreaterThanOrEqual(42);
+    });
+
+    test('page 1 Accueil mobile — réseaux sociaux et preuve de confiance restent dans le premier écran', async ({ page }) => {
+        const info = test.info();
+        const width = info.project.use?.viewport?.width || 1920;
+        test.skip(width > 600, 'Mobile only (<= 600px)');
+
+        await page.goto('/index.html#page-1');
+
+        const heroStatus = await page.locator('#page-1').evaluate((section) => {
+            const titleRect = section.querySelector('.hero-page1__title-group h1').getBoundingClientRect();
+            const trustRect = section.querySelector('.hero-page1__trust').getBoundingClientRect();
+            const ctaRect = section.querySelector('.hero-page1__cta').getBoundingClientRect();
+            const socialRect = section.querySelector('.hero-page1__bottom-right').getBoundingClientRect();
+            const chromeRect = document.querySelector('.breadcrumb').getBoundingClientRect();
+
+            return {
+                viewportWidth: window.innerWidth,
+                viewportHeight: window.innerHeight,
+                titleTop: titleRect.top,
+                chromeBottom: chromeRect.bottom,
+                trustVisible: trustRect.top >= 0 && trustRect.bottom <= window.innerHeight,
+                ctaVisible: ctaRect.top >= 0 && ctaRect.bottom <= window.innerHeight,
+                socialRightMargin: window.innerWidth - socialRect.right,
+            };
+        });
+
+        expect(heroStatus.titleTop).toBeGreaterThanOrEqual(heroStatus.chromeBottom + 8);
+        expect(heroStatus.trustVisible).toBe(true);
+        expect(heroStatus.ctaVisible).toBe(true);
+        expect(heroStatus.socialRightMargin).toBeGreaterThanOrEqual(16);
     });
 
     test('page 56 Charlotte Henschel — la bio garde une respiration interne', async ({ page }) => {

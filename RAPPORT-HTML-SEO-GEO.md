@@ -107,6 +107,28 @@ python3 scripts/serve-test.py 8771 dist
 
 Cette URL locale sert à vérifier le contenu et les endpoints générés. Elle ne remplace pas la preuve publique Search/Crawl.
 
+## Chantier PRD-002 Design Watch préproduction
+
+Le 2026-06-21, l'accueil a reçu un ajustement ciblé pour traiter les constats Design Watch du rapport : preuve de confiance plus visible, CTA principal explicite et liens sociaux moins proches du bord droit sur mobile.
+
+Changements source :
+
+```text
+src/index.html
+src/css/style.css
+src/*.html
+tests/responsive.spec.js
+```
+
+Preuves locales :
+
+```text
+reports/swing-digital/2026-06-21-prd-002-design-watch/hero-desktop-1920.png
+reports/swing-digital/2026-06-21-prd-002-design-watch/hero-mobile-375.png
+```
+
+Validation : les tests responsive ciblés passent avec 61 réussites et 5 ignorés ; `npm test` passe avec 1 304 réussites et 161 ignorés ; `npm run seo:check`, `npm run build:prod` et `npm run appmiweb:preflight` passent. Le score `Design Watch` doit être confirmé par un nouveau rapport HTML généré après publication.
+
 ## Rapport v1.2.2 audit visuel complet
 
 URL locale :
