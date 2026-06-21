@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Création du PRD-007 : migration typographique vers Satoshi Variable auto-hébergée sur tout le site.
 - Création du PRD-006 : fiabilisation de l'audit responsive lazy-load sans modifier le site public.
 - Implémentation du PRD-006 dans le skill `seo-geo-growth-agent` : mesure responsive avant et après scroll, distinction des images lazy-load et validation sur la préproduction publique.
 
