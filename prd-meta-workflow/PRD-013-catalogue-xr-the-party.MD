@@ -3,7 +3,7 @@
 **Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
-**Source** : `retour/changements_site (1).docx`, `retour/site_images/the_party*.jpg`, inspection de `src/index.html` et `src/experiences-series.html`
+**Source** : `retour/changements_site (1).docx`, `retour/site_images/the_party*.jpg`, `retour/the-party-1.jpg`, inspection de `src/index.html` et `src/experiences-series.html`
 
 ---
 
@@ -35,7 +35,8 @@ Depuis l’onglet XR, le visiteur voit The Party apparaître parmi les projets X
 - La liste `En développement` ne contient pas The Party.
 - Les lignes Marilyn et Toulouse-Lautrec ne mentionnent pas Pixihead.
 - `src/experiences-series.html` ne contient pas The Party dans la grille XR.
-- Les assets suivants sont disponibles : `the_party.jpg`, `the_party2.jpg`, `the_party3.jpg`, `the_party4.jpg`, `the_party4_photo_sans_légende.jpg`.
+- Les assets initiaux suivants sont disponibles : `the_party.jpg`, `the_party2.jpg`, `the_party3.jpg`, `the_party4.jpg`, `the_party4_photo_sans_légende.jpg`.
+- Stéphanie a fourni ensuite `retour/the-party-1.jpg` comme export corrigé de la deuxième slide, sans bord violet. La photo portrait isolée ne doit pas être réaffichée en fin de page, car elle existe déjà dans la présentation.
 - PRD-011 a déjà déplacé `Ni vues ni connues` vers Films. Ce point ne doit pas être annulé.
 
 ---
@@ -66,6 +67,8 @@ Préparer The Party comme projet XR en développement, avec une intégration pro
 - The Party est listé dans l’accueil `#page-4`, dans `experiences-series.html`, dans le menu XR global, dans le plan du site, le sitemap et les fichiers IA ;
 - les mentions Pixihead sont ajoutées pour The Party, Marilyn et Toulouse-Lautrec dans la liste d’accueil ;
 - `Ni vues ni connues` reste classé côté Films et ne revient pas dans le menu XR ;
+- la deuxième slide utilise l’export corrigé sans bord violet fourni dans `retour/the-party-1.jpg` ;
+- la photo portrait isolée `the-party-photo.jpg` n’est plus référencée dans `the-party.html` pour éviter le doublon signalé ;
 - le test Playwright `tests/prd013-catalogue-xr-the-party.spec.js` couvre le contenu source, le maillage public et le rendu responsive.
 
 ---
@@ -146,6 +149,7 @@ La création de page dédiée et l’entrée dans le menu XR global ont été va
 - `Ni vues ni connues` reste absent du menu XR global.
 - Si page dédiée validée, `src/the-party.html` et `dist/the-party.html` existent.
 - Si page dédiée validée, `sitemap.xml`, `plan-du-site.html`, `llms.txt`, `for-ai.*` et `schema-webpage.jsonld` référencent The Party de manière cohérente.
+- `src/the-party.html` affiche quatre images de présentation et ne référence plus `img/pages/the-party/the-party-photo.jpg`.
 - Aucun lien interne ajouté ne pointe vers un fichier absent.
 - Aucun débordement horizontal n’est observé à 375, 600, 768, 1024 et 1440 px.
 - `npm run build:prod`, `npm test` et `npm run seo:check` terminent avec un code `0`.
@@ -166,5 +170,6 @@ La création de page dédiée et l’entrée dans le menu XR global ont été va
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Remplacement de la deuxième slide par l’export sans bord violet et suppression de la photo portrait doublonnée en fin de page |
 | 2026-06-21 | Alex + Codex | Implémentation de `the-party.html`, intégration des assets, ajout au menu XR, au catalogue, au sitemap, aux fichiers IA et au test Playwright dédié |
 | 2026-06-21 | Alex + Codex | Création du PRD |

@@ -10,7 +10,6 @@ const thePartyAssets = [
   'img/pages/the-party/the-party-2.jpg',
   'img/pages/the-party/the-party-3.jpg',
   'img/pages/the-party/the-party-4.jpg',
-  'img/pages/the-party/the-party-photo.jpg',
 ];
 
 function readSrc(relativePath) {
@@ -68,6 +67,7 @@ test.describe('PRD-013 - catalogue XR et The Party', () => {
       expect(fs.existsSync(path.join(srcDir, asset)), asset).toBe(true);
       expect(page, asset).toContain(asset);
     }
+    expect(page).not.toContain('img/pages/the-party/the-party-photo.jpg');
 
     expect(xr).toContain('href="the-party.html"');
     expect(xr).toContain('The Party');
