@@ -44,6 +44,8 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
     expect(lautrec).not.toContain('Déambulation EN réalité mixte');
     expect(lautrec).not.toContain('accompagnée d\'une comédienne');
     expect(lautrec).not.toContain('les muses prennent enfin la parole');
+    expect(lautrec).toContain('img/pages/toulouse-lautrec/lautrec-page-53.jpg');
+    expect(lautrec).not.toContain('img/pages/page-53/');
     expect(lautrec).toContain('Visite immersive en réalité mixte dans Montmartre, accompagnée par des acteur·rices.');
     expect(lautrec).toContain('La Goulue, Jane Avril, Suzanne Valadon : les muses sortent de l\'ombre et prennent la parole.');
     expect(lautrec).toContain('Une déambulation où le spectacle vivant et la réalité mixte réécrivent l\'histoire à travers le regard de celles qui l\'ont vécue.');

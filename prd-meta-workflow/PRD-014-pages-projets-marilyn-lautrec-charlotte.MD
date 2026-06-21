@@ -3,7 +3,7 @@
 **Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
-**Source** : `retour/changements_site (1).docx`, `retour/site_images/Marilyn*.jpg`, `retour/site_images/Lautrec*.jpg`, `retour/site_images/Charlotte*.jpg`, inspection de `src/marilyn.html`, `src/toulouse-lautrec.html` et `src/charlotte-henschel.html`, réponse de Stéphanie du 2026-06-21
+**Source** : `retour/changements_site (1).docx`, `retour/site_images/Marilyn*.jpg`, `retour/site_images/Lautrec*.jpg`, `retour/site_images/Charlotte*.jpg`, inspection de `src/marilyn.html`, `src/toulouse-lautrec.html` et `src/charlotte-henschel.html`, réponse de Stéphanie du 2026-06-21, retour logos Toulouse-Lautrec du 2026-06-21
 
 ---
 
@@ -19,7 +19,7 @@ Le comment : renvoyé au Plan d’implémentation.
 
 Un visiteur ouvre `toulouse-lautrec.html#page-53`.
 
-Il ne lit plus l’ancien paragraphe en capitalisation irrégulière. La page affiche le nouveau texte : visite immersive en réalité mixte dans Montmartre, accompagnée par des acteur·rices, avec le Paris de 1890 qui se superpose au présent et l’effervescence de la Belle Époque qui reprend vie.
+Il ne lit plus l’ancien paragraphe en capitalisation irrégulière. La page utilise l’export complet validé pour conserver les logos Pixihead, Principe Actif et Swing Digital dans leur rendu d’origine, avec le nouveau texte conservé en HTML masqué : visite immersive en réalité mixte dans Montmartre, accompagnée par des acteur·rices, avec le Paris de 1890 qui se superpose au présent et l’effervescence de la Belle Époque qui reprend vie.
 
 Sur `#page-54`, le texte n’écrit plus seulement que les muses prennent la parole. Il ajoute que La Goulue, Jane Avril et Suzanne Valadon sortent de l’ombre, et que la déambulation réécrit l’histoire à travers leur regard.
 
@@ -43,6 +43,7 @@ Un visiteur ouvre `marilyn.html#page-52`. La page ne reconstruit plus deux visue
 - `src/charlotte-henschel.html#page-56` contient une seule phrase longue.
 - `src/marilyn.html#page-50` utilise des logos séparés et Stéphanie signale un problème de logos.
 - Les nouveaux assets fournis sont en 842 x 595 px pour les exports complets des pages projet.
+- Retour du 2026-06-21 : `toulouse-lautrec.html#page-53` présente un problème de logos quand la page est reconstruite en HTML avec des logos séparés.
 - Réponse de Stéphanie : `Marilyn_1.jpg`, `Marilyn2.jpg` et `Marilyn3.jpg` correspondent bien aux pages 50, 51 et 52 dans cet ordre.
 - Réponse de Stéphanie : les logos Marilyn sont résolus ; priorité à l’image la plus nette possible.
 - Réponse de Stéphanie : sur `marilyn.html#page-52`, les deux images ne doivent pas être reconstruites avec des tailles différentes.
@@ -84,7 +85,8 @@ Principes :
 - les exports Marilyn, Toulouse-Lautrec et Charlotte Henschel sont copiés dans des chemins stables sous `src/img/pages/` ;
 - `marilyn.html#page-50` utilise l’export complet `marilyn-page-50.jpg` avec contenu sémantique conservé pour l’accessibilité ;
 - `marilyn.html#page-52` utilise l’export complet `marilyn-page-52.jpg` pour éviter deux visuels de tailles différentes, avec contenu sémantique conservé pour l’accessibilité ;
-- `toulouse-lautrec.html#page-53` et `#page-54` reprennent les nouvelles formulations HTML ;
+- `toulouse-lautrec.html#page-53` utilise l’export complet `lautrec-page-53.jpg` pour corriger les logos, avec texte sémantique conservé pour l’accessibilité ;
+- `toulouse-lautrec.html#page-54` reprend la nouvelle formulation HTML ;
 - `charlotte-henschel.html#page-55` corrige la capitalisation et la formulation ;
 - `charlotte-henschel.html#page-56` découpe la biographie en lignes lisibles ;
 - le cache-buster CSS des trois pages modifiées est mis à jour ;
@@ -141,6 +143,8 @@ Les textes demandés par Stéphanie doivent être intégrés en HTML. Les export
 
 Pour Marilyn, le mapping des trois exports est confirmé. La page 52 est donc traitée comme une section image-first : l’export complet est utilisé pour éviter la reconstruction HTML de deux visuels à tailles différentes, et les textes sont conservés en HTML masqué.
 
+Pour Toulouse-Lautrec page 53, la même logique s’applique : l’export complet est retenu parce que la reconstruction HTML des logos séparés dégrade le rendu. Le texte reste présent en HTML masqué pour conserver une base accessible et indexable.
+
 ---
 
 ## Plan d’implémentation
@@ -154,12 +158,13 @@ Pour Marilyn, le mapping des trois exports est confirmé. La page 52 est donc tr
 7. Corriger les capitalisations visibles : noms propres, `en réalité mixte`, Belle Époque, Montmartre.
 8. Corriger les logos de Marilyn avec les assets fournis ou les logos séparés existants selon le rendu le plus net.
 9. Remplacer `marilyn.html#page-52` par l’export validé `marilyn-page-52.jpg`, tout en conservant les textes essentiels en HTML accessible.
-10. Mettre à jour les attributs `alt`, dimensions et `loading` des images remplacées.
-11. Ajuster le CSS uniquement si les nouveaux ratios d’image l’exigent.
-12. Mettre à jour le cache-buster CSS si le CSS change.
-13. Régénérer `dist/` avec `npm run build:prod`.
-14. Vérifier les pages aux largeurs 375, 600, 768, 1024 et 1440 px.
-15. Exécuter `npm test` et `npm run seo:check`.
+10. Remplacer `toulouse-lautrec.html#page-53` par l’export validé `lautrec-page-53.jpg` lorsque les logos séparés dégradent le rendu.
+11. Mettre à jour les attributs `alt`, dimensions et `loading` des images remplacées.
+12. Ajuster le CSS uniquement si les nouveaux ratios d’image l’exigent.
+13. Mettre à jour le cache-buster CSS si le CSS change.
+14. Régénérer `dist/` avec `npm run build:prod`.
+15. Vérifier les pages aux largeurs 375, 600, 768, 1024 et 1440 px.
+16. Exécuter `npm test` et `npm run seo:check`.
 
 ---
 
@@ -168,6 +173,8 @@ Pour Marilyn, le mapping des trois exports est confirmé. La page 52 est donc tr
 - `rg -n "Déambulation EN réalité mixte|toulouse-lautrec|la goulue|jane avril|suzanne valadon|EN réalité mixte|charlotte henschel" src/toulouse-lautrec.html src/charlotte-henschel.html` ne retourne plus d’occurrence active avec capitalisation incorrecte.
 - `src/toulouse-lautrec.html` contient `accompagnée par des acteur·rices`.
 - `src/toulouse-lautrec.html` contient `les muses sortent de l’ombre et prennent la parole`.
+- `src/toulouse-lautrec.html` référence `img/pages/toulouse-lautrec/lautrec-page-53.jpg` pour `#page-53`.
+- `src/toulouse-lautrec.html` ne référence plus `img/pages/page-53/`.
 - `src/charlotte-henschel.html` contient la nouvelle formulation `Une valise restée quarante ans dans l'oubli, sous un lit.`
 - `src/charlotte-henschel.html` contient `Charlotte a peint` et `plus de 220 tableaux` dans un bloc lisible.
 - `src/marilyn.html` référence `img/pages/marilyn/marilyn-page-52.jpg` pour `#page-52`.
@@ -192,6 +199,7 @@ Pour Marilyn, le mapping des trois exports est confirmé. La page 52 est donc tr
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Correction Toulouse-Lautrec page 53 : export complet utilisé pour résoudre les logos, texte conservé en HTML accessible et test PRD-014 renforcé |
 | 2026-06-21 | Alex + Codex | Intégration de la réponse de Stéphanie : mapping Marilyn confirmé, page 52 remplacée par l’export validé, écriture inclusive limitée à Lautrec |
 | 2026-06-21 | Alex + Codex | Implémentation des corrections Marilyn, Toulouse-Lautrec et Charlotte Henschel, intégration des exports et test Playwright dédié |
 | 2026-06-21 | Alex + Codex | Création du PRD |
