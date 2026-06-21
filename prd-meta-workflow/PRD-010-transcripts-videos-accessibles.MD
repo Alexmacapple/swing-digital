@@ -1,6 +1,6 @@
 # PRD-010 : Transcripts accessibles des vidéos publiques
 
-**Statut** : Brouillon
+**Statut** : Cadré, implémentation à planifier
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : Conversation, inventaire des liens vidéo publics et référence WAI-ARIA APG Disclosure
@@ -17,14 +17,18 @@ Le comment : renvoyé au Plan d'implémentation.
 
 ## Exemple bout-en-bout (projeté)
 
-Le crawl public confirme deux liens vidéo à traiter :
+Le crawl public confirme six vidéos publiques à traiter :
 
 ```txt
 https://www.youtube.com/watch?v=Le2Ybd_X6A0
+https://www.youtube.com/watch?v=0YDIZeBbYL0
 https://vimeo.com/250420667
+https://vimeo.com/528291420
+https://vimeo.com/782642139
+https://vimeo.com/838300539
 ```
 
-Le fichier `videos.txt` est créé à la racine avec ces deux URL.
+Le fichier `videos.txt` est créé à la racine avec ces six URL.
 
 `yt-dlp` récupère les pistes audio dans `swing_audio/`, les fichiers vidéo de contrôle dans `swing_videos/` si nécessaire, et les sous-titres disponibles dans `swing_subtitles/`.
 
@@ -36,6 +40,8 @@ Le transcript final de la vidéo YouTube associée à Galerie Joseph est publié
 
 Le transcript final de `DESSINE-MOI LE VENT (teaser)` est publié sous la vidéo Vimeo de `dessine-moi-le-vent.html`.
 
+Les transcripts des autres iframes publiques sont publiés sous leur vidéo respective : `voyage-autour-de-moi.html`, `monroe-piece.html`, `experience-monroe.html` et `monroe-podcasts.html`.
+
 Chaque transcript est masqué par défaut dans un disclosure avec un bouton adjacent : état `aria-expanded="false"`, cible unique via `aria-controls`, panneau `hidden`, ouverture et fermeture au clic comme au clavier.
 
 À l'ouverture, le bouton passe à `aria-expanded="true"` et le texte intégral devient lisible dans l'ordre oral d'origine.
@@ -44,16 +50,20 @@ Sans JavaScript, un fallback permet encore d'accéder au transcript.
 
 Le build `dist/` publie les pages HTML enrichies, pas les fichiers audio ou vidéo de travail.
 
-Les contrôles RGAA, Playwright, SEO et préproduction passent sans régression.
+Les contrôles RGAA, SEO, préproduction et Playwright passent sans régression, après restauration du harnais de tests versionné.
 
 ---
 
 ## Contexte
 
-Les pages publiques listées dans le plan du site exposent au moins deux URL vidéo externes confirmées :
+Les pages publiques listées dans le plan du site exposent six URL vidéo externes confirmées dans le périmètre PRD-010 :
 
 - `https://www.youtube.com/watch?v=Le2Ybd_X6A0`, depuis la page d'accueil, associé à Galerie Joseph ;
 - `https://vimeo.com/250420667`, depuis `dessine-moi-le-vent.html`, pour le teaser `DESSINE-MOI LE VENT`.
+- `https://vimeo.com/528291420`, depuis `voyage-autour-de-moi.html` ;
+- `https://vimeo.com/782642139`, depuis `monroe-piece.html` ;
+- `https://vimeo.com/838300539`, depuis `experience-monroe.html` ;
+- `https://www.youtube.com/watch?v=0YDIZeBbYL0`, depuis `monroe-podcasts.html`.
 
 Le site contient déjà un pattern disclosure en JavaScript (`button[aria-expanded][aria-controls]`) et une implémentation existante pour les citations presse de L'Expérience Monroe. Le nouveau composant doit réutiliser ce socle tout en évitant les fragilités connues : libellé trop spécifique aux citations, remplacement par `textContent` qui casserait d'éventuels enfants HTML, absence de fallback lisible sans JavaScript.
 
@@ -83,14 +93,18 @@ Mettre en place une chaîne documentaire et technique en quatre couches :
 3. produire puis corriger des transcripts avec Whisper et le workflow `transcript`, en conservant les bruts, les audits et les incertitudes ;
 4. publier les transcripts corrigés sous forme de disclosure accessible adjacent à chaque vidéo ou lien vidéo public concerné.
 
-Le périmètre initial validé est :
+Le périmètre validé est :
 
 ```txt
 https://www.youtube.com/watch?v=Le2Ybd_X6A0
+https://www.youtube.com/watch?v=0YDIZeBbYL0
 https://vimeo.com/250420667
+https://vimeo.com/528291420
+https://vimeo.com/782642139
+https://vimeo.com/838300539
 ```
 
-Avant implémentation, l'inventaire doit être recroisé avec `src/*.html` et le plan du site pour décider si les iframes Vimeo ou YouTube déjà intégrées mais non listées dans `videos.txt` entrent dans le même lot ou dans un PRD séparé.
+Le recroisement avec `src/*.html` a validé l'inclusion des autres iframes Vimeo ou YouTube publiques dans le même lot. Toute nouvelle vidéo découverte ultérieurement devra être ajoutée explicitement à `videos.txt` ou reportée dans un autre PRD.
 
 ---
 
@@ -166,7 +180,7 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
 
 ## Plan d'implémentation
 
-1. Créer ou confirmer `videos.txt` à la racine avec les deux URL initiales.
+1. Créer ou confirmer `videos.txt` à la racine avec les six URL du périmètre validé.
 2. Recroiser le périmètre avec `src/*.html`, `plan-du-site.html` et les iframes externes pour produire un inventaire daté des vidéos incluses, exclues ou reportées.
 3. Ajouter ou vérifier des règles `.gitignore` pour exclure `swing_audio/`, `swing_videos/`, `swing_subtitles/` et les artefacts Whisper bruts si ceux-ci ne doivent pas être versionnés.
 4. Vérifier localement la disponibilité de `yt-dlp`, `ffmpeg` et `whisper`, sans lancer de commande `sudo` depuis Codex.
@@ -221,7 +235,7 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
 17. Générer `dist/` avec `npm run build:prod`.
 18. Vérifier clavier et disclosure avec Playwright : clic, Entrée, Espace, état `aria-expanded`, visibilité du panneau et focus.
 19. Vérifier l'accessibilité statique avec les tests existants et un contrôle manuel RGAA sur les critères multimédia concernés.
-20. Relancer `npm test`, `npm run seo:check`, `npm run appmiweb:preflight` et, si publié en préproduction, `npm run appmiweb:search-crawl`.
+20. Restaurer le harnais Playwright si le dossier `tests/` est absent, puis relancer `npm test`, `npm run seo:check`, `npm run appmiweb:preflight` et, si publié en préproduction, `npm run appmiweb:search-crawl`.
 
 ---
 
@@ -229,9 +243,9 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
 
 En tant que LLM qui implémente ce PRD, les éléments manquants ou à figer avant exécution sont :
 
-- la liste finale des vidéos incluses dans ce lot si le recrawl découvre plus que les deux URL initiales ;
 - la politique de versionnement des transcripts corrigés, des rapports d'audit et des fichiers `.srt`/`.vtt` ;
 - la décision de placement exacte du transcript YouTube sur la page d'accueil, car le même lien y apparaît plusieurs fois ;
+- la décision de placement exacte du transcript YouTube de `monroe-podcasts.html`, car la vidéo est intégrée comme contenu de podcast ;
 - la liste métier des noms propres attendus dans les vidéos, si l'équipe veut valider les graphies ;
 - la confirmation que les fichiers audio/vidéo téléchargés servent uniquement à l'analyse locale et ne sont pas publiés ;
 - le niveau de verbatim attendu : transcription lisible corrigée ou conservation maximale des hésitations.
@@ -242,7 +256,7 @@ Ces points ne bloquent pas la création du PRD, mais ils doivent être résolus 
 
 ## Métriques de succès
 
-- `videos.txt` existe à la racine et contient les deux URL initiales, une par ligne.
+- `videos.txt` existe à la racine et contient les six URL du périmètre validé, une par ligne.
 - Un inventaire daté liste 100 % des vidéos incluses, exclues ou reportées après recrawl de `src/*.html`.
 - Pour chaque URL incluse, au moins un fichier audio MP3 existe dans `swing_audio/` après exécution de `yt-dlp`.
 - Pour chaque URL incluse, Whisper produit au minimum un `.txt`, un `.srt`, un `.vtt`, un `.json` et un `.tsv` dans `transcripts/`.
@@ -255,6 +269,7 @@ Ces points ne bloquent pas la création du PRD, mais ils doivent être résolus 
 - Au clavier, Entrée et Espace ouvrent et ferment chaque disclosure.
 - Avec JavaScript désactivé, le transcript reste accessible via un fallback vérifiable.
 - Les pages modifiées ne créent aucun nouveau H1 et conservent une hiérarchie H2/H3 cohérente.
+- Le dossier `tests/` ou une alternative de validation versionnée existe à nouveau avant d'utiliser Playwright comme preuve.
 - `npm run build:prod` termine avec un code `0`.
 - `npm test` termine avec un code `0`.
 - `npm run seo:check` termine avec un code `0`.
@@ -292,4 +307,5 @@ Limites structurelles à prendre en compte :
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Extension du périmètre à toutes les vidéos publiques trouvées dans `src/*.html` |
 | 2026-06-21 | Alex + Codex | Création du PRD |

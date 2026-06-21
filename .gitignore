@@ -32,6 +32,12 @@ dist/
 # Exports HD (275 Mo, videos et images)
 EXPORT_HD/
 
+# PRD-010 - artefacts locaux audio/video/transcription
+swing_audio/
+swing_videos/
+swing_subtitles/
+transcripts/
+
 # Tests visuels (resultats locaux)
 tests-visuels/
 

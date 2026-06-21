@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Mise à jour du PRD-010 : extension du périmètre à toutes les vidéos publiques trouvées dans `src/*.html` et exclusion Git des artefacts locaux audio, vidéo et Whisper.
 - Création du PRD-010 : récupération, transcription Whisper, correction et publication accessible des transcripts des vidéos publiques.
 - Validation et livraison du PRD-007 : Satoshi Variable auto-hébergée sur tout le site, suppression des anciennes polices OTF/TTF, build et contrôles navigateur toutes pages validés.
 - Correction de la documentation de validation : `npm test` et `npm run seo:check` retournent actuellement `No tests found`, le harnais Playwright doit être restauré.
