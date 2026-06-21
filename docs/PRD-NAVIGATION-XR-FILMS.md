@@ -5,6 +5,8 @@
 **Périmètre** : `src/` public Swing Digital, puis génération vers `dist/`
 **Objectif court** : séparer la rubrique XR / immersive de la rubrique audiovisuelle sans renommer les URL existantes.
 
+> Note 2026-06-21 : ce document reste le cadrage source détaillé. Le PRD canonique de suivi est désormais `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD`.
+
 **PDG-LARGE-FILE-JUSTIFICATION:** ce PRD dépasse 200 lignes parce qu’il regroupe le diagnostic fondé sur les sources, le cadrage produit, la liste de contrôle d’implémentation et le passage PDG dans un seul fichier de transmission. Le sujet touche les 24 pages HTML existantes, une 25e page à créer, la navigation, le JS d’état actif, les données structurées, le sitemap et les fichiers IA publics ; séparer ces éléments augmenterait le risque d’exécution partielle.
 
 ---

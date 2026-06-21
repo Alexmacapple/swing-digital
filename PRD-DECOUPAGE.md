@@ -1,25 +1,27 @@
 # PRD : Découpage multi-pages - Swing Digital
 
-**Statut : TERMINE** (merge sur main, tag v4, branche decoupage supprimee)
+**Statut : TERMINÉ** (merge sur main, tag v4, branche découpage supprimée)
 
 > Mise à jour 2026-06-20 : ce PRD décrit la décision historique de découpage multi-pages. L'état courant ajoute une préproduction SEO/GEO sur `https://swing.appmiweb.com`, un build public `dist/` et le PRD-001 pour les chantiers de production.
 
-## État courant au 2026-06-20
+> Mise à jour 2026-06-21 : le chantier ultérieur de séparation éditoriale `XR / Films` est suivi dans `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD`. Il ne remet pas en cause ce découpage multi-pages terminé.
+
+## État courant au 2026-06-21
 
 - Les 24 pages HTML existent toujours dans `src/`.
-- Les 23 pages indexables sont présentes dans `sitemap.xml`.
-- La préproduction Appmiweb sert les 23 URL du sitemap en HTTP 200.
+- Les 24 URL indexables sont présentes dans `sitemap.xml`.
+- La préproduction Appmiweb reste la cible publique de validation avant bascule vers le domaine final.
 - Les canonicals, Open Graph, sitemap, robots et `llms.txt` pointent vers `https://swing.appmiweb.com`.
 - La production finale nécessite une bascule via `npm run seo:set-base -- https://domaine-final`.
 - Les chantiers GSC, GA4/GTM, Bing Webmaster Tools, LCP final et politique crawlers IA sont cadrés dans `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
 
 ## Contexte
 
-Le site etait un single-page (`index.html`, 62 sections/pages). Le menu de navigation existait sur la page 1 mais n'etait pas persistant.
+Le site était un single-page (`index.html`, 62 sections/pages). Le menu de navigation existait sur la page 1 mais n'était pas persistant.
 
-**Objectif** : Decouper le site en plusieurs pages HTML avec navigation 3 niveaux, header/footer communs, fil d'Ariane, menu hamburger mobile, RGAA accessible.
+**Objectif** : Découper le site en plusieurs pages HTML avec navigation 3 niveaux, header/footer communs, fil d'Ariane, menu hamburger mobile, RGAA accessible.
 
-**Resultat** : 24 pages HTML, navigation 3 niveaux, 0 violation axe-core, audit 83/100
+**Résultat** : 24 pages HTML, navigation 3 niveaux, 0 violation axe-core, audit 83/100
 
 **Règle absolue** : Ne rien casser de l'existant. Découper et améliorer, jamais rétrograder. Chaque page après découpage doit être visuellement identique à la section correspondante dans le single-page actuel.
 

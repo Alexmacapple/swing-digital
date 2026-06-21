@@ -2,7 +2,7 @@
 
 Site vitrine multi-pages pour Swing Digital, spécialiste des expériences immersives et espaces augmentés.
 
-Site statique de préproduction sur `https://swing.appmiweb.com`, issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, accessibilité RGAA et socle SEO/GEO prêt pour validation avant domaine final.
+Site statique de préproduction sur `https://swing.appmiweb.com`, issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO prêt pour validation avant domaine final.
 
 ## Démarrage rapide
 
@@ -36,10 +36,10 @@ npm run seo:check
 
 ## Stack technique
 
-- HTML5 sémantique (24 pages)
+- HTML5 sémantique (24 pages top-level + `/for-ai/`)
 - CSS3 responsive (variables, BEM, mobile-first)
 - JavaScript vanilla (navigation, vidéos, animations)
-- Playwright (harnais à restaurer : aucun test versionné actuellement)
+- Playwright configuré, harnais à restaurer : aucun test versionné actuellement
 - Lighthouse et contrôles SEO/GEO de préproduction
 - Police : Satoshi Variable auto-hébergée
 - Pas de framework ni bundler
@@ -59,7 +59,7 @@ npm run seo:check
 
 ## Accessibilité (WCAG 2.2 AA / RGAA 4.1)
 
-- 0 violation axe-core observée dans la suite Playwright actuelle
+- Dernier audit axe-core complet historique sans violation bloquante ; le harnais Playwright versionné doit être restauré avant d'en refaire une preuve actuelle.
 - Navigation clavier complète (Tab, Escape, flèches)
 - Zoom 200% conforme (RGAA 10.4)
 - Textes en casse normale, majuscules via CSS (RGAA 10.2)
@@ -81,10 +81,13 @@ npm run seo:check
 | docs/SEO-GEO-AUDIT.md | Audit SEO/GEO de préproduction |
 | docs/SEO-GEO-PROD-CHECKLIST.md | Checklist go-live SEO/GEO |
 | docs/404-CUSTOM-ERROR-PAGE.md | Configuration serveur de la page 404 personnalisée |
+| docs/PRD-NAVIGATION-XR-FILMS.md | Cadrage source du menu XR / Films |
 | prd-meta-workflow/PRD-001-seo-geo-production.MD | PRD mise en production SEO/GEO et mesure |
 | prd-meta-workflow/PRD-007-migration-typographique-satoshi.MD | PRD migration typographique Satoshi |
 | prd-meta-workflow/PRD-008-fonds-roses-adoucis.MD | PRD fonds roses adoucis |
 | prd-meta-workflow/PRD-009-routage-404-personnalisee.MD | PRD routage de la page 404 personnalisée |
+| prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD | PRD transcripts accessibles des vidéos publiques |
+| prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD | PRD menu et découpage XR / Films |
 
 ## Production
 
@@ -95,6 +98,7 @@ Point d'hébergement restant : les URL inexistantes doivent être configurées c
 Commande de bascule vers production finale :
 
 ```bash
+# Restaurer d'abord le dossier tests/ pour que ces deux commandes soient probantes.
 npm test
 npm run seo:set-base -- https://votre-domaine.fr
 SEO_BASE_URL=https://votre-domaine.fr npm run seo:check
@@ -105,4 +109,4 @@ npm run prod:preflight -- https://votre-domaine.fr
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : v12 préproduction Satoshi, UI et 404 documentés
+**Version** : v12 préproduction Satoshi, UI et 404 documentés ; PRD-010 et PRD-011 cadrés

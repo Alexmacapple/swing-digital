@@ -6,14 +6,16 @@
 |-------------|-------|
 | HTML5 | Structure sémantique (sections, aria-labels, headings) |
 | CSS3 | Variables, BEM, responsive, animations |
-| JavaScript (vanilla) | Scroll tracking, videos Vimeo, navigation |
+| JavaScript (vanilla) | Navigation, disclosures, vidéos Vimeo, animations |
+| Node.js | Scripts de build, preflight, SEO/GEO et audits locaux |
 
 ## Approche
 
 - **Pas de framework** : site vitrine statique, HTML/CSS/JS pur
 - **Mobile-first** : breakpoints 768px et 480px
-- **Performance** : images optimisées, pas de dépendances externes
+- **Performance** : images optimisées, polices auto-hébergées, vidéos externes chargées conditionnellement
 - **Accessibilité** : WCAG 2.2 AA (alt text, contraste, navigation clavier)
+- **Runtime public** : pas de framework ni bundler côté site publié
 
 ## CSS
 
@@ -54,22 +56,24 @@ Fallbacks             -> Inter, system-ui, Segoe UI, sans-serif
 ## JavaScript
 
 - Scroll tracking (IntersectionObserver)
-- Vidéos Vimeo (iframe API, autoplay, loop, muted)
+- Vidéos Vimeo (iframe API chargée conditionnellement)
 - Contrôles vidéo accessibles (play/pause, son)
 - Navigation par ancres (#page-N)
-- Pas de dépendances npm
+- Dépendances npm réservées aux scripts, audits et tooling local
 
 ## Hébergement
 
-À définir (Netlify, Vercel, OVH, ou autre).
+Préproduction actuelle : `https://swing.appmiweb.com`.
+
+Production finale à définir : domaine HTTPS final, hébergeur légal et routage 404 côté origine.
 
 ## Fichiers
 
 | Fichier | Taille approx |
 |---------|---------------|
-| index.html | ~80 KB (1900+ lignes) |
-| style.css | ~120 KB (5800+ lignes) |
-| main.js | ~15 KB |
+| index.html | ~38 KB (614 lignes) |
+| style.css | ~177 KB (7 557 lignes) |
+| main.js | ~28 KB (837 lignes) |
 | Images | ~90 MB (220+ fichiers) |
 
 ---

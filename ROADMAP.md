@@ -28,6 +28,8 @@
 | 16. Typographie premium | PRD-007 : Satoshi Variable auto-hébergée | Terminé |
 | 17. Couleurs roses | PRD-008 : fonds roses adoucis, lisibilité et page équipe | Terminé |
 | 18. Page 404 hero | Page 404 custom visible sur `/404.html` | Terminé |
+| 19. Transcripts vidéos | PRD-010 : transcripts accessibles des vidéos publiques | Cadré, à implémenter |
+| 20. Menu XR / Films | PRD-011 : séparation XR, Films et Ni vues ni connues | Prêt à arbitrer |
 
 ---
 
@@ -39,6 +41,7 @@
 - [ ] Configurer le routage 404 custom : toute URL inexistante doit servir `/404.html` avec un statut HTTP 404.
 - [ ] Renseigner l'hébergeur dans `mentions-legales.html`.
 - [ ] Décider le scénario Réservations : billetterie active ou lancement informatif avec contact.
+- [ ] Restaurer le dossier `tests/` ou retirer les scripts Playwright obsolètes avant de les utiliser comme preuves.
 - [ ] Exécuter `npm test`, `npm run seo:check`, `npm run build:prod` et `npm run prod:preflight -- https://domaine-final`.
 
 ## Améliorations recommandées
@@ -50,6 +53,8 @@
 - [ ] Test cross-browser final (Chrome, Firefox, Safari).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 - [ ] Si l'origine ne permet pas le routage 404, envisager le repli Cloudflare Worker documenté dans `docs/404-CUSTOM-ERROR-PAGE.md`.
+- [ ] Implémenter le PRD-010 : inventaire vidéo, récupération audio, transcription, correction et publication accessible des transcripts.
+- [ ] Arbitrer puis implémenter le PRD-011 : onglets `Accueil - XR - Espace augmenté - Films - Réservation`.
 
 ## Optionnel (post-lancement)
 

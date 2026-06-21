@@ -5,16 +5,19 @@
 **Auteur** : Alex
 **Projet** : Swing Digital
 
-> Mise à jour 2026-06-20 : ce PRD reste une proposition historique de factorisation HTML. Le projet dispose désormais d'un packaging de production via `scripts/build-prod.js`, d'un dossier public `dist/` et d'un PRD séparé pour la production SEO/GEO : `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
+> Mise à jour 2026-06-21 : ce PRD reste une proposition historique de factorisation HTML. Le projet dispose désormais d'un packaging de production via `scripts/build-prod.js`, d'un dossier public `dist/`, d'une typographie Satoshi auto-hébergée et de PRD séparés pour la production SEO/GEO et les transcripts accessibles.
+
+> Note 2026-06-21 : le PRD-011 confirme que la navigation dupliquée augmente le risque des évolutions de menu. La factorisation par partials reste toutefois hors périmètre du PRD-011, afin de ne pas mélanger redécoupage éditorial et refonte de build.
 
 ---
 
-## État courant au 2026-06-20
+## État courant au 2026-06-21
 
 - Le build de production actuel ne repose pas sur des partials HTML.
 - `npm run build:prod` génère `dist/` en excluant les artefacts de travail.
 - `npm run appmiweb:preflight` valide la préproduction Appmiweb.
-- La suite Playwright observée passe avec 1 301 tests et 154 ignorés.
+- Le harnais Playwright versionné est à restaurer : `npm test` et `npm run seo:check` retournent actuellement `No tests found`.
+- Les polices actives sont `Satoshi-Variable.woff2` et `Satoshi-VariableItalic.woff2`; les anciens OTF/TTF Brandon, Fragen et Raleway ont été supprimés.
 - Les placeholders SEO `DOMAINE` sont remplacés en préproduction par `https://swing.appmiweb.com`.
 - La production finale devra utiliser `npm run seo:set-base -- https://domaine-final`.
 
@@ -143,10 +146,7 @@ Template avec variables interpolées :
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://DOMAINE/{{canonical}}">
     <link rel="icon" href="img/favicon.ico">
-    <link rel="preload" href="fonts/Brandon_blk.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="fonts/Brandon_reg.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="fonts/Fragen-Bold.otf" as="font" type="font/otf" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v={{cssVersion}}">
 </head>
 ```
 

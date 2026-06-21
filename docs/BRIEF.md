@@ -6,7 +6,7 @@ Refonte du site web de Swing Digital, entreprise spécialisée dans les expérie
 
 ## Structure du site
 
-Le site est un single-page composé de 62 slides/pages, organisé en sections :
+Le site public courant est un site statique multi-pages : 24 pages HTML top-level dans `src/`, plus `/for-ai/` pour le contexte agents IA. Il reste issu d'une maquette de 62 pages, réparties dans les routes suivantes :
 
 ### 1. Accueil (pages 1-2)
 - Hero avec gradient rose et titre
@@ -33,7 +33,7 @@ Le site est un single-page composé de 62 slides/pages, organisé en sections :
 | Dessine-moi le vent | 45-47 | En ligne |
 | Ni vues ni connues | 48-49 | En ligne |
 | Marilyn | 50-52 | En ligne |
-| Toulouse-Lautrec | 53-54 | **Masqué** (à remettre avant prod) |
+| Toulouse-Lautrec | 53-54 | En ligne |
 | Charlotte Henschel | 55-56 | En ligne |
 
 ### 5. XR Entreprises (page 57)
@@ -50,11 +50,12 @@ Le site est un single-page composé de 62 slides/pages, organisé en sections :
 ### 8. Contact (page 62)
 - Coordonnées, email, adresse
 
-## Navigation
+## Navigation courante
 
-- Site single-page à scroll vertical
-- Chaque section = un slide plein écran (100vh)
-- Navigation par scroll ou ancres (#page-N)
+- Navigation principale multi-pages avec menu, dropdown Expériences Séries et sous-menu Monroe.
+- Fil d'Ariane sur les pages internes.
+- Les sections issues de la maquette conservent des identifiants `#page-N`, mais les URL publiques canoniques sont les pages HTML.
+- Page `/for-ai/`, `llms.txt`, `for-ai.json`, `for-ai.txt` et `schema-webpage.jsonld` disponibles pour les agents IA.
 
 ## Référence visuelle
 
@@ -67,6 +68,7 @@ Site du même domaine pour inspiration : https://www.atelierdaruma.com/
 - Images extraites : `source-artifacts/pages-extracted/` (220 images)
 - Police active : Satoshi Variable auto-hébergée en `.woff2`
 - Anciennes polices de maquette Brandon, Fragen et Raleway supprimées du build
+- Build public : `dist/`, généré par `npm run build:prod`
 
 ---
 

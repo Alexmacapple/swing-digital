@@ -29,6 +29,11 @@ npm run appmiweb:preflight
 npm run appmiweb:search-crawl
 ```
 
+État courant au 2026-06-21 : `npm test` et `npm run seo:check`
+retournent `No tests found`, car le dossier `tests/` n'est pas versionné dans
+le dépôt. Ne pas les citer comme preuve tant que le harnais Playwright n'est pas
+restauré.
+
 Pour servir un dossier local :
 
 ```bash

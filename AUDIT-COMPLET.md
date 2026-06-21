@@ -4,25 +4,26 @@ Date : 22 mars 2026
 Scope : 24 pages HTML, 1 CSS, 1 JS, sitemap, robots.txt
 Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 
-> Mise à jour 2026-06-20 : ce document est conservé comme audit historique. L'état courant est documenté dans `docs/SEO-GEO-AUDIT.md`, `docs/SEO-GEO-PROD-CHECKLIST.md` et `prd-meta-workflow/PRD-001-seo-geo-production.MD`.
+> Mise à jour 2026-06-21 : ce document est conservé comme audit historique. L'état courant est documenté dans `README.md`, `CLAUDE.md`, `ROADMAP.md`, `docs/SEO-GEO-AUDIT.md`, `docs/SEO-GEO-PROD-CHECKLIST.md` et `prd-meta-workflow/`.
 
 ---
 
-## État courant au 2026-06-20
+## État courant au 2026-06-21
 
 | Zone | État actuel |
 |------|-------------|
 | Préproduction | `https://swing.appmiweb.com` validée techniquement |
-| URL publiques | 23 URL du sitemap vérifiées en HTTP 200 |
+| URL publiques | 24 URL dans le sitemap ; 24 pages HTML top-level et `/for-ai/` dans le build |
 | Canonicals | Cohérents sur la préproduction Appmiweb |
 | Sitemap / robots / llms | Présents et servis en 200 |
 | Données structurées | JSON-LD présent sur les pages indexables |
-| Tests SEO/GEO | `npm run seo:check` : 9/9 passés |
-| Suite Playwright | `npm test` : 1 301 passés, 154 ignorés |
+| Tests SEO/GEO | Harnais à restaurer : `npm run seo:check` retourne `No tests found` |
+| Suite Playwright | Harnais à restaurer : `npm test` retourne `No tests found` |
+| Typographie | Satoshi Variable auto-hébergée ; anciennes polices OTF/TTF supprimées |
 | Lighthouse accueil | SEO 100, accessibilité 100, bonnes pratiques 100, performance 89, LCP 3,8 s |
 | Lighthouse Réservations | SEO 100, accessibilité 100, bonnes pratiques 100, performance 97, LCP 2,4 s |
 
-Les anciens points « `https://DOMAINE/` », `og:image` manquante, favicon absent, dimensions d'images et boutons `href="#"` ont été traités dans l'état préproduction actuel. Les blocages restants concernent la production finale : domaine final HTTPS, hébergeur légal, scénario Réservations, mesure GSC/GA4/Bing/IA, optimisation LCP de l'accueil et politique crawlers IA.
+Les anciens points « `https://DOMAINE/` », `og:image` manquante, favicon absent, dimensions d'images, boutons `href="#"` et anciennes polices ont été traités dans l'état préproduction actuel. Les blocages restants concernent la production finale : domaine final HTTPS, hébergeur légal, scénario Réservations, mesure GSC/GA4/Bing/IA, routage 404 côté origine, restauration du harnais Playwright, optimisation LCP de l'accueil et politique crawlers IA.
 
 ---
 

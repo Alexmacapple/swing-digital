@@ -12,13 +12,13 @@
 
 ## Contexte
 
-Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 24 pages HTML avec navigation 3 niveaux. La préproduction Appmiweb est techniquement validée ; la production finale attend le domaine HTTPS définitif, les mentions légales hébergeur et le scénario Réservations.
+Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 24 pages HTML top-level, avec une page `/for-ai/` dédiée aux agents, une navigation 3 niveaux et une page 404 personnalisée prête côté HTML. La préproduction Appmiweb est techniquement validée ; la production finale attend le domaine HTTPS définitif, les mentions légales hébergeur, le scénario Réservations, le routage 404 côté origine et la restauration du harnais Playwright.
 
 **Architecture** : 4 niveaux de pages
-1. Accueil, Espaces augmentés, Reservations
-2. Experiences Series (rubrique 8 projets)
+1. Accueil, Espaces augmentés, Réservations
+2. Expériences Séries (rubrique 8 projets)
 3. Pages projet (Monroe, Voyage, Dessine, Ni vues, Marilyn, Toulouse-Lautrec, Charlotte Henschel, XR Corporate)
-4. Sous-pages Monroe (Piece, Roman Graphique, Installation, Photographie, Composition, Podcasts, Interviews, Experiences, Quiz)
+4. Sous-pages Monroe (Pièce, Roman Graphique, Installation, Photographie, Composition, Podcasts, Interviews, Expériences, Quiz)
 
 **Pages utilitaires** : 404 hero, Plan du site, Mentions légales
 
@@ -26,9 +26,9 @@ Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences 
 
 ## Stack Technique
 
-- HTML5 sémantique (24 pages)
+- HTML5 sémantique (24 pages top-level + `/for-ai/`)
 - CSS3 responsive (variables, BEM, mobile-first, 6 breakpoints)
-- JavaScript vanilla (navigation, videos, animations)
+- JavaScript vanilla (navigation, vidéos, animations)
 - Pas de framework ni bundler
 
 ## Polices
@@ -42,17 +42,17 @@ Satoshi Variable auto-hébergée, avec fallback système.
 ```
 src/
 ├── index.html                    Accueil (pages 1,2,3,4,8,62)
-├── espaces-augmentes.html        Espaces augmentes (pages 5-7)
+├── espaces-augmentes.html        Espaces augmentés (pages 5-7)
 ├── experiences-series.html       Rubrique projets (pages 9-10)
-├── experience-monroe.html        Monroe entree (pages 11-13,24)
-├── monroe-piece.html             Piece My Story (pages 14-19)
+├── experience-monroe.html        Monroe entrée (pages 11-13,24)
+├── monroe-piece.html             Pièce My Story (pages 14-19)
 ├── monroe-roman-graphique.html   Roman Graphique (pages 20-22)
 ├── monroe-installation.html      Installation (page 23)
 ├── monroe-photographie.html      Photographie (pages 25-26)
 ├── monroe-composition.html       Composition (pages 27-32)
 ├── monroe-podcasts.html          Podcasts (page 33)
 ├── monroe-interviews.html        Interviews (pages 34-36)
-├── monroe-experiences.html       Experiences interactives (pages 37-39)
+├── monroe-experiences.html       Expériences interactives (pages 37-39)
 ├── monroe-quiz.html              Quiz Marilyn (pages 40-41)
 ├── voyage-autour-de-moi.html     Voyage (pages 42-44)
 ├── dessine-moi-le-vent.html      Dessine-moi le vent (pages 45-47)
@@ -61,15 +61,15 @@ src/
 ├── toulouse-lautrec.html         Toulouse-Lautrec (pages 53-54)
 ├── charlotte-henschel.html       Charlotte Henschel (pages 55-56)
 ├── xr-corporate.html             XR Corporate (page 57)
-├── reservations.html             Reservations (pages 58-61)
+├── reservations.html             Réservations (pages 58-61)
 ├── 404.html                      Page introuvable hero
 ├── plan-du-site.html             Plan du site
-├── mentions-legales.html         Mentions legales
-├── sitemap.xml                   Sitemap (23 pages)
+├── mentions-legales.html         Mentions légales
+├── sitemap.xml                   Sitemap (24 URL)
 ├── robots.txt                    Robots
 ├── llms.txt                      Carte optionnelle pour agents IA
-├── css/style.css                 Styles (158 KB)
-├── js/main.js                    Scripts (22 KB)
+├── css/style.css                 Styles (~177 KB)
+├── js/main.js                    Scripts (~28 KB)
 ├── img/                          Images par page
 ├── fonts/                        Polices web
 └── video/                        hero.mp4, contact.mp4
@@ -88,22 +88,22 @@ src/
 
 ## Accessibilité - WCAG 2.2 AA / RGAA 4.1
 
-- 0 violation axe-core observée dans la suite Playwright actuelle
+- Dernier audit axe-core complet historique sans violation bloquante ; le harnais Playwright versionné doit être restauré pour refaire cette preuve.
 - Navigation clavier complète (Tab, Escape, Arrow)
 - Disclosure pattern sur dropdown et hamburger
 - aria-current="page" sur lien actif et breadcrumb
 - h1 sur chaque page (sr-only si pas de titre visible)
 - Textes en casse normale, majuscules via CSS (RGAA 10.2)
-- prefers-reduced-motion respecte (CSS + JS)
+- prefers-reduced-motion respecté (CSS + JS)
 - Contraste conforme AA (blanc sur noir 21:1)
-- Intitules de liens explicites (RGAA 6.1)
-- Boutons video avec intitule identifiant le contenu
+- Intitulés de liens explicites (RGAA 6.1)
+- Boutons vidéo avec intitulé identifiant le contenu
 
 ---
 
 ## Règles CSS strictes
 
-- Zero couleur codee en dur hors :root
+- Zéro couleur codée en dur hors `:root`
 - 38+ variables couleur dans :root
 - BEM naming sur tous les composants
 - text-transform: uppercase pour les majuscules visuelles (pas dans le HTML)
@@ -181,9 +181,11 @@ Décision actuelle :
 - `prd-meta-workflow/PRD-007-migration-typographique-satoshi.MD` : migration typographique Satoshi.
 - `prd-meta-workflow/PRD-008-fonds-roses-adoucis.MD` : remplacement ciblé des grands fonds rouges.
 - `prd-meta-workflow/PRD-009-routage-404-personnalisee.MD` : routage serveur de la page 404 personnalisée.
+- `prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD` : transcripts accessibles des vidéos publiques.
+- `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD` : séparation éditoriale XR / Films.
 - `docs/404-CUSTOM-ERROR-PAGE.md` : recettes Apache, Nginx, serveur statique Python et Cloudflare Worker.
 
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : 12.0.0 préproduction Satoshi, UI et 404 documentés
+**Version** : 12.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 et PRD-011 cadrés

@@ -1,6 +1,6 @@
 # Guidelines Templates - Swing Digital
 
-Conventions extraites du code source (reverse engineering v4, 24 pages multi-pages).
+Conventions extraites du code source courant : 24 pages HTML top-level, une page `/for-ai/`, build public `dist/` et typographie Satoshi auto-hébergée.
 
 ---
 
@@ -19,10 +19,7 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
     <meta property="og:description" content="[Description]">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://swing.appmiweb.com/[page].html">
-    <link rel="preload" href="fonts/Brandon_blk.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="fonts/Brandon_reg.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="fonts/Fragen-Bold.otf" as="font" type="font/otf" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20260621-1600">
     <script type="application/ld+json">...</script>
 </head>
 <body data-section="[section]" data-page="[page]">
@@ -83,7 +80,7 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
 
 - max-width 800px centre
 - Fond noir, texte blanc
-- Listes imbriquees avec padding progressif
+- Listes imbriquées avec padding progressif
 
 ---
 
@@ -93,7 +90,7 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
 
 ```css
 /* Brand */
---color-brand: #E8494B;         /* Decoratif uniquement */
+--color-brand: #E8494B;         /* Décoratif uniquement */
 --color-brand-btn: #CE3B3D;     /* Boutons, 4.86:1 sur blanc */
 --color-bg-red: #BE2F31;        /* Fonds, 5.77:1 sur blanc */
 
@@ -119,7 +116,7 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
 --size-xl:  clamp(1.5rem, 3.5vw, 2.5rem);        /* 24-40px titres xl */
 --size-2xl: clamp(1.75rem, 4.5vw, 3.5rem);       /* 28-56px hero */
 
-/* Aliases semantiques */
+/* Aliases sémantiques */
 --fs-hero: var(--size-3xl);
 --fs-title-xl: var(--size-2xl);
 --fs-title: var(--size-xl);
@@ -143,7 +140,7 @@ Conventions extraites du code source (reverse engineering v4, 24 pages multi-pag
 --header-height: 60px;
 --section-height: calc(100dvh - var(--header-height));
 --page-max-width: 1440px;
---slide-pad-x: 2rem;    /* Ajuste par breakpoint */
+--slide-pad-x: 2rem;    /* Ajusté par breakpoint */
 --slide-pad-y: 2rem;
 ```
 
@@ -187,7 +184,7 @@ Exemples : .page5__title, .page13__card, .page58__reserve-btn
 ### Composants partages
 
 ```
-.sr-only          (masque visuel, visible lecteur d'ecran)
+.sr-only          (masque visuel, visible lecteur d'écran)
 .skip-link        (premier enfant body, visible au focus)
 .reveal           (animation scroll, opacity 0 -> 1)
 .cta-reservation  (bouton CTA)
@@ -206,14 +203,14 @@ Exemples : .page5__title, .page13__card, .page58__reserve-btn
 | 1024px | Hamburger active, menu en colonne |
 | 768px | Grilles 2 colonnes -> 1 colonne, flex vertical |
 | 600px | Grilles cartes 2x2 -> 1 colonne |
-| 480px | Padding reduit, tailles police reduites |
+| 480px | Padding réduit, tailles police réduites |
 
-### Regles
+### Règles
 
-- Variables recalculees par breakpoint (--slide-pad-x, --grid-gap)
+- Variables recalculées par breakpoint (--slide-pad-x, --grid-gap)
 - Grilles passent en colonne unique sous 768px
 - Menu hamburger sous 1024px
-- Breadcrumb reduit sous 480px
+- Breadcrumb réduit sous 480px
 - Footer en colonne sous 480px
 
 ---
@@ -245,7 +242,7 @@ Exemples : .page5__title, .page13__card, .page58__reserve-btn
 
 - role="img" + aria-label explicite
 - Bouton play/pause avec aria-label dynamique
-- prefers-reduced-motion respecte
+- prefers-reduced-motion respecté
 
 ---
 
@@ -308,7 +305,7 @@ Vimeo API charge uniquement si iframe présente :
 if (!document.querySelector('iframe[src*="vimeo"]')) return;
 ```
 
-### Patterns utilises
+### Patterns utilisés
 
 - IntersectionObserver (scroll tracking, scroll reveal)
 - Disclosure pattern W3C (dropdown, hamburger)
@@ -337,5 +334,5 @@ if (!document.querySelector('iframe[src*="vimeo"]')) return;
 
 ---
 
-**Dernière mise à jour** : 2026-06-20
-**Version** : 4.0.0 (préproduction SEO/GEO)
+**Dernière mise à jour** : 2026-06-21
+**Version** : 12.0.0 (préproduction Satoshi, SEO/GEO, 404, PRD-010 et PRD-011 cadrés)
