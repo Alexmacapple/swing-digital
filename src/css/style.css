@@ -1020,6 +1020,16 @@ a.page13__card--link:focus-visible {
     color: var(--color-brand-pale);
 }
 
+.memory-box-page a {
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.memory-box-page a:hover {
+    color: var(--color-brand-pale);
+}
+
 
 /* ============================================================
    8g. PAGE MENTIONS LEGALES
@@ -4480,7 +4490,10 @@ section:hover [class*="__category"]::after {
 }
 .page56__bio {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: flex-end;
+    gap: var(--space-sm);
     padding: 1.5rem 2rem;
     background-color: var(--color-background-pink-readable); /* a11y : fond explicite pour contraste texte blanc */
 }
@@ -4608,6 +4621,12 @@ section:hover [class*="__category"]::after {
     line-height: 1.7;
     letter-spacing: 0.02em;
     margin: 0;
+}
+.page53__description p {
+    margin: 0 0 var(--space-xs);
+}
+.page53__description p:last-child {
+    margin-bottom: 0;
 }
 .page53__logos {
     display: flex;
@@ -4869,6 +4888,19 @@ section:hover [class*="__category"]::after {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+.page50--export {
+    background-color: #f1ddc5;
+}
+.page50--export .page50__background {
+    background-color: #f1ddc5;
+}
+.page50--export .page50__background::after {
+    content: none;
+}
+.page50--export .page50__background-image {
+    object-fit: contain;
+    object-position: center;
 }
 .page50__container {
     position: relative;

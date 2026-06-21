@@ -21,6 +21,16 @@
       "use_for": "Catalogue des créations immersives, réalité mixte et projets XR."
     },
     {
+      "label": "The Party",
+      "url": "https://swing.appmiweb.com/the-party.html",
+      "use_for": "Projet en développement mêlant réalité mixte et théâtre avec le studio Pixihead."
+    },
+    {
+      "label": "Memory Box VR",
+      "url": "https://swing.appmiweb.com/memory-box-vr.html",
+      "use_for": "Page projet autonome rattachée à L'Expérience Monroe et distincte de l'offre XR Corporate."
+    },
+    {
       "label": "Espace augmenté",
       "url": "https://swing.appmiweb.com/espaces-augmentes.html",
       "use_for": "Définition et usages des espaces narratifs augmentés."
@@ -55,6 +65,16 @@
     {
       "fact": "La rubrique XR rassemble les créations et projets immersifs de Swing Digital.",
       "source": "https://swing.appmiweb.com/experiences-series.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "The Party est un projet en développement mêlant réalité mixte et théâtre avec le studio Pixihead.",
+      "source": "https://swing.appmiweb.com/the-party.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "Memory Box VR est une page projet autonome rattachée à L'Expérience Monroe et distincte de l'offre XR Corporate.",
+      "source": "https://swing.appmiweb.com/memory-box-vr.html",
       "status": "verified_local"
     },
     {

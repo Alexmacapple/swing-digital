@@ -1,6 +1,6 @@
 # PRD-014 : Pages projets Marilyn, Toulouse-Lautrec et Charlotte Henschel
 
-**Statut** : Brouillon
+**Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : `retour/changements_site (1).docx`, `retour/site_images/Marilyn*.jpg`, `retour/site_images/Lautrec*.jpg`, `retour/site_images/Charlotte*.jpg`, inspection de `src/marilyn.html`, `src/toulouse-lautrec.html` et `src/charlotte-henschel.html`
@@ -15,7 +15,7 @@ Le pourquoi : ces pages présentent des projets en développement et doivent ref
 
 Le comment : renvoyé au Plan d’implémentation.
 
-## Exemple bout-en-bout projeté
+## Exemple bout-en-bout réel
 
 Un visiteur ouvre `toulouse-lautrec.html#page-53`.
 
@@ -72,6 +72,17 @@ Principes :
 - intégrer les logos via fichiers propres quand possible, plutôt qu’en texte pixellisé ;
 - corriger la capitalisation française visible ;
 - conserver les ancres existantes `#page-50`, `#page-53`, `#page-54`, `#page-55` et `#page-56`.
+
+État livré le 2026-06-21 :
+
+- les exports Marilyn, Toulouse-Lautrec et Charlotte Henschel sont copiés dans des chemins stables sous `src/img/pages/` ;
+- `marilyn.html#page-50` utilise l’export complet `marilyn-page-50.jpg` avec contenu sémantique conservé pour l’accessibilité ;
+- `marilyn.html#page-52` corrige `Marilyn` et `parcours en direct` ;
+- `toulouse-lautrec.html#page-53` et `#page-54` reprennent les nouvelles formulations HTML ;
+- `charlotte-henschel.html#page-55` corrige la capitalisation et la formulation ;
+- `charlotte-henschel.html#page-56` découpe la biographie en lignes lisibles ;
+- le cache-buster CSS des trois pages modifiées est mis à jour ;
+- le test Playwright `tests/prd014-pages-projets-marilyn-lautrec-charlotte.spec.js` couvre les textes, assets et rendus responsive.
 
 ---
 
@@ -172,4 +183,5 @@ Pour Marilyn, le mapping exact des trois exports doit être confirmé avant de s
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Implémentation des corrections Marilyn, Toulouse-Lautrec et Charlotte Henschel, intégration des exports et test Playwright dédié |
 | 2026-06-21 | Alex + Codex | Création du PRD |

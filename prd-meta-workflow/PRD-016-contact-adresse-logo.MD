@@ -1,6 +1,6 @@
 # PRD-016 : Contact, adresse et animation logo
 
-**Statut** : Brouillon
+**Statut** : Implémenté phase 1, attente asset et confirmation légale
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : `retour/changements_site (1).docx`, inspection de `src/index.html` et `src/mentions-legales.html`
@@ -15,7 +15,7 @@ Le pourquoi : le bloc contact de fin de page est une information pratique critiq
 
 Le comment : renvoyé au Plan d’implémentation.
 
-## Exemple bout-en-bout projeté
+## Exemple bout-en-bout réel
 
 Un visiteur descend en bas de `index.html`, section contact.
 
@@ -28,9 +28,9 @@ L’adresse visible devient :
 75018 Paris
 ```
 
-La vidéo ou animation de fond actuelle n’est remplacée que lorsqu’un nouvel asset logo animé sur fond rose est disponible. En attendant, la correction texte/adresse peut être livrée sans bloquer sur l’animation.
+La vidéo ou animation de fond actuelle n’est pas remplacée, car aucun nouvel asset logo animé sur fond rose n’est disponible dans `retour/site_images/` ou `src/video/`. En attendant, la correction texte/adresse est livrée sans bloquer sur l’animation.
 
-Les mentions légales sont traitées avec prudence : l’adresse peut être mise à jour si c’est bien l’adresse officielle de l’éditeur, mais la dénomination légale `Swing Digital Production` ne doit pas être supprimée sans confirmation.
+Les mentions légales sont traitées avec prudence : `Swing Digital Production` et l’ancienne adresse restent en place tant que Stéphanie ne confirme pas que la nouvelle adresse est l’adresse officielle de l’éditeur et que la dénomination légale change.
 
 ---
 
@@ -70,6 +70,15 @@ Pour les mentions légales :
 - mettre à jour l’adresse si elle est confirmée comme adresse officielle de l’éditeur ;
 - conserver `Swing Digital Production` comme dénomination légale tant qu’aucune confirmation contraire n’est donnée ;
 - ne pas inventer les informations d’hébergeur, qui restent un chantier de production finale distinct.
+
+État livré le 2026-06-21 :
+
+- `src/index.html#page-62` affiche `Swing Digital` ;
+- l’adresse visible de l’accueil est `59, rue du Département` / `75018 Paris` ;
+- l’email reste `production@swingdigitalproduction.com` ;
+- `src/mentions-legales.html` conserve `Swing Digital Production` et l’ancienne adresse dans l’attente d’une confirmation officielle ;
+- l’animation `video/contact.mp4` reste en place faute d’asset rose animé validé ;
+- le test Playwright `tests/prd016-contact-adresse-logo.spec.js` couvre le bloc source et le rendu responsive.
 
 ---
 
@@ -167,4 +176,5 @@ Dans les mentions légales, ne pas supprimer `Production` sans confirmation de l
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Implémentation phase 1 : marque visible et adresse de contact sur l’accueil, maintien prudent des mentions légales et test Playwright dédié |
 | 2026-06-21 | Alex + Codex | Création du PRD |

@@ -2,6 +2,10 @@
 
 ## 2026-06-21
 
+- Implémentation du PRD-016 phase 1 : marque visible `Swing Digital` et nouvelle adresse `59, rue du Département, 75018 Paris` sur le bloc contact de l’accueil, avec maintien prudent des mentions légales.
+- Implémentation du PRD-015 : création de `memory-box-vr.html`, intégration des exports Memory Box, reroutage des liens Memory Box, alignement sitemap / plan du site / fichiers IA et test Playwright dédié.
+- Implémentation du PRD-014 : corrections Marilyn, Toulouse-Lautrec et Charlotte Henschel, intégration des exports projet, capitalisations corrigées et test Playwright dédié.
+- Implémentation du PRD-013 : création de `the-party.html`, ajout dans le menu XR et le catalogue, intégration des assets, maillage sitemap / fichiers IA et test Playwright dédié.
 - Implémentation du PRD-012 : accueil recentré sur les expériences immersives, hashtags mis à jour, ligne de soutiens retirée du hero, introduction `#page-3` simplifiée et nouveau visuel `1_swing.jpg` intégré avec test Playwright dédié.
 - Analyse des retours Stéphanie issus de `retour/changements_site (1).docx` et `retour/site_images/`, avec tri des points déjà faits, corrections restantes et questions ouvertes.
 - Création des PRD-012 à PRD-016 : accueil éditorial, catalogue XR / The Party, pages projet Marilyn-Lautrec-Charlotte, page autonome Memory Box VR, contact/adresse/logo.

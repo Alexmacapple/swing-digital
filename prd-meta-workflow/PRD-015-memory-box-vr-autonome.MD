@@ -1,6 +1,6 @@
 # PRD-015 : Page autonome Memory Box VR
 
-**Statut** : Brouillon
+**Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : `retour/changements_site (1).docx`, texto de Stéphanie transmis par Alex, `retour/site_images/2_memory_box.jpg`, `retour/site_images/3_memory_box.jpg`, audit de maillage interne
@@ -15,13 +15,13 @@ Le pourquoi : Memory Box est présenté dans le site comme une brique de L’Exp
 
 Le comment : renvoyé au Plan d’implémentation.
 
-## Exemple bout-en-bout projeté
+## Exemple bout-en-bout réel
 
 Un visiteur arrive sur `index.html#page-3` et clique sur `Voir le projet Memory Box VR`.
 
 Il n’arrive plus sur une page intitulée `XR Corporate`. Il arrive sur `memory-box-vr.html`, avec un fil d’Ariane `Accueil > XR > Memory Box VR`.
 
-La page présente Memory Box VR avec les nouveaux exports `2_memory_box.jpg` et `3_memory_box.jpg`, un texte HTML accessible, des métadonnées propres et des liens de retour vers L’Expérience Monroe et la rubrique XR.
+La page présente Memory Box VR avec les nouveaux exports copiés sous `src/img/pages/memory-box-vr/memory-box-vr-1.jpg` et `src/img/pages/memory-box-vr/memory-box-vr-2.jpg`, un texte HTML accessible, des métadonnées propres et des liens de retour vers L’Expérience Monroe et la rubrique XR.
 
 Dans le menu Monroe, l’entrée `4. XR Memory Box` pointe aussi vers `memory-box-vr.html`. La page `xr-corporate.html` reste disponible pour l’offre corporate, sans être supprimée.
 
@@ -60,6 +60,14 @@ Inclure :
 - intégration des assets `2_memory_box.jpg` et `3_memory_box.jpg` ;
 - mise à jour des liens depuis `index.html`, `experience-monroe.html`, le menu Monroe global, le plan du site, le sitemap et les fichiers IA ;
 - conservation de `xr-corporate.html` pour l’offre entreprise.
+
+État livré le 2026-06-21 :
+
+- `src/memory-box-vr.html` existe avec canonical, Open Graph, Twitter Card, fil d’Ariane et JSON-LD dédiés ;
+- les exports Memory Box sont présents dans `src/img/pages/memory-box-vr/` ;
+- les liens éditoriaux `Memory Box VR` / `XR Memory Box` pointent vers `memory-box-vr.html` ;
+- `xr-corporate.html` reste disponible pour l’offre entreprise ;
+- `sitemap.xml`, `plan-du-site.html`, `llms.txt`, `for-ai.*`, `schema-webpage.jsonld` et `tests/seo-geo.spec.js` référencent Memory Box VR.
 
 ---
 
@@ -159,4 +167,5 @@ Le slug recommandé est `memory-box-vr.html`, car il correspond au libellé déj
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Implémentation de `memory-box-vr.html`, maillage interne, fichiers publics IA/SEO et test Playwright `tests/prd015-memory-box-vr-autonome.spec.js` |
 | 2026-06-21 | Alex + Codex | Création du PRD |

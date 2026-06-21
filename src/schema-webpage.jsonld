@@ -35,6 +35,8 @@
       "isBasedOn": [
         "https://swing.appmiweb.com/",
         "https://swing.appmiweb.com/experiences-series.html",
+        "https://swing.appmiweb.com/the-party.html",
+        "https://swing.appmiweb.com/memory-box-vr.html",
         "https://swing.appmiweb.com/espaces-augmentes.html",
         "https://swing.appmiweb.com/films.html",
         "https://swing.appmiweb.com/experience-monroe.html",
@@ -43,6 +45,34 @@
         "https://swing.appmiweb.com/for-ai.json",
         "https://swing.appmiweb.com/for-ai.txt"
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://swing.appmiweb.com/the-party.html#webpage",
+      "url": "https://swing.appmiweb.com/the-party.html",
+      "name": "The Party, réalité mixte et théâtre - Swing Digital",
+      "description": "The Party est un projet Swing Digital en développement mêlant réalité mixte et théâtre avec le studio Pixihead.",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": "https://swing.appmiweb.com/#website"
+      },
+      "about": {
+        "@id": "https://swing.appmiweb.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://swing.appmiweb.com/memory-box-vr.html#webpage",
+      "url": "https://swing.appmiweb.com/memory-box-vr.html",
+      "name": "Memory Box VR - Swing Digital",
+      "description": "Memory Box VR est une page projet autonome rattachée à L'Expérience Monroe et distincte de l'offre XR Corporate.",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": "https://swing.appmiweb.com/#website"
+      },
+      "about": {
+        "@id": "https://swing.appmiweb.com/#organization"
+      }
     },
     {
       "@type": "WebPage",

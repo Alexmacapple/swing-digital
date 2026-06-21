@@ -24,6 +24,8 @@
 - Qu'est-ce que Swing Digital : https://swing.appmiweb.com/
 - Espaces augmentés et réalité mixte : https://swing.appmiweb.com/espaces-augmentes.html
 - Catalogue XR : https://swing.appmiweb.com/experiences-series.html
+- The Party : https://swing.appmiweb.com/the-party.html
+- Memory Box VR : https://swing.appmiweb.com/memory-box-vr.html
 - Films et séries documentaires : https://swing.appmiweb.com/films.html
 - L'Expérience Monroe : https://swing.appmiweb.com/experience-monroe.html
 - Réservation et visites privées : https://swing.appmiweb.com/reservations.html
@@ -33,6 +35,8 @@
 - L'Expérience Monroe : https://swing.appmiweb.com/experience-monroe.html
 - Voyage autour de moi : https://swing.appmiweb.com/voyage-autour-de-moi.html
 - Dessine-moi le vent : https://swing.appmiweb.com/dessine-moi-le-vent.html
+- The Party : https://swing.appmiweb.com/the-party.html
+- Memory Box VR : https://swing.appmiweb.com/memory-box-vr.html
 - Marilyn : https://swing.appmiweb.com/marilyn.html
 - Toulouse-Lautrec : https://swing.appmiweb.com/toulouse-lautrec.html
 - Charlotte Henschel : https://swing.appmiweb.com/charlotte-henschel.html
