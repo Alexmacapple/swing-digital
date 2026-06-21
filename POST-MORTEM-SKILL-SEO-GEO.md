@@ -41,6 +41,22 @@ Règle proposée pour le skill :
 - correction site requise seulement si l'image reste cassée ou non chargée après exposition réelle, ou si un contrôle HTTP confirme une ressource invalide ;
 - aucune recommandation de retirer `loading="lazy"` quand les images finissent chargées après scroll.
 
+Amélioration produit du rapport : la cohorte `Responsive dynamique` ne devrait pas seulement afficher `ok` ou `warning`. Elle devrait afficher une décision explicite :
+
+- `aucune correction site requise` quand toutes les images finissent chargées après scroll ;
+- `correction site requise` quand une image reste cassée ou non chargée après exposition ;
+- `limite protocole` quand le navigateur n'a pas pu scroller, attendre ou capturer correctement ;
+- `preuve positive` quand le lazy-load fonctionne comme prévu.
+
+La carte de cohorte pourrait donc contenir quatre champs stables :
+
+- `decision` : `site_ok`, `site_fix_required`, `audit_protocol_limit` ou `needs_manual_review` ;
+- `why` : phrase courte expliquant la décision ;
+- `evidence` : compteurs clés et lien vers `responsive-study.json` ;
+- `next_action` : action unique, par exemple `ne rien changer au site`, `corriger les images cassées`, `relancer avec scroll plus long` ou `ouvrir une revue manuelle`.
+
+Pourquoi c'est utile à Loïc : le score `9/10` devient une décision opérationnelle, pas seulement une note. L'agent sait s'il doit modifier le site, améliorer le protocole d'audit ou simplement tracer la preuve.
+
 1. Rapport HTML obligatoire
 
 Au début, l'absence ou la mauvaise version du rapport HTML a créé de la confusion. L'amélioration qui force `audit.json`, `index.html`, URL locale ou chemin de rapport et captures est pertinente.
