@@ -1048,7 +1048,6 @@ a.page13__card--link:focus-visible {
 
 .mentions-legales {
     padding: var(--space-2xl) var(--slide-pad-x);
-    background-color: var(--color-black);
     color: var(--color-white);
 }
 
@@ -1059,21 +1058,17 @@ a.page13__card--link:focus-visible {
 
 .mentions-legales__container h2 {
     font-family: var(--font-primary);
-    font-size: var(--fs-title-xl);
-    margin-bottom: var(--space-xl);
-}
-
-.mentions-legales__container h3 {
-    font-family: var(--font-primary);
     font-size: var(--fs-title);
+    color: var(--color-brand-pale);
     margin-top: var(--space-xl);
     margin-bottom: var(--space-sm);
 }
 
-.mentions-legales__container h4 {
+.mentions-legales__container h3 {
     font-family: var(--font-primary);
     font-size: var(--fs-subtitle);
-    margin-top: var(--space-lg);
+    color: var(--color-white);
+    margin-top: var(--space-md);
     margin-bottom: var(--space-xs);
 }
 
@@ -1088,16 +1083,20 @@ a.page13__card--link:focus-visible {
     line-height: 1.8;
 }
 
+.mentions-legales__container li {
+    margin-bottom: var(--space-2xs);
+}
+
 .mentions-legales__container a,
 .mentions-legales__container a:visited {
     color: var(--color-white);
-    text-decoration-color: var(--color-white);
+    text-decoration: underline;
     text-underline-offset: 0.2em;
 }
 
 .mentions-legales__container a:hover,
 .mentions-legales__container a:focus-visible {
-    color: var(--color-white);
+    color: var(--color-brand-pale);
 }
 
 .mentions-legales__update {
@@ -4532,21 +4531,28 @@ section:hover [class*="__category"]::after {
 .page56__bio {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: var(--space-sm);
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(1.1rem, 2vw, 1.75rem);
     padding: 1.5rem 2rem;
     background-color: var(--color-background-pink-readable); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page56__bio p {
     font-family: var(--font-primary);
-    font-size: var(--fs-slide-meta);
-    font-weight: 700;
+    font-size: clamp(1rem, 1.35vw, 1.25rem);
+    font-weight: 600;
     color: var(--color-white);
-    letter-spacing: 0.03em;
-    line-height: 1.7;
+    letter-spacing: 0.005em;
+    line-height: 1.65;
+    max-width: 25rem;
     margin: 0;
-    text-transform: uppercase;
+    text-align: left;
+    text-transform: none;
+}
+.page56__bio p:first-child {
+    font-size: clamp(1.15rem, 1.75vw, 1.45rem);
+    font-weight: 700;
+    line-height: 1.55;
 }
 
 @media (max-width: 768px) {
@@ -4659,26 +4665,36 @@ section:hover [class*="__category"]::after {
     text-shadow: var(--shadow-text);
     font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
-    line-height: 1.7;
-    letter-spacing: 0.02em;
+    line-height: 1.85;
+    letter-spacing: 0.015em;
+    max-width: 34rem;
     margin: 0;
 }
 .page53__description p {
-    margin: 0 0 var(--space-xs);
+    margin: 0 0 clamp(0.9rem, 1.4vw, 1.25rem);
 }
 .page53__description p:last-child {
     margin-bottom: 0;
 }
+#page-55 .page53__description p {
+    margin-bottom: clamp(1.15rem, 1.8vw, 1.65rem);
+}
+#page-55 .page53__description p:last-child {
+    margin-bottom: 0;
+}
 .page53__logos {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: var(--space-md);
+    justify-content: flex-start;
+    gap: clamp(0.9rem, 2vw, 1.75rem);
     max-width: 100%;
 }
 .page53__logo {
-    height: 2.5rem;
-    max-width: 100%;
+    flex: 0 1 auto;
+    width: auto;
+    height: 3.5rem;
+    max-width: none;
     object-fit: contain;
 }
 .page53__right {
@@ -4715,6 +4731,19 @@ section:hover [class*="__category"]::after {
     }
     .page53__right {
         min-height: 50vh;
+    }
+    .page53__description {
+        line-height: 1.75;
+        max-width: 30rem;
+    }
+    .page53__description p {
+        margin-bottom: 0.75rem;
+    }
+    .page53__logos {
+        gap: clamp(0.55rem, 3vw, 0.75rem);
+    }
+    .page53__logo {
+        height: 3rem;
     }
 }
 
