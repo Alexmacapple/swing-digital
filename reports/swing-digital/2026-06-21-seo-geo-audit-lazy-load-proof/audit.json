@@ -118,34 +118,47 @@
   "findings": [
     {
       "priority": "P1",
-      "title": "PRD-006 validé : le faux warning lazy-load disparaît",
+      "title": "PRD-006 : transformer le faux warning lazy-load en règle de scoring du skill",
       "observed": [
-        "Le nouveau responsive-study.json a un statut pass sur desktop et mobile.",
-        "Desktop : 34 images lazy, 8 chargées initialement, 26 chargées après scroll.",
-        "Desktop : 0 image cassée, 0 image encore différée, 0 image manquante après scroll.",
-        "Mobile : 34 images chargées initialement, 0 image manquante après scroll."
+        "Le rapport précédent signalait 26 images non chargées au premier rendu responsive.",
+        "Le nouveau responsive-study.json scrolle la page avant de scorer les images et passe en statut pass sur desktop et mobile.",
+        "Desktop : 34 images lazy, 8 chargées initialement, 26 chargées après scroll, 0 cassée, 0 encore différée.",
+        "Mobile : 34 images chargées initialement, 0 cassée, 0 encore différée.",
+        "Aucun fichier du site n’a été modifié pour obtenir ce résultat : la correction est dans le protocole du skill."
       ],
       "inferred": [
-        "Le précédent warning responsive mesurait surtout le timing de capture, pas un défaut utilisateur confirmé.",
-        "La bonne correction était dans le skill, pas dans le site : il ne fallait pas retirer loading=\"lazy\"."
+        "Un compteur unique missingImages est trop ambigu : il mélange images cassées, images différées et images pas encore exposées au viewport.",
+        "Une image lazy-load chargée après scroll est un succès du comportement web, pas une dette à corriger dans le site.",
+        "Le skill doit recommander une correction site seulement si une image reste broken ou still_deferred après exposition réelle, ou si le contrôle HTTP confirme une ressource invalide.",
+        "Quand loaded_after_scroll est positif et broken/still_deferred restent à 0, le rapport doit classer le point comme preuve de protocole robuste, pas comme warning utilisateur."
       ],
       "recommended": [
-        "Intégrer ce protocole avant/après scroll dans la prochaine version du skill.",
-        "Afficher les compteurs loaded_initially, loaded_after_scroll, broken et still_deferred dans le rapport HTML.",
-        "Tracer cet incident dans le post-mortem pour Loïc comme amélioration générique du skill."
+        "Remplacer le scoring image basé sur missingImages initial par une règle après scroll : broken > 0 = issue ; still_deferred > 0 = warning ; loaded_after_scroll > 0 avec broken=0 = information positive.",
+        "Conserver dans le JSON deux états structurés : image_loading.initial et image_loading.after_scroll, avec loaded_initially, loaded_after_scroll, broken, still_deferred et unresolved_sample.",
+        "Afficher dans le rapport HTML une décision explicite : “aucune correction site requise” quand toutes les images lazy-load finissent chargées après scroll.",
+        "Tracer le protocole de reproduction : viewports, nombre de paliers de scroll, délai maximal d’attente et moment de la capture.",
+        "Ajouter une fixture de régression au skill : une image lazy sous la ligne de flottaison doit passer loaded_after_scroll, une image cassée doit rester broken."
       ],
       "evidence": [
         {
           "label": "Étude responsive corrigée",
-          "path": "responsive-study.json"
+          "path": "responsive-study.json",
+          "status": "pass après scroll"
+        },
+        {
+          "label": "Ancienne étude responsive",
+          "path": "../2026-06-21-seo-geo-audit-design-watch-mobile/responsive-study.json",
+          "status": "warning avant correction du protocole"
         },
         {
           "label": "Capture desktop du site audité",
-          "path": "site-screenshots/desktop.png"
+          "path": "site-screenshots/desktop.png",
+          "status": "0 image cassée"
         },
         {
           "label": "Capture mobile du site audité",
-          "path": "site-screenshots/mobile.png"
+          "path": "site-screenshots/mobile.png",
+          "status": "0 image cassée"
         }
       ]
     },
@@ -242,7 +255,7 @@
       "what_it_checks": "Overflow, images, H1, title, viewport, texte visible.",
       "verdict": "Le rendu mobile/desktop passe après correction du protocole lazy-load.",
       "evidence": "responsive-study.json : desktop 26 images chargées après scroll, 0 cassée, 0 encore différée ; mobile 0 image manquante.",
-      "next_action": "Reporter ce pattern dans le skill pour éviter les faux positifs sur d’autres sites."
+      "next_action": "Remonter dans le skill une règle de scoring après scroll, avec décision “site fix” seulement si broken ou still_deferred reste positif."
     },
     {
       "name": "Measurement owner",
@@ -1681,7 +1694,14 @@
         "missing_after_scroll": 0,
         "unresolved_sample": []
       },
-      "lesson_for_skill": "Le score image doit être calculé après exposition réelle au viewport, pas seulement au chargement initial."
+      "lesson_for_skill": "Le score image doit être calculé après exposition réelle au viewport, pas seulement au chargement initial.",
+      "recommended_skill_rule": {
+        "broken": "issue",
+        "still_deferred": "warning_after_scroll",
+        "loaded_after_scroll": "positive_lazy_load_evidence",
+        "site_fix_required_when": "broken > 0 or still_deferred > 0 after scroll exposure, or HTTP check fails",
+        "no_site_fix_when": "loaded_after_scroll > 0 and broken == 0 and still_deferred == 0"
+      }
     }
   },
   "public_measurements": [

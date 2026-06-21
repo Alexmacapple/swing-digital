@@ -33,6 +33,14 @@ Résultat observé : desktop avec 34 images lazy, 8 chargées initialement, 26 c
 
 Enseignement générique : ne pas transformer un comportement web sain en dette technique parce que le protocole d'audit observe trop tôt. Le skill doit aider l'agent à diagnostiquer si le problème vient du site, du cache, de la préproduction ou de l'outil.
 
+Règle proposée pour le skill :
+
+- `broken > 0` après scroll : issue site ;
+- `still_deferred > 0` après scroll : warning à investiguer ;
+- `loaded_after_scroll > 0` avec `broken = 0` et `still_deferred = 0` : preuve positive de lazy-load sain ;
+- correction site requise seulement si l'image reste cassée ou non chargée après exposition réelle, ou si un contrôle HTTP confirme une ressource invalide ;
+- aucune recommandation de retirer `loading="lazy"` quand les images finissent chargées après scroll.
+
 1. Rapport HTML obligatoire
 
 Au début, l'absence ou la mauvaise version du rapport HTML a créé de la confusion. L'amélioration qui force `audit.json`, `index.html`, URL locale ou chemin de rapport et captures est pertinente.
