@@ -457,6 +457,7 @@ img {
 
 .site-nav__link,
 .site-nav__btn {
+    position: relative;
     color: var(--color-white);
     text-decoration: none;
     font-family: var(--font-primary);
@@ -481,11 +482,23 @@ img {
     text-decoration: none;
 }
 
-/* Etat actif du menu — pas seulement la couleur (bordure + font-weight) */
+/* Etat actif du menu — soulignement lisible sur desktop */
 .site-nav__link--active,
 .site-nav__btn--active {
     font-weight: 900;
-    border-bottom: 3px solid var(--color-white);
+}
+
+.site-nav__link--active::after,
+.site-nav__btn--active::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 999px;
+    pointer-events: none;
 }
 
 /* Indicateur dropdown */
@@ -728,6 +741,11 @@ img {
     .site-nav__btn--active {
         border-bottom: none;
         border-left: 3px solid var(--color-white);
+    }
+
+    .site-nav__link--active::after,
+    .site-nav__btn--active::after {
+        content: none;
     }
 
     .site-nav__submenu {

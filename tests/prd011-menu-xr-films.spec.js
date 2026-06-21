@@ -110,4 +110,33 @@ test.describe('PRD-011 - menu XR et Films', () => {
       expect(content, name).not.toMatch(/Ni vues ni connues[\s\S]{0,160}XR/i);
     }
   });
+
+  test('le lien actif Films a un signal de menu lisible', async ({ page }) => {
+    await page.goto('/films.html');
+
+    const activeLink = page.locator('.site-nav__link[href="films.html"]');
+    await expect(activeLink).toHaveClass(/site-nav__link--active/);
+    await expect(activeLink).toHaveAttribute('aria-current', 'page');
+
+    const marker = await activeLink.evaluate((el) => {
+      const after = window.getComputedStyle(el, '::after');
+      const link = window.getComputedStyle(el);
+      return {
+        content: after.content,
+        height: Number.parseFloat(after.height),
+        backgroundColor: after.backgroundColor,
+        borderLeftWidth: Number.parseFloat(link.borderLeftWidth),
+        borderLeftColor: link.borderLeftColor,
+      };
+    });
+
+    if ((page.viewportSize()?.width ?? 0) >= 1024) {
+      expect(marker.content).not.toBe('none');
+      expect(marker.height).toBeGreaterThanOrEqual(2);
+      expect(marker.backgroundColor).toBe('rgb(255, 255, 255)');
+    } else {
+      expect(marker.borderLeftWidth).toBeGreaterThanOrEqual(2);
+      expect(marker.borderLeftColor).toBe('rgb(255, 255, 255)');
+    }
+  });
 });
