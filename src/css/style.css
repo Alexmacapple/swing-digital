@@ -79,6 +79,15 @@
     --color-brand-pink-gradient: #E84A7E;
     --color-brand-coral: #FF6B6B;
     --color-brand-peach: #FF9966;
+    --color-background-pink: #FF427D; /* décoratif uniquement, pas pour texte blanc normal */
+    --color-background-pink-readable: #C9365D; /* 5.04:1 sur blanc */
+    --gradient-background-pink: linear-gradient(90deg, #D54267 0%, #E85958 50%, #E97C54 100%);
+    --gradient-background-pink-readable:
+        linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24)),
+        var(--gradient-background-pink);
+    --gradient-hero-video-tint:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.36) 45%, rgba(0, 0, 0, 0.62) 100%),
+        linear-gradient(90deg, rgba(213, 66, 103, 0.34) 0%, rgba(232, 89, 88, 0.26) 50%, rgba(233, 124, 84, 0.3) 100%);
     --color-brand-red-btn: #C23537;
     --color-brand-red-dark: #c0392b;
     --color-brand-rose: #B5364E;
@@ -294,7 +303,7 @@ body {
     line-height: 1.8;
     letter-spacing: 0.015em;
     color: var(--color-text);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-background-pink-readable);
     hanging-punctuation: first last;
 }
 
@@ -1193,7 +1202,7 @@ a.page13__card--link:focus-visible {
     scroll-margin-top: calc(var(--header-height) + 3rem + var(--safe-top));
     overflow-x: hidden;
     display: block;
-    background-color: var(--color-brand-btn);
+    background-color: var(--color-background-pink-readable);
     color: var(--color-white);
 }
 
@@ -1203,9 +1212,7 @@ a.page13__card--link:focus-visible {
     left: 0;
     width: 100%;
     height: 100%;
-    background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.5) 45%, rgba(0, 0, 0, 0.68) 100%),
-        linear-gradient(135deg, rgba(190, 47, 49, 0.52) 0%, rgba(208, 72, 72, 0.32) 50%, rgba(190, 47, 49, 0.52) 100%);
+    background: var(--gradient-hero-video-tint);
     z-index: 3;
     pointer-events: none;
 }
@@ -1325,7 +1332,7 @@ a.page13__card--link:focus-visible {
     z-index: 15;
     width: 90%;
     max-width: 800px;
-    padding: var(--space-sm-tight) var(--space-md);
+    padding: clamp(1.25rem, 2.2vw, 2rem) clamp(1.5rem, 3vw, 3rem);
     isolation: isolate;
 }
 
@@ -1634,7 +1641,7 @@ a.page13__card--link:focus-visible {
         align-items: center;
         justify-content: center;
         max-width: 100%;
-        padding: var(--space-xs) var(--space-sm);
+        padding: clamp(1rem, 4vw, 1.5rem) clamp(1rem, 5vw, 1.75rem);
         text-align: center;
     }
 
@@ -2254,14 +2261,15 @@ section:hover [class*="__category"]::after {
     gap: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-brand);
-    background-color: var(--color-brand-btn); /* fallback a11y : 4.86:1 sur blanc */
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable); /* fallback a11y : 5.04:1 sur blanc */
     color: var(--color-white);
 }
 
 /* Colonne gauche - Texte */
 .page3__left {
-    background-color: var(--color-brand-btn); /* fallback a11y : outils ne traversent pas les gradients parents */
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable); /* fallback a11y : outils ne traversent pas les gradients parents */
     color: var(--color-white);
     padding: var(--slide-pad-y) var(--slide-pad-x);
     display: flex;
@@ -2303,7 +2311,7 @@ section:hover [class*="__category"]::after {
 
 .page3__creations {
     flex: 1;
-    background-color: inherit; /* a11y : herite du fond rouge parent pour outils de contraste */
+    background-color: inherit; /* a11y : hérite du fond rose parent pour outils de contraste */
 }
 
 .page3__section-title {
@@ -2313,7 +2321,7 @@ section:hover [class*="__category"]::after {
     margin: var(--space-sm) 0 0.6rem 0;
     text-transform: uppercase;
     color: var(--color-white);
-    background-color: var(--color-brand-btn); /* a11y : explicite pour les outils de contraste (4.86:1) */
+    background-color: var(--color-background-pink-readable); /* a11y : explicite pour les outils de contraste (5.04:1) */
 }
 
 .page3__project {
@@ -2346,7 +2354,7 @@ section:hover [class*="__category"]::after {
     margin: var(--space-2xs) 0;
     line-height: 1.7;
     font-weight: 400;
-    background-color: var(--color-brand-btn); /* a11y : explicite pour les outils de contraste (4.86:1) */
+    background-color: var(--color-background-pink-readable); /* a11y : explicite pour les outils de contraste (5.04:1) */
 }
 
 .page3__project-meta a {
@@ -2384,7 +2392,7 @@ section:hover [class*="__category"]::after {
     font-weight: 400;
     letter-spacing: 0.3px;
     transition: color 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
-    background-color: var(--color-brand-btn); /* a11y : explicite pour les outils de contraste (4.86:1) */
+    background-color: var(--color-background-pink-readable); /* a11y : explicite pour les outils de contraste (5.04:1) */
 }
 
 .page3__project-link:hover {
@@ -2442,7 +2450,8 @@ section:hover [class*="__category"]::after {
 }
 
 #page-4 .page3__right--text .page3__left {
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     color: var(--color-white);
 }
 
@@ -2511,8 +2520,8 @@ section:hover [class*="__category"]::after {
    ============================================================ */
 
 .page5 {
-    background: var(--gradient-brand);
-    background-color: var(--color-brand-btn);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     color: var(--color-white);
     padding: 0;
     min-height: var(--section-height);
@@ -2606,8 +2615,8 @@ section:hover [class*="__category"]::after {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: var(--gradient-brand);
-    background-color: var(--color-brand-btn);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     color: var(--color-white);
 }
 
@@ -2761,7 +2770,8 @@ section:hover [class*="__category"]::after {
     position: relative;
     width: 100%;
     min-height: var(--section-height);
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     padding: 0;
     overflow-x: hidden;
 }
@@ -2824,7 +2834,7 @@ section:hover [class*="__category"]::after {
     position: relative;
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-background-pink-readable);
 }
 
 .page9__background {
@@ -2838,7 +2848,7 @@ section:hover [class*="__category"]::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--gradient-hero);
+    background: var(--gradient-background-pink);
     opacity: 0.75;
     mix-blend-mode: multiply;
 }
@@ -2945,7 +2955,7 @@ section:hover [class*="__category"]::after {
     position: relative;
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background-color: var(--color-background-pink-readable);
 }
 
 .page10__background {
@@ -2959,7 +2969,7 @@ section:hover [class*="__category"]::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--gradient-hero);
+    background: var(--gradient-background-pink);
     opacity: 0.75;
     mix-blend-mode: multiply;
 }
@@ -3860,7 +3870,8 @@ section:hover [class*="__category"]::after {
 .page60 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     color: var(--color-white);
 }
 .page60__layout {
@@ -3933,7 +3944,8 @@ section:hover [class*="__category"]::after {
 .page61 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -3954,7 +3966,7 @@ section:hover [class*="__category"]::after {
 }
 .page61__mail-link {
     color: var(--color-white);
-    background-color: var(--color-bg-red);
+    background-color: var(--color-background-pink-readable);
     padding: 0.1rem 0.4rem;
     text-decoration: underline;
     font-weight: 700;
@@ -4200,8 +4212,8 @@ section:hover [class*="__category"]::after {
 .page57 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red); /* a11y : fallback pour outils de contraste */
-    background: linear-gradient(135deg, var(--color-bg-red) 0%, var(--color-red-mid) 50%, var(--color-bg-red) 100%);
+    background-color: var(--color-background-pink-readable); /* a11y : fallback pour outils de contraste */
+    background: var(--gradient-background-pink-readable);
     position: relative;
 }
 .page57::before {
@@ -4229,10 +4241,10 @@ section:hover [class*="__category"]::after {
     text-align: center;
     position: relative;
     margin-bottom: var(--space-sm);
-    background-color: inherit; /* a11y : herite fond rouge pour outils de contraste */
+    background-color: inherit; /* a11y : hérite fond rose pour outils de contraste */
 }
 .page57__main-title {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
@@ -4255,21 +4267,21 @@ section:hover [class*="__category"]::after {
     align-items: center;
 }
 .page57__subtitle {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-title);
     font-weight: 900;
     margin: 0 0 var(--space-sm);
 }
 .page57__paragraph {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-sm-tight);
 }
 .page57__tags {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     margin: 0 0 var(--space-sm);
@@ -4282,7 +4294,7 @@ section:hover [class*="__category"]::after {
     border-radius: 4px;
 }
 .page57__cta {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 700;
@@ -4308,8 +4320,8 @@ section:hover [class*="__category"]::after {
 .page56 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red); /* a11y : fallback pour outils de contraste */
-    background: linear-gradient(180deg, var(--color-bg-red) 0%, var(--color-red-mid) 100%);
+    background-color: var(--color-background-pink-readable); /* a11y : fallback pour outils de contraste */
+    background: var(--gradient-background-pink-readable);
     display: flex;
     flex-direction: column;
 }
@@ -4348,7 +4360,7 @@ section:hover [class*="__category"]::after {
     display: flex;
     align-items: flex-end;
     padding: 1.5rem 2rem;
-    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
+    background-color: var(--color-background-pink-readable); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page56__bio p {
     font-family: var(--font-primary);
@@ -4384,7 +4396,8 @@ section:hover [class*="__category"]::after {
 .page54 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     display: flex;
     flex-direction: column;
 }
@@ -4439,7 +4452,8 @@ section:hover [class*="__category"]::after {
 .page53 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     display: grid;
     grid-template-columns: 45% 55%;
 }
@@ -4449,10 +4463,10 @@ section:hover [class*="__category"]::after {
     justify-content: space-between;
     padding: var(--space-lg) var(--slide-pad-x);
     color: var(--color-white);
-    background-color: inherit; /* a11y : herite du fond rouge parent pour outils de contraste */
+    background-color: inherit; /* a11y : hérite du fond rose parent pour outils de contraste */
 }
 .page53__title {
-    background-color: var(--color-bg-red); /* a11y */
+    background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--size-lg);
     font-weight: 900;
@@ -4503,7 +4517,7 @@ section:hover [class*="__category"]::after {
     position: absolute;
     top: calc(1rem + var(--safe-top));
     right: calc(1rem + var(--safe-right));
-    background-color: var(--color-bg-red);
+    background-color: var(--color-background-pink-readable);
     color: var(--color-white);
     padding: var(--space-2xs) 0.6rem;
     font-family: var(--font-primary);
@@ -4991,7 +5005,8 @@ section:hover [class*="__category"]::after {
 .page47 {
     min-height: var(--section-height);
     overflow: visible;
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     display: flex;
     flex-direction: column;
 }
@@ -5007,24 +5022,25 @@ section:hover [class*="__category"]::after {
     flex-direction: column;
     justify-content: center;
     color: var(--color-white);
-    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page47__paragraph {
-    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
+    background-color: var(--color-background-pink-readable); /* a11y : fond explicite pour contraste texte blanc */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-body);
     line-height: 1.7;
     margin: 0 0 var(--space-sm-tight);
 }
 .page47__credit {
-    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
+    background-color: var(--color-background-pink-readable); /* a11y : fond explicite pour contraste texte blanc */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-small);
     color: var(--color-white);
     margin: 0 0 var(--space-2xs);
 }
 .page47__credit strong {
-    background-color: var(--color-bg-red); /* a11y : fond explicite pour contraste texte blanc */
+    background-color: var(--color-background-pink-readable); /* a11y : fond explicite pour contraste texte blanc */
 }
 .page47__gallery {
     display: grid;
@@ -5094,7 +5110,8 @@ section:hover [class*="__category"]::after {
 .page46 {
     min-height: var(--section-height);
     overflow: hidden;
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     display: flex;
     flex-direction: column;
 }
@@ -5196,7 +5213,8 @@ section:hover [class*="__category"]::after {
     display: block;
 }
 .page44__text {
-    background-color: var(--color-bg-red);
+    background: var(--gradient-background-pink-readable);
+    background-color: var(--color-background-pink-readable);
     color: var(--color-white);
     padding: var(--space-lg) var(--slide-pad-x);
     display: flex;
