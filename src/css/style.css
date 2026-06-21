@@ -155,6 +155,7 @@
     /* Responsive slide spacing */
     --slide-pad-x: 2rem;
     --slide-pad-y: 2rem;
+    --pink-panel-pad-x: clamp(2rem, 5vw, 4rem);
 
     /* === ECHELLE TYPOGRAPHIQUE (couche 1 : tailles) === */
     --size-2xs: 0.875rem;                            /* 14px — credits */
@@ -7511,4 +7512,33 @@ section:hover [class*="__category"]::after {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+}
+
+/* ============================================================
+   Panneaux roses : respiration texte
+   ============================================================ */
+
+.page3__left:not(.page3__left--image),
+.page3__right--text .page3__left,
+.page5__container,
+.page6__header,
+.page6__main,
+.partners-page__container,
+.page9__header,
+.page9__intro,
+.page9__grid,
+.page10__grid,
+.page44__text,
+.page46__header,
+.page46__visual,
+.page47__text,
+.page53__left,
+.page54__text,
+.page56__header,
+.page56__content,
+.page57__container,
+.page60__text,
+.page61__left {
+    padding-left: var(--pink-panel-pad-x);
+    padding-right: var(--pink-panel-pad-x);
 }
