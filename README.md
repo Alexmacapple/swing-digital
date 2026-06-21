@@ -105,4 +105,4 @@ npm run prod:preflight -- https://votre-domaine.fr
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : v11 préproduction UI, typographie et 404 documentés
+**Version** : v12 préproduction Satoshi, UI et 404 documentés

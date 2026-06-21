@@ -4,7 +4,7 @@
 
 | Technologie | Usage |
 |-------------|-------|
-| HTML5 | Structure semantique (sections, aria-labels, headings) |
+| HTML5 | Structure sémantique (sections, aria-labels, headings) |
 | CSS3 | Variables, BEM, responsive, animations |
 | JavaScript (vanilla) | Scroll tracking, videos Vimeo, navigation |
 
@@ -12,8 +12,8 @@
 
 - **Pas de framework** : site vitrine statique, HTML/CSS/JS pur
 - **Mobile-first** : breakpoints 768px et 480px
-- **Performance** : images optimisees, pas de dependances externes
-- **Accessibilite** : WCAG 2.2 AA (alt text, contraste, navigation clavier)
+- **Performance** : images optimisées, pas de dépendances externes
+- **Accessibilité** : WCAG 2.2 AA (alt text, contraste, navigation clavier)
 
 ## CSS
 
@@ -21,12 +21,11 @@
 
 ```css
 --section-height     /* 100vh / 100dvh */
---color-brand        /* #E8494B (fonds decoratifs) */
+--color-brand        /* #E8494B (fonds décoratifs) */
 --color-brand-btn    /* #CE3B3D (texte sur blanc, WCAG AA) */
---color-brand-gold   /* #E8C84A (elements dores) */
+--color-brand-gold   /* #E8C84A (éléments dorés) */
 --gradient-brand     /* #B93539 -> #CE3B3D */
---font-primary       /* Brandon */
---font-secondary     /* Fragen */
+--font-primary       /* Satoshi */
 --fs-slide-title     /* clamp(1.5rem, 4vw, 2.5rem) */
 --fs-slide-body      /* clamp(0.8rem, 1.5vw, 0.9rem) */
 --slide-pad-x        /* 2rem -> 1rem */
@@ -40,31 +39,29 @@
 .pageN__element--mod    /* Modifier */
 ```
 
-### Archetypes de layout
+### Archétypes de layout
 
-10 templates couvrent les 62 pages (details dans GUIDELINES-TEMPLATES.md).
+10 templates couvrent les 62 pages (détails dans GUIDELINES-TEMPLATES.md).
 
 ## Polices
 
 ```
-Brandon Black      -> Titres principaux, headings
-Fragen             -> Corps de texte, sous-titres, descriptions
-Raleway Bold       -> Navigation, labels
-Roboto Bold        -> Elements UI
-Walden Black       -> Elements decoratifs (page 1)
+Satoshi Variable       -> Police principale du site
+Satoshi VariableItalic -> Emphase et italiques
+Fallbacks             -> Inter, system-ui, Segoe UI, sans-serif
 ```
 
 ## JavaScript
 
 - Scroll tracking (IntersectionObserver)
-- Videos Vimeo (iframe API, autoplay, loop, muted)
-- Controles video accessibles (play/pause, son)
+- Vidéos Vimeo (iframe API, autoplay, loop, muted)
+- Contrôles vidéo accessibles (play/pause, son)
 - Navigation par ancres (#page-N)
-- Pas de dependances npm
+- Pas de dépendances npm
 
-## Hebergement
+## Hébergement
 
-A definir (Netlify, Vercel, OVH, ou autre).
+À définir (Netlify, Vercel, OVH, ou autre).
 
 ## Fichiers
 
@@ -77,4 +74,4 @@ A definir (Netlify, Vercel, OVH, ou autre).
 
 ---
 
-**Derniere mise a jour** : 2026-03-22
+**Dernière mise à jour** : 2026-06-21

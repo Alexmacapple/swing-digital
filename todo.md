@@ -67,6 +67,7 @@
 - [x] `npm run build:prod` et `npm run appmiweb:preflight`
 - [x] PRD-001 créé : mise en production SEO/GEO et mesure
 - [x] PRD-007 créé : migration typographique Satoshi
+- [x] PRD-007 livré : Satoshi Variable auto-hébergée, anciennes polices supprimées, validation navigateur toutes pages OK
 - [x] PRD-008 créé : fonds roses adoucis
 - [x] PRD-009 créé : routage de la page 404 personnalisée
 - [x] Page 404 hero visible sur `/404.html`

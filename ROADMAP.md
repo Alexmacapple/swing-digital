@@ -25,7 +25,7 @@
 | 13. SEO/GEO préproduction | Canonicals Appmiweb, sitemap, robots, `llms.txt`, JSON-LD, FAQ, réponses directes | Terminé |
 | 14. Packaging production | `npm run build:prod`, `dist/` public, preflight Appmiweb | Terminé |
 | 15. PRD production SEO/GEO | PRD-001 : mesure, LCP, politique crawlers IA | Terminé |
-| 16. Typographie premium | PRD-007 : Satoshi Variable auto-hébergée | Prêt à valider |
+| 16. Typographie premium | PRD-007 : Satoshi Variable auto-hébergée | Terminé |
 | 17. Couleurs roses | PRD-008 : fonds roses adoucis, lisibilité et page équipe | Terminé |
 | 18. Page 404 hero | Page 404 custom visible sur `/404.html` | Terminé |
 

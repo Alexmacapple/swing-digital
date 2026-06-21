@@ -112,7 +112,7 @@ src/
 ## Branche de travail
 
 **Branche active** : main
-**Tags** : v1 à v11, dont v11 pour les couleurs roses, le plan du site et la page 404 hero
+**Tags** : v1 à v12, dont v12 pour la migration typographique Satoshi
 **Branches mergées** : cosmétique, image, decoupage
 
 ## Commandes de validation actuelles
@@ -129,6 +129,7 @@ Derniers résultats observés :
 - `npm test` : 1 301 tests passés, 154 ignorés.
 - `npm run seo:check` : 9/9 tests passés.
 - `npm run appmiweb:preflight` : OK avec avertissements attendus sur mentions légales, CTA Réservations et billetterie.
+- Contrôle navigateur Satoshi : 25 pages HTML x 3 largeurs, police locale chargée, aucune famille calculée hors Satoshi, aucun débordement horizontal.
 
 ---
 
@@ -185,4 +186,4 @@ Décision actuelle :
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : 11.0.0 préproduction UI, typographie et 404 documentés
+**Version** : 12.0.0 préproduction Satoshi, UI et 404 documentés

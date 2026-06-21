@@ -10,6 +10,6 @@ Index des PRD du workspace Swing Digital.
 | PRD-004 | Mesure préproduction SEO/GEO | Validé localement | 2026-06-21 | Haute |
 | PRD-005 | Validation Search/Crawl préproduction | Validé public | 2026-06-21 | Moyenne |
 | PRD-006 | Audit responsive lazy-load | Implémenté outil | 2026-06-21 | Moyenne |
-| PRD-007 | Migration typographique Satoshi | Implémentation prête à valider | 2026-06-21 | Moyenne |
+| PRD-007 | Migration typographique Satoshi | Validé et livré | 2026-06-21 | Moyenne |
 | PRD-008 | Fonds roses adoucis | Implémenté et publié en préproduction | 2026-06-21 | Moyenne |
 | PRD-009 | Routage de la page 404 personnalisée | Documenté, action infra requise | 2026-06-21 | Moyenne |

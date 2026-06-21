@@ -2,71 +2,72 @@
 
 ## Projet
 
-Refonte du site web de Swing Digital, entreprise specialisee dans les experiences immersives et les espaces augmentes.
+Refonte du site web de Swing Digital, entreprise spécialisée dans les expériences immersives et les espaces augmentés.
 
 ## Structure du site
 
-Le site est un single-page compose de 62 slides/pages, organise en sections :
+Le site est un single-page composé de 62 slides/pages, organisé en sections :
 
 ### 1. Accueil (pages 1-2)
 - Hero avec gradient rose et titre
-- Presentation equipe (photos, roles)
+- Présentation équipe (photos, rôles)
 
-### 2. Creations (pages 3-4)
-- Portfolio des projets en cours et realises
+### 2. Créations (pages 3-4)
+- Portfolio des projets en cours et réalisés
 - Collage photos + descriptions
 
-### 3. Espaces augmentes (pages 5-8)
+### 3. Espaces augmentés (pages 5-8)
 - Description des services et de l'approche
 - Partenaires/clients (24 logos)
 
-### 4. Experiences (pages 9-56)
+### 4. Expériences (pages 9-56)
 
 | Projet | Pages | Statut |
 |--------|-------|--------|
-| L'Experience Monroe | 9-19 | En ligne |
+| L'Expérience Monroe | 9-19 | En ligne |
 | Le Roman Graphique | 20-22 | En ligne |
 | Installation Interactive | 23-38 | En ligne |
-| La Serie Marilyn | 39 | En ligne |
+| La Série Marilyn | 39 | En ligne |
 | XR 360 | 40-41 | En ligne |
 | Voyage autour de moi | 42-44 | En ligne |
 | Dessine-moi le vent | 45-47 | En ligne |
-| Ni vues Ni connues | 48-49 | En ligne |
+| Ni vues ni connues | 48-49 | En ligne |
 | Marilyn | 50-52 | En ligne |
-| Toulouse-Lautrec | 53-54 | **Masque** (a remettre avant prod) |
+| Toulouse-Lautrec | 53-54 | **Masqué** (à remettre avant prod) |
 | Charlotte Henschel | 55-56 | En ligne |
 
 ### 5. XR Entreprises (page 57)
 - Offre corporate, team-building immersif
 
-### 6. Reservations (pages 58-59)
-- Billetterie Experience Toulouse-Lautrec
-- Billetterie Experience Charlotte Henschel (bientot)
+### 6. Réservations (pages 58-59)
+- Billetterie Expérience Toulouse-Lautrec
+- Billetterie Expérience Charlotte Henschel (bientôt)
 
 ### 7. Informations (pages 60-61)
 - Informations pratiques, tarifs, FAQ
-- Visites privees et sur-mesure
+- Visites privées et sur-mesure
 
 ### 8. Contact (page 62)
-- Coordonnees, email, adresse
+- Coordonnées, email, adresse
 
 ## Navigation
 
-- Site single-page a scroll vertical
-- Chaque section = un slide plein ecran (100vh)
+- Site single-page à scroll vertical
+- Chaque section = un slide plein écran (100vh)
 - Navigation par scroll ou ancres (#page-N)
 
-## Reference visuelle
+## Référence visuelle
 
-Site du meme domaine pour inspiration : https://www.atelierdaruma.com/
+Site du même domaine pour inspiration : https://www.atelierdaruma.com/
 
 ## Assets
 
 - Maquette PDF : `source-artifacts/maquette-site.pdf` (62 pages)
-- Export HD : `EXPORT_HD/EXPORT_JPG/` (62 JPG haute definition)
+- Export HD : `EXPORT_HD/EXPORT_JPG/` (62 JPG haute définition)
 - Images extraites : `source-artifacts/pages-extracted/` (220 images)
-- Polices : Brandon, Fragen, Raleway, Roboto, Walden
+- Police active : Satoshi Variable auto-hébergée en `.woff2`
+- Anciennes polices de maquette Brandon, Fragen et Raleway supprimées du build
 
 ---
 
-**Derniere mise a jour** : 2026-03-22
+**Dernière mise à jour** : 2026-06-21

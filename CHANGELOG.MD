@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Validation et livraison du PRD-007 : Satoshi Variable auto-hébergée sur tout le site, suppression des anciennes polices OTF/TTF, build et contrôles navigateur toutes pages validés.
 - Mise à jour des PRD-007, PRD-008 et PRD-009 avec leur statut, leur état d'implémentation et les suites de validation.
 - Mise à jour des Markdown racine pour refléter Satoshi, les fonds roses, la page 404 hero et le routage 404 restant côté hébergement.
 - Création du PRD-009 : routage serveur de la page 404 personnalisée avec conservation du statut HTTP 404.

@@ -8,38 +8,20 @@
    ============================================================ */
 
 @font-face {
-    font-family: 'Brandon';
-    src: url('../fonts/Brandon_blk.otf') format('opentype');
-    font-weight: 900;
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Variable.woff2') format('woff2');
+    font-weight: 300 900;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Brandon';
-    src: url('../fonts/Brandon_reg.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Brandon';
-    src: url('../fonts/Brandon_light_it.otf') format('opentype');
-    font-weight: 300;
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-VariableItalic.woff2') format('woff2');
+    font-weight: 300 900;
     font-style: italic;
     font-display: swap;
 }
-
-@font-face {
-    font-family: 'Fragen';
-    src: url('../fonts/Fragen-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* Fragen-BoldItalic : fichier absent, supprime pour eviter 404 */
 
 /* ============================================================
    2. CSS VARIABLES
@@ -138,7 +120,7 @@
     /* Largeur max desktop pour eviter l'etirement sur grands ecrans */
     --page-max-width: 1440px;
 
-    --font-primary: 'Brandon', sans-serif;
+    --font-primary: 'Satoshi', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
     --space-2xs: 0.3rem;
     --space-xs: 0.5rem;
@@ -291,6 +273,7 @@ body::-webkit-scrollbar {
 
 /* iOS : supprime le delay 300ms au tap et le flash bleu */
 a, button, [role="button"], input, select, textarea {
+    font-family: var(--font-primary);
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
 }
@@ -3986,6 +3969,7 @@ section:hover [class*="__category"]::after {
     padding: 0.1rem 0.4rem;
     text-decoration: underline;
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
 .page61__title {
     font-family: var(--font-primary);
