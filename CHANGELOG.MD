@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Implémentation du PRD-012 : accueil recentré sur les expériences immersives, hashtags mis à jour, ligne de soutiens retirée du hero, introduction `#page-3` simplifiée et nouveau visuel `1_swing.jpg` intégré avec test Playwright dédié.
 - Analyse des retours Stéphanie issus de `retour/changements_site (1).docx` et `retour/site_images/`, avec tri des points déjà faits, corrections restantes et questions ouvertes.
 - Création des PRD-012 à PRD-016 : accueil éditorial, catalogue XR / The Party, pages projet Marilyn-Lautrec-Charlotte, page autonome Memory Box VR, contact/adresse/logo.
 - Implémentation du PRD-011 : menu principal `Accueil - XR - Espace augmenté - Films - Réservation`, création de `films.html`, déplacement de `Ni vues ni connues` sous Films et alignement sitemap / fichiers IA.

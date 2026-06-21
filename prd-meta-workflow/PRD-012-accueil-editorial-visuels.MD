@@ -1,6 +1,6 @@
 # PRD-012 : Accueil éditorial et visuels de présentation
 
-**Statut** : Brouillon
+**Statut** : Implémenté
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : `retour/changements_site (1).docx`, `retour/site_images/1_swing.jpg`, inspection de `src/index.html`
@@ -33,7 +33,7 @@ Le visiteur descend à `index.html#page-3`. L’introduction devient une seule p
 
 ## Contexte
 
-État observé le 2026-06-21 :
+État observé avant implémentation le 2026-06-21 :
 
 - `src/index.html` contient encore l’ancien H1, les anciens hashtags, l’ancien résumé et la ligne de soutiens.
 - `src/index.html#page-3` contient encore deux paragraphes d’introduction.
@@ -145,6 +145,30 @@ Question de microtypographie à valider avec Stéphanie : afficher le H1 en capi
 
 ---
 
+## Implémentation réalisée
+
+État au 2026-06-21 :
+
+- `retour/site_images/1_swing.jpg` est intégré sous `src/img/pages/page-3/swing-presentation.jpg`.
+- Le H1 de l’accueil devient `CRÉATEURS D’EXPÉRIENCES IMMERSIVES`, en capitales accentuées.
+- Les hashtags deviennent `# formats courts # spectacle vivant # XR # réalité mixte # storytelling`.
+- Le résumé du hero est remplacé par les deux phrases demandées.
+- La ligne de soutiens est supprimée du hero, sans supprimer la section partenaires.
+- L’introduction de `#page-3` devient `Nous imaginons des récits immersifs au croisement du spectacle vivant et des technologies XR.`
+- Le visuel de `#page-3` utilise le nouvel asset avec un texte alternatif descriptif.
+- Les métadonnées SEO/GEO principales de l’accueil sont alignées avec le nouveau positionnement éditorial.
+- Aucun ajustement CSS n’a été nécessaire : les contrôles mobile, tablette et desktop ne détectent ni débordement horizontal ni chevauchement du bloc éditorial avec les liens bas.
+- Un test Playwright dédié couvre le contenu éditorial, l’absence de l’ancienne ligne de soutiens, le chargement du nouvel asset et le comportement responsive.
+
+Validations exécutées :
+
+- `npx playwright test tests/prd012-accueil-editorial-visuels.spec.js` : 6 passés, 4 ignorés volontairement hors contrôle source.
+- `npm run build:prod` : OK, 440 fichiers copiés dans `dist/`, 3 artefacts exclus.
+- `npm test` : 35 passés, 20 ignorés volontairement selon la configuration viewport.
+- `npm run seo:check` : 4 passés.
+
+---
+
 ## Métriques de succès
 
 - `rg -n "Créateurs d'Expériences Transmédia Immersives|# spectacle vivant # réalité mixte # storytelling|Soutiens CNC" src/index.html` ne retourne plus d’occurrence active.
@@ -171,4 +195,5 @@ Question de microtypographie à valider avec Stéphanie : afficher le H1 en capi
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Implémentation et validation du PRD |
 | 2026-06-21 | Alex + Codex | Création du PRD |
