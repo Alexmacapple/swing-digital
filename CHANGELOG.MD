@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Remplacement du favicon par une version minimaliste `SD` et ajout d’un cache-buster dédié.
 - Accessibilité : ajout des liens d’évitement `Aller au contenu`, `Aller au menu` et `Aller au pied de page` sur toutes les pages.
 - Correction globale des fonds roses : suppression du voile noir et du stop orange brunissant sur la variable partagée, avec cache-buster CSS aligné sur toutes les pages.
 - Correction PRD-012 accueil : retrait du calque de teinte sur la vidéo hero et passage du lien d’évitement sur le fond rose lisible.
