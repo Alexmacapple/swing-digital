@@ -179,6 +179,17 @@ Les meilleurs passages du rapport sont ceux qui disent quoi faire maintenant, qu
 
 Amélioration proposée : pour chaque scorecard, ajouter `next_now`, `defer_until_prod`, `proof_needed` et `risk_if_ignored`.
 
+## Plan d'action proposé
+
+| Quand | Action | Preuve attendue |
+|-------|--------|-----------------|
+| Maintenant | Partager ce post-mortem à Loïc comme retour d'usage sur le skill. | Les patterns réutilisables sont visibles : mode préproduction, reçu de rapport courant, comparaison native, responsive lazy-load avant/après scroll. |
+| Préproduction continue | Conserver un contrôle Search/Crawl public après chaque publication, purge ou changement d'asset. | Le skill sait distinguer retour d'artefact public, cache obsolète et état local sain. |
+| Avant production finale | Garder les gates production séparés : hébergeur légal, domaine final HTTPS, GSC, GA4/GTM, Bing Webmaster, scénario Réservations. | Le rapport ne pousse pas à brancher des outils de production ou à inventer des métriques tant que le site reste en préproduction. |
+| Après domaine final | Lancer un panel GEO/Citation sur ChatGPT, Perplexity et Claude. | Le skill passe d'une readiness IA à une mesure de citations réelles, avec requêtes, réponses, concurrents cités, sources reprises et erreurs. |
+
+Priorité produit pour le skill : rendre ces quatre lignes générables automatiquement dans chaque rapport, en distinguant `maintenant`, `préproduction continue`, `avant production finale` et `après domaine final`.
+
 ## Incident utile observé
 
 Le chantier PRD-006 a montré un faux positif typique : le protocole d'audit peut déclarer des images manquantes alors que l'utilisateur les verrait après scroll. La correction doit rester côté outil, pas côté site. Retirer `loading="lazy"` aurait été une mauvaise correction.
