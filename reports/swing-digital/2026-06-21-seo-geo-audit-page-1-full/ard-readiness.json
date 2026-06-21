@@ -1,0 +1,30 @@
+{
+  "status": "missing",
+  "checked_url": "https://swing.appmiweb.com/#page-1",
+  "catalog_url": "https://swing.appmiweb.com/.well-known/ai-catalog.json",
+  "signals": {
+    "well_known": {
+      "status": "missing",
+      "url": "https://swing.appmiweb.com/.well-known/ai-catalog.json"
+    },
+    "html_link": {
+      "status": "missing",
+      "url": ""
+    },
+    "robots_agentmap": {
+      "status": "missing",
+      "url": ""
+    }
+  },
+  "validation": {
+    "status": "not_checked",
+    "errors": []
+  },
+  "entries": [],
+  "observed": [
+    "No ARD ai-catalog discovery signal was found."
+  ],
+  "recommended": [
+    "If the site exposes a skill, MCP server, A2A agent, or callable AI service, publish an owner-reviewed ai-catalog draft."
+  ]
+}

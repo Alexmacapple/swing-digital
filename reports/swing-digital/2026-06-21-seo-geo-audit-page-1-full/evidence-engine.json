@@ -1,0 +1,158 @@
+{
+  "url": "https://swing.appmiweb.com/#page-1",
+  "generated_at": "2026-06-21T11:58:49.210Z",
+  "method": "Chrome DevTools fallback",
+  "console_watch": {
+    "summary": {
+      "total": 0,
+      "errors": 0,
+      "warnings": 0,
+      "by_classification": {}
+    },
+    "sample": []
+  },
+  "network_watch": {
+    "summary": {
+      "response_count": 49,
+      "failed_requests": 4,
+      "status_counts": {
+        "200": 43,
+        "206": 6
+      },
+      "non_2xx_3xx": 0
+    },
+    "failed_sample": [
+      {
+        "request_id": "58873.41",
+        "type": "Media",
+        "error_text": "net::ERR_ABORTED",
+        "blocked_reason": ""
+      },
+      {
+        "request_id": "58873.8",
+        "type": "Media",
+        "error_text": "net::ERR_ABORTED",
+        "blocked_reason": ""
+      },
+      {
+        "request_id": "58873.59",
+        "type": "Media",
+        "error_text": "net::ERR_ABORTED",
+        "blocked_reason": ""
+      },
+      {
+        "request_id": "58873.58",
+        "type": "Media",
+        "error_text": "net::ERR_ABORTED",
+        "blocked_reason": ""
+      }
+    ],
+    "response_sample": [
+      {
+        "url": "https://swing.appmiweb.com/",
+        "type": "Document",
+        "status": 200,
+        "mime_type": "text/html"
+      },
+      {
+        "url": "https://swing.appmiweb.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+        "type": "Script",
+        "status": 200,
+        "mime_type": "application/javascript"
+      },
+      {
+        "url": "https://swing.appmiweb.com/img/hero/hero-featured-image.jpg",
+        "type": "Image",
+        "status": 200,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "url": "https://swing.appmiweb.com/css/style.css?v=20260621-0210",
+        "type": "Stylesheet",
+        "status": 200,
+        "mime_type": "text/css"
+      },
+      {
+        "url": "https://swing.appmiweb.com/video/hero.mp4",
+        "type": "Media",
+        "status": 206,
+        "mime_type": "video/mp4"
+      },
+      {
+        "url": "https://swing.appmiweb.com/video/contact.mp4",
+        "type": "Media",
+        "status": 206,
+        "mime_type": "video/mp4"
+      },
+      {
+        "url": "https://swing.appmiweb.com/img/pages/page-2/page-2-image-9.jpg",
+        "type": "Image",
+        "status": 200,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "url": "https://swing.appmiweb.com/img/pages/page-2/stephanie.jpg",
+        "type": "Image",
+        "status": 200,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "url": "https://swing.appmiweb.com/img/pages/page-2/anseau.jpg",
+        "type": "Image",
+        "status": 200,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "url": "https://swing.appmiweb.com/img/pages/page-2/mathieu.jpg",
+        "type": "Image",
+        "status": 200,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "url": "https://swing.appmiweb.com/img/pages/page-2/joshua.jpg",
+        "type": "Image",
+        "status": 200,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "url": "https://swing.appmiweb.com/img/pages/page-2/benoit.jpg",
+        "type": "Image",
+        "status": 200,
+        "mime_type": "image/jpeg"
+      }
+    ]
+  },
+  "cache_cdn_watch": {
+    "status": "headers_available",
+    "verdict": "Cache/CDN headers captured; compare with deployment state before calling a page stale.",
+    "url": "https://swing.appmiweb.com/",
+    "status_code": 200,
+    "headers": {
+      "cf-cache-status": "DYNAMIC",
+      "last-modified": "Sun, 21 Jun 2026 00:07:12 GMT",
+      "server": "cloudflare"
+    }
+  },
+  "design_watch_metrics": {
+    "desktop": {
+      "cta_visible": true,
+      "cta_labels": [
+        "Lancer la vidéo d'ambiance de la section Contact"
+      ],
+      "trust_signal_visible": true,
+      "hero_height": 72,
+      "hero_height_ratio": 0.04,
+      "next_section_visible": true
+    },
+    "mobile": {
+      "cta_visible": true,
+      "cta_labels": [
+        "Lancer la vidéo d'ambiance de la section Contact"
+      ],
+      "trust_signal_visible": true,
+      "hero_height": 66,
+      "hero_height_ratio": 0.05,
+      "next_section_visible": true
+    }
+  }
+}

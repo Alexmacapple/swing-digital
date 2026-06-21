@@ -1,13 +1,25 @@
 # Swing Digital - Todo
 
-## Avant mise en production (bloquant)
+## Backlog mise en production finale
 
-- [ ] Choisir le domaine final HTTPS.
+### Bloquant / À décider
+
+- [ ] Renseigner les mentions légales avec l'hébergeur réel.
+- [ ] Valider le scénario Réservations : page informative ou parcours transactionnel.
+- [ ] Ne pas utiliser `https://swing.appmiweb.com/#page-1` comme URL de partage ou SEO ; garder l'URL canonique `https://swing.appmiweb.com/`.
+- [ ] Choisir et préparer le domaine final HTTPS.
 - [ ] Basculer les URL SEO publiques vers le domaine final avec `npm run seo:set-base -- https://domaine-final`.
-- [ ] Configurer HTTPS + redirections HTTP vers HTTPS.
-- [ ] Renseigner l'hébergeur réel dans `mentions-legales.html`.
-- [ ] Décider le scénario Réservations : billetterie active ou lancement informatif avec contact.
-- [ ] Exécuter `npm test`, `npm run seo:check`, `npm run build:prod` et `npm run prod:preflight -- https://domaine-final`.
+- [ ] Configurer les redirections HTTP vers HTTPS.
+- [ ] Vérifier les canonical, `sitemap.xml` et `robots.txt` sur le domaine final.
+- [ ] Brancher ou préparer la mesure réelle : Google Search Console, GA4 ou GTM, Bing Webmaster Tools et événements de conversion.
+
+### À faire juste avant publication
+
+- [ ] Exécuter `npm run build:prod`.
+- [ ] Exécuter `npm run appmiweb:preflight`.
+- [ ] Exécuter `npm run appmiweb:search-crawl`.
+- [ ] Vérifier que `/llms.txt`, `/for-ai`, `/for-ai.json` et `/for-ai.txt` restent alignés avec les contenus visibles.
+- [ ] Relancer un audit SEO/GEO sur l'URL canonique finale, pas seulement sur la préproduction.
 
 ## Améliorations recommandées
 

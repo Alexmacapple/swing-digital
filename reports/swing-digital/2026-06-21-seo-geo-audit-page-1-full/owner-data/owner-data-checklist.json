@@ -1,0 +1,49 @@
+{
+  "site": "swing.appmiweb.com/#page-1",
+  "language": "fr",
+  "generated_at": "2026-06-21T11:58:49.337482+00:00",
+  "requested_sources": [
+    {
+      "source": "gsc",
+      "label": "Google Search Console",
+      "requested_export": "Performance export for the audited property covering queries, pages, countries, devices, CTR, clicks, impressions, and average position.",
+      "why": "Search visibility, query fit, CTR, and page-level opportunities cannot be proven from public HTML alone."
+    },
+    {
+      "source": "ga4",
+      "label": "GA4",
+      "requested_export": "Landing page, source/medium, conversion, engagement, and AI-assistant referral reports for the same audit window.",
+      "why": "Public tools cannot verify visits, conversions, or business impact."
+    },
+    {
+      "source": "bing_webmaster_tools",
+      "label": "Bing Webmaster Tools",
+      "requested_export": "Search performance, crawl/indexing issues, IndexNow status, and AI Performance data if available.",
+      "why": "Bing/Copilot and IndexNow evidence requires owner access or explicit exports."
+    },
+    {
+      "source": "server_logs",
+      "label": "server logs",
+      "requested_export": "Bot/user-agent logs for Googlebot, Bingbot, OAI-SearchBot, GPTBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, PerplexityBot, and Perplexity-User.",
+      "why": "Crawler access, WAF blocks, and fetch behavior need log evidence."
+    },
+    {
+      "source": "cloudflare",
+      "label": "Cloudflare Analytics",
+      "requested_export": "Traffic, cache, WAF/firewall, bot, and response status analytics for audited URLs.",
+      "why": "Cache/CDN behavior and blocked crawlers should be verified by owner-side telemetry, not bypass attempts."
+    }
+  ],
+  "paid_tools": {
+    "default_policy": "ask_before_use",
+    "examples": [
+      "Haloscan",
+      "Semrush",
+      "Ahrefs",
+      "DataForSEO",
+      "Similarweb",
+      "SerpApi"
+    ]
+  },
+  "cloudflare_policy": "Use owner analytics, logs, cache headers, and WAF events. Do not bypass Cloudflare protections."
+}

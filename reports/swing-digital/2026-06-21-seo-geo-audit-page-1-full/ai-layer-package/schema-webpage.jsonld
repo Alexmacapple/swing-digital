@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "La préproduction Swing Digital est crawlable et lisible par agents, avec trois garde-fous à traiter avant production finale.",
+  "url": "https://swing.appmiweb.com/#page-1",
+  "description": "La préproduction Swing Digital est crawlable et lisible par agents, avec trois garde-fous à traiter avant production finale.",
+  "isBasedOn": [
+    "https://swing.appmiweb.com/#page-1",
+    "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json",
+    "site-screenshots/"
+  ]
+}

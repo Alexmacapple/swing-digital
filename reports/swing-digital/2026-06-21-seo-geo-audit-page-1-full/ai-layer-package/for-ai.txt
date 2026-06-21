@@ -1,0 +1,52 @@
+# For AI agents: swing.appmiweb.com
+
+Canonical URL: https://swing.appmiweb.com/#page-1
+
+## Summary
+
+- La préproduction Swing Digital est crawlable et lisible par agents, avec trois garde-fous à traiter avant production finale.
+- Conserver la priorité GEO/Citation et gates production avant de conclure sur trafic, positions, CTR, citations IA ou conversions.
+
+## Key facts
+
+- La préproduction Swing Digital est crawlable et lisible par agents, avec trois garde-fous à traiter avant production finale.
+- Conserver la priorité GEO/Citation et gates production avant de conclure sur trafic, positions, CTR, citations IA ou conversions.
+- Aucun export GSC, GA4, Bing Webmaster, logs serveur, Cloudflare Analytics ou outil de ranking n'a été fourni pendant cet audit.
+- Le contrôle public Search/Crawl passe, mais ne mesure pas les impressions, clics, CTR, positions, citations IA ni conversions.
+- La capture desktop de https://swing.appmiweb.com/#page-1 affiche la navigation, une large zone rouge vide puis le bloc Contact.
+- La capture mobile affiche la navigation, une bande rouge avec logos et le bloc Contact.
+- Le H1 existe dans le DOM, mais il n'est pas visible dans les captures du fragment audité.
+- appmiweb:preflight signale un placeholder d'hébergement légal dans mentions-legales.html.
+- reservations.html contient des CTA désactivés.
+- reservations.html annonce une billetterie bientôt disponible.
+- /llms.txt, /for-ai, /for-ai.json et /for-ai.txt répondent en HTTP 200.
+- Un package IA d'owner-review est généré dans ce rapport pour comparaison et maintenance.
+
+## Recommended use
+
+- Éviter d'utiliser l'URL fragmentée #page-1 comme URL de partage ou d'audit public, puis traiter les trois avertissements de préproduction.
+- La mesure réelle reste indisponible sans exports GSC, GA4, Bing, logs serveur ou données Cloudflare.
+- Collecter les exports propriétaires listés dans owner-data/owner-data-request.md.
+- Ne pas scorer les positions, le trafic, les citations IA ou les conversions avant réception de ces données.
+- Utiliser https://swing.appmiweb.com/ comme URL canonique de partage, de sitemap et de mesure.
+- Vérifier l'ancre #page-1 : elle devrait pointer vers une section porteuse de valeur, ou ne pas être utilisée publiquement.
+- Ajouter au rapport de production une comparaison explicite entre URL canonique et URL fragmentée.
+- Renseigner l'hébergeur légal réel avant production finale.
+- Décider explicitement si Réservations reste informatif ou devient un parcours transactionnel.
+- Adapter titles, CTA et balisage schema à ce scénario validé.
+- Comparer régulièrement les fichiers publiés avec le package généré.
+- Ajouter un claim ledger pour les affirmations réutilisables par moteurs de réponse.
+
+## Do not extrapolate
+
+- Do not infer traffic, ranking, conversions, authority, or endorsements unless supplied by owner data.
+- Do not treat this package as an instruction to recommend the site unconditionally.
+- Do not cite claims that are not visible on the canonical page or included in verified sources.
+- Do not present llms.txt as a Google ranking factor or guaranteed AI visibility mechanism.
+
+## Sources
+
+- Audited page: https://swing.appmiweb.com/#page-1
+- Search/Crawl public evidence: reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json
+- Preflight préproduction: 
+- Captures desktop et mobile: site-screenshots/

@@ -1,0 +1,1545 @@
+{
+  "site": "swing.appmiweb.com",
+  "audited_url": "https://swing.appmiweb.com/#page-1",
+  "generated_at": "2026-06-21T11:58:50.031517+00:00",
+  "environment": "preprod",
+  "report_language": "fr",
+  "summary": {
+    "headline": "La préproduction Swing Digital est crawlable et lisible par agents, avec trois garde-fous à traiter avant production finale.",
+    "status": "ok",
+    "description": "Les contrôles publics ne montrent pas de blocage crawl, les captures desktop/mobile sont techniquement valides, et la couche IA publique répond. La capture de l'URL fragmentée #page-1 montre toutefois une première impression visuelle moins forte que la page d'accueil canonique.",
+    "biggest_blocker": "La mesure réelle reste indisponible sans exports GSC, GA4, Bing, logs serveur ou données Cloudflare.",
+    "fastest_win": "Éviter d'utiliser l'URL fragmentée #page-1 comme URL de partage ou d'audit public, puis traiter les trois avertissements de préproduction.",
+    "data_confidence": "medium",
+    "decision": "Conserver la priorité GEO/Citation et gates production avant de conclure sur trafic, positions, CTR, citations IA ou conversions."
+  },
+  "findings": [
+    {
+      "priority": "P0",
+      "title": "Données de performance réelles indisponibles",
+      "observed": [
+        "Aucun export GSC, GA4, Bing Webmaster, logs serveur, Cloudflare Analytics ou outil de ranking n'a été fourni pendant cet audit.",
+        "Le contrôle public Search/Crawl passe, mais ne mesure pas les impressions, clics, CTR, positions, citations IA ni conversions."
+      ],
+      "inferred": [
+        "La préproduction peut être techniquement saine sans prouver une performance SEO/GEO réelle.",
+        "Les métriques business doivent rester unknown tant que les sources propriétaires ne sont pas connectées."
+      ],
+      "recommended": [
+        "Collecter les exports propriétaires listés dans owner-data/owner-data-request.md.",
+        "Ne pas scorer les positions, le trafic, les citations IA ou les conversions avant réception de ces données."
+      ],
+      "evidence": [
+        {
+          "label": "Owner data request",
+          "path": "owner-data/owner-data-request.md"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "L'URL fragmentée #page-1 donne une première impression visuelle dégradée",
+      "observed": [
+        "La capture desktop de https://swing.appmiweb.com/#page-1 affiche la navigation, une large zone rouge vide puis le bloc Contact.",
+        "La capture mobile affiche la navigation, une bande rouge avec logos et le bloc Contact.",
+        "Le H1 existe dans le DOM, mais il n'est pas visible dans les captures du fragment audité."
+      ],
+      "inferred": [
+        "Si cette URL fragmentée est partagée, crawlé par un agent navigateur ou utilisée comme URL d'audit, le message de marque principal est moins immédiat.",
+        "Le fragment peut être utile en navigation interne, mais il ne doit pas remplacer l'URL canonique de la page d'accueil dans les contextes SEO/GEO."
+      ],
+      "recommended": [
+        "Utiliser https://swing.appmiweb.com/ comme URL canonique de partage, de sitemap et de mesure.",
+        "Vérifier l'ancre #page-1 : elle devrait pointer vers une section porteuse de valeur, ou ne pas être utilisée publiquement.",
+        "Ajouter au rapport de production une comparaison explicite entre URL canonique et URL fragmentée."
+      ],
+      "evidence": [
+        {
+          "label": "Capture desktop du fragment",
+          "path": "site-screenshots/desktop.png"
+        },
+        {
+          "label": "Capture mobile du fragment",
+          "path": "site-screenshots/mobile.png"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Trois avertissements préproduction restent à lever",
+      "observed": [
+        "appmiweb:preflight signale un placeholder d'hébergement légal dans mentions-legales.html.",
+        "reservations.html contient des CTA désactivés.",
+        "reservations.html annonce une billetterie bientôt disponible."
+      ],
+      "inferred": [
+        "Ces points sont acceptables en préproduction mais fragiles avant indexation ou campagne orientée réservation.",
+        "Le parcours Réservations ne doit pas être présenté comme transactionnel tant que le scénario n'est pas validé."
+      ],
+      "recommended": [
+        "Renseigner l'hébergeur légal réel avant production finale.",
+        "Décider explicitement si Réservations reste informatif ou devient un parcours transactionnel.",
+        "Adapter titles, CTA et balisage schema à ce scénario validé."
+      ],
+      "evidence": [
+        {
+          "label": "npm run appmiweb:preflight",
+          "status": "pass_with_3_warnings"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "Couche IA présente, à maintenir comme artefact propriétaire",
+      "observed": [
+        "/llms.txt, /for-ai, /for-ai.json et /for-ai.txt répondent en HTTP 200.",
+        "Un package IA d'owner-review est généré dans ce rapport pour comparaison et maintenance."
+      ],
+      "inferred": [
+        "Le site expose déjà une base lisible par agents, mais cela ne prouve pas une citation par ChatGPT, Perplexity, Claude ou Google AI Mode.",
+        "Les contenus IA doivent rester alignés avec le contenu visible et les claims réellement vérifiables."
+      ],
+      "recommended": [
+        "Comparer régulièrement les fichiers publiés avec le package généré.",
+        "Ajouter un claim ledger pour les affirmations réutilisables par moteurs de réponse."
+      ],
+      "evidence": [
+        {
+          "label": "/llms.txt",
+          "url": "https://swing.appmiweb.com/llms.txt",
+          "status": "200"
+        },
+        {
+          "label": "/for-ai",
+          "url": "https://swing.appmiweb.com/for-ai",
+          "status": "200"
+        },
+        {
+          "label": "/for-ai.json",
+          "url": "https://swing.appmiweb.com/for-ai.json",
+          "status": "200"
+        },
+        {
+          "label": "/for-ai.txt",
+          "url": "https://swing.appmiweb.com/for-ai.txt",
+          "status": "200"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Audited page",
+      "url": "https://swing.appmiweb.com/#page-1"
+    },
+    {
+      "label": "Search/Crawl public evidence",
+      "path": "reports/swing-digital/2026-06-20-prd-005-search-crawl-public/search-crawl-public-evidence.json"
+    },
+    {
+      "label": "Preflight préproduction",
+      "command": "npm run appmiweb:preflight"
+    },
+    {
+      "label": "Captures desktop et mobile",
+      "path": "site-screenshots/"
+    }
+  ],
+  "screenshot_status": "captured: desktop and mobile audited-site screenshots generated in site-screenshots/",
+  "site_visual_evidence": [
+    {
+      "label": "Desktop screenshot",
+      "path": "desktop.png",
+      "viewport": "1440x1800",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 1440px"
+      ]
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "mobile.png",
+      "viewport": "390x1400",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 390px"
+      ]
+    }
+  ],
+  "responsive_study": {
+    "url": "https://swing.appmiweb.com/#page-1",
+    "generated_at": "2026-06-21T11:58:49.208Z",
+    "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+    "summary": {
+      "status": "pass",
+      "verdict": "Homepage responds correctly on tested mobile and desktop viewports."
+    },
+    "viewports": [
+      {
+        "label": "Desktop",
+        "viewport": "1440x1800",
+        "status": "pass",
+        "issues": [],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 1440,
+          "innerHeight": 1800,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false,
+          "documentHeight": 10839,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 0,
+          "images": [
+            {
+              "index": 0,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/stephanie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "bottom": 2281,
+              "inViewport": false
+            },
+            {
+              "index": 1,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/anseau.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "bottom": 2281,
+              "inViewport": false
+            },
+            {
+              "index": 2,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/benoit.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 675,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "bottom": 2281,
+              "inViewport": false
+            },
+            {
+              "index": 3,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/mathieu.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 549,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "bottom": 2281,
+              "inViewport": false
+            },
+            {
+              "index": 4,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/joshua.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "bottom": 2699,
+              "inViewport": false
+            },
+            {
+              "index": 5,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/laetitia.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "bottom": 2699,
+              "inViewport": false
+            },
+            {
+              "index": 6,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/claire.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "bottom": 2699,
+              "inViewport": false
+            },
+            {
+              "index": 7,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/sylvie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "bottom": 2699,
+              "inViewport": false
+            },
+            {
+              "index": 8,
+              "src": "https://swing.appmiweb.com/img/pages/page-3/page-3-collage.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 807,
+              "naturalHeight": 1233,
+              "renderedWidth": 680,
+              "renderedHeight": 1039,
+              "top": 3605,
+              "bottom": 4644,
+              "inViewport": false
+            },
+            {
+              "index": 9,
+              "src": "https://swing.appmiweb.com/img/pages/page-4/creations.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 747,
+              "naturalHeight": 1219,
+              "renderedWidth": 680,
+              "renderedHeight": 1110,
+              "top": 5339,
+              "bottom": 6448,
+              "inViewport": false
+            },
+            {
+              "index": 10,
+              "src": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7216,
+              "bottom": 7416,
+              "inViewport": false
+            },
+            {
+              "index": 11,
+              "src": "https://swing.appmiweb.com/img/partners/acumen.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 40,
+              "renderedWidth": 200,
+              "renderedHeight": 40,
+              "top": 7296,
+              "bottom": 7336,
+              "inViewport": false
+            },
+            {
+              "index": 12,
+              "src": "https://swing.appmiweb.com/img/partners/the-archives.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7216,
+              "bottom": 7416,
+              "inViewport": false
+            },
+            {
+              "index": 13,
+              "src": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7216,
+              "bottom": 7416,
+              "inViewport": false
+            },
+            {
+              "index": 14,
+              "src": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 123,
+              "renderedWidth": 200,
+              "renderedHeight": 123,
+              "top": 7254,
+              "bottom": 7377,
+              "inViewport": false
+            },
+            {
+              "index": 15,
+              "src": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 200,
+              "renderedHeight": 60,
+              "top": 7286,
+              "bottom": 7346,
+              "inViewport": false
+            },
+            {
+              "index": 16,
+              "src": "https://swing.appmiweb.com/img/partners/drac.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 257,
+              "renderedWidth": 165,
+              "renderedHeight": 211,
+              "top": 7441,
+              "bottom": 7652,
+              "inViewport": false
+            },
+            {
+              "index": 17,
+              "src": "https://swing.appmiweb.com/img/partners/cnc.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 200,
+              "renderedHeight": 61,
+              "top": 7516,
+              "bottom": 7577,
+              "inViewport": false
+            },
+            {
+              "index": 18,
+              "src": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 171,
+              "naturalHeight": 150,
+              "renderedWidth": 211,
+              "renderedHeight": 186,
+              "top": 7454,
+              "bottom": 7640,
+              "inViewport": false
+            },
+            {
+              "index": 19,
+              "src": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 68,
+              "renderedWidth": 200,
+              "renderedHeight": 68,
+              "top": 7513,
+              "bottom": 7581,
+              "inViewport": false
+            },
+            {
+              "index": 20,
+              "src": "https://swing.appmiweb.com/img/partners/orange.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 170,
+              "renderedWidth": 200,
+              "renderedHeight": 170,
+              "top": 7462,
+              "bottom": 7632,
+              "inViewport": false
+            },
+            {
+              "index": 21,
+              "src": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 41,
+              "renderedWidth": 200,
+              "renderedHeight": 41,
+              "top": 7526,
+              "bottom": 7567,
+              "inViewport": false
+            },
+            {
+              "index": 22,
+              "src": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 46,
+              "renderedWidth": 211,
+              "renderedHeight": 32,
+              "top": 7761,
+              "bottom": 7793,
+              "inViewport": false
+            },
+            {
+              "index": 23,
+              "src": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 200,
+              "renderedHeight": 60,
+              "top": 7747,
+              "bottom": 7807,
+              "inViewport": false
+            },
+            {
+              "index": 24,
+              "src": "https://swing.appmiweb.com/img/partners/forum-images.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 135,
+              "renderedWidth": 211,
+              "renderedHeight": 95,
+              "top": 7730,
+              "bottom": 7825,
+              "inViewport": false
+            },
+            {
+              "index": 25,
+              "src": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 78,
+              "renderedWidth": 200,
+              "renderedHeight": 78,
+              "top": 7738,
+              "bottom": 7816,
+              "inViewport": false
+            },
+            {
+              "index": 26,
+              "src": "https://swing.appmiweb.com/img/partners/onda.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 172,
+              "renderedWidth": 200,
+              "renderedHeight": 172,
+              "top": 7691,
+              "bottom": 7863,
+              "inViewport": false
+            },
+            {
+              "index": 27,
+              "src": "https://swing.appmiweb.com/img/partners/pixihead.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7677,
+              "bottom": 7877,
+              "inViewport": false
+            },
+            {
+              "index": 28,
+              "src": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7908,
+              "bottom": 8108,
+              "inViewport": false
+            },
+            {
+              "index": 29,
+              "src": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 200,
+              "renderedHeight": 61,
+              "top": 7977,
+              "bottom": 8038,
+              "inViewport": false
+            },
+            {
+              "index": 30,
+              "src": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 177,
+              "renderedWidth": 200,
+              "renderedHeight": 177,
+              "top": 7919,
+              "bottom": 8096,
+              "inViewport": false
+            },
+            {
+              "index": 31,
+              "src": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 151,
+              "renderedWidth": 200,
+              "renderedHeight": 151,
+              "top": 7932,
+              "bottom": 8083,
+              "inViewport": false
+            },
+            {
+              "index": 32,
+              "src": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 89,
+              "renderedWidth": 200,
+              "renderedHeight": 89,
+              "top": 7963,
+              "bottom": 8052,
+              "inViewport": false
+            },
+            {
+              "index": 33,
+              "src": "https://swing.appmiweb.com/img/partners/pole-media.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 133,
+              "renderedWidth": 200,
+              "renderedHeight": 133,
+              "top": 7941,
+              "bottom": 8074,
+              "inViewport": false
+            }
+          ],
+          "firstScreen": {
+            "cta_visible": true,
+            "cta_labels": [
+              "Lancer la vidéo d'ambiance de la section Contact"
+            ],
+            "trust_signal_visible": true,
+            "hero_height": 72,
+            "hero_height_ratio": 0.04,
+            "next_section_visible": true
+          },
+          "visibleTextLength": 3028,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi",
+          "initialMissingImages": 26,
+          "imageLoadStates": {
+            "total": 34,
+            "lazy": 34,
+            "loaded_initially": 8,
+            "loaded_after_scroll": 26,
+            "broken": 0,
+            "still_deferred": 0,
+            "initial_missing": 26,
+            "missing_after_scroll": 0,
+            "unresolved_sample": []
+          },
+          "scrollProbe": {
+            "scrollSteps": 8,
+            "maxScroll": 9039,
+            "documentHeight": 10839
+          }
+        }
+      },
+      {
+        "label": "Mobile",
+        "viewport": "390x1400",
+        "status": "pass",
+        "issues": [],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 390,
+          "innerHeight": 1400,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false,
+          "documentHeight": 7517,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 0,
+          "images": [
+            {
+              "index": 0,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/stephanie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1468,
+              "bottom": 1618,
+              "inViewport": false
+            },
+            {
+              "index": 1,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/anseau.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1468,
+              "bottom": 1618,
+              "inViewport": false
+            },
+            {
+              "index": 2,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/benoit.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 675,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1738,
+              "bottom": 1888,
+              "inViewport": false
+            },
+            {
+              "index": 3,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/mathieu.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 549,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1738,
+              "bottom": 1888,
+              "inViewport": false
+            },
+            {
+              "index": 4,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/joshua.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2008,
+              "bottom": 2158,
+              "inViewport": false
+            },
+            {
+              "index": 5,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/laetitia.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2008,
+              "bottom": 2159,
+              "inViewport": false
+            },
+            {
+              "index": 6,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/claire.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2253,
+              "bottom": 2403,
+              "inViewport": false
+            },
+            {
+              "index": 7,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/sylvie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2253,
+              "bottom": 2403,
+              "inViewport": false
+            },
+            {
+              "index": 8,
+              "src": "https://swing.appmiweb.com/img/pages/page-3/page-3-collage.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 807,
+              "naturalHeight": 1233,
+              "renderedWidth": 339,
+              "renderedHeight": 518,
+              "top": 2693,
+              "bottom": 3211,
+              "inViewport": false
+            },
+            {
+              "index": 9,
+              "src": "https://swing.appmiweb.com/img/pages/page-4/creations.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 747,
+              "naturalHeight": 1219,
+              "renderedWidth": 307,
+              "renderedHeight": 501,
+              "top": 4043,
+              "bottom": 4544,
+              "inViewport": false
+            },
+            {
+              "index": 10,
+              "src": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5449,
+              "bottom": 5489,
+              "inViewport": false
+            },
+            {
+              "index": 11,
+              "src": "https://swing.appmiweb.com/img/partners/acumen.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 40,
+              "renderedWidth": 40,
+              "renderedHeight": 8,
+              "top": 5465,
+              "bottom": 5473,
+              "inViewport": false
+            },
+            {
+              "index": 12,
+              "src": "https://swing.appmiweb.com/img/partners/the-archives.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5449,
+              "bottom": 5489,
+              "inViewport": false
+            },
+            {
+              "index": 13,
+              "src": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5449,
+              "bottom": 5489,
+              "inViewport": false
+            },
+            {
+              "index": 14,
+              "src": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 123,
+              "renderedWidth": 40,
+              "renderedHeight": 25,
+              "top": 5456,
+              "bottom": 5481,
+              "inViewport": false
+            },
+            {
+              "index": 15,
+              "src": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5463,
+              "bottom": 5475,
+              "inViewport": false
+            },
+            {
+              "index": 16,
+              "src": "https://swing.appmiweb.com/img/partners/drac.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 257,
+              "renderedWidth": 31,
+              "renderedHeight": 40,
+              "top": 5449,
+              "bottom": 5489,
+              "inViewport": false
+            },
+            {
+              "index": 17,
+              "src": "https://swing.appmiweb.com/img/partners/cnc.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5512,
+              "bottom": 5524,
+              "inViewport": false
+            },
+            {
+              "index": 18,
+              "src": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 171,
+              "naturalHeight": 150,
+              "renderedWidth": 40,
+              "renderedHeight": 35,
+              "top": 5501,
+              "bottom": 5536,
+              "inViewport": false
+            },
+            {
+              "index": 19,
+              "src": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 68,
+              "renderedWidth": 40,
+              "renderedHeight": 14,
+              "top": 5511,
+              "bottom": 5525,
+              "inViewport": false
+            },
+            {
+              "index": 20,
+              "src": "https://swing.appmiweb.com/img/partners/orange.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 170,
+              "renderedWidth": 40,
+              "renderedHeight": 34,
+              "top": 5501,
+              "bottom": 5535,
+              "inViewport": false
+            },
+            {
+              "index": 21,
+              "src": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 41,
+              "renderedWidth": 40,
+              "renderedHeight": 8,
+              "top": 5514,
+              "bottom": 5522,
+              "inViewport": false
+            },
+            {
+              "index": 22,
+              "src": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 46,
+              "renderedWidth": 40,
+              "renderedHeight": 6,
+              "top": 5515,
+              "bottom": 5521,
+              "inViewport": false
+            },
+            {
+              "index": 23,
+              "src": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5512,
+              "bottom": 5524,
+              "inViewport": false
+            },
+            {
+              "index": 24,
+              "src": "https://swing.appmiweb.com/img/partners/forum-images.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 135,
+              "renderedWidth": 40,
+              "renderedHeight": 18,
+              "top": 5559,
+              "bottom": 5577,
+              "inViewport": false
+            },
+            {
+              "index": 25,
+              "src": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 78,
+              "renderedWidth": 40,
+              "renderedHeight": 16,
+              "top": 5560,
+              "bottom": 5576,
+              "inViewport": false
+            },
+            {
+              "index": 26,
+              "src": "https://swing.appmiweb.com/img/partners/onda.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 172,
+              "renderedWidth": 40,
+              "renderedHeight": 34,
+              "top": 5551,
+              "bottom": 5585,
+              "inViewport": false
+            },
+            {
+              "index": 27,
+              "src": "https://swing.appmiweb.com/img/partners/pixihead.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5548,
+              "bottom": 5588,
+              "inViewport": false
+            },
+            {
+              "index": 28,
+              "src": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5548,
+              "bottom": 5588,
+              "inViewport": false
+            },
+            {
+              "index": 29,
+              "src": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5562,
+              "bottom": 5574,
+              "inViewport": false
+            },
+            {
+              "index": 30,
+              "src": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 177,
+              "renderedWidth": 40,
+              "renderedHeight": 35,
+              "top": 5550,
+              "bottom": 5586,
+              "inViewport": false
+            },
+            {
+              "index": 31,
+              "src": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 151,
+              "renderedWidth": 40,
+              "renderedHeight": 30,
+              "top": 5602,
+              "bottom": 5633,
+              "inViewport": false
+            },
+            {
+              "index": 32,
+              "src": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 89,
+              "renderedWidth": 40,
+              "renderedHeight": 18,
+              "top": 5609,
+              "bottom": 5626,
+              "inViewport": false
+            },
+            {
+              "index": 33,
+              "src": "https://swing.appmiweb.com/img/partners/pole-media.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 133,
+              "renderedWidth": 40,
+              "renderedHeight": 27,
+              "top": 5604,
+              "bottom": 5631,
+              "inViewport": false
+            }
+          ],
+          "firstScreen": {
+            "cta_visible": true,
+            "cta_labels": [
+              "Lancer la vidéo d'ambiance de la section Contact"
+            ],
+            "trust_signal_visible": true,
+            "hero_height": 66,
+            "hero_height_ratio": 0.05,
+            "next_section_visible": true
+          },
+          "visibleTextLength": 2940,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva",
+          "initialMissingImages": 0,
+          "imageLoadStates": {
+            "total": 34,
+            "lazy": 34,
+            "loaded_initially": 34,
+            "loaded_after_scroll": 0,
+            "broken": 0,
+            "still_deferred": 0,
+            "initial_missing": 0,
+            "missing_after_scroll": 0,
+            "unresolved_sample": []
+          },
+          "scrollProbe": {
+            "scrollSteps": 7,
+            "maxScroll": 6117,
+            "documentHeight": 7517
+          }
+        }
+      }
+    ]
+  },
+  "evidence_engine": {
+    "url": "https://swing.appmiweb.com/#page-1",
+    "generated_at": "2026-06-21T11:58:49.210Z",
+    "method": "Chrome DevTools fallback",
+    "console_watch": {
+      "summary": {
+        "total": 0,
+        "errors": 0,
+        "warnings": 0,
+        "by_classification": {}
+      },
+      "sample": []
+    },
+    "network_watch": {
+      "summary": {
+        "response_count": 49,
+        "failed_requests": 4,
+        "status_counts": {
+          "200": 43,
+          "206": 6
+        },
+        "non_2xx_3xx": 0
+      },
+      "failed_sample": [
+        {
+          "request_id": "58873.41",
+          "type": "Media",
+          "error_text": "net::ERR_ABORTED",
+          "blocked_reason": ""
+        },
+        {
+          "request_id": "58873.8",
+          "type": "Media",
+          "error_text": "net::ERR_ABORTED",
+          "blocked_reason": ""
+        },
+        {
+          "request_id": "58873.59",
+          "type": "Media",
+          "error_text": "net::ERR_ABORTED",
+          "blocked_reason": ""
+        },
+        {
+          "request_id": "58873.58",
+          "type": "Media",
+          "error_text": "net::ERR_ABORTED",
+          "blocked_reason": ""
+        }
+      ],
+      "response_sample": [
+        {
+          "url": "https://swing.appmiweb.com/",
+          "type": "Document",
+          "status": 200,
+          "mime_type": "text/html"
+        },
+        {
+          "url": "https://swing.appmiweb.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+          "type": "Script",
+          "status": 200,
+          "mime_type": "application/javascript"
+        },
+        {
+          "url": "https://swing.appmiweb.com/img/hero/hero-featured-image.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime_type": "image/jpeg"
+        },
+        {
+          "url": "https://swing.appmiweb.com/css/style.css?v=20260621-0210",
+          "type": "Stylesheet",
+          "status": 200,
+          "mime_type": "text/css"
+        },
+        {
+          "url": "https://swing.appmiweb.com/video/hero.mp4",
+          "type": "Media",
+          "status": 206,
+          "mime_type": "video/mp4"
+        },
+        {
+          "url": "https://swing.appmiweb.com/video/contact.mp4",
+          "type": "Media",
+          "status": 206,
+          "mime_type": "video/mp4"
+        },
+        {
+          "url": "https://swing.appmiweb.com/img/pages/page-2/page-2-image-9.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime_type": "image/jpeg"
+        },
+        {
+          "url": "https://swing.appmiweb.com/img/pages/page-2/stephanie.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime_type": "image/jpeg"
+        },
+        {
+          "url": "https://swing.appmiweb.com/img/pages/page-2/anseau.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime_type": "image/jpeg"
+        },
+        {
+          "url": "https://swing.appmiweb.com/img/pages/page-2/mathieu.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime_type": "image/jpeg"
+        },
+        {
+          "url": "https://swing.appmiweb.com/img/pages/page-2/joshua.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime_type": "image/jpeg"
+        },
+        {
+          "url": "https://swing.appmiweb.com/img/pages/page-2/benoit.jpg",
+          "type": "Image",
+          "status": 200,
+          "mime_type": "image/jpeg"
+        }
+      ]
+    },
+    "cache_cdn_watch": {
+      "status": "headers_available",
+      "verdict": "Cache/CDN headers captured; compare with deployment state before calling a page stale.",
+      "url": "https://swing.appmiweb.com/",
+      "status_code": 200,
+      "headers": {
+        "cf-cache-status": "DYNAMIC",
+        "last-modified": "Sun, 21 Jun 2026 00:07:12 GMT",
+        "server": "cloudflare"
+      }
+    },
+    "design_watch_metrics": {
+      "desktop": {
+        "cta_visible": true,
+        "cta_labels": [
+          "Lancer la vidéo d'ambiance de la section Contact"
+        ],
+        "trust_signal_visible": true,
+        "hero_height": 72,
+        "hero_height_ratio": 0.04,
+        "next_section_visible": true
+      },
+      "mobile": {
+        "cta_visible": true,
+        "cta_labels": [
+          "Lancer la vidéo d'ambiance de la section Contact"
+        ],
+        "trust_signal_visible": true,
+        "hero_height": 66,
+        "hero_height_ratio": 0.05,
+        "next_section_visible": true
+      }
+    }
+  },
+  "design_watch": {
+    "score": 68,
+    "status": "warning",
+    "verdict": "Le rendu responsive est sain, mais l'URL fragmentée #page-1 produit une première impression centrée sur Contact, avec une grande bande rouge vide en desktop, plutôt que sur la promesse immersive principale.",
+    "observed": [
+      "Captures générées en desktop 1440x1800 et mobile 390x1400.",
+      "Aucun overflow horizontal observé.",
+      "Le titre de page est « Swing Digital - Espaces augmentés, expériences immersives ».",
+      "Le viewport contient un H1 unique : « CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES ».",
+      "La capture desktop montre une large bande rouge vide avant le bloc Contact.",
+      "La capture mobile montre une bande rouge avec logos, puis le bloc Contact.",
+      "Les métriques Design Watch détectent un CTA visible et un signal de confiance visible en desktop et mobile, mais la promesse principale n'est pas immédiatement visible dans cette capture fragmentée."
+    ],
+    "inferred": [
+      "La page canonique peut rester pertinente, mais le fragment #page-1 est moins fiable comme première URL d'entrée pour un humain ou un agent navigateur.",
+      "Le score reste préproduction : il ne prouve ni performance commerciale ni citations IA."
+    ],
+    "recommended": [
+      "Ne pas utiliser l'URL #page-1 comme URL de partage, de sitemap ou de reporting SEO principal.",
+      "Corriger ou documenter l'ancre #page-1 si elle doit rester exposée.",
+      "Renforcer les blocs citables et les preuves visibles sur l'URL canonique pour transformer la première impression en sources GEO réutilisables."
+    ]
+  },
+  "analysis_cohorts": [
+    {
+      "name": "Search / crawl",
+      "score": 92,
+      "status": "pass",
+      "what_it_checks": "Accès public, sitemap, réponses HTTP et crawl de préproduction.",
+      "verdict": "Le crawl public passe avec 0 écart sur 24 URL sitemap contrôlées.",
+      "evidence": [
+        "npm run appmiweb:search-crawl : 0 écart(s), 24 URL sitemap contrôlée(s).",
+        "Network Watch : 49 réponses, 0 réponse non-2xx/3xx."
+      ],
+      "next_action": "Maintenir ce contrôle après chaque publication CSS/HTML visible."
+    },
+    {
+      "name": "AI citation",
+      "score": 78,
+      "status": "partial",
+      "what_it_checks": "Présence d'une couche IA, clarté des claims et préparation citation.",
+      "verdict": "Les endpoints IA répondent, mais les citations réelles restent unknown sans panel ou outil propriétaire.",
+      "evidence": [
+        "/llms.txt, /for-ai, /for-ai.json et /for-ai.txt répondent HTTP 200.",
+        "Aucune mesure de citation ChatGPT, Perplexity, Claude ou Google AI Mode fournie."
+      ],
+      "next_action": "Exécuter le panel GEO/Citation et ajouter un claim ledger owner-reviewed."
+    },
+    {
+      "name": "Browser agent",
+      "score": 72,
+      "status": "warning",
+      "what_it_checks": "Rendu, navigation, H1, images, CTA et lisibilité responsive.",
+      "verdict": "La page est exploitable par navigateur automatisé, mais l'URL fragmentée auditée ne montre pas immédiatement la promesse principale.",
+      "evidence": [
+        "H1 unique sur desktop et mobile.",
+        "Aucun débordement horizontal.",
+        "Image Load States : broken 0, still_deferred 0, missing_after_scroll 0.",
+        "Captures #page-1 centrées sur Contact plutôt que sur le hero ou la proposition de valeur."
+      ],
+      "next_action": "Auditer aussi l'URL canonique https://swing.appmiweb.com/ et réserver #page-1 à la navigation interne si nécessaire."
+    },
+    {
+      "name": "Measurement owner",
+      "score": 45,
+      "status": "needs_owner_data",
+      "what_it_checks": "Disponibilité GSC, GA4, Bing, logs serveur, Cloudflare et conversions.",
+      "verdict": "Les données publiques suffisent pour un audit technique, pas pour conclure sur la performance.",
+      "evidence": [
+        "owner-data/owner-data-request.md généré.",
+        "Métriques de trafic, CTR, positions, citations IA et conversions non fournies."
+      ],
+      "next_action": "Importer les exports owner-data avant toute notation de performance."
+    }
+  ],
+  "production_gates": [
+    {
+      "gate": "Mentions légales",
+      "status": "defer_until_prod",
+      "observed": "Placeholder d'hébergement légal encore présent en préproduction.",
+      "next_action": "Renseigner l'hébergeur réel avant production finale."
+    },
+    {
+      "gate": "Réservations",
+      "status": "proof_needed",
+      "observed": "CTA désactivés et billetterie bientôt disponible.",
+      "next_action": "Valider le scénario informatif ou transactionnel avant campagne SEO orientée réservation."
+    },
+    {
+      "gate": "Mesure réelle",
+      "status": "proof_needed",
+      "observed": "Aucune donnée propriétaire fournie pendant cet audit.",
+      "next_action": "Brancher ou exporter GSC, GA4/GTM, Bing Webmaster et logs avant scoring performance."
+    }
+  ],
+  "ard_readiness": {
+    "status": "missing",
+    "checked_url": "https://swing.appmiweb.com/#page-1",
+    "catalog_url": "https://swing.appmiweb.com/.well-known/ai-catalog.json",
+    "signals": {
+      "well_known": {
+        "status": "missing",
+        "url": "https://swing.appmiweb.com/.well-known/ai-catalog.json"
+      },
+      "html_link": {
+        "status": "missing",
+        "url": ""
+      },
+      "robots_agentmap": {
+        "status": "missing",
+        "url": ""
+      }
+    },
+    "validation": {
+      "status": "not_checked",
+      "errors": []
+    },
+    "entries": [],
+    "observed": [
+      "No ARD ai-catalog discovery signal was found."
+    ],
+    "recommended": [
+      "If the site exposes a skill, MCP server, A2A agent, or callable AI service, publish an owner-reviewed ai-catalog draft."
+    ]
+  },
+  "ai_layer_current_state": {
+    "llms_txt": true,
+    "for_ai": true,
+    "for_ai_json": true,
+    "for_ai_txt": true
+  },
+  "ai_layer_endpoint_checks": [
+    {
+      "label": "/llms.txt",
+      "url": "https://swing.appmiweb.com/llms.txt",
+      "status_code": 200,
+      "present": true,
+      "error": ""
+    },
+    {
+      "label": "/for-ai",
+      "url": "https://swing.appmiweb.com/for-ai",
+      "status_code": 200,
+      "present": true,
+      "error": ""
+    },
+    {
+      "label": "/for-ai.json",
+      "url": "https://swing.appmiweb.com/for-ai.json",
+      "status_code": 200,
+      "present": true,
+      "error": ""
+    },
+    {
+      "label": "/for-ai.txt",
+      "url": "https://swing.appmiweb.com/for-ai.txt",
+      "status_code": 200,
+      "present": true,
+      "error": ""
+    }
+  ],
+  "public_measurements": [
+    {
+      "source": "Public HTTP checks",
+      "access": "public",
+      "metric": "AI-readable endpoint presence",
+      "limit": "No visit counts, rankings, conversions, or AI citation metrics"
+    }
+  ],
+  "ai_layer_package": {
+    "status": "generated",
+    "publication_status": "already_present",
+    "status_reason": "The audited site appears to already expose the expected AI-readable layer.",
+    "path": "ai-layer-package",
+    "zip_path": "ai-layer-package.zip",
+    "files": [
+      {
+        "label": "llms.txt",
+        "path": "ai-layer-package/llms.txt",
+        "purpose": "Site-level AI assistant index"
+      },
+      {
+        "label": "/for-ai",
+        "path": "ai-layer-package/for-ai/index.html",
+        "purpose": "Agent-readable page context"
+      },
+      {
+        "label": "/for-ai.json",
+        "path": "ai-layer-package/for-ai.json",
+        "purpose": "Structured facts, limits, and citation guidance"
+      },
+      {
+        "label": "/for-ai.txt",
+        "path": "ai-layer-package/for-ai.txt",
+        "purpose": "Compact plain-text context for agents"
+      },
+      {
+        "label": "schema-webpage.jsonld",
+        "path": "ai-layer-package/schema-webpage.jsonld",
+        "purpose": "Schema.org WebPage JSON-LD draft"
+      },
+      {
+        "label": "AI_LAYER_INSTALL.md",
+        "path": "ai-layer-package/AI_LAYER_INSTALL.md",
+        "purpose": "Owner publishing checklist"
+      },
+      {
+        "label": "manifest.json",
+        "path": "ai-layer-package/manifest.json",
+        "purpose": "Package file inventory"
+      }
+    ]
+  }
+}

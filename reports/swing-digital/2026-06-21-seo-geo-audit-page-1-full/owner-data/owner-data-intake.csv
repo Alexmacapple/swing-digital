@@ -1,0 +1,6 @@
+site,source_key,source_label,owner,property_or_account,date_range_start,date_range_end,export_path,status,notes
+swing.appmiweb.com/#page-1,gsc,Google Search Console,,,,,,requested,"Search visibility, query fit, CTR, and page-level opportunities cannot be proven from public HTML alone."
+swing.appmiweb.com/#page-1,ga4,GA4,,,,,,requested,"Public tools cannot verify visits, conversions, or business impact."
+swing.appmiweb.com/#page-1,bing_webmaster_tools,Bing Webmaster Tools,,,,,,requested,Bing/Copilot and IndexNow evidence requires owner access or explicit exports.
+swing.appmiweb.com/#page-1,server_logs,server logs,,,,,,requested,"Crawler access, WAF blocks, and fetch behavior need log evidence."
+swing.appmiweb.com/#page-1,cloudflare,Cloudflare Analytics,,,,,,requested,"Cache/CDN behavior and blocked crawlers should be verified by owner-side telemetry, not bypass attempts."

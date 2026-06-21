@@ -1,0 +1,30 @@
+{
+  "target_url": "https://swing.appmiweb.com/#page-1",
+  "site_slug": "swing.appmiweb.com",
+  "language": "fr",
+  "environment": "preprod",
+  "mode": "full_audit",
+  "created_at": "2026-06-21T11:58:39.528553+00:00",
+  "expected_outputs": [
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/audit.json",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/index.html",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/LATEST-SEO-GEO-REPORT.md",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/site-screenshots/desktop.png",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/site-screenshots/mobile.png",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/responsive-study.json",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/evidence-engine.json",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/report-validation.json",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/owner-data/owner-data-request.md",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/owner-data/owner-data-checklist.json",
+    "/Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/owner-data/owner-data-intake.csv"
+  ],
+  "next_commands": [
+    "node scripts/capture_site_screenshots.mjs --url https://swing.appmiweb.com/#page-1 --output-dir /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/site-screenshots --evidence-out /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/site-visual-evidence.json --study-out /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/responsive-study.json --evidence-engine-out /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/evidence-engine.json",
+    "python3 scripts/generate_owner_data_request.py --site https://swing.appmiweb.com/#page-1 --output-dir /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/owner-data --language fr",
+    "python3 scripts/check_ard_readiness.py --url https://swing.appmiweb.com/#page-1 --output /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/ard-readiness.json",
+    "python3 scripts/generate_ai_layer_package.py --input /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/audit.json --output-dir /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full --update-audit",
+    "python3 scripts/generate_html_audit_report.py --input /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/audit.json --output-dir /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full",
+    "python3 scripts/validate_audit_report.py --report-dir /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full --output /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/report-validation.json",
+    "python3 scripts/serve_report.py --dir /Users/alex/Claude/projets-heberges/swing-digital/reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full --port 8766 --open"
+  ]
+}
