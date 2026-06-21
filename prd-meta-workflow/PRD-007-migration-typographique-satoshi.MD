@@ -1,6 +1,6 @@
 # PRD-007 : Migration typographique Satoshi
 
-**Statut** : Brouillon
+**Statut** : Implémentation prête à valider
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : conversation et vérification du code réel du dépôt
@@ -191,8 +191,22 @@ Le chemin d'intégration retenu est `src/fonts/Satoshi-Variable.woff2`, car il c
 
 ---
 
+## État d'implémentation
+
+État documenté le 2026-06-21 :
+
+- `src/fonts/Satoshi-Variable.woff2` et `src/fonts/Satoshi-VariableItalic.woff2` sont présents dans le workspace.
+- `src/css/style.css` charge Satoshi en `.woff2` et utilise `--font-primary: 'Satoshi', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`.
+- Les `@font-face` actifs Brandon et Fragen ont été retirés du CSS global.
+- `src/for-ai/index.html` charge Satoshi localement dans son style inline autonome.
+- Les pages HTML qui chargent `css/style.css` utilisent le cache-buster `20260621-1557`.
+- La validation finale attend un build `dist/`, un preflight et un contrôle navigateur après commit des fichiers applicatifs concernés.
+
+---
+
 ## Changelog
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Mise à jour du statut et de l'état d'implémentation |
 | 2026-06-21 | Alex + Codex | Création du PRD |

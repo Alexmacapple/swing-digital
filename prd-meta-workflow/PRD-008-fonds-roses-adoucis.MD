@@ -1,6 +1,6 @@
 # PRD-008 : Fonds roses adoucis
 
-**Statut** : Brouillon
+**Statut** : Implémenté et publié en préproduction
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : conversation, captures locales, préproduction publique et vérification du code réel du dépôt
@@ -248,8 +248,22 @@ linear-gradient(90deg, #D54267 0%, #E85958 50%, #E97C54 100%)
 
 ---
 
+## État d'implémentation
+
+État documenté le 2026-06-21 :
+
+- Les tokens roses dédiés ont été intégrés dans `src/css/style.css`.
+- Les grands fonds rouges décoratifs ont été remplacés par des fonds roses lisibles sur les pages concernées.
+- Les panneaux roses des pages créations, Dessine-moi le vent et XR Corporate ont été aérés ou rendus transparents au niveau des lignes de texte pour éviter l'effet de texte collé au fond.
+- La page équipe utilise `--color-background-pink-readable` pour les cartes afin de réduire le rouge trop dur sous les portraits.
+- Les titres Monroe concernés par `--color-text-gold` ont été requalifiés vers un rose profond, et la page Installation affiche `3 Installation Interactive` en blanc pour rester lisible.
+- La préproduction a été vérifiée avec `style.css?v=20260621-1544`; les changements ont été poussés dans le tag `v11`.
+
+---
+
 ## Changelog
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Mise à jour du statut et de l'état d'implémentation |
 | 2026-06-21 | Alex + Codex | Création du PRD |

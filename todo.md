@@ -10,6 +10,7 @@
 - [ ] Choisir et préparer le domaine final HTTPS.
 - [ ] Basculer les URL SEO publiques vers le domaine final avec `npm run seo:set-base -- https://domaine-final`.
 - [ ] Configurer les redirections HTTP vers HTTPS.
+- [ ] Configurer le document d'erreur 404 côté origine : les URL inexistantes doivent afficher `/404.html` en conservant le statut HTTP `404`.
 - [ ] Vérifier les canonical, `sitemap.xml` et `robots.txt` sur le domaine final.
 - [ ] Brancher ou préparer la mesure réelle : Google Search Console, GA4 ou GTM, Bing Webmaster Tools et événements de conversion.
 
@@ -20,6 +21,7 @@
 - [ ] Exécuter `npm run appmiweb:search-crawl`.
 - [ ] Vérifier que `/llms.txt`, `/for-ai`, `/for-ai.json` et `/for-ai.txt` restent alignés avec les contenus visibles.
 - [ ] Relancer un audit SEO/GEO sur l'URL canonique finale, pas seulement sur la préproduction.
+- [ ] Vérifier `curl -sL https://swing.appmiweb.com/page-inexistante-test-404.html | rg "page-404-hero"` après configuration serveur.
 
 ## Améliorations recommandées
 
@@ -64,3 +66,8 @@
 - [x] Suite complète Playwright : 1 301 tests passés, 154 ignorés
 - [x] `npm run build:prod` et `npm run appmiweb:preflight`
 - [x] PRD-001 créé : mise en production SEO/GEO et mesure
+- [x] PRD-007 créé : migration typographique Satoshi
+- [x] PRD-008 créé : fonds roses adoucis
+- [x] PRD-009 créé : routage de la page 404 personnalisée
+- [x] Page 404 hero visible sur `/404.html`
+- [x] Documentation d'exploitation 404 créée dans `docs/404-CUSTOM-ERROR-PAGE.md`

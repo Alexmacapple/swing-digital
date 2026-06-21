@@ -25,6 +25,9 @@
 | 13. SEO/GEO préproduction | Canonicals Appmiweb, sitemap, robots, `llms.txt`, JSON-LD, FAQ, réponses directes | Terminé |
 | 14. Packaging production | `npm run build:prod`, `dist/` public, preflight Appmiweb | Terminé |
 | 15. PRD production SEO/GEO | PRD-001 : mesure, LCP, politique crawlers IA | Terminé |
+| 16. Typographie premium | PRD-007 : Satoshi Variable auto-hébergée | Prêt à valider |
+| 17. Couleurs roses | PRD-008 : fonds roses adoucis, lisibilité et page équipe | Terminé |
+| 18. Page 404 hero | Page 404 custom visible sur `/404.html` | Terminé |
 
 ---
 
@@ -33,6 +36,7 @@
 - [ ] Choisir le domaine final HTTPS.
 - [ ] Basculer les canonicals, Open Graph, sitemap, robots et `llms.txt` vers le domaine final.
 - [ ] Configurer HTTPS + redirections HTTP vers HTTPS.
+- [ ] Configurer le routage 404 custom : toute URL inexistante doit servir `/404.html` avec un statut HTTP 404.
 - [ ] Renseigner l'hébergeur dans `mentions-legales.html`.
 - [ ] Décider le scénario Réservations : billetterie active ou lancement informatif avec contact.
 - [ ] Exécuter `npm test`, `npm run seo:check`, `npm run build:prod` et `npm run prod:preflight -- https://domaine-final`.
@@ -45,6 +49,7 @@
 - [ ] Optimiser les images (compression, WebP/AVIF avec fallback).
 - [ ] Test cross-browser final (Chrome, Firefox, Safari).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
+- [ ] Si l'origine ne permet pas le routage 404, envisager le repli Cloudflare Worker documenté dans `docs/404-CUSTOM-ERROR-PAGE.md`.
 
 ## Optionnel (post-lancement)
 
@@ -57,4 +62,4 @@
 
 ---
 
-**Dernière mise à jour** : 2026-06-20
+**Dernière mise à jour** : 2026-06-21

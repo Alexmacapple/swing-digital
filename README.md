@@ -41,7 +41,7 @@ npm run seo:check
 - JavaScript vanilla (navigation, vidéos, animations)
 - Playwright (tests automatisés)
 - Lighthouse et contrôles SEO/GEO de préproduction
-- Polices : Brandon, Fragen
+- Police : Satoshi Variable auto-hébergée
 - Pas de framework ni bundler
 
 ## Fonctionnalités
@@ -52,7 +52,7 @@ npm run seo:check
 - Vidéo hero avec contrôle son
 - Vidéo contact avec play/pause
 - Footer 8 liens (responsive)
-- Page 404, plan du site, mentions légales
+- Page 404 hero, plan du site, mentions légales
 - Favicon, Open Graph, Twitter Card et JSON-LD sur les pages indexables
 - `robots.txt`, `sitemap.xml` et `llms.txt`
 - Build de production `dist/` excluant les artefacts de travail
@@ -80,11 +80,17 @@ npm run seo:check
 | AUDIT-COMPLET.md | Audit technique, SEO, a11y, sécurité, UX |
 | docs/SEO-GEO-AUDIT.md | Audit SEO/GEO de préproduction |
 | docs/SEO-GEO-PROD-CHECKLIST.md | Checklist go-live SEO/GEO |
+| docs/404-CUSTOM-ERROR-PAGE.md | Configuration serveur de la page 404 personnalisée |
 | prd-meta-workflow/PRD-001-seo-geo-production.MD | PRD mise en production SEO/GEO et mesure |
+| prd-meta-workflow/PRD-007-migration-typographique-satoshi.MD | PRD migration typographique Satoshi |
+| prd-meta-workflow/PRD-008-fonds-roses-adoucis.MD | PRD fonds roses adoucis |
+| prd-meta-workflow/PRD-009-routage-404-personnalisee.MD | PRD routage de la page 404 personnalisée |
 
 ## Production
 
 La préproduction Appmiweb est validée techniquement. La production finale reste bloquée tant que le domaine final HTTPS, l'hébergeur légal et le scénario Réservations ne sont pas décidés.
+
+Point d'hébergement restant : les URL inexistantes doivent être configurées côté origine pour servir `/404.html` avec un statut HTTP `404`. Voir `docs/404-CUSTOM-ERROR-PAGE.md`.
 
 Commande de bascule vers production finale :
 
@@ -98,5 +104,5 @@ npm run prod:preflight -- https://votre-domaine.fr
 
 ---
 
-**Dernière mise à jour** : 2026-06-20
-**Version** : v6 préproduction SEO/GEO
+**Dernière mise à jour** : 2026-06-21
+**Version** : v11 préproduction UI, typographie et 404 documentés

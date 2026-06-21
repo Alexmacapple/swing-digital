@@ -20,7 +20,7 @@ Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences 
 3. Pages projet (Monroe, Voyage, Dessine, Ni vues, Marilyn, Toulouse-Lautrec, Charlotte Henschel, XR Corporate)
 4. Sous-pages Monroe (Piece, Roman Graphique, Installation, Photographie, Composition, Podcasts, Interviews, Experiences, Quiz)
 
-**Pages utilitaires** : 404, Plan du site, Mentions légales
+**Pages utilitaires** : 404 hero, Plan du site, Mentions légales
 
 ---
 
@@ -33,7 +33,7 @@ Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences 
 
 ## Polices
 
-Brandon (blk, reg, light-it), Fragen (Bold), Raleway Bold
+Satoshi Variable auto-hébergée, avec fallback système.
 
 ---
 
@@ -62,7 +62,7 @@ src/
 ├── charlotte-henschel.html       Charlotte Henschel (pages 55-56)
 ├── xr-corporate.html             XR Corporate (page 57)
 ├── reservations.html             Reservations (pages 58-61)
-├── 404.html                      Page introuvable
+├── 404.html                      Page introuvable hero
 ├── plan-du-site.html             Plan du site
 ├── mentions-legales.html         Mentions legales
 ├── sitemap.xml                   Sitemap (23 pages)
@@ -112,7 +112,7 @@ src/
 ## Branche de travail
 
 **Branche active** : main
-**Tags** : v1, v2, v3, v4 (découpé multi-pages)
+**Tags** : v1 à v11, dont v11 pour les couleurs roses, le plan du site et la page 404 hero
 **Branches mergées** : cosmétique, image, decoupage
 
 ## Commandes de validation actuelles
@@ -142,6 +142,9 @@ Derniers résultats observés :
 6. Chargement conditionnel Vimeo API (guard iframe)
 7. CTA Reservation en button aria-disabled (billetterie non définie)
 8. Video contact en pause par défaut (play au clic)
+9. Satoshi Variable auto-hébergée comme police principale du site
+10. Fonds roses adoucis via tokens dédiés, avec contraste texte blanc préservé
+11. Page 404 custom prête ; routage des URL inexistantes à configurer côté origine
 
 ---
 
@@ -172,7 +175,14 @@ Décision actuelle :
 3. Optimiser le LCP de l'accueil sur le domaine final.
 4. Publier une politique crawlers IA propriétaire après décision explicite.
 
+## PRD récents
+
+- `prd-meta-workflow/PRD-007-migration-typographique-satoshi.MD` : migration typographique Satoshi.
+- `prd-meta-workflow/PRD-008-fonds-roses-adoucis.MD` : remplacement ciblé des grands fonds rouges.
+- `prd-meta-workflow/PRD-009-routage-404-personnalisee.MD` : routage serveur de la page 404 personnalisée.
+- `docs/404-CUSTOM-ERROR-PAGE.md` : recettes Apache, Nginx, serveur statique Python et Cloudflare Worker.
+
 ---
 
-**Dernière mise a jour** : 2026-06-20
-**Version** : 6.0.0 préproduction SEO/GEO
+**Dernière mise à jour** : 2026-06-21
+**Version** : 11.0.0 préproduction UI, typographie et 404 documentés
