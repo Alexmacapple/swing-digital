@@ -10,7 +10,7 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=20260621-1525">
+    <link rel="stylesheet" href="css/style.css?v=20260621-1544">
 </head>
 <body data-section="erreur" data-page="404">
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
@@ -86,14 +86,62 @@
 
     <!-- Contenu principal -->
     <main id="main-content">
-        <section class="page-404" aria-labelledby="page404-title">
-            <div class="page-404__container">
-                <h1 id="page404-title" class="page-404__title">Page introuvable</h1>
-                <p class="page-404__text">La page que vous cherchez n'existe pas ou a été déplacée.</p>
-                <p class="page-404__text"><a href="index.html" class="page-404__link">Retour à l'accueil</a></p>
+        <section id="page-1" class="hero-page1 page-404-hero" aria-labelledby="page404-title" aria-describedby="page404-summary">
+            <!-- Dégradé de fond -->
+            <div class="hero-page1__background"></div>
 
-                <p class="page-404__text"><a href="plan-du-site.html" class="page-404__link">Consulter le plan du site</a></p>
-                <p class="page-404__text"><a href="mailto:production@swingdigitalproduction.com" class="page-404__link">Nous contacter</a></p>
+            <!-- Repère secondaire -->
+            <div class="hero-page1__partners">
+                <a href="plan-du-site.html">Plan du site</a>
+            </div>
+
+            <!-- Message 404 -->
+            <div class="hero-page1__title-group">
+                <h1 id="page404-title">Page introuvable</h1>
+                <p class="hero-page1__hashtags"># 404 # expérience introuvable # retour au récit</p>
+                <p id="page404-summary" class="hero-page1__summary">La page que vous cherchez n'existe pas ou a été déplacée. Retrouvez les expériences Swing Digital depuis l'accueil ou le plan du site.</p>
+                <p class="hero-page1__trust">Espaces augmentés, réalité mixte, spectacle vivant et narration transmédia</p>
+                <div class="page-404-hero__actions">
+                    <a href="index.html" class="hero-page1__cta">Retour à l'accueil</a>
+                    <a href="experiences-series.html" class="hero-page1__cta">Découvrir les expériences</a>
+                </div>
+            </div>
+
+            <!-- Vidéo hero -->
+            <video id="hero-video"
+                   class="hero-page1__video"
+                   autoplay loop muted playsinline
+                   poster="img/hero/hero-featured-image.jpg"
+                   role="img"
+                   aria-label="Vidéo d'ambiance Swing Digital - expériences immersives">
+                <source src="video/hero.mp4" type="video/mp4">
+            </video>
+            <!-- Contrôle son hero -->
+            <button id="hero-sound-btn" class="hero-page1__sound-btn" type="button" aria-label="Activer le son" aria-pressed="false">
+                <svg class="hero-page1__sound-icon hero-page1__sound-icon--off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+                    <line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2"/>
+                    <line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <svg class="hero-page1__sound-icon hero-page1__sound-icon--on" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
+                    <path d="M15.54 8.46a5 5 0 010 7.07" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M19.07 4.93a10 10 0 010 14.14" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+            </button>
+
+            <!-- Liens secondaires -->
+            <div class="hero-page1__bottom-left">
+                <a href="index.html">Accueil</a>
+                <a href="mailto:production@swingdigitalproduction.com">Contact</a>
+            </div>
+
+            <!-- Liens sociaux -->
+            <div class="hero-page1__bottom-right">
+                <p class="hero-page1__follow-label">Suivre</p>
+                <a href="https://www.instagram.com/swingdigital_france/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/swing-digital-production-460681263/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://x.com/Swing_Digital" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </section>
     </main>
