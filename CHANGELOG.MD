@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Création du PRD-010 : récupération, transcription Whisper, correction et publication accessible des transcripts des vidéos publiques.
 - Validation et livraison du PRD-007 : Satoshi Variable auto-hébergée sur tout le site, suppression des anciennes polices OTF/TTF, build et contrôles navigateur toutes pages validés.
 - Correction de la documentation de validation : `npm test` et `npm run seo:check` retournent actuellement `No tests found`, le harnais Playwright doit être restauré.
 - Mise à jour des PRD-007, PRD-008 et PRD-009 avec leur statut, leur état d'implémentation et les suites de validation.

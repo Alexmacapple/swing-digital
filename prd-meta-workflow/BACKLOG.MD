@@ -13,3 +13,4 @@ Index des PRD du workspace Swing Digital.
 | PRD-007 | Migration typographique Satoshi | Validé et livré | 2026-06-21 | Moyenne |
 | PRD-008 | Fonds roses adoucis | Implémenté et publié en préproduction | 2026-06-21 | Moyenne |
 | PRD-009 | Routage de la page 404 personnalisée | Documenté, action infra requise | 2026-06-21 | Moyenne |
+| PRD-010 | Transcripts accessibles des vidéos publiques | Brouillon | 2026-06-21 | Haute |
