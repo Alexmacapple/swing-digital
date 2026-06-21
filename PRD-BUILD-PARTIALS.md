@@ -16,6 +16,7 @@
 - Le build de production actuel ne repose pas sur des partials HTML.
 - `npm run build:prod` génère `dist/` en excluant les artefacts de travail.
 - `npm run appmiweb:preflight` valide la préproduction Appmiweb.
+- Le site courant contient 25 pages HTML top-level après ajout de `films.html` par PRD-011.
 - Le harnais Playwright versionné est restauré : `npm test` couvre PRD-011 et le socle SEO/GEO local, `npm run seo:check` cible `tests/seo-geo.spec.js`.
 - Les polices actives sont `Satoshi-Variable.woff2` et `Satoshi-VariableItalic.woff2`; les anciens OTF/TTF Brandon, Fragen et Raleway ont été supprimés.
 - Les placeholders SEO `DOMAINE` sont remplacés en préproduction par `https://swing.appmiweb.com`.
@@ -27,15 +28,15 @@ Ce PRD ne doit donc pas être utilisé comme checklist de production. Il reste u
 
 ## Contexte
 
-Le site Swing Digital est composé de 24 pages HTML statiques partageant un header (59 lignes), un footer (17 lignes) et un bloc head (~15 lignes) identiques. Ces composants sont aujourd'hui copiés-collés dans chaque fichier. Toute modification (ajout d'un lien de navigation, correction d'un texte, nouveau projet dans le dropdown) doit être répliquée manuellement 24 fois.
+Le site Swing Digital est composé de 25 pages HTML top-level statiques partageant un header, un footer et un bloc head proches. Ces composants sont aujourd'hui copiés-collés dans chaque fichier. Toute modification (ajout d'un lien de navigation, correction d'un texte, nouveau projet dans le dropdown) doit être répliquée manuellement sur les pages concernées.
 
 Au moment de rédaction de ce PRD, le site disposait de 984 tests Playwright sur 4 viewports et d'une conformité WCAG 2.2 AA validée. Toute solution doit préserver ces acquis ainsi que les contrôles SEO/GEO ajoutés depuis.
 
 ## Problème
 
-1. **Duplication** : 3 blocs communs (head, header, footer) dupliqués dans 24 fichiers = ~2 200 lignes redondantes
-2. **Risque d'inconsistance** : une modification oubliée dans 1 fichier sur 24 crée une divergence silencieuse
-3. **Coût de maintenance** : chaque changement dans la navigation nécessite 24 édits identiques
+1. **Duplication** : 3 blocs communs (head, header, footer) dupliqués dans 25 fichiers top-level
+2. **Risque d'inconsistance** : une modification oubliée dans 1 fichier crée une divergence silencieuse
+3. **Coût de maintenance** : chaque changement dans la navigation nécessite des édits synchronisés sur les 25 pages top-level
 4. **Fragilité** : les tests détectent les divergences, mais seulement après coup
 
 ## Solution retenue : script de build maison (Option 2)

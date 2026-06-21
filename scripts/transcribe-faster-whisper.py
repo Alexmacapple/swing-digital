@@ -40,6 +40,11 @@ def parse_args() -> argparse.Namespace:
         default=",".join(DEFAULT_FORMATS),
         help="Formats de sortie séparés par des virgules : txt,srt,vtt,json,tsv.",
     )
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Ignorer les sources dont toutes les sorties demandées existent déjà.",
+    )
     return parser.parse_args()
 
 
@@ -140,6 +145,12 @@ def write_outputs(
         write_tsv(output_path("tsv"), segments)
 
 
+def expected_outputs(output_dir: Path, source: Path, formats: set[str], suffix: str = "") -> list[Path]:
+    output_stem = f"{source.stem}.{suffix}" if suffix else source.stem
+    base = output_dir / output_stem
+    return [base.parent / f"{base.name}.{extension}" for extension in sorted(formats)]
+
+
 def main() -> int:
     args = parse_args()
     input_dir = Path(args.input_dir)
@@ -164,7 +175,13 @@ def main() -> int:
     model = WhisperModel(args.model, device=args.device, compute_type=args.compute_type)
 
     for source in sources:
-        print(f"{args.task} : {source}")
+        if args.skip_existing and all(
+            path.is_file() and path.stat().st_size > 0
+            for path in expected_outputs(output_dir, source, formats, args.output_suffix.strip())
+        ):
+            print(f"Déjà présent : {source}", flush=True)
+            continue
+        print(f"{args.task} : {source}", flush=True)
         raw_segments, info = model.transcribe(
             str(source),
             language=args.language,
@@ -175,7 +192,7 @@ def main() -> int:
         segments = [segment_to_dict(segment) for segment in raw_segments]
         write_outputs(output_dir, source, info, segments, formats, args.output_suffix.strip())
 
-    print(f"Terminé : {len(sources)} fichier(s), sortie {output_dir}")
+    print(f"Terminé : {len(sources)} fichier(s), sortie {output_dir}", flush=True)
     return 0
 
 

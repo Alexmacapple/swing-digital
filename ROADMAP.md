@@ -28,7 +28,7 @@
 | 16. Typographie premium | PRD-007 : Satoshi Variable auto-hébergée | Terminé |
 | 17. Couleurs roses | PRD-008 : fonds roses adoucis, lisibilité et page équipe | Terminé |
 | 18. Page 404 hero | Page 404 custom visible sur `/404.html` | Terminé |
-| 19. Transcripts vidéos | PRD-010 : transcripts accessibles des vidéos publiques | Cadré, à implémenter |
+| 19. Transcripts vidéos | PRD-010 : transcripts accessibles des vidéos publiques | Cadré, outillage local ajouté, publication à planifier |
 | 20. Menu XR / Films | PRD-011 : séparation XR, Films et Ni vues ni connues | Implémenté et vérifié localement |
 
 ---
@@ -52,7 +52,7 @@
 - [ ] Test cross-browser final (Chrome, Firefox, Safari).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 - [ ] Si l'origine ne permet pas le routage 404, envisager le repli Cloudflare Worker documenté dans `docs/404-CUSTOM-ERROR-PAGE.md`.
-- [ ] Implémenter le PRD-010 : inventaire vidéo, récupération audio, transcription, correction et publication accessible des transcripts.
+- [ ] Finaliser le PRD-010 : corriger les transcripts bruts, publier les disclosures accessibles et valider le rendu.
 
 ## Optionnel (post-lancement)
 

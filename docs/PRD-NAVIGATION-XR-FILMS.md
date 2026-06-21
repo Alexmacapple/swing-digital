@@ -219,13 +219,13 @@ Cette itération ne doit pas :
 
 ---
 
-## 7. Points à arbitrer avant implémentation
+## 7. Arbitrages retenus lors de l'implémentation
 
-1. Confirmer que le menu doit afficher `Espace augmenté` et `Réservation` au singulier, même si les pages restent `espaces-augmentes.html` et `reservations.html`.
-2. Choisir le remplacement visuel de la carte `Ni vues ni connues` dans la grille XR : suppression avec grille à 3 cartes, remplacement par `XR Corporate`, ou réorganisation plus légère de la grille.
-3. Confirmer que `Ni vues ni connues` est le seul contenu à migrer vers `Films` dans cette itération.
+1. Le menu affiche `Espace augmenté` et `Réservation` au singulier, même si les pages restent `espaces-augmentes.html` et `reservations.html`.
+2. La carte `Ni vues ni connues` retirée de la grille XR est remplacée par `XR Corporate`.
+3. `Ni vues ni connues` est le seul contenu migré vers `Films` dans cette itération.
 
-Recommandation : valider les trois points avant de modifier les 24 pages existantes et de créer `films.html`.
+Ces arbitrages sont repris dans `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD`.
 
 ---
 

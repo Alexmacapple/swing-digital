@@ -52,7 +52,7 @@ Le site public courant est un site statique multi-pages : 25 pages HTML top-leve
 
 ## Navigation courante
 
-- Navigation principale multi-pages avec menu, dropdown Expériences Séries et sous-menu Monroe.
+- Navigation principale multi-pages avec menu `Accueil - XR - Espace augmenté - Films - Réservation`, dropdown XR et sous-menu Monroe.
 - Fil d'Ariane sur les pages internes.
 - Les sections issues de la maquette conservent des identifiants `#page-N`, mais les URL publiques canoniques sont les pages HTML.
 - Page `/for-ai/`, `llms.txt`, `for-ai.json`, `for-ai.txt` et `schema-webpage.jsonld` disponibles pour les agents IA.

@@ -4,12 +4,14 @@
 
 > Mise à jour 2026-06-20 : ce PRD décrit la décision historique de découpage multi-pages. L'état courant ajoute une préproduction SEO/GEO sur `https://swing.appmiweb.com`, un build public `dist/` et le PRD-001 pour les chantiers de production.
 
-> Mise à jour 2026-06-21 : le chantier ultérieur de séparation éditoriale `XR / Films` est suivi dans `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD`. Il ne remet pas en cause ce découpage multi-pages terminé.
+> Mise à jour 2026-06-21 : le chantier ultérieur de séparation éditoriale `XR / Films` est suivi dans `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD`. Il ne remet pas en cause ce découpage multi-pages terminé, mais ajoute `films.html` et porte l'état courant à 25 pages HTML top-level.
 
 ## État courant au 2026-06-21
 
-- Les 24 pages HTML existent toujours dans `src/`.
-- Les 24 URL indexables sont présentes dans `sitemap.xml`.
+- Les 24 pages HTML issues du découpage initial existent toujours dans `src/`.
+- Le PRD-011 ajoute `films.html` : l'état courant contient 25 pages HTML top-level.
+- Les 25 URL indexables sont présentes dans `sitemap.xml`.
+- La navigation visible courante est `Accueil - XR - Espace augmenté - Films - Réservation`.
 - La préproduction Appmiweb reste la cible publique de validation avant bascule vers le domaine final.
 - Les canonicals, Open Graph, sitemap, robots et `llms.txt` pointent vers `https://swing.appmiweb.com`.
 - La production finale nécessite une bascule via `npm run seo:set-base -- https://domaine-final`.

@@ -113,7 +113,7 @@ src/
 ## Branche de travail
 
 **Branche active** : main
-**Tags** : v1 à v12, dont v12 pour la migration typographique Satoshi
+**Tags** : v1 à v14, dont v12 pour la migration typographique Satoshi, v13 pour le menu XR / Films et v14 pour la synchronisation documentaire
 **Branches mergées** : cosmétique, image, decoupage
 
 ## Commandes de validation actuelles
@@ -182,11 +182,11 @@ Décision actuelle :
 - `prd-meta-workflow/PRD-007-migration-typographique-satoshi.MD` : migration typographique Satoshi.
 - `prd-meta-workflow/PRD-008-fonds-roses-adoucis.MD` : remplacement ciblé des grands fonds rouges.
 - `prd-meta-workflow/PRD-009-routage-404-personnalisee.MD` : routage serveur de la page 404 personnalisée.
-- `prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD` : transcripts accessibles des vidéos publiques.
+- `prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD` : transcripts accessibles des vidéos publiques, outillage local ajouté, publication à finaliser.
 - `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD` : séparation éditoriale XR / Films implémentée.
 - `docs/404-CUSTOM-ERROR-PAGE.md` : recettes Apache, Nginx, serveur statique Python et Cloudflare Worker.
 
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : 12.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 cadré, PRD-011 implémenté
+**Version** : 14.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité

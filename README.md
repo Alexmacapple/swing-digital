@@ -82,11 +82,12 @@ npm run seo:check
 | docs/SEO-GEO-PROD-CHECKLIST.md | Checklist go-live SEO/GEO |
 | docs/404-CUSTOM-ERROR-PAGE.md | Configuration serveur de la page 404 personnalisée |
 | docs/PRD-NAVIGATION-XR-FILMS.md | Cadrage source du menu XR / Films |
+| docs/AUDIT-MAILLAGE-INTERNE-2026-06-21.md | Audit des liens internes et points éditoriaux à confirmer |
 | prd-meta-workflow/PRD-001-seo-geo-production.MD | PRD mise en production SEO/GEO et mesure |
 | prd-meta-workflow/PRD-007-migration-typographique-satoshi.MD | PRD migration typographique Satoshi |
 | prd-meta-workflow/PRD-008-fonds-roses-adoucis.MD | PRD fonds roses adoucis |
 | prd-meta-workflow/PRD-009-routage-404-personnalisee.MD | PRD routage de la page 404 personnalisée |
-| prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD | PRD transcripts accessibles des vidéos publiques |
+| prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD | PRD transcripts accessibles des vidéos et podcasts publics |
 | prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD | PRD menu et découpage XR / Films |
 
 ## Production
@@ -108,4 +109,4 @@ npm run prod:preflight -- https://votre-domaine.fr
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : v12 préproduction Satoshi, UI et 404 documentés ; PRD-010 cadré, PRD-011 implémenté
+**Version** : v14 préproduction Satoshi, UI et 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité

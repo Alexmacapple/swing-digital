@@ -1,4 +1,4 @@
-# PRD-010 : Transcripts accessibles des vidéos publiques
+# PRD-010 : Transcripts accessibles des vidéos et podcasts publics
 
 **Statut** : Cadré, implémentation outillée
 **Date** : 2026-06-21
@@ -9,7 +9,7 @@
 
 ## Vision
 
-Le quoi : chaque vidéo publique Swing Digital concernée doit disposer d'une transcription textuelle corrigée, publiée à proximité immédiate du média ou du lien vidéo dans un disclosure accessible.
+Le quoi : chaque vidéo et épisode de podcast public Swing Digital concerné doit disposer d'une transcription textuelle corrigée, publiée à proximité immédiate du média ou du lien média dans un disclosure accessible.
 
 Le pourquoi : une vidéo externe intégrée ou liée ne suffit pas à rendre le contenu multimédia accessible. Le mécanisme utile est double : extraire l'audio pour produire une base textuelle, puis publier cette transcription comme alternative adjacente, actionnable au clavier et compréhensible par les technologies d'assistance. Cela améliore l'accès au contenu pour les personnes sourdes, malentendantes, non disponibles pour l'écoute audio, ainsi que la lisibilité SEO/GEO sans inventer de métriques.
 
@@ -17,18 +17,22 @@ Le comment : renvoyé au Plan d'implémentation.
 
 ## Exemple bout-en-bout (projeté)
 
-Le crawl public confirme six vidéos publiques à traiter :
+Le crawl public confirme dix URL média publiques à traiter : six URL vidéo initiales, dont une déjà utilisée comme premier épisode de podcast, et quatre épisodes YouTube supplémentaires présents sur `monroe-podcasts.html`.
 
 ```txt
 https://www.youtube.com/watch?v=Le2Ybd_X6A0
 https://www.youtube.com/watch?v=0YDIZeBbYL0
+https://www.youtube.com/watch?v=iJjEmnqXWzU
+https://www.youtube.com/watch?v=FD7Du_SD-QI
+https://www.youtube.com/watch?v=rx0VDLfEbLU
+https://www.youtube.com/watch?v=AB2Fb1wdHoo
 https://vimeo.com/250420667
 https://vimeo.com/528291420
 https://vimeo.com/782642139
 https://vimeo.com/838300539
 ```
 
-Le fichier `videos.txt` est créé à la racine avec ces six URL.
+Le fichier `videos.txt` est créé à la racine avec ces dix URL uniques. Le fichier `podcasts.txt` documente les cinq épisodes de podcast de `monroe-podcasts.html`, dont `0YDIZeBbYL0` déjà inclus dans le lot initial.
 
 `yt-dlp` récupère les pistes audio dans `swing_audio/`, les fichiers vidéo de contrôle dans `swing_videos/` si nécessaire, et les sous-titres disponibles dans `swing_subtitles/`.
 
@@ -41,6 +45,8 @@ Le transcript final de la vidéo YouTube associée à Galerie Joseph est publié
 Le transcript final de `DESSINE-MOI LE VENT (teaser)` est publié sous la vidéo Vimeo de `dessine-moi-le-vent.html`.
 
 Les transcripts des autres iframes publiques sont publiés sous leur vidéo respective : `voyage-autour-de-moi.html`, `monroe-piece.html`, `experience-monroe.html` et `monroe-podcasts.html`.
+
+Les cinq épisodes de podcast de `monroe-podcasts.html` disposent chacun d'un transcript français corrigé et sémantisé, publié dans un disclosure adjacent à la liste ou au lecteur d'épisode.
 
 Chaque transcript est masqué par défaut dans un disclosure avec un bouton adjacent : état `aria-expanded="false"`, cible unique via `aria-controls`, panneau `hidden`, ouverture et fermeture au clic comme au clavier.
 
@@ -56,14 +62,18 @@ Les contrôles RGAA, SEO, préproduction et Playwright passent sans régression,
 
 ## Contexte
 
-Les pages publiques listées dans le plan du site exposent six URL vidéo externes confirmées dans le périmètre PRD-010 :
+Les pages publiques listées dans le plan du site exposent dix URL média externes confirmées dans le périmètre PRD-010 :
 
 - `https://www.youtube.com/watch?v=Le2Ybd_X6A0`, depuis la page d'accueil, associé à Galerie Joseph ;
 - `https://vimeo.com/250420667`, depuis `dessine-moi-le-vent.html`, pour le teaser `DESSINE-MOI LE VENT`.
 - `https://vimeo.com/528291420`, depuis `voyage-autour-de-moi.html` ;
 - `https://vimeo.com/782642139`, depuis `monroe-piece.html` ;
 - `https://vimeo.com/838300539`, depuis `experience-monroe.html` ;
-- `https://www.youtube.com/watch?v=0YDIZeBbYL0`, depuis `monroe-podcasts.html`.
+- `https://www.youtube.com/watch?v=0YDIZeBbYL0`, depuis `monroe-podcasts.html`, épisode `Devenir Marilyn` ;
+- `https://www.youtube.com/watch?v=iJjEmnqXWzU`, depuis `monroe-podcasts.html`, épisode `Une icône en Corée` ;
+- `https://www.youtube.com/watch?v=FD7Du_SD-QI`, depuis `monroe-podcasts.html`, épisode `Kennedy et moi` ;
+- `https://www.youtube.com/watch?v=rx0VDLfEbLU`, depuis `monroe-podcasts.html`, épisode `Ma mort et après...` ;
+- `https://www.youtube.com/watch?v=AB2Fb1wdHoo`, depuis `monroe-podcasts.html`, épisode `The Archives`.
 
 Le site contient déjà un pattern disclosure en JavaScript (`button[aria-expanded][aria-controls]`) et une implémentation existante pour les citations presse de L'Expérience Monroe. Le nouveau composant doit réutiliser ce socle tout en évitant les fragilités connues : libellé trop spécifique aux citations, remplacement par `textContent` qui casserait d'éventuels enfants HTML, absence de fallback lisible sans JavaScript.
 
@@ -73,7 +83,7 @@ Le référentiel RGAA demande une transcription textuelle ou alternative pour le
 
 ## Problème
 
-Les vidéos externes publiques ne disposent pas aujourd'hui d'une transcription textuelle publiée à proximité du média ou du lien qui les expose.
+Les vidéos externes publiques et épisodes de podcast ne disposent pas aujourd'hui d'une transcription textuelle publiée à proximité du média ou du lien qui les expose.
 
 Cela crée quatre problèmes :
 
@@ -88,7 +98,7 @@ Cela crée quatre problèmes :
 
 Mettre en place une chaîne documentaire et technique en quatre couches :
 
-1. inventorier les URL vidéo publiques à traiter, avec `videos.txt` comme source de départ ;
+1. inventorier les URL vidéo et podcast publiques à traiter, avec `videos.txt` comme source de départ et `podcasts.txt` comme inventaire dédié de `monroe-podcasts.html` ;
 2. récupérer localement l'audio, les éventuels sous-titres et les vidéos de contrôle avec `yt-dlp`, sans versionner ces artefacts lourds ;
 3. produire puis corriger des transcripts avec `faster-whisper` et le workflow `transcript`, en conservant les bruts, les audits et les incertitudes ;
 4. publier les transcripts corrigés sous forme de disclosure accessible adjacent à chaque vidéo ou lien vidéo public concerné.
@@ -98,13 +108,17 @@ Le périmètre validé est :
 ```txt
 https://www.youtube.com/watch?v=Le2Ybd_X6A0
 https://www.youtube.com/watch?v=0YDIZeBbYL0
+https://www.youtube.com/watch?v=iJjEmnqXWzU
+https://www.youtube.com/watch?v=FD7Du_SD-QI
+https://www.youtube.com/watch?v=rx0VDLfEbLU
+https://www.youtube.com/watch?v=AB2Fb1wdHoo
 https://vimeo.com/250420667
 https://vimeo.com/528291420
 https://vimeo.com/782642139
 https://vimeo.com/838300539
 ```
 
-Le recroisement avec `src/*.html` a validé l'inclusion des autres iframes Vimeo ou YouTube publiques dans le même lot. Toute nouvelle vidéo découverte ultérieurement devra être ajoutée explicitement à `videos.txt` ou reportée dans un autre PRD.
+Le recroisement avec `src/*.html` a validé l'inclusion des autres iframes Vimeo ou YouTube publiques dans le même lot. Le recroisement de `monroe-podcasts.html` a identifié quatre épisodes YouTube supplémentaires au premier épisode déjà inclus. Toute nouvelle vidéo ou podcast découvert ultérieurement devra être ajouté explicitement à `videos.txt` ou reporté dans un autre PRD.
 
 ---
 
@@ -180,7 +194,7 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
 
 ## Plan d'implémentation
 
-1. Créer ou confirmer `videos.txt` à la racine avec les six URL du périmètre validé.
+1. Créer ou confirmer `videos.txt` à la racine avec les dix URL uniques du périmètre validé, et `podcasts.txt` avec les cinq épisodes listés sur `monroe-podcasts.html`.
 2. Recroiser le périmètre avec `src/*.html`, `plan-du-site.html` et les iframes externes pour produire un inventaire daté des vidéos incluses, exclues ou reportées.
 3. Ajouter ou vérifier des règles `.gitignore` pour exclure `swing_audio/`, `swing_videos/`, `swing_subtitles/` et les artefacts STT bruts si ceux-ci ne doivent pas être versionnés.
 4. Vérifier localement la disponibilité de `yt-dlp`, `ffmpeg`, du Python `gemma4/.venv` et du module `faster_whisper`, sans lancer de commande `sudo` depuis Codex.
@@ -220,18 +234,20 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
      --language fr
    ```
 
-9. Pour chaque transcript brut, appliquer le workflow `transcript` en sortie Markdown structurée accessible, avec rapport d'audit séparé et sauvegarde du brut.
-10. Conserver les corrections de forme uniquement : accents, ponctuation, graphies évidentes, passages `[inaudible]`; ne pas résumer, traduire, réordonner ou compléter les propos.
-11. Créer un composant HTML de transcript avec titre explicite, bouton disclosure adjacent, panneau contrôlé par identifiant unique et fallback sans JavaScript.
-12. Adapter `initDisclosure()` pour gérer des libellés génériques via un enfant de bouton dédié, sans détruire les icônes ou le balisage interne avec `textContent`.
-13. Publier le transcript YouTube sur `src/index.html` à proximité de la première occurrence pertinente du lien Galerie Joseph ; les occurrences suivantes du même lien doivent pointer vers le même transcript ou rester sans duplication.
-14. Publier le transcript Vimeo sous la vidéo principale de `src/dessine-moi-le-vent.html`.
-15. Ajouter les styles nécessaires dans `src/css/style.css` avec contraste, lisibilité, responsive, hauteur maximale raisonnable et focus visible.
-16. Mettre à jour les paramètres `style.css?v=...` sur les pages modifiées si le CSS visible change.
-17. Générer `dist/` avec `npm run build:prod`.
-18. Vérifier clavier et disclosure avec Playwright : clic, Entrée, Espace, état `aria-expanded`, visibilité du panneau et focus.
-19. Vérifier l'accessibilité statique avec les tests existants et un contrôle manuel RGAA sur les critères multimédia concernés.
-20. Relancer le harnais Playwright versionné (`npm test` et `npm run seo:check`), puis `npm run appmiweb:preflight` et, si publié en préproduction, `npm run appmiweb:search-crawl`.
+9. Produire les SRT français et anglais pour chaque URL incluse, avec suffixes explicites `.fr.srt` et `.en.srt`, afin de permettre un dépôt ultérieur sur YouTube ou Vimeo.
+10. Pour chaque transcript brut français, appliquer le workflow `transcript` en sortie Markdown structurée accessible, avec titres factuels, paragraphes lisibles, rapport d'audit séparé et sauvegarde du brut.
+11. Conserver les corrections de forme uniquement : accents, ponctuation, graphies évidentes, passages `[inaudible]`; ne pas résumer, traduire, réordonner ou compléter les propos.
+12. Créer un composant HTML de transcript avec titre explicite, bouton disclosure adjacent, panneau contrôlé par identifiant unique et fallback sans JavaScript.
+13. Adapter `initDisclosure()` pour gérer des libellés génériques via un enfant de bouton dédié, sans détruire les icônes ou le balisage interne avec `textContent`.
+14. Publier le transcript YouTube sur `src/index.html` à proximité de la première occurrence pertinente du lien Galerie Joseph ; les occurrences suivantes du même lien doivent pointer vers le même transcript ou rester sans duplication.
+15. Publier le transcript Vimeo sous la vidéo principale de `src/dessine-moi-le-vent.html`.
+16. Publier les transcripts des cinq épisodes sous ou près du lecteur et de la liste d'épisodes de `src/monroe-podcasts.html`, sans dupliquer le transcript du même identifiant vidéo ailleurs.
+17. Ajouter les styles nécessaires dans `src/css/style.css` avec contraste, lisibilité, responsive, hauteur maximale raisonnable et focus visible.
+18. Mettre à jour les paramètres `style.css?v=...` sur les pages modifiées si le CSS visible change.
+19. Générer `dist/` avec `npm run build:prod`.
+20. Vérifier clavier et disclosure avec Playwright : clic, Entrée, Espace, état `aria-expanded`, visibilité du panneau et focus.
+21. Vérifier l'accessibilité statique avec les tests existants et un contrôle manuel RGAA sur les critères multimédia concernés.
+22. Relancer le harnais Playwright versionné (`npm test` et `npm run seo:check`), puis `npm run appmiweb:preflight` et, si publié en préproduction, `npm run appmiweb:search-crawl`.
 
 ---
 
@@ -241,7 +257,7 @@ En tant que LLM qui implémente ce PRD, les éléments manquants ou à figer ava
 
 - la politique de versionnement des transcripts corrigés, des rapports d'audit et des fichiers `.srt`/`.vtt` ;
 - la décision de placement exacte du transcript YouTube sur la page d'accueil, car le même lien y apparaît plusieurs fois ;
-- la décision de placement exacte du transcript YouTube de `monroe-podcasts.html`, car la vidéo est intégrée comme contenu de podcast ;
+- la décision de placement exacte des cinq transcripts de `monroe-podcasts.html`, car les épisodes sont pilotés par un même lecteur YouTube dynamique ;
 - la liste métier des noms propres attendus dans les vidéos, si l'équipe veut valider les graphies ;
 - la confirmation que les fichiers audio/vidéo téléchargés servent uniquement à l'analyse locale et ne sont pas publiés ;
 - le niveau de verbatim attendu : transcription lisible corrigée ou conservation maximale des hésitations.
@@ -252,11 +268,13 @@ Ces points ne bloquent pas la création du PRD, mais ils doivent être résolus 
 
 ## Métriques de succès
 
-- `videos.txt` existe à la racine et contient les six URL du périmètre validé, une par ligne.
-- Un inventaire daté liste 100 % des vidéos incluses, exclues ou reportées après recrawl de `src/*.html`.
+- `videos.txt` existe à la racine et contient les dix URL uniques du périmètre validé, une par ligne.
+- `podcasts.txt` existe à la racine et contient les cinq épisodes de `monroe-podcasts.html`, une URL par ligne.
+- Un inventaire daté liste 100 % des vidéos et podcasts inclus, exclus ou reportés après recrawl de `src/*.html`.
 - Pour chaque URL incluse, au moins un fichier audio MP3 existe dans `swing_audio/` après exécution de `yt-dlp`.
 - Pour chaque URL incluse, `scripts/transcribe-faster-whisper.py` produit au minimum un `.txt`, un `.srt`, un `.vtt`, un `.json` et un `.tsv` dans `transcripts/`.
-- Pour chaque transcript publié, un transcript corrigé et un rapport d'audit séparé existent.
+- Pour chaque transcript publié, un transcript français corrigé, sémantisé avec titres et paragraphes, et un rapport d'audit séparé existent.
+- Pour chaque URL incluse, les fichiers `.fr.srt` et `.en.srt` existent pour dépôt ultérieur sur les plateformes vidéo.
 - Le validateur `validate_transcript_integrity.py` du workflow `transcript` passe sur chaque transcript corrigé ou indique explicitement pourquoi le cas est non applicable.
 - Aucun fichier audio ou vidéo de travail n'est présent dans `src/` ou `dist/`.
 - Chaque vidéo ou lien vidéo inclus dispose d'un bouton ou lien adjacent donnant accès à la transcription textuelle.
@@ -303,6 +321,7 @@ Limites structurelles à prendre en compte :
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Extension du périmètre aux cinq épisodes podcast de `monroe-podcasts.html` et aux SRT FR/EN |
 | 2026-06-21 | Alex + Codex | Adoption de `faster-whisper` et ajout du script de transcription local |
 | 2026-06-21 | Alex + Codex | Extension du périmètre à toutes les vidéos publiques trouvées dans `src/*.html` |
 | 2026-06-21 | Alex + Codex | Création du PRD |

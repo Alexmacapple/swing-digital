@@ -1,10 +1,10 @@
 # Audit complet - Swing Digital
 
 Date : 22 mars 2026
-Scope : 24 pages HTML, 1 CSS, 1 JS, sitemap, robots.txt
+Scope historique : 24 pages HTML, 1 CSS, 1 JS, sitemap, robots.txt
 Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 
-> Mise à jour 2026-06-21 : ce document est conservé comme audit historique. L'état courant est documenté dans `README.md`, `CLAUDE.md`, `ROADMAP.md`, `docs/SEO-GEO-AUDIT.md`, `docs/SEO-GEO-PROD-CHECKLIST.md` et `prd-meta-workflow/`.
+> Mise à jour 2026-06-21 : ce document est conservé comme audit historique. L'état courant ajoute `films.html`, soit 25 pages HTML top-level, et remplace la rubrique visible `Expériences Séries` par `XR`. L'état courant est documenté dans `README.md`, `CLAUDE.md`, `ROADMAP.md`, `docs/SEO-GEO-AUDIT.md`, `docs/SEO-GEO-PROD-CHECKLIST.md` et `prd-meta-workflow/`.
 
 ---
 

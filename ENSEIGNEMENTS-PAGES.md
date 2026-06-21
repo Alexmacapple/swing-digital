@@ -33,17 +33,19 @@ Leçons apprises sur les 62 pages et le découpé multi-pages. Capitalisation po
 
 ## Phase 5 : Découpé multi-pages
 
+> Note 2026-06-21 : cette section décrit le découpage initial. L'état courant ajoute `films.html`, soit 25 pages HTML top-level, et la navigation principale est désormais `Accueil - XR - Espace augmenté - Films - Réservation`.
+
 ### Architecture
 
-- 24 pages HTML au lieu d'un single-page de 2240 lignes
+- 24 pages HTML au moment du découpage initial, puis 25 pages HTML top-level après ajout de `films.html`
 - Header/footer/breadcrumb dupliqués dans chaque page (pas de include serveur)
-- Toute modification du header doit être répliquée dans 24 fichiers (script Python ou sed)
+- Toute modification du header doit être répliquée dans les pages HTML concernées, actuellement 25 fichiers top-level
 - Le script de génération Python est le moyen le plus fiable pour les modifications de masse
 
 ### Navigation 3 niveaux
 
-- Menu niveau 1 : 4 items (Accueil, Espaces, Experiences, Reservations)
-- Menu niveau 2 : dropdown 8 projets sous Experiences
+- Menu niveau 1 actuel : 5 items (Accueil, XR, Espace augmenté, Films, Réservation)
+- Menu niveau 2 : dropdown projets sous XR
 - Menu niveau 3 : sous-menu Monroe (5 volets + 6 categories, séparateur visuel)
 - Pattern disclosure (button aria-expanded, pas de menubar)
 - Pas de aria-haspopup (réservé aux menus applicatifs)

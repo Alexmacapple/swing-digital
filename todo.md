@@ -30,7 +30,7 @@
 - [ ] Décider et publier une politique crawlers IA propriétaire.
 - [ ] Optimiser les images (compression, WebP/AVIF avec fallback).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
-- [ ] Implémenter PRD-010 : transcripts accessibles des vidéos publiques.
+- [ ] Finaliser PRD-010 : corriger les transcripts bruts, publier les disclosures accessibles et valider le rendu.
 
 ## Terminé
 
@@ -72,6 +72,7 @@
 - [x] PRD-008 créé : fonds roses adoucis
 - [x] PRD-009 créé : routage de la page 404 personnalisée
 - [x] PRD-010 créé : transcripts accessibles des vidéos publiques
+- [x] PRD-010 outillé : script `faster-whisper` local ajouté pour produire les transcripts bruts
 - [x] PRD-011 créé : menu et découpage XR / Films
 - [x] PRD-011 implémenté : menu `Accueil - XR - Espace augmenté - Films - Réservation`, page `films.html` et `Ni vues ni connues` déplacé sous Films
 - [x] Page 404 hero visible sur `/404.html`

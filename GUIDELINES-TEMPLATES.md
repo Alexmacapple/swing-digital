@@ -1,6 +1,6 @@
 # Guidelines Templates - Swing Digital
 
-Conventions extraites du code source courant : 24 pages HTML top-level, une page `/for-ai/`, build public `dist/` et typographie Satoshi auto-hébergée.
+Conventions extraites du code source courant : 25 pages HTML top-level, une page `/for-ai/`, build public `dist/`, menu `Accueil - XR - Espace augmenté - Films - Réservation` et typographie Satoshi auto-hébergée.
 
 ---
 
@@ -19,7 +19,7 @@ Conventions extraites du code source courant : 24 pages HTML top-level, une page
     <meta property="og:description" content="[Description]">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://swing.appmiweb.com/[page].html">
-    <link rel="stylesheet" href="css/style.css?v=20260621-1600">
+    <link rel="stylesheet" href="css/style.css?v=20260621-1700">
     <script type="application/ld+json">...</script>
 </head>
 <body data-section="[section]" data-page="[page]">
@@ -335,4 +335,4 @@ if (!document.querySelector('iframe[src*="vimeo"]')) return;
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : 12.0.0 (préproduction Satoshi, SEO/GEO, 404, PRD-010 cadré et PRD-011 implémenté)
+**Version** : 14.0.0 (préproduction Satoshi, SEO/GEO, 404, PRD-010 outillé, PRD-011 implémenté, maillage interne audité)
