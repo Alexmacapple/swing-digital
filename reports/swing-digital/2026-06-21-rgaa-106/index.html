@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audit RGAA 106 critères - Swing Digital</title>
+  <style>
+    :root{--bg:#f6f7f9;--panel:#fff;--ink:#14171f;--muted:#5a6170;--line:#d9dee7;--brand:#0f6f7b;--bad:#b42318;--ok:#137333;--na:#667085;--nt:#8a5b00}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}a{color:var(--brand)}.skip{position:absolute;left:1rem;top:-5rem;background:#fff;padding:.75rem 1rem;border:2px solid var(--brand);z-index:2}.skip:focus{top:1rem}.shell{max-width:1180px;margin:0 auto;padding:32px 20px 56px}.hero{display:grid;gap:16px;margin-bottom:24px}.eyebrow{margin:0;color:var(--brand);font-weight:700;text-transform:uppercase;font-size:.78rem;letter-spacing:.04em}h1{margin:0;font-size:clamp(2rem,4vw,3.6rem);line-height:1.05;letter-spacing:0}h2{margin:0 0 14px;font-size:1.35rem}h3{margin:0 0 8px;font-size:1rem}.lede{max-width:780px;margin:0;color:var(--muted);font-size:1.08rem}.grid{display:grid;gap:16px}.cards{grid-template-columns:repeat(5,minmax(0,1fr))}.card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 1px 2px rgba(16,24,40,.05)}.card{padding:18px}.value{display:block;font-size:2rem;font-weight:760;line-height:1}.label{display:block;color:var(--muted);font-size:.86rem;margin-top:6px}.panel{padding:20px;margin-top:18px}.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:end}.field{display:grid;gap:6px}.field input,.field select{min-height:42px;border:1px solid var(--line);border-radius:6px;padding:0 12px;background:#fff;color:var(--ink);font:inherit}.search{flex:1 1 280px}.filters{display:flex;flex-wrap:wrap;gap:8px}.filters button{min-height:42px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);padding:0 12px;font-weight:650;cursor:pointer}.filters button[aria-pressed=true]{border-color:var(--brand);background:#e7f5f6;color:#074c55}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff}table{width:100%;border-collapse:collapse;min-width:820px}th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f1f3f6;font-size:.86rem}tbody tr:last-child td{border-bottom:0}.badge{display:inline-flex;align-items:center;justify-content:center;min-width:2.4rem;border-radius:999px;padding:.2rem .55rem;font-weight:760;font-size:.82rem}.C{background:#e8f5e9;color:var(--ok)}.NC{background:#fdecea;color:var(--bad)}.NA{background:#eef1f5;color:var(--na)}.NT{background:#fff4db;color:var(--nt)}.priority{grid-template-columns:repeat(2,minmax(0,1fr))}.issue{border-left:4px solid var(--bad);padding:14px 16px}.issue p{margin:0;color:var(--muted)}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;color:var(--muted);font-size:.9rem}.notice{border-left:4px solid var(--nt);background:#fff9ed}.links{display:flex;flex-wrap:wrap;gap:10px}.links a{display:inline-flex;align-items:center;min-height:40px;border:1px solid var(--line);border-radius:6px;background:#fff;padding:0 12px;text-decoration:none;font-weight:650}.count{margin:12px 0;color:var(--muted)}:focus-visible{outline:3px solid #0b7285;outline-offset:3px}@media (max-width:820px){.shell{padding:24px 14px 44px}.cards,.priority{grid-template-columns:1fr}.card{padding:14px}.toolbar{display:grid}.filters button{flex:1 1 auto}h1{font-size:2.15rem}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#criteria">Aller au tableau des critères</a>
+  <main class="shell">
+    <header class="hero">
+      <p class="eyebrow">Audit outillé non certifiant - 21 juin 2026</p>
+      <h1>Audit RGAA 106 critères<br>Swing Digital</h1>
+      <p class="lede">Interface de consultation du rapport : synthèse, non-conformités prioritaires, filtres par statut et thématique, liens vers les preuves brutes.</p>
+    </header>
+
+    <section aria-labelledby="summary-title">
+      <h2 id="summary-title">Synthèse</h2>
+      <div class="grid cards">
+        <div class="card"><span class="value">39</span><span class="label">Critères conformes</span></div>
+        <div class="card"><span class="value">11</span><span class="label">Critères non conformes</span></div>
+        <div class="card"><span class="value">36</span><span class="label">Non applicables</span></div>
+        <div class="card"><span class="value">20</span><span class="label">Non testés</span></div>
+        <div class="card"><span class="value">78 %</span><span class="label">Taux sur C + NC</span></div>
+      </div>
+      <div class="panel notice">
+        <p><strong>Statut :</strong> audit outillé de reprise, non certifiant. Le taux exclut les critères NA et NT et ne doit pas être utilisé comme déclaration officielle tant que les critères non testés ne sont pas levés.</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="proof-title">
+      <h2 id="proof-title">Outils et preuves</h2>
+      <ul>
+        <li>axe-core Playwright : 24 pages passées, 0 violation automatisée WCAG 2.2 AA.</li>
+        <li>Tests navigation/accessibilité Playwright : 62 passés, 10 ignorés par breakpoint.</li>
+        <li>AccessLint live sur 24 pages : violations consolidées dans le fichier JSON.</li>
+        <li>Inventaire DOM HTTP : images, iframes, tableaux, liens, boutons, ARIA, reflow et clavier mobile.</li>
+      </ul>
+      <div class="links" aria-label="Fichiers du rapport">
+        <a href="AUDIT-RGAA-106.md">Rapport Markdown</a>
+        <a href="accesslint-summary.json">Preuves AccessLint</a>
+        <a href="rgaa-evidence.json">Inventaire DOM</a>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="issues-title">
+      <h2 id="issues-title">Non-conformités prioritaires</h2>
+      <div class="grid priority">
+        <article class="issue"><h3>3.2 - Contrastes insuffisants</h3><p>Voyage autour de moi et Dessine-moi le vent présentent des ratios insuffisants relevés par AccessLint.</p></article>
+        <article class="issue"><h3>4.1 / 4.3 - Médias sans alternatives locales</h3><p>Aucun élément <code>&lt;track&gt;</code>, sous-titre ou transcription locale n’a été trouvé pour les médias intégrés.</p></article>
+        <article class="issue"><h3>4.11 / 7.1 / 7.3 - Contrôles média incomplets</h3><p>Certains boutons de lecture Vimeo affichent un état ARIA sans piloter le lecteur correspondant.</p></article>
+        <article class="issue"><h3>4.13 - Rôle ARIA invalide</h3><p>La vidéo <code>#hero-video</code> possède un rôle ARIA d’image non autorisé sur une balise vidéo.</p></article>
+        <article class="issue"><h3>9.1 - Hiérarchie de titres</h3><p>Deux pages Monroe contiennent un titre h3 directement après le h1.</p></article>
+        <article class="issue"><h3>9.2 - Régions homonymes</h3><p>Plusieurs landmarks ont des noms accessibles dupliqués sur une même page.</p></article>
+        <article class="issue"><h3>13.6 / 13.8 - Contenus en mouvement</h3><p>Des vidéos en mouvement automatique n’ont pas toujours un contrôle pause ou arrêt effectif.</p></article>
+      </div>
+    </section>
+
+    <section class="panel" id="criteria" aria-labelledby="criteria-title">
+      <h2 id="criteria-title">Tableau des 106 critères</h2>
+      <div class="toolbar" aria-label="Filtres du tableau">
+        <div class="field search"><label for="q">Rechercher</label><input id="q" type="search" autocomplete="off" placeholder="Ex. contraste, média, clavier"></div>
+        <div class="field"><label for="theme">Thématique</label><select id="theme"><option value="">Toutes</option></select></div>
+        <div class="filters" role="group" aria-label="Statut"><button type="button" data-status="" aria-pressed="true">Tous</button><button type="button" data-status="C" aria-pressed="false">C</button><button type="button" data-status="NC" aria-pressed="false">NC</button><button type="button" data-status="NA" aria-pressed="false">NA</button><button type="button" data-status="NT" aria-pressed="false">NT</button></div>
+      </div>
+      <p class="count" id="result-count" aria-live="polite"></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Critère</th><th>Thématique</th><th>Statut</th><th>Justification</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="limits-title">
+      <h2 id="limits-title">Limites de l’audit</h2>
+      <ul>
+        <li>Pertinence éditoriale des alternatives d’images non revue image par image.</li>
+        <li>Sous-titres, transcriptions et audiodescriptions tierces Vimeo ou YouTube non inspectés côté fournisseur.</li>
+        <li>Aucun test lecteur d’écran réel exécuté.</li>
+        <li>Validation HTML normative, zoom 200 %, espacements utilisateur et rendu sans CSS non testés sur tout l’échantillon.</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    const criteria = [
+      ["1.1","Images","C","175 images inventoriées, aucune image sans attribut alt."],["1.2","Images","NT","Le caractère décoratif des images à alt vide exige une validation éditoriale image par image."],["1.3","Images","NT","La pertinence de toutes les alternatives textuelles exige une revue éditoriale des 175 images."],["1.4","Images","NA","Aucune description détaillée déclarée dans l’échantillon testé."],["1.5","Images","NA","Pas de description détaillée déclarée à restituer."],["1.6","Images","NT","Le besoin de description détaillée ne peut pas être tranché sans revue éditoriale complète."],["1.7","Images","NA","Pas de description détaillée adjacente attendue dans le code audité."],["1.8","Images","NT","La présence éventuelle d’images de texte, notamment logos, demande une décision éditoriale."],["1.9","Images","C","Les figures repérées disposent de légendes ou de noms accessibles associés."],["2.1","Cadres","C","5 cadres iframe, tous avec title."],["2.2","Cadres","C","Les titres de cadres identifient les contenus Vimeo ou YouTube intégrés."],["3.1","Couleurs","NT","L’absence d’information donnée uniquement par la couleur n’a pas été vérifiée éditorialement."],["3.2","Couleurs","NC","AccessLint remonte des contrastes insuffisants sur Voyage autour de moi et Dessine-moi le vent."],["3.3","Couleurs","NT","Les contrastes des composants graphiques porteurs d’information exigent une vérification visuelle dédiée."],["4.1","Multimédia","NC","Plusieurs médias temporels intégrés ne présentent pas de transcription textuelle visible dans le HTML local."],["4.2","Multimédia","NA","Aucun sous-titre synchronisé local n’est présent à évaluer."],["4.3","Multimédia","NC","Les vidéos et épisodes intégrés ne déclarent pas de piste de sous-titres dans le code audité."],["4.4","Multimédia","NA","Pas de sous-titres synchronisés locaux à qualifier."],["4.5","Multimédia","NT","Le besoin d’audiodescription dépend du contenu audiovisuel réel des vidéos tierces."],["4.6","Multimédia","NA","Pas d’audiodescription déclarée à qualifier."],["4.7","Multimédia","C","Les médias intégrés disposent de titres ou de libellés accessibles."],["4.8","Multimédia","NA","Aucun média non temporel distinct repéré hors images déjà traitées."],["4.9","Multimédia","NA","Aucune alternative de média non temporel à qualifier."],["4.10","Multimédia","C","Les sons automatiques sont muets par défaut ou contrôlés par bouton."],["4.11","Multimédia","NC","Les boutons lecture des pages Voyage, Dessine-moi le vent et The Play ne modifient pas aria-pressed : contrôle non fonctionnel."],["4.12","Multimédia","NA","Aucun média non temporel interactif repéré."],["4.13","Multimédia","NC","AccessLint signale un rôle ARIA d’image non autorisé sur la balise vidéo #hero-video."],["5.1","Tableaux","NA","Aucun tableau de données complexe repéré."],["5.2","Tableaux","NA","Aucun résumé de tableau complexe à qualifier."],["5.3","Tableaux","NA","Aucun tableau de mise en forme repéré."],["5.4","Tableaux","C","4 tableaux avec titre ou caption."],["5.5","Tableaux","C","Les tableaux audités comportent des en-têtes."],["5.6","Tableaux","C","Aucun en-tête de tableau sans scope ou id détecté."],["5.7","Tableaux","C","Les tableaux sont simples et les associations en-têtes/cellules sont suffisantes."],["5.8","Tableaux","C","Aucun tableau de mise en forme utilisant des balises de données détecté."],["6.1","Liens","C","Aucun lien vide détecté ; les libellés sont exploitables sur l’échantillon."],["6.2","Liens","C","Aucun lien sans intitulé accessible détecté."],["7.1","Scripts","NC","Les contrôles JS de certains médias affichent un état ARIA mais ne pilotent pas le lecteur correspondant."],["7.2","Scripts","NA","Aucun script nécessitant une alternative distincte repéré."],["7.3","Scripts","NC","Contrôle clavier/souris incomplet pour les médias Vimeo hors page Monroe."],["7.4","Scripts","C","Aucun changement de contexte non sollicité détecté dans les tests automatisés et clavier."],["7.5","Scripts","NA","Aucune alerte non sollicitée détectée."],["8.1","Éléments obligatoires","C","Les 24 pages déclarent un doctype HTML."],["8.2","Éléments obligatoires","NT","Validation HTML complète non exécutée avec validateur normatif."],["8.3","Éléments obligatoires","C","Toutes les pages déclarent html lang=\"fr\"."],["8.4","Éléments obligatoires","C","Le code de langue fr est pertinent pour les contenus audités."],["8.5","Éléments obligatoires","C","Toutes les pages ont un title."],["8.6","Éléments obligatoires","C","Les titres de pages sont descriptifs sur l’échantillon."],["8.7","Éléments obligatoires","NT","Les changements de langue internes exigent une revue éditoriale fine."],["8.8","Éléments obligatoires","NT","La langue de restitution de chaque passage multilingue n’a pas été vérifiée exhaustivement."],["8.9","Éléments obligatoires","C","Pas de balises HTML de présentation obsolètes détectées."],["8.10","Éléments obligatoires","NA","Aucun changement de direction de lecture repéré."],["9.1","Structuration","NC","AccessLint signale des niveaux de titres sautés sur monroe-piece et monroe-roman-graphique."],["9.2","Structuration","NC","AccessLint signale plusieurs régions landmark avec noms accessibles dupliqués."],["9.3","Structuration","C","Les listes visibles auditées utilisent des structures ul, ol, li."],["9.4","Structuration","C","Les citations presse utilisent blockquote et cite sur la page Monroe."],["10.1","Présentation","NT","L’information par forme, taille ou position nécessite une revue visuelle exhaustive."],["10.2","Présentation","NT","Test sans feuille de style non exécuté."],["10.3","Présentation","NT","Compréhension sans feuille de style non testée."],["10.4","Présentation","NT","Zoom texte à 200 % non testé sur tout l’échantillon."],["10.5","Présentation","NT","Critère AAA non qualifié dans cette passe."],["10.6","Présentation","NT","Visibilité des liens dans le texte à qualifier visuellement."],["10.7","Présentation","C","Focus visible vérifié, y compris burger mobile avec outline 2 px."],["10.8","Présentation","C","Aucun contenu caché problématique détecté par axe-core ou l’inventaire ARIA."],["10.9","Présentation","NT","Pertinence de l’information hors forme/taille/position non qualifiée."],["10.10","Présentation","NT","Contenus restitués via position CSS non testés exhaustivement."],["10.11","Présentation","C","Pas de débordement horizontal à 320 px ni à 256 px de hauteur sur la page d’accueil."],["10.12","Présentation","NT","Espacements de texte utilisateur non testés."],["10.13","Présentation","C","Le menu niveau 3 est atteignable au hover, au focus et au clic selon les tests."],["10.14","Présentation","C","Les contenus additionnels de navigation sont rendus visibles au clavier."],["11.1","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.2","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.3","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.4","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.5","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.6","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.7","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.8","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.9","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.10","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.11","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.12","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["11.13","Formulaires","NA","Aucun formulaire ni champ de saisie actif dans le périmètre audité."],["12.1","Navigation","C","Menu principal, navigation secondaire, plan du site et fil d’Ariane sont présents selon les pages."],["12.2","Navigation","C","Le menu et les zones de navigation restent à la même place dans l’échantillon."],["12.3","Navigation","C","La page plan du site existe et expose les liens principaux."],["12.4","Navigation","C","Le plan du site est accessible depuis la navigation secondaire."],["12.5","Navigation","NA","Aucun moteur de recherche interne n’est présent."],["12.6","Navigation","C","Présence de header, nav, main, footer et lien d’évitement vers main-content."],["12.7","Navigation","C","Lien d’évitement présent et testé."],["12.8","Navigation","C","Ordre de tabulation vérifié sur les parcours principaux et mobile."],["12.9","Navigation","C","Aucun piège clavier détecté dans les tests Playwright."],["12.10","Navigation","NA","Aucun raccourci clavier à une seule touche détecté."],["12.11","Navigation","C","Sous-menus de navigation atteignables au clavier et au clic, y compris niveau 3 Monroe."],["13.1","Consultation","NA","Aucune limite de temps détectée."],["13.2","Consultation","C","Aucune ouverture de fenêtre sans action utilisateur détectée."],["13.3","Consultation","NA","Aucun document bureautique en téléchargement repéré."],["13.4","Consultation","NA","Aucune version accessible de document bureautique à comparer."],["13.5","Consultation","NT","Les contenus cryptiques éventuels, dont les symboles de drapeaux, demandent une revue éditoriale."],["13.6","Consultation","NC","Des contenus vidéo en mouvement automatique ne disposent pas toujours d’un contrôle pause/arrêt effectif."],["13.7","Consultation","NA","Aucun effet de flash ou changement brusque de luminosité détecté."],["13.8","Consultation","NC","Même constat que 13.6 pour les médias en mouvement ou en boucle."],["13.9","Consultation","C","Aucune contrainte d’orientation écran détectée."],["13.10","Consultation","NA","Aucune fonctionnalité reposant sur un geste complexe détectée."],["13.11","Consultation","C","Pas d’action menu sur mousedown/touchstart ; le seul mousedown retire un état visuel de navigation clavier."],["13.12","Consultation","NA","Aucune fonctionnalité impliquant un mouvement de l’appareil détectée."]
+    ];
+    const rows = document.querySelector("#rows"), q = document.querySelector("#q"), theme = document.querySelector("#theme"), count = document.querySelector("#result-count"), buttons = [...document.querySelectorAll("[data-status]")];
+    let currentStatus = "";
+    [...new Set(criteria.map(item => item[1]))].forEach(name => theme.append(new Option(name, name)));
+    function render(){
+      const term = q.value.trim().toLowerCase();
+      const filtered = criteria.filter(([id, topic, status, text]) => (!currentStatus || status === currentStatus) && (!theme.value || topic === theme.value) && (!term || `${id} ${topic} ${status} ${text}`.toLowerCase().includes(term)));
+      rows.replaceChildren(...filtered.map(([id, topic, status, text]) => {
+        const tr = document.createElement("tr");
+        [id, topic].forEach(value => { const td = document.createElement("td"); td.textContent = value; tr.append(td); });
+        const statusCell = document.createElement("td"), badge = document.createElement("span");
+        badge.className = `badge ${status}`; badge.textContent = status; statusCell.append(badge); tr.append(statusCell);
+        const textCell = document.createElement("td"); textCell.textContent = text; tr.append(textCell);
+        return tr;
+      }));
+      count.textContent = `${filtered.length} critère${filtered.length > 1 ? "s" : ""} affiché${filtered.length > 1 ? "s" : ""} sur 106.`;
+    }
+    buttons.forEach(button => button.addEventListener("click", () => { currentStatus = button.dataset.status; buttons.forEach(item => item.setAttribute("aria-pressed", String(item === button))); render(); }));
+    q.addEventListener("input", render); theme.addEventListener("change", render); render();
+  </script>
+</body>
+</html>

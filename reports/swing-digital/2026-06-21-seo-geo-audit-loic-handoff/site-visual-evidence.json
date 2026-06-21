@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Desktop screenshot",
+    "path": "desktop.png",
+    "viewport": "1440x1800",
+    "notes": [
+      "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+      "Horizontal overflow: no",
+      "Document width: 1440px"
+    ]
+  },
+  {
+    "label": "Mobile screenshot",
+    "path": "mobile.png",
+    "viewport": "390x1400",
+    "notes": [
+      "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+      "Horizontal overflow: no",
+      "Document width: 390px"
+    ]
+  }
+]

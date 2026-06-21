@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Rapport autonome SEO/GEO pour Loïc</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  :root { color-scheme: light; --ink:#17211f; --muted:#5f6f6a; --line:#dbe5df; --accent:#176b4d; --soft:#f4f8f5; --paper:#ffffff; }
+  * { box-sizing: border-box; }
+  html { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; color: var(--ink); background: #eef4f0; }
+  body { max-width: 1080px; margin: 0 auto; padding: 40px 22px 64px; }
+  main { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 34px; box-shadow: 0 18px 48px rgba(20, 46, 35, .08); }
+  h1 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; margin: 0 0 18px; color: #0f3f31; }
+  h2 { margin-top: 42px; padding-top: 24px; border-top: 1px solid var(--line); color: #123c31; }
+  h3 { margin-top: 28px; color: #204d41; }
+  a { color: var(--accent); }
+  code { background: var(--soft); border: 1px solid var(--line); padding: 0.1rem 0.28rem; border-radius: 5px; }
+  pre { overflow: auto; background: #10251f; color: #edf7f1; padding: 18px; border-radius: 8px; }
+  pre code { background: transparent; border: 0; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0 26px; font-size: .95rem; }
+  th, td { border: 1px solid var(--line); padding: 9px 11px; vertical-align: top; }
+  th { background: var(--soft); text-align: left; color: #183d33; }
+  blockquote { margin: 18px 0; padding: 12px 18px; border-left: 4px solid var(--accent); background: var(--soft); color: var(--muted); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 38px 0; }
+  .header-note { margin: 0 0 30px; color: var(--muted); font-size: 1rem; }
+  ul, ol { padding-left: 1.35rem; }
+  @media (max-width: 720px) { body { padding: 16px; } main { padding: 22px 16px; border-radius: 8px; } table { display:block; overflow-x:auto; } }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Rapport autonome SEO/GEO pour Loïc</h1>
+</header>
+<h1 id="post-mortem-skill-seogeo">Post-mortem skill SEO/GEO</h1>
+<p>Date : 2026-06-21</p>
+<p>Source publique consultée : <a
+href="https://github.com/bacoco/seo-geo-growth-agent">https://github.com/bacoco/seo-geo-growth-agent</a></p>
+<p>Contexte : utilisation du skill <code>seo-geo-growth-agent</code> sur
+la préproduction Swing Digital, avec génération de rapports HTML,
+captures desktop/mobile, Design Watch, couche IA publique, Search/Crawl,
+mesure préproduction et amélioration du script responsive lazy-load.</p>
+<h2 id="synthèse-depuis-les-dernières-versions-testées">Synthèse depuis
+les dernières versions testées</h2>
+<p>La trajectoire du skill est bonne : les rapports HTML visuels, Design
+Watch, les cohortes, la couche IA téléchargeable et l'étude responsive
+rendent l'audit beaucoup plus actionnable qu'une réponse chat.</p>
+<p>La principale friction n'est pas la profondeur d'analyse, mais
+l'orchestration autour du livrable : savoir quel rapport est courant,
+quelle URL est valide, quelles limites viennent de la préproduction,
+quels problèmes sont réellement dans le site et quels problèmes viennent
+du protocole d'audit.</p>
+<p>Les améliorations les plus utiles pour une prochaine version seraient
+donc des garde-fous de workflow :</p>
+<ul>
+<li>un pointeur automatique vers le dernier rapport valide ;</li>
+<li>un mode préproduction explicite ;</li>
+<li>une comparaison native entre deux rapports ;</li>
+<li>une distinction robuste entre défaut site, défaut cache, limite
+d'accès propriétaire et limite du script ;</li>
+<li>une commande de synchronisation et doctor des copies installées
+;</li>
+<li>des preuves navigateur plus classées, notamment console, cache,
+captures et lazy-load.</li>
+</ul>
+<h2 id="retours-par-étape-de-session">Retours par étape de session</h2>
+<ol start="0" type="1">
+<li>Relance d'audit après correction lazy-load</li>
+</ol>
+<p>La relance du 2026-06-21 a validé l'intérêt de corriger le skill
+plutôt que le site. Le rapport précédent signalait 26 images non
+chargées. Le nouveau rapport scrolle la page, puis distingue les états
+des images.</p>
+<p>Résultat observé : desktop avec 34 images lazy, 8 chargées
+initialement, 26 chargées après scroll, 0 cassée et 0 encore différée.
+Mobile avec 34 images chargées initialement et 0 défaut final.</p>
+<p>À renforcer : ce pattern doit devenir natif dans le skill. Le rapport
+devrait toujours exposer <code>loaded_initially</code>,
+<code>loaded_after_scroll</code>, <code>broken</code> et
+<code>still_deferred</code>, puis scorer uniquement les images cassées
+ou encore différées après exposition réelle.</p>
+<p>Enseignement générique : ne pas transformer un comportement web sain
+en dette technique parce que le protocole d'audit observe trop tôt. Le
+skill doit aider l'agent à diagnostiquer si le problème vient du site,
+du cache, de la préproduction ou de l'outil.</p>
+<p>Règle proposée pour le skill :</p>
+<ul>
+<li><code>broken &gt; 0</code> après scroll : issue site ;</li>
+<li><code>still_deferred &gt; 0</code> après scroll : warning à
+investiguer ;</li>
+<li><code>loaded_after_scroll &gt; 0</code> avec <code>broken = 0</code>
+et <code>still_deferred = 0</code> : preuve positive de lazy-load sain
+;</li>
+<li>correction site requise seulement si l'image reste cassée ou non
+chargée après exposition réelle, ou si un contrôle HTTP confirme une
+ressource invalide ;</li>
+<li>aucune recommandation de retirer <code>loading="lazy"</code> quand
+les images finissent chargées après scroll.</li>
+</ul>
+<p>Amélioration produit du rapport : la cohorte
+<code>Responsive dynamique</code> ne devrait pas seulement afficher
+<code>ok</code> ou <code>warning</code>. Elle devrait afficher une
+décision explicite :</p>
+<ul>
+<li><code>aucune correction site requise</code> quand toutes les images
+finissent chargées après scroll ;</li>
+<li><code>correction site requise</code> quand une image reste cassée ou
+non chargée après exposition ;</li>
+<li><code>limite protocole</code> quand le navigateur n'a pas pu
+scroller, attendre ou capturer correctement ;</li>
+<li><code>preuve positive</code> quand le lazy-load fonctionne comme
+prévu.</li>
+</ul>
+<p>La carte de cohorte pourrait donc contenir quatre champs stables
+:</p>
+<ul>
+<li><code>decision</code> : <code>site_ok</code>,
+<code>site_fix_required</code>, <code>audit_protocol_limit</code> ou
+<code>needs_manual_review</code> ;</li>
+<li><code>why</code> : phrase courte expliquant la décision ;</li>
+<li><code>evidence</code> : compteurs clés et lien vers
+<code>responsive-study.json</code> ;</li>
+<li><code>next_action</code> : action unique, par exemple
+<code>ne rien changer au site</code>,
+<code>corriger les images cassées</code>,
+<code>relancer avec scroll plus long</code> ou
+<code>ouvrir une revue manuelle</code>.</li>
+</ul>
+<p>Pourquoi c'est utile à Loïc : le score <code>9/10</code> devient une
+décision opérationnelle, pas seulement une note. L'agent sait s'il doit
+modifier le site, améliorer le protocole d'audit ou simplement tracer la
+preuve.</p>
+<ol type="1">
+<li>Rapport HTML obligatoire</li>
+</ol>
+<p>Au début, l'absence ou la mauvaise version du rapport HTML a créé de
+la confusion. L'amélioration qui force <code>audit.json</code>,
+<code>index.html</code>, URL locale ou chemin de rapport et captures est
+pertinente.</p>
+<p>À renforcer : à la fin de chaque audit, le skill devrait écrire
+automatiquement un mini-fichier de réception avec
+<code>rapport courant</code>, <code>URL locale</code>,
+<code>URL distante si tunnel</code>, <code>dossier</code>,
+<code>date</code>, <code>cible auditée</code> et
+<code>version du skill</code>.</p>
+<ol start="2" type="1">
+<li>Rapport vert avec score et onglets</li>
+</ol>
+<p>L'utilisateur a identifié la bonne version du rapport par son
+apparence : page verte, score, onglets. C'est un signal que l'interface
+est devenue reconnaissable, mais aussi que la version du rapport n'était
+pas assez explicite.</p>
+<p>À renforcer : afficher visiblement la version du générateur, le
+chemin <code>audit.json</code> et une empreinte courte du rapport dans
+l'en-tête HTML.</p>
+<ol start="3" type="1">
+<li>Design Watch</li>
+</ol>
+<p>Le passage de 8/10 à 8,5/10 a été compréhensible parce qu'il
+s'appuyait sur une preuve visuelle précise : le mobile montrait plus tôt
+la section suivante. Le score seul n'aurait pas suffi.</p>
+<p>À renforcer : pour chaque point Design Watch, ajouter une preuve
+mesurable de premier écran : hauteur hero, premier contenu visible, CTA
+visible, signal de confiance visible, largeur testée.</p>
+<ol start="4" type="1">
+<li>Search/Crawl</li>
+</ol>
+<p>Le passage à 9/10 a été crédible grâce au contrôle public avec 0
+écart. Le cache Cloudflare a cependant masqué temporairement l'état
+réel.</p>
+<p>À renforcer : le skill devrait distinguer <code>local ok</code>,
+<code>public ok</code>, <code>public cache stale</code>,
+<code>asset version mismatch</code> et
+<code>forbidden artifact still public</code>.</p>
+<ol start="5" type="1">
+<li>Measurement</li>
+</ol>
+<p>Le score bas a été bien expliqué seulement quand on a distingué
+préproduction et production. Avant cela, il pouvait être lu comme une
+dette immédiate alors que les outils propriétaires ne doivent pas être
+branchés trop tôt.</p>
+<p>À renforcer : quand <code>measurement</code> est bas mais
+volontairement différé, le rapport doit le nommer comme
+<code>gate production</code>, pas comme correction préproduction.</p>
+<ol start="6" type="1">
+<li>Couche IA et pack téléchargeable</li>
+</ol>
+<p>Le pack IA v1.2.3 est utile pour combler rapidement
+<code>/llms.txt</code>, <code>/for-ai</code>, JSON et TXT. En revanche,
+il faut éviter que le pack remplace sans contrôle une couche déjà
+adaptée au projet.</p>
+<p>À renforcer : dans l'onglet Téléchargements, ajouter un statut
+<code>à publier tel quel</code>, <code>à adapter</code>,
+<code>déjà présent</code>,
+<code>conflit avec source existante</code>.</p>
+<ol start="7" type="1">
+<li>Console Chrome</li>
+</ol>
+<p>Les avertissements console ont été nombreux et mélangeaient vrais
+signaux, preloads, iframes tierces et Cloudflare. Sans tri,
+l'utilisateur peut corriger le mauvais sujet.</p>
+<p>À renforcer : un onglet ou bloc <code>Console Watch</code> qui classe
+les messages par responsabilité et gravité.</p>
+<ol start="8" type="1">
+<li>URL locale, tunnel et rapport courant</li>
+</ol>
+<p>Les ports locaux et les tunnels Cloudflare temporaires ont été
+difficiles à suivre. L'utilisateur a explicitement demandé une note
+racine pour ne pas chercher l'URL.</p>
+<p>À renforcer : produire systématiquement un
+<code>LATEST-SEO-GEO-REPORT.md</code> ou équivalent, mis à jour à chaque
+génération.</p>
+<ol start="9" type="1">
+<li>Synchronisation des installations</li>
+</ol>
+<p>Le skill était présent dans plusieurs copies actives : source, Claude
+et Codex. Une amélioration locale n'est pas utile si l'agent actif
+continue à utiliser une ancienne copie.</p>
+<p>À renforcer : intégrer un <code>sync-and-doctor</code> qui déploie
+vers toutes les destinations connues, vérifie la version, puis affiche
+un reçu court.</p>
+<ol start="10" type="1">
+<li>Comparaison sans tableau</li>
+</ol>
+<p>La comparaison des scores a été plus utile en prose qu'en tableau
+pour décider la prochaine action.</p>
+<p>À renforcer : proposer deux rendus :
+<code>comparaison structurée</code> et
+<code>comparaison narrative</code>.</p>
+<h2 id="points-damélioration-génériques-pour-loïc">Points d'amélioration
+génériques pour Loïc</h2>
+<ol type="1">
+<li>Séparer clairement les modes préproduction et production</li>
+</ol>
+<p>Le rapport doit distinguer les blocages réels des décisions
+volontairement différées. Sur un site pas encore en production, GSC,
+GA4/GTM, Bing Webmaster, domaine final, hébergeur légal et citations IA
+réelles ne doivent pas être traités comme des corrections
+immédiates.</p>
+<p>Amélioration proposée : ajouter un mode <code>preprod</code>
+explicite dans l'audit, avec des scores ou libellés séparés pour
+<code>readiness préproduction</code> et
+<code>gates production</code>.</p>
+<ol start="2" type="1">
+<li>Réduire les faux positifs lazy-load</li>
+</ol>
+<p>Le script responsive scorait les images avant parcours complet de
+page. Sur Swing Digital, le desktop avait 26 images lazy-load non
+chargées au premier relevé, mais 0 image manquante après scroll.</p>
+<p>Amélioration proposée : conserver systématiquement deux états dans
+<code>responsive-study.json</code> : initial et après scroll. Les
+compteurs utiles sont <code>loaded_initially</code>,
+<code>loaded_after_scroll</code>, <code>broken</code> et
+<code>still_deferred</code>.</p>
+<ol start="3" type="1">
+<li>Ajouter un mode comparaison de rapports</li>
+</ol>
+<p>Pendant la session, il a fallu comparer plusieurs rapports locaux et
+Cloudflare : <code>8767</code>, <code>8768</code>, <code>8769</code> et
+des tunnels temporaires. La confusion venait surtout de l'absence d'un
+résumé comparatif natif.</p>
+<p>Amélioration proposée : générer automatiquement un bloc
+<code>comparison</code> quand un rapport précédent est fourni, avec
+variations de scores, causes et conclusion en prose. Prévoir une sortie
+sans tableau, car c'est plus lisible en discussion.</p>
+<ol start="4" type="1">
+<li>Stabiliser l'identité du rapport courant</li>
+</ol>
+<p>Les tunnels Cloudflare expirent et les ports locaux changent.
+L'utilisateur ne doit pas chercher quel rapport est le bon.</p>
+<p>Amélioration proposée : produire une petite note racine ou un fichier
+<code>LATEST-SEO-GEO-REPORT.md</code> avec chemin HTML, URL locale
+active, URL distante éventuelle, date, cible auditée et statut du
+tunnel.</p>
+<ol start="5" type="1">
+<li>Mieux diagnostiquer le cache CDN</li>
+</ol>
+<p>Une partie de la session a été perturbée par du cache Cloudflare et
+par des versions CSS anciennes. Le rapport gagnait en fiabilité dès
+qu'on ajoutait des preuves de version d'asset et des contrôles
+publics.</p>
+<p>Amélioration proposée : intégrer un diagnostic cache léger : URL
+testée, en-têtes cache, version CSS détectée, présence ou absence des
+fichiers attendus, et distinction entre cache public et état local.</p>
+<ol start="6" type="1">
+<li>Classer les erreurs console par responsabilité</li>
+</ol>
+<p>Les avertissements Chrome mélangeaient ressources du site, iframes
+tierces, Cloudflare et preloads. Il faut éviter de faire corriger au
+site des messages provenant d'un tiers.</p>
+<p>Amélioration proposée : capturer la console navigateur puis classer
+les messages en <code>first_party</code>, <code>third_party</code>,
+<code>browser_policy</code> et <code>unknown</code>, avec seulement les
+erreurs first-party en recommandations prioritaires.</p>
+<ol start="7" type="1">
+<li>Rendre le workflow d'installation plus visible</li>
+</ol>
+<p>Le skill existe en plusieurs copies actives : source workspace, copie
+Claude et copie Codex. Après modification, il faut resynchroniser et
+vérifier chaque installation.</p>
+<p>Amélioration proposée : ajouter une commande ou un runbook
+<code>sync-and-doctor</code> qui déploie vers Codex et Claude, puis
+lance <code>skill_doctor.py</code> sur chaque destination.</p>
+<ol start="8" type="1">
+<li>Protéger le rapport contre les scores artificiels</li>
+</ol>
+<p>Le rapport est utile quand il garde les métriques inconnues en
+<code>unknown</code>. Il devient moins fiable s'il pousse à brancher
+trop tôt des outils de production ou à créer du contenu sans preuve.</p>
+<p>Amélioration proposée : rendre les garde-fous plus visibles dans le
+HTML : <code>unknown assumé</code>,
+<code>donnée propriétaire absente</code>,
+<code>décision préproduction</code>,
+<code>preuve publique disponible</code>.</p>
+<ol start="9" type="1">
+<li>Formaliser le panel GEO/Citation</li>
+</ol>
+<p>Quand le domaine final n'est pas en ligne, les citations réelles ne
+sont pas mesurables proprement. En revanche, le skill peut préparer un
+protocole de panel.</p>
+<p>Amélioration proposée : générer un fichier de test avec requêtes
+ChatGPT, Perplexity et Claude, colonnes de citations, concurrents cités,
+faits repris, erreurs, sources utilisées et date du test.</p>
+<p>Pattern validé sur Swing Digital : produire un CSV prêt à remplir et
+une courte note d'exécution. Le CSV doit couvrir au minimum les familles
+<code>brand_discovery</code>, <code>category_discovery</code>,
+<code>concept_explanation</code>, <code>project_discovery</code>,
+<code>booking_boundary</code> et <code>source_integrity</code>. Tant que
+les résultats ne sont pas saisis, le rapport peut monter en readiness,
+mais il doit afficher clairement <code>ready_not_executed</code> et
+garder les citations réelles en <code>unknown</code>.</p>
+<ol start="10" type="1">
+<li>Renforcer les recommandations orientées décision</li>
+</ol>
+<p>Les meilleurs passages du rapport sont ceux qui disent quoi faire
+maintenant, quoi différer et pourquoi. C'est particulièrement utile
+quand un score faible est normal en préproduction.</p>
+<p>Amélioration proposée : pour chaque scorecard, ajouter
+<code>next_now</code>, <code>defer_until_prod</code>,
+<code>proof_needed</code> et <code>risk_if_ignored</code>.</p>
+<h2 id="plan-daction-proposé">Plan d'action proposé</h2>
+<table>
+<thead>
+<tr>
+<th>Quand</th>
+<th>Action</th>
+<th>Preuve attendue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maintenant</td>
+<td>Partager ce post-mortem à Loïc comme retour d'usage sur le
+skill.</td>
+<td>Les patterns réutilisables sont visibles : mode préproduction, reçu
+de rapport courant, comparaison native, responsive lazy-load avant/après
+scroll, panel GEO/Citation prêt mais non exécuté.</td>
+</tr>
+<tr>
+<td>Préproduction continue</td>
+<td>Conserver un contrôle Search/Crawl public après chaque publication,
+purge ou changement d'asset.</td>
+<td>Le skill sait distinguer retour d'artefact public, cache obsolète et
+état local sain.</td>
+</tr>
+<tr>
+<td>Avant production finale</td>
+<td>Garder les gates production séparés : hébergeur légal, domaine final
+HTTPS, GSC, GA4/GTM, Bing Webmaster, scénario Réservations.</td>
+<td>Le rapport ne pousse pas à brancher des outils de production ou à
+inventer des métriques tant que le site reste en préproduction.</td>
+</tr>
+<tr>
+<td>Après domaine final</td>
+<td>Lancer un panel GEO/Citation sur ChatGPT, Perplexity et Claude.</td>
+<td>Le skill passe d'une readiness IA à une mesure de citations réelles,
+avec requêtes, réponses, concurrents cités, sources reprises et
+erreurs.</td>
+</tr>
+</tbody>
+</table>
+<p>Priorité produit pour le skill : rendre ces quatre lignes générables
+automatiquement dans chaque rapport, en distinguant
+<code>maintenant</code>, <code>préproduction continue</code>,
+<code>avant production finale</code> et
+<code>après domaine final</code>.</p>
+<h2 id="incident-utile-observé">Incident utile observé</h2>
+<p>Le chantier PRD-006 a montré un faux positif typique : le protocole
+d'audit peut déclarer des images manquantes alors que l'utilisateur les
+verrait après scroll. La correction doit rester côté outil, pas côté
+site. Retirer <code>loading="lazy"</code> aurait été une mauvaise
+correction.</p>
+<h2 id="preuves-de-session-utiles">Preuves de session utiles</h2>
+<ul>
+<li>Le rapport Swing Digital est passé à une lecture plus juste du
+Design Watch mobile après preuve publique.</li>
+<li>Search/Crawl est resté stable à 9/10 avec contrôle public.</li>
+<li>Measurement est resté bas pour une bonne raison : absence volontaire
+de prod finale.</li>
+<li>Le responsive dynamique peut être amélioré par le harnais d'audit
+sans modifier le site.</li>
+<li>Les copies Codex et Claude du skill doivent être vérifiées après
+chaque modification.</li>
+</ul>
+<h1
+id="modifications-locales-du-skill-seogeo-par-rapport-à-github">Modifications
+locales du skill SEO/GEO par rapport à GitHub</h1>
+<p>Date : 2026-06-21 Complément :
+<code>POST-MORTEM-SKILL-SEO-GEO.md</code> Skill concerné :
+<code>seo-geo-growth-agent</code></p>
+<h2 id="sources-comparées">Sources comparées</h2>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dépôt public</td>
+<td><code>https://github.com/bacoco/seo-geo-growth-agent</code></td>
+</tr>
+<tr>
+<td>Version publique comparée</td>
+<td><code>v1.2.3</code></td>
+</tr>
+<tr>
+<td>Commit public comparé</td>
+<td><code>53fc44f17b65c27ddce965161be882e5014eef74</code></td>
+</tr>
+<tr>
+<td>Message du commit public</td>
+<td><code>Add downloadable AI layer packages</code></td>
+</tr>
+<tr>
+<td>Copie locale analysée</td>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent</code></td>
+</tr>
+<tr>
+<td>Commit local avant correction fonctionnelle</td>
+<td><code>ac639703</code> —
+<code>Ajout du skill SEO GEO et des livrables</code></td>
+</tr>
+<tr>
+<td>Commit local après correction fonctionnelle</td>
+<td><code>921dcf70</code> —
+<code>Correction audit responsive lazy-load</code></td>
+</tr>
+</tbody>
+</table>
+<p>Méthode : clone propre du dépôt public dans <code>/tmp</code>,
+comparaison avec la copie locale en excluant <code>.git</code>,
+<code>__pycache__</code> et <code>.pytest_cache</code>.</p>
+<p>Résultat du delta strict local contre GitHub :
+<code>15 files changed, 287 insertions(+), 51 deletions(-)</code>.</p>
+<p>Résultat du delta fonctionnel récent dans la copie locale :
+<code>4 files changed, 250 insertions(+), 14 deletions(-)</code>.</p>
+<h2 id="résumé-court">Résumé court</h2>
+<p>La modification utile ajoutée au skill concerne l’audit responsive
+dynamique et le traitement des images en chargement différé.</p>
+<p>Avant correction, le script pouvait signaler comme manquantes des
+images <code>loading="lazy"</code> observées trop tôt, avant que le
+navigateur ait réellement parcouru la page.</p>
+<p>Après correction, le script :</p>
+<ul>
+<li>mesure l’état initial des images ;</li>
+<li>scrolle toute la page dans le navigateur ;</li>
+<li>attend les images encore en attente ;</li>
+<li>mesure l’état final ;</li>
+<li>distingue les images chargées initialement, chargées après scroll,
+cassées ou encore différées ;</li>
+<li>ne remonte une correction site que si l’image reste cassée ou non
+chargée après exposition réelle.</li>
+</ul>
+<p>Cette correction évite un faux positif observé sur Swing Digital : 26
+images semblaient manquantes au premier relevé desktop, alors qu’elles
+étaient simplement chargées après scroll.</p>
+<h2 id="modifications-fonctionnelles-ajoutées">Modifications
+fonctionnelles ajoutées</h2>
+<table>
+<thead>
+<tr>
+<th>Fichier</th>
+<th>Modification</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scripts/capture_site_screenshots.mjs</code></td>
+<td>Ajout de <code>readLayout(send)</code> avec inventaire détaillé des
+images : <code>src</code>, <code>loading</code>, <code>complete</code>,
+dimensions naturelles, dimensions rendues, position et visibilité.</td>
+<td>Le rapport dispose d’une preuve image par image au lieu d’un simple
+compteur d’images manquantes.</td>
+</tr>
+<tr>
+<td><code>scripts/capture_site_screenshots.mjs</code></td>
+<td>Ajout de <code>scrollThroughPage(send)</code> : scroll progressif
+jusqu’au bas de page, attente courte à chaque palier, attente des images
+en attente, retour en haut.</td>
+<td>Les images paresseuses sont réellement exposées au navigateur avant
+le verdict.</td>
+</tr>
+<tr>
+<td><code>scripts/capture_site_screenshots.mjs</code></td>
+<td>Ajout de
+<code>summarizeImageLoading(initialImages, finalImages)</code>.</td>
+<td>Création des compteurs <code>loaded_initially</code>,
+<code>loaded_after_scroll</code>, <code>broken</code>,
+<code>still_deferred</code>, <code>initial_missing</code>,
+<code>missing_after_scroll</code> et
+<code>unresolved_sample</code>.</td>
+</tr>
+<tr>
+<td><code>scripts/capture_site_screenshots.mjs</code></td>
+<td>Modification de <code>captureViewport(...)</code> pour mesurer avant
+scroll, scroller, remesurer, puis attacher
+<code>initialMissingImages</code>, <code>imageLoadStates</code> et
+<code>scrollProbe</code>.</td>
+<td>Le champ historique <code>missingImages</code> représente maintenant
+le reste à traiter après scroll, pas l’état initial trompeur.</td>
+</tr>
+<tr>
+<td><code>scripts/capture_site_screenshots.mjs</code></td>
+<td>Modification de <code>analyzeViewport(layout)</code>.</td>
+<td>Le script ne signale plus toutes les images absentes au premier
+rendu. Il signale seulement les images cassées après scroll ou les
+images paresseuses encore différées après parcours complet.</td>
+</tr>
+<tr>
+<td><code>scripts/generate_html_audit_report.py</code></td>
+<td>Ajout des libellés anglais et français pour les nouveaux compteurs
+image.</td>
+<td>Le rapport HTML affiche les compteurs d’images de façon
+lisible.</td>
+</tr>
+<tr>
+<td><code>scripts/generate_html_audit_report.py</code></td>
+<td>Ajout du rendu de <code>imageLoadStates</code> dans l’étude
+responsive.</td>
+<td>L’onglet responsive montre la différence entre image chargée
+initialement, chargée après scroll, cassée ou encore différée.</td>
+</tr>
+<tr>
+<td><code>tests/test_site_capture.py</code></td>
+<td>Ajout d’un mini-serveur HTTP de test et d’une image PNG 1x1
+embarquée.</td>
+<td>Le test peut simuler un vrai chargement d’image sans dépendre d’une
+ressource externe.</td>
+</tr>
+<tr>
+<td><code>tests/test_site_capture.py</code></td>
+<td>Ajout d’un test avec une image paresseuse valide et une image
+manquante.</td>
+<td>Le test vérifie que le script distingue une image chargée après
+scroll d’une image réellement cassée.</td>
+</tr>
+<tr>
+<td><code>tests/test_visual_html_audit.py</code></td>
+<td>Ajout de <code>imageLoadStates</code> dans la fixture et assertion
+sur <code>Images loaded after scroll</code>.</td>
+<td>Le générateur HTML est couvert pour le nouveau bloc de preuves.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repères-précis-dans-la-copie-locale">Repères précis dans la
+copie locale</h2>
+<table>
+<thead>
+<tr>
+<th>Fichier local</th>
+<th style="text-align: right;">Lignes utiles</th>
+<th>Ce qui est vérifiable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/scripts/capture_site_screenshots.mjs</code></td>
+<td style="text-align: right;">113-163</td>
+<td>Lecture du layout et collecte détaillée des images.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/scripts/capture_site_screenshots.mjs</code></td>
+<td style="text-align: right;">165-205</td>
+<td>Scroll complet de la page et attente des images en attente.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/scripts/capture_site_screenshots.mjs</code></td>
+<td style="text-align: right;">207-249</td>
+<td>Comparaison initial/final et calcul des états d’images.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/scripts/capture_site_screenshots.mjs</code></td>
+<td style="text-align: right;">251-276</td>
+<td>Intégration des nouveaux états dans la capture viewport.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/scripts/capture_site_screenshots.mjs</code></td>
+<td style="text-align: right;">279-288</td>
+<td>Nouvelle logique de remontée des problèmes image.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/scripts/generate_html_audit_report.py</code></td>
+<td style="text-align: right;">594-597</td>
+<td>Libellés HTML des nouveaux compteurs.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/scripts/generate_html_audit_report.py</code></td>
+<td style="text-align: right;">1167-1180</td>
+<td>Affichage des compteurs dans le tableau responsive.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/tests/test_site_capture.py</code></td>
+<td style="text-align: right;">37-52</td>
+<td>Serveur HTTP temporaire pour fixture locale.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/tests/test_site_capture.py</code></td>
+<td style="text-align: right;">109-112</td>
+<td>Assertion <code>missing_after_scroll = 0</code> sur la fixture
+simple.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/tests/test_site_capture.py</code></td>
+<td style="text-align: right;">114-181</td>
+<td>Test image paresseuse chargée après scroll et image cassée.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/tests/test_visual_html_audit.py</code></td>
+<td style="text-align: right;">95-100</td>
+<td>Fixture HTML avec <code>imageLoadStates</code>.</td>
+</tr>
+<tr>
+<td><code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent/tests/test_visual_html_audit.py</code></td>
+<td style="text-align: right;">165</td>
+<td>Assertion de présence du libellé
+<code>Images loaded after scroll</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="structure-des-nouvelles-preuves-json">Structure des nouvelles
+preuves JSON</h2>
+<p>Le script ajoute maintenant, pour chaque viewport, un bloc de ce type
+dans <code>responsive-study.json</code> :</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;imageLoadStates&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;total&quot;</span><span class="fu">:</span> <span class="dv">34</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;lazy&quot;</span><span class="fu">:</span> <span class="dv">34</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;loaded_initially&quot;</span><span class="fu">:</span> <span class="dv">8</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;loaded_after_scroll&quot;</span><span class="fu">:</span> <span class="dv">26</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;broken&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;still_deferred&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;initial_missing&quot;</span><span class="fu">:</span> <span class="dv">26</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;missing_after_scroll&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;unresolved_sample&quot;</span><span class="fu">:</span> <span class="ot">[]</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;scrollProbe&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;scrollSteps&quot;</span><span class="fu">:</span> <span class="dv">4</span><span class="fu">,</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;maxScroll&quot;</span><span class="fu">:</span> <span class="dv">3200</span><span class="fu">,</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;documentHeight&quot;</span><span class="fu">:</span> <span class="dv">5000</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>La valeur décisive n’est plus <code>initial_missing</code>, mais
+<code>missing_after_scroll</code>.</p>
+<h2 id="règles-de-décision-ajoutées">Règles de décision ajoutées</h2>
+<table>
+<thead>
+<tr>
+<th>Situation après scroll</th>
+<th>Décision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>broken &gt; 0</code></td>
+<td>Problème site : ressource image cassée ou invalide.</td>
+</tr>
+<tr>
+<td><code>still_deferred &gt; 0</code></td>
+<td>Avertissement : image paresseuse encore non chargée après
+exposition.</td>
+</tr>
+<tr>
+<td><code>loaded_after_scroll &gt; 0</code>, <code>broken = 0</code>,
+<code>still_deferred = 0</code></td>
+<td>Preuve positive : le chargement différé fonctionne.</td>
+</tr>
+<tr>
+<td><code>initial_missing &gt; 0</code>,
+<code>missing_after_scroll = 0</code></td>
+<td>Pas de correction site requise sur les images.</td>
+</tr>
+</tbody>
+</table>
+<h2
+id="écarts-non-fonctionnels-aussi-présents-dans-la-copie-locale">Écarts
+non fonctionnels aussi présents dans la copie locale</h2>
+<p>Le delta strict contre GitHub contient aussi <code>11</code> fichiers
+de documentation ou templates modifiés sans effet runtime.</p>
+<p>Ces écarts portent surtout sur :</p>
+<ul>
+<li>la casse des titres Markdown, par exemple <code>Use It</code> vers
+<code>Use it</code> ;</li>
+<li>des titres de runbooks et templates passés en casse phrase ;</li>
+<li>quelques remplacements accidentels de <code>reference</code> par
+<code>référence</code> dans des fichiers rédigés en anglais.</li>
+</ul>
+<p>Fichiers concernés :</p>
+<ul>
+<li><code>CHANGELOG.md</code></li>
+<li><code>README.md</code></li>
+<li><code>runbooks/bootstrap.md</code></li>
+<li><code>runbooks/public-measurement-access.md</code></li>
+<li><code>runbooks/skill-optimization.md</code></li>
+<li><code>runbooks/visual-html-audit.md</code></li>
+<li><code>templates/browser-audit-codification.md</code></li>
+<li><code>templates/crawler-policy-freshness-check.md</code></li>
+<li><code>templates/design-watch-audit.md</code></li>
+<li><code>templates/domain-notes.md</code></li>
+<li><code>templates/responsive-dynamic-study.md</code></li>
+</ul>
+<p>Ces changements ne sont pas nécessaires au correctif lazy-load. Pour
+une contribution upstream propre, il vaut mieux les exclure ou les
+nettoyer avant pull request.</p>
+<h2 id="fichiers-du-skill-non-modifiés-fonctionnellement">Fichiers du
+skill non modifiés fonctionnellement</h2>
+<p>Je n’ai pas modifié fonctionnellement :</p>
+<ul>
+<li><code>SKILL.md</code> ;</li>
+<li><code>manifest.json</code> ;</li>
+<li>les références numérotées <code>references/*.md</code> ;</li>
+<li><code>scripts/install.sh</code> ;</li>
+<li><code>scripts/skill_doctor.py</code> ;</li>
+<li><code>scripts/validate_skill.py</code> ;</li>
+<li><code>scripts/generate_ai_layer_package.py</code> ;</li>
+<li>les templates IA principaux comme <code>llms.txt</code>,
+<code>for-ai-page.md</code>, <code>for-ai-json.json</code>.</li>
+</ul>
+<h2 id="preuves-de-vérification-exécutées">Preuves de vérification
+exécutées</h2>
+<p>Depuis
+<code>/Users/alex/Claude/.claude/skills/seo-geo-growth-agent</code>
+:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> scripts/validate_skill.py</span></code></pre></div>
+<p>Résultat :</p>
+<pre class="text"><code>OK: skill repository validation passed</code></pre>
+<p>Commande de tests ciblés :</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> pytest tests/test_site_capture.py tests/test_visual_html_audit.py</span></code></pre></div>
+<p>Résultat :</p>
+<pre class="text"><code>5 passed in 14.03s</code></pre>
+<h2 id="impact-observé-sur-swing-digital">Impact observé sur Swing
+Digital</h2>
+<p>Dans le rapport Swing Digital
+<code>2026-06-21-seo-geo-audit-lazy-load-proof</code>, la correction
+permet de documenter que le desktop avait des images chargées après
+scroll, pas des images cassées.</p>
+<p>Lecture opérationnelle :</p>
+<ul>
+<li>le problème initial était un faux positif du protocole d’audit
+;</li>
+<li>le site ne nécessitait pas de suppression de
+<code>loading="lazy"</code> ;</li>
+<li>la correction devait rester côté skill ;</li>
+<li>la preuve doit être conservée dans
+<code>responsive-study.json</code> et rendue visible dans le rapport
+HTML.</li>
+</ul>
+<h2 id="recommandation-pour-publication-upstream">Recommandation pour
+publication upstream</h2>
+<p>Préparer une pull request limitée aux <code>4</code> fichiers
+fonctionnels :</p>
+<ul>
+<li><code>scripts/capture_site_screenshots.mjs</code></li>
+<li><code>scripts/generate_html_audit_report.py</code></li>
+<li><code>tests/test_site_capture.py</code></li>
+<li><code>tests/test_visual_html_audit.py</code></li>
+</ul>
+<p>Ne pas inclure dans cette pull request les changements de casse ou
+les remplacements <code>reference</code> vers <code>référence</code>,
+sauf décision explicite de les corriger proprement dans une PR
+séparée.</p>
+</body>
+</html>

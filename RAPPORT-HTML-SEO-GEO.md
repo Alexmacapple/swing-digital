@@ -4,9 +4,40 @@ Date : 2026-06-21
 
 ## URL locale du rapport courant
 
-http://127.0.0.1:61343/
+http://127.0.0.1:8772/
 
-Cette URL pointe vers le rapport SEO/GEO public régénéré après correction du protocole responsive lazy-load du skill.
+Cette URL pointe vers le rapport SEO/GEO public relancé avec le dossier de transmission Loïc.
+
+HTML autonome à transmettre à Loïc :
+
+```text
+http://127.0.0.1:8772/rapport-skill-seo-geo-loic.html
+```
+
+Chemin local :
+
+```text
+reports/swing-digital/2026-06-21-seo-geo-audit-loic-handoff/rapport-skill-seo-geo-loic.html
+```
+
+## Rapport courant du 2026-06-21 — relance SEO/GEO et transmission Loïc
+
+Fichier HTML :
+
+```text
+reports/swing-digital/2026-06-21-seo-geo-audit-loic-handoff/index.html
+```
+
+Verdict : la relance publique confirme que la préproduction Appmiweb reste saine. `Search/Crawl` reste à 9/10 avec 0 écart, `Responsive dynamique` reste à 9/10 avec le protocole lazy-load après scroll, `GEO/Citation` reste en readiness à 8/10 et `Readiness globale` reste à 8,7/10.
+
+Résultats clés :
+
+- `Search/Crawl` : 0 écart, 24 URL sitemap contrôlées, canonicals et `og:url` cohérents ;
+- `Responsive dynamique` : desktop avec 34 images lazy, 8 chargées initialement, 26 chargées après scroll, 0 cassée, 0 encore différée ;
+- mobile : 34 images chargées initialement, 0 cassée, 0 encore différée ;
+- endpoints IA publics : `/llms.txt`, `/for-ai/`, `/for-ai.json`, `/for-ai.txt` et `schema-webpage.jsonld` répondent en 200 via GET ;
+- `Measurement` reste à 5,5/10, car les données propriétaires et la production finale restent hors périmètre ;
+- le fichier `rapport-skill-seo-geo-loic.html` regroupe le post-mortem produit et l'annexe technique pour Loïc.
 
 ## Rapport courant du 2026-06-21 — PRD-006 lazy-load et panel GEO/Citation
 

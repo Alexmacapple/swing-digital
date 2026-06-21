@@ -260,16 +260,19 @@ html {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge legacy */
 }
 
 body {
     overscroll-behavior-y: none;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE/Edge legacy */
 }
 
+html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
@@ -449,6 +452,8 @@ img {
     gap: 0;
     margin: 0;
     padding: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .site-nav__item {
@@ -515,10 +520,17 @@ img {
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .site-nav__submenu--open {
     display: block;
+}
+
+.site-nav__list::-webkit-scrollbar,
+.site-nav__submenu::-webkit-scrollbar {
+    display: none;
 }
 
 .site-nav__submenu-link {
@@ -622,6 +634,7 @@ img {
 .site-nav__link:focus-visible,
 .site-nav__btn:focus-visible,
 .site-nav__submenu-link:focus-visible,
+.site-nav__burger:focus-visible,
 .site-header__logo:focus-visible {
     outline: 2px solid var(--color-white);
     outline-offset: 2px;
@@ -682,8 +695,8 @@ img {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Responsive hamburger (≤ 1024px) */
-@media (max-width: 1024px) {
+/* Responsive hamburger (≤ 1023px) */
+@media (max-width: 1023px) {
     .site-nav__burger {
         display: flex;
     }
@@ -727,6 +740,9 @@ img {
         box-shadow: none;
         padding-left: 1rem;
         min-width: auto;
+        width: 100%;
+        max-height: none;
+        overflow: visible;
     }
 
     .site-nav__submenu--level3 {
@@ -734,6 +750,22 @@ img {
         box-shadow: none;
         padding-left: 1rem;
         min-width: auto;
+        width: 100%;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .site-nav__submenu-link {
+        white-space: normal;
+        line-height: 1.3;
+        word-break: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .site-nav__submenu-toggle {
+        min-width: 44px;
+        flex: 0 0 44px;
+        justify-content: center;
     }
 
     .site-nav__arrow-right {
@@ -742,6 +774,29 @@ img {
 
     .site-nav__submenu-toggle[aria-expanded="true"] .site-nav__arrow-right {
         transform: rotate(-90deg);
+    }
+}
+
+/* Navigation desktop : niveau 3 visible au survol et au focus clavier. */
+@media (min-width: 1024px) {
+    .site-nav__item:hover > .site-nav__submenu,
+    .site-nav__item:focus-within > .site-nav__submenu,
+    .site-nav__submenu-item--has-children:hover > .site-nav__submenu--level3,
+    .site-nav__submenu-item--has-children:focus-within > .site-nav__submenu--level3 {
+        display: block;
+    }
+
+    /* Le niveau 2 ne doit pas clipper le panneau absolu du niveau 3. */
+    .site-nav__item > .site-nav__submenu {
+        overflow: visible;
+        max-height: none;
+    }
+
+    .site-nav__submenu--level3 {
+        z-index: 1002;
+        max-height: calc(100dvh - var(--header-height) - var(--safe-top) - 1rem);
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 }
 

@@ -1,0 +1,131 @@
+{
+  "outil": "AccessLint audit_live, WCAG A/AA, 24 pages HTTP locales",
+  "violations": [
+    {
+      "page": "/",
+      "impact": "minor",
+      "regle": "aria/aria-allowed-role",
+      "cible": "#hero-video",
+      "detail": "role=\"img\" non autorisé sur <video>",
+      "rgaa": [
+        "4.13"
+      ]
+    },
+    {
+      "page": "/reservations.html",
+      "impact": "moderate",
+      "regle": "landmarks/landmark-unique",
+      "cible": "#page-59",
+      "detail": "Plusieurs régions portent le même nom accessible « Réservez votre expérience XR »",
+      "rgaa": [
+        "9.2"
+      ]
+    },
+    {
+      "page": "/voyage-autour-de-moi.html",
+      "impact": "serious",
+      "regle": "distinguishable/color-contrast",
+      "cible": "#page44-title et textes de #page-44",
+      "detail": "Contrastes mesurés entre 1,28:1 et 1,99:1",
+      "rgaa": [
+        "3.2"
+      ]
+    },
+    {
+      "page": "/voyage-autour-de-moi.html",
+      "impact": "moderate",
+      "regle": "landmarks/landmark-unique",
+      "cible": "#page-44",
+      "detail": "Plusieurs régions portent le même nom accessible « Voyage autour de moi »",
+      "rgaa": [
+        "9.2"
+      ]
+    },
+    {
+      "page": "/dessine-moi-le-vent.html",
+      "impact": "serious",
+      "regle": "distinguishable/color-contrast",
+      "cible": "#page-46, #page-47",
+      "detail": "Dix contrastes insuffisants, ratios mesurés entre 1,22:1 et 1,87:1",
+      "rgaa": [
+        "3.2"
+      ]
+    },
+    {
+      "page": "/marilyn.html",
+      "impact": "moderate",
+      "regle": "landmarks/landmark-unique",
+      "cible": "#page-51",
+      "detail": "Plusieurs régions portent le même nom accessible « Marilyn »",
+      "rgaa": [
+        "9.2"
+      ]
+    },
+    {
+      "page": "/monroe-piece.html",
+      "impact": "moderate",
+      "regle": "navigable/heading-order",
+      "cible": "#page14-title",
+      "detail": "Titre h3 après h1 sans h2 intermédiaire",
+      "rgaa": [
+        "9.1"
+      ]
+    },
+    {
+      "page": "/monroe-roman-graphique.html",
+      "impact": "moderate",
+      "regle": "navigable/heading-order",
+      "cible": "#page20-title",
+      "detail": "Titre h3 après h1 sans h2 intermédiaire",
+      "rgaa": [
+        "9.1"
+      ]
+    },
+    {
+      "page": "/monroe-composition.html",
+      "impact": "moderate",
+      "regle": "landmarks/landmark-unique",
+      "cible": "#page-28, #page-29, #page-30, #page-32",
+      "detail": "Régions avec noms accessibles dupliqués « IA - Milton Greene » et « Composition électroacoustique »",
+      "rgaa": [
+        "9.2"
+      ]
+    },
+    {
+      "page": "/monroe-interviews.html",
+      "impact": "moderate",
+      "regle": "landmarks/landmark-unique",
+      "cible": "#page-35",
+      "detail": "Plusieurs régions portent le même nom accessible « Interviews »",
+      "rgaa": [
+        "9.2"
+      ]
+    },
+    {
+      "page": "/charlotte-henschel.html",
+      "impact": "moderate",
+      "regle": "landmarks/landmark-unique",
+      "cible": "#page-56",
+      "detail": "Plusieurs régions portent le même nom accessible « Charlotte Henschel une vie à peindre »",
+      "rgaa": [
+        "9.2"
+      ]
+    }
+  ],
+  "pagesSansViolation": [
+    "/espaces-augmentes.html",
+    "/experiences-series.html",
+    "/experience-monroe.html",
+    "/monroe-installation.html",
+    "/monroe-photographie.html",
+    "/monroe-podcasts.html",
+    "/monroe-experiences.html",
+    "/monroe-quiz.html",
+    "/ni-vues-ni-connues.html",
+    "/toulouse-lautrec.html",
+    "/xr-corporate.html",
+    "/404.html",
+    "/plan-du-site.html",
+    "/mentions-legales.html"
+  ]
+}

@@ -1,0 +1,2535 @@
+{
+  "generatedAt": "2026-06-21T00:15:42.532Z",
+  "scope": "src local HTTP 127.0.0.1:8080",
+  "pages": [
+    "/",
+    "/espaces-augmentes.html",
+    "/experiences-series.html",
+    "/experience-monroe.html",
+    "/monroe-piece.html",
+    "/monroe-roman-graphique.html",
+    "/monroe-installation.html",
+    "/monroe-photographie.html",
+    "/monroe-composition.html",
+    "/monroe-podcasts.html",
+    "/monroe-interviews.html",
+    "/monroe-experiences.html",
+    "/monroe-quiz.html",
+    "/voyage-autour-de-moi.html",
+    "/dessine-moi-le-vent.html",
+    "/ni-vues-ni-connues.html",
+    "/marilyn.html",
+    "/toulouse-lautrec.html",
+    "/charlotte-henschel.html",
+    "/xr-corporate.html",
+    "/reservations.html",
+    "/404.html",
+    "/plan-du-site.html",
+    "/mentions-legales.html"
+  ],
+  "pageResults": [
+    {
+      "url": "/",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Swing Digital - Espaces augmentés, expériences immersives",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Créateurs d'Expériences Transmédia Immersives"
+        },
+        {
+          "level": 2,
+          "text": "Qui sommes nous ?"
+        },
+        {
+          "level": 3,
+          "text": "Sphyras"
+        },
+        {
+          "level": 3,
+          "text": "Delassalle"
+        },
+        {
+          "level": 3,
+          "text": "Nguyen Tat"
+        },
+        {
+          "level": 3,
+          "text": "Berthonnet"
+        },
+        {
+          "level": 3,
+          "text": "Greene"
+        },
+        {
+          "level": 3,
+          "text": "Viallet"
+        },
+        {
+          "level": 3,
+          "text": "De LaRochefoucault"
+        },
+        {
+          "level": 3,
+          "text": "Lardet"
+        },
+        {
+          "level": 2,
+          "text": "Swing digital"
+        },
+        {
+          "level": 3,
+          "text": "Nos créations"
+        },
+        {
+          "level": 4,
+          "text": "L'Expérience Monroe"
+        },
+        {
+          "level": 5,
+          "text": "Memory Box VR"
+        },
+        {
+          "level": 2,
+          "text": "Créations"
+        },
+        {
+          "level": 3,
+          "text": "Voyage autour de moi"
+        },
+        {
+          "level": 3,
+          "text": "Dessine-moi le vent"
+        },
+        {
+          "level": 4,
+          "text": "En développement"
+        },
+        {
+          "level": 2,
+          "text": "Ils nous ont faitConfiance"
+        },
+        {
+          "level": 2,
+          "text": "Contact"
+        }
+      ],
+      "images": {
+        "total": 34,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [
+        {
+          "id": "hero-video",
+          "ariaHidden": null,
+          "role": "img",
+          "label": "Vidéo d'ambiance Swing Digital - expériences immersives",
+          "autoplay": true,
+          "muted": true,
+          "controls": false,
+          "tracks": 0
+        },
+        {
+          "id": "contact-video",
+          "ariaHidden": "true",
+          "role": null,
+          "label": null,
+          "autoplay": false,
+          "muted": true,
+          "controls": false,
+          "tracks": 0
+        }
+      ],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 51,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 6,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/espaces-augmentes.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Espaces augmentés et réalité mixte - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Espaces augmentés"
+        },
+        {
+          "level": 2,
+          "text": "Qu'est-ce qu'un espace augmenté ?"
+        },
+        {
+          "level": 2,
+          "text": "RéinventerL'espace des récits"
+        },
+        {
+          "level": 2,
+          "text": "Réalité mixteThéâtre"
+        },
+        {
+          "level": 3,
+          "text": "Ancrer le virtuelDans l'espace physique"
+        },
+        {
+          "level": 3,
+          "text": "L'espace n'est plus une contrainte"
+        },
+        {
+          "level": 3,
+          "text": "Une nouvelle dramaturgie"
+        }
+      ],
+      "images": {
+        "total": 3,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [
+        {
+          "caption": "Faits clés sur les espaces augmentés Swing Digital",
+          "th": 4,
+          "thWithoutScopeOrId": 0
+        }
+      ],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 34,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/experiences-series.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Expériences immersives et séries XR - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Expériences Séries"
+        },
+        {
+          "level": 2,
+          "text": "Quelles expériences immersives découvrir ?"
+        },
+        {
+          "level": 2,
+          "text": "#théâtre #XR #installations #récits immersifs #séries"
+        },
+        {
+          "level": 3,
+          "text": "L'Expérience Monroe"
+        },
+        {
+          "level": 3,
+          "text": "Voyage autour de moi"
+        },
+        {
+          "level": 3,
+          "text": "Dessine-moi le vent"
+        },
+        {
+          "level": 3,
+          "text": "Ni vues ni connues"
+        },
+        {
+          "level": 2,
+          "text": "Projets en développement"
+        },
+        {
+          "level": 3,
+          "text": "Marilyn"
+        },
+        {
+          "level": 3,
+          "text": "Toulouse-Lautrec"
+        },
+        {
+          "level": 3,
+          "text": "Charlotte Henschel"
+        },
+        {
+          "level": 3,
+          "text": "XR Corporate"
+        }
+      ],
+      "images": {
+        "total": 8,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [
+        {
+          "caption": "Cartographie des expériences présentées",
+          "th": 4,
+          "thWithoutScopeOrId": 0
+        }
+      ],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 51,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/experience-monroe.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "L'Expérience Monroe immersive - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "L'Expérience Monroe"
+        },
+        {
+          "level": 2,
+          "text": "De quoi se compose L'Expérience Monroe ?"
+        },
+        {
+          "level": 2,
+          "text": "L'Expérience Monroe - Revue de presse"
+        },
+        {
+          "level": 2,
+          "text": "L'Expérience Monroe"
+        },
+        {
+          "level": 3,
+          "text": "Pièce My Story"
+        },
+        {
+          "level": 3,
+          "text": "Roman Graphique"
+        },
+        {
+          "level": 3,
+          "text": "Installation"
+        },
+        {
+          "level": 3,
+          "text": "XRMemory Box"
+        },
+        {
+          "level": 3,
+          "text": "SérieMarilyn"
+        },
+        {
+          "level": 2,
+          "text": "Interactive Exhibition"
+        },
+        {
+          "level": 3,
+          "text": "Photographies"
+        },
+        {
+          "level": 3,
+          "text": "CompositionÉlectroacoustique"
+        },
+        {
+          "level": 3,
+          "text": "Podcast"
+        },
+        {
+          "level": 3,
+          "text": "Interviews"
+        },
+        {
+          "level": 3,
+          "text": "ExpériencesInteractives"
+        },
+        {
+          "level": 3,
+          "text": "Le quizMarilyn"
+        }
+      ],
+      "images": {
+        "total": 24,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 1,
+        "missingTitle": [],
+        "titles": [
+          "Vidéo de présentation du spectacle L'Expérience Monroe"
+        ]
+      },
+      "videos": [],
+      "tables": [
+        {
+          "caption": "Volets principaux de L'Expérience Monroe",
+          "th": 5,
+          "thWithoutScopeOrId": 0
+        }
+      ],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 51,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 7,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Voir les 8 citations presse",
+            "expanded": "false",
+            "controls": "page12-quotes"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-piece.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Pièce My Story - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Pièce My Story"
+        },
+        {
+          "level": 3,
+          "text": "LAPièce"
+        },
+        {
+          "level": 2,
+          "text": "The Play"
+        },
+        {
+          "level": 2,
+          "text": "The Play - Scenes"
+        }
+      ],
+      "images": {
+        "total": 8,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 1,
+        "missingTitle": [],
+        "titles": [
+          "Vidéo de la pièce de théâtre The Play, spectacle immersif"
+        ]
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 6,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-roman-graphique.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Roman Graphique - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Roman Graphique"
+        },
+        {
+          "level": 3,
+          "text": "LERomanGraphique"
+        },
+        {
+          "level": 2,
+          "text": "Planches du roman graphique"
+        },
+        {
+          "level": 2,
+          "text": "Planches du roman graphique - Hollywood"
+        }
+      ],
+      "images": {
+        "total": 5,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-installation.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Installation - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Installation"
+        },
+        {
+          "level": 2,
+          "text": "InstallationInteractive"
+        }
+      ],
+      "images": {
+        "total": 1,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-photographie.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Photographie - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Photographie"
+        },
+        {
+          "level": 2,
+          "text": "Photographies"
+        }
+      ],
+      "images": {
+        "total": 4,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-composition.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Composition électroacoustique - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Composition électroacoustique"
+        },
+        {
+          "level": 2,
+          "text": "IA - milton greene"
+        },
+        {
+          "level": 2,
+          "text": "IA - milton greene"
+        },
+        {
+          "level": 2,
+          "text": "IA - milton greene"
+        },
+        {
+          "level": 2,
+          "text": "IA - milton greene"
+        },
+        {
+          "level": 3,
+          "text": "Composition électroacoustique"
+        },
+        {
+          "level": 3,
+          "text": "Installation interactive"
+        }
+      ],
+      "images": {
+        "total": 9,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-podcasts.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Podcasts - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Podcasts"
+        },
+        {
+          "level": 2,
+          "text": "Podcasts"
+        }
+      ],
+      "images": {
+        "total": 6,
+        "missingAlt": [],
+        "emptyAlt": [
+          "img/pages/page-33/podcast-01.jpg",
+          "img/pages/page-33/podcast-02.jpg",
+          "img/pages/page-33/podcast-03.jpg",
+          "img/pages/page-33/podcast-04.jpg",
+          "img/pages/page-33/podcast-05.jpg"
+        ],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 1,
+        "missingTitle": [],
+        "titles": [
+          "DEVENIR MARILYN - Épisode 1 et 2"
+        ]
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 9,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-interviews.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Interviews - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Interviews"
+        },
+        {
+          "level": 2,
+          "text": "Interviews"
+        },
+        {
+          "level": 3,
+          "text": "Interviews"
+        },
+        {
+          "level": 3,
+          "text": "Le Quiz Marilyn"
+        }
+      ],
+      "images": {
+        "total": 6,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 37,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-experiences.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Expériences interactives - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Expériences interactives"
+        },
+        {
+          "level": 2,
+          "text": "L'estrade E Marilyn Avec ou sans Jupes"
+        },
+        {
+          "level": 2,
+          "text": "→ Le quizMarilyn"
+        },
+        {
+          "level": 2,
+          "text": "La série"
+        }
+      ],
+      "images": {
+        "total": 3,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/monroe-quiz.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Le Quiz Marilyn - L'Expérience Monroe - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Le Quiz Marilyn"
+        },
+        {
+          "level": 2,
+          "text": "XR"
+        },
+        {
+          "level": 3,
+          "text": "Version expérience (Multi-utilisateur)"
+        },
+        {
+          "level": 3,
+          "text": "Version PC/VR"
+        },
+        {
+          "level": 2,
+          "text": "Expérience de réalité virtuelle immersive"
+        }
+      ],
+      "images": {
+        "total": 5,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/voyage-autour-de-moi.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Voyage autour de moi - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Voyage autour de moi"
+        },
+        {
+          "level": 2,
+          "text": "Voyage autour de moi"
+        },
+        {
+          "level": 2,
+          "text": "Voyage autour de moi"
+        }
+      ],
+      "images": {
+        "total": 10,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 1,
+        "missingTitle": [],
+        "titles": [
+          "Vidéo du spectacle Voyage autour de moi, récit immersif"
+        ]
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 35,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 6,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/dessine-moi-le-vent.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Dessine-moi le vent - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Dessine-moi le vent"
+        },
+        {
+          "level": 2,
+          "text": "Dessine-moile vent"
+        },
+        {
+          "level": 2,
+          "text": "Dessine-moi le vent - Détails du projet"
+        }
+      ],
+      "images": {
+        "total": 10,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 1,
+        "missingTitle": [],
+        "titles": [
+          "Vidéo du spectacle Dessine-moi le vent, réalité augmentée"
+        ]
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 36,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 6,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/ni-vues-ni-connues.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Ni vues ni connues - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Ni vues ni connues"
+        },
+        {
+          "level": 2,
+          "text": "Ni vues Ni connues"
+        },
+        {
+          "level": 2,
+          "text": "Ni vues Ni connues - Portraits de femmes"
+        }
+      ],
+      "images": {
+        "total": 9,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 35,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/marilyn.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Marilyn, théâtre et réalité mixte - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Marilyn"
+        },
+        {
+          "level": 2,
+          "text": "Marilyn"
+        },
+        {
+          "level": 2,
+          "text": "Marilyn"
+        },
+        {
+          "level": 2,
+          "text": "Réalité mixte"
+        },
+        {
+          "level": 3,
+          "text": "Exploration libre"
+        },
+        {
+          "level": 3,
+          "text": "Performance live et interactive"
+        }
+      ],
+      "images": {
+        "total": 7,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 35,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/toulouse-lautrec.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Toulouse-Lautrec - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Toulouse-Lautrec"
+        },
+        {
+          "level": 2,
+          "text": "Toulouse-Lautrec"
+        },
+        {
+          "level": 2,
+          "text": "Toulouse-Lautrec - Visite immersive à Montmartre"
+        }
+      ],
+      "images": {
+        "total": 11,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 35,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/charlotte-henschel.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Charlotte Henschel - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Charlotte Henschel"
+        },
+        {
+          "level": 2,
+          "text": "Charlotte HenschelUne vie à peindre"
+        },
+        {
+          "level": 2,
+          "text": "Charlotte HenschelUne vie à peindre"
+        }
+      ],
+      "images": {
+        "total": 6,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 35,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/xr-corporate.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "XR Corporate et réalité étendue - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "XR Corporate"
+        },
+        {
+          "level": 2,
+          "text": "XR pour les entreprises"
+        },
+        {
+          "level": 3,
+          "text": "Et si vos équipes se découvraient autrement ?"
+        }
+      ],
+      "images": {
+        "total": 1,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 35,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/reservations.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Réservations expériences XR - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Réservations"
+        },
+        {
+          "level": 2,
+          "text": "Comment réserver une expérience Swing Digital ?"
+        },
+        {
+          "level": 2,
+          "text": "Réservez votre expérience XR"
+        },
+        {
+          "level": 3,
+          "text": "Expérience toulouse-lautrec"
+        },
+        {
+          "level": 4,
+          "text": "Tarifs"
+        },
+        {
+          "level": 4,
+          "text": "Restez informé"
+        },
+        {
+          "level": 2,
+          "text": "Réservez votre expérience XR"
+        },
+        {
+          "level": 3,
+          "text": "Expérience charlotte henschel"
+        },
+        {
+          "level": 4,
+          "text": "Restez informé"
+        },
+        {
+          "level": 2,
+          "text": "Ce qui est inclus"
+        },
+        {
+          "level": 3,
+          "text": "Avant de réserver"
+        },
+        {
+          "level": 3,
+          "text": "Le jour de votre visite"
+        },
+        {
+          "level": 3,
+          "text": "Annulation et modification"
+        },
+        {
+          "level": 2,
+          "text": "Visites privées et sur-mesure"
+        },
+        {
+          "level": 3,
+          "text": "Questions fréquentes"
+        },
+        {
+          "level": 3,
+          "text": "Besoin d'aide ?"
+        }
+      ],
+      "images": {
+        "total": 5,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [
+        {
+          "caption": "Informations pratiques de réservation",
+          "th": 6,
+          "thWithoutScopeOrId": 0
+        }
+      ],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 43,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 7,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/404.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Page introuvable - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Page introuvable"
+        }
+      ],
+      "images": {
+        "total": 0,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 37,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/plan-du-site.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Plan du site et pages clés - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Plan du site"
+        },
+        {
+          "level": 2,
+          "text": "Pages principales"
+        }
+      ],
+      "images": {
+        "total": 0,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 56,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    },
+    {
+      "url": "/mentions-legales.html",
+      "doctype": "html",
+      "compatMode": "CSS1Compat",
+      "lang": "fr",
+      "title": "Mentions légales - Swing Digital",
+      "mainCount": 1,
+      "mainContent": true,
+      "skipLinks": [
+        {
+          "text": "Aller au contenu principal",
+          "href": "#main-content"
+        }
+      ],
+      "navLabels": [
+        "Menu principal",
+        "Fil d'Ariane",
+        "Navigation secondaire"
+      ],
+      "headings": [
+        {
+          "level": 1,
+          "text": "Mentions légales"
+        },
+        {
+          "level": 2,
+          "text": "Mentions légales"
+        },
+        {
+          "level": 3,
+          "text": "1. Éditeur du site"
+        },
+        {
+          "level": 3,
+          "text": "2. Hébergement"
+        },
+        {
+          "level": 3,
+          "text": "3. Propriété intellectuelle"
+        },
+        {
+          "level": 3,
+          "text": "4. Crédits photographiques"
+        },
+        {
+          "level": 3,
+          "text": "5. Protection des données personnelles"
+        },
+        {
+          "level": 4,
+          "text": "Données collectées"
+        },
+        {
+          "level": 4,
+          "text": "Finalité du traitement"
+        },
+        {
+          "level": 4,
+          "text": "Durée de conservation"
+        },
+        {
+          "level": 3,
+          "text": "6. Cookies"
+        },
+        {
+          "level": 3,
+          "text": "7. Liens hypertextes"
+        },
+        {
+          "level": 3,
+          "text": "8. Accessibilité"
+        },
+        {
+          "level": 3,
+          "text": "9. Droit applicable et juridiction"
+        }
+      ],
+      "images": {
+        "total": 0,
+        "missingAlt": [],
+        "emptyAlt": [],
+        "longAlt": []
+      },
+      "iframes": {
+        "total": 0,
+        "missingTitle": [],
+        "titles": []
+      },
+      "videos": [],
+      "tables": [],
+      "forms": {
+        "forms": 0,
+        "controls": 0,
+        "unlabeledControls": []
+      },
+      "links": {
+        "total": 37,
+        "empty": [],
+        "targetBlankWithoutNoopener": []
+      },
+      "buttons": {
+        "total": 4,
+        "empty": [],
+        "expandedWithoutControls": []
+      },
+      "aria": {
+        "controlsMissing": [],
+        "expanded": [
+          {
+            "tag": "BUTTON",
+            "text": "Menu de navigation",
+            "expanded": "false",
+            "controls": "main-menu"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Expériences Séries ▼",
+            "expanded": "false",
+            "controls": "submenu-experiences"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "Sous-menu L'Expérience Monroe",
+            "expanded": "false",
+            "controls": "submenu-monroe"
+          }
+        ]
+      }
+    }
+  ],
+  "aggregate": {
+    "pages": 24,
+    "images": 175,
+    "imagesMissingAlt": [],
+    "iframes": 5,
+    "iframesMissingTitle": [],
+    "tables": 4,
+    "tableHeaderIssues": [],
+    "formControls": 0,
+    "unlabeledControls": [],
+    "emptyLinks": [],
+    "emptyButtons": [],
+    "ariaControlsMissing": [],
+    "videos": [
+      {
+        "page": "/",
+        "id": "hero-video",
+        "ariaHidden": null,
+        "role": "img",
+        "label": "Vidéo d'ambiance Swing Digital - expériences immersives",
+        "autoplay": true,
+        "muted": true,
+        "controls": false,
+        "tracks": 0
+      },
+      {
+        "page": "/",
+        "id": "contact-video",
+        "ariaHidden": "true",
+        "role": null,
+        "label": null,
+        "autoplay": false,
+        "muted": true,
+        "controls": false,
+        "tracks": 0
+      }
+    ],
+    "pagesWithoutMain": [],
+    "pagesWithoutSkipMainContent": [],
+    "pagesWithoutOneH1": []
+  },
+  "reflow": {
+    "width320": {
+      "path": "/",
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "hasHorizontalOverflow": false
+    },
+    "height256": {
+      "path": "/",
+      "viewport": {
+        "width": 1280,
+        "height": 256
+      },
+      "scrollWidth": 1280,
+      "clientWidth": 1280,
+      "hasHorizontalOverflow": false
+    }
+  },
+  "keyboardMobile": {
+    "steps": [
+      {
+        "tag": "A",
+        "text": "Aller au contenu principal",
+        "class": "skip-link",
+        "expanded": null,
+        "outlineWidth": "2px",
+        "outlineStyle": "solid",
+        "matchesFocusVisible": true
+      },
+      {
+        "tag": "A",
+        "text": "| Swing Digital |",
+        "class": "site-header__logo",
+        "expanded": null,
+        "outlineWidth": "2px",
+        "outlineStyle": "solid",
+        "matchesFocusVisible": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "class": "site-nav__burger",
+        "expanded": "false",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid",
+        "matchesFocusVisible": true
+      }
+    ],
+    "opened": {
+      "burgerExpanded": "true",
+      "menuVisible": true,
+      "focusText": "Accueil",
+      "focusClass": "site-nav__link site-nav__link--active"
+    }
+  }
+}

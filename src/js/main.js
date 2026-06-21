@@ -136,6 +136,7 @@ function initDropdown() {
         var submenuId = btn.getAttribute('aria-controls');
         var submenu = document.getElementById(submenuId);
         if (!submenu) return;
+        btn.setAttribute('aria-haspopup', 'true');
 
         // Clic toggle
         btn.addEventListener('click', function(e) {
@@ -232,42 +233,102 @@ function initDropdown() {
     }
 
     // Sous-menu niveau 3 (Monroe)
+    var desktopMq = window.matchMedia('(min-width: 1024px)');
     var toggles = document.querySelectorAll('.site-nav__submenu-toggle[aria-controls]');
     toggles.forEach(function(toggle) {
         var subId = toggle.getAttribute('aria-controls');
         var sub = document.getElementById(subId);
+        var parentItem = toggle.closest('.site-nav__submenu-item--has-children');
         if (!sub) return;
+        toggle.setAttribute('aria-haspopup', 'true');
 
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             var isOpen = toggle.getAttribute('aria-expanded') === 'true';
-            if (isOpen) {
-                toggle.setAttribute('aria-expanded', 'false');
-                sub.classList.remove('site-nav__submenu--open');
+            if (isOpen && !desktopMq.matches) {
+                closeLevel3(toggle, sub);
             } else {
-                toggle.setAttribute('aria-expanded', 'true');
-                sub.classList.remove('site-nav__submenu--align-left');
-                sub.classList.add('site-nav__submenu--open');
-                // Flip si le sous-menu deborde a droite du viewport
-                requestAnimationFrame(function() {
-                    if (sub.getBoundingClientRect().right > window.innerWidth - 16) {
-                        sub.classList.add('site-nav__submenu--align-left');
-                    }
-                });
+                closeAllLevel3(toggle);
+                openLevel3(toggle, sub);
             }
         });
+
+        if (parentItem) {
+            parentItem.addEventListener('mouseenter', function() {
+                if (desktopMq.matches) {
+                    closeAllLevel3(toggle);
+                    openLevel3(toggle, sub);
+                }
+            });
+
+            parentItem.addEventListener('mouseleave', function() {
+                if (desktopMq.matches) {
+                    closeLevel3(toggle, sub);
+                }
+            });
+
+            parentItem.addEventListener('focusin', function() {
+                if (desktopMq.matches) {
+                    closeAllLevel3(toggle);
+                    openLevel3(toggle, sub);
+                }
+            });
+
+            parentItem.addEventListener('focusout', function() {
+                setTimeout(function() {
+                    if (desktopMq.matches && !parentItem.contains(document.activeElement)) {
+                        closeLevel3(toggle, sub);
+                    }
+                }, 0);
+            });
+        }
 
         // Escape ferme le sous-menu niveau 3
         sub.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 e.stopPropagation();
-                toggle.setAttribute('aria-expanded', 'false');
-                sub.classList.remove('site-nav__submenu--open');
+                closeLevel3(toggle, sub);
                 toggle.focus();
             }
         });
     });
+
+    function openLevel3(toggle, submenu) {
+        toggle.setAttribute('aria-expanded', 'true');
+        submenu.classList.add('site-nav__submenu--open');
+        alignLevel3(submenu);
+    }
+
+    function closeLevel3(toggle, submenu) {
+        toggle.setAttribute('aria-expanded', 'false');
+        submenu.classList.remove('site-nav__submenu--open', 'site-nav__submenu--align-left');
+    }
+
+    function closeAllLevel3(exceptToggle) {
+        document.querySelectorAll('.site-nav__submenu-toggle[aria-controls]').forEach(function(t) {
+            if (t === exceptToggle) return;
+            var s3 = document.getElementById(t.getAttribute('aria-controls'));
+            if (s3) {
+                closeLevel3(t, s3);
+            }
+        });
+    }
+
+    function alignLevel3(submenu) {
+        if (!desktopMq.matches) {
+            submenu.classList.remove('site-nav__submenu--align-left');
+            return;
+        }
+
+        submenu.classList.remove('site-nav__submenu--align-left');
+        // Flip si le sous-menu déborde à droite du viewport.
+        requestAnimationFrame(function() {
+            if (submenu.getBoundingClientRect().right > window.innerWidth - 16) {
+                submenu.classList.add('site-nav__submenu--align-left');
+            }
+        });
+    }
 
     function closeAllDropdowns() {
         // Fermer niveau 3 aussi
@@ -275,7 +336,7 @@ function initDropdown() {
             var s3 = document.getElementById(t.getAttribute('aria-controls'));
             if (s3) {
                 t.setAttribute('aria-expanded', 'false');
-                s3.classList.remove('site-nav__submenu--open');
+                s3.classList.remove('site-nav__submenu--open', 'site-nav__submenu--align-left');
             }
         });
         document.querySelectorAll('.site-nav__btn[aria-controls]').forEach(function(b) {

@@ -1,0 +1,1924 @@
+{
+  "site": "swing.appmiweb.com",
+  "audited_url": "https://swing.appmiweb.com/",
+  "report_language": "fr",
+  "generated_at": "2026-06-21T00:40:20Z",
+  "summary": {
+    "headline": "Audit SEO/GEO public relancé avec rapport autonome de transmission pour Loïc.",
+    "description": "Relance publique sur https://swing.appmiweb.com/ avec Search/Crawl à 0 écart, captures desktop/mobile fraîches et responsive lazy-load validé après scroll. Le rapport inclut aussi un HTML autonome de post-mortem skill à transmettre.",
+    "status": "partial",
+    "biggest_blocker": "Les gates production restent inchangés : domaine final, hébergeur légal, GSC, GA4/GTM, Bing Webmaster, logs, citations IA réelles et scénario Réservations.",
+    "fastest_win": "Transmettre le rapport autonome à Loïc et intégrer la règle lazy-load après scroll dans le skill upstream.",
+    "data_confidence": "high",
+    "decision": "La préproduction publique reste saine ; les progrès actuels portent sur la qualité du protocole et la transmission au mainteneur du skill, pas sur des métriques propriétaires."
+  },
+  "executive_brief": [
+    "Search/Crawl public relancé : 0 écart, 24 URL sitemap contrôlées, canonicals et og:url cohérents.",
+    "Responsive dynamique confirmé : desktop 26 images chargées après scroll, 0 cassée, 0 encore différée ; mobile 34 images chargées initialement.",
+    "Le HTML autonome pour Loïc regroupe le post-mortem produit et l’annexe technique des modifications locales du skill.",
+    "GEO/Citation reste en readiness : panel de 18 requêtes prêt, citations réelles non exécutées.",
+    "Measurement reste volontairement à 5,5/10 tant que le site n’est pas en production finale."
+  ],
+  "metrics": [
+    {
+      "label": "Écarts Search/Crawl",
+      "value": "0",
+      "detail": "Relance publique du 2026-06-21 sur https://swing.appmiweb.com."
+    },
+    {
+      "label": "URL sitemap contrôlées",
+      "value": "24",
+      "detail": "Toutes les URL sitemap ont été contrôlées."
+    },
+    {
+      "label": "Pages HTTP 200",
+      "value": "24/24",
+      "detail": "Pages sitemap accessibles publiquement."
+    },
+    {
+      "label": "Artefacts interdits non publics",
+      "value": "9/9",
+      "detail": "Aucun artefact de travail public détecté."
+    },
+    {
+      "label": "Lazy-load desktop après scroll",
+      "value": "26",
+      "detail": "Images chargées après exposition réelle au viewport."
+    },
+    {
+      "label": "Images cassées après scroll",
+      "value": "0",
+      "detail": "Desktop et mobile cumulés."
+    },
+    {
+      "label": "Panel GEO/Citation",
+      "value": "18 requêtes",
+      "detail": "Prêt à exécuter sur ChatGPT, Perplexity et Claude ; résultats non mesurés."
+    },
+    {
+      "label": "HTML autonome Loïc",
+      "value": "1 fichier",
+      "detail": "rapport-skill-seo-geo-loic.html généré dans ce dossier."
+    },
+    {
+      "label": "Données propriétaires",
+      "value": "unknown",
+      "detail": "GSC, GA4/GTM, Bing Webmaster, logs, citations IA et conversions non fournis."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Search/Crawl",
+      "score": 9,
+      "max": 10,
+      "note": "Relance publique : 0 écart, 24 URL sitemap OK, robots/llms/canonicals/OG OK."
+    },
+    {
+      "label": "Couche IA publique",
+      "score": 9,
+      "max": 10,
+      "note": "Endpoints IA publics en 200 via GET ; citations réelles non encore mesurées."
+    },
+    {
+      "label": "Design Watch",
+      "score": 8.5,
+      "max": 10,
+      "note": "Premier écran mobile déjà amélioré dans le rapport précédent ; aucune nouvelle modification site."
+    },
+    {
+      "label": "Responsive dynamique",
+      "score": 9,
+      "max": 10,
+      "note": "Audit relancé avec protocole après scroll : 0 image cassée, 0 encore différée."
+    },
+    {
+      "label": "GEO/Citation",
+      "score": 8,
+      "max": 10,
+      "note": "Panel de 18 requêtes prêt ; citations réelles toujours non mesurées."
+    },
+    {
+      "label": "Measurement",
+      "score": 5.5,
+      "max": 10,
+      "note": "Matrice et sélecteurs prêts en préproduction ; données propriétaires toujours inconnues."
+    },
+    {
+      "label": "Readiness globale",
+      "score": 8.7,
+      "max": 10,
+      "note": "Préproduction robuste ; gain de fiabilité audit et livrable autonome, production finale hors périmètre."
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P1",
+      "title": "Relance SEO/GEO publique : état stable et preuves fraîches",
+      "observed": [
+        "Search/Crawl public relancé avec 0 écart.",
+        "24 URL sitemap répondent en HTTP 200.",
+        "24 canonicals et 24 og:url sont cohérents.",
+        "9 artefacts interdits sont contrôlés et non publics.",
+        "Les endpoints IA répondent 200 en GET avec curl."
+      ],
+      "inferred": [
+        "La surface publique Appmiweb reste saine pour une préproduction.",
+        "Le blocage observé en HEAD Python sur les endpoints IA relève de la méthode ou de l’agent, pas du contenu public servi."
+      ],
+      "recommended": [
+        "Conserver cette relance comme nouveau rapport courant de transmission.",
+        "Relancer le même audit après toute purge, publication ou bascule de domaine final."
+      ],
+      "evidence": [
+        {
+          "label": "Search/Crawl public",
+          "path": "search-crawl-public-evidence.json",
+          "status": "0 écart"
+        },
+        {
+          "label": "Endpoints IA publics",
+          "path": "ai-public-endpoints.json",
+          "status": "GET 200"
+        }
+      ]
+    },
+    {
+      "priority": "P1",
+      "title": "PRD-006 lazy-load confirmé après relance",
+      "observed": [
+        "Desktop : 34 images lazy, 8 chargées initialement, 26 chargées après scroll, 0 cassée, 0 encore différée.",
+        "Mobile : 34 images chargées initialement, 0 cassée, 0 encore différée.",
+        "Aucun fichier du site n’a été modifié pour obtenir ce résultat."
+      ],
+      "inferred": [
+        "Le protocole après scroll évite le faux warning lazy-load.",
+        "Le site ne doit pas retirer loading=\"lazy\" pour corriger ce point."
+      ],
+      "recommended": [
+        "Transmettre à Loïc la règle de scoring après scroll et les tests associés.",
+        "Garder broken et still_deferred comme seuls déclencheurs de correction site."
+      ],
+      "evidence": [
+        {
+          "label": "Étude responsive relancée",
+          "path": "responsive-study.json",
+          "status": "pass"
+        },
+        {
+          "label": "Capture desktop",
+          "path": "site-screenshots/desktop.png",
+          "status": "0 image cassée"
+        },
+        {
+          "label": "Capture mobile",
+          "path": "site-screenshots/mobile.png",
+          "status": "0 image cassée"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Rapport autonome transmissible à Loïc",
+      "observed": [
+        "Le post-mortem produit et l’annexe technique sont convertis en un HTML autonome.",
+        "Le fichier ne dépend pas d’assets externes pour sa mise en forme principale.",
+        "Il récapitule les modifications locales, les tests passés et la recommandation de PR upstream limitée à 4 fichiers fonctionnels."
+      ],
+      "inferred": [
+        "Loïc peut lire le retour sans ouvrir le dépôt Swing Digital ni reconstituer le contexte de session."
+      ],
+      "recommended": [
+        "Envoyer rapport-skill-seo-geo-loic.html avec les deux Markdown sources si besoin.",
+        "Si une PR upstream est préparée, exclure les changements non fonctionnels de casse et de traduction accidentelle."
+      ],
+      "evidence": [
+        {
+          "label": "HTML autonome Loïc",
+          "path": "rapport-skill-seo-geo-loic.html",
+          "status": "généré"
+        },
+        {
+          "label": "Post-mortem",
+          "path": "../../POST-MORTEM-SKILL-SEO-GEO.md"
+        },
+        {
+          "label": "Annexe technique",
+          "path": "../../MODIFICATIONS-SKILL-SEO-GEO.md"
+        }
+      ]
+    },
+    {
+      "priority": "P2",
+      "title": "Gates production toujours non bloquants pour la préproduction",
+      "observed": [
+        "Le domaine final, GSC, GA4/GTM, Bing Webmaster, logs et citations IA réelles ne sont pas disponibles.",
+        "Le scénario Réservations n’est pas encore figé en parcours transactionnel."
+      ],
+      "inferred": [
+        "Ces points ne doivent pas être traités comme des corrections préproduction immédiates.",
+        "Le score Measurement reste bas pour une bonne raison."
+      ],
+      "recommended": [
+        "Conserver ces sujets comme gates production.",
+        "Ne pas installer de tag prod ni inventer de métriques avant la décision de production finale."
+      ],
+      "evidence": [
+        {
+          "label": "Measurement readiness",
+          "path": "measurement-readiness-evidence.json",
+          "status": "prepared_not_installed"
+        }
+      ]
+    }
+  ],
+  "analysis_cohorts": [
+    {
+      "name": "Search / crawl",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Crawl public, sitemap, robots.txt, canonicals, Open Graph, artefacts interdits.",
+      "verdict": "La surface publique Appmiweb reste saine après relance.",
+      "evidence": "search-crawl-public-evidence.json : 0 écart, 24 URL sitemap contrôlées.",
+      "next_action": "Relancer sur le domaine final HTTPS avant production."
+    },
+    {
+      "name": "AI citation",
+      "score": "8/10",
+      "status": "partial",
+      "what_it_checks": "Faits extractibles, couche IA, limites et préparation aux citations.",
+      "verdict": "Couche IA publique et panel prêt ; citations réelles non mesurées.",
+      "evidence": "Endpoints IA GET 200 et geo-citation-panel.csv prêt avec 18 requêtes.",
+      "next_action": "Exécuter le panel sur le domaine final ou sur préproduction si accepté."
+    },
+    {
+      "name": "Browser agent",
+      "score": "8/10",
+      "status": "ok",
+      "what_it_checks": "Compréhension du premier écran et chemins d’action visibles.",
+      "verdict": "Le site reste lisible et stable dans les captures relancées.",
+      "evidence": "site-screenshots/desktop.png et site-screenshots/mobile.png.",
+      "next_action": "Surveiller Réservations quand le scénario transactionnel sera décidé."
+    },
+    {
+      "name": "Design Watch",
+      "score": "8.5/10",
+      "status": "ok",
+      "what_it_checks": "Première impression, hiérarchie, confiance, lisibilité mobile.",
+      "verdict": "Le chantier mobile précédent reste la référence ; aucune nouvelle correction site dans cette relance.",
+      "evidence": "Captures fraîches et métriques précédentes de Design Watch.",
+      "next_action": "Ne pas rouvrir ce chantier sans retour humain ou nouveau signal."
+    },
+    {
+      "name": "Responsive dynamique",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Overflow, images, H1, title, viewport, texte visible.",
+      "verdict": "Le rendu mobile/desktop passe après scroll complet.",
+      "evidence": "responsive-study.json : desktop 26 images chargées après scroll, 0 cassée, 0 encore différée.",
+      "next_action": "Remonter cette règle dans le skill upstream."
+    },
+    {
+      "name": "Measurement owner",
+      "score": "5.5/10",
+      "status": "partial",
+      "what_it_checks": "Préparation GSC, GA4/GTM, Bing, logs, citations IA et conversions.",
+      "verdict": "La mesure est prête côté plan, mais aucune donnée propriétaire n’est observée.",
+      "evidence": "measurement-readiness-evidence.json.",
+      "next_action": "Attendre la décision de production finale pour brancher les outils réels."
+    },
+    {
+      "name": "Skill handoff",
+      "score": "9/10",
+      "status": "ok",
+      "what_it_checks": "Transmission exploitable au mainteneur du skill.",
+      "verdict": "Le rapport autonome et l’annexe technique sont prêts à transmettre.",
+      "evidence": "rapport-skill-seo-geo-loic.html, POST-MORTEM-SKILL-SEO-GEO.md, MODIFICATIONS-SKILL-SEO-GEO.md.",
+      "next_action": "Partager à Loïc et décider si une PR upstream est préparée."
+    }
+  ],
+  "design_watch": {
+    "score": "8.5/10",
+    "verdict": "Première impression mobile plus décisionnelle après cache-busting public.",
+    "summary": "Le hero mobile reste dense, mais la version publique corrigée réduit la hauteur du premier écran et fait apparaître “Qui sommes-nous ?” sans supprimer le contenu existant.",
+    "confidence": "high",
+    "observed": [
+      "css/style.css?v=20260621-0210 est chargé par la préproduction publique.",
+      "À 390x844, le hero mesure 688 px et la section “Qui sommes-nous ?” apparaît sur 53,8 px.",
+      "Aucun overflow horizontal détecté.",
+      "Le CTA Découvrir les expériences et le signal de confiance restent visibles."
+    ],
+    "inferred": [
+      "La compréhension de la suite éditoriale est meilleure au premier contact mobile.",
+      "Le score progresse, mais les preuves de citations IA et de conversion restent nécessaires pour dépasser durablement 8,5/10."
+    ],
+    "recommended": [
+      "Ne plus prioriser Design Watch mobile en préproduction tant que la revue humaine ne demande pas un autre ajustement.",
+      "Exécuter le panel GEO/Citation préparé pour obtenir une preuve externe de visibilité IA."
+    ]
+  },
+  "responsive_study": {
+    "url": "https://swing.appmiweb.com/",
+    "generated_at": "2026-06-21T00:39:42.422Z",
+    "method": "Chrome DevTools fallback; prefer Agent Browser when available",
+    "summary": {
+      "status": "pass",
+      "verdict": "Homepage responds correctly on tested mobile and desktop viewports."
+    },
+    "viewports": [
+      {
+        "label": "Desktop",
+        "viewport": "1440x1800",
+        "status": "pass",
+        "issues": [],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 1440,
+          "innerHeight": 1800,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "horizontalOverflow": false,
+          "documentHeight": 10839,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 0,
+          "images": [
+            {
+              "index": 0,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/stephanie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "visibleInViewport": false
+            },
+            {
+              "index": 1,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/anseau.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "visibleInViewport": false
+            },
+            {
+              "index": 2,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/benoit.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 675,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "visibleInViewport": false
+            },
+            {
+              "index": 3,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/mathieu.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 549,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2031,
+              "visibleInViewport": false
+            },
+            {
+              "index": 4,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/joshua.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "visibleInViewport": false
+            },
+            {
+              "index": 5,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/laetitia.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "visibleInViewport": false
+            },
+            {
+              "index": 6,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/claire.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "visibleInViewport": false
+            },
+            {
+              "index": 7,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/sylvie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 294,
+              "renderedHeight": 250,
+              "top": 2449,
+              "visibleInViewport": false
+            },
+            {
+              "index": 8,
+              "src": "https://swing.appmiweb.com/img/pages/page-3/page-3-collage.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 807,
+              "naturalHeight": 1233,
+              "renderedWidth": 680,
+              "renderedHeight": 1039,
+              "top": 3605,
+              "visibleInViewport": false
+            },
+            {
+              "index": 9,
+              "src": "https://swing.appmiweb.com/img/pages/page-4/creations.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 747,
+              "naturalHeight": 1219,
+              "renderedWidth": 680,
+              "renderedHeight": 1110,
+              "top": 5339,
+              "visibleInViewport": false
+            },
+            {
+              "index": 10,
+              "src": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7216,
+              "visibleInViewport": true
+            },
+            {
+              "index": 11,
+              "src": "https://swing.appmiweb.com/img/partners/acumen.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 40,
+              "renderedWidth": 200,
+              "renderedHeight": 40,
+              "top": 7296,
+              "visibleInViewport": true
+            },
+            {
+              "index": 12,
+              "src": "https://swing.appmiweb.com/img/partners/the-archives.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7216,
+              "visibleInViewport": true
+            },
+            {
+              "index": 13,
+              "src": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7216,
+              "visibleInViewport": true
+            },
+            {
+              "index": 14,
+              "src": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 123,
+              "renderedWidth": 200,
+              "renderedHeight": 123,
+              "top": 7254,
+              "visibleInViewport": true
+            },
+            {
+              "index": 15,
+              "src": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 200,
+              "renderedHeight": 60,
+              "top": 7286,
+              "visibleInViewport": true
+            },
+            {
+              "index": 16,
+              "src": "https://swing.appmiweb.com/img/partners/drac.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 257,
+              "renderedWidth": 165,
+              "renderedHeight": 211,
+              "top": 7441,
+              "visibleInViewport": true
+            },
+            {
+              "index": 17,
+              "src": "https://swing.appmiweb.com/img/partners/cnc.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 200,
+              "renderedHeight": 61,
+              "top": 7516,
+              "visibleInViewport": true
+            },
+            {
+              "index": 18,
+              "src": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 171,
+              "naturalHeight": 150,
+              "renderedWidth": 211,
+              "renderedHeight": 186,
+              "top": 7454,
+              "visibleInViewport": true
+            },
+            {
+              "index": 19,
+              "src": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 68,
+              "renderedWidth": 200,
+              "renderedHeight": 68,
+              "top": 7513,
+              "visibleInViewport": true
+            },
+            {
+              "index": 20,
+              "src": "https://swing.appmiweb.com/img/partners/orange.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 170,
+              "renderedWidth": 200,
+              "renderedHeight": 170,
+              "top": 7462,
+              "visibleInViewport": true
+            },
+            {
+              "index": 21,
+              "src": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 41,
+              "renderedWidth": 200,
+              "renderedHeight": 41,
+              "top": 7526,
+              "visibleInViewport": true
+            },
+            {
+              "index": 22,
+              "src": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 46,
+              "renderedWidth": 211,
+              "renderedHeight": 32,
+              "top": 7761,
+              "visibleInViewport": true
+            },
+            {
+              "index": 23,
+              "src": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 200,
+              "renderedHeight": 60,
+              "top": 7747,
+              "visibleInViewport": true
+            },
+            {
+              "index": 24,
+              "src": "https://swing.appmiweb.com/img/partners/forum-images.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 135,
+              "renderedWidth": 211,
+              "renderedHeight": 95,
+              "top": 7730,
+              "visibleInViewport": true
+            },
+            {
+              "index": 25,
+              "src": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 78,
+              "renderedWidth": 200,
+              "renderedHeight": 78,
+              "top": 7738,
+              "visibleInViewport": true
+            },
+            {
+              "index": 26,
+              "src": "https://swing.appmiweb.com/img/partners/onda.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 172,
+              "renderedWidth": 200,
+              "renderedHeight": 172,
+              "top": 7691,
+              "visibleInViewport": true
+            },
+            {
+              "index": 27,
+              "src": "https://swing.appmiweb.com/img/partners/pixihead.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7677,
+              "visibleInViewport": true
+            },
+            {
+              "index": 28,
+              "src": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 200,
+              "renderedHeight": 200,
+              "top": 7908,
+              "visibleInViewport": true
+            },
+            {
+              "index": 29,
+              "src": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 200,
+              "renderedHeight": 61,
+              "top": 7977,
+              "visibleInViewport": true
+            },
+            {
+              "index": 30,
+              "src": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 177,
+              "renderedWidth": 200,
+              "renderedHeight": 177,
+              "top": 7919,
+              "visibleInViewport": true
+            },
+            {
+              "index": 31,
+              "src": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 151,
+              "renderedWidth": 200,
+              "renderedHeight": 151,
+              "top": 7932,
+              "visibleInViewport": true
+            },
+            {
+              "index": 32,
+              "src": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 89,
+              "renderedWidth": 200,
+              "renderedHeight": 89,
+              "top": 7963,
+              "visibleInViewport": true
+            },
+            {
+              "index": 33,
+              "src": "https://swing.appmiweb.com/img/partners/pole-media.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 133,
+              "renderedWidth": 200,
+              "renderedHeight": 133,
+              "top": 7941,
+              "visibleInViewport": true
+            }
+          ],
+          "visibleTextLength": 3028,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil Espaces augmentés Expériences Séries ▼ Réservations Accueil Ils nous ont fait confiance CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swi",
+          "initialMissingImages": 26,
+          "imageLoadStates": {
+            "total": 34,
+            "lazy": 34,
+            "loaded_initially": 8,
+            "loaded_after_scroll": 26,
+            "broken": 0,
+            "still_deferred": 0,
+            "initial_missing": 26,
+            "missing_after_scroll": 0,
+            "unresolved_sample": []
+          },
+          "scrollProbe": {
+            "scrollSteps": 8,
+            "maxScroll": 9039,
+            "documentHeight": 10839
+          }
+        }
+      },
+      {
+        "label": "Mobile",
+        "viewport": "390x1400",
+        "status": "pass",
+        "issues": [],
+        "metrics": {
+          "title": "Swing Digital - Espaces augmentés, expériences immersives",
+          "innerWidth": 390,
+          "innerHeight": 1400,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "horizontalOverflow": false,
+          "documentHeight": 7535,
+          "hasViewportMeta": true,
+          "h1Count": 1,
+          "h1Text": [
+            "CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES"
+          ],
+          "navLinkCount": 32,
+          "imageCount": 34,
+          "missingImages": 0,
+          "images": [
+            {
+              "index": 0,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/stephanie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1468,
+              "visibleInViewport": false
+            },
+            {
+              "index": 1,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/anseau.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 549,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1468,
+              "visibleInViewport": false
+            },
+            {
+              "index": 2,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/benoit.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 675,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1738,
+              "visibleInViewport": false
+            },
+            {
+              "index": 3,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/mathieu.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 485,
+              "naturalHeight": 549,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 1738,
+              "visibleInViewport": false
+            },
+            {
+              "index": 4,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/joshua.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2008,
+              "visibleInViewport": false
+            },
+            {
+              "index": 5,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/laetitia.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2008,
+              "visibleInViewport": false
+            },
+            {
+              "index": 6,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/claire.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2253,
+              "visibleInViewport": false
+            },
+            {
+              "index": 7,
+              "src": "https://swing.appmiweb.com/img/pages/page-2/sylvie.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 484,
+              "naturalHeight": 550,
+              "renderedWidth": 177,
+              "renderedHeight": 150,
+              "top": 2253,
+              "visibleInViewport": false
+            },
+            {
+              "index": 8,
+              "src": "https://swing.appmiweb.com/img/pages/page-3/page-3-collage.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 807,
+              "naturalHeight": 1233,
+              "renderedWidth": 339,
+              "renderedHeight": 518,
+              "top": 2699,
+              "visibleInViewport": true
+            },
+            {
+              "index": 9,
+              "src": "https://swing.appmiweb.com/img/pages/page-4/creations.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 747,
+              "naturalHeight": 1219,
+              "renderedWidth": 307,
+              "renderedHeight": 501,
+              "top": 4055,
+              "visibleInViewport": true
+            },
+            {
+              "index": 10,
+              "src": "https://swing.appmiweb.com/img/partners/la-centrale.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5461,
+              "visibleInViewport": false
+            },
+            {
+              "index": 11,
+              "src": "https://swing.appmiweb.com/img/partners/acumen.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 40,
+              "renderedWidth": 40,
+              "renderedHeight": 8,
+              "top": 5477,
+              "visibleInViewport": false
+            },
+            {
+              "index": 12,
+              "src": "https://swing.appmiweb.com/img/partners/the-archives.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5461,
+              "visibleInViewport": false
+            },
+            {
+              "index": 13,
+              "src": "https://swing.appmiweb.com/img/partners/saint-gratien.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5461,
+              "visibleInViewport": false
+            },
+            {
+              "index": 14,
+              "src": "https://swing.appmiweb.com/img/partners/charlie-chaplin.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 123,
+              "renderedWidth": 40,
+              "renderedHeight": 25,
+              "top": 5468,
+              "visibleInViewport": false
+            },
+            {
+              "index": 15,
+              "src": "https://swing.appmiweb.com/img/partners/robert-laffont.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5475,
+              "visibleInViewport": false
+            },
+            {
+              "index": 16,
+              "src": "https://swing.appmiweb.com/img/partners/drac.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 257,
+              "renderedWidth": 31,
+              "renderedHeight": 40,
+              "top": 5461,
+              "visibleInViewport": false
+            },
+            {
+              "index": 17,
+              "src": "https://swing.appmiweb.com/img/partners/cnc.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5524,
+              "visibleInViewport": false
+            },
+            {
+              "index": 18,
+              "src": "https://swing.appmiweb.com/img/partners/ville-de-paris.svg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 171,
+              "naturalHeight": 150,
+              "renderedWidth": 40,
+              "renderedHeight": 35,
+              "top": 5513,
+              "visibleInViewport": false
+            },
+            {
+              "index": 19,
+              "src": "https://swing.appmiweb.com/img/partners/galerie-joseph.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 68,
+              "renderedWidth": 40,
+              "renderedHeight": 14,
+              "top": 5523,
+              "visibleInViewport": false
+            },
+            {
+              "index": 20,
+              "src": "https://swing.appmiweb.com/img/partners/orange.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 170,
+              "renderedWidth": 40,
+              "renderedHeight": 34,
+              "top": 5513,
+              "visibleInViewport": false
+            },
+            {
+              "index": 21,
+              "src": "https://swing.appmiweb.com/img/partners/principe-actif.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 41,
+              "renderedWidth": 40,
+              "renderedHeight": 8,
+              "top": 5526,
+              "visibleInViewport": false
+            },
+            {
+              "index": 22,
+              "src": "https://swing.appmiweb.com/img/partners/epinay-sur-seine.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 46,
+              "renderedWidth": 40,
+              "renderedHeight": 6,
+              "top": 5527,
+              "visibleInViewport": false
+            },
+            {
+              "index": 23,
+              "src": "https://swing.appmiweb.com/img/partners/seine-saint-denis.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 60,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5524,
+              "visibleInViewport": false
+            },
+            {
+              "index": 24,
+              "src": "https://swing.appmiweb.com/img/partners/forum-images.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 300,
+              "naturalHeight": 135,
+              "renderedWidth": 40,
+              "renderedHeight": 18,
+              "top": 5571,
+              "visibleInViewport": false
+            },
+            {
+              "index": 25,
+              "src": "https://swing.appmiweb.com/img/partners/morrison-hotel.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 78,
+              "renderedWidth": 40,
+              "renderedHeight": 16,
+              "top": 5572,
+              "visibleInViewport": false
+            },
+            {
+              "index": 26,
+              "src": "https://swing.appmiweb.com/img/partners/onda.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 172,
+              "renderedWidth": 40,
+              "renderedHeight": 34,
+              "top": 5563,
+              "visibleInViewport": false
+            },
+            {
+              "index": 27,
+              "src": "https://swing.appmiweb.com/img/partners/pixihead.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5560,
+              "visibleInViewport": false
+            },
+            {
+              "index": 28,
+              "src": "https://swing.appmiweb.com/img/partners/jean-legendre.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 200,
+              "renderedWidth": 40,
+              "renderedHeight": 40,
+              "top": 5560,
+              "visibleInViewport": false
+            },
+            {
+              "index": 29,
+              "src": "https://swing.appmiweb.com/img/partners/grand-est.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 61,
+              "renderedWidth": 40,
+              "renderedHeight": 12,
+              "top": 5574,
+              "visibleInViewport": false
+            },
+            {
+              "index": 30,
+              "src": "https://swing.appmiweb.com/img/partners/ejt-labo.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 177,
+              "renderedWidth": 40,
+              "renderedHeight": 35,
+              "top": 5562,
+              "visibleInViewport": false
+            },
+            {
+              "index": 31,
+              "src": "https://swing.appmiweb.com/img/partners/feu-vert.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 151,
+              "renderedWidth": 40,
+              "renderedHeight": 30,
+              "top": 5614,
+              "visibleInViewport": false
+            },
+            {
+              "index": 32,
+              "src": "https://swing.appmiweb.com/img/partners/fondation-vinci.jpg",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 89,
+              "renderedWidth": 40,
+              "renderedHeight": 18,
+              "top": 5621,
+              "visibleInViewport": false
+            },
+            {
+              "index": 33,
+              "src": "https://swing.appmiweb.com/img/partners/pole-media.png",
+              "loading": "lazy",
+              "complete": true,
+              "naturalWidth": 200,
+              "naturalHeight": 133,
+              "renderedWidth": 40,
+              "renderedHeight": 27,
+              "top": 5616,
+              "visibleInViewport": false
+            }
+          ],
+          "visibleTextLength": 2940,
+          "textSample": "Aller au contenu principal | SWING DIGITAL | Accueil CRÉATEURS D'EXPÉRIENCES TRANSMÉDIA IMMERSIVES # SPECTACLE VIVANT # RÉALITÉ MIXTE # STORYTELLING Swing Digital conçoit des espaces augmentés et des expériences immersives où spectacle viva",
+          "initialMissingImages": 0,
+          "imageLoadStates": {
+            "total": 34,
+            "lazy": 34,
+            "loaded_initially": 34,
+            "loaded_after_scroll": 0,
+            "broken": 0,
+            "still_deferred": 0,
+            "initial_missing": 0,
+            "missing_after_scroll": 0,
+            "unresolved_sample": []
+          },
+          "scrollProbe": {
+            "scrollSteps": 7,
+            "maxScroll": 6135,
+            "documentHeight": 7535
+          }
+        }
+      }
+    ]
+  },
+  "site_visual_evidence": [
+    {
+      "label": "Desktop screenshot",
+      "path": "site-screenshots/desktop.png",
+      "viewport": "1440x1800",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 1440px"
+      ]
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "site-screenshots/mobile.png",
+      "viewport": "390x1400",
+      "notes": [
+        "Page title: Swing Digital - Espaces augmentés, expériences immersives",
+        "Horizontal overflow: no",
+        "Document width: 390px"
+      ]
+    }
+  ],
+  "screenshot_status": {
+    "status": "available",
+    "desktop": "site-screenshots/desktop.png",
+    "mobile": "site-screenshots/mobile.png",
+    "method": "capture_site_screenshots.mjs avec scroll complet avant scoring image"
+  },
+  "technical_checks": {
+    "search_crawl_public": {
+      "generatedAt": "2026-06-21T00:39:33.538Z",
+      "base": "https://swing.appmiweb.com",
+      "sitemapUrlCount": 24,
+      "sitemapStatusOk": true,
+      "robotsStatusOk": true,
+      "robotsDeclaresSitemap": true,
+      "llmsStatusOk": true,
+      "llmsMentionsCanonicalBase": true,
+      "pages200": 24,
+      "pagesCanonicalOk": 24,
+      "pagesOgUrlOk": 24,
+      "pagesWithOgImage": 24,
+      "ogImagesChecked": 21,
+      "ogImagesOk": 21,
+      "forbiddenArtifactsChecked": 9,
+      "forbiddenArtifactsNotPublicOk": 9,
+      "forbiddenArtifactsCacheOnly": 0
+    },
+    "search_crawl_failures": [],
+    "seo_check": {
+      "status": "passed",
+      "passed": 12,
+      "command": "npm run seo:check"
+    },
+    "build_prod": {
+      "status": "passed",
+      "files": 443,
+      "excluded_artifacts": 3,
+      "command": "npm run build:prod"
+    },
+    "appmiweb_preflight": {
+      "status": "passed_with_warnings",
+      "files": 443,
+      "warnings": 3,
+      "command": "npm run appmiweb:preflight"
+    },
+    "ai_public_endpoints": [
+      {
+        "path": "/llms.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/for-ai/",
+        "status": 200,
+        "content_type": "text/html"
+      },
+      {
+        "path": "/for-ai.json",
+        "status": 200,
+        "content_type": "application/json"
+      },
+      {
+        "path": "/for-ai.txt",
+        "status": 200,
+        "content_type": "text/plain"
+      },
+      {
+        "path": "/schema-webpage.jsonld",
+        "status": 200,
+        "content_type": "application/octet-stream"
+      }
+    ],
+    "geo_citation_panel": {
+      "status": "ready_not_executed",
+      "rows": 18,
+      "engines": [
+        "ChatGPT",
+        "Perplexity",
+        "Claude"
+      ],
+      "prompt_families": [
+        "brand_discovery",
+        "category_discovery",
+        "concept_explanation",
+        "project_discovery",
+        "booking_boundary",
+        "source_integrity"
+      ],
+      "files": [
+        "geo-citation-panel.csv",
+        "geo-citation-panel.md"
+      ],
+      "score_interpretation": "Readiness GEO/Citation à 8/10 parce que le protocole est prêt ; citations réelles toujours unknown tant que le panel n’est pas exécuté."
+    },
+    "homepage_image_status": {
+      "generated_at": "2026-06-20T23:46:15.409Z",
+      "url": "https://swing.appmiweb.com/",
+      "method": "Playwright viewport 1440x1800, initial load, scroll pass, then HEAD on unresolved lazy images",
+      "initial": {
+        "imageCount": 34,
+        "missingImages": 25,
+        "lazyImages": 34
+      },
+      "after_scroll": {
+        "imageCount": 34,
+        "missingImages": 24
+      },
+      "unresolved_http_checks": [
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/svg+xml"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/jpeg"
+        },
+        {
+          "status": 200,
+          "ok": true,
+          "contentType": "image/png"
+        }
+      ],
+      "interpretation": "Les images non chargées dans le DOM sont des images lazy/visuelles différées dont les URLs répondent 200 en HTTP."
+    },
+    "measurement_readiness": {
+      "generated_at": "2026-06-20T22:58:31.356Z",
+      "source_matrix": "docs/SEO-GEO-MEASUREMENT-MATRIX.csv",
+      "source_plan": "docs/SEO-GEO-MEASUREMENT-PLAN.md",
+      "status": "prepared_not_installed",
+      "event_count": 9,
+      "metric_statuses": [
+        "unknown"
+      ],
+      "production_activation_modes": [
+        "activate_on_final_domain",
+        "activate_when_booking_active",
+        "activate_when_newsletter_active"
+      ],
+      "tested_command": "npx playwright test tests/seo-geo.spec.js --project=desktop-1920",
+      "tested_result": "11 passed",
+      "guardrails": [
+        "No GA4 or GTM tag installed in preproduction files.",
+        "All event metrics remain unknown until proprietary data exists.",
+        "Disabled booking and newsletter buttons are documented as non-conversions."
+      ],
+      "events": [
+        {
+          "event_name": "page_view_home",
+          "page_path": "index.html",
+          "selector": "body[data-section=\"accueil\"]",
+          "trigger": "page_view",
+          "preprod_status": "documented",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "page_view_visible_in_realtime",
+          "metric_status": "unknown",
+          "notes": "no_tag_installed_in_preprod"
+        },
+        {
+          "event_name": "click_hero_experiences",
+          "page_path": "index.html",
+          "selector": ".hero-page1__cta",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "event_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "primary_discovery_cta"
+        },
+        {
+          "event_name": "click_contact_home",
+          "page_path": "index.html",
+          "selector": ".hero-page1__bottom-left a[href=\"mailto:production@swingdigitalproduction.com\"]",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "email_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "contact_intent"
+        },
+        {
+          "event_name": "click_social_instagram",
+          "page_path": "index.html",
+          "selector": ".hero-page1__bottom-right a[href=\"https://www.instagram.com/swingdigital_france/\"]",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "outbound_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "social_intent"
+        },
+        {
+          "event_name": "open_mobile_menu",
+          "page_path": "index.html",
+          "selector": ".site-nav__burger",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "menu_open_event_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "navigation_intent"
+        },
+        {
+          "event_name": "click_reservation_disabled",
+          "page_path": "reservations.html",
+          "selector": ".page58__reserve-btn",
+          "trigger": "click",
+          "preprod_status": "documented_disabled",
+          "prod_activation": "activate_when_booking_active",
+          "tool_target": "GA4_or_GTM",
+          "owner": "product_marketing",
+          "success_signal": "no_conversion_until_booking_enabled",
+          "metric_status": "unknown",
+          "notes": "disabled_button_is_not_a_conversion"
+        },
+        {
+          "event_name": "click_newsletter_disabled",
+          "page_path": "reservations.html",
+          "selector": ".page58__subscribe-btn",
+          "trigger": "click",
+          "preprod_status": "documented_disabled",
+          "prod_activation": "activate_when_newsletter_active",
+          "tool_target": "GA4_or_GTM",
+          "owner": "product_marketing",
+          "success_signal": "no_conversion_until_newsletter_enabled",
+          "metric_status": "unknown",
+          "notes": "disabled_button_is_not_a_conversion"
+        },
+        {
+          "event_name": "click_reservation_faq",
+          "page_path": "reservations.html",
+          "selector": ".page58__faq-link",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "faq_click_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "reservation_information_intent"
+        },
+        {
+          "event_name": "click_private_visit_contact",
+          "page_path": "reservations.html",
+          "selector": ".page61__contact-link",
+          "trigger": "click",
+          "preprod_status": "trackable",
+          "prod_activation": "activate_on_final_domain",
+          "tool_target": "GA4_or_GTM",
+          "owner": "marketing_tech",
+          "success_signal": "private_visit_contact_visible_in_debug_view",
+          "metric_status": "unknown",
+          "notes": "group_or_private_visit_intent"
+        }
+      ]
+    },
+    "design_watch_mobile_metrics": {
+      "generated_at": "2026-06-20T23:46:10.753Z",
+      "url": "https://swing.appmiweb.com/#page-1",
+      "viewport": "390x844",
+      "cssHref": [
+        "https://swing.appmiweb.com/css/style.css?v=20260621-0145"
+      ],
+      "hero": {
+        "x": 0,
+        "y": 102.15625,
+        "width": 390,
+        "height": 688,
+        "top": 102.15625,
+        "right": 390,
+        "bottom": 790.15625,
+        "left": 0
+      },
+      "team": {
+        "x": 0,
+        "y": 790.15625,
+        "width": 390,
+        "height": 1173.765625,
+        "top": 790.15625,
+        "right": 390,
+        "bottom": 1963.921875,
+        "left": 0
+      },
+      "teamPreviewPx": 53.84375,
+      "horizontalOverflow": false,
+      "cta": {
+        "x": 52.640625,
+        "y": 473.78125,
+        "width": 231,
+        "height": 42,
+        "top": 473.78125,
+        "right": 283.640625,
+        "bottom": 515.78125,
+        "left": 52.640625
+      },
+      "trust": {
+        "x": 25.59375,
+        "y": 428.203125,
+        "width": 285.109375,
+        "height": 40.78125,
+        "top": 428.203125,
+        "right": 310.703125,
+        "bottom": 468.984375,
+        "left": 25.59375
+      },
+      "social": {
+        "x": 195,
+        "y": 613.78125,
+        "width": 179,
+        "height": 161.984375,
+        "top": 613.78125,
+        "right": 374,
+        "bottom": 775.765625,
+        "left": 195
+      },
+      "bottomLeft": {
+        "x": 16,
+        "y": 682.96875,
+        "width": 179,
+        "height": 92.796875,
+        "top": 682.96875,
+        "right": 195,
+        "bottom": 775.765625,
+        "left": 16
+      },
+      "computed": {
+        "heroHeight": "688px",
+        "heroMinHeight": "0px",
+        "gridTemplateAreas": "\"content content\" \"links social\"",
+        "sectionHeight": "calc(100dvh - 60px)"
+      }
+    },
+    "report_ui_quality": {
+      "status": "passed",
+      "report_url": "http://127.0.0.1:8769/",
+      "desktop_overflow": false,
+      "mobile_overflow": false,
+      "console_errors": 0,
+      "screenshots": [
+        "report-ui-desktop.png",
+        "report-ui-mobile.png"
+      ]
+    },
+    "css_version_public": "css/style.css?v=20260621-0210",
+    "responsive_lazy_load_probe": {
+      "status": "pass",
+      "desktop": {
+        "total": 34,
+        "lazy": 34,
+        "loaded_initially": 8,
+        "loaded_after_scroll": 26,
+        "broken": 0,
+        "still_deferred": 0,
+        "initial_missing": 26,
+        "missing_after_scroll": 0,
+        "unresolved_sample": []
+      },
+      "mobile": {
+        "total": 34,
+        "lazy": 34,
+        "loaded_initially": 34,
+        "loaded_after_scroll": 0,
+        "broken": 0,
+        "still_deferred": 0,
+        "initial_missing": 0,
+        "missing_after_scroll": 0,
+        "unresolved_sample": []
+      },
+      "lesson_for_skill": "Le score image doit être calculé après exposition réelle au viewport, pas seulement au chargement initial.",
+      "recommended_skill_rule": {
+        "broken": "issue",
+        "still_deferred": "warning_after_scroll",
+        "loaded_after_scroll": "positive_lazy_load_evidence",
+        "site_fix_required_when": "broken > 0 or still_deferred > 0 after scroll exposure, or HTTP check fails",
+        "no_site_fix_when": "loaded_after_scroll > 0 and broken == 0 and still_deferred == 0"
+      }
+    },
+    "loic_handoff_report": {
+      "status": "generated",
+      "path": "rapport-skill-seo-geo-loic.html",
+      "sources": [
+        "POST-MORTEM-SKILL-SEO-GEO.md",
+        "MODIFICATIONS-SKILL-SEO-GEO.md"
+      ],
+      "format": "standalone_html"
+    }
+  },
+  "public_measurements": [
+    {
+      "source": "Measurement matrix",
+      "access": "available",
+      "metric": "event readiness",
+      "limit": "Préparation de collecte uniquement, pas une métrique de trafic."
+    },
+    {
+      "source": "Google Search Console",
+      "access": "not_available",
+      "metric": "impressions, clicks, CTR, positions",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "GA4/GTM",
+      "access": "not_available",
+      "metric": "sessions, conversions, referrals IA",
+      "limit": "Tag non installé en préproduction et export non fourni."
+    },
+    {
+      "source": "Bing Webmaster Tools",
+      "access": "not_available",
+      "metric": "indexation, clics, performance Bing/AI",
+      "limit": "Export ou accès non fourni."
+    },
+    {
+      "source": "Server logs",
+      "access": "not_available",
+      "metric": "hits bots Google/Bing/AI",
+      "limit": "Logs non fournis."
+    },
+    {
+      "source": "Manual public audit",
+      "access": "available",
+      "metric": "crawl, canonicals, OG, endpoints IA, captures",
+      "limit": "Ne mesure pas le trafic ni les citations réelles."
+    }
+  ],
+  "action_plan": [
+    {
+      "when": "Maintenant",
+      "action": "Envoyer à Loïc le rapport autonome et les deux sources Markdown.",
+      "outcome": "Le mainteneur dispose du retour produit et de l’annexe technique sans chercher le contexte."
+    },
+    {
+      "when": "Maintenant",
+      "action": "Décider si une PR upstream limitée aux 4 fichiers fonctionnels est préparée.",
+      "outcome": "Éviter d’inclure les changements non fonctionnels de casse ou de traduction accidentelle."
+    },
+    {
+      "when": "Préproduction continue",
+      "action": "Relancer Search/Crawl et responsive après publication ou purge.",
+      "outcome": "Éviter les faux positifs cache ou protocole."
+    },
+    {
+      "when": "Avant production finale",
+      "action": "Compléter domaine final, hébergeur légal, GSC, GA4/GTM, Bing Webmaster et scénario Réservations.",
+      "outcome": "Lever les gates production sans polluer la préproduction."
+    },
+    {
+      "when": "Après domaine final",
+      "action": "Exécuter le panel GEO/Citation ChatGPT, Perplexity et Claude.",
+      "outcome": "Remplacer la readiness par une mesure de citations réelles."
+    }
+  ],
+  "ai_layer_package": {
+    "status": "already_public",
+    "note": "Aucun ZIP généré dans ce rapport : la couche IA est déjà publiée sur la préproduction.",
+    "files": [
+      {
+        "label": "llms.txt",
+        "path": "https://swing.appmiweb.com/llms.txt",
+        "purpose": "Index public lisible par agents."
+      },
+      {
+        "label": "/for-ai",
+        "path": "https://swing.appmiweb.com/for-ai/",
+        "purpose": "Page HTML de contexte agent-readable."
+      },
+      {
+        "label": "/for-ai.json",
+        "path": "https://swing.appmiweb.com/for-ai.json",
+        "purpose": "Faits structurés et consignes de citation."
+      },
+      {
+        "label": "/for-ai.txt",
+        "path": "https://swing.appmiweb.com/for-ai.txt",
+        "purpose": "Contexte texte compact pour agents."
+      },
+      {
+        "label": "schema-webpage.jsonld",
+        "path": "https://swing.appmiweb.com/schema-webpage.jsonld",
+        "purpose": "JSON-LD WebPage public."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "label": "Accueil public audité",
+      "url": "https://swing.appmiweb.com/"
+    },
+    {
+      "label": "robots.txt",
+      "url": "https://swing.appmiweb.com/robots.txt"
+    },
+    {
+      "label": "sitemap.xml",
+      "url": "https://swing.appmiweb.com/sitemap.xml"
+    },
+    {
+      "label": "llms.txt",
+      "url": "https://swing.appmiweb.com/llms.txt"
+    },
+    {
+      "label": "for-ai",
+      "url": "https://swing.appmiweb.com/for-ai/"
+    },
+    {
+      "label": "Search/Crawl evidence",
+      "path": "search-crawl-public-evidence.json"
+    },
+    {
+      "label": "Responsive study",
+      "path": "responsive-study.json"
+    },
+    {
+      "label": "Desktop screenshot",
+      "path": "site-screenshots/desktop.png"
+    },
+    {
+      "label": "Mobile screenshot",
+      "path": "site-screenshots/mobile.png"
+    },
+    {
+      "label": "Endpoints IA publics",
+      "path": "ai-public-endpoints.json"
+    },
+    {
+      "label": "Panel GEO/Citation",
+      "path": "geo-citation-panel.csv"
+    },
+    {
+      "label": "Mode d’emploi du panel GEO/Citation",
+      "path": "geo-citation-panel.md"
+    },
+    {
+      "label": "Measurement readiness evidence",
+      "path": "measurement-readiness-evidence.json"
+    },
+    {
+      "label": "Rapport autonome Loïc",
+      "path": "rapport-skill-seo-geo-loic.html"
+    },
+    {
+      "label": "Post-mortem skill SEO/GEO",
+      "path": "../../POST-MORTEM-SKILL-SEO-GEO.md"
+    },
+    {
+      "label": "Modifications locales du skill",
+      "path": "../../MODIFICATIONS-SKILL-SEO-GEO.md"
+    },
+    {
+      "label": "Repo public seo-geo-growth-agent",
+      "url": "https://github.com/bacoco/seo-geo-growth-agent"
+    }
+  ]
+}

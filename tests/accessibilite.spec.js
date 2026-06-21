@@ -13,7 +13,7 @@ test.describe('Accessibilité', () => {
     test('dropdown — Escape ferme et remet le focus', async ({ page }) => {
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        test.skip(width <= 1024, 'Desktop only (dropdown horizontal, breakpoint > 1024px)');
+        test.skip(width < 1024, 'Desktop only (dropdown horizontal, breakpoint >= 1024px)');
         await page.goto('/');
         const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
         await btn.click();
@@ -27,7 +27,7 @@ test.describe('Accessibilité', () => {
     test('dropdown — navigation clavier flèches', async ({ page }) => {
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        test.skip(width <= 1024, 'Desktop only (dropdown horizontal, breakpoint > 1024px)');
+        test.skip(width < 1024, 'Desktop only (dropdown horizontal, breakpoint >= 1024px)');
         await page.goto('/');
         const btn = page.locator('.site-nav__btn[aria-controls="submenu-experiences"]');
         await btn.focus();
@@ -41,7 +41,7 @@ test.describe('Accessibilité', () => {
     test('hamburger — Escape ferme le menu mobile', async ({ page }) => {
         const info = test.info();
         const width = info.project.use?.viewport?.width || 1920;
-        test.skip(width > 1024, 'Mobile only (hamburger, breakpoint <= 1024px)');
+        test.skip(width >= 1024, 'Mobile only (hamburger, breakpoint <= 1023px)');
         await page.goto('/');
         const burger = page.locator('.site-nav__burger');
         await burger.click();
@@ -49,6 +49,27 @@ test.describe('Accessibilité', () => {
 
         await page.keyboard.press('Escape');
         await expect(burger).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    test('hamburger — accessible au clavier en mobile', async ({ page }) => {
+        const info = test.info();
+        const width = info.project.use?.viewport?.width || 1920;
+        test.skip(width >= 1024, 'Mobile only (hamburger, breakpoint <= 1023px)');
+        await page.goto('/');
+
+        await page.keyboard.press('Tab'); // lien d'évitement
+        await page.keyboard.press('Tab'); // logo
+        await page.keyboard.press('Tab'); // burger
+
+        const burger = page.locator('.site-nav__burger');
+        await expect(burger).toBeFocused();
+        await expect(burger).toHaveCSS('outline-width', '2px');
+        await expect(burger).toHaveCSS('outline-style', 'solid');
+
+        await page.keyboard.press('Enter');
+        await expect(burger).toHaveAttribute('aria-expanded', 'true');
+        await expect(page.locator('#main-menu')).toBeVisible();
+        await expect(page.locator('.site-nav__link').first()).toBeFocused();
     });
 
     test('bouton retour en haut — apparaît au scroll', async ({ page }) => {
