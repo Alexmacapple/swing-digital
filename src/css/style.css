@@ -156,6 +156,8 @@
     --slide-pad-x: 2rem;
     --slide-pad-y: 2rem;
     --pink-panel-pad-x: clamp(2rem, 5vw, 4rem);
+    --pink-panel-inner-pad-x: clamp(1.5rem, 4vw, 2.5rem);
+    --pink-panel-inner-pad-y: clamp(1.25rem, 3vw, 2rem);
 
     /* === ECHELLE TYPOGRAPHIQUE (couche 1 : tailles) === */
     --size-2xs: 0.875rem;                            /* 14px — credits */
@@ -2313,6 +2315,8 @@ section:hover [class*="__category"]::after {
 .page3__creations {
     flex: 1;
     background-color: inherit; /* a11y : hérite du fond rose parent pour outils de contraste */
+    padding: var(--pink-panel-inner-pad-y) var(--pink-panel-inner-pad-x);
+    box-sizing: border-box;
 }
 
 .page3__section-title {
