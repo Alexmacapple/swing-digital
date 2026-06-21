@@ -15,3 +15,8 @@ Index des PRD du workspace Swing Digital.
 | PRD-009 | Routage de la page 404 personnalisée | Documenté, action infra requise | 2026-06-21 | Moyenne |
 | PRD-010 | Transcripts accessibles des vidéos publiques | Cadré, outillage local ajouté, publication à planifier | 2026-06-21 | Haute |
 | PRD-011 | Menu et découpage XR / Films | Implémenté et vérifié localement | 2026-06-21 | Haute |
+| PRD-012 | Accueil éditorial et visuels de présentation | Brouillon | 2026-06-21 | Haute |
+| PRD-013 | Catalogue XR et ajout de The Party | Brouillon | 2026-06-21 | Haute |
+| PRD-014 | Pages projets Marilyn, Toulouse-Lautrec et Charlotte Henschel | Brouillon | 2026-06-21 | Haute |
+| PRD-015 | Page autonome Memory Box VR | Brouillon | 2026-06-21 | Haute |
+| PRD-016 | Contact, adresse et animation logo | Brouillon | 2026-06-21 | Haute |

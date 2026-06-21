@@ -2,6 +2,8 @@
 
 ## 2026-06-21
 
+- Analyse des retours Stéphanie issus de `retour/changements_site (1).docx` et `retour/site_images/`, avec tri des points déjà faits, corrections restantes et questions ouvertes.
+- Création des PRD-012 à PRD-016 : accueil éditorial, catalogue XR / The Party, pages projet Marilyn-Lautrec-Charlotte, page autonome Memory Box VR, contact/adresse/logo.
 - Implémentation du PRD-011 : menu principal `Accueil - XR - Espace augmenté - Films - Réservation`, création de `films.html`, déplacement de `Ni vues ni connues` sous Films et alignement sitemap / fichiers IA.
 - Restauration du harnais Playwright versionné : `npm test` couvre PRD-011 et le socle SEO/GEO local ; `npm run seo:check` cible `tests/seo-geo.spec.js`.
 - Mise à jour du PRD-010 : adoption de `faster-whisper` via `scripts/transcribe-faster-whisper.py` pour produire les transcripts bruts.
