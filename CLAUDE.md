@@ -124,10 +124,10 @@ npm run build:prod
 npm run appmiweb:preflight
 ```
 
-Derniers résultats observés :
+Derniers résultats observés le 2026-06-21 :
 
-- `npm test` : 1 301 tests passés, 154 ignorés.
-- `npm run seo:check` : 9/9 tests passés.
+- `npm test` : échec `No tests found`, aucun fichier de test versionné dans `tests/`.
+- `npm run seo:check` : échec `No tests found`, `tests/seo-geo.spec.js` absent.
 - `npm run appmiweb:preflight` : OK avec avertissements attendus sur mentions légales, CTA Réservations et billetterie.
 - Contrôle navigateur Satoshi : 25 pages HTML x 3 largeurs, police locale chargée, aucune famille calculée hors Satoshi, aucun débordement horizontal.
 

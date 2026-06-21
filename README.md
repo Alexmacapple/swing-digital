@@ -24,14 +24,14 @@ python3 -m http.server 8080
 
 ```bash
 npm test
-# Dernier run observé : 1 301 tests passés, 154 ignorés
+# État actuel : aucun fichier de test versionné, Playwright retourne "No tests found"
 ```
 
 Contrôle SEO/GEO ciblé :
 
 ```bash
 npm run seo:check
-# Dernier run observé : 9/9 tests passés
+# État actuel : tests/seo-geo.spec.js absent, Playwright retourne "No tests found"
 ```
 
 ## Stack technique
@@ -39,7 +39,7 @@ npm run seo:check
 - HTML5 sémantique (24 pages)
 - CSS3 responsive (variables, BEM, mobile-first)
 - JavaScript vanilla (navigation, vidéos, animations)
-- Playwright (tests automatisés)
+- Playwright (harnais à restaurer : aucun test versionné actuellement)
 - Lighthouse et contrôles SEO/GEO de préproduction
 - Police : Satoshi Variable auto-hébergée
 - Pas de framework ni bundler

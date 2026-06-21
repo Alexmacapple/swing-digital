@@ -21,7 +21,7 @@
 | 9. UX | Footer 8 liens, bouton retour en haut | Terminé |
 | 10. SEO | Favicon, og:image, width/height images | Terminé |
 | 11. Zoom 200% | 7 corrections RGAA 10.4 / WCAG 1.4.4 | Terminé |
-| 12. Tests | Playwright : dernier run observé 1 301 passés, 154 ignorés | Terminé |
+| 12. Tests | Harnais Playwright à restaurer : `npm test` et `seo:check` retournent `No tests found` | À reprendre |
 | 13. SEO/GEO préproduction | Canonicals Appmiweb, sitemap, robots, `llms.txt`, JSON-LD, FAQ, réponses directes | Terminé |
 | 14. Packaging production | `npm run build:prod`, `dist/` public, preflight Appmiweb | Terminé |
 | 15. PRD production SEO/GEO | PRD-001 : mesure, LCP, politique crawlers IA | Terminé |

@@ -59,11 +59,11 @@
 - [x] Cache-buster CSS sur les 24 pages
 - [x] Scrollbar masquée, menus scrollables, seuil tactile 44px
 - [x] Test cross-browser Chrome DevTools (iPhone, desktop 1100/1440/1920)
-- [x] Tests visuels PRD-091 : 65 sections testees (24 pages x sections), 65/65 PASS
+- [x] Tests visuels PRD-091 : 65 sections testées (24 pages x sections), 65/65 PASS
 - [x] Bascule SEO de préproduction vers `https://swing.appmiweb.com`
 - [x] Audit SEO/GEO de préproduction : 23 URL sitemap en 200, canonicals OK, JSON-LD présent
-- [x] `npm run seo:check` : 9/9 tests passés
-- [x] Suite complète Playwright : 1 301 tests passés, 154 ignorés
+- [ ] Restaurer `npm run seo:check` : `tests/seo-geo.spec.js` est absent
+- [ ] Restaurer la suite Playwright : `npm test` retourne `No tests found`
 - [x] `npm run build:prod` et `npm run appmiweb:preflight`
 - [x] PRD-001 créé : mise en production SEO/GEO et mesure
 - [x] PRD-007 créé : migration typographique Satoshi
