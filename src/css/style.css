@@ -63,10 +63,8 @@
     --color-brand-peach: #FF9966;
     --color-background-pink: #FF427D; /* décoratif uniquement, pas pour texte blanc normal */
     --color-background-pink-readable: #C9365D; /* 5.04:1 sur blanc */
-    --gradient-background-pink: linear-gradient(90deg, #D54267 0%, #E85958 50%, #E97C54 100%);
-    --gradient-background-pink-readable:
-        linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24)),
-        var(--gradient-background-pink);
+    --gradient-background-pink: linear-gradient(90deg, #C84C59 0%, #C74361 52%, #B9365D 100%);
+    --gradient-background-pink-readable: var(--gradient-background-pink);
     --color-brand-red-btn: #C23537;
     --color-brand-red-dark: #c0392b;
     --color-brand-rose: #B5364E;
@@ -1802,21 +1800,29 @@ a.page13__card--link:focus-visible {
     text-shadow: var(--shadow-text);
 }
 
-.skip-link {
+.skip-links {
     position: absolute;
-    top: -100%;
+    top: 0;
     left: 0;
+    z-index: 1002;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transform: translateY(-120%);
+}
+
+.skip-links:focus-within {
+    transform: translateY(0);
+}
+
+.skip-link {
     background: var(--color-background-pink-readable);
     color: var(--color-white);
     padding: 0.5rem 1rem;
-    z-index: 1002;
     font-family: var(--font-primary);
     font-weight: 700;
     text-decoration: none;
-}
-
-.skip-link:focus {
-    top: 0;
 }
 
 /* ============================================================

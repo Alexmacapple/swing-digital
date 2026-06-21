@@ -2,6 +2,8 @@
 
 ## 2026-06-21
 
+- Accessibilité : ajout des liens d’évitement `Aller au contenu`, `Aller au menu` et `Aller au pied de page` sur toutes les pages.
+- Correction globale des fonds roses : suppression du voile noir et du stop orange brunissant sur la variable partagée, avec cache-buster CSS aligné sur toutes les pages.
 - Correction PRD-012 accueil : retrait du calque de teinte sur la vidéo hero et passage du lien d’évitement sur le fond rose lisible.
 - Correction PRD-016 contact : suppression du filtre couleur sur la vidéo pour conserver le rendu du fichier fourni, avec cache-buster CSS.
 - Correction PRD-016 contact : vidéo de fond configurée en autoplay et lancement automatique synchronisé avec le bouton lecture/pause.

@@ -158,15 +158,20 @@ Question de microtypographie à valider avec Stéphanie : afficher le H1 en capi
 - Le visuel de `#page-3` utilise le nouvel asset avec un texte alternatif descriptif.
 - Les métadonnées SEO/GEO principales de l’accueil sont alignées avec le nouveau positionnement éditorial.
 - Le calque de teinte du hero `#page-1` est retiré : la vidéo `video/hero.mp4` est affichée sans overlay rose/corail ni opacité artificielle.
-- Le lien d’évitement utilise le fond rose lisible `--color-background-pink-readable`, et non le rouge historique.
-- Les ajustements CSS restent ciblés : retrait du calque hero, lien d’évitement rose et contraintes responsive existantes conservées.
-- Un test Playwright dédié couvre le contenu éditorial, l’absence de l’ancienne ligne de soutiens, le chargement du nouvel asset et le comportement responsive.
+- Les liens d’évitement utilisent le fond rose lisible `--color-background-pink-readable`, et non le rouge historique.
+- La variable globale `--gradient-background-pink-readable` ne superpose plus de voile noir sur le fond rose.
+- Le dégradé rose partagé ne contient plus le stop orange `#E97C54` qui brunissait `index.html#page-3` et `espaces-augmentes.html#page-5`.
+- Les ajustements CSS restent ciblés : retrait du calque hero, liens d’évitement roses, fonds roses partagés et contraintes responsive existantes conservées.
+- Le cache-buster CSS est aligné sur `20260621-2356` pour toutes les pages HTML afin d’éviter une ancienne version en cache.
+- Un test Playwright dédié couvre le contenu éditorial, l’absence de l’ancienne ligne de soutiens, le chargement du nouvel asset, les fonds roses partagés et le comportement responsive.
 
 Validations exécutées :
 
-- `npx playwright test tests/prd012-accueil-editorial-visuels.spec.js` : 6 passés, 4 ignorés volontairement hors contrôle source.
-- `npm run build:prod` : OK, 440 fichiers copiés dans `dist/`, 3 artefacts exclus.
-- `npm test` : 35 passés, 20 ignorés volontairement selon la configuration viewport.
+- `npx playwright test tests/prd012-accueil-editorial-visuels.spec.js --project=desktop-1920` : 3 passés.
+- `npx playwright test tests/prd012-accueil-editorial-visuels.spec.js` : 11 passés, 4 ignorés volontairement hors contrôle source.
+- Inspection visuelle locale : `index.html#page-3` et `espaces-augmentes.html#page-5` affichent un rose soutenu sans dérive marron/orange.
+- `npm run build:prod` : OK, 457 fichiers copiés dans `dist/`, 3 artefacts exclus.
+- `npm test` : 97 passés, 48 ignorés volontairement selon la configuration viewport.
 - `npm run seo:check` : 4 passés.
 
 ---
@@ -181,7 +186,10 @@ Validations exécutées :
 - Le nouvel asset issu de `1_swing.jpg` est référencé depuis `src/index.html`.
 - L’image possède un attribut `alt` utile.
 - La vidéo hero `#page-1` n’est pas recouverte par le calque `--gradient-hero-video-tint`.
-- Le lien d’évitement `.skip-link` utilise le fond rose lisible du site.
+- Les liens d’évitement `.skip-link` utilisent le fond rose lisible du site.
+- `--gradient-background-pink-readable` pointe directement sur `--gradient-background-pink`, sans voile noir.
+- `--gradient-background-pink` ne contient plus `#E97C54`.
+- `index.html#page-3` et `espaces-augmentes.html#page-5` utilisent le fond rose partagé sans filtre CSS.
 - Aucun débordement horizontal n’est observé à 375, 600, 768, 1024 et 1440 px.
 - `npm run build:prod`, `npm test` et `npm run seo:check` terminent avec un code `0`.
 
@@ -199,6 +207,7 @@ Validations exécutées :
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Correction globale du fond rose partagé pour supprimer le voile noir et l’orange brunissant |
 | 2026-06-21 | Alex + Codex | Retrait du calque de teinte sur la vidéo hero et passage du lien d’évitement sur le fond rose lisible |
 | 2026-06-21 | Alex + Codex | Implémentation et validation du PRD |
 | 2026-06-21 | Alex + Codex | Création du PRD |

@@ -21,7 +21,7 @@
     <link rel="icon" href="img/favicon.ico">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=20260621-1900">
+    <link rel="stylesheet" href="css/style.css?v=20260621-2356">
     <!-- Données structurées SEO/GEO -->
     <script type="application/ld+json">
     {
@@ -97,7 +97,11 @@
     </script>
 </head>
 <body data-section="experiences" data-page="dessine">
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <nav class="skip-links" aria-label="Liens d’évitement">
+        <a href="#main-content" class="skip-link">Aller au contenu</a>
+        <a href="#site-navigation" class="skip-link">Aller au menu</a>
+        <a href="#site-footer" class="skip-link">Aller au pied de page</a>
+    </nav>
 
     <!-- Header persistant -->
     <header class="site-header">
@@ -107,7 +111,7 @@
                 <span class="site-header__logo-text">Swing Digital</span>
                 <span class="site-header__logo-pipe" aria-hidden="true">|</span>
             </a>
-            <nav aria-label="Menu principal">
+            <nav id="site-navigation" tabindex="-1" aria-label="Menu principal">
                 <button class="site-nav__burger" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Menu de navigation">
                     <span class="site-nav__burger-icon" aria-hidden="true"></span>
                 </button>
@@ -174,7 +178,7 @@
     </nav>
 
     <!-- Contenu principal -->
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
         <h1 class="sr-only">Dessine-moi le vent</h1>
 
         <!-- Page PDF 45 -->
@@ -304,7 +308,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer footer">
+    <footer id="site-footer" class="site-footer footer" tabindex="-1">
         <div class="footer__container">
             <p class="footer__copyright">&copy; 2026 Swing Digital. Tous droits réservés.</p>
             <nav aria-label="Navigation secondaire">

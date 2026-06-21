@@ -60,6 +60,23 @@ test.describe('PRD-011 - menu XR et Films', () => {
     }
   });
 
+  test('toutes les pages HTML exposent les trois liens d’évitement', () => {
+    const pages = listHtmlPages();
+
+    for (const page of pages) {
+      const html = readSrc(page);
+
+      expect(html, page).toContain('<nav class="skip-links" aria-label="Liens d’évitement">');
+      expect(html, page).toContain('<a href="#main-content" class="skip-link">Aller au contenu</a>');
+      expect(html, page).toContain('<a href="#site-navigation" class="skip-link">Aller au menu</a>');
+      expect(html, page).toContain('<a href="#site-footer" class="skip-link">Aller au pied de page</a>');
+      expect(html, page).toContain('<main id="main-content" tabindex="-1">');
+      expect(html, page).toContain('<nav id="site-navigation" tabindex="-1" aria-label="Menu principal">');
+      expect(html, page).toContain('<footer id="site-footer" class="site-footer footer" tabindex="-1">');
+      expect(html, page).not.toContain('Aller au contenu principal');
+    }
+  });
+
   test('la page Films existe et classe Ni vues ni connues comme contenu audiovisuel', () => {
     const html = readSrc('films.html');
 

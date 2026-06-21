@@ -28,6 +28,10 @@ test.describe('PRD-012 - accueil éditorial et visuels', () => {
     expect(css).toContain('.hero-page1__background {\n    display: none;\n}');
     expect(css).not.toContain('--gradient-hero-video-tint');
     expect(css).not.toContain('background: var(--gradient-hero-video-tint)');
+    expect(css).toContain('--gradient-background-pink: linear-gradient(90deg, #C84C59 0%, #C74361 52%, #B9365D 100%);');
+    expect(css).toContain('--gradient-background-pink-readable: var(--gradient-background-pink);');
+    expect(css).not.toContain('linear-gradient(rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24))');
+    expect(css).not.toContain('#E97C54');
 
     expect(html).not.toContain('Créateurs d\'Expériences Transmédia Immersives');
     expect(html).not.toContain('# spectacle vivant # réalité mixte # storytelling');
@@ -86,11 +90,49 @@ test.describe('PRD-012 - accueil éditorial et visuels', () => {
     expect(heroLayout.heroVideoOpacity).toBe('1');
 
     await page.goto('/index.html#page-3');
+    const page3Background = await page.locator('#page-3 .page3__container').evaluate((element) => {
+      const style = window.getComputedStyle(element);
+      return {
+        backgroundColor: style.backgroundColor,
+        backgroundImage: style.backgroundImage,
+        filter: style.filter,
+      };
+    });
+    expect(page3Background.backgroundImage).toContain('rgb(200, 76, 89)');
+    expect(page3Background.backgroundImage).toContain('rgb(199, 67, 97)');
+    expect(page3Background.backgroundImage).toContain('rgb(185, 54, 93)');
+    expect(page3Background.backgroundImage).not.toContain('rgba(0, 0, 0');
+    expect(page3Background.backgroundImage).not.toContain('rgb(233, 124, 84)');
+    expect(page3Background.filter).toBe('none');
+
     const page3Image = page.locator(`#page-3 img[src="${page3ImagePath}"]`);
     await expect(page3Image).toHaveAttribute('alt', /expériences immersives/i);
 
     const imageLoaded = await page3Image.evaluate((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0);
     expect(imageLoaded).toBe(true);
+
+    const overflow = await page.evaluate(() => Math.ceil(document.documentElement.scrollWidth - window.innerWidth));
+    expect(overflow).toBeLessThanOrEqual(1);
+  });
+
+  test('les fonds roses partagés restent proches des références sans brunir', async ({ page }) => {
+    await page.goto('/espaces-augmentes.html#page-5');
+
+    const page5Background = await page.locator('#page-5').evaluate((element) => {
+      const style = window.getComputedStyle(element);
+      return {
+        backgroundColor: style.backgroundColor,
+        backgroundImage: style.backgroundImage,
+        filter: style.filter,
+      };
+    });
+
+    expect(page5Background.backgroundImage).toContain('rgb(200, 76, 89)');
+    expect(page5Background.backgroundImage).toContain('rgb(199, 67, 97)');
+    expect(page5Background.backgroundImage).toContain('rgb(185, 54, 93)');
+    expect(page5Background.backgroundImage).not.toContain('rgba(0, 0, 0');
+    expect(page5Background.backgroundImage).not.toContain('rgb(233, 124, 84)');
+    expect(page5Background.filter).toBe('none');
 
     const overflow = await page.evaluate(() => Math.ceil(document.documentElement.scrollWidth - window.innerWidth));
     expect(overflow).toBeLessThanOrEqual(1);
