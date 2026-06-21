@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Mise à jour du PRD-010 : adoption de `faster-whisper` via `scripts/transcribe-faster-whisper.py` pour produire les transcripts bruts.
 - Mise à jour du PRD-010 : extension du périmètre à toutes les vidéos publiques trouvées dans `src/*.html` et exclusion Git des artefacts locaux audio, vidéo et Whisper.
 - Création du PRD-010 : récupération, transcription Whisper, correction et publication accessible des transcripts des vidéos publiques.
 - Validation et livraison du PRD-007 : Satoshi Variable auto-hébergée sur tout le site, suppression des anciennes polices OTF/TTF, build et contrôles navigateur toutes pages validés.

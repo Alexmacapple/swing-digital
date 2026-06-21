@@ -1,6 +1,6 @@
 # PRD-010 : Transcripts accessibles des vidéos publiques
 
-**Statut** : Cadré, implémentation à planifier
+**Statut** : Cadré, implémentation outillée
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : Conversation, inventaire des liens vidéo publics et référence WAI-ARIA APG Disclosure
@@ -32,7 +32,7 @@ Le fichier `videos.txt` est créé à la racine avec ces six URL.
 
 `yt-dlp` récupère les pistes audio dans `swing_audio/`, les fichiers vidéo de contrôle dans `swing_videos/` si nécessaire, et les sous-titres disponibles dans `swing_subtitles/`.
 
-Whisper transcrit chaque MP3 en français avec le modèle `medium`, puis écrit les formats `.txt`, `.srt`, `.vtt`, `.json` et `.tsv` dans `transcripts/`.
+`faster-whisper` transcrit chaque MP3 en français avec le modèle `medium`, via `scripts/transcribe-faster-whisper.py`, puis écrit les formats `.txt`, `.srt`, `.vtt`, `.json` et `.tsv` dans `transcripts/`.
 
 Le transcript brut de chaque vidéo est corrigé avec le workflow `transcript` : sauvegarde du brut, correction de forme seulement, validation d'intégrité, rapport de corrections et signalement des passages incertains.
 
@@ -79,7 +79,7 @@ Cela crée quatre problèmes :
 
 - accessibilité : le contenu oral ou sonore n'est pas disponible sous forme textuelle adjacente ;
 - conformité : les critères RGAA multimédia ne peuvent pas être validés de manière robuste sans alternative textuelle pertinente ;
-- qualité éditoriale : une transcription brute Whisper peut contenir des erreurs, hallucinations ou graphies instables ;
+- qualité éditoriale : une transcription brute STT peut contenir des erreurs, hallucinations ou graphies instables ;
 - exploitation : les fichiers audio, vidéo, sous-titres, transcripts bruts et transcripts corrigés doivent être distingués pour ne pas publier ou versionner des artefacts inutiles.
 
 ---
@@ -90,7 +90,7 @@ Mettre en place une chaîne documentaire et technique en quatre couches :
 
 1. inventorier les URL vidéo publiques à traiter, avec `videos.txt` comme source de départ ;
 2. récupérer localement l'audio, les éventuels sous-titres et les vidéos de contrôle avec `yt-dlp`, sans versionner ces artefacts lourds ;
-3. produire puis corriger des transcripts avec Whisper et le workflow `transcript`, en conservant les bruts, les audits et les incertitudes ;
+3. produire puis corriger des transcripts avec `faster-whisper` et le workflow `transcript`, en conservant les bruts, les audits et les incertitudes ;
 4. publier les transcripts corrigés sous forme de disclosure accessible adjacent à chaque vidéo ou lien vidéo public concerné.
 
 Le périmètre validé est :
@@ -120,7 +120,7 @@ Le recroisement avec `src/*.html` a validé l'inclusion des autres iframes Vimeo
 - permet de publier un transcript éditorialement contrôlé, pas un brut STT.
 
 **Inconvénients** :
-- nécessite une passe de correction rigoureuse après Whisper ;
+- nécessite une passe de correction rigoureuse après STT ;
 - ajoute du contenu HTML potentiellement long dans les pages ;
 - demande des contrôles clavier, lecteur d'écran et responsive ;
 - impose une gestion claire des artefacts locaux non versionnés.
@@ -182,14 +182,14 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
 
 1. Créer ou confirmer `videos.txt` à la racine avec les six URL du périmètre validé.
 2. Recroiser le périmètre avec `src/*.html`, `plan-du-site.html` et les iframes externes pour produire un inventaire daté des vidéos incluses, exclues ou reportées.
-3. Ajouter ou vérifier des règles `.gitignore` pour exclure `swing_audio/`, `swing_videos/`, `swing_subtitles/` et les artefacts Whisper bruts si ceux-ci ne doivent pas être versionnés.
-4. Vérifier localement la disponibilité de `yt-dlp`, `ffmpeg` et `whisper`, sans lancer de commande `sudo` depuis Codex.
+3. Ajouter ou vérifier des règles `.gitignore` pour exclure `swing_audio/`, `swing_videos/`, `swing_subtitles/` et les artefacts STT bruts si ceux-ci ne doivent pas être versionnés.
+4. Vérifier localement la disponibilité de `yt-dlp`, `ffmpeg`, du Python `gemma4/.venv` et du module `faster_whisper`, sans lancer de commande `sudo` depuis Codex.
 5. Récupérer l'audio avec :
 
    ```bash
    mkdir -p swing_audio
 
-   yt-dlp \
+   /Users/alex/Claude/projets-heberges/gemma4/.venv/bin/yt-dlp \
      -x --audio-format mp3 --audio-quality 0 \
      -o "swing_audio/%(title).200s [%(id)s].%(ext)s" \
      -a videos.txt
@@ -200,7 +200,7 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
    ```bash
    mkdir -p swing_subtitles
 
-   yt-dlp \
+   /Users/alex/Claude/projets-heberges/gemma4/.venv/bin/yt-dlp \
      --write-subs --write-auto-subs \
      --sub-langs "fr,en.*" \
      --skip-download \
@@ -209,19 +209,15 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
    ```
 
 7. Récupérer les fichiers vidéo uniquement si nécessaire au contrôle qualité, dans `swing_videos/`, sans les publier.
-8. Transcrire les MP3 avec Whisper en français :
+8. Transcrire les MP3 avec `faster-whisper` en français :
 
    ```bash
-   mkdir -p transcripts
-
-   for f in swing_audio/*.mp3; do
-     whisper "$f" \
-       --language French \
-       --task transcribe \
-       --model medium \
-       --output_dir transcripts \
-       --output_format all
-   done
+   /Users/alex/Claude/projets-heberges/gemma4/.venv/bin/python \
+     scripts/transcribe-faster-whisper.py \
+     --input-dir swing_audio \
+     --output-dir transcripts \
+     --model medium \
+     --language fr
    ```
 
 9. Pour chaque transcript brut, appliquer le workflow `transcript` en sortie Markdown structurée accessible, avec rapport d'audit séparé et sauvegarde du brut.
@@ -259,7 +255,7 @@ Ces points ne bloquent pas la création du PRD, mais ils doivent être résolus 
 - `videos.txt` existe à la racine et contient les six URL du périmètre validé, une par ligne.
 - Un inventaire daté liste 100 % des vidéos incluses, exclues ou reportées après recrawl de `src/*.html`.
 - Pour chaque URL incluse, au moins un fichier audio MP3 existe dans `swing_audio/` après exécution de `yt-dlp`.
-- Pour chaque URL incluse, Whisper produit au minimum un `.txt`, un `.srt`, un `.vtt`, un `.json` et un `.tsv` dans `transcripts/`.
+- Pour chaque URL incluse, `scripts/transcribe-faster-whisper.py` produit au minimum un `.txt`, un `.srt`, un `.vtt`, un `.json` et un `.tsv` dans `transcripts/`.
 - Pour chaque transcript publié, un transcript corrigé et un rapport d'audit séparé existent.
 - Le validateur `validate_transcript_integrity.py` du workflow `transcript` passe sur chaque transcript corrigé ou indique explicitement pourquoi le cas est non applicable.
 - Aucun fichier audio ou vidéo de travail n'est présent dans `src/` ou `dist/`.
@@ -283,13 +279,13 @@ Le post-traitement de transcript assisté par LLM ne garantit pas à lui seul la
 
 Limites structurelles à prendre en compte :
 
-- Whisper peut omettre des mots, halluciner des segments courts ou mal ponctuer les échanges.
+- `faster-whisper` peut omettre des mots, halluciner des segments courts ou mal ponctuer les échanges.
 - Un LLM peut lisser le registre oral alors que le workflow `transcript` exige de conserver les formulations réellement prononcées.
 - Un LLM peut normaliser à tort un nom propre, un organisme ou un acronyme connu mais absent du brut.
 - La correction doit porter sur la forme, pas sur le fond : pas de résumé, pas de reformulation, pas de traduction implicite.
 - Les passages inaudibles doivent être signalés, jamais devinés.
-- Sans écoute humaine ponctuelle ou source témoin, les désaccords entre Whisper, sous-titres automatiques et audio doivent rester documentés comme incertains.
-- Le coût réel inclut la récupération des médias, le temps Whisper, la correction, les contrôles RGAA et la validation éditoriale.
+- Sans écoute humaine ponctuelle ou source témoin, les désaccords entre `faster-whisper`, sous-titres automatiques et audio doivent rester documentés comme incertains.
+- Le coût réel inclut la récupération des médias, le temps de transcription STT, la correction, les contrôles RGAA et la validation éditoriale.
 
 ---
 
@@ -299,7 +295,7 @@ Limites structurelles à prendre en compte :
 - Exemple APG image description : `https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-image-description/`
 - RGAA, critères et tests, thématique Multimédia : `https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/`
 - yt-dlp : `https://github.com/yt-dlp/yt-dlp`
-- OpenAI Whisper : `https://github.com/openai/whisper`
+- faster-whisper : `https://github.com/SYSTRAN/faster-whisper`
 
 ---
 
@@ -307,5 +303,6 @@ Limites structurelles à prendre en compte :
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Adoption de `faster-whisper` et ajout du script de transcription local |
 | 2026-06-21 | Alex + Codex | Extension du périmètre à toutes les vidéos publiques trouvées dans `src/*.html` |
 | 2026-06-21 | Alex + Codex | Création du PRD |
