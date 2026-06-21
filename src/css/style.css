@@ -4776,6 +4776,34 @@ section:hover [class*="__category"]::after {
     }
 }
 
+.page52--export {
+    height: var(--section-height);
+    min-height: var(--section-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1ddc5;
+}
+
+.page52--export .page52__export-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .page52--export {
+        height: auto;
+        min-height: 0;
+        padding: var(--space-xl) 0;
+    }
+
+    .page52--export .page52__export-image {
+        height: auto;
+    }
+}
+
 /* ============================================================
    PAGE 51 : MARILYN - Réalité mixte/Théâtre (texte + photo)
    ============================================================ */

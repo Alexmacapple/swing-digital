@@ -2,6 +2,7 @@
 
 ## 2026-06-21
 
+- Mise à jour du PRD-014 après réponse de Stéphanie : mapping Marilyn confirmé, `marilyn.html#page-52` remplacée par l’export validé pour éviter deux images de tailles différentes, écriture inclusive maintenue uniquement sur Lautrec.
 - Mise à jour du PRD-016 après réponse de Stéphanie : nouvelle adresse confirmée comme siège social dans les mentions légales, dénomination légale `Swing Digital Production` conservée et animation logo rose laissée en attente d’asset.
 - Implémentation du PRD-016 phase 1 : marque visible `Swing Digital` et nouvelle adresse `59, rue du Département, 75018 Paris` sur le bloc contact de l’accueil, avec maintien prudent des mentions légales.
 - Implémentation du PRD-015 : création de `memory-box-vr.html`, intégration des exports Memory Box, reroutage des liens Memory Box, alignement sitemap / plan du site / fichiers IA et test Playwright dédié.

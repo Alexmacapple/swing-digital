@@ -3,7 +3,7 @@
 **Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
-**Source** : `retour/changements_site (1).docx`, `retour/site_images/Marilyn*.jpg`, `retour/site_images/Lautrec*.jpg`, `retour/site_images/Charlotte*.jpg`, inspection de `src/marilyn.html`, `src/toulouse-lautrec.html` et `src/charlotte-henschel.html`
+**Source** : `retour/changements_site (1).docx`, `retour/site_images/Marilyn*.jpg`, `retour/site_images/Lautrec*.jpg`, `retour/site_images/Charlotte*.jpg`, inspection de `src/marilyn.html`, `src/toulouse-lautrec.html` et `src/charlotte-henschel.html`, réponse de Stéphanie du 2026-06-21
 
 ---
 
@@ -29,6 +29,8 @@ Sur `#page-56`, la biographie de Charlotte est mise en lignes plus lisibles, san
 
 Un visiteur ouvre `marilyn.html#page-50`. Les logos et exports sont remplacés ou recadrés de façon nette, sans compression visible et sans chevauchement.
 
+Un visiteur ouvre `marilyn.html#page-52`. La page ne reconstruit plus deux visuels de tailles différentes. Elle utilise l’export `marilyn-page-52.jpg` validé, tout en conservant les textes essentiels en HTML masqué pour l’accessibilité.
+
 ---
 
 ## Contexte
@@ -41,6 +43,10 @@ Un visiteur ouvre `marilyn.html#page-50`. Les logos et exports sont remplacés o
 - `src/charlotte-henschel.html#page-56` contient une seule phrase longue.
 - `src/marilyn.html#page-50` utilise des logos séparés et Stéphanie signale un problème de logos.
 - Les nouveaux assets fournis sont en 842 x 595 px pour les exports complets des pages projet.
+- Réponse de Stéphanie : `Marilyn_1.jpg`, `Marilyn2.jpg` et `Marilyn3.jpg` correspondent bien aux pages 50, 51 et 52 dans cet ordre.
+- Réponse de Stéphanie : les logos Marilyn sont résolus ; priorité à l’image la plus nette possible.
+- Réponse de Stéphanie : sur `marilyn.html#page-52`, les deux images ne doivent pas être reconstruites avec des tailles différentes.
+- Réponse de Stéphanie : l’écriture inclusive `acteur·rices` est validée pour Lautrec, mais ne doit pas être généralisée partout pour ne pas alourdir la lecture.
 
 Assets fournis :
 
@@ -77,7 +83,7 @@ Principes :
 
 - les exports Marilyn, Toulouse-Lautrec et Charlotte Henschel sont copiés dans des chemins stables sous `src/img/pages/` ;
 - `marilyn.html#page-50` utilise l’export complet `marilyn-page-50.jpg` avec contenu sémantique conservé pour l’accessibilité ;
-- `marilyn.html#page-52` corrige `Marilyn` et `parcours en direct` ;
+- `marilyn.html#page-52` utilise l’export complet `marilyn-page-52.jpg` pour éviter deux visuels de tailles différentes, avec contenu sémantique conservé pour l’accessibilité ;
 - `toulouse-lautrec.html#page-53` et `#page-54` reprennent les nouvelles formulations HTML ;
 - `charlotte-henschel.html#page-55` corrige la capitalisation et la formulation ;
 - `charlotte-henschel.html#page-56` découpe la biographie en lignes lisibles ;
@@ -133,7 +139,7 @@ Retenir l’Option A.
 
 Les textes demandés par Stéphanie doivent être intégrés en HTML. Les exports complets servent à remplacer les images quand la page actuelle est principalement visuelle, ou à guider les corrections de logos et de composition.
 
-Pour Marilyn, le mapping exact des trois exports doit être confirmé avant de supprimer les images existantes, sauf si l’inspection visuelle permet d’établir une correspondance évidente.
+Pour Marilyn, le mapping des trois exports est confirmé. La page 52 est donc traitée comme une section image-first : l’export complet est utilisé pour éviter la reconstruction HTML de deux visuels à tailles différentes, et les textes sont conservés en HTML masqué.
 
 ---
 
@@ -147,7 +153,7 @@ Pour Marilyn, le mapping exact des trois exports doit être confirmé avant de s
 6. Recomposer le bloc biographique de `charlotte-henschel.html#page-56` avec une meilleure mise à la ligne.
 7. Corriger les capitalisations visibles : noms propres, `en réalité mixte`, Belle Époque, Montmartre.
 8. Corriger les logos de Marilyn avec les assets fournis ou les logos séparés existants selon le rendu le plus net.
-9. Remplacer les images compressées si les exports fournis sont plus nets et compatibles avec la mise en page.
+9. Remplacer `marilyn.html#page-52` par l’export validé `marilyn-page-52.jpg`, tout en conservant les textes essentiels en HTML accessible.
 10. Mettre à jour les attributs `alt`, dimensions et `loading` des images remplacées.
 11. Ajuster le CSS uniquement si les nouveaux ratios d’image l’exigent.
 12. Mettre à jour le cache-buster CSS si le CSS change.
@@ -164,6 +170,8 @@ Pour Marilyn, le mapping exact des trois exports doit être confirmé avant de s
 - `src/toulouse-lautrec.html` contient `les muses sortent de l’ombre et prennent la parole`.
 - `src/charlotte-henschel.html` contient la nouvelle formulation `Une valise restée quarante ans dans l'oubli, sous un lit.`
 - `src/charlotte-henschel.html` contient `Charlotte a peint` et `plus de 220 tableaux` dans un bloc lisible.
+- `src/marilyn.html` référence `img/pages/marilyn/marilyn-page-52.jpg` pour `#page-52`.
+- `src/marilyn.html` ne référence plus `img/pages/page-52/page-52-image-1.jpg` ni `img/pages/page-52/page-52-image-2.jpg`.
 - Les images remplacées référencent des fichiers présents dans `src/img/`.
 - Chaque nouvelle image possède un `alt` adapté.
 - Aucun débordement horizontal n’est observé à 375, 600, 768, 1024 et 1440 px sur les trois pages.
@@ -171,11 +179,12 @@ Pour Marilyn, le mapping exact des trois exports doit être confirmé avant de s
 
 ---
 
-## Questions pour Stéphanie
+## Réponses de Stéphanie
 
-1. Les fichiers `Marilyn_1.jpg`, `Marilyn2.jpg` et `Marilyn3.jpg` correspondent-ils aux pages 50, 51 et 52 dans cet ordre ?
-2. Pour Marilyn, faut-il remplacer toute la page 50 par l’export complet, ou seulement corriger les logos sur la composition HTML actuelle ?
-3. Pour Charlotte, souhaites-tu conserver `acteur·rices` seulement sur Lautrec, ou appliquer une écriture inclusive similaire ailleurs ?
+1. Les fichiers `Marilyn_1.jpg`, `Marilyn2.jpg` et `Marilyn3.jpg` correspondent aux pages 50, 51 et 52 dans cet ordre.
+2. Pour Marilyn, les logos sont résolus ; il faut privilégier l’image la plus nette possible et éviter toute image dégradée.
+3. Sur `marilyn.html#page-52`, les deux images ne doivent pas être reconstruites avec des tailles différentes.
+4. L’écriture inclusive `acteur·rices` est validée pour Lautrec ; elle ne doit pas être généralisée partout pour éviter d’alourdir la lecture.
 
 ---
 
@@ -183,5 +192,6 @@ Pour Marilyn, le mapping exact des trois exports doit être confirmé avant de s
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Intégration de la réponse de Stéphanie : mapping Marilyn confirmé, page 52 remplacée par l’export validé, écriture inclusive limitée à Lautrec |
 | 2026-06-21 | Alex + Codex | Implémentation des corrections Marilyn, Toulouse-Lautrec et Charlotte Henschel, intégration des exports et test Playwright dédié |
 | 2026-06-21 | Alex + Codex | Création du PRD |

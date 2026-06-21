@@ -35,6 +35,9 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
     expect(marilyn).not.toContain('img/pages/page-50/page-50-image-4.jpg');
     expect(marilyn).not.toContain('img/pages/page-50/page-50-image-3.jpg');
     expect(marilyn).not.toContain('img/pages/page-50/page-50-image-2.jpg');
+    expect(marilyn).toContain('img/pages/marilyn/marilyn-page-52.jpg');
+    expect(marilyn).not.toContain('img/pages/page-52/page-52-image-1.jpg');
+    expect(marilyn).not.toContain('img/pages/page-52/page-52-image-2.jpg');
     expect(marilyn).not.toContain('parcours EN direct');
     expect(marilyn).toContain('parcours en direct');
 
@@ -55,6 +58,7 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
 
   for (const { url, selector } of [
     { url: '/marilyn.html#page-50', selector: '#page-50' },
+    { url: '/marilyn.html#page-52', selector: '#page-52' },
     { url: '/toulouse-lautrec.html#page-53', selector: '#page-53' },
     { url: '/toulouse-lautrec.html#page-54', selector: '#page-54' },
     { url: '/charlotte-henschel.html#page-55', selector: '#page-55' },
