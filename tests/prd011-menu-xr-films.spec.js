@@ -77,6 +77,17 @@ test.describe('PRD-011 - menu XR et Films', () => {
     }
   });
 
+  test('toutes les pages HTML versionnent le script principal', () => {
+    const pages = listHtmlPages();
+
+    for (const page of pages) {
+      const html = readSrc(page);
+
+      expect(html, page).toContain('<script src="js/main.js?v=20260621-autoplay" defer></script>');
+      expect(html, page).not.toContain('<script src="js/main.js" defer></script>');
+    }
+  });
+
   test('la page Films existe et classe Ni vues ni connues comme contenu audiovisuel', () => {
     const html = readSrc('films.html');
 

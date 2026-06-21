@@ -85,6 +85,7 @@ Pour les mentions légales :
 - l’asset `src/accueil-1.mp4` est présent dans l’arborescence publique ;
 - la vidéo de `page-62` est affichée sans filtre rose ni rotation de teinte ;
 - la vidéo de `page-62` est configurée en autoplay, muette, en boucle et synchronisée avec le bouton lecture/pause ;
+- les pages HTML chargent `js/main.js?v=20260621-autoplay` pour éviter que Cloudflare serve l’ancien script qui mettait la vidéo contact en pause ;
 - le test Playwright `tests/prd016-contact-adresse-logo.spec.js` couvre le bloc source et le rendu responsive.
 
 ---
@@ -168,6 +169,7 @@ Dans les mentions légales, conserver `Swing Digital Production` comme dénomina
 - Le nouvel asset d’animation fourni est présent dans `src/` et référencé par le bloc contact en chemin relatif.
 - Le rendu de la vidéo de contact reste au plus proche du fichier fourni, sans filtre rose.
 - La vidéo de contact démarre automatiquement quand la page est rendue, avec fallback manuel via le bouton.
+- Toutes les pages HTML référencent `js/main.js?v=20260621-autoplay` et ne référencent plus `js/main.js` sans version.
 - Aucun débordement horizontal n’est observé à 375, 600, 768, 1024 et 1440 px sur la section contact.
 - `npm run build:prod`, `npm test` et `npm run seo:check` terminent avec un code `0`.
 
@@ -185,6 +187,7 @@ Dans les mentions légales, conserver `Swing Digital Production` comme dénomina
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Ajout d’un cache-buster sur `js/main.js` pour forcer le script qui démarre la vidéo contact en autoplay |
 | 2026-06-21 | Alex + Codex | Suppression du filtre couleur sur la vidéo contact pour conserver le rendu du fichier fourni, avec cache-buster CSS |
 | 2026-06-21 | Alex + Codex | Activation de l’autoplay sur la vidéo contact et synchronisation du bouton lecture/pause |
 | 2026-06-21 | Alex + Codex | Remplacement de la vidéo de fond du contact par `accueil-1.mp4` en chemin relatif, sans modifier le reste de la section |
