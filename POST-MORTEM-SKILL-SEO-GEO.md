@@ -173,6 +173,8 @@ Quand le domaine final n'est pas en ligne, les citations réelles ne sont pas me
 
 Amélioration proposée : générer un fichier de test avec requêtes ChatGPT, Perplexity et Claude, colonnes de citations, concurrents cités, faits repris, erreurs, sources utilisées et date du test.
 
+Pattern validé sur Swing Digital : produire un CSV prêt à remplir et une courte note d'exécution. Le CSV doit couvrir au minimum les familles `brand_discovery`, `category_discovery`, `concept_explanation`, `project_discovery`, `booking_boundary` et `source_integrity`. Tant que les résultats ne sont pas saisis, le rapport peut monter en readiness, mais il doit afficher clairement `ready_not_executed` et garder les citations réelles en `unknown`.
+
 10. Renforcer les recommandations orientées décision
 
 Les meilleurs passages du rapport sont ceux qui disent quoi faire maintenant, quoi différer et pourquoi. C'est particulièrement utile quand un score faible est normal en préproduction.
@@ -183,7 +185,7 @@ Amélioration proposée : pour chaque scorecard, ajouter `next_now`, `defer_unti
 
 | Quand | Action | Preuve attendue |
 |-------|--------|-----------------|
-| Maintenant | Partager ce post-mortem à Loïc comme retour d'usage sur le skill. | Les patterns réutilisables sont visibles : mode préproduction, reçu de rapport courant, comparaison native, responsive lazy-load avant/après scroll. |
+| Maintenant | Partager ce post-mortem à Loïc comme retour d'usage sur le skill. | Les patterns réutilisables sont visibles : mode préproduction, reçu de rapport courant, comparaison native, responsive lazy-load avant/après scroll, panel GEO/Citation prêt mais non exécuté. |
 | Préproduction continue | Conserver un contrôle Search/Crawl public après chaque publication, purge ou changement d'asset. | Le skill sait distinguer retour d'artefact public, cache obsolète et état local sain. |
 | Avant production finale | Garder les gates production séparés : hébergeur légal, domaine final HTTPS, GSC, GA4/GTM, Bing Webmaster, scénario Réservations. | Le rapport ne pousse pas à brancher des outils de production ou à inventer des métriques tant que le site reste en préproduction. |
 | Après domaine final | Lancer un panel GEO/Citation sur ChatGPT, Perplexity et Claude. | Le skill passe d'une readiness IA à une mesure de citations réelles, avec requêtes, réponses, concurrents cités, sources reprises et erreurs. |

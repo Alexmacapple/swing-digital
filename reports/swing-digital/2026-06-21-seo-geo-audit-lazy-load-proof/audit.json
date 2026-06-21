@@ -2,20 +2,21 @@
   "site": "swing.appmiweb.com",
   "audited_url": "https://swing.appmiweb.com/",
   "report_language": "fr",
-  "generated_at": "2026-06-21T00:14:54.416940+00:00",
+  "generated_at": "2026-06-21T00:28:40Z",
   "summary": {
-    "headline": "Audit SEO/GEO public régénéré après correction du script responsive lazy-load : le faux warning images disparaît, Search/Crawl reste validé et les gates production restent inchangés.",
-    "description": "Rapport généré avec le script capture_site_screenshots.mjs corrigé. Le protocole scrolle désormais la page avant de scorer les images lazy-load et distingue images chargées initialement, chargées après scroll, cassées et encore différées.",
+    "headline": "Audit SEO/GEO public régénéré après correction du script responsive lazy-load et préparation du panel GEO/Citation.",
+    "description": "Rapport généré avec le script capture_site_screenshots.mjs corrigé. Le protocole scrolle désormais la page avant de scorer les images lazy-load et distingue images chargées initialement, chargées après scroll, cassées et encore différées. Le panel GEO/Citation est prêt à exécuter, sans encore constituer une preuve de citation réelle.",
     "status": "partial",
     "biggest_blocker": "Les données propriétaires et la production finale restent absentes : GSC, GA4/GTM, Bing Webmaster, logs, citations IA réelles, hébergeur légal et scénario Réservations.",
-    "fastest_win": "Pour améliorer le skill de façon générique, intégrer nativement la mesure responsive avant/après scroll et produire un reçu clair du rapport courant.",
+    "fastest_win": "Exécuter le panel GEO/Citation si la préproduction publique est acceptée comme cible de mesure ; sinon conserver le protocole prêt pour le domaine final.",
     "data_confidence": "high",
-    "decision": "PRD-006 est validé côté outil : le site ne change pas, mais le rapport devient plus juste en ne pénalisant plus les images lazy-load saines."
+    "decision": "PRD-006 est validé côté outil et GEO/Citation progresse en readiness : le site ne change pas, mais le rapport devient plus juste et le protocole de mesure IA est traçable."
   },
   "executive_brief": [
     "Search/Crawl reste stable à 9/10 : 0 écart public, 24 URL sitemap contrôlées et 9 artefacts interdits non publics.",
     "Responsive dynamique passe de warning à pass : 26 images desktop sont chargées après scroll, 0 image cassée, 0 image encore différée.",
     "Le gain porte sur la qualité du skill et du protocole d’audit, pas sur une modification du site Swing Digital.",
+    "GEO/Citation monte en readiness grâce à un panel de 18 requêtes prêt à exécuter sur ChatGPT, Perplexity et Claude ; les citations réelles restent non mesurées.",
     "Measurement reste volontairement à 5,5/10 tant que le vrai domaine de production et les accès propriétaires ne sont pas prêts.",
     "Le post-mortem Loïc doit retenir ce pattern : distinguer défaut site, limite de préproduction, cache public et limite de l’outil."
   ],
@@ -69,6 +70,11 @@
       "label": "Données propriétaires",
       "value": "unknown",
       "detail": "GSC, GA4/GTM, Bing Webmaster, logs, citations IA et conversions non fournis."
+    },
+    {
+      "label": "Panel GEO/Citation",
+      "value": "18 requêtes",
+      "detail": "6 familles de prompts x 3 moteurs, prêt à exécuter ; résultats laissés unknown tant que le panel n’est pas lancé."
     }
   ],
   "scorecards": [
@@ -98,9 +104,9 @@
     },
     {
       "label": "GEO/Citation",
-      "score": 7.5,
+      "score": 8,
       "max": 10,
-      "note": "Base d’extraction solide avec faits visibles et couche IA ; panel de citations réel non lancé."
+      "note": "Base d’extraction solide avec faits visibles, couche IA et panel de 18 requêtes prêt ; citations réelles toujours non mesurées."
     },
     {
       "label": "Measurement",
@@ -110,9 +116,9 @@
     },
     {
       "label": "Readiness globale",
-      "score": 8.6,
+      "score": 8.7,
       "max": 10,
-      "note": "Préproduction robuste ; le gain vient de la fiabilité du rapport responsive, tandis que production finale et mesure réelle restent hors périmètre."
+      "note": "Préproduction robuste ; le gain vient de la fiabilité du rapport responsive et du protocole GEO/Citation prêt, tandis que production finale et mesure réelle restent hors périmètre."
     }
   ],
   "findings": [
@@ -209,6 +215,37 @@
           "path": "ai-public-endpoints.json"
         }
       ]
+    },
+    {
+      "priority": "P2",
+      "title": "Panel GEO/Citation prêt, mais non exécuté",
+      "observed": [
+        "La couche IA publique est disponible : /llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld.",
+        "Un panel de 18 requêtes est préparé : 6 familles de prompts sur ChatGPT, Perplexity et Claude.",
+        "Les colonnes de résultats restent vides ou unknown tant qu’aucune exécution réelle n’a été saisie."
+      ],
+      "inferred": [
+        "La readiness GEO/Citation progresse parce que le protocole de mesure devient exécutable et traçable.",
+        "Le rapport ne doit pas interpréter cette préparation comme une preuve de citation réelle.",
+        "Le score peut monter en readiness, mais les corrections éditoriales dépendront des réponses observées."
+      ],
+      "recommended": [
+        "Exécuter le panel sur la préproduction si elle est acceptée comme cible de test IA.",
+        "Sinon conserver le panel comme artefact prêt pour le domaine final HTTPS.",
+        "Reporter le pattern dans le skill : quand les citations réelles manquent, générer un panel prêt à remplir plutôt qu’un simple conseil générique."
+      ],
+      "evidence": [
+        {
+          "label": "Panel GEO/Citation",
+          "path": "geo-citation-panel.csv",
+          "status": "18 lignes prêtes, résultats unknown"
+        },
+        {
+          "label": "Mode d’emploi du panel",
+          "path": "geo-citation-panel.md",
+          "status": "prêt à exécuter"
+        }
+      ]
     }
   ],
   "analysis_cohorts": [
@@ -223,12 +260,12 @@
     },
     {
       "name": "AI citation",
-      "score": "7.5/10",
+      "score": "8/10",
       "status": "partial",
       "what_it_checks": "Faits extractibles, couche IA, limites et préparation aux citations.",
-      "verdict": "La base est solide mais les citations réelles ne sont pas encore mesurées.",
-      "evidence": "/llms.txt, /for-ai, /for-ai.json, /for-ai.txt et schema-webpage.jsonld publics.",
-      "next_action": "Lancer le panel de requêtes ChatGPT, Perplexity et Claude."
+      "verdict": "La base est solide et le panel de mesure est prêt ; les citations réelles ne sont pas encore mesurées.",
+      "evidence": "/llms.txt, /for-ai, /for-ai.json, /for-ai.txt, schema-webpage.jsonld publics et geo-citation-panel.csv prêt avec 18 requêtes.",
+      "next_action": "Exécuter le panel de requêtes ChatGPT, Perplexity et Claude, puis saisir les citations et erreurs observées."
     },
     {
       "name": "Browser agent",
@@ -293,7 +330,7 @@
     ],
     "recommended": [
       "Ne plus prioriser Design Watch mobile en préproduction tant que la revue humaine ne demande pas un autre ajustement.",
-      "Prioriser GEO/Citation pour obtenir une preuve externe de visibilité IA."
+      "Exécuter le panel GEO/Citation préparé pour obtenir une preuve externe de visibilité IA."
     ]
   },
   "responsive_study": {
@@ -1304,6 +1341,28 @@
         "content_type": "application/octet-stream"
       }
     ],
+    "geo_citation_panel": {
+      "status": "ready_not_executed",
+      "rows": 18,
+      "engines": [
+        "ChatGPT",
+        "Perplexity",
+        "Claude"
+      ],
+      "prompt_families": [
+        "brand_discovery",
+        "category_discovery",
+        "concept_explanation",
+        "project_discovery",
+        "booking_boundary",
+        "source_integrity"
+      ],
+      "files": [
+        "geo-citation-panel.csv",
+        "geo-citation-panel.md"
+      ],
+      "score_interpretation": "Readiness GEO/Citation à 8/10 parce que le protocole est prêt ; citations réelles toujours unknown tant que le panel n’est pas exécuté."
+    },
     "homepage_image_status": {
       "generated_at": "2026-06-20T23:46:15.409Z",
       "url": "https://swing.appmiweb.com/",
@@ -1745,8 +1804,8 @@
   "action_plan": [
     {
       "when": "Maintenant",
-      "action": "Partager le post-mortem Loïc sur les améliorations génériques du skill.",
-      "outcome": "Faire remonter les patterns réutilisables : mode préprod, reçu rapport courant, comparaison native, lazy-load avant/après scroll."
+      "action": "Partager le post-mortem Loïc et le panel GEO/Citation prêt à exécuter.",
+      "outcome": "Faire remonter les patterns réutilisables : mode préprod, reçu rapport courant, comparaison native, lazy-load avant/après scroll, panel IA prêt quand les citations réelles manquent."
     },
     {
       "when": "Préproduction continue",
@@ -1761,7 +1820,7 @@
     {
       "when": "Après domaine final",
       "action": "Lancer le panel GEO/Citation ChatGPT, Perplexity et Claude.",
-      "outcome": "Mesurer les citations réelles plutôt que seulement la readiness."
+      "outcome": "Remplacer la readiness par une mesure de citations réelles, avec sources citées, erreurs et concurrents observés."
     }
   ],
   "ai_layer_package": {
@@ -1863,6 +1922,14 @@
     {
       "label": "Preuve QA UI rapport",
       "path": "report-ui-visual-evidence.json"
+    },
+    {
+      "label": "Panel GEO/Citation",
+      "path": "geo-citation-panel.csv"
+    },
+    {
+      "label": "Mode d’emploi du panel GEO/Citation",
+      "path": "geo-citation-panel.md"
     },
     {
       "label": "Post-mortem skill SEO/GEO",

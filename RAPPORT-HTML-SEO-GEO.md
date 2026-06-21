@@ -8,7 +8,7 @@ http://127.0.0.1:61343/
 
 Cette URL pointe vers le rapport SEO/GEO public régénéré après correction du protocole responsive lazy-load du skill.
 
-## Rapport courant du 2026-06-21 — preuve PRD-006 lazy-load
+## Rapport courant du 2026-06-21 — PRD-006 lazy-load et panel GEO/Citation
 
 Fichier HTML :
 
@@ -18,14 +18,24 @@ reports/swing-digital/2026-06-21-seo-geo-audit-lazy-load-proof/index.html
 
 Verdict : le rapport confirme que le précédent warning responsive était un faux positif de protocole d'audit, pas une image cassée confirmée côté site. Le nouveau script scrolle la page avant de scorer les images lazy-load.
 
+Le rapport inclut maintenant aussi un panel GEO/Citation prêt à exécuter :
+
+```text
+reports/swing-digital/2026-06-21-seo-geo-audit-lazy-load-proof/geo-citation-panel.csv
+reports/swing-digital/2026-06-21-seo-geo-audit-lazy-load-proof/geo-citation-panel.md
+```
+
+Ce panel contient 18 requêtes : 6 familles de prompts sur ChatGPT, Perplexity et Claude. Il améliore la readiness GEO/Citation, mais ne prouve pas encore des citations réelles. Les résultats restent donc `unknown` tant que le panel n'est pas exécuté.
+
 Résultats clés :
 
 - `Search/Crawl` reste à 9/10 avec 0 écart public, 24 URL sitemap contrôlées, 24 canonicals cohérentes, 24 `og:url` cohérentes et 9 artefacts interdits non publics ;
+- `GEO/Citation` passe de 7,5/10 à 8/10 en readiness, grâce au panel de 18 requêtes prêt à exécuter ;
 - `Responsive dynamique` passe de 8/10 à 9/10 dans ce rapport, car l'étude responsive corrigée passe en desktop et mobile ;
 - desktop : 34 images lazy, 8 chargées initialement, 26 chargées après scroll, 0 cassée, 0 encore différée ;
 - mobile : 34 images chargées initialement, 0 cassée, 0 encore différée ;
 - `Measurement` reste à 5,5/10, car le vrai domaine de production et les accès propriétaires restent hors périmètre ;
-- `Readiness globale` passe de 8,5/10 à 8,6/10, gain limité car il porte sur la fiabilité du rapport, pas sur une nouvelle preuve de production.
+- `Readiness globale` passe de 8,6/10 à 8,7/10, gain limité car il porte sur la fiabilité du rapport et la préparation du panel, pas sur une nouvelle preuve de production.
 
 Enseignement pour le skill `seo-geo-growth-agent` : le score image responsive doit être calculé après exposition réelle au viewport. Le rapport doit distinguer `loaded_initially`, `loaded_after_scroll`, `broken` et `still_deferred` pour éviter de pousser une mauvaise correction comme retirer `loading="lazy"`.
 
