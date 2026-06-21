@@ -1,6 +1,6 @@
 # PRD-006 : Audit responsive lazy-load
 
-**Statut** : Brouillon
+**Statut** : Implémenté dans le skill
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : rapport HTML SEO/GEO du 2026-06-21 et arbitrage préproduction
@@ -104,6 +104,28 @@ Retenir l'Option A. Le problème confirmé concerne la méthode de mesure, pas l
 
 ---
 
+## Résultat du 2026-06-21
+
+Changements livrés dans le skill `seo-geo-growth-agent` :
+
+- le script `capture_site_screenshots.mjs` mesure maintenant les images avant et après parcours complet de la page ;
+- le JSON responsive expose les états `loaded_initially`, `loaded_after_scroll`, `broken` et `still_deferred` ;
+- le rapport HTML affiche les images chargées initialement, chargées après scroll, cassées et encore différées ;
+- les tests couvrent un cas lazy-load hors écran et un cas image cassée ;
+- les copies installées `~/.codex/skills/seo-geo-growth-agent` et `~/.claude/skills/seo-geo-growth-agent` ont été resynchronisées.
+
+Preuves :
+
+- `node --check scripts/capture_site_screenshots.mjs` : OK ;
+- `python3 -m pytest` dans le skill : 7 tests passés ;
+- `python3 scripts/validate_skill.py` : OK ;
+- `skill_doctor.py` : OK sur les copies Codex et Claude ;
+- capture publique sur `https://swing.appmiweb.com/` : desktop avec 26 images chargées après scroll, 0 image cassée et 0 image encore différée.
+
+Verdict : le chantier est implémenté côté outil. Le site Swing Digital n'a pas été modifié par ce chantier.
+
+---
+
 ## Plan d'implémentation
 
 1. Identifier le script responsable de l'étude responsive du rapport SEO/GEO.
@@ -132,3 +154,4 @@ Retenir l'Option A. Le problème confirmé concerne la méthode de mesure, pas l
 | Date | Auteur | Changement |
 |------|--------|------------|
 | 2026-06-21 | Alex + Codex | Création du PRD |
+| 2026-06-21 | Alex + Codex | Implémentation dans le skill et validation sur la préproduction Swing Digital |
