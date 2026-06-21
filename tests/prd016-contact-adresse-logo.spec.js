@@ -25,6 +25,11 @@ test.describe('PRD-016 - contact, adresse et logo', () => {
     expect(html).not.toContain('75008 Paris');
 
     expect(legal).toContain('Swing Digital Production');
+    expect(legal).toContain('59, rue du Département');
+    expect(legal).toContain('75018 Paris, France');
+    expect(legal).not.toContain('C/O Liberty');
+    expect(legal).not.toContain('35-37 rue d\'Artois');
+    expect(legal).not.toContain('75008 Paris');
     expect(legal).toContain('[Nom de l\'hébergeur]');
   });
 

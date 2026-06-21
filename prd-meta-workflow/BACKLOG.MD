@@ -19,4 +19,4 @@ Index des PRD du workspace Swing Digital.
 | PRD-013 | Catalogue XR et ajout de The Party | Implémenté et vérifié localement | 2026-06-21 | Haute |
 | PRD-014 | Pages projets Marilyn, Toulouse-Lautrec et Charlotte Henschel | Implémenté et vérifié localement | 2026-06-21 | Haute |
 | PRD-015 | Page autonome Memory Box VR | Implémenté et vérifié localement | 2026-06-21 | Haute |
-| PRD-016 | Contact, adresse et animation logo | Implémenté phase 1, attente asset et confirmation légale | 2026-06-21 | Haute |
+| PRD-016 | Contact, adresse et animation logo | Implémenté sauf animation, attente asset | 2026-06-21 | Haute |

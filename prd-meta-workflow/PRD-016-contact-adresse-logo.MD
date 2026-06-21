@@ -1,9 +1,9 @@
 # PRD-016 : Contact, adresse et animation logo
 
-**Statut** : Implémenté phase 1, attente asset et confirmation légale
+**Statut** : Implémenté sauf animation, attente asset
 **Date** : 2026-06-21
 **Auteur** : Alex
-**Source** : `retour/changements_site (1).docx`, inspection de `src/index.html` et `src/mentions-legales.html`
+**Source** : `retour/changements_site (1).docx`, inspection de `src/index.html` et `src/mentions-legales.html`, réponse de Stéphanie du 2026-06-21
 
 ---
 
@@ -28,9 +28,9 @@ L’adresse visible devient :
 75018 Paris
 ```
 
-La vidéo ou animation de fond actuelle n’est pas remplacée, car aucun nouvel asset logo animé sur fond rose n’est disponible dans `retour/site_images/` ou `src/video/`. En attendant, la correction texte/adresse est livrée sans bloquer sur l’animation.
+La vidéo ou animation de fond actuelle n’est pas remplacée, car Stéphanie confirme que l’animation logo rose est encore en production.
 
-Les mentions légales sont traitées avec prudence : `Swing Digital Production` et l’ancienne adresse restent en place tant que Stéphanie ne confirme pas que la nouvelle adresse est l’adresse officielle de l’éditeur et que la dénomination légale change.
+Les mentions légales affichent `Swing Digital Production`, car Stéphanie confirme que c’est le titre légal. L’adresse légale est mise à jour avec le nouveau siège social.
 
 ---
 
@@ -44,6 +44,9 @@ Les mentions légales sont traitées avec prudence : `Swing Digital Production` 
 - Le DOCX demande : `Swing digital (tu peux enlever production)` et fournit `59, rue du Département`, `75018 PARIS`.
 - Le DOCX indique aussi que Stéphanie doit régénérer une animation logo sur du rose qui s’anime.
 - Aucun nouvel asset vidéo ou animation logo n’est présent dans `retour/site_images/`.
+- Réponse de Stéphanie : la nouvelle adresse est le nouveau siège social.
+- Réponse de Stéphanie : le vrai titre légal reste `Swing Digital Production`; `Production` est seulement retiré de la marque visible pour alléger l’affichage.
+- Réponse de Stéphanie : l’animation logo rose est en cours de fabrication et arrivera plus tard.
 
 ---
 
@@ -76,8 +79,8 @@ Pour les mentions légales :
 - `src/index.html#page-62` affiche `Swing Digital` ;
 - l’adresse visible de l’accueil est `59, rue du Département` / `75018 Paris` ;
 - l’email reste `production@swingdigitalproduction.com` ;
-- `src/mentions-legales.html` conserve `Swing Digital Production` et l’ancienne adresse dans l’attente d’une confirmation officielle ;
-- l’animation `video/contact.mp4` reste en place faute d’asset rose animé validé ;
+- `src/mentions-legales.html` conserve `Swing Digital Production` et affiche le nouveau siège social `59, rue du Département`, `75018 Paris, France` ;
+- l’animation `video/contact.mp4` reste en place dans l’attente de l’asset rose animé ;
 - le test Playwright `tests/prd016-contact-adresse-logo.spec.js` couvre le bloc source et le rendu responsive.
 
 ---
@@ -127,7 +130,7 @@ Retenir l’Option A.
 
 La correction du texte et de l’adresse est indépendante et prioritaire. L’animation logo sur fond rose reste une dépendance externe à intégrer lorsqu’elle est fournie.
 
-Dans les mentions légales, ne pas supprimer `Production` sans confirmation de l’entité légale. La marque visible peut être `Swing Digital`, tandis que l’éditeur légal peut rester `Swing Digital Production`.
+Dans les mentions légales, conserver `Swing Digital Production` comme dénomination légale confirmée. La marque visible peut rester `Swing Digital`, tandis que l’éditeur légal reste `Swing Digital Production`.
 
 ---
 
@@ -137,8 +140,8 @@ Dans les mentions légales, ne pas supprimer `Production` sans confirmation de l
 2. Remplacer `S w i n g Digital Production` par une marque visible cohérente `Swing Digital`.
 3. Remplacer l’ancienne adresse par `59, rue du Département` et `75018 Paris`.
 4. Vérifier si la capitalisation `Paris` doit rester en style français standard ou en capitales comme dans le DOCX.
-5. Si Stéphanie confirme que la nouvelle adresse est officielle, mettre à jour l’adresse dans `src/mentions-legales.html`.
-6. Conserver `Swing Digital Production` dans les mentions légales tant que la dénomination légale n’est pas confirmée comme changée.
+5. Mettre à jour l’adresse dans `src/mentions-legales.html`, Stéphanie ayant confirmé qu’il s’agit du nouveau siège social.
+6. Conserver `Swing Digital Production` dans les mentions légales, Stéphanie ayant confirmé que c’est le vrai titre légal.
 7. Documenter l’asset manquant pour l’animation logo rose.
 8. Lorsque l’asset est fourni, l’intégrer dans `src/video/` ou `src/img/` selon son format.
 9. Mettre à jour les attributs accessibles de contrôle vidéo si la section conserve une vidéo.
@@ -155,7 +158,7 @@ Dans les mentions légales, ne pas supprimer `Production` sans confirmation de l
 - `src/index.html` ne contient plus `35-37 rue d'Artois`.
 - `src/index.html` contient `59, rue du Département`.
 - Le bloc contact visible affiche `Swing Digital` sans `Production`.
-- Si validé, `src/mentions-legales.html` contient la nouvelle adresse.
+- `src/mentions-legales.html` contient la nouvelle adresse.
 - `src/mentions-legales.html` conserve une dénomination légale explicite et non ambiguë.
 - Aucune information d’hébergeur n’est inventée.
 - Si un nouvel asset d’animation est fourni, il est présent dans `src/` et référencé par le bloc contact.
@@ -164,11 +167,11 @@ Dans les mentions légales, ne pas supprimer `Production` sans confirmation de l
 
 ---
 
-## Questions pour Stéphanie
+## Réponses de Stéphanie
 
-1. La suppression de `Production` concerne-t-elle seulement la marque visible, ou aussi l’entité légale ?
-2. La nouvelle adresse `59, rue du Département, 75018 Paris` est-elle l’adresse officielle à mettre aussi dans les mentions légales ?
-3. Peux-tu fournir le nouvel asset d’animation logo rose quand il est prêt, idéalement en `.mp4` court et optimisé web ?
+1. La nouvelle adresse `59, rue du Département, 75018 Paris` est le nouveau siège social.
+2. Le vrai titre légal reste `Swing Digital Production`; la suppression de `Production` concerne seulement la marque affichée.
+3. L’animation logo rose est en cours de fabrication et sera fournie plus tard.
 
 ---
 
@@ -176,5 +179,6 @@ Dans les mentions légales, ne pas supprimer `Production` sans confirmation de l
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Intégration de la réponse de Stéphanie : adresse du siège social mise à jour dans les mentions légales, dénomination légale `Swing Digital Production` conservée, animation logo rose maintenue en attente d’asset |
 | 2026-06-21 | Alex + Codex | Implémentation phase 1 : marque visible et adresse de contact sur l’accueil, maintien prudent des mentions légales et test Playwright dédié |
 | 2026-06-21 | Alex + Codex | Création du PRD |
