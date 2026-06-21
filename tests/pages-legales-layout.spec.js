@@ -19,7 +19,7 @@ test.describe('Pages légales - design éditorial unifié', () => {
     expect(legal).toContain('<div class="sitemap-page__container mentions-legales__container">');
     expect(legal).toContain('<h1 id="mentions-title">Mentions légales</h1>');
     expect(legal).not.toContain('<h1 class="sr-only">Mentions légales</h1>');
-    expect(legal).toContain('css/style.css?v=20260622-mentions-sitemap');
+    expect(legal).toContain('css/style.css?v=20260622-a11y-reflow-headings');
   });
 
   for (const url of ['/plan-du-site.html', '/mentions-legales.html']) {

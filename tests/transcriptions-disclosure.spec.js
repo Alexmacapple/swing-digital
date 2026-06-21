@@ -14,6 +14,47 @@ function px(value) {
 }
 
 test.describe('Transcriptions accessibles', () => {
+  test('chaque transcription podcast est placée sous son épisode respectif', async ({ page }) => {
+    await page.goto('/monroe-podcasts.html#page-33');
+
+    const layout = await page.evaluate(() => {
+      const episodes = Array.from(document.querySelectorAll('.page33__episode'));
+
+      return {
+        hasGlobalTranscriptBlock: Boolean(document.querySelector('.media-transcripts--podcasts')),
+        episodes: episodes.map((episode) => {
+          const button = episode.querySelector(':scope > .page33__episode-btn');
+          const transcript = episode.querySelector(':scope > .media-transcript');
+          const buttonRect = button.getBoundingClientRect();
+          const transcriptRect = transcript.getBoundingClientRect();
+
+          return {
+            hasTranscript: Boolean(transcript),
+            followsButton: button.compareDocumentPosition(transcript) & Node.DOCUMENT_POSITION_FOLLOWING,
+            buttonBottom: buttonRect.bottom,
+            buttonLeft: buttonRect.left,
+            buttonWidth: buttonRect.width,
+            transcriptTop: transcriptRect.top,
+            transcriptLeft: transcriptRect.left,
+            transcriptWidth: transcriptRect.width,
+          };
+        }),
+        overflow: Math.ceil(document.documentElement.scrollWidth - window.innerWidth),
+      };
+    });
+
+    expect(layout.hasGlobalTranscriptBlock).toBe(false);
+    expect(layout.episodes).toHaveLength(5);
+    for (const episode of layout.episodes) {
+      expect(episode.hasTranscript).toBe(true);
+      expect(Boolean(episode.followsButton)).toBe(true);
+      expect(episode.transcriptTop).toBeGreaterThanOrEqual(episode.buttonBottom - 1);
+      expect(episode.transcriptLeft).toBeGreaterThan(episode.buttonLeft);
+      expect(episode.transcriptWidth).toBeLessThan(episode.buttonWidth);
+    }
+    expect(layout.overflow).toBeLessThanOrEqual(1);
+  });
+
   test('toutes les transcriptions restent des disclosures RGAA au style de lien discret', async ({ page }) => {
     let total = 0;
 

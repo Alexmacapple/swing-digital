@@ -915,6 +915,8 @@ a.page13__card--link:focus-visible {
     color: var(--color-white);
     font-weight: 700;
     text-decoration-thickness: 2px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 #faq-reservations {
@@ -1041,6 +1043,11 @@ a.page13__card--link:focus-visible {
     color: var(--color-brand-pale);
 }
 
+main a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 
 /* ============================================================
    8g. PAGE MENTIONS LEGALES
@@ -1092,6 +1099,8 @@ a.page13__card--link:focus-visible {
     color: var(--color-white);
     text-decoration: underline;
     text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .mentions-legales__container a:hover,
@@ -3349,11 +3358,8 @@ section:hover [class*="__category"]::after {
     color: inherit;
 }
 
-.media-transcripts--podcasts {
-    width: 100%;
-    margin-top: var(--space-sm);
-    padding: var(--space-lg) var(--slide-pad-x);
-    background: var(--color-white);
+main > .media-transcript {
+    color: var(--color-white);
 }
 
 .media-transcripts__title {
@@ -3421,6 +3427,7 @@ section:hover [class*="__category"]::after {
     margin-top: var(--space-md);
 }
 
+.media-transcript__section h3,
 .media-transcript__section h4 {
     margin: 0 0 var(--space-xs);
     font-size: clamp(1rem, 1.4vw, 1.25rem);
@@ -3434,8 +3441,9 @@ section:hover [class*="__category"]::after {
 }
 
 .page33 .media-transcript {
-    width: 100%;
-    margin: var(--space-xs) 0 0;
+    width: calc(100% - 130px - 0.75rem - (var(--space-xs) * 2));
+    margin: 0.2rem var(--space-xs) 0 auto;
+    color: var(--color-gray-dark);
 }
 
 .page33 .media-transcript__button {
@@ -3446,6 +3454,9 @@ section:hover [class*="__category"]::after {
 
 .page33 .media-transcript__panel {
     padding: var(--space-sm);
+    max-height: min(46vh, 24rem);
+    overflow-y: auto;
+    box-shadow: none;
 }
 
 /* ============================================================
@@ -4216,6 +4227,8 @@ section:hover [class*="__category"]::after {
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 0.16em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 .page61__contact-link,
 .page61__contact-link:visited {
@@ -6454,6 +6467,9 @@ section:hover [class*="__category"]::after {
     .page33__episode-thumb {
         width: 90px;
         height: 51px;
+    }
+    .page33 .media-transcript {
+        width: calc(100% - 90px - 0.75rem - (var(--space-xs) * 2));
     }
     .page33__episode-title {
         font-size: 0.85rem;
