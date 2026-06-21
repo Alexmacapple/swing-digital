@@ -16,7 +16,7 @@
 - Le build de production actuel ne repose pas sur des partials HTML.
 - `npm run build:prod` génère `dist/` en excluant les artefacts de travail.
 - `npm run appmiweb:preflight` valide la préproduction Appmiweb.
-- Le harnais Playwright versionné est à restaurer : `npm test` et `npm run seo:check` retournent actuellement `No tests found`.
+- Le harnais Playwright versionné est restauré : `npm test` couvre PRD-011 et le socle SEO/GEO local, `npm run seo:check` cible `tests/seo-geo.spec.js`.
 - Les polices actives sont `Satoshi-Variable.woff2` et `Satoshi-VariableItalic.woff2`; les anciens OTF/TTF Brandon, Fragen et Raleway ont été supprimés.
 - Les placeholders SEO `DOMAINE` sont remplacés en préproduction par `https://swing.appmiweb.com`.
 - La production finale devra utiliser `npm run seo:set-base -- https://domaine-final`.

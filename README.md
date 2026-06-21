@@ -24,22 +24,22 @@ python3 -m http.server 8080
 
 ```bash
 npm test
-# État actuel : aucun fichier de test versionné, Playwright retourne "No tests found"
+# Suite versionnée : PRD-011 sur 5 viewports + socle SEO/GEO local
 ```
 
 Contrôle SEO/GEO ciblé :
 
 ```bash
 npm run seo:check
-# État actuel : tests/seo-geo.spec.js absent, Playwright retourne "No tests found"
+# Exécute tests/seo-geo.spec.js sur desktop-1920
 ```
 
 ## Stack technique
 
-- HTML5 sémantique (24 pages top-level + `/for-ai/`)
+- HTML5 sémantique (25 pages top-level + `/for-ai/`)
 - CSS3 responsive (variables, BEM, mobile-first)
 - JavaScript vanilla (navigation, vidéos, animations)
-- Playwright configuré, harnais à restaurer : aucun test versionné actuellement
+- Playwright configuré, harnais restauré pour PRD-011 et SEO/GEO local
 - Lighthouse et contrôles SEO/GEO de préproduction
 - Police : Satoshi Variable auto-hébergée
 - Pas de framework ni bundler
@@ -51,7 +51,7 @@ npm run seo:check
 - Bouton retour en haut de page
 - Vidéo hero avec contrôle son
 - Vidéo contact avec play/pause
-- Footer 8 liens (responsive)
+- Footer de navigation secondaire (responsive)
 - Page 404 hero, plan du site, mentions légales
 - Favicon, Open Graph, Twitter Card et JSON-LD sur les pages indexables
 - `robots.txt`, `sitemap.xml` et `llms.txt`
@@ -59,7 +59,7 @@ npm run seo:check
 
 ## Accessibilité (WCAG 2.2 AA / RGAA 4.1)
 
-- Dernier audit axe-core complet historique sans violation bloquante ; le harnais Playwright versionné doit être restauré avant d'en refaire une preuve actuelle.
+- Dernier audit axe-core complet historique sans violation bloquante ; la suite Playwright actuelle couvre la taxonomie XR / Films et le socle SEO/GEO, pas encore un scan axe-core complet.
 - Navigation clavier complète (Tab, Escape, flèches)
 - Zoom 200% conforme (RGAA 10.4)
 - Textes en casse normale, majuscules via CSS (RGAA 10.2)
@@ -98,7 +98,6 @@ Point d'hébergement restant : les URL inexistantes doivent être configurées c
 Commande de bascule vers production finale :
 
 ```bash
-# Restaurer d'abord le dossier tests/ pour que ces deux commandes soient probantes.
 npm test
 npm run seo:set-base -- https://votre-domaine.fr
 SEO_BASE_URL=https://votre-domaine.fr npm run seo:check
@@ -109,4 +108,4 @@ npm run prod:preflight -- https://votre-domaine.fr
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : v12 préproduction Satoshi, UI et 404 documentés ; PRD-010 et PRD-011 cadrés
+**Version** : v12 préproduction Satoshi, UI et 404 documentés ; PRD-010 cadré, PRD-011 implémenté

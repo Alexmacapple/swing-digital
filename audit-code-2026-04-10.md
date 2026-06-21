@@ -4,14 +4,14 @@ Rapport d'audit ciblé sur le code source JavaScript (applicatif + tests Playwri
 
 Ce rapport complète `AUDIT-COMPLET.md` (audit pré-prod global du 6 avril 2026) en apportant une analyse de qualité du code JS et des tests E2E.
 
-> Mise à jour 2026-06-21 : ce rapport reste un audit historique du code JS et des tests d'avril. Depuis, le projet dispose d'un packaging `dist/`, d'une préproduction Appmiweb, de PRD SEO/GEO, Satoshi, 404 et transcripts ; le harnais Playwright versionné doit toutefois être restauré.
+> Mise à jour 2026-06-21 : ce rapport reste un audit historique du code JS et des tests d'avril. Depuis, le projet dispose d'un packaging `dist/`, d'une préproduction Appmiweb, de PRD SEO/GEO, Satoshi, 404 et transcripts ; le harnais Playwright versionné est restauré pour PRD-011 et le socle SEO/GEO local.
 
 ---
 
 ## État courant au 2026-06-21
 
-- `npm test` observé : échec `No tests found`, aucun fichier de test versionné dans `tests/`.
-- `npm run seo:check` observé : échec `No tests found`, `tests/seo-geo.spec.js` absent.
+- `npm test` observé : OK, suite Playwright versionnée.
+- `npm run seo:check` observé : OK, `tests/seo-geo.spec.js` sur `desktop-1920`.
 - `npm run appmiweb:preflight` observé : OK avec avertissements préproduction attendus.
 - La préproduction `https://swing.appmiweb.com` sert `robots.txt`, `sitemap.xml`, `llms.txt` et les pages publiques du sitemap.
 - Les chantiers restants de production sont cadrés dans `prd-meta-workflow/PRD-001-seo-geo-production.MD`.

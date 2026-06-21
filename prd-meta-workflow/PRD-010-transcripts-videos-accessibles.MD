@@ -231,7 +231,7 @@ Les fichiers `.srt` et `.vtt` restent des livrables utiles, mais secondaires. Il
 17. Générer `dist/` avec `npm run build:prod`.
 18. Vérifier clavier et disclosure avec Playwright : clic, Entrée, Espace, état `aria-expanded`, visibilité du panneau et focus.
 19. Vérifier l'accessibilité statique avec les tests existants et un contrôle manuel RGAA sur les critères multimédia concernés.
-20. Restaurer le harnais Playwright si le dossier `tests/` est absent, puis relancer `npm test`, `npm run seo:check`, `npm run appmiweb:preflight` et, si publié en préproduction, `npm run appmiweb:search-crawl`.
+20. Relancer le harnais Playwright versionné (`npm test` et `npm run seo:check`), puis `npm run appmiweb:preflight` et, si publié en préproduction, `npm run appmiweb:search-crawl`.
 
 ---
 

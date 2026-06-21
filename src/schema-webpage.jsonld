@@ -34,14 +34,29 @@
       },
       "isBasedOn": [
         "https://swing.appmiweb.com/",
-        "https://swing.appmiweb.com/espaces-augmentes.html",
         "https://swing.appmiweb.com/experiences-series.html",
+        "https://swing.appmiweb.com/espaces-augmentes.html",
+        "https://swing.appmiweb.com/films.html",
         "https://swing.appmiweb.com/experience-monroe.html",
         "https://swing.appmiweb.com/reservations.html",
         "https://swing.appmiweb.com/llms.txt",
         "https://swing.appmiweb.com/for-ai.json",
         "https://swing.appmiweb.com/for-ai.txt"
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://swing.appmiweb.com/films.html#webpage",
+      "url": "https://swing.appmiweb.com/films.html",
+      "name": "Films - Swing Digital",
+      "description": "Films, séries documentaires et récits audiovisuels de Swing Digital.",
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": "https://swing.appmiweb.com/#website"
+      },
+      "about": {
+        "@id": "https://swing.appmiweb.com/#organization"
+      }
     }
   ]
 }

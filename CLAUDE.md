@@ -12,12 +12,12 @@
 
 ## Contexte
 
-Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 24 pages HTML top-level, avec une page `/for-ai/` dédiée aux agents, une navigation 3 niveaux et une page 404 personnalisée prête côté HTML. La préproduction Appmiweb est techniquement validée ; la production finale attend le domaine HTTPS définitif, les mentions légales hébergeur, le scénario Réservations, le routage 404 côté origine et la restauration du harnais Playwright.
+Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 25 pages HTML top-level, avec une page `/for-ai/` dédiée aux agents, une navigation 3 niveaux et une page 404 personnalisée prête côté HTML. La préproduction Appmiweb est techniquement validée ; la production finale attend le domaine HTTPS définitif, les mentions légales hébergeur, le scénario Réservations, le routage 404 côté origine et la mesure réelle.
 
 **Architecture** : 4 niveaux de pages
-1. Accueil, Espaces augmentés, Réservations
-2. Expériences Séries (rubrique 8 projets)
-3. Pages projet (Monroe, Voyage, Dessine, Ni vues, Marilyn, Toulouse-Lautrec, Charlotte Henschel, XR Corporate)
+1. Accueil, XR, Espace augmenté, Films, Réservation
+2. XR (rubrique 7 projets immersifs) et Films (rubrique audiovisuelle)
+3. Pages projet (Monroe, Voyage, Dessine, Marilyn, Toulouse-Lautrec, Charlotte Henschel, XR Corporate, Ni vues ni connues)
 4. Sous-pages Monroe (Pièce, Roman Graphique, Installation, Photographie, Composition, Podcasts, Interviews, Expériences, Quiz)
 
 **Pages utilitaires** : 404 hero, Plan du site, Mentions légales
@@ -26,7 +26,7 @@ Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences 
 
 ## Stack Technique
 
-- HTML5 sémantique (24 pages top-level + `/for-ai/`)
+- HTML5 sémantique (25 pages top-level + `/for-ai/`)
 - CSS3 responsive (variables, BEM, mobile-first, 6 breakpoints)
 - JavaScript vanilla (navigation, vidéos, animations)
 - Pas de framework ni bundler
@@ -43,7 +43,8 @@ Satoshi Variable auto-hébergée, avec fallback système.
 src/
 ├── index.html                    Accueil (pages 1,2,3,4,8,62)
 ├── espaces-augmentes.html        Espaces augmentés (pages 5-7)
-├── experiences-series.html       Rubrique projets (pages 9-10)
+├── experiences-series.html       Rubrique XR (pages 9-10)
+├── films.html                    Rubrique Films
 ├── experience-monroe.html        Monroe entrée (pages 11-13,24)
 ├── monroe-piece.html             Pièce My Story (pages 14-19)
 ├── monroe-roman-graphique.html   Roman Graphique (pages 20-22)
@@ -65,7 +66,7 @@ src/
 ├── 404.html                      Page introuvable hero
 ├── plan-du-site.html             Plan du site
 ├── mentions-legales.html         Mentions légales
-├── sitemap.xml                   Sitemap (24 URL)
+├── sitemap.xml                   Sitemap (25 URL)
 ├── robots.txt                    Robots
 ├── llms.txt                      Carte optionnelle pour agents IA
 ├── css/style.css                 Styles (~177 KB)
@@ -79,7 +80,7 @@ src/
 
 ## Composants communs (dupliqués dans chaque page)
 
-- **Header** : fixe, fond noir, logo texte, menu 4 sections, dropdown 8 projets, sous-menu Monroe (11 liens), hamburger mobile
+- **Header** : fixe, fond noir, logo texte, menu 5 entrées, dropdown XR, sous-menu Monroe (11 liens), hamburger mobile
 - **Fil d'Ariane** : sticky sous le header, fond noir, texte blanc
 - **Footer** : fond noir, copyright, liens (Équipe, Contact, Plan du site, Mentions légales)
 - **Skip link** : en dur dans le HTML, premier élément du body
@@ -88,7 +89,7 @@ src/
 
 ## Accessibilité - WCAG 2.2 AA / RGAA 4.1
 
-- Dernier audit axe-core complet historique sans violation bloquante ; le harnais Playwright versionné doit être restauré pour refaire cette preuve.
+- Dernier audit axe-core complet historique sans violation bloquante ; la suite Playwright actuelle couvre la taxonomie XR / Films et le socle SEO/GEO, pas encore un scan axe-core complet.
 - Navigation clavier complète (Tab, Escape, Arrow)
 - Disclosure pattern sur dropdown et hamburger
 - aria-current="page" sur lien actif et breadcrumb
@@ -126,8 +127,8 @@ npm run appmiweb:preflight
 
 Derniers résultats observés le 2026-06-21 :
 
-- `npm test` : échec `No tests found`, aucun fichier de test versionné dans `tests/`.
-- `npm run seo:check` : échec `No tests found`, `tests/seo-geo.spec.js` absent.
+- `npm test` : OK, suite Playwright versionnée sur la taxonomie XR / Films et le socle SEO/GEO local.
+- `npm run seo:check` : OK, `tests/seo-geo.spec.js` sur `desktop-1920`.
 - `npm run appmiweb:preflight` : OK avec avertissements attendus sur mentions légales, CTA Réservations et billetterie.
 - Contrôle navigateur Satoshi : 25 pages HTML x 3 largeurs, police locale chargée, aucune famille calculée hors Satoshi, aucun débordement horizontal.
 
@@ -182,10 +183,10 @@ Décision actuelle :
 - `prd-meta-workflow/PRD-008-fonds-roses-adoucis.MD` : remplacement ciblé des grands fonds rouges.
 - `prd-meta-workflow/PRD-009-routage-404-personnalisee.MD` : routage serveur de la page 404 personnalisée.
 - `prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD` : transcripts accessibles des vidéos publiques.
-- `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD` : séparation éditoriale XR / Films.
+- `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD` : séparation éditoriale XR / Films implémentée.
 - `docs/404-CUSTOM-ERROR-PAGE.md` : recettes Apache, Nginx, serveur statique Python et Cloudflare Worker.
 
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : 12.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 et PRD-011 cadrés
+**Version** : 12.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 cadré, PRD-011 implémenté

@@ -16,14 +16,19 @@
       "use_for": "Présentation générale de Swing Digital."
     },
     {
-      "label": "Espaces augmentés",
+      "label": "XR",
+      "url": "https://swing.appmiweb.com/experiences-series.html",
+      "use_for": "Catalogue des créations immersives, réalité mixte et projets XR."
+    },
+    {
+      "label": "Espace augmenté",
       "url": "https://swing.appmiweb.com/espaces-augmentes.html",
       "use_for": "Définition et usages des espaces narratifs augmentés."
     },
     {
-      "label": "Expériences Séries",
-      "url": "https://swing.appmiweb.com/experiences-series.html",
-      "use_for": "Catalogue des créations et projets immersifs."
+      "label": "Films",
+      "url": "https://swing.appmiweb.com/films.html",
+      "use_for": "Films, séries documentaires et récits audiovisuels."
     },
     {
       "label": "L'Expérience Monroe",
@@ -31,7 +36,7 @@
       "use_for": "Présentation du récit immersif consacré à Marilyn Monroe."
     },
     {
-      "label": "Réservations",
+      "label": "Réservation",
       "url": "https://swing.appmiweb.com/reservations.html",
       "use_for": "Informations pratiques à revérifier avant toute recommandation transactionnelle."
     }
@@ -48,8 +53,13 @@
       "status": "verified_local"
     },
     {
-      "fact": "La rubrique Expériences Séries rassemble les créations et projets immersifs de Swing Digital.",
+      "fact": "La rubrique XR rassemble les créations et projets immersifs de Swing Digital.",
       "source": "https://swing.appmiweb.com/experiences-series.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "La rubrique Films rassemble les films, séries documentaires et récits audiovisuels de Swing Digital.",
+      "source": "https://swing.appmiweb.com/films.html",
       "status": "verified_local"
     },
     {
@@ -58,7 +68,7 @@
       "status": "verified_local"
     },
     {
-      "fact": "Les informations de durée, tarifs, disponibilité, âge minimum et accessibilité doivent être revérifiées sur la page Réservations avant toute recommandation transactionnelle.",
+      "fact": "Les informations de durée, tarifs, disponibilité, âge minimum et accessibilité doivent être revérifiées sur la page Réservation avant toute recommandation transactionnelle.",
       "source": "https://swing.appmiweb.com/reservations.html",
       "status": "needs_owner_review_before_transaction"
     }
@@ -77,7 +87,7 @@
     ],
     "avoid": [
       "Classements, trafic, conversions ou recommandations commerciales non sourcés",
-      "Promesses de disponibilité ou de prix sans vérification de la page Réservations",
+      "Promesses de disponibilité ou de prix sans vérification de la page Réservation",
       "Confusion avec d'autres entités nommées Swing"
     ]
   },

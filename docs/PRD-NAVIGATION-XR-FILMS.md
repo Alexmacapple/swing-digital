@@ -1,11 +1,11 @@
 # PRD : navigation XR et Films
 
-**Statut** : cadrage fondé sur les sources, prêt à arbitrer
+**Statut** : cadrage source, implémenté via PRD-011
 **Date** : 2026-06-21
 **Périmètre** : `src/` public Swing Digital, puis génération vers `dist/`
 **Objectif court** : séparer la rubrique XR / immersive de la rubrique audiovisuelle sans renommer les URL existantes.
 
-> Note 2026-06-21 : ce document reste le cadrage source détaillé. Le PRD canonique de suivi est désormais `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD`.
+> Note 2026-06-21 : ce document reste le cadrage source détaillé. Le PRD canonique de suivi est `prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD`, désormais implémenté et vérifié localement.
 
 **PDG-LARGE-FILE-JUSTIFICATION:** ce PRD dépasse 200 lignes parce qu’il regroupe le diagnostic fondé sur les sources, le cadrage produit, la liste de contrôle d’implémentation et le passage PDG dans un seul fichier de transmission. Le sujet touche les 24 pages HTML existantes, une 25e page à créer, la navigation, le JS d’état actif, les données structurées, le sitemap et les fichiers IA publics ; séparer ces éléments augmenterait le risque d’exécution partielle.
 
@@ -331,3 +331,14 @@ Preuve de régression requise :
 - preflight Appmiweb ;
 - contrôle `rg` des libellés ;
 - inspection navigateur des quatre routes clés : accueil, XR, Films, Ni vues ni connues.
+
+## 11. Livraison PRD-011
+
+Le chantier a été livré le 2026-06-21 dans `src/` :
+
+- menu principal aligné sur `Accueil - XR - Espace augmenté - Films - Réservation` ;
+- création de `src/films.html` ;
+- déplacement éditorial de `Ni vues ni connues` sous Films ;
+- retrait de `Ni vues ni connues` du menu XR ;
+- alignement de `main.js`, `sitemap.xml`, `plan-du-site.html`, `llms.txt`, `for-ai.*` et `schema-webpage.jsonld` ;
+- validation locale par `npm test`, `npm run seo:check`, `npm run build:prod`, `npm run appmiweb:preflight` et contrôle navigateur multi-largeurs.

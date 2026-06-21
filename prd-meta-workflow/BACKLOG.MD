@@ -14,4 +14,4 @@ Index des PRD du workspace Swing Digital.
 | PRD-008 | Fonds roses adoucis | Implémenté et publié en préproduction | 2026-06-21 | Moyenne |
 | PRD-009 | Routage de la page 404 personnalisée | Documenté, action infra requise | 2026-06-21 | Moyenne |
 | PRD-010 | Transcripts accessibles des vidéos publiques | Cadré, implémentation à planifier | 2026-06-21 | Haute |
-| PRD-011 | Menu et découpage XR / Films | Prêt à arbitrer | 2026-06-21 | Haute |
+| PRD-011 | Menu et découpage XR / Films | Implémenté et vérifié localement | 2026-06-21 | Haute |

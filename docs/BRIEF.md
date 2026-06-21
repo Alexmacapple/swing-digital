@@ -6,7 +6,7 @@ Refonte du site web de Swing Digital, entreprise spécialisée dans les expérie
 
 ## Structure du site
 
-Le site public courant est un site statique multi-pages : 24 pages HTML top-level dans `src/`, plus `/for-ai/` pour le contexte agents IA. Il reste issu d'une maquette de 62 pages, réparties dans les routes suivantes :
+Le site public courant est un site statique multi-pages : 25 pages HTML top-level dans `src/`, plus `/for-ai/` pour le contexte agents IA. Il reste issu d'une maquette de 62 pages, réparties dans les routes suivantes :
 
 ### 1. Accueil (pages 1-2)
 - Hero avec gradient rose et titre
@@ -20,7 +20,7 @@ Le site public courant est un site statique multi-pages : 24 pages HTML top-leve
 - Description des services et de l'approche
 - Partenaires/clients (24 logos)
 
-### 4. Expériences (pages 9-56)
+### 4. XR et films (pages 9-57)
 
 | Projet | Pages | Statut |
 |--------|-------|--------|
@@ -31,7 +31,7 @@ Le site public courant est un site statique multi-pages : 24 pages HTML top-leve
 | XR 360 | 40-41 | En ligne |
 | Voyage autour de moi | 42-44 | En ligne |
 | Dessine-moi le vent | 45-47 | En ligne |
-| Ni vues ni connues | 48-49 | En ligne |
+| Ni vues ni connues | 48-49 | En ligne, rubrique Films |
 | Marilyn | 50-52 | En ligne |
 | Toulouse-Lautrec | 53-54 | En ligne |
 | Charlotte Henschel | 55-56 | En ligne |

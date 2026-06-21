@@ -13,17 +13,17 @@ Outils : axe-core (accesslint MCP), inspection manuelle, check-site.sh
 | Zone | État actuel |
 |------|-------------|
 | Préproduction | `https://swing.appmiweb.com` validée techniquement |
-| URL publiques | 24 URL dans le sitemap ; 24 pages HTML top-level et `/for-ai/` dans le build |
+| URL publiques | 25 URL dans le sitemap ; 25 pages HTML top-level et `/for-ai/` dans le build |
 | Canonicals | Cohérents sur la préproduction Appmiweb |
 | Sitemap / robots / llms | Présents et servis en 200 |
 | Données structurées | JSON-LD présent sur les pages indexables |
-| Tests SEO/GEO | Harnais à restaurer : `npm run seo:check` retourne `No tests found` |
-| Suite Playwright | Harnais à restaurer : `npm test` retourne `No tests found` |
+| Tests SEO/GEO | Harnais restauré : `tests/seo-geo.spec.js` vérifie le socle local |
+| Suite Playwright | Harnais restauré : PRD-011 sur 5 viewports + SEO/GEO local |
 | Typographie | Satoshi Variable auto-hébergée ; anciennes polices OTF/TTF supprimées |
 | Lighthouse accueil | SEO 100, accessibilité 100, bonnes pratiques 100, performance 89, LCP 3,8 s |
 | Lighthouse Réservations | SEO 100, accessibilité 100, bonnes pratiques 100, performance 97, LCP 2,4 s |
 
-Les anciens points « `https://DOMAINE/` », `og:image` manquante, favicon absent, dimensions d'images, boutons `href="#"` et anciennes polices ont été traités dans l'état préproduction actuel. Les blocages restants concernent la production finale : domaine final HTTPS, hébergeur légal, scénario Réservations, mesure GSC/GA4/Bing/IA, routage 404 côté origine, restauration du harnais Playwright, optimisation LCP de l'accueil et politique crawlers IA.
+Les anciens points « `https://DOMAINE/` », `og:image` manquante, favicon absent, dimensions d'images, boutons `href="#"`, anciennes polices et absence de harnais Playwright ont été traités dans l'état préproduction actuel. Les blocages restants concernent la production finale : domaine final HTTPS, hébergeur légal, scénario Réservations, mesure GSC/GA4/Bing/IA, routage 404 côté origine, optimisation LCP de l'accueil et politique crawlers IA.
 
 ---
 

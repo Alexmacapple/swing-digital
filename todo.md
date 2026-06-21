@@ -13,7 +13,6 @@
 - [ ] Configurer le document d'erreur 404 côté origine : les URL inexistantes doivent afficher `/404.html` en conservant le statut HTTP `404`.
 - [ ] Vérifier les canonical, `sitemap.xml` et `robots.txt` sur le domaine final.
 - [ ] Brancher ou préparer la mesure réelle : Google Search Console, GA4 ou GTM, Bing Webmaster Tools et événements de conversion.
-- [ ] Restaurer le harnais Playwright versionné (`tests/`) ou retirer les scripts obsolètes avant de les citer comme preuves.
 
 ### À faire juste avant publication
 
@@ -32,7 +31,6 @@
 - [ ] Optimiser les images (compression, WebP/AVIF avec fallback).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 - [ ] Implémenter PRD-010 : transcripts accessibles des vidéos publiques.
-- [ ] Arbitrer PRD-011 : libellés finaux, grille XR et périmètre Films.
 
 ## Terminé
 
@@ -46,7 +44,7 @@
 - [x] Suppression badges de section (redondants)
 - [x] Traduction textes anglais en français
 - [x] Accentuation complète des fichiers Markdown
-- [x] Footer complet (8 liens, centré, responsive)
+- [x] Footer complet (navigation secondaire, centré, responsive)
 - [x] Bouton retour en haut de page (accessible)
 - [x] Ajout width/height sur toutes les images (CLS)
 - [x] Favicon créé + og:image sur toutes les pages
@@ -64,9 +62,9 @@
 - [x] Test cross-browser Chrome DevTools (iPhone, desktop 1100/1440/1920)
 - [x] Tests visuels PRD-091 : 65 sections testées (24 pages x sections), 65/65 PASS
 - [x] Bascule SEO de préproduction vers `https://swing.appmiweb.com`
-- [x] Audit SEO/GEO de préproduction historique ; sitemap actuel : 24 URL, canonicals et JSON-LD en place
-- [ ] Restaurer `npm run seo:check` : `tests/seo-geo.spec.js` est absent
-- [ ] Restaurer la suite Playwright : `npm test` retourne `No tests found`
+- [x] Audit SEO/GEO de préproduction historique ; sitemap actuel : 25 URL, canonicals et JSON-LD en place
+- [x] Restaurer `npm run seo:check` avec `tests/seo-geo.spec.js`
+- [x] Restaurer la suite Playwright : `npm test` couvre PRD-011 et SEO/GEO local
 - [x] `npm run build:prod` et `npm run appmiweb:preflight`
 - [x] PRD-001 créé : mise en production SEO/GEO et mesure
 - [x] PRD-007 créé : migration typographique Satoshi
@@ -75,5 +73,6 @@
 - [x] PRD-009 créé : routage de la page 404 personnalisée
 - [x] PRD-010 créé : transcripts accessibles des vidéos publiques
 - [x] PRD-011 créé : menu et découpage XR / Films
+- [x] PRD-011 implémenté : menu `Accueil - XR - Espace augmenté - Films - Réservation`, page `films.html` et `Ni vues ni connues` déplacé sous Films
 - [x] Page 404 hero visible sur `/404.html`
 - [x] Documentation d'exploitation 404 créée dans `docs/404-CUSTOM-ERROR-PAGE.md`

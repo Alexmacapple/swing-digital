@@ -335,4 +335,4 @@ if (!document.querySelector('iframe[src*="vimeo"]')) return;
 ---
 
 **Dernière mise à jour** : 2026-06-21
-**Version** : 12.0.0 (préproduction Satoshi, SEO/GEO, 404, PRD-010 et PRD-011 cadrés)
+**Version** : 12.0.0 (préproduction Satoshi, SEO/GEO, 404, PRD-010 cadré et PRD-011 implémenté)

@@ -20,6 +20,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", default="transcripts", help="Dossier de sortie des transcripts.")
     parser.add_argument("--model", default="medium", help="Modèle faster-whisper à utiliser.")
     parser.add_argument("--language", default="fr", help="Langue forcée pour la transcription.")
+    parser.add_argument(
+        "--task",
+        choices=("transcribe", "translate"),
+        default="transcribe",
+        help="Tâche faster-whisper : transcribe pour la langue source, translate pour traduire vers l'anglais.",
+    )
+    parser.add_argument(
+        "--output-suffix",
+        default="",
+        help="Suffixe ajouté au nom des sorties avant l'extension, par exemple fr ou en.",
+    )
     parser.add_argument("--device", default="auto", help="Device faster-whisper : auto, cpu, cuda.")
     parser.add_argument("--compute-type", default="default", help="Compute type faster-whisper.")
     parser.add_argument("--beam-size", type=int, default=5, help="Beam size de décodage.")
@@ -106,18 +117,27 @@ def segment_to_dict(segment: object) -> dict[str, object]:
     }
 
 
-def write_outputs(output_dir: Path, source: Path, info: object, segments: list[dict[str, object]], formats: set[str]) -> None:
-    base = output_dir / source.stem
+def write_outputs(
+    output_dir: Path,
+    source: Path,
+    info: object,
+    segments: list[dict[str, object]],
+    formats: set[str],
+    suffix: str = "",
+) -> None:
+    output_stem = f"{source.stem}.{suffix}" if suffix else source.stem
+    base = output_dir / output_stem
+    output_path = lambda extension: base.parent / f"{base.name}.{extension}"
     if "txt" in formats:
-        write_txt(base.with_suffix(".txt"), segments)
+        write_txt(output_path("txt"), segments)
     if "srt" in formats:
-        write_srt(base.with_suffix(".srt"), segments)
+        write_srt(output_path("srt"), segments)
     if "vtt" in formats:
-        write_vtt(base.with_suffix(".vtt"), segments)
+        write_vtt(output_path("vtt"), segments)
     if "json" in formats:
-        write_json(base.with_suffix(".json"), source, info, segments)
+        write_json(output_path("json"), source, info, segments)
     if "tsv" in formats:
-        write_tsv(base.with_suffix(".tsv"), segments)
+        write_tsv(output_path("tsv"), segments)
 
 
 def main() -> int:
@@ -144,16 +164,16 @@ def main() -> int:
     model = WhisperModel(args.model, device=args.device, compute_type=args.compute_type)
 
     for source in sources:
-        print(f"Transcription : {source}")
+        print(f"{args.task} : {source}")
         raw_segments, info = model.transcribe(
             str(source),
             language=args.language,
-            task="transcribe",
+            task=args.task,
             beam_size=args.beam_size,
             vad_filter=args.vad_filter,
         )
         segments = [segment_to_dict(segment) for segment in raw_segments]
-        write_outputs(output_dir, source, info, segments, formats)
+        write_outputs(output_dir, source, info, segments, formats, args.output_suffix.strip())
 
     print(f"Terminé : {len(sources)} fichier(s), sortie {output_dir}")
     return 0

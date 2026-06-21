@@ -44,6 +44,7 @@ function initNavActiveState() {
     var sectionMap = {
         'accueil': 'index.html',
         'espaces': 'espaces-augmentes.html',
+        'films': 'films.html',
         'reservations': 'reservations.html'
     };
 

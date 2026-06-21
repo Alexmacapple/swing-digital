@@ -29,10 +29,10 @@ npm run appmiweb:preflight
 npm run appmiweb:search-crawl
 ```
 
-État courant au 2026-06-21 : `npm test` et `npm run seo:check`
-retournent `No tests found`, car le dossier `tests/` n'est pas versionné dans
-le dépôt. Ne pas les citer comme preuve tant que le harnais Playwright n'est pas
-restauré.
+État courant au 2026-06-21 : le harnais Playwright est restauré avec
+`tests/prd011-menu-xr-films.spec.js` et `tests/seo-geo.spec.js`. `npm test`
+vérifie la taxonomie XR / Films sur 5 viewports et `npm run seo:check` vérifie
+le socle SEO/GEO local sur `desktop-1920`.
 
 Pour servir un dossier local :
 

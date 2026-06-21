@@ -17,8 +17,13 @@
     </url>
     <url>
         <loc>https://swing.appmiweb.com/experiences-series.html</loc>
-        <lastmod>2026-06-20</lastmod>
+        <lastmod>2026-06-21</lastmod>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://swing.appmiweb.com/films.html</loc>
+        <lastmod>2026-06-21</lastmod>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://swing.appmiweb.com/reservations.html</loc>
@@ -42,7 +47,7 @@
     </url>
     <url>
         <loc>https://swing.appmiweb.com/ni-vues-ni-connues.html</loc>
-        <lastmod>2026-06-20</lastmod>
+        <lastmod>2026-06-21</lastmod>
         <priority>0.6</priority>
     </url>
     <url>
@@ -117,7 +122,7 @@
     </url>
     <url>
         <loc>https://swing.appmiweb.com/plan-du-site.html</loc>
-        <lastmod>2026-06-20</lastmod>
+        <lastmod>2026-06-21</lastmod>
         <priority>0.3</priority>
     </url>
 </urlset>

@@ -2,12 +2,13 @@
 
 ## 2026-06-21
 
+- Implémentation du PRD-011 : menu principal `Accueil - XR - Espace augmenté - Films - Réservation`, création de `films.html`, déplacement de `Ni vues ni connues` sous Films et alignement sitemap / fichiers IA.
+- Restauration du harnais Playwright versionné : `npm test` couvre PRD-011 et le socle SEO/GEO local ; `npm run seo:check` cible `tests/seo-geo.spec.js`.
 - Mise à jour du PRD-010 : adoption de `faster-whisper` via `scripts/transcribe-faster-whisper.py` pour produire les transcripts bruts.
 - Création du PRD-011 : séparation menu et découpage éditorial XR / Films, avec création prévue de `films.html` et déplacement de `Ni vues ni connues`.
 - Mise à jour du PRD-010 : extension du périmètre à toutes les vidéos publiques trouvées dans `src/*.html` et exclusion Git des artefacts locaux audio, vidéo et Whisper.
 - Création du PRD-010 : récupération, transcription Whisper, correction et publication accessible des transcripts des vidéos publiques.
 - Validation et livraison du PRD-007 : Satoshi Variable auto-hébergée sur tout le site, suppression des anciennes polices OTF/TTF, build et contrôles navigateur toutes pages validés.
-- Correction de la documentation de validation : `npm test` et `npm run seo:check` retournent actuellement `No tests found`, le harnais Playwright doit être restauré.
 - Mise à jour des PRD-007, PRD-008 et PRD-009 avec leur statut, leur état d'implémentation et les suites de validation.
 - Mise à jour des Markdown racine pour refléter Satoshi, les fonds roses, la page 404 hero et le routage 404 restant côté hébergement.
 - Création du PRD-009 : routage serveur de la page 404 personnalisée avec conservation du statut HTTP 404.

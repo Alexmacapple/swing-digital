@@ -1,6 +1,6 @@
 # PRD-011 : Menu et découpage XR / Films
 
-**Statut** : Prêt à arbitrer
+**Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : Conversation, `docs/PRD-NAVIGATION-XR-FILMS.md`, `PRD-DECOUPAGE.md` et inspection du code réel
@@ -15,7 +15,7 @@ Le pourquoi : le menu actuel regroupe des formats hétérogènes sous `Expérien
 
 Le comment : renvoyé au Plan d'implémentation.
 
-## Exemple bout-en-bout (projeté)
+## Exemple bout-en-bout implémenté
 
 Un visiteur arrive sur `https://swing.appmiweb.com/`.
 
@@ -47,7 +47,7 @@ Demande produit transmise :
 
 > Dans les onglets, dissocier ce qui est audiovisuel, films et séries, de ce qui est expérience immersive XR. Avoir un onglet XR à la place d'Expérience et série, en y enlevant Ni vues ni connues, et un onglet Films avec Ni vues ni connues. Ordre attendu : Accueil - XR - Espace augmenté - Films - Réservation.
 
-Constats au 2026-06-21 :
+Constats avant implémentation :
 
 - la navigation est dupliquée dans les pages HTML existantes ;
 - `Expériences Séries` reste le libellé visible du menu déroulant ;
@@ -148,10 +148,18 @@ La création d'un système de partials HTML n'est pas incluse dans ce PRD. La du
 
 ---
 
+## Arbitrages retenus
+
+1. Les libellés visibles retenus sont `Espace augmenté` et `Réservation`, afin de rester alignés avec la demande produit et les intitulés déjà présents dans le site.
+2. Après retrait de `Ni vues ni connues` de la grille XR, la carte est remplacée par `XR Corporate`, déjà cohérent avec la rubrique immersive.
+3. `Ni vues ni connues` est le seul contenu déplacé vers `Films` dans cette itération.
+
+---
+
 ## Plan d'implémentation
 
-1. Arbitrer les libellés finaux du menu : `Espace augmenté` ou `Espaces augmentés`, `Réservation` ou `Réservations`.
-2. Arbitrer la grille de `experiences-series.html` après retrait de `Ni vues ni connues` : suppression simple, remplacement par un projet XR ou réorganisation.
+1. Confirmer les arbitrages produit.
+2. Remplacer la carte `Ni vues ni connues` de `experiences-series.html` par un projet XR.
 3. Confirmer que `Ni vues ni connues` est le seul contenu déplacé vers `Films` dans cette itération.
 4. Créer `src/films.html` avec canonical, métadonnées, H1, fil d'Ariane, JSON-LD et carte vers `ni-vues-ni-connues.html`.
 5. Mettre à jour la navigation dupliquée dans toutes les pages HTML existantes, puis dans `films.html`.
@@ -195,11 +203,14 @@ La création d'un système de partials HTML n'est pas incluse dans ce PRD. La du
 
 ---
 
-## Points à arbitrer avant implémentation
+## Validation 2026-06-21
 
-1. Confirmer les libellés exacts : `Espace augmenté` / `Espaces augmentés`, `Réservation` / `Réservations`.
-2. Choisir le traitement de la carte `Ni vues ni connues` retirée de la grille XR.
-3. Confirmer que `Ni vues ni connues` est le seul projet déplacé vers `Films` dans cette itération.
+- Test RED créé avant implémentation : `tests/prd011-menu-xr-films.spec.js`.
+- `npm test` : OK, suite Playwright PRD-011 et SEO/GEO local.
+- `npm run seo:check` : OK, contrôle SEO/GEO local desktop.
+- `npm run build:prod` : OK, build `dist/` généré avec `films.html`.
+- `npm run appmiweb:preflight` : OK, sans erreur bloquante.
+- Contrôle navigateur local sur `index.html`, `experiences-series.html`, `films.html` et `ni-vues-ni-connues.html` aux largeurs 375, 600, 768, 1024 et 1440 px : aucun débordement horizontal observé.
 
 ---
 
@@ -208,3 +219,4 @@ La création d'un système de partials HTML n'est pas incluse dans ce PRD. La du
 | Date | Auteur | Changement |
 |------|--------|------------|
 | 2026-06-21 | Alex + Codex | Création du PRD |
+| 2026-06-21 | Alex + Codex | Implémentation du menu XR / Films, création de `films.html`, déplacement éditorial de `Ni vues ni connues` et validation locale |
