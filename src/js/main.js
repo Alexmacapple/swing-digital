@@ -525,12 +525,31 @@ function initVideoSound() {
 function initDisclosure() {
     var buttons = document.querySelectorAll('#main-content button[aria-expanded][aria-controls]');
 
+    function updateButtonLabel(btn, label) {
+        var labelNode = btn.querySelector('.js-disclosure-label');
+        if (labelNode) {
+            labelNode.textContent = label;
+        } else {
+            btn.textContent = label;
+        }
+    }
+
     for (var i = 0; i < buttons.length; i++) {
         (function(btn) {
             var targetId = btn.getAttribute('aria-controls');
             var target = document.getElementById(targetId);
 
             if (!target) return;
+
+            btn.hidden = false;
+
+            if (btn.getAttribute('aria-expanded') === 'true') {
+                target.hidden = false;
+                updateButtonLabel(btn, btn.dataset.labelHide || 'Masquer le contenu');
+            } else {
+                target.hidden = true;
+                updateButtonLabel(btn, btn.dataset.labelShow || 'Voir le contenu');
+            }
 
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -539,12 +558,12 @@ function initDisclosure() {
                 if (isExpanded) {
                     btn.setAttribute('aria-expanded', 'false');
                     target.hidden = true;
-                    btn.textContent = btn.dataset.labelShow || 'Voir les 8 citations presse';
+                    updateButtonLabel(btn, btn.dataset.labelShow || 'Voir le contenu');
                     btn.focus();
                 } else {
                     btn.setAttribute('aria-expanded', 'true');
                     target.hidden = false;
-                    btn.textContent = btn.dataset.labelHide || 'Masquer les citations presse';
+                    updateButtonLabel(btn, btn.dataset.labelHide || 'Masquer le contenu');
                 }
             });
         })(buttons[i]);

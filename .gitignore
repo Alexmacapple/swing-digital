@@ -36,7 +36,7 @@ EXPORT_HD/
 swing_audio/
 swing_videos/
 swing_subtitles/
-transcripts/
+/transcripts/
 
 # Tests visuels (resultats locaux)
 tests-visuels/
