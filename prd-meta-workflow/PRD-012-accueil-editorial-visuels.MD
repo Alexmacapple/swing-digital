@@ -1,6 +1,6 @@
 # PRD-012 : Accueil éditorial et visuels de présentation
 
-**Statut** : Implémenté
+**Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
 **Source** : `retour/changements_site (1).docx`, `retour/site_images/1_swing.jpg`, inspection de `src/index.html`
@@ -157,7 +157,9 @@ Question de microtypographie à valider avec Stéphanie : afficher le H1 en capi
 - L’introduction de `#page-3` devient `Nous imaginons des récits immersifs au croisement du spectacle vivant et des technologies XR.`
 - Le visuel de `#page-3` utilise le nouvel asset avec un texte alternatif descriptif.
 - Les métadonnées SEO/GEO principales de l’accueil sont alignées avec le nouveau positionnement éditorial.
-- Aucun ajustement CSS n’a été nécessaire : les contrôles mobile, tablette et desktop ne détectent ni débordement horizontal ni chevauchement du bloc éditorial avec les liens bas.
+- Le calque de teinte du hero `#page-1` est retiré : la vidéo `video/hero.mp4` est affichée sans overlay rose/corail ni opacité artificielle.
+- Le lien d’évitement utilise le fond rose lisible `--color-background-pink-readable`, et non le rouge historique.
+- Les ajustements CSS restent ciblés : retrait du calque hero, lien d’évitement rose et contraintes responsive existantes conservées.
 - Un test Playwright dédié couvre le contenu éditorial, l’absence de l’ancienne ligne de soutiens, le chargement du nouvel asset et le comportement responsive.
 
 Validations exécutées :
@@ -178,6 +180,8 @@ Validations exécutées :
 - `index.html#page-3` contient la phrase `Nous imaginons des récits immersifs au croisement du spectacle vivant et des technologies XR.`
 - Le nouvel asset issu de `1_swing.jpg` est référencé depuis `src/index.html`.
 - L’image possède un attribut `alt` utile.
+- La vidéo hero `#page-1` n’est pas recouverte par le calque `--gradient-hero-video-tint`.
+- Le lien d’évitement `.skip-link` utilise le fond rose lisible du site.
 - Aucun débordement horizontal n’est observé à 375, 600, 768, 1024 et 1440 px.
 - `npm run build:prod`, `npm test` et `npm run seo:check` terminent avec un code `0`.
 
@@ -195,5 +199,6 @@ Validations exécutées :
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Retrait du calque de teinte sur la vidéo hero et passage du lien d’évitement sur le fond rose lisible |
 | 2026-06-21 | Alex + Codex | Implémentation et validation du PRD |
 | 2026-06-21 | Alex + Codex | Création du PRD |

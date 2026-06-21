@@ -771,7 +771,7 @@ function initHeaderSpacing() {
 }
 
 /**
- * Video contact (page 62) — play/pause + autoplay au scroll
+ * Video contact (page 62) — play/pause + autoplay
  */
 function initContactVideo() {
     var video = document.getElementById('contact-video');
@@ -791,23 +791,29 @@ function initContactVideo() {
         btn.classList.remove('page62__play-btn--playing');
     }
 
-    // Video en pause par defaut — ne demarre qu'au clic sur le bouton
-    video.pause();
-    setPaused();
+    function startVideo() {
+        var playPromise = video.play();
+        if (playPromise !== undefined) {
+            playPromise.then(function() {
+                setPlaying();
+            }).catch(function() {
+                setPaused();
+            });
+        } else {
+            setPlaying();
+        }
+    }
+
+    if (video.paused) {
+        startVideo();
+    } else {
+        setPlaying();
+    }
 
     // Bouton play/pause
     btn.addEventListener('click', function() {
         if (video.paused) {
-            var playPromise = video.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    setPlaying();
-                }).catch(function() {
-                    setPaused(); /* iOS autoplay policy */
-                });
-            } else {
-                setPlaying();
-            }
+            startVideo();
         } else {
             video.pause();
             setPaused();

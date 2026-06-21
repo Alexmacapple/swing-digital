@@ -15,6 +15,7 @@ test.describe('PRD-012 - accueil éditorial et visuels', () => {
     test.skip(testInfo.project.name !== 'desktop-1920', 'Contrôle source exécuté une seule fois.');
 
     const html = readSrc('index.html');
+    const css = readSrc('css/style.css');
 
     expect(html).toContain('CRÉATEURS D’EXPÉRIENCES IMMERSIVES');
     expect(html).toContain('# formats courts # spectacle vivant # XR # réalité mixte # storytelling');
@@ -23,6 +24,10 @@ test.describe('PRD-012 - accueil éditorial et visuels', () => {
     expect(html).toContain('Nous imaginons des récits immersifs au croisement du spectacle vivant et des technologies XR.');
     expect(html).toContain(`src="${page3ImagePath}"`);
     expect(fs.existsSync(path.join(srcDir, page3ImagePath))).toBe(true);
+    expect(css).toContain('background: var(--color-background-pink-readable);');
+    expect(css).toContain('.hero-page1__background {\n    display: none;\n}');
+    expect(css).not.toContain('--gradient-hero-video-tint');
+    expect(css).not.toContain('background: var(--gradient-hero-video-tint)');
 
     expect(html).not.toContain('Créateurs d\'Expériences Transmédia Immersives');
     expect(html).not.toContain('# spectacle vivant # réalité mixte # storytelling');
@@ -51,6 +56,10 @@ test.describe('PRD-012 - accueil éditorial et visuels', () => {
       const content = rect('.hero-page1__title-group');
       const bottomLeft = rect('.hero-page1__bottom-left');
       const bottomRight = rect('.hero-page1__bottom-right');
+      const heroBackground = document.querySelector('.hero-page1__background');
+      const heroVideo = document.querySelector('.hero-page1__video');
+      const backgroundStyle = heroBackground ? window.getComputedStyle(heroBackground) : null;
+      const videoStyle = heroVideo ? window.getComputedStyle(heroVideo) : null;
 
       return {
         contentInsideHero: Boolean(
@@ -63,12 +72,18 @@ test.describe('PRD-012 - accueil éditorial et visuels', () => {
         ),
         contentOverlapsBottomLinks: overlaps(content, bottomLeft) || overlaps(content, bottomRight),
         pageOverflow: Math.ceil(document.documentElement.scrollWidth - window.innerWidth),
+        heroBackgroundDisplay: backgroundStyle ? backgroundStyle.display : null,
+        heroVideoFilter: videoStyle ? videoStyle.filter : null,
+        heroVideoOpacity: videoStyle ? videoStyle.opacity : null,
       };
     });
 
     expect(heroLayout.contentInsideHero).toBe(true);
     expect(heroLayout.contentOverlapsBottomLinks).toBe(false);
     expect(heroLayout.pageOverflow).toBeLessThanOrEqual(1);
+    expect(heroLayout.heroBackgroundDisplay).toBe('none');
+    expect(heroLayout.heroVideoFilter).toBe('none');
+    expect(heroLayout.heroVideoOpacity).toBe('1');
 
     await page.goto('/index.html#page-3');
     const page3Image = page.locator(`#page-3 img[src="${page3ImagePath}"]`);

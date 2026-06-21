@@ -1,9 +1,9 @@
 # PRD-016 : Contact, adresse et animation logo
 
-**Statut** : Implémenté sauf animation, attente asset
+**Statut** : Implémenté et vérifié localement
 **Date** : 2026-06-21
 **Auteur** : Alex
-**Source** : `retour/changements_site (1).docx`, inspection de `src/index.html` et `src/mentions-legales.html`, réponse de Stéphanie du 2026-06-21
+**Source** : `retour/changements_site (1).docx`, `retour/accueil-1.mp4`, inspection de `src/index.html` et `src/mentions-legales.html`, réponse de Stéphanie du 2026-06-21
 
 ---
 
@@ -28,7 +28,7 @@ L’adresse visible devient :
 75018 Paris
 ```
 
-La vidéo ou animation de fond actuelle n’est pas remplacée, car Stéphanie confirme que l’animation logo rose est encore en production.
+La vidéo de fond du bloc contact est remplacée par `accueil-1.mp4`, en chemin relatif, sans filtre couleur afin de rester au plus proche du fichier fourni.
 
 Les mentions légales affichent `Swing Digital Production`, car Stéphanie confirme que c’est le titre légal. L’adresse légale est mise à jour avec le nouveau siège social.
 
@@ -47,6 +47,7 @@ Les mentions légales affichent `Swing Digital Production`, car Stéphanie confi
 - Réponse de Stéphanie : la nouvelle adresse est le nouveau siège social.
 - Réponse de Stéphanie : le vrai titre légal reste `Swing Digital Production`; `Production` est seulement retiré de la marque visible pour alléger l’affichage.
 - Réponse de Stéphanie : l’animation logo rose est en cours de fabrication et arrivera plus tard.
+- Asset fourni ensuite : `retour/accueil-1.mp4`, intégré comme vidéo de fond relative `accueil-1.mp4` sur `src/index.html#page-62`.
 
 ---
 
@@ -80,7 +81,10 @@ Pour les mentions légales :
 - l’adresse visible de l’accueil est `59, rue du Département` / `75018 Paris` ;
 - l’email reste `production@swingdigitalproduction.com` ;
 - `src/mentions-legales.html` conserve `Swing Digital Production` et affiche le nouveau siège social `59, rue du Département`, `75018 Paris, France` ;
-- l’animation `video/contact.mp4` reste en place dans l’attente de l’asset rose animé ;
+- la vidéo de fond du bloc contact référence `accueil-1.mp4` en chemin relatif ;
+- l’asset `src/accueil-1.mp4` est présent dans l’arborescence publique ;
+- la vidéo de `page-62` est affichée sans filtre rose ni rotation de teinte ;
+- la vidéo de `page-62` est configurée en autoplay, muette, en boucle et synchronisée avec le bouton lecture/pause ;
 - le test Playwright `tests/prd016-contact-adresse-logo.spec.js` couvre le bloc source et le rendu responsive.
 
 ---
@@ -161,7 +165,9 @@ Dans les mentions légales, conserver `Swing Digital Production` comme dénomina
 - `src/mentions-legales.html` contient la nouvelle adresse.
 - `src/mentions-legales.html` conserve une dénomination légale explicite et non ambiguë.
 - Aucune information d’hébergeur n’est inventée.
-- Si un nouvel asset d’animation est fourni, il est présent dans `src/` et référencé par le bloc contact.
+- Le nouvel asset d’animation fourni est présent dans `src/` et référencé par le bloc contact en chemin relatif.
+- Le rendu de la vidéo de contact reste au plus proche du fichier fourni, sans filtre rose.
+- La vidéo de contact démarre automatiquement quand la page est rendue, avec fallback manuel via le bouton.
 - Aucun débordement horizontal n’est observé à 375, 600, 768, 1024 et 1440 px sur la section contact.
 - `npm run build:prod`, `npm test` et `npm run seo:check` terminent avec un code `0`.
 
@@ -179,6 +185,9 @@ Dans les mentions légales, conserver `Swing Digital Production` comme dénomina
 
 | Date | Auteur | Changement |
 |------|--------|------------|
+| 2026-06-21 | Alex + Codex | Suppression du filtre couleur sur la vidéo contact pour conserver le rendu du fichier fourni, avec cache-buster CSS |
+| 2026-06-21 | Alex + Codex | Activation de l’autoplay sur la vidéo contact et synchronisation du bouton lecture/pause |
+| 2026-06-21 | Alex + Codex | Remplacement de la vidéo de fond du contact par `accueil-1.mp4` en chemin relatif, sans modifier le reste de la section |
 | 2026-06-21 | Alex + Codex | Intégration de la réponse de Stéphanie : adresse du siège social mise à jour dans les mentions légales, dénomination légale `Swing Digital Production` conservée, animation logo rose maintenue en attente d’asset |
 | 2026-06-21 | Alex + Codex | Implémentation phase 1 : marque visible et adresse de contact sur l’accueil, maintien prudent des mentions légales et test Playwright dédié |
 | 2026-06-21 | Alex + Codex | Création du PRD |
