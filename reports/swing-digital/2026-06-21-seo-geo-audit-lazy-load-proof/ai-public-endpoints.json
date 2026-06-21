@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/llms.txt",
+    "status": 200,
+    "content_type": "text/plain"
+  },
+  {
+    "path": "/for-ai/",
+    "status": 200,
+    "content_type": "text/html"
+  },
+  {
+    "path": "/for-ai.json",
+    "status": 200,
+    "content_type": "application/json"
+  },
+  {
+    "path": "/for-ai.txt",
+    "status": 200,
+    "content_type": "text/plain"
+  },
+  {
+    "path": "/schema-webpage.jsonld",
+    "status": 200,
+    "content_type": "application/octet-stream"
+  }
+]

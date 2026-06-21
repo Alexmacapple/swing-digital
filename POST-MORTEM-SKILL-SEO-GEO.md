@@ -23,6 +23,16 @@ Les améliorations les plus utiles pour une prochaine version seraient donc des 
 
 ## Retours par étape de session
 
+0. Relance d'audit après correction lazy-load
+
+La relance du 2026-06-21 a validé l'intérêt de corriger le skill plutôt que le site. Le rapport précédent signalait 26 images non chargées. Le nouveau rapport scrolle la page, puis distingue les états des images.
+
+Résultat observé : desktop avec 34 images lazy, 8 chargées initialement, 26 chargées après scroll, 0 cassée et 0 encore différée. Mobile avec 34 images chargées initialement et 0 défaut final.
+
+À renforcer : ce pattern doit devenir natif dans le skill. Le rapport devrait toujours exposer `loaded_initially`, `loaded_after_scroll`, `broken` et `still_deferred`, puis scorer uniquement les images cassées ou encore différées après exposition réelle.
+
+Enseignement générique : ne pas transformer un comportement web sain en dette technique parce que le protocole d'audit observe trop tôt. Le skill doit aider l'agent à diagnostiquer si le problème vient du site, du cache, de la préproduction ou de l'outil.
+
 1. Rapport HTML obligatoire
 
 Au début, l'absence ou la mauvaise version du rapport HTML a créé de la confusion. L'amélioration qui force `audit.json`, `index.html`, URL locale ou chemin de rapport et captures est pertinente.
