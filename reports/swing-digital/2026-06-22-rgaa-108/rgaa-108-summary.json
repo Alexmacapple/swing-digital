@@ -1,0 +1,743 @@
+{
+  "generatedAt": "2026-06-21T22:53:07.951Z",
+  "updatedAt": "2026-06-21T22:56:15.021Z",
+  "pages": 27,
+  "axeViolations": [
+    {
+      "page": "/reservations.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 8,
+      "targets": [
+        [
+          "#page58-title"
+        ],
+        [
+          "#page-58 > .page58__container > .page58__layout > .page58__left > .page58__image-wrapper > .page58__badge-new"
+        ],
+        [
+          "#page-58 > .page58__container > .page58__layout > .page58__left > .page58__experience-title"
+        ],
+        [
+          ".page58__faq-link"
+        ],
+        [
+          "#page59-title"
+        ],
+        [
+          ".page58__image-wrapper--double > .page58__badge-new"
+        ],
+        [
+          "#page-59 > .page58__container > .page58__layout > .page58__left > .page58__experience-title"
+        ],
+        [
+          ".page61__mail-link"
+        ]
+      ]
+    },
+    {
+      "page": "/experience-monroe.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 1,
+      "targets": [
+        [
+          ".js-disclosure-label"
+        ]
+      ]
+    },
+    {
+      "page": "/voyage-autour-de-moi.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 1,
+      "targets": [
+        [
+          ".js-disclosure-label"
+        ]
+      ]
+    },
+    {
+      "page": "/dessine-moi-le-vent.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 1,
+      "targets": [
+        [
+          ".js-disclosure-label"
+        ]
+      ]
+    },
+    {
+      "page": "/ni-vues-ni-connues.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 1,
+      "targets": [
+        [
+          ".page49__description"
+        ]
+      ]
+    },
+    {
+      "page": "/marilyn.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 6,
+      "targets": [
+        [
+          "#page51-title"
+        ],
+        [
+          ".page51__description > p:nth-child(1)"
+        ],
+        [
+          "em"
+        ],
+        [
+          "strong:nth-child(2)"
+        ],
+        [
+          "strong:nth-child(3)"
+        ],
+        [
+          ".page51__description > p:nth-child(2)"
+        ]
+      ]
+    },
+    {
+      "page": "/monroe-piece.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 1,
+      "targets": [
+        [
+          ".js-disclosure-label"
+        ]
+      ]
+    },
+    {
+      "page": "/monroe-experiences.html",
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "tags": [
+        "cat.color",
+        "wcag2aa",
+        "wcag143",
+        "TTv5",
+        "TT13.c",
+        "EN-301-549",
+        "EN-9.1.4.3",
+        "ACT",
+        "RGAAv4",
+        "RGAA-3.2.1"
+      ],
+      "nodes": 2,
+      "targets": [
+        [
+          "#page39-title"
+        ],
+        [
+          ".page39__description"
+        ]
+      ]
+    }
+  ],
+  "erroredPages": [],
+  "reflowFailures": [
+    {
+      "url": "https://swing.appmiweb.com/mentions-legales.html",
+      "reflow": {
+        "scrollWidth": 339,
+        "innerWidth": 320,
+        "scrollHeight": 5740,
+        "innerHeight": 256,
+        "overflowX": 19
+      },
+      "spacing": {
+        "scrollWidth": 415,
+        "innerWidth": 320,
+        "overflowX": 95
+      }
+    },
+    {
+      "url": "https://swing.appmiweb.com/reservations.html",
+      "reflow": {
+        "scrollWidth": 320,
+        "innerWidth": 320,
+        "scrollHeight": 7474,
+        "innerHeight": 256,
+        "overflowX": 0
+      },
+      "spacing": {
+        "scrollWidth": 377,
+        "innerWidth": 320,
+        "overflowX": 57
+      }
+    }
+  ],
+  "keyboardPotentialIssues": [
+    {
+      "url": "https://swing.appmiweb.com/#page-1",
+      "invisibleFocusCount": 0,
+      "tabs": [
+        {
+          "tag": "a",
+          "id": "",
+          "className": "hero-page1__cta",
+          "text": "Découvrir les expériences",
+          "href": "experiences-series.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 506,
+          "left": 56
+        },
+        {
+          "tag": "button",
+          "id": "hero-sound-btn",
+          "className": "hero-page1__sound-btn",
+          "text": "Activer le son",
+          "href": null,
+          "outline": true,
+          "visibleRect": true,
+          "top": 118,
+          "left": 270
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "Qui sommes nous ?",
+          "href": "#page-2",
+          "outline": true,
+          "visibleRect": true,
+          "top": 735,
+          "left": 16
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "Contact",
+          "href": "mailto:production@swingdigitalproduction.com",
+          "outline": true,
+          "visibleRect": true,
+          "top": 783,
+          "left": 16
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "Instagram",
+          "href": "https://www.instagram.com/swingdigital_france/",
+          "outline": true,
+          "visibleRect": true,
+          "top": 695,
+          "left": 309
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "LinkedIn",
+          "href": "https://www.linkedin.com/in/swing-digital-production-460681263/",
+          "outline": true,
+          "visibleRect": true,
+          "top": 739,
+          "left": 318
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "X",
+          "href": "https://x.com/Swing_Digital",
+          "outline": true,
+          "visibleRect": true,
+          "top": 783,
+          "left": 360
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "Galerie Joseph",
+          "href": "https://youtu.be/Le2Ybd_X6A0?si=hi0dl2k455NCpaog",
+          "outline": true,
+          "visibleRect": true,
+          "top": 2817,
+          "left": 236
+        }
+      ]
+    },
+    {
+      "url": "https://swing.appmiweb.com/plan-du-site.html",
+      "invisibleFocusCount": 0,
+      "tabs": [
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au contenu",
+          "href": "#main-content",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au menu",
+          "href": "#site-navigation",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 186
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au pied de page",
+          "href": "#site-footer",
+          "outline": true,
+          "visibleRect": true,
+          "top": 61,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "site-header__logo",
+          "text": "| Swing Digital |",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 15,
+          "left": 16
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "className": "site-nav__burger",
+          "text": "Menu de navigation",
+          "href": null,
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 330
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Accueil",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 10
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Plan du site",
+          "href": "plan-du-site.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 70
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "Accueil",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 289,
+          "left": 16
+        }
+      ]
+    },
+    {
+      "url": "https://swing.appmiweb.com/mentions-legales.html",
+      "invisibleFocusCount": 1,
+      "tabs": [
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au contenu",
+          "href": "#main-content",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au menu",
+          "href": "#site-navigation",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 186
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au pied de page",
+          "href": "#site-footer",
+          "outline": true,
+          "visibleRect": true,
+          "top": 61,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "site-header__logo",
+          "text": "| Swing Digital |",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 15,
+          "left": 16
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "className": "site-nav__burger",
+          "text": "Menu de navigation",
+          "href": null,
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 330
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Accueil",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 10
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Mentions légales",
+          "href": "mentions-legales.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 70
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "",
+          "text": "production@swingdigitalproduction.com",
+          "href": "mailto:production@swingdigitalproduction.com",
+          "outline": true,
+          "visibleRect": true,
+          "top": 589,
+          "left": 16
+        }
+      ]
+    },
+    {
+      "url": "https://swing.appmiweb.com/toulouse-lautrec.html",
+      "invisibleFocusCount": 1,
+      "tabs": [
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au contenu",
+          "href": "#main-content",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au menu",
+          "href": "#site-navigation",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 186
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au pied de page",
+          "href": "#site-footer",
+          "outline": true,
+          "visibleRect": true,
+          "top": 61,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "site-header__logo",
+          "text": "| Swing Digital |",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 15,
+          "left": 16
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "className": "site-nav__burger",
+          "text": "Menu de navigation",
+          "href": null,
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 330
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Accueil",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 10
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "XR",
+          "href": "experiences-series.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 70
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Toulouse-Lautrec",
+          "href": "toulouse-lautrec.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 104
+        }
+      ]
+    },
+    {
+      "url": "https://swing.appmiweb.com/charlotte-henschel.html",
+      "invisibleFocusCount": 1,
+      "tabs": [
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au contenu",
+          "href": "#main-content",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au menu",
+          "href": "#site-navigation",
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 186
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "skip-link",
+          "text": "Aller au pied de page",
+          "href": "#site-footer",
+          "outline": true,
+          "visibleRect": true,
+          "top": 61,
+          "left": 8
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "site-header__logo",
+          "text": "| Swing Digital |",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 15,
+          "left": 16
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "className": "site-nav__burger",
+          "text": "Menu de navigation",
+          "href": null,
+          "outline": true,
+          "visibleRect": true,
+          "top": 8,
+          "left": 330
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Accueil",
+          "href": "index.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 10
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "XR",
+          "href": "experiences-series.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 70
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "className": "breadcrumb__link",
+          "text": "Charlotte Henschel",
+          "href": "charlotte-henschel.html",
+          "outline": true,
+          "visibleRect": true,
+          "top": 66,
+          "left": 104
+        }
+      ]
+    }
+  ]
+}

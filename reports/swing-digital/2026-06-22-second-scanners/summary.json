@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-06-22T00:06:03.194Z",
+  "localBase": "http://127.0.0.1:8792",
+  "publicBase": "https://swing.appmiweb.com",
+  "standard": "WCAG2AA",
+  "urls": [
+    {
+      "path": "/",
+      "publicUrl": "https://swing.appmiweb.com/",
+      "localUrl": "http://127.0.0.1:8792/"
+    },
+    {
+      "path": "/for-ai",
+      "publicUrl": "https://swing.appmiweb.com/for-ai",
+      "localUrl": "http://127.0.0.1:8792/for-ai"
+    },
+    {
+      "path": "/espaces-augmentes.html",
+      "publicUrl": "https://swing.appmiweb.com/espaces-augmentes.html",
+      "localUrl": "http://127.0.0.1:8792/espaces-augmentes.html"
+    },
+    {
+      "path": "/experiences-series.html",
+      "publicUrl": "https://swing.appmiweb.com/experiences-series.html",
+      "localUrl": "http://127.0.0.1:8792/experiences-series.html"
+    },
+    {
+      "path": "/the-party.html",
+      "publicUrl": "https://swing.appmiweb.com/the-party.html",
+      "localUrl": "http://127.0.0.1:8792/the-party.html"
+    },
+    {
+      "path": "/memory-box-vr.html",
+      "publicUrl": "https://swing.appmiweb.com/memory-box-vr.html",
+      "localUrl": "http://127.0.0.1:8792/memory-box-vr.html"
+    },
+    {
+      "path": "/films.html",
+      "publicUrl": "https://swing.appmiweb.com/films.html",
+      "localUrl": "http://127.0.0.1:8792/films.html"
+    },
+    {
+      "path": "/reservations.html",
+      "publicUrl": "https://swing.appmiweb.com/reservations.html",
+      "localUrl": "http://127.0.0.1:8792/reservations.html"
+    },
+    {
+      "path": "/experience-monroe.html",
+      "publicUrl": "https://swing.appmiweb.com/experience-monroe.html",
+      "localUrl": "http://127.0.0.1:8792/experience-monroe.html"
+    },
+    {
+      "path": "/voyage-autour-de-moi.html",
+      "publicUrl": "https://swing.appmiweb.com/voyage-autour-de-moi.html",
+      "localUrl": "http://127.0.0.1:8792/voyage-autour-de-moi.html"
+    },
+    {
+      "path": "/dessine-moi-le-vent.html",
+      "publicUrl": "https://swing.appmiweb.com/dessine-moi-le-vent.html",
+      "localUrl": "http://127.0.0.1:8792/dessine-moi-le-vent.html"
+    },
+    {
+      "path": "/ni-vues-ni-connues.html",
+      "publicUrl": "https://swing.appmiweb.com/ni-vues-ni-connues.html",
+      "localUrl": "http://127.0.0.1:8792/ni-vues-ni-connues.html"
+    },
+    {
+      "path": "/marilyn.html",
+      "publicUrl": "https://swing.appmiweb.com/marilyn.html",
+      "localUrl": "http://127.0.0.1:8792/marilyn.html"
+    },
+    {
+      "path": "/toulouse-lautrec.html",
+      "publicUrl": "https://swing.appmiweb.com/toulouse-lautrec.html",
+      "localUrl": "http://127.0.0.1:8792/toulouse-lautrec.html"
+    },
+    {
+      "path": "/charlotte-henschel.html",
+      "publicUrl": "https://swing.appmiweb.com/charlotte-henschel.html",
+      "localUrl": "http://127.0.0.1:8792/charlotte-henschel.html"
+    },
+    {
+      "path": "/xr-corporate.html",
+      "publicUrl": "https://swing.appmiweb.com/xr-corporate.html",
+      "localUrl": "http://127.0.0.1:8792/xr-corporate.html"
+    },
+    {
+      "path": "/monroe-piece.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-piece.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-piece.html"
+    },
+    {
+      "path": "/monroe-roman-graphique.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-roman-graphique.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-roman-graphique.html"
+    },
+    {
+      "path": "/monroe-installation.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-installation.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-installation.html"
+    },
+    {
+      "path": "/monroe-photographie.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-photographie.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-photographie.html"
+    },
+    {
+      "path": "/monroe-composition.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-composition.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-composition.html"
+    },
+    {
+      "path": "/monroe-podcasts.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-podcasts.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-podcasts.html"
+    },
+    {
+      "path": "/monroe-interviews.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-interviews.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-interviews.html"
+    },
+    {
+      "path": "/monroe-experiences.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-experiences.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-experiences.html"
+    },
+    {
+      "path": "/monroe-quiz.html",
+      "publicUrl": "https://swing.appmiweb.com/monroe-quiz.html",
+      "localUrl": "http://127.0.0.1:8792/monroe-quiz.html"
+    },
+    {
+      "path": "/mentions-legales.html",
+      "publicUrl": "https://swing.appmiweb.com/mentions-legales.html",
+      "localUrl": "http://127.0.0.1:8792/mentions-legales.html"
+    },
+    {
+      "path": "/plan-du-site.html",
+      "publicUrl": "https://swing.appmiweb.com/plan-du-site.html",
+      "localUrl": "http://127.0.0.1:8792/plan-du-site.html"
+    }
+  ],
+  "pa11yVersion": "9.1.1",
+  "htmlcsVersion": "2.5.1",
+  "lighthouseVersion": "13.0.3",
+  "pa11ySummary": {
+    "notice": 2379,
+    "warning": 352
+  },
+  "htmlcsSummary": {
+    "notice": 2379,
+    "warning": 352
+  },
+  "lighthouseSummary": {
+    "pages": 27,
+    "minScore": 100,
+    "maxScore": 100,
+    "failedAuditPages": 0,
+    "failedAudits": 0
+  }
+}
