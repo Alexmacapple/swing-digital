@@ -480,14 +480,20 @@ function initVimeoConditional() {
 
 /**
  * Video Sound Toggle (Vimeo Player API)
+ * Un lecteur par bloc .page11 : chaque page video a ses propres boutons.
  */
 function initVideoSound() {
-    var iframe = document.getElementById('vimeo-monroe');
-    var playBtn = document.querySelector('.page11__play-btn');
-    var soundBtn = document.querySelector('.page11__sound-btn');
+    if (typeof Vimeo === 'undefined') return;
 
-    if (!iframe || typeof Vimeo === 'undefined') return;
+    document.querySelectorAll('.page11').forEach(function(section) {
+        var iframe = section.querySelector('iframe[src*="player.vimeo.com"]');
+        if (iframe) bindVideoControls(section, iframe);
+    });
+}
 
+function bindVideoControls(section, iframe) {
+    var playBtn = section.querySelector('.page11__play-btn');
+    var soundBtn = section.querySelector('.page11__sound-btn');
     var player = new Vimeo.Player(iframe);
 
     if (playBtn) {

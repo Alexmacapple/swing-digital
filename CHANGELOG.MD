@@ -2,6 +2,7 @@
 
 ## 2026-09-19
 
+- Correction accessibilité des vidéos : les boutons lecture et son n’étaient câblés que sur `#vimeo-monroe` ; sur Voyage autour de moi, Dessine-moi le vent et la vidéo du roman graphique ils étaient inertes, avec une vidéo en lecture automatique impossible à mettre en pause. `initVideoSound()` relie désormais chaque bloc `.page11` à son propre lecteur ; cache-buster `js/main.js` mis à jour sur les 27 pages ; nouveau test `tests/boutons-video-vimeo.spec.js` (souris et clavier, fausse API Vimeo).
 - Correction Expérience Monroe (issue #24) : la vidéo « Marilyn Monroe - Confession inachevée - Roman Graphique » et sa transcription quittent `monroe-piece.html`, où elles étaient placées par erreur, pour `monroe-roman-graphique.html` ; intitulé accessible de l’iframe corrigé (il annonçait la pièce The Play) ; `scripts/build-public-transcripts.py` cible désormais la page Roman graphique (slug `roman-graphique`) ; `tests/transcriptions-disclosure.spec.js` suit le déplacement ; nouveau test `tests/t24-roman-graphique-video.spec.js`. La Pièce reste sans vidéo en attendant le lien de la bonne (issue #23).
 - Correction XR Corporate (issue #18) : « team-building » ne se coupe plus, « Contactez-nous pour en discuter. » passe sous l’image, centré, avec un espacement régulier ; cache-buster CSS mis à jour sur `xr-corporate.html` ; test Playwright `tests/t18-xr-corporate.spec.js` sur six largeurs, mesuré sans animation.
 
