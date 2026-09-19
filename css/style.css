@@ -8871,3 +8871,78 @@ main > .media-transcript {
     justify-content: flex-start;
     padding-inline: 0;
 }
+
+/* ============================================================
+   LES VOLETS DE L'EXPERIENCE MONROE (issue #38)
+   Une fois entre dans une sous-page, rien ne menait aux dix autres : seul le sous-menu de l'en-tete, au
+   troisieme niveau, le permettait. Chaque sous-page porte en fin de contenu la liste des onze volets.
+   ============================================================ */
+.volets {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.volets__titre {
+    font-family: var(--font-primary);
+    font-size: var(--fs-caption);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-sm);
+}
+.volets__liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: var(--space-2xs) var(--space-md);
+}
+.volets__lien {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    min-height: 44px;
+    min-width: 44px;
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+.volets__lien:hover {
+    color: var(--color-brand-pale);
+}
+.volets__numero {
+    font-weight: 700;
+    min-width: 1.4em;
+}
+/* Page courante : pas un lien, marquee par un trait vertical */
+.volets__lien--courant {
+    text-decoration: none;
+    font-weight: 700;
+    border-left: 3px solid var(--color-brand-pale);
+    padding-left: 0.6em;
+    margin-left: -0.9em;
+}
+.volets__retour-ligne {
+    margin: var(--space-md) 0 0;
+}
+.volets__retour {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: var(--font-primary);
+    font-size: var(--fs-body);
+    color: var(--color-white);
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+.volets__retour:hover {
+    color: var(--color-brand-pale);
+}
+@media (max-width: 600px) {
+    .volets__liste {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
