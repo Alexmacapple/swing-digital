@@ -8771,3 +8771,24 @@ main > .media-transcript {
 .page48__logo + .page48__logo {
     height: clamp(0.9rem, 1.8vw, 1.6rem);
 }
+
+/* ============================================================
+   ACCUEIL, PAGES 3 ET 4 (issue #10) : credits moins « pave »
+   La cliente : « pour les infos soutien, coproduction, diffusion, il faut reduire l'interligne et la typo ».
+   Ces lignes avaient le corps, l'interligne et les marges de la ligne de genre. Elles forment un bloc plus serre,
+   detache du genre, libelles en gras ; jamais sous 12 px.
+   ============================================================ */
+.page3__project-meta--credit {
+    font-size: 0.75rem; /* 12 px au reglage par defaut, suit la taille de police choisie par l'utilisateur */
+    line-height: 1.34;
+    margin: 0.06rem 0;
+}
+.page3__project-meta + .page3__project-meta--credit {
+    margin-top: 0.06rem;
+}
+.page3__project-meta:not(.page3__project-meta--credit) + .page3__project-meta--credit {
+    margin-top: 0.55rem;
+}
+.page3__credit-label {
+    font-weight: 700;
+}
