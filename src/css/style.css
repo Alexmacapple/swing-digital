@@ -6072,6 +6072,37 @@ main > .media-transcript {
     font-size: var(--fs-hero);
     color: var(--color-text-gold-dark);
 }
+/* Export de la cliente : le E tient dans une gouttiere a gauche, sous la fleche. En ligne dans le titre,
+   deux fois plus gros que lui, il decalait « Marilyn » de 27 a 50 px par rapport aux trois autres lignes. */
+.page37__title-group {
+    display: grid;
+    grid-template-columns: calc(var(--fs-title) * 1.08) 1fr;
+    column-gap: var(--space-2xs);
+    align-items: start;
+    position: relative;
+}
+.page37__category-arrow {
+    margin: 0;
+    line-height: 1.3;
+}
+.page37__letter {
+    position: absolute;
+    left: 0;
+    top: calc(var(--page37-corps, var(--fs-title)) * 1.3);
+    font-size: calc(var(--page37-corps, var(--fs-title)) * 1.7);
+    line-height: 1;
+}
+/* Colonne de 35 % : le corps suit la largeur pour garder « Avec ou sans » sur une ligne (quatre lignes, comme l'export). */
+@media (min-width: 769px) {
+    .page37__title-group {
+        --page37-corps: min(var(--fs-title), 2.9vw);
+        grid-template-columns: calc(var(--page37-corps) * 1.08) 1fr;
+    }
+    .page37__title,
+    .page37__category-arrow {
+        font-size: var(--page37-corps);
+    }
+}
 .page37__right {
     position: relative;
     overflow: hidden;
@@ -6185,6 +6216,66 @@ main > .media-transcript {
     .page36__photo--small {
         min-height: 25vh;
     }
+}
+/* Export de la cliente (experience-interactive-1) : trois photos entieres. La grande photo etait en
+   object-fit: cover dans une case haute et perdait 81 % de sa surface. Composition calee sur l'export
+   (754 x 424 sous le titre) : grande photo a gauche, les deux portraits dans un cadre blanc qui la chevauche. */
+.page36 {
+    align-items: center;
+    background: linear-gradient(to bottom, var(--color-white) 52%, var(--color-brand-gold) 52%);
+}
+.page36__header {
+    align-self: stretch;
+}
+.page36__gallery {
+    flex: none;
+    display: block;
+    position: relative;
+    box-sizing: content-box;
+    width: min(calc(100% - 2 * var(--slide-pad-x)), calc((var(--section-height) - 11rem) * 754 / 424));
+    aspect-ratio: 754 / 424;
+    padding: 0;
+    margin-bottom: var(--space-md);
+}
+.page36__photo {
+    position: absolute;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+.page36__photo-image {
+    height: auto;
+    object-fit: contain;
+}
+.page36__photo--large { top: 0; left: 0; width: 82.5%; }
+.page36__photo--medium,
+.page36__photo--small {
+    top: 4.7%;
+    background-color: var(--color-white);
+}
+.page36__photo--medium { left: 48.5%; width: 25.55%; padding: 1.6% 1% 1.6% 2.25%; }
+.page36__photo--small { left: 74.05%; width: 25.95%; padding: 1.6% 1.7% 1.6% 1%; }
+@media (max-width: 768px) {
+    .page36__gallery {
+        display: grid;
+        /* colonnes proportionnelles aux ratios natifs (701 x 1235 et 700 x 1180) : portraits de meme hauteur */
+        grid-template-columns: 0.5676fr 0.5932fr;
+        gap: var(--space-xs);
+        aspect-ratio: auto;
+        width: calc(100% - 2 * var(--slide-pad-x));
+    }
+    .page36__photo {
+        position: static;
+        width: auto;
+        min-height: 0;
+        padding: 0;
+    }
+    .page36__photo--large {
+        grid-column: 1 / -1;
+    }
+    .page36__photo--medium { grid-column: 1; }
+    .page36__photo--small { grid-column: 2; }
 }
 
 /* ============================================================
