@@ -2,30 +2,45 @@
 
 Site vitrine multi-pages pour Swing Digital, spécialiste des expériences immersives et espaces augmentés.
 
-Site statique de préproduction sur `https://swing.appmiweb.com`, issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO prêt pour validation avant domaine final.
+Site statique issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO prêt pour validation avant domaine final.
+
+- Site de recette en ligne, pour la cliente : `https://alexmacapple.github.io/swing-digital/` (GitHub Pages, publié depuis `main`, non référençable). Voir « Site de recette en ligne ».
+- Travail et tests : en local uniquement, sur `localhost`.
+- Domaine final : non décidé. Les métadonnées SEO désignent pour l'instant `https://swing.appmiweb.com`, ancienne préproduction, qui n'est plus la référence de recette.
 
 ## Démarrage rapide
 
 ```bash
-npm test
-npm run seo:check
-npm run build:prod
-npm run appmiweb:preflight
+npm test                        # suite Playwright complète, en local
+npm run seo:check               # socle SEO/GEO, en local
+npm run build:prod              # construit dist/
+scripts/publier-gh-pages.sh     # publie dist/ sur le site de recette
 ```
 
-Pour une lecture locale simple :
+Pour une lecture locale simple, avec le serveur qu'utilisent aussi les tests :
 
 ```bash
-cd src/
-python3 -m http.server 8080
+python3 scripts/serve-test.py 8080 src
+# puis http://localhost:8080/
 ```
+
+Attention : Playwright réutilise un serveur déjà présent sur le port 8080. S'il sert un autre arbre (un worktree, par exemple), les tests mesurent ce code-là : arrêter ce serveur avant `npm test`.
 
 ## Tests
 
 ```bash
 npm test
-# Suite versionnée : PRD-011 sur 5 viewports + socle SEO/GEO local
+# 45 fichiers de test sur 5 tailles d'écran (1920, 1024, 768, 600 et 375 px) : navigation, SEO/GEO,
+# accessibilité, vidéos, transcriptions, et un test de géométrie par page recomposée d'après les exports de la cliente
 ```
+
+Sur une machine chargée, cinq navigateurs en parallèle peuvent être tués en cours de route (« browser has been closed ») ; rejouer alors avec moins de parallélisme :
+
+```bash
+npm test -- --workers=2
+```
+
+Deux garde-fous transverses : `tests/t02-medias-entiers.spec.js` refuse toute photo rognée de plus de 8 % sur chacune des pages (hors cadrages voulus, listés dans le test), et `tests/images-espace-colorimetrique.spec.js` refuse tout JPEG encodé en CMJN.
 
 Contrôle SEO/GEO ciblé :
 
@@ -36,7 +51,7 @@ npm run seo:check
 
 ## Stack technique
 
-- HTML5 sémantique (25 pages top-level + `/for-ai/`)
+- HTML5 sémantique (28 pages top-level + `/for-ai/`)
 - CSS3 responsive (variables, BEM, mobile-first)
 - JavaScript vanilla (navigation, vidéos, animations)
 - Playwright configuré, harnais restauré pour PRD-011 et SEO/GEO local
@@ -56,6 +71,7 @@ npm run seo:check
 - Favicon, Open Graph, Twitter Card et JSON-LD sur les pages indexables
 - `robots.txt`, `sitemap.xml` et `llms.txt`
 - Build de production `dist/` excluant les artefacts de travail
+- Site de recette publié sur GitHub Pages par `scripts/publier-gh-pages.sh`
 
 ## Accessibilité (WCAG 2.2 AA / RGAA 4.1)
 
@@ -125,7 +141,7 @@ Points à connaître :
 
 ## Production
 
-La préproduction Appmiweb est validée techniquement. La production finale reste bloquée tant que le domaine final HTTPS, l'hébergeur légal et le scénario Réservations ne sont pas décidés.
+La recette se fait sur le site GitHub Pages (voir plus haut). L'ancienne préproduction Appmiweb n'est plus mise à jour ; les commandes `npm run appmiweb:*` qui l'interrogent restent dans `package.json` mais ne font plus partie du flux de travail. La production finale reste bloquée tant que le domaine final HTTPS, l'hébergeur légal et le scénario Réservations ne sont pas décidés.
 
 Point d'hébergement restant : les URL inexistantes doivent être configurées côté origine pour servir `/404.html` avec un statut HTTP `404`. Voir `docs/404-CUSTOM-ERROR-PAGE.md`.
 
@@ -141,5 +157,5 @@ npm run prod:preflight -- https://votre-domaine.fr
 
 ---
 
-**Dernière mise à jour** : 2026-09-19 (site de recette GitHub Pages)
+**Dernière mise à jour** : 2026-09-19 — site de recette sur GitHub Pages, travail en local sur localhost
 **Version** : v14 préproduction Satoshi, UI et 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité
