@@ -1,7 +1,7 @@
-# Rapport de corrections - Podcast - The Archives
+# Rapport de corrections - Interview - Amy Greene
 
-- Source : `transcripts/The archives - Joshua Greene [AB2Fb1wdHoo].en.txt`
-- Sauvegarde source : `The archives - Joshua Greene [AB2Fb1wdHoo].en.txt.bak-20260919-235852`
+- Source : `transcripts/Interview Amy Greene [c6ji1dscDqs].en.txt`
+- Sauvegarde source : `Interview Amy Greene [c6ji1dscDqs].en.txt.bak-20260919-235852`
 - Source primaire : transcript faster-whisper anglais, traduction française
 - Locuteurs : non applicable, aucun label de locuteur source.
 

@@ -1,7 +1,7 @@
 # Rapport de corrections - Podcast - Une icône en Corée
 
 - Source : `transcripts/UNE ICÔNE EN CORÉE (An Icon in Korea) - Épisode 3 ⧸ UN SAGE M' OUVRE LES YEUX -  Épisode 4 [iJjEmnqXWzU].fr.txt`
-- Sauvegarde source : `UNE ICÔNE EN CORÉE (An Icon in Korea) - Épisode 3 ⧸ UN SAGE M' OUVRE LES YEUX -  Épisode 4 [iJjEmnqXWzU].fr.txt.bak-20260621-183304`
+- Sauvegarde source : `UNE ICÔNE EN CORÉE (An Icon in Korea) - Épisode 3 ⧸ UN SAGE M' OUVRE LES YEUX -  Épisode 4 [iJjEmnqXWzU].fr.txt.bak-20260919-235852`
 - Source primaire : transcript faster-whisper français
 - Locuteurs : non applicable, aucun label de locuteur source.
 

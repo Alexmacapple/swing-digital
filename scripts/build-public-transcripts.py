@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TRANSCRIPTS_DIR = ROOT / "transcripts"
 PUBLIC_DIR = ROOT / "docs" / "transcripts"
 SRC_DIR = ROOT / "src"
-CSS_VERSION = "20260621-1900"
+CSS_VERSION = "20260920-t33-transcriptions"
 
 
 @dataclass(frozen=True)
@@ -51,7 +51,131 @@ COMMON_REPLACEMENTS: tuple[tuple[str, str], ...] = (
     ("Milton Green", "Milton Greene"),
     ("Milti est mon mentor.", "Milton est mon mentor."),
     ("Milton Green-Mountain Road", "Milton Greene-Marilyn Monroe"),
+    ("Milton Green,", "Milton Greene,"),
+    ("Milton Green ", "Milton Greene "),
+    ("vous êtes dans une blouse du mois d'août", "vous êtes dans un blues du mois d'août"),
+    ("Norma Dugherty", "Norma Dougherty"),
+    ("Monsieur Zanduc", "Monsieur Zanuck"),
+    ("Les grands monitours des studios", "Les grands manitous des studios"),
+    ("que le public s'emmène", "que le public s'en mêle"),
+    ("en m'accusant moi de la similité", "en m'accusant, moi, de leur duplicité"),
 )
+
+
+AMY_GREENE_FR = """Quelle est la spécificité du travail photographique de Milton Greene avec Marilyn ?
+Sur le plan humain comme sur le plan commercial : ils s'adoraient, ils se faisaient confiance. S'il lui avait demandé de faire la roue, elle l'aurait faite. Elle adorait être photographiée par lui, parce que les photographies étaient d'une beauté qu'elle n'avait jamais vue avant de découvrir le travail de Milton.
+Elle n'avait jamais vu de photographies pareilles, aussi belles, aussi élégantes. Elle a regardé le portfolio et elle a demandé : qui est cette personne ?
+Le rédacteur de Look, qui représentait le magazine à Los Angeles, lui a répondu : un type à New York, il s'appelle Milton Greene.
+Elle a dit : eh bien, je veux qu'il me photographie. Et Steve a répondu : parfait, parce que lui aussi veut vous photographier. C'est comme ça que ça s'est fait. Nous sommes partis tous les deux en Californie ; nous étions en voyage de noces, nous venions de nous marier, aussi incroyable que cela paraisse.
+
+En quoi le travail de Milton Greene différait-il de celui des autres photographes ?
+Richard Avedon l'a dit en peu de mots : Milton photographie les femmes comme personne d'autre au monde n'en est capable, moi compris.
+Il avait un rapport particulier aux femmes. Et puis c'était un artiste, un véritable artiste, avec un esprit hors du commun.
+
+Qu'est-ce qui a poussé Milton Greene à se lancer dans la production ? Et pourquoi a-t-il pris tous ces risques ?
+Il avait atteint ce niveau-là, mais il voulait monter plus haut encore. Il aimait le cinéma, bien sûr, il avait toujours aimé les films, il avait grandi dans un monde de fiction, et il voulait passer à l'étape suivante. Elle était enthousiaste à l'idée que cette société se crée autour d'elle.
+On rencontre quelqu'un, on l'apprécie, on apprend à le connaître, et la confiance s'installe. C'était la force de Milton avec toutes les personnes qu'il photographiait : celle ou celui qu'il photographiait savait qu'il ne lui ferait jamais de mal. Le mot, c'est la confiance.
+
+En 1954, Marilyn est partie de la Fox et s'est réfugiée chez vous, à Weston, dans le Connecticut. Quels souvenirs gardez-vous de cette période ? Avez-vous une anecdote à nous raconter ?
+Elle ne m'aurait jamais fait de mal, d'aucune façon. Je savais donc qu'il n'y avait rien entre eux. Beaucoup de gens disent que je suis folle, et que...
+Elle allait bien. C'était une jeune femme qui était une éponge : elle absorbait tout, de partout.
+
+Pendant la période où Milton dirigeait la Marilyn Monroe Productions, Marilyn et vous avez passé beaucoup de temps ensemble. Qu'est-ce qui vous unissait alors ?
+Nous sommes devenues amies. Je n'avais pas besoin de l'appeler pour lui proposer d'aller au Met : elle était dans la chambre à côté de la mienne.
+C'était une atmosphère de famille, et elle adorait ça. Joshua était là, il avait deux ans ; elle l'aimait et il l'aimait.
+C'était un bonheur partagé. Je déteste que cela sonne aussi mièvre, mais c'est vrai : elle ne m'a jamais posé le moindre problème. D'abord, je ne crois pas qu'elle aurait osé.
+Et puis tout le monde venait chez nous, à la campagne. Chaque dimanche soir, nous étions quinze ou seize autour de la table. Marilyn était là, elle participait à la conversation et elle tenait sa place.
+J'ai une histoire amusante à vous raconter. Un dimanche soir — Milton avait construit cette table lui-même, il se prenait pour un menuisier — tout le monde était assis autour, et un invité a dit qu'il revenait d'un enterrement. Nous avons commencé à parler de la mort.
+J'ai dit : très bien, faisons le tour de table, que chacun nous dise ce qu'il en pense. Et c'est passé de l'un à l'autre. Des gens passionnants qui parlent.
+Le tour est arrivé à Marilyn. Elle a dit : moi, je veux juste être enterrée sous une pierre tombale où il sera écrit 36, 22, 36. Vous savez ce que c'était ? Ses mensurations.
+Voilà pourquoi elle avait cet humour formidable. Elle a eu droit à une ovation.
+
+Il existe de belles photographies de Milton Greene où l'on voit Marilyn avec votre fils Joshua. Quel regard Marilyn portait-elle sur lui ?
+Marilyn Monroe reste une icône mondiale, et beaucoup de gens se sont emparés de son image. Ce phénomène était-il prévisible à l'époque de la Marilyn Monroe Productions ?
+C'était Le Prince et la Danseuse, et elle n'a jamais été aussi heureuse qu'à ce moment-là de sa vie.
+D'ailleurs Joshua Logan, le grand metteur en scène, celui dont Joshua Greene porte le prénom, disait que c'était sa période dorée. C'est lui qui l'a dirigée dans Arrêt d'autobus.
+Autre chose, très important : la Marilyn Monroe Productions lui donnait le droit de choisir son metteur en scène, ce qu'elle n'avait jamais eu auparavant. Là encore, c'était Lew Wasserman, Milton Greene, Jay Kanter. Tout cela s'est négocié au téléphone avec Zanuck.
+Zanuck ne l'a jamais comprise. Zanuck ne l'a jamais aimée. Il l'appelait tête de paille. Mais peu importe.
+
+Comment expliquez-vous que Marilyn soit devenue une icône ?
+Cette génération — non, pas celle-ci, les deux dernières — semble ne plus avoir de héros comme nous en avions. Alors il leur en faut fabriquer un. Et Marilyn était là.
+Elle était morte avant que cela n'arrive. Elle en aurait été aussi stupéfaite que nous tous. Personne n'a compris ce phénomène.
+D'ailleurs, l'un de nos affreux amis, qui se prenait pour un comique, a dit à la mort de Marilyn que c'était un bon plan de carrière. Et ça l'a été. Si elle avait vécu, peut-être que rien de tout cela ne serait arrivé.
+Mais elle dépasse aussi James Dean. Elle dépasse Steve McQueen. C'est à un niveau qu'on n'avait jamais vu. Peut-être un roi ou une reine. Peut-être la reine Victoria, à l'époque victorienne.
+Mon fils Joshua dit toujours qu'elle est morte jeune. Elle est morte à trente-six ans. Et il a raison. C'est encore cette image de la jeunesse : Dean, Elvis, Jimi Hendrix, Janis Joplin. Si l'on veut tous les réunir : Mozart, trente-six ans. Modigliani, trente-six ans.
+Il y a une raison pour que ceux-là deviennent des icônes, et je crois qu'il tient quelque chose : ils sont morts jeunes. Personne n'a pu voir leurs défauts.
+
+Arthur était jaloux de Milton. Pas de Milton en tant qu'homme, mais du temps que Marilyn et Milton passaient à travailler ensemble. Arthur ne le supportait pas. C'était au-delà de ses forces. Il était possessif, et il estimait que c'était son temps à lui.
+Enfin, ils faisaient un film, tout de même. Soyons charitables : Arthur a trois enfants, et je ne veux pas être méchante. Disons simplement qu'il n'était pas de taille. Il ne pouvait pas gérer ce que géraient Kanter, Greene et Wasserman. Il ne comprenait pas. Ce n'était pas son métier, ce n'étaient pas ses moyens.
+S'il était allé s'asseoir dans un coin pour écrire, il n'aurait gêné personne. Nous priions pour ça : mon Dieu, faites qu'Arthur aille écrire une pièce. Mais non.
+Il venait sur le plateau. Il venait dans la loge. Il passait la prendre, et elle n'en voulait pas. Elle n'en voulait vraiment pas, parce qu'elle travaillait. Quand c'est Laurence Olivier qui vous dirige, il faut être attentive, même quand on n'en a pas envie. Et Arthur, lui, était devenu impossible.
+Voilà ce qui a eu raison de la Marilyn Monroe Productions.
+J'avais un mari malheureux. J'avais un mari qui ne voulait pas vraiment faire ce qu'il faisait. Nous vivions très bien, nous vivions magnifiquement de son talent, nous étions habitués à une vie très agréable. Et tout à coup, il y avait un homme malheureux à la maison.
+
+Des années plus tard, pendant le tournage des Désaxés, mon ami Eli Wallach, que j'adorais — un acteur très connu à New York — était sur le plateau : il jouait l'un des personnages.
+À un moment, Marilyn s'est retournée contre Arthur. Ils se disputaient sans arrêt sur le tournage. Elle s'est retournée contre lui, elle s'est mise à crier, à lui reprocher ceci et cela. Et elle a dit, entre autres : tu m'as même pris la seule personne en qui j'aie eu confiance de toute ma vie. Tu me l'as enlevé.
+Arthur a répondu : de quoi parles-tu ? Marilyn a dit : de Milton Greene. Pourquoi n'est-il pas là ? Pourquoi n'est-il pas sur ce plateau ?
+C'est Eli qui me l'a raconté. Vous avez votre réponse.
+
+Attendez, reprenons depuis le début. J'ai rêvé de Marilyn, et elle appelait à l'aide. Je réveille mon mari et je lui dis : prends un avion et va la voir.
+Il m'a répondu : tu as perdu la tête, nous partons à Paris dans trois jours pour les collections, comment veux-tu ? C'est impossible, je fais mes valises, je pars.
+J'ai dit : très bien. Si tu ne veux pas aller la voir, appelle-la.
+Il a donc appelé Arthur Jacobs, qui était l'attaché de presse, et Arthur lui a aussitôt donné le numéro. Ils ont parlé trois heures. Pas une heure : trois heures, ce jour-là.
+Puis elle l'a rappelé le lendemain, ils se sont de nouveau parlé et ils ont fixé un rendez-vous : à la fin des collections, il prendrait l'avion par le pôle et irait à Los Angeles, et moi je rentrerais à New York. C'était convenu. Et vous savez ce qui est arrivé.
+
+Savez-vous ce qui s'est dit pendant ces conversations ?
+Non, mon petit. Je quittais la pièce, cela ne me regardait pas. J'étais sûre de moi à ce point.
+Exactement. Non. Ils étaient associés. De la même façon, je n'écoutais pas : je sortais de la pièce quand il parlait à des annonceurs. Je ne suis pas ce genre de femme, je ne l'ai jamais été. Je me sens très bien comme cela.
+Elle était donc dans un cocon, et le papillon sortait du cocon, avec tous ceux qui l'entouraient. Et elle adorait ça. Elle n'avait aucun problème, sauf Arthur.
+Bon, d'accord, je ne vais pas parler d'Arthur : la journée est trop belle.
+Arthur n'a jamais pu comprendre la relation entre Milton et Marilyn. Jamais de la vie il n'aurait pu la comprendre.
+Et la Marilyn Monroe Productions, c'était Marilyn à cinquante et un pour cent. C'est Milton qui a fait cela, avec Lew Wasserman et Jay Kanter, pour qu'elle ait la majorité de sa propre société de production.
+Arthur ne comprenait pas pourquoi Milton Greene détenait quarante-neuf pour cent de la Marilyn Monroe Productions, parce qu'il n'a jamais su ce que Milton faisait au quotidien.
+
+Un jour, Gene Kelly est venu à la maison et il a dit : je rentre de Paris, j'ai vu une pièce en français — Gene parlait français — Irma la Douce. J'ai pris une option dessus, et nous allons la monter à Broadway.
+Milton a dit : absolument. Marilyn a été mise dans la confidence le soir même, et on lui a annoncé qu'elle allait jouer Irma la Douce à Broadway.
+Qu'est-ce que c'est, Irma la Douce ? Elle a adoré. Une prostituée, ceci, cela, amoureuse d'un policier, et la musique. Elle était enchantée.
+Voilà la protection que Milton Greene lui apportait, et qu'Arthur n'a jamais comprise. C'était une protection quotidienne, de chaque heure, constante.
+
+En quoi était-elle une femme moderne ?
+Elle est devenue féministe. Elle s'est mise tout à coup à poser des questions et à exiger des réponses, de Zanuck comme de tous ceux à qui elle parlait. Elle aimait Carl Sandburg, elle est allée le rencontrer à Chicago.
+Une chose très importante : la première fois que Marilyn a décroché son téléphone pour dire à quelqu'un « j'exige que vous fassiez telle chose », c'est quand elle a appris que sa chanteuse préférée, Ella Fitzgerald, devait se produire au Crescendo et qu'on n'en voulait pas, parce qu'elle était afro-américaine.
+Marilyn a décroché le téléphone et a dit : vous devez la laisser venir. Et si vous le faites, je serai là tous les soirs. Elle y était tous les soirs. Et Ella et elle sont devenues amies.
+C'est là qu'elle a pris conscience de son pouvoir pour la première fois.
+
+Un soir, nous sommes allés voir Sinatra au Copacabana. La salle était pleine à craquer, on n'aurait pas pu y glisser un cure-dent. Nous sortions d'une grande soirée de presse : elle portait une robe de satin blanc, des chaussures de satin blanc, un manteau de vison blanc, du vison rasé, des diamants. Elle ressemblait à une star de cinéma.
+Et je lui dis : n'y compte pas, nous n'entrerons jamais. Ils connaissent Milton, et s'ils lui ont dit non au téléphone, nous n'entrerons pas.
+Elle m'a demandé : tu tiens à entrer à quel point ? J'ai répondu : je suis amoureuse de cet homme, alors bien sûr que je veux entrer et le voir. Elle a dit : d'accord, suis-moi.
+Nous quittons la soirée, nous entrons au Copacabana — pas par les cuisines, comme d'habitude : si vous vous souvenez de la scène des Affranchis, c'est comme cela que nous entrions. Mais cette fois, nous sommes descendus par l'escalier.
+Il y avait un petit palier avant les trois dernières marches. Elle s'est arrêtée là, sans dire un mot. Moi derrière elle, Milton derrière moi. Elle est restée là.
+Et tout le monde s'est tourné dans cette direction. Frank était de l'autre côté, et il s'aperçoit qu'il se passe quelque chose, parce que plus personne ne fait attention à lui. Il demande : quoi ? Qui est-ce ? Que se passe-t-il ? Il arrête le spectacle.
+J'étais très impressionnée. J'ai dit : d'accord, je t'en dois une.
+
+Une erreur. Rien qu'une erreur. Milton et moi... On nous a posé cette question depuis toujours.
+Elle a simplement pris les deux comprimés de trop, ceux qu'elle n'aurait jamais dû prendre, parce qu'elle avait oublié qu'elle en avait déjà pris trois heures plus tôt. C'était une erreur.
+Les Cubains n'étaient pas après elle. Les gangsters n'étaient pas après elle. Les Kennedy n'étaient pas après elle. C'était une erreur, un point c'est tout.
+Seulement, une erreur, cela n'a rien de romanesque. Alors bien sûr, personne ne veut le croire. Elle s'est trompée. C'est aussi simple que cela. Elle s'est trompée. Ce n'était pas prémédité.
+Parce qu'elle avait eu ces trois conversations avec Milton. Elle est morte pendant que nous étions à Paris, pour les collections. Il la croyait heureuse, il la croyait en sécurité, et ils avaient hâte de se retrouver.
+Si elle n'était pas morte, je suis certaine que la Marilyn Monroe Productions serait repartie une fois de plus. Mais cela n'est jamais arrivé. Une erreur.
+
+La liberté sexuelle : je crois que c'est cela, sa vraie contribution. Je ne crois pas qu'elle savait ce qu'elle faisait pendant qu'elle le faisait, mais cette liberté sexuelle qui est partout aujourd'hui — sauf au Moyen-Orient, mais n'entrons pas là-dedans.
+Soyez heureuse de votre corps. Aimez votre corps. Prenez soin de votre corps. Soyez sexy.
+Tout ce que nous voyons aujourd'hui, qui est excessif, déjà trop : il n'y a jamais de juste milieu, c'est toujours trop ou trop peu. Je crois donc que ce qu'elle a apporté au monde en général, c'est la liberté sexuelle.
+
+Les cheveux blonds : plus de femmes se sont teint les cheveux en blond qu'à l'époque même de Jean Harlow. Elles ne l'avaient pas fait autant qu'avec Marilyn.
+N'oublions pas que Betty Grable était blonde. Nous avons toujours aimé les blondes. Jean Harlow était magnifique, tout en elle était magnifique : si vous regardez un film de Jean Harlow, regardez ses pieds, ses chevilles, ses jambes. Ils sont magnifiques. Betty Grable, pareil.
+Chaque femme a quelque chose à donner au cinéma. C'est leur métier, et c'est ce qu'elles doivent faire, parce que c'est pour cela qu'on les paie très cher.
+Il y a donc eu Harlow, puis Grable, puis Marilyn. Dietrich, elle, était dans un monde à part : on n'a jamais dit de Dietrich qu'elle était une blonde, si vous voyez ce que je veux dire. Elle était blonde, mais c'était tout autre chose.
+Qui d'autre me vient à l'esprit ? Eva Marie Saint, dans les années soixante. Mais là encore, elle n'était pas assez sensuelle pour cela.
+Je crois donc que ce qu'elle a laissé, c'est qu'on a le droit de se teindre les cheveux et d'être blonde, si c'est ce qu'on veut. Elle a donné aux femmes leur liberté.
+Les femmes sont formidables, mais nous ne le savons pas. Nous n'avons pas compris ce que nous valons, vraiment. Nous pouvons tout faire."""
+
+
+ESTRADE_DESCRIPTION = """Vidéo musicale, sans parole.
+
+Dans une salle d'exposition aux murs couverts de photographies, une estrade blanche à gradins porte en son centre une grille de soufflerie. Les visiteurs y montent à tour de rôle, seuls ou à deux. Portés par le souffle d'air et la musique, ils prennent la pose, dansent, retiennent un vêtement qui s'envole, rient. À côté de l'estrade, un écran vertical leur renvoie leur image.
+
+Le montage alterne des plans larges de l'installation et des plans rapprochés sur les visages et les gestes : un homme en chemise qui esquisse un pas de danse, deux femmes qui rient ensemble, une jeune femme en grand écart, une autre, bras levés, qui tourne sur elle-même."""
 
 
 THE_ARCHIVES_FR = """Milton Greene est photographe. Pendant des années, des millions d'entre nous ont vu ses images en couverture de Look, Life, Vogue et d'autres magazines.
@@ -166,6 +290,45 @@ CONFIGS: tuple[TranscriptConfig, ...] = (
         headings=("La Fox et les économies", "Le 4 août", "Après la mort"),
     ),
     TranscriptConfig(
+        slug="la-piece",
+        title="La Pièce - teaser",
+        source="La Pièce - teaser théâtre [106406158].fr.txt",
+        headings=("Un nouveau nom", "Les studios", "Jouer"),
+        replacement_overrides=(
+            ("Sous-titrage ST'501\n", ""),
+            ("Rien que tu pensais.\nYes, the strongest more\nWhite mama made of...\n", "[Passage chanté en anglais.]\n"),
+        ),
+    ),
+    TranscriptConfig(
+        slug="installation-galerie-joseph",
+        title="L'installation à la Galerie Joseph",
+        source="L'Expérience Monroe à La Galerie Joseph [872268258].fr.txt",
+        headings=("Le labyrinthe", "Mars 1954", "Les volets du parcours"),
+        replacement_overrides=(("Sous-titres réalisés para la communauté d'Amara.org\n", ""),),
+    ),
+    TranscriptConfig(
+        slug="estrade-marilyn",
+        title="L'estrade Marilyn",
+        source="La Pièce - teaser théâtre [106406158].fr.txt",
+        headings=("Ce que montre la vidéo",),
+        source_label="description rédigée : vidéo musicale, sans parole",
+        translated_text=ESTRADE_DESCRIPTION,
+    ),
+    TranscriptConfig(
+        slug="interview-gombeaud-montagner",
+        title="Interview - Adrien Gombeaud et Christelle Montagner",
+        source="Interview Gombeaud et Montagner [Q8IsqXjCXwc].fr.txt",
+        headings=("Écrire une blonde à Manhattan", "Norma Jeane et Marilyn", "L'image et les photographes", "Le mythe et ses fans", "Le dernier mot"),
+    ),
+    TranscriptConfig(
+        slug="interview-amy-greene",
+        title="Interview - Amy Greene",
+        source="Interview Amy Greene [c6ji1dscDqs].en.txt",
+        headings=("Milton Greene et Marilyn", "Weston, Connecticut", "La Marilyn Monroe Productions", "Devenir une icône", "Arthur Miller", "Une femme moderne", "Ce qu'elle a laissé"),
+        source_label="transcript faster-whisper anglais, traduction française",
+        translated_text=AMY_GREENE_FR,
+    ),
+    TranscriptConfig(
         slug="podcast-the-archives",
         title="Podcast - The Archives",
         source="The archives - Joshua Greene [AB2Fb1wdHoo].en.txt",
@@ -182,6 +345,10 @@ PAGE_TARGETS = {
     "src/voyage-autour-de-moi.html": ("voyage-autour-de-moi",),
     "src/monroe-roman-graphique.html": ("roman-graphique",),
     "src/experience-monroe.html": ("experience-monroe",),
+    "src/monroe-piece.html": ("la-piece",),
+    "src/monroe-installation.html": ("installation-galerie-joseph",),
+    "src/monroe-experiences.html": ("estrade-marilyn",),
+    "src/monroe-interviews.html": ("interview-gombeaud-montagner", "interview-amy-greene"),
     "src/monroe-podcasts.html": (
         "podcast-devenir-marilyn",
         "podcast-icone-coree",
@@ -269,7 +436,7 @@ def split_sections(paragraphs: list[str], headings: tuple[str, ...]) -> list[tup
     return result
 
 
-def render_transcript(config: TranscriptConfig, text: str) -> str:
+def render_transcript(config: TranscriptConfig, text: str, heading_level: int = 2) -> str:
     panel_id = f"transcript-{config.slug}"
     sections = split_sections(paragraphs_from_text(text), config.headings)
 
@@ -283,14 +450,14 @@ def render_transcript(config: TranscriptConfig, text: str) -> str:
             f'<span class="js-disclosure-label">Lire la transcription : {html.escape(config.title)}</span></button>'
         ),
         f'    <div id="{panel_id}" class="media-transcript__panel" hidden>',
-        f'        <h3 class="media-transcript__title">Transcription - {html.escape(config.title)}</h3>',
+        f'        <h{heading_level} class="media-transcript__title">Transcription - {html.escape(config.title)}</h{heading_level}>',
     ]
 
     for heading, section_paragraphs in sections:
         if not section_paragraphs:
             continue
         lines.append('        <section class="media-transcript__section">')
-        lines.append(f'            <h4>{html.escape(heading)}</h4>')
+        lines.append(f'            <h{heading_level + 1}>{html.escape(heading)}</h{heading_level + 1}>')
         for paragraph in section_paragraphs:
             lines.append(f'            <p>{html.escape(paragraph)}</p>')
         lines.append("        </section>")
@@ -317,7 +484,9 @@ def write_public_files(timestamp: str) -> dict[str, str]:
         html_path = PUBLIC_DIR / f"{config.slug}.html"
 
         corrected_path.write_text(corrected_text, encoding="utf-8")
-        rendered_html = render_transcript(config, corrected_text)
+        # Les transcriptions de podcasts vivent sous un h2 englobant : leur titre descend d'un niveau.
+        niveau = 3 if config.slug.startswith('podcast-') else 2
+        rendered_html = render_transcript(config, corrected_text, niveau)
         html_path.write_text(rendered_html + "\n", encoding="utf-8")
         rendered[config.slug] = rendered_html
 
@@ -400,6 +569,11 @@ def inject_pages(rendered: dict[str, str]) -> None:
         ("voyage-autour-de-moi.html", "page-42", "voyage-autour-de-moi"),
         ("monroe-roman-graphique.html", "roman-graphique-video", "roman-graphique"),
         ("experience-monroe.html", "page-11", "experience-monroe"),
+        ("monroe-piece.html", "la-piece-video", "la-piece"),
+        ("monroe-installation.html", "installation-video", "installation-galerie-joseph"),
+        ("monroe-experiences.html", "estrade-video", "estrade-marilyn"),
+        ("monroe-interviews.html", "interviews-videos", "interview-gombeaud-montagner"),
+        ("monroe-interviews.html", "interviews-videos", "interview-amy-greene"),
     ):
         path = SRC_DIR / page
         text = path.read_text(encoding="utf-8")
@@ -430,7 +604,7 @@ def inject_pages(rendered: dict[str, str]) -> None:
 
 
 def update_css_version(text: str) -> str:
-    return re.sub(r"css/style\.css\?v=[0-9-]+", f"css/style.css?v={CSS_VERSION}", text)
+    return re.sub(r"css/style\.css\?v=[0-9a-z-]+", f"css/style.css?v={CSS_VERSION}", text)
 
 
 def main() -> int:

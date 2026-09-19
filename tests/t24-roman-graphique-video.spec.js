@@ -45,7 +45,10 @@ test.describe('T24 - vidéo du roman graphique', () => {
     expect(script).toContain('"src/monroe-roman-graphique.html": ("roman-graphique",)');
     expect(script).toContain('("monroe-roman-graphique.html", "roman-graphique-video", "roman-graphique")');
     expect(script).not.toContain('"the-play"');
-    expect(script).not.toMatch(/"src\/monroe-piece\.html":/);
+    // La Pièce a depuis sa propre transcription (#33) : ce qui reste interdit, c'est que le slug du roman
+    // graphique y soit renvoyé, l'erreur d'origine de cette issue.
+    expect(script).not.toMatch(/"src\/monroe-piece\.html": \([^)]*roman-graphique/);
+    expect(script).not.toMatch(/\("monroe-piece\.html", "[^"]*", "roman-graphique"\)/);
   });
 
   test('les deux pages gardent un seul h1 et leurs liens d’évitement', () => {

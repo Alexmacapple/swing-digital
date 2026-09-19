@@ -1,7 +1,7 @@
-# Rapport de corrections - Dessine-moi le vent
+# Rapport de corrections - Interview - Adrien Gombeaud et Christelle Montagner
 
-- Source : `transcripts/DESSINE-MOI LE VENT (teaser) [250420667].fr.txt`
-- Sauvegarde source : `DESSINE-MOI LE VENT (teaser) [250420667].fr.txt.bak-20260919-235852`
+- Source : `transcripts/Interview Gombeaud et Montagner [Q8IsqXjCXwc].fr.txt`
+- Sauvegarde source : `Interview Gombeaud et Montagner [Q8IsqXjCXwc].fr.txt.bak-20260919-235852`
 - Source primaire : transcript faster-whisper français
 - Locuteurs : non applicable, aucun label de locuteur source.
 
@@ -9,7 +9,7 @@
 
 | Avant | Après | Catégorie |
 |---|---|---|
-| Aucune correction automatique appliquée | Aucune | Non applicable |
+| `Milton Green` | `Milton Greene` | correction de forme ou graphie confirmee |
 
 ## Elements non resolus
 

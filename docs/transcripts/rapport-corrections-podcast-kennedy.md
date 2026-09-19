@@ -1,7 +1,7 @@
 # Rapport de corrections - Podcast - Kennedy et moi
 
 - Source : `transcripts/KENNEDY ET MOI ( The President and I) EPISODE 4 [FD7Du_SD-QI].fr.txt`
-- Sauvegarde source : `KENNEDY ET MOI ( The President and I) EPISODE 4 [FD7Du_SD-QI].fr.txt.bak-20260621-183304`
+- Sauvegarde source : `KENNEDY ET MOI ( The President and I) EPISODE 4 [FD7Du_SD-QI].fr.txt.bak-20260919-235852`
 - Source primaire : transcript faster-whisper français
 - Locuteurs : non applicable, aucun label de locuteur source.
 

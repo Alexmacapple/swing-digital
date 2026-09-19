@@ -1,8 +1,8 @@
-# Rapport de corrections - Podcast - The Archives
+# Rapport de corrections - L'estrade Marilyn
 
-- Source : `transcripts/The archives - Joshua Greene [AB2Fb1wdHoo].en.txt`
-- Sauvegarde source : `The archives - Joshua Greene [AB2Fb1wdHoo].en.txt.bak-20260919-235852`
-- Source primaire : transcript faster-whisper anglais, traduction française
+- Source : `transcripts/La Pièce - teaser théâtre [106406158].fr.txt`
+- Sauvegarde source : `La Pièce - teaser théâtre [106406158].fr.txt.bak-20260919-235852`
+- Source primaire : description rédigée : vidéo musicale, sans parole
 - Locuteurs : non applicable, aucun label de locuteur source.
 
 ## Corrections appliquées

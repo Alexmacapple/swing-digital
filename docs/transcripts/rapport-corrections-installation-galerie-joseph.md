@@ -1,7 +1,7 @@
-# Rapport de corrections - Prolongation de L'Expérience Monroe
+# Rapport de corrections - L'installation à la Galerie Joseph
 
-- Source : `transcripts/Prolongation de l'Expérience Monroe pour les fêtes, jusqu'au 14 janvier 2024 [Le2Ybd_X6A0].fr.txt`
-- Sauvegarde source : `Prolongation de l'Expérience Monroe pour les fêtes, jusqu'au 14 janvier 2024 [Le2Ybd_X6A0].fr.txt.bak-20260919-235852`
+- Source : `transcripts/L'Expérience Monroe à La Galerie Joseph [872268258].fr.txt`
+- Sauvegarde source : `L'Expérience Monroe à La Galerie Joseph [872268258].fr.txt.bak-20260919-235852`
 - Source primaire : transcript faster-whisper français
 - Locuteurs : non applicable, aucun label de locuteur source.
 
@@ -11,7 +11,8 @@
 |---|---|---|
 | `Milton Green` | `Milton Greene` | correction de forme ou graphie confirmee |
 | `vous êtes dans une blouse du mois d'août` | `vous êtes dans un blues du mois d'août` | correction de forme ou graphie confirmee |
-| `mention technique de sous-titrage` | `suppression` | suppression d'une mention technique de sous-titrage |
+| `Sous-titres réalisés para la communauté d'Amara.org
+` | `` | correction de forme ou graphie confirmee |
 
 ## Elements non resolus
 

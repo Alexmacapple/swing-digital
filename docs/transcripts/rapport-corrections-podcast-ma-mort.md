@@ -1,7 +1,7 @@
 # Rapport de corrections - Podcast - Ma mort et après...
 
 - Source : `transcripts/MA MORT ET ÂPRES...( The After life)  ÉPISODE 5 et 6 [rx0VDLfEbLU].fr.txt`
-- Sauvegarde source : `MA MORT ET ÂPRES...( The After life)  ÉPISODE 5 et 6 [rx0VDLfEbLU].fr.txt.bak-20260621-183304`
+- Sauvegarde source : `MA MORT ET ÂPRES...( The After life)  ÉPISODE 5 et 6 [rx0VDLfEbLU].fr.txt.bak-20260919-235852`
 - Source primaire : transcript faster-whisper français
 - Locuteurs : non applicable, aucun label de locuteur source.
 

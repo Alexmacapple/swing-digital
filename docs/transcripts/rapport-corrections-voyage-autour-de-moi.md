@@ -1,7 +1,7 @@
 # Rapport de corrections - Voyage autour de moi
 
 - Source : `transcripts/Voyage autour de moi [528291420].fr.txt`
-- Sauvegarde source : `Voyage autour de moi [528291420].fr.txt.bak-20260621-183304`
+- Sauvegarde source : `Voyage autour de moi [528291420].fr.txt.bak-20260919-235852`
 - Source primaire : transcript faster-whisper français
 - Locuteurs : non applicable, aucun label de locuteur source.
 
