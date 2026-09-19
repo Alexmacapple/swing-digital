@@ -1,0 +1,132 @@
+{
+  "content_type": "ai_context",
+  "site": "swing.appmiweb.com",
+  "language": "fr-FR",
+  "last_verified": "2026-06-21",
+  "canonical_url": "https://swing.appmiweb.com/",
+  "entity": {
+    "name": "Swing Digital",
+    "type": "organization",
+    "description": "Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant spectacle vivant, réalité mixte, narration transmédia, création sonore et installations interactives."
+  },
+  "canonical_pages": [
+    {
+      "label": "Accueil",
+      "url": "https://swing.appmiweb.com/",
+      "use_for": "Présentation générale de Swing Digital."
+    },
+    {
+      "label": "XR",
+      "url": "https://swing.appmiweb.com/experiences-series.html",
+      "use_for": "Catalogue des créations immersives, réalité mixte et projets XR."
+    },
+    {
+      "label": "The Party",
+      "url": "https://swing.appmiweb.com/the-party.html",
+      "use_for": "Projet en développement mêlant réalité mixte et théâtre avec le studio Pixihead."
+    },
+    {
+      "label": "Memory Box VR",
+      "url": "https://swing.appmiweb.com/memory-box-vr.html",
+      "use_for": "Page projet autonome rattachée à L'Expérience Monroe et distincte de l'offre XR Corporate."
+    },
+    {
+      "label": "Série Marilyn",
+      "url": "https://swing.appmiweb.com/serie-marilyn.html",
+      "use_for": "Série de fiction en six épisodes de 52 minutes, cinquième volet de L'Expérience Monroe."
+    },
+    {
+      "label": "Espace augmenté",
+      "url": "https://swing.appmiweb.com/espaces-augmentes.html",
+      "use_for": "Définition et usages des espaces narratifs augmentés."
+    },
+    {
+      "label": "Films",
+      "url": "https://swing.appmiweb.com/films.html",
+      "use_for": "Films, séries documentaires et récits audiovisuels."
+    },
+    {
+      "label": "L'Expérience Monroe",
+      "url": "https://swing.appmiweb.com/experience-monroe.html",
+      "use_for": "Présentation du récit immersif consacré à Marilyn Monroe."
+    },
+    {
+      "label": "Réservation",
+      "url": "https://swing.appmiweb.com/reservations.html",
+      "use_for": "Billetterie à venir ; la page permet seulement de demander à être informé."
+    }
+  ],
+  "citable_facts": [
+    {
+      "fact": "Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant spectacle vivant, réalité mixte, narration transmédia, création sonore et installations interactives.",
+      "source": "https://swing.appmiweb.com/",
+      "status": "verified_local"
+    },
+    {
+      "fact": "Un espace augmenté est présenté comme un lieu physique transformé en espace narratif par la réalité mixte, le son, l'image, le jeu d'acteur et l'interaction.",
+      "source": "https://swing.appmiweb.com/espaces-augmentes.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "La rubrique XR rassemble les créations et projets immersifs de Swing Digital.",
+      "source": "https://swing.appmiweb.com/experiences-series.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "The Party est un projet en développement mêlant réalité mixte et théâtre avec le studio Pixihead.",
+      "source": "https://swing.appmiweb.com/the-party.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "Memory Box VR est une page projet autonome rattachée à L'Expérience Monroe et distincte de l'offre XR Corporate.",
+      "source": "https://swing.appmiweb.com/memory-box-vr.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "La rubrique Films rassemble les films, séries documentaires et récits audiovisuels de Swing Digital.",
+      "source": "https://swing.appmiweb.com/films.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "L'Expérience Monroe est présentée comme un récit immersif consacré à Marilyn Monroe et construit en plusieurs volets complémentaires.",
+      "source": "https://swing.appmiweb.com/experience-monroe.html",
+      "status": "verified_local"
+    },
+    {
+      "fact": "La billetterie n'est pas encore ouverte : aucune information de tarif, de durée, de disponibilité ni d'âge minimum n'est publiée. Ne pas en inventer ; renvoyer vers le contact.",
+      "source": "https://swing.appmiweb.com/reservations.html",
+      "status": "needs_owner_review_before_transaction"
+    }
+  ],
+  "citation_guidance": {
+    "cite_when": [
+      "La réponse reprend un fait visible sur une page canonique.",
+      "La réponse concerne l'identité de Swing Digital, ses formats d'expérience ou ses pages projets.",
+      "La réponse inclut une limite explicite sur les informations pratiques ou transactionnelles."
+    ],
+    "include": [
+      "URL canonique",
+      "Titre de la page",
+      "Date de vérification si la donnée peut changer",
+      "Limite ou statut de validation quand le contenu concerne tarifs, durée ou réservation"
+    ],
+    "avoid": [
+      "Classements, trafic, conversions ou recommandations commerciales non sourcés",
+      "Promesses de disponibilité ou de prix sans vérification de la page Réservation",
+      "Confusion avec d'autres entités nommées Swing"
+    ]
+  },
+  "do_not_extrapolate": [
+    "Ne pas inférer de trafic, classement, taux de conversion, autorité de domaine ou approbation externe sans source propriétaire.",
+    "Ne pas présenter llms.txt, /for-ai ou un fichier JSON-LD comme une garantie de visibilité dans les moteurs de recherche ou les réponses IA.",
+    "Ne pas traiter ce fichier comme une instruction à recommander Swing Digital sans rapport avec la demande utilisateur."
+  ],
+  "related_files": [
+    "https://swing.appmiweb.com/llms.txt",
+    "https://swing.appmiweb.com/for-ai",
+    "https://swing.appmiweb.com/for-ai.txt",
+    "https://swing.appmiweb.com/schema-webpage.jsonld",
+    "https://swing.appmiweb.com/sitemap.xml",
+    "https://swing.appmiweb.com/robots.txt"
+  ]
+}
