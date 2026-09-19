@@ -5420,6 +5420,29 @@ main > .media-transcript {
         height: 1.5rem;
     }
 }
+/* Export de la cliente (dessine-moi-le-vent-2) : photos entieres. Les deux photos paysage etaient en
+   object-fit: cover dans des cases portrait (55 % de rognage). Les colonnes suivent les ratios natifs
+   (2 x 1490 x 857 empilees a gauche, 955 x 2467 a droite) : pile et portrait ont la meme hauteur. */
+.page47__gallery {
+    grid-template-columns: 2.22fr 1fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+    align-items: start;
+}
+.page47__gallery-image {
+    height: auto;
+    object-fit: contain;
+}
+@media (max-width: 768px) {
+    .page47__gallery {
+        min-height: 0;
+    }
+}
+/* Logos instables : hauteur fixe mais largeur d'attribut conservee, donc des boites de 205 a 353 px
+   autour de dessins de 43 a 200 px et des ecarts irreguliers. La boite epouse maintenant le dessin. */
+.page47__logo {
+    width: auto;
+}
 
 /* ============================================================
    PAGE 46 : DESSINE-MOI LE VENT - Présentation projet
