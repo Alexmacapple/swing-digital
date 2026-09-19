@@ -6841,6 +6841,57 @@ main > .media-transcript {
     }
 }
 
+/* Ordinateur et tablette large : composition de l'export de la cliente (842 x 595).
+   Panoramique entier, bande jaune a gauche (0 -> 32 %), deux photos carrees entieres
+   decalees a droite (14 -> 89 %), legende sous la premiere, lettre et titre sur une ligne. */
+@media (min-width: 769px) {
+    .page25 {
+        grid-template-rows: auto 1fr;
+    }
+    .page25__panoramic-image {
+        height: auto;
+        aspect-ratio: 3000 / 619;
+    }
+    .page25__bottom {
+        display: block;
+        overflow: visible;
+        background: linear-gradient(90deg, var(--color-brand-gold) 0, var(--color-brand-gold) 32%, transparent 32%);
+        padding: var(--space-sm) 0 var(--space-md);
+    }
+    .page25__gallery {
+        overflow: visible;
+        margin-left: 14%;
+        width: 75%;
+    }
+    .page25__gallery-figure {
+        grid-template-rows: auto auto;
+        gap: var(--space-xs) 2%;
+        height: auto;
+        padding: 0;
+        overflow: visible;
+    }
+    .page25__gallery-image {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+    .page25__gallery-caption {
+        grid-column: 1 / 2;
+        font-style: italic;
+        padding: var(--space-xs) 0 0;
+    }
+    .page25__category {
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: var(--space-md);
+        padding: var(--space-xs) 0 0 8%;
+    }
+    .page25__category-letter {
+        line-height: 1;
+    }
+}
+
 /* ============================================================
    PAGE 23 : INSTALLATION INTERACTIVE - Volet 3 (pattern page 20)
    ============================================================ */
