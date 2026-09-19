@@ -6556,6 +6556,82 @@ main > .media-transcript {
 }
 
 /* ============================================================
+   QUIZ MARILYN (issue #31) : lien vers le quiz externe et images des questions 1, 4 et 6
+   ============================================================ */
+.quiz-jouer {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.quiz-jouer__title,
+.quiz-jouer__subtitle {
+    font-family: var(--font-primary);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-gold);
+    margin: 0 0 var(--space-xs);
+}
+.quiz-jouer__title {
+    font-size: var(--fs-title);
+}
+.quiz-jouer__subtitle {
+    font-size: var(--fs-subtitle);
+    margin-top: var(--space-lg);
+}
+.quiz-jouer__text {
+    font-size: var(--fs-body);
+    margin: 0 0 var(--space-sm);
+}
+.quiz-jouer__action {
+    margin: 0;
+}
+.quiz-jouer__lien {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-text-gold);
+    color: var(--color-white);
+    font-weight: 700;
+    text-decoration: underline;
+}
+.quiz-jouer__lien-note {
+    font-weight: 400;
+    margin-left: 0.4em;
+}
+/* Galerie justifiee : colonnes proportionnelles aux ratios natifs (deux portraits 810 x 1440, un paysage 850 x 567),
+   bornee pour ne jamais agrandir une image au-dela de sa definition. */
+.quiz-jouer__gallery {
+    display: grid;
+    grid-template-columns: 0.5625fr 0.5625fr 1.5fr;
+    gap: var(--space-sm);
+    align-items: start;
+    max-width: 1500px;
+}
+.quiz-jouer__figure {
+    margin: 0;
+}
+.quiz-jouer__image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.quiz-jouer__caption {
+    font-size: var(--fs-caption);
+    font-style: italic;
+    margin-top: var(--space-2xs);
+}
+@media (max-width: 768px) {
+    .quiz-jouer__gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+    .quiz-jouer__figure--paysage {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ============================================================
    INTERVIEWS EN VIDEO (issue #29) : deux lecteurs YouTube 16:9, commandes natives
    ============================================================ */
 .interviews-videos {

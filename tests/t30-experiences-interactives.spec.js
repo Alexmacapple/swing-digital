@@ -7,7 +7,7 @@ const { test, expect } = require('@playwright/test');
 const ATTENDU = {
   '/monroe-interviews.html': ['page-34', 'page-35'],
   '/monroe-experiences.html': ['page-36', 'page-37'],
-  '/monroe-quiz.html': ['page-38', 'page-40', 'page-41'],
+  '/monroe-quiz.html': ['page-38'],
 };
 
 test('T30 - Sections Monroe rangées dans leur onglet, sans saut de niveau de titre', async ({ page }, testInfo) => {
