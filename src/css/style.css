@@ -3995,6 +3995,15 @@ main > .media-transcript {
     display: flex;
     align-items: flex-start;
 }
+.page58--newsletter-seule .page58__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--section-height);
+}
+.page58--newsletter-seule .page58__newsletter {
+    width: min(100%, 34rem);
+}
 .page58__newsletter {
     background-color: rgba(255, 255, 255, 0.12);
     padding: var(--space-lg);

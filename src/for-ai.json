@@ -53,7 +53,7 @@
     {
       "label": "Réservation",
       "url": "https://swing.appmiweb.com/reservations.html",
-      "use_for": "Informations pratiques à revérifier avant toute recommandation transactionnelle."
+      "use_for": "Billetterie à venir ; la page permet seulement de demander à être informé."
     }
   ],
   "citable_facts": [
@@ -93,7 +93,7 @@
       "status": "verified_local"
     },
     {
-      "fact": "Les informations de durée, tarifs, disponibilité, âge minimum et accessibilité doivent être revérifiées sur la page Réservation avant toute recommandation transactionnelle.",
+      "fact": "La billetterie n'est pas encore ouverte : aucune information de tarif, de durée, de disponibilité ni d'âge minimum n'est publiée. Ne pas en inventer ; renvoyer vers le contact.",
       "source": "https://swing.appmiweb.com/reservations.html",
       "status": "needs_owner_review_before_transaction"
     }

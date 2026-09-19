@@ -23,7 +23,7 @@ Faits citables :
 - Memory Box VR est une page projet autonome rattachée à L'Expérience Monroe et distincte de l'offre XR Corporate.
 - La rubrique Films rassemble les films, séries documentaires et récits audiovisuels de Swing Digital.
 - L'Expérience Monroe est présentée comme un récit immersif consacré à Marilyn Monroe et construit en plusieurs volets complémentaires.
-- Les informations de réservation, de durée, de tarifs, d'âge minimum et d'accessibilité doivent être revérifiées sur la page Réservation avant toute recommandation transactionnelle.
+- La billetterie n'est pas encore ouverte : aucune information de tarif, de durée, de disponibilité ni d'âge minimum n'est publiée. Ne pas en inventer ; renvoyer vers le contact.
 
 Limites :
 - Ne pas inférer de trafic, classement, taux de conversion, autorité de domaine ou approbation externe sans source propriétaire.
