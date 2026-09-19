@@ -5,7 +5,7 @@ const routesAvecTranscriptions = [
   '/experience-monroe.html',
   '/voyage-autour-de-moi.html',
   '/dessine-moi-le-vent.html',
-  '/monroe-piece.html',
+  '/monroe-roman-graphique.html',
   '/monroe-podcasts.html',
 ];
 

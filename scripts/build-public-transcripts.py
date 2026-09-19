@@ -129,7 +129,7 @@ CONFIGS: tuple[TranscriptConfig, ...] = (
         headings=("Première rencontre", "Questions d'adolescence", "Amour, peurs et famille", "Ateliers et théâtre", "Rêves et texte final"),
     ),
     TranscriptConfig(
-        slug="the-play",
+        slug="roman-graphique",
         title="Marilyn Monroe - Confession inachevée",
         source="Marilyn Monroe - Confession inachevée - Roman Graphique. [782642139].fr.txt",
         headings=("Générique", "Entrée en scène"),
@@ -180,7 +180,7 @@ PAGE_TARGETS = {
     "src/index.html": ("galerie-joseph",),
     "src/dessine-moi-le-vent.html": ("dessine-moi-le-vent",),
     "src/voyage-autour-de-moi.html": ("voyage-autour-de-moi",),
-    "src/monroe-piece.html": ("the-play",),
+    "src/monroe-roman-graphique.html": ("roman-graphique",),
     "src/experience-monroe.html": ("experience-monroe",),
     "src/monroe-podcasts.html": (
         "podcast-devenir-marilyn",
@@ -398,7 +398,7 @@ def inject_pages(rendered: dict[str, str]) -> None:
     for page, section_id, slug in (
         ("dessine-moi-le-vent.html", "page-45", "dessine-moi-le-vent"),
         ("voyage-autour-de-moi.html", "page-42", "voyage-autour-de-moi"),
-        ("monroe-piece.html", "page-19", "the-play"),
+        ("monroe-roman-graphique.html", "roman-graphique-video", "roman-graphique"),
         ("experience-monroe.html", "page-11", "experience-monroe"),
     ):
         path = SRC_DIR / page
