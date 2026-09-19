@@ -8842,3 +8842,32 @@ main > .media-transcript {
         transform: scale(1.1);
     }
 }
+
+/* ============================================================
+   CIBLES TACTILES (issue #37, WCAG 2.5.8) : liens de texte trop petits
+   Des liens laisses en display: inline sans marge interne : la zone cliquable se limitait a la hauteur de ligne,
+   20 a 22 px. Ils recoivent une cible de 44 px sans que l'aspect du texte change (le soulignement suit le texte).
+   ============================================================ */
+.footer__nav-list a,
+.hero-page1__partners a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    padding-inline: var(--space-2xs);
+}
+/* Les rangees du pied de page se resserrent : la cible porte deja la hauteur. */
+.footer__nav-list {
+    gap: var(--space-2xs) var(--space-md);
+}
+@media (max-width: 600px) {
+    .footer__nav-list {
+        gap: 0;
+    }
+}
+/* Le lien partenaires garde son bord gauche aligne sur le reste de la colonne. */
+.hero-page1__partners a {
+    justify-content: flex-start;
+    padding-inline: 0;
+}
