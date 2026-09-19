@@ -7776,6 +7776,65 @@ main > .media-transcript {
 }
 
 /* ============================================================
+   LA PIECE : photos entieres (exports la-piece-2 a la-piece-5)
+   Les cases imposaient object-fit: cover : 18 a 63 % de rognage en pleine page,
+   27 a 40 % sur les pages a deux photos. Chaque photo suit desormais son ratio natif ;
+   la composition, calee sur la page de l'export (842 x 595), tient dans la hauteur d'ecran.
+   ============================================================ */
+.full-image-page--entiere {
+    height: auto;
+}
+.full-image-page--entiere .full-image-page__cadre {
+    position: relative;
+    width: min(100%, calc(var(--section-height) * 4945 / 3500));
+}
+.full-image-page--entiere .full-image-page__image {
+    height: auto;
+    object-fit: contain;
+}
+@media (min-width: 769px) {
+    .page16--champ,
+    .page16--couloir {
+        min-height: 0;
+        align-items: center;
+    }
+    .page16--champ .page16__images,
+    .page16--couloir .page16__images {
+        flex: none;
+        width: min(100%, calc(var(--section-height) * 842 / 595));
+        aspect-ratio: 842 / 595;
+    }
+    .page16--champ .page16__image,
+    .page16--couloir .page16__image {
+        height: auto;
+        object-fit: contain;
+        bottom: auto;
+        right: auto;
+    }
+    .page16--champ .page16__image--main { top: 0; left: 0; width: 100%; }
+    .page16--champ .page16__image--overlay { top: 40.3%; left: 42.5%; width: 51.1%; }
+    .page16--couloir .page16__image--main { top: 0; left: 3.8%; width: 96.2%; }
+    .page16--couloir .page16__image--overlay { top: 47.4%; left: 44.2%; width: 55.8%; }
+    .page16--champ .page16__credit,
+    .page16--couloir .page16__credit {
+        position: absolute;
+        padding: 0;
+        color: var(--color-white);
+        text-shadow: var(--shadow-text);
+    }
+    .page16--champ .page16__credit { right: 8%; bottom: 12.4%; }
+    .page16--couloir .page16__credit { right: 1.6%; bottom: 1.6%; }
+}
+@media (max-width: 768px) {
+    .page16--champ .page16__credit,
+    .page16--couloir .page16__credit {
+        display: block;
+        text-align: right;
+        padding: 0 0 var(--space-sm-tight);
+    }
+}
+
+/* ============================================================
    RESPONSIVE - PAGE 24 (Interactive Exhibition - Bandeau 6 cartes)
    ============================================================ */
 
