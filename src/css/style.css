@@ -5705,6 +5705,65 @@ main > .media-transcript {
         height: 1.5rem;
     }
 }
+/* Export de la cliente (voyage-autour-de-moi-1) : bandeau noir des prix, puis la photo de la troupe
+   entiere, titre pose dessus, logos dessous. La photo etait un fond en object-fit: cover : 14 % de rognage
+   a 1024 px, 53 % a 768 px, 69 % a 390 px. Elle dimensionne maintenant la section, contenue dans l'ecran. */
+.page43 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+}
+.page43__container {
+    display: contents;
+    color: var(--color-white);
+}
+.page43__awards {
+    grid-row: 1;
+    padding: var(--space-sm) var(--slide-pad-x);
+    color: var(--color-white);
+}
+.page43__award-title {
+    margin-bottom: var(--space-2xs);
+}
+.page43__award-text {
+    line-height: 1.4;
+}
+.page43__background {
+    position: relative;
+    inset: auto;
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: center;
+    width: min(100%, calc((var(--section-height) - 15rem) * 3516 / 2083));
+}
+.page43__background-image {
+    height: auto;
+    object-fit: contain;
+}
+.page43__title-group {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
+    position: relative;
+    z-index: 1;
+    padding: 0 var(--slide-pad-x);
+    color: var(--color-white);
+}
+.page43__logos {
+    grid-row: 3;
+    margin: 0;
+}
+.page43__logo {
+    width: auto;
+}
+@media (max-width: 768px) {
+    .page43 {
+        min-height: 0;
+    }
+    .page43__title {
+        font-size: var(--fs-title);
+    }
+}
 
 /* ============================================================
    PAGE 41 : EXPERIENCE XR - Trois bandes panoramiques
