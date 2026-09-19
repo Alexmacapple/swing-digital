@@ -6,13 +6,14 @@
 **Date début** : 2026-02-20
 **Auteur** : Alex
 **Dépôt** : git@github.com:Alexmacapple/swing-digital.git (SSH)
-**Préproduction** : https://swing.appmiweb.com
+**Recette** : https://alexmacapple.github.io/swing-digital/ (GitHub Pages, publiée par `scripts/publier-gh-pages.sh`, non référençable)
+**Travail et tests** : en local uniquement, sur `localhost`. Ne lancer aucun contrôle contre `swing.appmiweb.com`, ancienne préproduction retirée du tunnel le 2026-09-19.
 
 ---
 
 ## Contexte
 
-Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 25 pages HTML top-level, avec une page `/for-ai/` dédiée aux agents, une navigation 3 niveaux et une page 404 personnalisée prête côté HTML. La préproduction Appmiweb est techniquement validée ; la production finale attend le domaine HTTPS définitif, les mentions légales hébergeur, le scénario Réservations, le routage 404 côté origine et la mesure réelle.
+Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences immersives et espaces augmentés. Site découpé en 28 pages HTML top-level, avec une page `/for-ai/` dédiée aux agents, une navigation 3 niveaux et une page 404 personnalisée prête côté HTML. La recette par la cliente se fait sur GitHub Pages ; les métadonnées SEO désignent encore `https://swing.appmiweb.com`, qui ne répond plus. La production finale attend le domaine HTTPS définitif, les mentions légales hébergeur, le scénario Réservations, le routage 404 côté origine et la mesure réelle.
 
 **Architecture** : 4 niveaux de pages
 1. Accueil, XR, Espace augmenté, Films, Réservation
@@ -26,7 +27,7 @@ Site vitrine pour Swing Digital, entreprise spécialisée dans les expériences 
 
 ## Stack Technique
 
-- HTML5 sémantique (25 pages top-level + `/for-ai/`)
+- HTML5 sémantique (28 pages top-level + `/for-ai/`)
 - CSS3 responsive (variables, BEM, mobile-first, 6 breakpoints)
 - JavaScript vanilla (navigation, vidéos, animations)
 - Pas de framework ni bundler
@@ -49,12 +50,12 @@ src/
 ├── monroe-piece.html             Pièce My Story (pages 14-19)
 ├── monroe-roman-graphique.html   Roman Graphique (pages 20-22)
 ├── monroe-installation.html      Installation (page 23)
-├── monroe-photographie.html      Photographie (pages 25-26)
-├── monroe-composition.html       Composition (pages 27-32)
+├── monroe-photographie.html      Photographie (pages 25-30)
+├── monroe-composition.html       Composition (pages 31-32)
 ├── monroe-podcasts.html          Podcasts (page 33)
-├── monroe-interviews.html        Interviews (pages 34-36)
-├── monroe-experiences.html       Expériences interactives (pages 37-39)
-├── monroe-quiz.html              Quiz Marilyn (pages 40-41)
+├── monroe-interviews.html        Interviews (pages 34-35, vidéos)
+├── monroe-experiences.html       Expériences interactives (pages 36-37, vidéo)
+├── monroe-quiz.html              Quiz Marilyn (page 38, lien vers le quiz, images des questions)
 ├── voyage-autour-de-moi.html     Voyage (pages 42-44)
 ├── dessine-moi-le-vent.html      Dessine-moi le vent (pages 45-47)
 ├── ni-vues-ni-connues.html       Ni vues ni connues (pages 48-49)
@@ -66,7 +67,7 @@ src/
 ├── 404.html                      Page introuvable hero
 ├── plan-du-site.html             Plan du site
 ├── mentions-legales.html         Mentions légales
-├── sitemap.xml                   Sitemap (25 URL)
+├── sitemap.xml                   Sitemap (28 URL)
 ├── robots.txt                    Robots
 ├── llms.txt                      Carte optionnelle pour agents IA
 ├── css/style.css                 Styles (~177 KB)
@@ -122,10 +123,14 @@ src/
 npm test
 npm run seo:check
 npm run build:prod
-npm run appmiweb:preflight
+scripts/publier-gh-pages.sh          # met à jour le site de recette, depuis main propre et poussé
 ```
 
-Derniers résultats observés le 2026-06-21 :
+Sur une machine chargée, rejouer la suite par `npm test -- --workers=2`. Playwright réutilise un serveur déjà présent sur le port 8080 : arrêter tout serveur qui sert un autre arbre avant de tester. Les commandes `npm run appmiweb:*` interrogent l'ancienne préproduction et ne sont plus à utiliser.
+
+Résultats observés le 2026-09-19 : `npm test` à 619 passés (45 fichiers de test, 5 tailles d'écran), dont deux garde-fous transverses : `tests/t02-medias-entiers.spec.js` (aucune photo rognée de plus de 8 % hors cadrages voulus listés) et `tests/images-espace-colorimetrique.spec.js` (aucun JPEG en CMJN).
+
+Résultats historiques du 2026-06-21 :
 
 - `npm test` : OK, suite Playwright versionnée sur la taxonomie XR / Films et le socle SEO/GEO local.
 - `npm run seo:check` : OK, `tests/seo-geo.spec.js` sur `desktop-1920`.
@@ -147,6 +152,10 @@ Derniers résultats observés le 2026-06-21 :
 9. Satoshi Variable auto-hébergée comme police principale du site
 10. Fonds roses adoucis via tokens dédiés, avec contraste texte blanc préservé
 11. Page 404 custom prête ; routage des URL inexistantes à configurer côté origine
+12. Recomposition des pages d'après les exports de la cliente : l'export est un plan de mise en page, jamais une image à poser ; texte en HTML, photos du site conservées, chaque photo à son ratio natif
+13. `object-fit: cover` réservé aux cadrages voulus, listés avec leur raison dans `tests/t02-medias-entiers.spec.js`
+14. Recette sur GitHub Pages par une branche `gh-pages` poussée normalement, copie en `noindex` ; jamais de chemin absolu à la racine dans le site
+15. Vidéos : Vimeo avec le lecteur piloté par le site quand un lien Vimeo existe, YouTube sans cookie et sans lecture automatique sinon ; aucune transcription automatique publiée sans relecture à l'écoute
 
 ---
 
@@ -189,7 +198,7 @@ Décision actuelle :
 ---
 
 **Dernière mise à jour** : 2026-09-19
-**Version** : 14.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité ; section usage systématique Loriq/ShipGuard ajoutée
+**Version** : 15.0.0 demandes de la cliente (24 issues fermées sur 33 au 2026-09-19, suivi dans l'issue #34), recette GitHub Pages ; historique 14.0.0 : préproduction Satoshi, UI, 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité ; section usage systématique Loriq/ShipGuard ajoutée
 
 ## Loriq et ShipGuard — à utiliser systématiquement
 

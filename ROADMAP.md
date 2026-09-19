@@ -2,7 +2,7 @@
 
 **Projet** : Site vitrine multi-pages Swing Digital
 **Début** : 2026-02-20
-**Statut** : Préproduction Appmiweb validée techniquement, production finale en attente
+**Statut** : recette par la cliente sur GitHub Pages (`https://alexmacapple.github.io/swing-digital/`), production finale en attente du domaine
 
 ---
 
@@ -30,12 +30,16 @@
 | 18. Page 404 hero | Page 404 custom visible sur `/404.html` | Terminé |
 | 19. Transcripts vidéos | PRD-010 : transcripts accessibles des vidéos publiques | Cadré, outillage local ajouté, publication à planifier |
 | 20. Menu XR / Films | PRD-011 : séparation XR, Films et Ni vues ni connues | Implémenté et vérifié localement |
+| 21. Demandes de la cliente | 33 issues tirées de ses retours de juin et juillet : recomposition des pages d'après ses exports, photos entières, copyrights fixés, vidéos, textes | 24 issues fermées sur 33 au 2026-09-19 ; le reste attend ses fichiers (issue #34) |
+| 22. Règle médias | Balayage des 28 pages, garde-fous de test sur le rognage et sur l'espace colorimétrique des JPEG | Terminé |
+| 23. Site de recette | GitHub Pages, `scripts/publier-gh-pages.sh`, copie non référençable ; ancienne préproduction retirée du tunnel | Terminé |
+| 24. Transcriptions | Outillage remis en état, cinq brouillons produits hors dépôt | Relecture à l'écoute et publication à faire (#33) |
 
 ---
 
 ## Avant mise en production (bloquant)
 
-- [ ] Choisir le domaine final HTTPS.
+- [ ] Choisir le domaine final HTTPS. Tant qu'il n'est pas choisi, les métadonnées SEO désignent `https://swing.appmiweb.com`, qui ne répond plus.
 - [ ] Basculer les canonicals, Open Graph, sitemap, robots et `llms.txt` vers le domaine final.
 - [ ] Configurer HTTPS + redirections HTTP vers HTTPS.
 - [ ] Configurer le routage 404 custom : toute URL inexistante doit servir `/404.html` avec un statut HTTP 404.
@@ -48,11 +52,12 @@
 - [ ] Optimiser le LCP de l'accueil sur le domaine final.
 - [ ] Installer GSC, GA4 ou GTM, Bing Webmaster Tools et suivi des sources IA.
 - [ ] Décider la politique crawlers IA : recherche/citation, fetch utilisateur, entraînement.
-- [ ] Optimiser les images (compression, WebP/AVIF avec fallback).
+- [ ] Images : compression sans perte faite ; restent WebP/AVIF avec repli.
+- [ ] Recevoir de la cliente les réexports en haute définition et les logos à fond transparent (issue #34).
 - [ ] Test cross-browser final (Chrome, Firefox, Safari).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 - [ ] Si l'origine ne permet pas le routage 404, envisager le repli Cloudflare Worker documenté dans `docs/404-CUSTOM-ERROR-PAGE.md`.
-- [ ] Finaliser le PRD-010 : corriger les transcripts bruts, publier les disclosures accessibles et valider le rendu.
+- [ ] Finaliser le PRD-010 : relire les brouillons à l'écoute, publier les disclosures accessibles et valider le rendu (#33).
 
 ## Optionnel (post-lancement)
 
@@ -65,4 +70,4 @@
 
 ---
 
-**Dernière mise à jour** : 2026-06-21
+**Dernière mise à jour** : 2026-09-19

@@ -97,6 +97,16 @@ Les badges de section (ex: `<div class="pageN__badge">Nom</div>`) ont été supp
 
 ---
 
+### Recomposer une page d'après un export de la cliente (2026-09)
+
+- L'export (842 px de large) est un plan, pas une image à poser : garder le texte en HTML et les photos du site, mieux définies.
+- Chaque photo garde son ratio natif ; la case s'y adapte, jamais l'inverse. `object-fit: cover` est réservé aux cadrages voulus, listés dans `tests/t02-medias-entiers.spec.js`.
+- Une composition calée sur la page de l'export se code en pourcentages dans un conteneur au ratio de cette page (842 x 595), dont la largeur est bornée par la hauteur d'écran.
+- Un copyright partage le cadre de sa photo : posé dessus sur ordinateur, juste dessous sur mobile quand la photo devient une bande basse.
+- Un bloc de texte posé sur une vidéo se place après avoir regardé la vidéo sur toute sa durée : le sujet bouge.
+- Une section rangée dans le mauvais onglet se déplace, elle ne se supprime pas ; vérifier d'abord que son contenu n'existe pas déjà ailleurs sous une autre forme.
+- À chaque section déplacée : table des anciennes ancres de `js/main.js`, niveaux de titres de la page de départ, image de partage, cache-buster.
+
 ## Erreurs récurrentes a éviter
 
 ### Git et fichiers
@@ -145,5 +155,5 @@ Les badges de section (ex: `<div class="pageN__badge">Nom</div>`) ont été supp
 ---
 
 **Dernière mise à jour** : 2026-03-22
-**Mise à jour complémentaire** : 2026-06-20
+**Mise à jour complémentaire** : 2026-06-20, puis 2026-09-19 (recomposition d'après les exports de la cliente)
 **Version** : 4.0.0

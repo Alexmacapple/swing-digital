@@ -81,3 +81,60 @@
 - **Cause** : `setPlaying()` appele avant la resolution de la promesse `play()`
 - **Solution** : deplacer `setPlaying()` dans le `.then()` de la promesse
 - **Lecon** : sur iOS, `video.play()` retourne une promesse qui peut etre rejetee (autoplay policy). Toujours gerer le `.then()` et le `.catch()`
+
+## Session 2026-09-19 : demandes de la cliente (une trentaine de commits)
+
+### « Photo tronquée » veut presque toujours dire object-fit: cover
+
+- **Symptôme** : la cliente signale des photos tronquées sur une dizaine de pages.
+- **Cause** : une image en `object-fit: cover` dans une case dont les proportions ne sont pas les siennes. Le rognage dépend alors de la largeur ET de la hauteur d'écran : invisible à 1440 x 768, il atteint 20 % à 1440 x 900.
+- **Solution** : donner à la case le ratio natif de la photo (`aspect-ratio`, colonnes de grille proportionnelles aux ratios), et borner la largeur par la hauteur d'écran pour que la page reste visible d'un seul tenant.
+- **Leçon** : mesurer le rognage à plusieurs hauteurs d'écran, pas seulement plusieurs largeurs. Garde-fou : `tests/t02-medias-entiers.spec.js`.
+
+### Logos qui « se baladent » : hauteur fixe et largeur d'attribut
+
+- **Symptôme** : logos de partenaires mal espacés, qui s'empilent ou sortent de leur bandeau sur mobile.
+- **Cause** : `height` fixé en CSS, mais l'attribut HTML `width` continue de s'appliquer : une boîte de 350 px autour d'un dessin de 47 px.
+- **Solution** : `width: auto` sur le logo.
+- **Leçon** : dès qu'on fixe une dimension d'une image en CSS, libérer l'autre. Défaut retrouvé sur trois pages.
+
+### Couleurs « fluo » : JPEG en CMJN
+
+- **Symptôme** : couleurs saturées sur ordinateur pour quelques images seulement.
+- **Cause** : JPEG exportés en CMJN, que les navigateurs rendent mal.
+- **Solution** : conversion en sRVB avec le profil du système (`sips --matchTo`).
+- **Leçon** : vérifier l'espace colorimétrique des fichiers reçus d'un outil de mise en page. Garde-fou : `tests/images-espace-colorimetrique.spec.js`.
+
+### Un élément en ligne plus gros que son texte décale la ligne
+
+- **Symptôme** : « le E se déplace » dans un titre de quatre lignes.
+- **Cause** : une lettre décorative deux fois plus grosse, en ligne dans le titre, pousse le reste de sa ligne.
+- **Solution** : la sortir du flux dans une gouttière (grille à deux colonnes, lettre en position absolue).
+
+### Playwright réutilise le serveur déjà présent sur le port 8080
+
+- **Symptôme** : des tests verts qui ne mesurent pas le code qu'on croit.
+- **Cause** : `reuseExistingServer: true`. Si un serveur sert un autre arbre (un worktree), les tests lancés ailleurs le réutilisent.
+- **Leçon** : vérifier `lsof -iTCP:8080` avant `npm test`, et arrêter tout serveur d'un autre arbre.
+
+### Suite instable sous forte charge
+
+- **Symptôme** : sept tests sans rapport échouent avec « browser has been closed ».
+- **Cause** : machine chargée, cinq navigateurs en parallèle.
+- **Solution** : `npm test -- --workers=2`. Un échec d'infrastructure n'est ni un vert ni un rouge : rejouer avant de conclure.
+
+### Vimeo refuse les navigateurs sans interface
+
+- **Symptôme** : tous les lecteurs Vimeo renvoient 401 avec un défi Cloudflare dans un contrôle automatisé.
+- **Cause** : protection anti-robot, indépendante du domaine qui intègre la vidéo.
+- **Solution** : vérifier avec un navigateur visible (`headless: false, channel: 'chrome'`). Toujours rejouer le test sur un témoin avant d'accuser le domaine.
+
+### Savoir ce qui sert réellement une URL avant d'en parler
+
+- **Symptôme** : les notes affirmaient que la préproduction était alimentée à la main ; elle servait en réalité `src/` en direct par un tunnel vers le poste.
+- **Leçon** : une affirmation d'infrastructure reprise d'une note se vérifie (`dig`, processus, configuration du tunnel) avant d'être répétée, surtout dans un message destiné à la cliente.
+
+### Un test dérivé d'un export mesure l'intention, pas le pixel
+
+- **Méthode validée** : l'export de la cliente sert de plan de mise en page, pas d'image à intégrer ; les photos du site, mieux définies, sont conservées. Pour chaque page : mesurer le rendu, écrire un test de géométrie qui échoue pour la bonne raison, corriger, rejouer la suite.
+- **Écarts assumés** : ils se déclarent au moment où on les fait (couleur gardée pour le contraste, faute d'orthographe de l'export non reprise, teintes éclaircies pour atteindre le seuil).

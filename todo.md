@@ -1,12 +1,33 @@
 # Swing Digital - Todo
 
+## Demandes de la cliente (chantier de septembre 2026)
+
+Suivi détaillé dans les issues GitHub du dépôt. Au 2026-09-19 : 24 issues fermées sur 33. Recette par la cliente sur `https://alexmacapple.github.io/swing-digital/` ; après chaque lot de corrections, relancer `scripts/publier-gh-pages.sh`.
+
+### En attente de fichiers ou de réponses de la cliente (issue de suivi #34)
+
+- [ ] #14 et #15 : logos Swing Digital, Principe Actif et Pixihead à fond transparent, en version claire.
+- [ ] #5 : logo rose du bas de page, et préciser ce que désigne « bas de page ».
+- [ ] #12 : visuel The Party à animer.
+- [ ] #8 : page 4 de l'accueil réexportée en grand (reçue en 360 x 594 px).
+- [ ] #29 : photos d'origine de la première page des Interviews, au cadrage de son export.
+- [ ] Réexports en 2400 px de large des pages livrées mais floues : accueil page 3, Marilyn pages 50 et 52, The Party, seconde photo de la sixième page de Photographies, cinquième page de La Pièce.
+
+### En attente d'une action du porteur du projet
+
+- [ ] #28 : télécharger les trois fichiers audio de la Composition électroacoustique, les convertir pour le web, puis mettre en scène le paysage sonore (boucles courtes ou boucle longue, choix laissé libre par la cliente).
+- [ ] #25 : télécharger les vidéos de Memory Box VR.
+- [ ] #33 : relire à l'écoute les brouillons de transcription (`transcripts/brouillons-2026-09-19/`, avec `A-RELIRE.md`), décider de la forme publiée des deux longs entretiens, puis publier page par page en étendant `tests/transcriptions-disclosure.spec.js`.
+- [ ] Vérifier à l'écoute la transcription « Galerie Joseph » déjà en ligne sur l'accueil : « une blouse du mois d'août » est très probablement « un blues du mois d'août ».
+- [ ] Envoyer le message à la cliente (brouillon local, hors dépôt).
+
 ## Backlog mise en production finale
 
 ### Bloquant / À décider
 
 - [ ] Renseigner les mentions légales avec l'hébergeur réel.
 - [ ] Valider le scénario Réservations : page informative ou parcours transactionnel.
-- [ ] Ne pas utiliser `https://swing.appmiweb.com/#page-1` comme URL de partage ou SEO ; garder l'URL canonique `https://swing.appmiweb.com/`.
+- [ ] Les métadonnées SEO (canoniques, balises de partage, données structurées, sitemap, `llms.txt`, `for-ai`) désignent encore `https://swing.appmiweb.com`, ancienne préproduction retirée du tunnel le 2026-09-19 : à basculer dès que le domaine final est choisi.
 - [ ] Choisir et préparer le domaine final HTTPS.
 - [ ] Basculer les URL SEO publiques vers le domaine final avec `npm run seo:set-base -- https://domaine-final`.
 - [ ] Configurer les redirections HTTP vers HTTPS.
@@ -17,23 +38,30 @@
 ### À faire juste avant publication
 
 - [ ] Exécuter `npm run build:prod`.
-- [ ] Exécuter `npm run appmiweb:preflight`.
-- [ ] Exécuter `npm run appmiweb:search-crawl`.
+- [ ] Exécuter `npm run prod:preflight -- https://domaine-final` (les commandes `npm run appmiweb:*` interrogent l'ancienne préproduction, qui ne répond plus : ne plus les utiliser).
 - [ ] Vérifier que `/llms.txt`, `/for-ai`, `/for-ai.json` et `/for-ai.txt` restent alignés avec les contenus visibles.
 - [ ] Relancer un audit SEO/GEO sur l'URL canonique finale, pas seulement sur la préproduction.
-- [ ] Vérifier `curl -sL https://swing.appmiweb.com/page-inexistante-test-404.html | rg "page-404-hero"` après configuration serveur.
+- [ ] Vérifier sur le domaine final qu'une URL inexistante affiche la page 404 personnalisée avec un statut HTTP `404`.
 
 ## Améliorations recommandées
 
 - [ ] Installer GSC, GA4 ou GTM, Bing Webmaster Tools et suivi des sources IA au moment du go-live.
 - [ ] Optimiser le LCP de l'accueil sur le domaine final si Lighthouse reste > 2,5 s.
 - [ ] Décider et publier une politique crawlers IA propriétaire.
-- [ ] Optimiser les images (compression, WebP/AVIF avec fallback).
+- [ ] Images : compression sans perte faite (ImageOptim, 2026-09-19) ; restent les formats WebP/AVIF avec repli.
+- [ ] Renommer en `.png` les treize fichiers de `src/img/monroe/` qui portent l'extension `.jpg` mais sont des PNG, et mettre à jour leurs références.
+- [ ] La page Quiz ne porte plus de contenu XR ; vérifier avec la cliente que rien d'autre n'y manque.
+- [ ] Aligner la variable CSS `--header-height` sur la hauteur réelle de l'en-tête (3 px d'écart mesurés).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
-- [ ] Finaliser PRD-010 : corriger les transcripts bruts, publier les disclosures accessibles et valider le rendu.
+- [ ] Finaliser PRD-010 : voir #33.
 
 ## Terminé
 
+- [x] Chantier des demandes de la cliente, session du 2026-09-19 : Photographies (six pages), Composition (pages), La Pièce, Interviews, Expérience interactive, Quiz, volets de L'Expérience Monroe, Voyage autour de moi, Dessine-moi le vent, Toulouse-Lautrec (galerie), Ni vues ni connues, Espaces augmentés, bloc Contact de l'accueil, effet de pavé des pages 3 et 4. Détail dans `CHANGELOG.MD`.
+- [x] Règle « aucune photo tronquée » tenue par `tests/t02-medias-entiers.spec.js` sur les 28 pages.
+- [x] Sept JPEG encodés en CMJN convertis en sRVB, garde-fou `tests/images-espace-colorimetrique.spec.js`.
+- [x] Site de recette sur GitHub Pages, publié par `scripts/publier-gh-pages.sh` ; `swing.appmiweb.com` retiré du tunnel.
+- [x] Outillage de transcription remis en état par `uv`, sans installation globale (procédure dans `transcripts/brouillons-2026-09-19/A-RELIRE.md`, hors dépôt).
 - [x] Phase 1-4 : Intégration 62 pages
 - [x] Audit fidélité PDF
 - [x] Découpe multi-pages (24 HTML)
