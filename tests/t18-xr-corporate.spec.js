@@ -57,7 +57,24 @@ test.describe('T18 - XR Corporate page 57', () => {
   });
 
   test('la feuille de style de la page est versionnée pour T18', () => {
-    expect(readSrc('xr-corporate.html')).toContain('css/style.css?v=20260919-t18-xr-corporate');
+    expect(readSrc('xr-corporate.html')).toContain('css/style.css?v=20260919-t18-mailto');
+  });
+
+  test('« Contactez-nous » est un lien actif vers l’adresse de contact', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/xr-corporate.html');
+    const lien = page.locator('.page57__cta a');
+    await expect(lien).toHaveCount(1);
+    await expect(lien).toHaveAttribute('href', 'mailto:production@swingdigitalproduction.com');
+    await expect(lien).toHaveText('Contactez-nous pour en discuter.');
+    const style = await lien.evaluate((a) => {
+      const cs = getComputedStyle(a); const parent = getComputedStyle(a.parentElement);
+      return { memeCouleur: cs.color === parent.color, souligne: cs.textDecorationLine.includes('underline') };
+    });
+    expect(style.memeCouleur, 'le lien garde la couleur lisible du texte sur fond rose').toBe(true);
+    expect(style.souligne, 'le lien reste reconnaissable sans la couleur').toBe(true);
+    await lien.focus();
+    await expect(lien).toBeFocused();
   });
 
   test('mise en page conforme à la largeur du projet', async ({ page }) => {

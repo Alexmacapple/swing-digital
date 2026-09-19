@@ -4488,6 +4488,10 @@ main > .media-transcript {
 .page57__nowrap {
     white-space: nowrap;
 }
+.page57__cta a {
+    color: inherit;
+    text-decoration: underline;
+}
 .page57__cta {
     background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
