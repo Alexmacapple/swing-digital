@@ -3521,6 +3521,20 @@ main > .media-transcript {
     object-fit: cover;
     display: block;
 }
+/* Export de la cliente : cinq visuels de memes proportions, alignes en bas. Quatre images sont en portrait
+   (600 x 840), celle de l'installation en paysage (1272 x 815) : dans une case flexible de hauteur indefinie son
+   height: 100 % ne s'appliquait pas et elle s'arretait a mi-hauteur. Le cadre porte le ratio, l'image le remplit. */
+.page13__card-image-wrapper {
+    flex: none;
+    aspect-ratio: 600 / 840;
+}
+.page13__card-image {
+    position: absolute;
+    inset: 0;
+}
+.page13__card-body {
+    flex: 1;
+}
 
 .page13__card-number {
     position: absolute;
