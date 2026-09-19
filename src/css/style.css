@@ -4542,11 +4542,12 @@ main > .media-transcript {
 .page56__paintings {
     display: flex;
     gap: var(--space-sm);
-    align-items: center;
+    align-items: flex-start; /* les tableaux suivent le titre au lieu d'etre centres dans la hauteur */
 }
 .page56__painting {
     max-height: 100%;
     object-fit: contain;
+    object-position: top;
     display: block;
     flex: 1;
     min-width: 0;
@@ -6781,11 +6782,16 @@ main > .media-transcript {
 
 /* Responsive mobile */
 @media (max-width: 768px) {
+    /* Une colonne : les rangees suivent leur contenu, sinon le bloc categorie recouvre la galerie */
+    .page25 {
+        grid-template-rows: auto auto;
+    }
     .page25__panoramic {
         height: 25vh;
     }
     .page25__bottom {
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
         min-height: auto;
     }
     .page25__gallery-figure {
@@ -7593,15 +7599,20 @@ main > .media-transcript {
    ============================================================ */
 
 @media (max-width: 1024px) {
+    /* Deux rangees de cartes : la section doit grandir, sinon overflow: hidden coupe la seconde */
+    .page24 {
+        height: auto;
+        min-height: var(--section-height);
+    }
     .page24__cards {
         grid-template-columns: repeat(3, 1fr);
+        max-height: none;
     }
 }
 
 @media (max-width: 768px) {
     .page24__cards {
         grid-template-columns: repeat(2, 1fr);
-        max-height: none;
     }
 }
 
