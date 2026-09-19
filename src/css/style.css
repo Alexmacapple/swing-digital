@@ -6688,6 +6688,36 @@ main > .media-transcript {
         gap: var(--space-sm);
     }
 }
+/* Export de la cliente : deux photos carrees de meme taille, cote a cote, legende sous la premiere.
+   Le cote du carre est limite par la demi-largeur et par la hauteur d'ecran disponible (titre et legende deduits) ;
+   la seconde photo (422 px) n'est plus bridee a sa taille native. */
+.page30__container {
+    height: auto;
+    min-height: var(--section-height);
+}
+.page30__grid {
+    --page30-cote: min(calc((100% - var(--space-lg)) / 2), calc(var(--section-height) - 2 * var(--slide-pad-y) - 9rem));
+    grid-template-columns: repeat(2, var(--page30-cote));
+    justify-content: center;
+    align-content: center;
+    align-items: start;
+}
+.page30__image-block {
+    display: block;
+    height: auto;
+}
+.page30__image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 1 / 1;
+}
+@media (max-width: 600px) {
+    .page30__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+}
 
 /* ============================================================
    PAGE 26 : PHOTOGRAPHIE MARILYN AU DINER - Image centree + credit (archetype C)
