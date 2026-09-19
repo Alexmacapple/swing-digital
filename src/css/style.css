@@ -4478,12 +4478,22 @@ main > .media-transcript {
     display: block;
     border-radius: 4px;
 }
+.page57__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    min-height: 0;
+}
+.page57__nowrap {
+    white-space: nowrap;
+}
 .page57__cta {
     background-color: var(--color-background-pink-readable); /* a11y */
     font-family: var(--font-primary);
     font-size: var(--fs-slide-meta);
     font-weight: 700;
-    text-align: right;
+    text-align: center;
     margin: 0;
     flex-shrink: 0;
 }

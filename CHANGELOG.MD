@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-19
+
+- Correction XR Corporate (issue #18) : « team-building » ne se coupe plus, « Contactez-nous pour en discuter. » passe sous l’image, centré, avec un espacement régulier ; cache-buster CSS mis à jour sur `xr-corporate.html` ; test Playwright `tests/t18-xr-corporate.spec.js` sur six largeurs, mesuré sans animation.
+
 ## 2026-06-21
 
 - Correction PRD-016 contact : ajout d’un cache-buster sur `js/main.js` pour forcer le JS qui lance la vidéo contact en autoplay.
