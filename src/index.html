@@ -24,7 +24,7 @@
     <link rel="preload" href="img/hero/hero-featured-image.jpg" as="image">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=20260919-t10-credits">
+    <link rel="stylesheet" href="css/style.css?v=20260919-t36-pause">
     <!-- Données structurées SEO/GEO -->
     <script type="application/ld+json">
     {
@@ -196,6 +196,16 @@
                    aria-label="Vidéo d'ambiance Swing Digital - expériences immersives">
                 <source src="video/hero.mp4" type="video/mp4">
             </video>
+            <!-- Controle lecture hero -->
+            <button id="hero-play-btn" class="hero-page1__play-btn" type="button" aria-label="Mettre en pause la vidéo d'ambiance">
+                <svg class="hero-page1__play-icon hero-page1__play-icon--playing" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                    <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+                </svg>
+                <svg class="hero-page1__play-icon hero-page1__play-icon--paused" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                </svg>
+            </button>
             <!-- Controle son hero -->
             <button id="hero-sound-btn" class="hero-page1__sound-btn" type="button" aria-label="Activer le son" aria-pressed="false">
                 <svg class="hero-page1__sound-icon hero-page1__sound-icon--off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -636,6 +646,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js?v=20260919-t31-ancres" defer></script>
+    <script src="js/main.js?v=20260919-t36-pause" defer></script>
 </body>
 </html>

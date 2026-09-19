@@ -83,7 +83,7 @@ test.describe('PRD-011 - menu XR et Films', () => {
     for (const page of pages) {
       const html = readSrc(page);
 
-      expect(html, page).toContain('<script src="js/main.js?v=20260919-t31-ancres" defer></script>');
+      expect(html, page).toContain('<script src="js/main.js?v=20260919-t36-pause" defer></script>');
       expect(html, page).not.toContain('<script src="js/main.js" defer></script>');
     }
   });

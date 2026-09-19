@@ -667,6 +667,8 @@ function initHeroVideo() {
     var btn = document.getElementById('hero-sound-btn');
     if (!video || !btn) return;
 
+    initHeroPlayback(video);
+
     btn.addEventListener('click', function() {
         if (video.muted) {
             video.muted = false;
@@ -676,6 +678,50 @@ function initHeroVideo() {
             video.muted = true;
             btn.setAttribute('aria-pressed', 'false');
             btn.setAttribute('aria-label', 'Activer le son');
+        }
+    });
+}
+
+/**
+ * Video d'ambiance (accueil, 404) — lecture et pause (WCAG 2.2.2, RGAA 13.8)
+ * La video ne demarre pas seule sous prefers-reduced-motion : le poster reste affiche.
+ */
+function initHeroPlayback(video) {
+    var btn = document.getElementById('hero-play-btn');
+    if (!btn) return;
+
+    var labelPlay = 'Lancer la vidéo d\'ambiance';
+    var labelPause = 'Mettre en pause la vidéo d\'ambiance';
+
+    function refleter() {
+        if (video.paused) {
+            btn.setAttribute('aria-label', labelPlay);
+            btn.classList.remove('hero-page1__play-btn--playing');
+        } else {
+            btn.setAttribute('aria-label', labelPause);
+            btn.classList.add('hero-page1__play-btn--playing');
+        }
+    }
+
+    // L'etat affiche suit toujours l'etat reel du lecteur, y compris si le navigateur refuse la lecture automatique.
+    video.addEventListener('play', refleter);
+    video.addEventListener('pause', refleter);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        video.removeAttribute('autoplay');
+        video.pause();
+        video.load();
+    }
+    refleter();
+
+    btn.addEventListener('click', function() {
+        if (video.paused) {
+            var playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.then(refleter).catch(refleter);
+            }
+        } else {
+            video.pause();
         }
     });
 }
