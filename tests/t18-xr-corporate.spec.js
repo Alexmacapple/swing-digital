@@ -56,8 +56,10 @@ test.describe('T18 - XR Corporate page 57', () => {
     expect(html.match(/class="page57__cta"/g)).toHaveLength(1);
   });
 
-  test('la feuille de style de la page est versionnée pour T18', () => {
-    expect(readSrc('xr-corporate.html')).toContain('css/style.css?v=20260919-t18-mailto');
+  test('la feuille de style de la page porte un cache-buster', () => {
+    // Valeur volontairement non figée : elle change à chaque lot. La cohérence entre pages est
+    // contrôlée par tests/cache-buster-coherent.spec.js.
+    expect(readSrc('xr-corporate.html')).toMatch(/css\/style\.css\?v=[0-9a-z-]+"/);
   });
 
   test('« Contactez-nous » est un lien actif vers l’adresse de contact', async ({ page }) => {
