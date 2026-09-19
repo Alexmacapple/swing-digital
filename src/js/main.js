@@ -709,7 +709,7 @@ function initAnchorRedirects() {
         'page-23': 'monroe-installation.html',
         'page-25': 'monroe-photographie.html',
         'page-26': 'monroe-photographie.html',
-        'page-27': 'monroe-composition.html',
+        'page-27': 'monroe-photographie.html',
         'page-28': 'monroe-composition.html',
         'page-29': 'monroe-composition.html',
         'page-30': 'monroe-composition.html',
