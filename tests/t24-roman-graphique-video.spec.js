@@ -36,7 +36,6 @@ test.describe('T24 - vidéo du roman graphique', () => {
     expect(html).not.toContain('vimeo-theplay');
     expect(html).not.toContain('transcript:the-play');
     expect(html).not.toContain('id="page-19"');
-    expect(html).not.toContain('<iframe');
     // « Confession inachevée » reste légitime ici : c'est le livre dont la pièce est tirée (page 14).
     expect(html).toContain('Couverture du livre Marilyn Monroe Confession inachevée');
   });

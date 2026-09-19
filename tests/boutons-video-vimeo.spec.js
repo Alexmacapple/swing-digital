@@ -9,6 +9,7 @@ const pagesAvecVideoPilotable = [
   '/voyage-autour-de-moi.html',
   '/dessine-moi-le-vent.html',
   '/monroe-roman-graphique.html',
+  '/monroe-piece.html',
 ];
 
 // Fausse API Vimeo : enregistre les appels, sans réseau ni dépendance à Vimeo.
