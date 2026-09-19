@@ -57,6 +57,8 @@
     --color-gray-light: #767676;
     --color-gray-lightest: #f0f0f0;
     --color-bg-navy: #1a2744;
+    --color-title-blue-on-navy: #6F86FF; /* 4.6:1 sur --color-bg-navy, grand titre */
+    --color-title-red-on-navy: #FF5A5F;  /* 4.9:1 sur --color-bg-navy, grand titre */
     --color-brand-pink: #E84878;
     --color-brand-pink-gradient: #E84A7E;
     --color-brand-coral: #FF6B6B;
@@ -5328,6 +5330,16 @@ main > .media-transcript {
 }
 .page48__title strong {
     font-weight: 900;
+}
+/* Export de la cliente : « NI VUES » bleu, « NI CONNUES » rouge, capitales grasses. Aucune police fournie : Satoshi 900.
+   Teintes eclaircies par rapport a l'export pour atteindre 3:1 sur le bandeau marine. */
+.page48__title {
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--color-title-blue-on-navy);
+}
+.page48__title strong {
+    color: var(--color-title-red-on-navy);
 }
 .page48__subtitle {
     font-family: var(--font-primary);

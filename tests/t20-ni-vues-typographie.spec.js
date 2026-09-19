@@ -31,3 +31,27 @@ for (const largeur of [1920, 1440, 1024, 768, 390]) {
     expect(m.deborde).toBe(false);
   });
 }
+
+// Titre de la première page : sur l'export de la cliente, « NI VUES » est bleu et « NI CONNUES » rouge, en capitales grasses.
+// Aucune police n'a été fournie : Satoshi en graisse 900, bicolore par mot. Écart volontaire : les deux teintes sont
+// éclaircies pour atteindre 3:1 sur le bandeau marine (grand titre), ce que le bleu et le rouge de l'export n'atteignent pas.
+test('T20 - Ni vues ni connues : titre bicolore, gras, lisible sur le bandeau marine', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'desktop-1920', 'Contrôle de style : exécuté une seule fois.');
+  await page.goto('/ni-vues-ni-connues.html');
+  await page.evaluate(() => document.fonts.ready);
+  const m = await page.evaluate(() => {
+    const t = document.querySelector('.page48__title'); const s = t.querySelector('strong');
+    const lum = (rgb) => { const [r, g, b] = rgb.match(/\d+/g).slice(0, 3).map((v) => { const c = v / 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+    const fond = lum(getComputedStyle(document.querySelector('.page48')).backgroundColor);
+    const ratio = (e) => { const l = lum(getComputedStyle(e).color); return (Math.max(l, fond) + 0.05) / (Math.min(l, fond) + 0.05); };
+    const c = (e) => getComputedStyle(e);
+    return { texte: t.textContent.replace(/\s+/g, ' ').trim(), couleurs: [c(t).color, c(s).color], graisses: [Number(c(t).fontWeight), Number(c(s).fontWeight)], casse: c(t).textTransform, police: c(t).fontFamily, ratios: [ratio(t), ratio(s)], taille: parseFloat(c(t).fontSize) };
+  });
+  expect(m.texte, 'casse normale dans le HTML, capitales par CSS').toBe('Ni vues Ni connues');
+  expect(m.casse).toBe('uppercase');
+  expect(m.police).toContain('Satoshi');
+  expect(m.graisses).toEqual([900, 900]);
+  expect(m.couleurs[0], 'deux couleurs distinctes').not.toBe(m.couleurs[1]);
+  expect(m.taille, 'grand titre').toBeGreaterThanOrEqual(24);
+  m.ratios.forEach((r, k) => expect(r, `contraste du mot ${k + 1} sur le bandeau marine`).toBeGreaterThanOrEqual(3));
+});
