@@ -6411,6 +6411,53 @@ main > .media-transcript {
 }
 
 /* ============================================================
+   INTERVIEWS EN VIDEO (issue #29) : deux lecteurs YouTube 16:9, commandes natives
+   ============================================================ */
+.interviews-videos {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+}
+.interviews-videos__title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-title);
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-md);
+}
+.interviews-videos__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+}
+.interviews-videos__name {
+    font-family: var(--font-primary);
+    font-size: var(--fs-subtitle);
+    font-weight: 700;
+    margin: 0 0 var(--space-xs);
+}
+.interviews-videos__player {
+    aspect-ratio: 16 / 9;
+}
+.interviews-videos__player iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+.interviews-videos__credit {
+    font-size: var(--fs-caption);
+    font-style: italic;
+    margin: var(--space-xs) 0 0;
+}
+@media (max-width: 768px) {
+    .interviews-videos__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ============================================================
    PAGE 34 : INTERVIEWS - Lettre D + deux photos panoramiques
    ============================================================ */
 
