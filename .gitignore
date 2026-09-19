@@ -53,3 +53,8 @@ agent/
 
 # Sauvegardes d'outils (l'historique git fait foi)
 *.bak
+
+# Harnais Loriq genere (outil prive : ne pas publier dans ce depot public)
+.loriq/
+.agents/
+GEMINI.md
