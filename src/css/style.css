@@ -8600,3 +8600,76 @@ main > .media-transcript {
 .page57__cta {
     background-color: transparent;
 }
+
+/* ============================================================
+   REGLE MEDIAS GLOBALE (issue #2) : dernieres photos tronquees par object-fit: cover
+   Chaque case suit desormais le ratio natif de sa photo. Garde-fou : tests/t02-medias-entiers.spec.js.
+   ============================================================ */
+
+/* Espaces augmentes #page-6 : cadre 16:10 autour d'une image 16:9 (10 % de rognage). */
+.page6__image {
+    aspect-ratio: 16 / 9;
+}
+
+/* Catalogue XR #page-10 : la carte Marilyn (paysage) heritait de la hauteur de The Party (portrait) : 54 % de rognage.
+   The Party occupe deux rangees a gauche, Marilyn et Toulouse-Lautrec s'empilent a droite : les hauteurs concordent. */
+@media (min-width: 601px) {
+    .page10__card:first-child {
+        grid-row: span 2;
+    }
+}
+
+/* Photographies #page-25, mobile : bandeau de 25vh autour d'un panoramique 3000 x 619 (38 a 60 % de rognage). */
+@media (max-width: 768px) {
+    .page25__panoramic {
+        height: auto;
+    }
+    .page25__panoramic-image {
+        height: auto;
+        aspect-ratio: 3000 / 619;
+    }
+    /* Le bandeau ne fait plus que 80 px de haut a 390 px : le copyright passe dessous, sur le fond noir du bloc,
+       au lieu de recouvrir la photo (regle copyright stable). */
+    .page25__panoramic-credit {
+        position: static;
+        display: block;
+        padding: var(--space-2xs) var(--slide-pad-x);
+        text-align: right;
+        text-shadow: none;
+    }
+}
+
+/* Podcasts #page-33, mobile : photo portrait plafonnee a 50vw de haut (67 % de rognage). */
+@media (max-width: 768px) {
+    .page33__right {
+        max-height: none;
+    }
+    .page33__photo {
+        height: auto;
+    }
+}
+
+/* Marilyn #page-51 : la photo remplissait la hauteur de la colonne (13 a 20 % de rognage selon l'ecran).
+   La colonne porte le ratio de la photo (1554 x 1696) ; les citations restent posees dessus. */
+.page51__right {
+    aspect-ratio: 1554 / 1696;
+    align-self: center;
+    min-height: 0;
+}
+
+/* Ni vues ni connues #page-49, ordinateur : cinq portraits de ratios differents dans des colonnes egales
+   (15 a 20 % de rognage). Colonnes proportionnelles aux ratios natifs, galerie bornee par la hauteur d'ecran. */
+@media (min-width: 769px) {
+    .page49 {
+        align-items: center;
+    }
+    .page49__portraits {
+        flex: none;
+        width: min(100%, calc((var(--section-height) - 9rem) * 1.768));
+        grid-template-columns: 0.3464fr 0.3662fr 0.3439fr 0.3555fr 0.3566fr;
+        align-items: start;
+    }
+    .page49__portrait-image {
+        height: auto;
+    }
+}
