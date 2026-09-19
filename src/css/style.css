@@ -6581,6 +6581,46 @@ main > .media-transcript {
         min-height: var(--section-height);
     }
 }
+/* Export de la cliente : grande photo entiere sur fond blanc, mordant sur l'aplat jaune,
+   titre et compositeur, puis bandeau photo (3138 x 582) entier. Les deux cases heritaient de
+   object-fit: cover dans des rangees egales : le bandeau perdait 58 % de sa surface. */
+.page32 {
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+    background: linear-gradient(to bottom, var(--color-white) 40%, var(--color-brand-gold) 40%);
+}
+.page32__top {
+    padding-inline: clamp(0rem, 2vw, 2rem);
+}
+.page32__image {
+    height: auto;
+    object-fit: contain;
+}
+.page32__category {
+    background-color: transparent;
+    padding-inline: 0;
+    align-items: flex-start;
+}
+.page31__category-title {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xs);
+}
+.page31__category-textes,
+.page32__category-textes {
+    display: flex;
+    flex-direction: column;
+}
+.page31__composer,
+.page32__composer {
+    font-family: var(--font-primary);
+    font-size: var(--fs-caption);
+    font-weight: 700;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--color-text-gold-darker);
+}
 
 /* ============================================================
    PAGE 31 : COMPOSITION ELECTROACOUSTIQUE - Categorie + galerie (archetype K variante)
