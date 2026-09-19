@@ -10,7 +10,7 @@
     <link rel="icon" href="img/favicon.ico?v=20260621-sd">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/style.css?v=20260622-transcriptions">
+    <link rel="stylesheet" href="css/style.css?v=20260919-t36-pause">
 </head>
 <body data-section="erreur" data-page="404">
     <nav class="skip-links" aria-label="Liens d’évitement">
@@ -120,11 +120,20 @@
                    class="hero-page1__video"
                    autoplay loop muted playsinline
                    poster="img/hero/hero-featured-image.jpg"
-                   role="img"
                    aria-label="Vidéo d'ambiance Swing Digital - expériences immersives">
                 <source src="video/hero.mp4" type="video/mp4">
             </video>
             <!-- Contrôle son hero -->
+            <!-- Controle lecture hero -->
+            <button id="hero-play-btn" class="hero-page1__play-btn" type="button" aria-label="Mettre en pause la vidéo d'ambiance">
+                <svg class="hero-page1__play-icon hero-page1__play-icon--playing" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                    <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+                </svg>
+                <svg class="hero-page1__play-icon hero-page1__play-icon--paused" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                    <polygon points="5,3 19,12 5,21" fill="currentColor"/>
+                </svg>
+            </button>
             <button id="hero-sound-btn" class="hero-page1__sound-btn" type="button" aria-label="Activer le son" aria-pressed="false">
                 <svg class="hero-page1__sound-icon hero-page1__sound-icon--off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
                     <path d="M11 5L6 9H2v6h4l5 4V5z" fill="currentColor"/>
@@ -175,6 +184,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js?v=20260919-t31-ancres" defer></script>
+    <script src="js/main.js?v=20260919-t36-pause" defer></script>
 </body>
 </html>
