@@ -6722,6 +6722,27 @@ main > .media-transcript {
     color: var(--color-text);
     margin: var(--space-xs) 0 0 0;
 }
+/* Photo et legende dans une meme colonne, dimensionnee sur la photo (1177 x 790) :
+   la legende part toujours du bord gauche de la photo, a toutes les largeurs. */
+.page26__container {
+    display: grid;
+    grid-template-columns: min(100%, calc((var(--section-height) - 2 * var(--slide-pad-y) - 3rem) * 1177 / 790));
+    justify-content: center;
+    align-content: center;
+    height: auto;
+    min-height: var(--section-height);
+}
+.page26__image-wrapper {
+    display: block;
+}
+.page26__image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+}
+.page26__credit {
+    font-style: italic;
+}
 
 /* ============================================================
    PAGE 25 : PHOTOGRAPHIES - Panoramique + galerie + categorie (archetype K)
