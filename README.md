@@ -90,6 +90,39 @@ npm run seo:check
 | prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD | PRD transcripts accessibles des vidéos et podcasts publics |
 | prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD | PRD menu et découpage XR / Films |
 
+## Site de recette en ligne
+
+Une copie du site est publiée sur GitHub Pages pour la recette par la cliente : `https://alexmacapple.github.io/swing-digital/`. Elle reflète la branche `main` au moment de la dernière publication ; elle ne se met pas à jour toute seule.
+
+Publier ou remettre à jour, depuis `main` propre et poussé :
+
+```bash
+scripts/publier-gh-pages.sh
+```
+
+Vérifier sans rien publier (prépare la copie et contrôle le `noindex`, sans commit ni push) :
+
+```bash
+scripts/publier-gh-pages.sh --a-blanc
+```
+
+Ce que fait le script :
+
+1. il refuse de publier hors de `main`, avec un arbre de travail non propre, ou si `main` n'est pas aligné sur `origin/main` ;
+2. il reconstruit `dist/` par `npm run build:prod` ;
+3. il copie `dist/` en miroir dans un worktree dédié à la branche `gh-pages` (`~/Claude-worktrees/swing-gh-pages`, créé au premier lancement ; autre emplacement par la variable `SWING_GH_PAGES_WORKTREE`) ;
+4. il prépare la copie de recette : `noindex, nofollow` sur chaque page HTML, `robots.txt` qui interdit tout, fichier `.nojekyll` pour que Pages serve le site tel quel ;
+5. il vérifie que toutes les pages portent le `noindex`, puis commite et pousse normalement sur `gh-pages`. Jamais de push forcé : l'historique de la branche s'allonge, mais les images, identiques à celles de `main`, ne sont stockées qu'une fois par git.
+
+`src/` n'est jamais modifié. GitHub déploie en une à deux minutes après le push ; l'état du déploiement se lit dans l'onglet Actions du dépôt, ou par `gh api repos/Alexmacapple/swing-digital/pages/builds/latest`.
+
+Points à connaître :
+
+- le site fonctionne sous le sous-dossier `/swing-digital/` parce qu'il n'utilise aucun chemin absolu à la racine : ne pas en introduire (`/css/…`, `/img/…`) ;
+- la copie est publique, comme le dépôt, mais non référençable ; les balises canoniques continuent de désigner le domaine configuré par `npm run seo:set-base` ;
+- les lecteurs YouTube et Vimeo acceptent ce domaine (vérifié le 2026-09-19). Pour le revérifier, utiliser un navigateur visible : un navigateur sans interface reçoit un refus de Vimeo (défi anti-robot), quel que soit le domaine ;
+- pour dépublier : désactiver Pages dans Settings → Pages du dépôt, puis archiver la branche `gh-pages`.
+
 ## Production
 
 La préproduction Appmiweb est validée techniquement. La production finale reste bloquée tant que le domaine final HTTPS, l'hébergeur légal et le scénario Réservations ne sont pas décidés.
@@ -108,5 +141,5 @@ npm run prod:preflight -- https://votre-domaine.fr
 
 ---
 
-**Dernière mise à jour** : 2026-06-21
+**Dernière mise à jour** : 2026-09-19 (site de recette GitHub Pages)
 **Version** : v14 préproduction Satoshi, UI et 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité
