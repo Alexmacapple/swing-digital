@@ -711,7 +711,7 @@ function initAnchorRedirects() {
         'page-26': 'monroe-photographie.html',
         'page-27': 'monroe-photographie.html',
         'page-28': 'monroe-photographie.html',
-        'page-29': 'monroe-composition.html',
+        'page-29': 'monroe-photographie.html',
         'page-30': 'monroe-composition.html',
         'page-31': 'monroe-composition.html',
         'page-32': 'monroe-composition.html',
