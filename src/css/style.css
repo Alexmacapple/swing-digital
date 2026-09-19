@@ -6283,6 +6283,41 @@ main > .media-transcript {
         min-height: 50vh;
     }
 }
+/* Export de la cliente (interviews-2) : titre, photo entiere en pleine largeur, legende dessous a gauche,
+   aplat jaune a gauche. La photo etait en object-fit: cover dans une colonne : 43 a 64 % de rognage. */
+.page35 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+    background: linear-gradient(to right, var(--color-brand-gold) 32%, var(--color-white) 32%);
+}
+.page35__left {
+    display: contents;
+}
+.page35__category {
+    order: 1;
+    padding: 0 0 var(--space-sm);
+}
+.page35__right {
+    order: 2;
+    overflow: visible;
+    min-height: 0;
+    width: min(100%, calc((var(--section-height) - 2 * var(--slide-pad-y) - 17rem) * 2521 / 1114));
+}
+.page35__photo {
+    height: auto;
+    object-fit: contain;
+}
+.page35__caption {
+    order: 3;
+    padding: var(--space-xs) 0 0;
+}
+@media (max-width: 768px) {
+    .page35__right {
+        min-height: 0;
+    }
+}
 
 /* ============================================================
    PAGE 34 : INTERVIEWS - Lettre D + deux photos panoramiques
