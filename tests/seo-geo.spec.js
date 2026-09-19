@@ -51,7 +51,7 @@ test.describe('SEO/GEO - socle public local', () => {
   test('le sitemap expose les URL publiques locales et chaque route répond', async ({ request }) => {
     const locs = sitemapLocs();
 
-    expect(locs).toHaveLength(27);
+    expect(locs).toHaveLength(28);
     expect(new Set(locs).size).toBe(locs.length);
     expect(locs).toContain(`${expectedBase}/`);
     expect(locs).toContain(`${expectedBase}/for-ai`);

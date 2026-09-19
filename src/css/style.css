@@ -5882,6 +5882,31 @@ main > .media-transcript {
     margin: 0;
     max-width: min(280px, 85vw);
 }
+.page39__format {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    color: var(--color-gray-medium);
+    margin: 0.2rem 0 0;
+}
+.page39__selection-title {
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-body);
+    font-weight: 700;
+    color: var(--color-gray-medium);
+    margin: var(--space-sm) 0 0.2rem;
+}
+.page39__selection-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--fs-slide-body);
+    font-style: italic;
+    color: var(--color-gray-medium);
+    line-height: 1.7;
+    max-width: min(280px, 85vw);
+}
 .page39__stripe {
     background-color: var(--color-indigo-light);
 }
