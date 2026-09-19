@@ -46,6 +46,7 @@ tests-visuels/
 
 # Demandes cliente (depot public : nom, conversations privees, tickets non anonymises)
 demande-stephanie.md
+demande-stephanie/
 .scratch/
 
 # Skills tiers installes (sources publiques, reinstallables depuis skills-lock.json)

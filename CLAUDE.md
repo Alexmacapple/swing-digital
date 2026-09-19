@@ -188,5 +188,21 @@ Décision actuelle :
 
 ---
 
-**Dernière mise à jour** : 2026-06-21
-**Version** : 14.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité
+**Dernière mise à jour** : 2026-09-19
+**Version** : 14.0.0 préproduction Satoshi, UI, 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité ; section usage systématique Loriq/ShipGuard ajoutée
+
+## Loriq et ShipGuard — à utiliser systématiquement
+
+**Loriq** (harnais généré, installé 2026-09-19, source de vérité `.loriq/profile.yml`) :
+
+- Avant d’éditer du code, lire le plan routé : `.loriq/control/task-router.yml`, `.loriq/control/behavior-contract.yml`, `.loriq/control/oracles.yml`, `.loriq/memory/MEMORY.md` et `.loriq/memory/mistakes.md`.
+- Toute modification passe par les routes : périmètre scellé, travail borné, oracles rejoués.
+- Les comportements `proposed` du behavior-contract attendent la confirmation humaine (cérémonie `runtime/ceremony.py confirm`) avant qu’une tâche bornée ne s’appuie dessus.
+- Les artefacts de session hors diff vont sous `.loriq-operator-artifacts/` ; la capture mémoire (`.loriq/memory/**`) est hors bande, jamais dans un arbre routé.
+
+**ShipGuard** (plugin installé pour Claude Code ; variant Codex présent localement) — acte : ShipGuard est fait passer à chaque fois que possible :
+
+- Avant toute modification visible à l’écran : snapshot de référence ; après : snapshot de comparaison (`/sg-visual-run` ; `/sg-visual-discover` pour (re)générer les manifestes par route ; `/sg-change-report` pour la preuve avant/après durable ; `/sg-ship` pour la vérification de bout en bout).
+- Ne jamais rapporter un vert de navigateur/test qui n’a pas réellement tourné.
+- Lanes navigateur via le CLI local `agent-browser` (sortie sémantique/DOM ; pas de captures PNG sans demande explicite de l’humain).
+- Artefacts ShipGuard dans `visual-tests/_results/`.
