@@ -8673,3 +8673,55 @@ main > .media-transcript {
         height: auto;
     }
 }
+
+/* ============================================================
+   ACCUEIL, CONTACT (issue #6) : le texte n'empiete plus sur la video
+   La video de fond porte au centre un casque, le logo et deux cordes qui descendent du haut de l'image : il ne
+   reste ni en haut ni en bas assez de place pour le bloc, meme resserre. Interlignes resserres comme demande ;
+   sur grand ecran le bloc passe dans le tiers gauche, vide ; en dessous il passe sous la video, montree entiere.
+   ============================================================ */
+.page62__brand,
+.page62__title {
+    margin-bottom: var(--space-2xs);
+}
+.page62__email {
+    margin-bottom: var(--space-xs);
+}
+.page62__address {
+    line-height: 1.35;
+    margin-bottom: 0;
+}
+@media (min-width: 1200px) {
+    .page62__container {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 32%;
+        height: auto;
+        padding: var(--slide-pad-y) var(--space-sm);
+    }
+}
+@media (max-width: 1199px) {
+    .page62 {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+    }
+    .page62__background {
+        position: relative;
+        inset: auto;
+        aspect-ratio: 16 / 9;
+    }
+    .page62__background-video {
+        object-fit: contain;
+    }
+    .page62__container {
+        height: auto;
+        padding: var(--space-md) var(--slide-pad-x);
+    }
+    /* le bouton reste dans l'angle de la video, pas dans le bloc de texte */
+    .page62__play-btn {
+        bottom: auto;
+        top: calc(100vw * 9 / 16 - 48px - var(--space-sm));
+    }
+}
