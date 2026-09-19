@@ -1,0 +1,17 @@
+name: "Memory Box VR"
+description: "Auto-generated from static HTML file — experience VR (salle d'archives)"
+priority: medium
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+generated_by: sg-visual-discover
+generated_date: "2026-09-19"
+
+steps:
+  - action: open
+    url: "{base_url}/memory-box-vr.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "H1 sr-only Memory Box VR present, navigation 3 niveaux fonctionnelle, contenu principal affiche, footer complet, no blank screen, no broken resources"
+    severity: critical
+    screenshot: "pages-memory-box-vr.png"

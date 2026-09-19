@@ -1,0 +1,17 @@
+name: "Films"
+description: "Auto-generated from static HTML file — page éditoriale Films (taxonomie XR / Films)"
+priority: high
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+generated_by: sg-visual-discover
+generated_date: "2026-09-19"
+
+steps:
+  - action: open
+    url: "{base_url}/films.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "Titre id=films-title visible, navigation 3 niveaux fonctionnelle, cards films affichees, footer complet, no blank screen, no broken resources"
+    severity: critical
+    screenshot: "pages-films.png"

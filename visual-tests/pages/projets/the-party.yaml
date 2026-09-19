@@ -1,0 +1,22 @@
+name: "The Party"
+description: "Auto-generated from static HTML file — projet réalité mixte et théâtre"
+priority: medium
+requires_auth: false
+timeout: 30s
+tags: [auto-generated, static-html]
+generated_by: sg-visual-discover
+generated_date: "2026-09-19"
+
+steps:
+  - action: open
+    url: "{base_url}/the-party.html"
+  - action: llm-check
+    description: "Page loads and renders content"
+    criteria: "H1 sr-only The Party present, navigation 3 niveaux fonctionnelle, contenu principal affiche, footer complet, no blank screen"
+    severity: critical
+    screenshot: "pages-projets-the-party.png"
+  - action: llm-check
+    description: "All images loaded"
+    criteria: "All images loaded, no broken image icons (photos the-party-1 à the-party-4)"
+    severity: medium
+    screenshot: "pages-projets-the-party-images.png"
