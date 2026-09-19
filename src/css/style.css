@@ -4664,6 +4664,46 @@ main > .media-transcript {
         min-height: 40vh;
     }
 }
+/* Export de la cliente (toulouse-lautrec-2) : galerie justifiee, chaque photo entiere. Les sept photos etaient en
+   object-fit: cover dans des cases egales (22 a 52 % de rognage). La grille compte 600 colonnes fines ; chaque photo
+   en occupe une part proportionnelle a son ratio natif : meme hauteur dans la rangee, rangee pleine largeur. */
+.page54__mosaic {
+    flex: none;
+    grid-template-columns: repeat(600, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 0;
+    align-items: start;
+}
+.page54__photo {
+    padding: 1.5px;
+}
+.page54__photo--large {
+    grid-column: auto;
+}
+.page54__photo-image {
+    height: auto;
+    object-fit: contain;
+}
+.page54__photo:nth-child(1) { grid-column: span 165; }
+.page54__photo:nth-child(2) { grid-column: span 165; }
+.page54__photo:nth-child(3) { grid-column: span 105; }
+.page54__photo:nth-child(4) { grid-column: span 165; }
+.page54__photo:nth-child(5) { grid-column: span 248; }
+.page54__photo:nth-child(6) { grid-column: span 159; }
+.page54__photo:nth-child(7) { grid-column: span 193; }
+@media (max-width: 768px) {
+    .page54__mosaic {
+        grid-template-columns: repeat(600, minmax(0, 1fr));
+        min-height: 0;
+    }
+    .page54__photo:nth-child(1) { grid-column: span 300; }
+    .page54__photo:nth-child(2) { grid-column: span 300; }
+    .page54__photo:nth-child(3) { grid-column: span 233; }
+    .page54__photo:nth-child(4) { grid-column: span 367; }
+    .page54__photo:nth-child(5) { grid-column: span 600; }
+    .page54__photo:nth-child(6) { grid-column: span 271; }
+    .page54__photo:nth-child(7) { grid-column: span 329; }
+}
 
 /* ============================================================
    PAGE 53 : TOULOUSE-LAUTREC - Réalité mixte/Théâtre
@@ -8327,7 +8367,6 @@ main > .media-transcript {
    ============================================================ */
 @media (max-width: 480px) {
     .page49__portraits,
-    .page54__mosaic,
     .page13__cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
