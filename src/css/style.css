@@ -5249,6 +5249,15 @@ main > .media-transcript {
     padding: var(--space-md) var(--slide-pad-x);
     flex-shrink: 0;
 }
+/* Demande de la cliente : « bien aligner la typo au debut des phrases ». Centrees une a une, les trois lignes
+   commencaient chacune a un endroit different. Le bloc reste centre sous les portraits (colonne a la largeur de
+   la ligne la plus longue), mais ses lignes partent du meme bord gauche. */
+.page49__text {
+    display: grid;
+    grid-template-columns: minmax(0, max-content);
+    justify-content: center;
+    text-align: left;
+}
 .page49__tagline {
     font-family: var(--font-primary);
     font-size: var(--fs-subtitle);
