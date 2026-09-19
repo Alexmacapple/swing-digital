@@ -8725,3 +8725,37 @@ main > .media-transcript {
         top: calc(100vw * 9 / 16 - 48px - var(--space-sm));
     }
 }
+
+/* ============================================================
+   ISSUE #19 : image alignee sur le texte, logos qui ne « se baladent » plus
+   ============================================================ */
+/* Espaces augmentes #page-5 : l'image etait centree (max 1000 px) sous un titre cale a gauche : 156 px de decalage
+   a 1440 px. Elle part maintenant du meme bord gauche que le titre et le sous-titre. */
+@media (min-width: 769px) {
+    .page5__image-wrapper {
+        align-self: flex-start;
+        width: min(100%, 1000px);
+    }
+}
+/* Ni vues ni connues #page-48 : hauteur fixe mais largeur d'attribut conservee (boites de 350 et 544 px autour de
+   dessins de 47 et 125 px) : le second logo flottait loin du premier et, sur mobile, les deux s'empilaient hors du
+   bandeau. Boites aux proportions du dessin, logos groupes sur une ligne, comme sur l'export de la cliente. */
+/* Les logos s'ancrent au bandeau, pas a la section, plus haute que lui sur tablette. */
+.page48__banner-bottom {
+    position: relative;
+}
+/* Sur petit ecran le conteneur du bandeau est plus haut que son image : les logos se calent sur le bas de l'image,
+   dont la hauteur se deduit de son ratio natif (2246 x 396) et de la largeur de section (plafonnee a 1440 px). */
+.page48__logos {
+    --page48-logo: clamp(2rem, 4.2vw, 3.75rem);
+    flex-wrap: nowrap;
+    bottom: auto;
+    top: calc(min(100vw, 1440px) * 396 / 2246 - var(--page48-logo) - 0.5rem);
+}
+.page48__logo {
+    width: auto;
+    height: var(--page48-logo);
+}
+.page48__logo + .page48__logo {
+    height: clamp(0.9rem, 1.8vw, 1.6rem);
+}
