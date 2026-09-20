@@ -1,0 +1,6 @@
+# Domaine canonique : HTTPS sur www.swingdigitalproduction.com.
+RewriteEngine On
+
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.swingdigitalproduction\.com$ [NC]
+RewriteRule ^ https://www.swingdigitalproduction.com%{REQUEST_URI} [R=301,L]
