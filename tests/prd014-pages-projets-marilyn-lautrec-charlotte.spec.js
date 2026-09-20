@@ -15,6 +15,12 @@ const exportedAssets = [
   'img/pages/charlotte-henschel/charlotte-page-56.jpg',
 ];
 
+const lautrecLogoAssets = [
+  'img/pages/page-53/page-53-logo-pixihead-white.png',
+  'img/pages/page-53/page-53-logo-principe-actif.png',
+  'img/pages/page-53/page-53-logo-swing-digital.png',
+];
+
 function readSrc(relativePath) {
   return fs.readFileSync(path.join(srcDir, relativePath), 'utf8');
 }
@@ -28,6 +34,10 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
     const charlotte = readSrc('charlotte-henschel.html');
 
     for (const asset of exportedAssets) {
+      expect(fs.existsSync(path.join(srcDir, asset)), asset).toBe(true);
+    }
+
+    for (const asset of lautrecLogoAssets) {
       expect(fs.existsSync(path.join(srcDir, asset)), asset).toBe(true);
     }
 
@@ -48,9 +58,12 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
     expect(lautrec).not.toContain('page53__export-image');
     expect(lautrec).not.toContain('img/pages/toulouse-lautrec/lautrec-page-53.jpg');
     expect(lautrec).toContain('class="page53__description"');
-    expect(lautrec).toContain('img/pages/page-53/page-53-image-2.jpg');
-    expect(lautrec).toContain('img/pages/page-53/page-53-principe-actif.jpg');
-    expect(lautrec).toContain('img/pages/page-53/page-53-swing-digital.jpg');
+    expect(lautrec).not.toContain('img/pages/page-53/page-53-image-2.jpg');
+    expect(lautrec).not.toContain('img/pages/page-53/page-53-principe-actif.jpg');
+    expect(lautrec).not.toContain('img/pages/page-53/page-53-swing-digital.jpg');
+    for (const asset of lautrecLogoAssets) {
+      expect(lautrec).toContain(asset);
+    }
     expect(lautrec).toContain('img/pages/page-53/page-53-image-4.jpg');
     expect(lautrec).toContain('Visite immersive en réalité mixte dans Montmartre, accompagnée par des acteur·rices.');
     expect(lautrec).toContain('La Goulue, Jane Avril, Suzanne Valadon : les muses sortent de l\'ombre et prennent la parole.');
@@ -121,14 +134,14 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
 
           return {
             count: rects.length,
-            topDelta: Math.max(...tops) - Math.min(...tops),
+            bottomDelta: Math.max(...bottoms) - Math.min(...bottoms),
             rowHeight: Math.max(...bottoms) - Math.min(...tops),
             maxLogoHeight: Math.max(...heights),
           };
         });
 
         expect(logoRow.count).toBe(3);
-        expect(logoRow.topDelta).toBeLessThanOrEqual(2);
+        expect(logoRow.bottomDelta).toBeLessThanOrEqual(2);
         expect(logoRow.rowHeight).toBeLessThanOrEqual(logoRow.maxLogoHeight + 2);
       }
 
