@@ -7,26 +7,25 @@ Contexte : préparation du déploiement Git de Swing Digital sur `https://www.sw
 
 Le domaine final est choisi et les sources SEO/GEO pointent désormais vers `https://www.swingdigitalproduction.com`. Le site reste indexable dans le build public : les pages publiques n'ont pas de `noindex`, le sitemap et `robots.txt` déclarent le domaine final, et `404.html` reste exclue de l'index.
 
-La mise en production n'est pas encore annoncée : `npm run prod:preflight -- https://www.swingdigitalproduction.com` échoue encore sur le placeholder d'hébergeur des mentions légales. Le déploiement Git OVH est documenté mais doit attendre un preflight vert.
+La mise en production n'est pas encore annoncée : le preflight local est vert, mais le document root OVH reste à synchroniser et le HTTPS public doit encore être vérifié. Le tag `mepv1-20-septembre-2026` et la branche `production` sont désormais poussés en SSH.
 
 ## État vérifié
 
 1. `npm run seo:set-base -- https://www.swingdigitalproduction.com` a basculé les URL publiques dans `src/`.
 2. Les ressources `robots.txt`, `sitemap.xml`, `llms.txt`, `for-ai` et JSON-LD utilisent le domaine final.
 3. `npm run build:prod` génère `dist/` ; seuls les fichiers de `dist/` doivent être publiés.
-4. La recette GitHub Pages reste distincte et non indexable ; elle ne doit pas servir de branche de production.
+4. Le flux GitHub Pages est arrêté ; sa désactivation effective reste à confirmer dans `Settings → Pages`. Il ne doit pas servir de branche de production.
 5. Les métriques GSC, GA4/GTM, Bing Webmaster Tools, logs serveur et citations IA restent `unknown` tant qu'aucune preuve propriétaire n'est fournie.
 
 ## Décisions encore nécessaires
 
-- Renseigner dans `src/mentions-legales.html` le nom, l'adresse et le téléphone réels de l'hébergeur.
 - Confirmer que Réservations reste informatif au lancement, ou fournir le parcours de billetterie actif.
-- Vérifier DNS, certificat HTTPS, document root OVH et règle d'erreur 404 après le premier `git pull` de production.
+- Tirer la branche `production` dans le document root OVH puis vérifier DNS, certificat HTTPS et règle d'erreur 404.
 - Décider les outils de mesure et la politique propriétaire pour les crawlers IA avant d'ajouter des tags ou des règles spécifiques.
 
 ## Procédure de publication
 
-Après correction des mentions légales :
+Contrôles locaux réalisés avant publication :
 
 ```bash
 npm test
@@ -35,7 +34,7 @@ npm run build:prod
 npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Si toutes les commandes terminent avec le code 0, publier le contenu de `dist/` à la racine de la branche Git de production, puis tirer cette branche dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`. Vérifier ensuite l'accueil, `robots.txt`, `sitemap.xml` et une URL inexistante avec `curl`.
+Ces commandes terminent avec le code 0 (les deux avertissements Réservations sont informatifs). Le contenu de `dist/` a été publié à la racine de la branche `production`. La prochaine action est de tirer cette branche dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`, puis de vérifier l'accueil, `robots.txt`, `sitemap.xml` et une URL inexistante avec `curl`.
 
 ## À ne pas sur-vendre
 

@@ -2,7 +2,7 @@
 
 **Projet** : Site vitrine multi-pages Swing Digital
 **Début** : 2026-02-20
-**Statut** : recette par la cliente sur GitHub Pages (`https://alexmacapple.github.io/swing-digital/`), domaine de production configuré sur `https://www.swingdigitalproduction.com`, déploiement Git en préparation
+**Statut** : source validée sur `main`, build publié sur la branche `production`, document root OVH à synchroniser sur `https://www.swingdigitalproduction.com`
 
 ---
 
@@ -32,7 +32,7 @@
 | 20. Menu XR / Films | PRD-011 : séparation XR, Films et Ni vues ni connues | Implémenté et vérifié localement |
 | 21. Demandes de la cliente | 33 issues tirées de ses retours de juin et juillet : recomposition des pages d'après ses exports, photos entières, copyrights fixés, vidéos, textes | 24 issues fermées sur 33 au 2026-09-19 ; le reste attend ses fichiers (issue #34) |
 | 22. Règle médias | Balayage des 28 pages, garde-fous de test sur le rognage et sur l'espace colorimétrique des JPEG | Terminé |
-| 23. Site de recette | GitHub Pages, `scripts/publier-gh-pages.sh`, copie non référençable ; ancienne préproduction retirée du tunnel | Terminé |
+| 23. Site de recette | Flux GitHub Pages arrêté ; désactivation effective à confirmer dans `Settings → Pages` | Flux arrêté |
 | 24. Transcriptions | Outillage remis en état, cinq brouillons produits hors dépôt | Relecture à l'écoute et publication à faire (#33) |
 
 ---
@@ -43,11 +43,13 @@
 - [x] Basculer les canonicals, Open Graph, sitemap, robots, JSON-LD, `llms.txt` et `for-ai` vers le domaine final.
 - [ ] Configurer HTTPS + redirections HTTP vers HTTPS.
 - [ ] Configurer le routage 404 custom : toute URL inexistante doit servir `/404.html` avec un statut HTTP 404.
-- [ ] Renseigner l'hébergeur dans `mentions-legales.html`.
+- [x] Renseigner l'hébergeur OVH dans `mentions-legales.html`.
 - [ ] Décider le scénario Réservations : billetterie active ou lancement informatif avec contact.
 - [x] Exécuter `npm test`, `npm run seo:check` et `npm run build:prod`.
-- [ ] Obtenir un code 0 avec `npm run prod:preflight -- https://www.swingdigitalproduction.com`.
-- [ ] Publier la branche Git de production dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`.
+- [x] Obtenir un code 0 avec `npm run prod:preflight -- https://www.swingdigitalproduction.com` (avertissements Réservations informatifs).
+- [x] Créer et pousser la branche Git `production`, avec uniquement le contenu de `dist/` à sa racine.
+- [ ] Tirer la branche `production` dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`.
+- [ ] Vérifier DNS, certificat HTTPS, redirections et routage HTTP 404 sur le domaine final.
 
 ## Améliorations recommandées
 
@@ -72,4 +74,4 @@
 
 ---
 
-**Dernière mise à jour** : 2026-09-20
+**Dernière mise à jour** : 2026-09-20 — branche `production` et tag `mepv1-20-septembre-2026` poussés ; synchronisation OVH restante
