@@ -62,6 +62,8 @@ test.describe('PRD-013 - catalogue XR et The Party', () => {
     expect(page).toContain('Lauréat de Villa Formose Immersive');
     expect(page).toContain('Taiwan XR Residency - Larger Scale');
     expect(page).toContain(`<link rel="canonical" href="${expectedBase}/the-party.html">`);
+    expect(page).toContain(`<meta property="og:image" content="${expectedBase}/img/pages/the-party/the-party-1.jpg">`);
+    expect(page).toContain(`<meta name="twitter:image" content="${expectedBase}/img/pages/the-party/the-party-1.jpg">`);
 
     for (const asset of thePartyAssets) {
       expect(fs.existsSync(path.join(srcDir, asset)), asset).toBe(true);
@@ -100,6 +102,15 @@ test.describe('PRD-013 - catalogue XR et The Party', () => {
       images.every((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0),
     );
     expect(imagesLoaded).toBe(true);
+
+    const slides = await page.locator('main img').evaluateAll((images) => images.map((img) => ({
+      width: img.naturalWidth,
+      height: img.naturalHeight,
+      alt: img.alt,
+    })));
+    expect(slides.every(({ width, height }) => width === 842 && height === 595)).toBe(true);
+    expect(slides[0].alt).toContain('idéogramme traditionnel');
+    expect(slides[3].alt).toContain('Polaroid');
 
     const overflow = await page.evaluate(() => Math.ceil(document.documentElement.scrollWidth - window.innerWidth));
     expect(overflow).toBeLessThanOrEqual(1);

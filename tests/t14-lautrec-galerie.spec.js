@@ -1,8 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
-// Référence : export de la cliente (toulouse-lautrec-2). Galerie « justifiée » : chaque photo est entière,
+// Référence : export de la cliente l1.jpg. Galerie « justifiée » : six photos entières,
 // les photos d'une même rangée ont la même hauteur et la rangée remplit la largeur.
-// Sur le site les sept photos étaient en object-fit: cover dans des cases égales : 22 à 52 % de rognage.
 for (const largeur of [1920, 1440, 1024, 768, 390]) {
   test(`T14 - Toulouse-Lautrec : galerie de photos entières à ${largeur}px`, async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop-1920', 'Largeurs fixées par le test : exécuté une seule fois.');
@@ -24,7 +23,7 @@ for (const largeur of [1920, 1440, 1024, 768, 390]) {
         coupe: s.scrollHeight - s.clientHeight, deborde: document.documentElement.scrollWidth > innerWidth + 1,
       };
     });
-    expect(m.photos).toHaveLength(7);
+    expect(m.photos).toHaveLength(6);
     m.photos.forEach((p, k) => expect(p.rognage, `photo ${k + 1} entière`).toBeLessThan(0.03));
     const rangees = {};
     m.photos.forEach((p) => { const cle = Object.keys(rangees).find((h) => Math.abs(h - p.haut) <= 3) ?? p.haut; (rangees[cle] = rangees[cle] || []).push(p); });

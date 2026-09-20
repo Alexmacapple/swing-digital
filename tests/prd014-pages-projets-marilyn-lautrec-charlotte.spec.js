@@ -68,6 +68,7 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
     expect(lautrec).toContain('Visite immersive en réalité mixte dans Montmartre, accompagnée par des acteur·rices.');
     expect(lautrec).toContain('La Goulue, Jane Avril, Suzanne Valadon : les muses sortent de l\'ombre et prennent la parole.');
     expect(lautrec).toContain('Une déambulation où le spectacle vivant et la réalité mixte réécrivent l\'histoire à travers le regard de celles qui l\'ont vécue.');
+    expect(lautrec).not.toContain('img/pages/page-54/page-54-image-7.jpg');
 
     expect(charlotte).not.toContain('l\'histoire de charlotte henschel');
     expect(charlotte).not.toContain('EN réalité mixte');
@@ -75,6 +76,8 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
     expect(charlotte).toContain('Une vie passée à peindre malgré la guerre, l\'exil, les camps et l\'anonymat.');
     expect(charlotte).toContain('Un parcours habité par ce besoin irrépressible de créer, envers et contre tout.');
     expect(charlotte).toMatch(/Charlotte a peint\s*<br>\s*plus de 220 tableaux\s*<br>\s*jusqu'à l'âge de 90 ans\./);
+    expect(charlotte).toContain('page56__content--without-paintings');
+    expect(charlotte).not.toContain('page56__painting');
   });
 
   for (const { url, selector } of [
@@ -91,16 +94,21 @@ test.describe('PRD-014 - pages projets Marilyn, Toulouse-Lautrec et Charlotte He
       const section = page.locator(selector);
       await expect(section).toBeVisible();
 
-      await page.waitForFunction((targetSelector) => {
-        const images = Array.from(document.querySelectorAll(`${targetSelector} img`));
+      if (selector === '#page-56') {
+        await expect(section.locator('.page56__painting')).toHaveCount(0);
+        await expect(section.locator('.page56__bio')).toBeVisible();
+      } else {
+        await page.waitForFunction((targetSelector) => {
+          const images = Array.from(document.querySelectorAll(`${targetSelector} img`));
 
-        return images.length > 0 && images.every((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0);
-      }, selector);
+          return images.length > 0 && images.every((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0);
+        }, selector);
 
-      const imagesLoaded = await section.locator('img').evaluateAll((images) =>
-        images.every((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0),
-      );
-      expect(imagesLoaded).toBe(true);
+        const imagesLoaded = await section.locator('img').evaluateAll((images) =>
+          images.every((img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0),
+        );
+        expect(imagesLoaded).toBe(true);
+      }
 
       const overflow = await page.evaluate(() => Math.ceil(document.documentElement.scrollWidth - window.innerWidth));
       expect(overflow).toBeLessThanOrEqual(1);

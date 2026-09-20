@@ -57,23 +57,21 @@ test.describe('Photographie - bloc catégorie et galerie (#page-25)', () => {
   }
 });
 
-test.describe('Charlotte Henschel - titre et tableaux (#page-56)', () => {
+test.describe('Charlotte Henschel - biographie sans tableaux (#page-56)', () => {
   for (const largeur of LARGEURS) {
-    test(`les tableaux suivent le titre à ${largeur}px`, async ({ page }, testInfo) => {
+    test(`la biographie reste lisible sans tableaux à ${largeur}px`, async ({ page }, testInfo) => {
       test.skip(testInfo.project.name !== 'desktop-1920', 'Largeurs fixées par le test : exécuté une seule fois.');
       await ouvrir(page, '/charlotte-henschel.html', largeur);
       const m = await page.evaluate(() => {
         const s = document.querySelector('#page-56');
-        const titre = s.querySelector('.page56__title').getBoundingClientRect();
-        const tableaux = [...s.querySelectorAll('.page56__painting')].map((i) => i.getBoundingClientRect());
         return {
-          ecart: Math.round(Math.min(...tableaux.map((t) => t.top)) - titre.bottom),
-          deformation: Math.max(...[...s.querySelectorAll('.page56__painting')].map((i) => { const r = i.getBoundingClientRect(); return i.naturalWidth ? Math.abs(r.width / r.height - i.naturalWidth / i.naturalHeight) : 0; })),
+          tableaux: s.querySelectorAll('.page56__painting').length,
+          bioVisible: Boolean(s.querySelector('.page56__bio')?.getBoundingClientRect().height),
           coupe: s.scrollHeight - s.clientHeight,
         };
       });
-      expect(m.ecart, 'espace entre le titre et les tableaux (px)').toBeGreaterThanOrEqual(8);
-      expect(m.ecart, 'espace entre le titre et les tableaux (px)').toBeLessThanOrEqual(64);
+      expect(m.tableaux, 'la décision validée retire les tableaux de la page 56').toBe(0);
+      expect(m.bioVisible, 'la biographie reste visible').toBe(true);
       expect(m.coupe, 'contenu coupé par la section').toBeLessThanOrEqual(2);
     });
   }
