@@ -20,7 +20,7 @@ function sourcePathForLoc(loc) {
   if (pathname === '/') {
     return 'index.html';
   }
-  if (pathname === '/for-ai') {
+  if (pathname === '/for-ai' || pathname === '/for-ai/') {
     return 'for-ai/index.html';
   }
   return pathname.replace(/^\/+/, '');
@@ -54,7 +54,7 @@ test.describe('SEO/GEO - socle public local', () => {
     expect(locs).toHaveLength(28);
     expect(new Set(locs).size).toBe(locs.length);
     expect(locs).toContain(`${expectedBase}/`);
-    expect(locs).toContain(`${expectedBase}/for-ai`);
+    expect(locs).toContain(`${expectedBase}/for-ai/`);
     expect(locs).toContain(`${expectedBase}/the-party.html`);
     expect(locs).toContain(`${expectedBase}/memory-box-vr.html`);
     expect(locs).toContain(`${expectedBase}/films.html`);
@@ -106,6 +106,9 @@ test.describe('SEO/GEO - socle public local', () => {
     expect(llms).toContain('Films');
     expect(forAiTxt).toContain('Films');
     expect(forAiIndex).toContain('Films');
+    expect(forAiIndex).toContain(`<link rel="canonical" href="${expectedBase}/for-ai/">`);
+    expect(forAiIndex).toContain(`<meta property="og:url" content="${expectedBase}/for-ai/">`);
+    expect(forAiIndex).toContain(`"url": "${expectedBase}/for-ai/"`);
   });
 
   test('robots.txt autorise les ressources IA et référence le sitemap canonique', () => {

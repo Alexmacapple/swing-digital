@@ -114,6 +114,27 @@ test.describe('version anglaise locale', () => {
     }
   });
 
+  test('la navigation EN emploie Home et Augmented space', () => {
+    for (const route of englishRoutes) {
+      const html = readRoute(route);
+      expect(html, route).not.toContain('Increased space');
+      expect(html, route).not.toMatch(/>Welcome</);
+      expect(html, route).not.toMatch(/"name"\s*:\s*"Welcome"/);
+    }
+  });
+
+  test('les titres de films et les pronoms de la transcription Monroe sont corrigés', () => {
+    const html = readRoute('/en/monroe-interviews.html');
+
+    expect(html).toContain("Something's Got to Give");
+    expect(html).toContain('The Misfits');
+    expect(html).not.toMatch(/Something (?:Will|Got) to Give/);
+    expect(html).not.toMatch(/Les déaccesses|disaccessions|Something will crack/);
+    expect(html).not.toContain('He called him strawhead');
+    expect(html).not.toContain('Milton Greene gave him');
+    expect(html).not.toContain('which did not suit him');
+  });
+
   test('les annotations hreflang sont réciproques entre les deux langues', () => {
     for (const route of englishRoutes) {
       const english = readRoute(route);
