@@ -25,6 +25,11 @@ risques de rupture des médias et des liens internes.
 | plan du site | sitemap | Navigation et SEO |
 | mentions légales | legal notice | Page réglementaire |
 
+Les formes britanniques à préserver dans le texte anglais sont notamment
+`colour`, `colourful`, `coloured`, `colours`, `catalogue`, `favour`, `realise`,
+`centre` et `theatre`. Les propriétés CSS `color:` ainsi que les noms propres
+d’institutions ne sont pas des occurrences éditoriales à traduire.
+
 ## Correspondance des routes
 
 Chaque fichier ci-dessous est servi depuis `src/en/` et possède un lien

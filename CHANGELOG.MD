@@ -15,13 +15,20 @@
   réciproques sur les 29 routes françaises et anglaises. Les noms
   d’institutions, les variantes de titres de transcriptions et la relecture à
   l’écoute restent soumis à validation éditoriale.
+- Conformité au glossaire EN : les 71 libellés `Reservation`/`Reservations`
+  deviennent `Booking`, les formes britanniques visibles sont alignées,
+  `Legal notice`, `Sitemap`, `Journey around me`, `Hide transcript` et
+  `Limitations to check` sont harmonisés. Les slugs techniques
+  `reservations.html` restent inchangés.
 - Accessibilité EN : les libellés produits par `src/js/main.js` suivent la
   langue du document pour les vidéos, les disclosures et le retour en haut de
   page. Le cache-buster `main.js` est passé en `v3` sur les pages françaises et
   anglaises.
 - Validation locale : build de production réussi (500 fichiers), `seo:check`
   4/4, recette EN 7/7 et PRD-011 7/7. La vérification route par route de la
-  revue donne 29/29 réponses HTTP 200 avec langue et sélecteur attendus. La suite complète Playwright reste non
+  revue donne 29/29 réponses HTTP 200 avec langue et sélecteur attendus ; les
+  contrôles `hreflang` et liens internes donnent respectivement 0 anomalie et
+  0 échec sur 230 URL. La suite complète Playwright reste non
   concluante (527 passés, 972 ignorés, code 1 sur des contrôles visuels et
   responsive) ; elle ne vaut donc pas validation finale de #54.
 - Publication Git : `f6de318` et les six commits EN précédents ont été poussés

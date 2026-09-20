@@ -118,8 +118,13 @@ test.describe('version anglaise locale', () => {
     for (const route of englishRoutes) {
       const english = readRoute(route);
       const french = readFrenchRoute(route);
-      const englishUrl = canonicalUrl(english, `https://www.swingdigitalproduction.com${route}`);
-      const frenchUrl = canonicalUrl(french, `https://www.swingdigitalproduction.com${frenchRoute(route)}`);
+      const isForAi = route === '/en/for-ai/index.html';
+      const englishUrl = isForAi
+        ? 'https://www.swingdigitalproduction.com/en/for-ai/'
+        : canonicalUrl(english, `https://www.swingdigitalproduction.com${route}`);
+      const frenchUrl = isForAi
+        ? 'https://www.swingdigitalproduction.com/for-ai/'
+        : canonicalUrl(french, `https://www.swingdigitalproduction.com${frenchRoute(route)}`);
 
       expect(english, route).toContain(`hreflang="fr" href="${frenchUrl}"`);
       expect(french, frenchRoute(route)).toContain(`hreflang="en" href="${englishUrl}"`);

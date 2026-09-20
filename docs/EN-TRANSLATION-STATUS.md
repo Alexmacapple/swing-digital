@@ -22,10 +22,11 @@ format de durée. Les 29 pages françaises portent maintenant les alternates
 `en`, `fr` et `x-default` réciproques ; la 404 EN expose aussi son URL Open
 Graph et sa locale.
 
-Les noms d’institutions et de lieux, les variantes de titres de transcriptions,
-le vocabulaire `booking` dans les pages restantes et la relecture à l’écoute
-restent séparés de cette correction : ils demandent la décision éditoriale et
-la validation audio prévues par le rapport.
+Le vocabulaire `booking`, les formes britanniques signalées par le glossaire,
+les titres `legal notice` et `sitemap`, ainsi que les libellés de transcription
+ont été alignés dans ce lot. Les noms d’institutions et de lieux, la relecture
+à l’écoute et le choix de `x-default` restent séparés : ils demandent une
+décision éditoriale ou une validation humaine.
 
 ## Preuves locales
 
@@ -35,6 +36,8 @@ la validation audio prévues par le rapport.
 - `tests/prd011-menu-xr-films.spec.js --project=desktop-1920` : 7/7 ;
 - vérification de la revue sur `dist` : 29/29 routes HTTP 200, `lang="en"`,
   `translate="no"` et sélecteur FR présents ;
+- contrôles complémentaires de la revue : `booking` 0 résidu, `hreflang` 0
+  anomalie, 0 lien interne en échec sur 230 URL distinctes ;
 - `git status` propre et `main` alignée sur `origin/main`.
 
 La suite complète Playwright a été exécutée mais termine avec le code 1 : 527
@@ -46,6 +49,8 @@ terminée.
 
 - revue éditoriale de Stéphanie, notamment pour le vocabulaire artistique et
   juridique ;
+- arbitrage des noms d’institutions et de lieux, ainsi que de la cible
+  `x-default` ;
 - relecture à l’écoute des transcriptions anglaises et désignation de la
   personne responsable de cette validation (`#52`) ;
 - vérification sur OVH du routage des erreurs sous `/en/` vers `en/404.html` ;
