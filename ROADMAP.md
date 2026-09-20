@@ -63,6 +63,7 @@
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 - [ ] Si l'origine ne permet pas le routage 404, envisager le repli Cloudflare Worker documenté dans `docs/404-CUSTOM-ERROR-PAGE.md`.
 - [ ] Finaliser le suivi du PRD-010 : relire intégralement les transcriptions à l'écoute et documenter les sous-titres à activer sur les plateformes (hors dépôt, #33).
+- [ ] The Party : rédiger la description du contenu visuel de la vidéo de présentation, qui ne comporte aucune parole (issue #55).
 - [x] Ajouter les scripts de publication contrôlée depuis le Mac et de synchronisation manuelle depuis SSH OVH.
 
 ## Chantier version anglaise
