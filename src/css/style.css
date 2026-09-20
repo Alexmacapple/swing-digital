@@ -8979,7 +8979,7 @@ main > .media-transcript {
     gap: 0.35rem;
     width: auto;
     flex: 0 0 auto;
-    margin: 0 1rem 0 1rem;
+    margin: 0 1rem 0 1.5rem;
     padding: 0.45rem 0;
     font-size: 0.875rem;
     line-height: 1.4;
@@ -9019,6 +9019,7 @@ main > .media-transcript {
     }
 
     .language-switcher {
+        margin-left: 1rem;
         margin-right: 0.25rem;
         font-size: 0.8rem;
     }
