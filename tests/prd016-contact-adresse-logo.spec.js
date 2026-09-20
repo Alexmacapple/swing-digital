@@ -37,7 +37,10 @@ test.describe('PRD-016 - contact, adresse et logo', () => {
     expect(legal).not.toContain('C/O Liberty');
     expect(legal).not.toContain('35-37 rue d\'Artois');
     expect(legal).not.toContain('75008 Paris');
-    expect(legal).toContain('[Nom de l\'hébergeur]');
+    expect(legal).toContain('OVH SAS');
+    expect(legal).toContain('2 rue Kellermann');
+    expect(legal).toContain('59100 Roubaix, France');
+    expect(legal).toContain('Téléphone : 1007');
   });
 
   test('la section contact se rend sans débordement horizontal', async ({ page }) => {

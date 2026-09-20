@@ -4,9 +4,9 @@ Site vitrine multi-pages pour Swing Digital, spécialiste des expériences immer
 
 Site statique issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO configuré pour la production.
 
-- Site de recette en ligne, pour la cliente : `https://alexmacapple.github.io/swing-digital/` (GitHub Pages, publié depuis `main`, non référençable). Voir « Site de recette en ligne ».
+- Production cible : `https://www.swingdigitalproduction.com` — publication prévue par Git/SSH dans le document root OVH.
+- Recette GitHub Pages : flux arrêté après validation locale ; la désactivation effective du site reste à confirmer dans `Settings → Pages`.
 - Travail et tests : en local uniquement, sur `localhost`.
-- Domaine de production : `https://www.swingdigitalproduction.com`.
 
 ## Démarrage rapide
 
@@ -14,7 +14,7 @@ Site statique issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, pa
 npm test                        # suite Playwright complète, en local
 npm run seo:check               # socle SEO/GEO, en local
 npm run build:prod              # construit dist/
-scripts/publier-gh-pages.sh     # publie dist/ sur le site de recette
+npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
 Pour une lecture locale simple, avec le serveur qu'utilisent aussi les tests :
@@ -55,7 +55,7 @@ npm run seo:check
 - CSS3 responsive (variables, BEM, mobile-first)
 - JavaScript vanilla (navigation, vidéos, animations)
 - Playwright configuré, harnais restauré pour PRD-011 et SEO/GEO local
-- Lighthouse et contrôles SEO/GEO de préproduction
+- Lighthouse et contrôles SEO/GEO locaux avant production
 - Police : Satoshi Variable auto-hébergée
 - Pas de framework ni bundler
 
@@ -71,7 +71,7 @@ npm run seo:check
 - Favicon, Open Graph, Twitter Card et JSON-LD sur les pages indexables
 - `robots.txt`, `sitemap.xml` et `llms.txt`
 - Build de production `dist/` excluant les artefacts de travail
-- Site de recette publié sur GitHub Pages par `scripts/publier-gh-pages.sh`
+- Publication de production prévue par branche Git dédiée contenant uniquement `dist/`
 
 ## Accessibilité (WCAG 2.2 AA / RGAA 4.1)
 
@@ -106,23 +106,17 @@ npm run seo:check
 | prd-meta-workflow/PRD-010-transcripts-videos-accessibles.MD | PRD transcripts accessibles des vidéos et podcasts publics |
 | prd-meta-workflow/PRD-011-menu-decoupage-xr-films.MD | PRD menu et découpage XR / Films |
 
-## Site de recette en ligne
+## Ancienne recette GitHub Pages (flux arrêté)
 
-Une copie du site est publiée sur GitHub Pages pour la recette par la cliente : `https://alexmacapple.github.io/swing-digital/`. Elle reflète la branche `main` au moment de la dernière publication ; elle ne se met pas à jour toute seule.
+GitHub Pages a servi de recette temporaire. Le flux de publication est désormais arrêté afin d'éviter de confondre l'URL de recette avec la production OVH. La désactivation effective du site doit être confirmée dans `Settings → Pages` du dépôt ; la branche `gh-pages` et le script de publication sont conservés comme historique technique, mais ne doivent plus être utilisés pour le lancement.
 
-Publier ou remettre à jour, depuis `main` propre et poussé :
-
-```bash
-scripts/publier-gh-pages.sh
-```
-
-Vérifier sans rien publier (prépare la copie et contrôle le `noindex`, sans commit ni push) :
+Pour réactiver volontairement une recette, il faudra d'abord décider une nouvelle URL et réautoriser Pages dans les réglages du dépôt. Ne pas exécuter le script ci-dessous dans le flux de production :
 
 ```bash
 scripts/publier-gh-pages.sh --a-blanc
 ```
 
-Ce que fait le script :
+Le script historique faisait :
 
 1. il refuse de publier hors de `main`, avec un arbre de travail non propre, ou si `main` n'est pas aligné sur `origin/main` ;
 2. il reconstruit `dist/` par `npm run build:prod` ;
@@ -130,18 +124,18 @@ Ce que fait le script :
 4. il prépare la copie de recette : `noindex, nofollow` sur chaque page HTML, `robots.txt` qui interdit tout, fichier `.nojekyll` pour que Pages serve le site tel quel ;
 5. il vérifie que toutes les pages portent le `noindex`, puis commite et pousse normalement sur `gh-pages`. Jamais de push forcé : l'historique de la branche s'allonge, mais les images, identiques à celles de `main`, ne sont stockées qu'une fois par git.
 
-`src/` n'est jamais modifié. GitHub déploie en une à deux minutes après le push ; l'état du déploiement se lit dans l'onglet Actions du dépôt, ou par `gh api repos/Alexmacapple/swing-digital/pages/builds/latest`.
+`src/` n'était jamais modifié. Cette recette n'est plus publiée.
 
 Points à connaître :
 
 - le site fonctionne sous le sous-dossier `/swing-digital/` parce qu'il n'utilise aucun chemin absolu à la racine : ne pas en introduire (`/css/…`, `/img/…`) ;
 - la copie est publique, comme le dépôt, mais non référençable ; les balises canoniques continuent de désigner le domaine configuré par `npm run seo:set-base` ;
 - les lecteurs YouTube et Vimeo acceptent ce domaine (vérifié le 2026-09-19). Pour le revérifier, utiliser un navigateur visible : un navigateur sans interface reçoit un refus de Vimeo (défi anti-robot), quel que soit le domaine ;
-- pour dépublier : désactiver Pages dans Settings → Pages du dépôt, puis archiver la branche `gh-pages`.
+- pour réactiver une recette : décider explicitement de l'URL, réactiver Pages dans Settings → Pages, puis republier après contrôle du `noindex`.
 
 ## Production
 
-La production cible `https://www.swingdigitalproduction.com`. La recette GitHub Pages reste séparée et non indexable. Le déploiement de production se fait par une branche Git contenant uniquement le contenu généré de `dist/`, tirée dans le document root OVH ; voir [docs/DEPLOIEMENT-PRODUCTION-GIT.md](docs/DEPLOIEMENT-PRODUCTION-GIT.md).
+La production cible `https://www.swingdigitalproduction.com`. Le déploiement se fait par une branche Git contenant uniquement le contenu généré de `dist/`, tirée dans le document root OVH ; voir [docs/DEPLOIEMENT-PRODUCTION-GIT.md](docs/DEPLOIEMENT-PRODUCTION-GIT.md).
 
 La chaîne de contrôle est :
 
@@ -154,9 +148,9 @@ npm run build:prod
 npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Le preflight est bloquant tant que les mentions légales contiennent le placeholder d'hébergeur. Les URL inexistantes doivent aussi être configurées côté origine pour servir `/404.html` avec un statut HTTP `404`.
+Les mentions légales indiquent désormais OVH SAS. Le preflight doit être relancé ; la publication reste conditionnée à un code 0, au routage 404, au certificat HTTPS du domaine et à la synchronisation de la branche Git de production dans le document root OVH.
 
 ---
 
-**Dernière mise à jour** : 2026-09-20 — domaine de production configuré, recette GitHub Pages séparée et procédure Git documentée
-**Version** : v16 — corrections The Party, Lautrec et Charlotte ; SEO/GEO basculé vers le domaine final ; préflight production en attente des mentions légales d'hébergement
+**Dernière mise à jour** : 2026-09-20 — production OVH préparée par Git/SSH, flux GitHub Pages arrêté
+**Version** : v17 — tag `mepv1-20-septembre-2026` ; mentions OVH renseignées ; production à synchroniser sur le serveur
