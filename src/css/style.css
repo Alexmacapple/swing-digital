@@ -4569,6 +4569,9 @@ main > .media-transcript {
     gap: var(--space-sm);
     padding: 0 var(--slide-pad-x) var(--slide-pad-y);
 }
+.page56__content--without-paintings {
+    grid-template-columns: 1fr;
+}
 .page56__paintings {
     display: flex;
     gap: var(--space-sm);
@@ -4602,6 +4605,10 @@ main > .media-transcript {
     margin: 0;
     text-align: left;
     text-transform: none;
+}
+.page56__bio--solo {
+    width: min(100%, 52rem);
+    justify-self: center;
 }
 .page56__bio p:first-child {
     font-size: clamp(1.15rem, 1.75vw, 1.45rem);
@@ -4680,9 +4687,8 @@ main > .media-transcript {
         min-height: 40vh;
     }
 }
-/* Export de la cliente (toulouse-lautrec-2) : galerie justifiee, chaque photo entiere. Les sept photos etaient en
-   object-fit: cover dans des cases egales (22 a 52 % de rognage). La grille compte 600 colonnes fines ; chaque photo
-   en occupe une part proportionnelle a son ratio natif : meme hauteur dans la rangee, rangee pleine largeur. */
+/* Export de la cliente (l1.jpg) : galerie justifiee de six photos entieres. La grille compte 600 colonnes fines ;
+   chaque photo en occupe une part proportionnelle a son ratio natif, sur deux rangees de trois photos. */
 .page54__mosaic {
     flex: none;
     grid-template-columns: repeat(600, minmax(0, 1fr));
@@ -4700,13 +4706,12 @@ main > .media-transcript {
     height: auto;
     object-fit: contain;
 }
-.page54__photo:nth-child(1) { grid-column: span 165; }
-.page54__photo:nth-child(2) { grid-column: span 165; }
-.page54__photo:nth-child(3) { grid-column: span 105; }
-.page54__photo:nth-child(4) { grid-column: span 165; }
-.page54__photo:nth-child(5) { grid-column: span 248; }
-.page54__photo:nth-child(6) { grid-column: span 159; }
-.page54__photo:nth-child(7) { grid-column: span 193; }
+.page54__photo:nth-child(1) { grid-column: span 228; }
+.page54__photo:nth-child(2) { grid-column: span 228; }
+.page54__photo:nth-child(3) { grid-column: span 144; }
+.page54__photo:nth-child(4) { grid-column: span 228; }
+.page54__photo:nth-child(5) { grid-column: span 227; }
+.page54__photo:nth-child(6) { grid-column: span 145; }
 @media (max-width: 768px) {
     .page54__mosaic {
         grid-template-columns: repeat(600, minmax(0, 1fr));
@@ -4716,9 +4721,8 @@ main > .media-transcript {
     .page54__photo:nth-child(2) { grid-column: span 300; }
     .page54__photo:nth-child(3) { grid-column: span 233; }
     .page54__photo:nth-child(4) { grid-column: span 367; }
-    .page54__photo:nth-child(5) { grid-column: span 600; }
-    .page54__photo:nth-child(6) { grid-column: span 271; }
-    .page54__photo:nth-child(7) { grid-column: span 329; }
+    .page54__photo:nth-child(5) { grid-column: span 367; }
+    .page54__photo:nth-child(6) { grid-column: span 233; }
 }
 
 /* ============================================================
