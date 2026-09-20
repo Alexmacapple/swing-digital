@@ -76,25 +76,28 @@ accessible au clavier.
 
 Issues GitHub ouvertes :
 
-- [ ] #47 — glossaire bilingue et carte des 29 routes anglaises ; décision sur les slugs et validation éditoriale.
+- [ ] #47 — glossaire bilingue et carte des 29 routes anglaises ; slugs français conservés sous `/en/`, validation éditoriale restante.
 - [ ] #48 — architecture `/en/` et switcher bilingue accessible.
 - [ ] #49 — socle partagé, accueil et pages utilitaires.
-- [ ] #50 — pages XR, Films et projets indépendants ; contenu à geler avant traduction pour les demandes clientes ouvertes.
+- [ ] #50 — pages XR, Films et projets indépendants ; retraduction ciblée acceptée après correction des demandes clientes.
 - [ ] #51 — collection Monroe et Marilyn, hors transcriptions.
-- [ ] #52 — transcriptions vidéo et podcasts ; la décision peut autoriser des blocs conservés en français avec `lang="fr"`, s'ils sont inventoriés.
+- [ ] #52 — transcriptions vidéo et podcasts ; traduction intégrale en anglais décidée, relecture à l'écoute à désigner.
 - [ ] #53 — ressources SEO/GEO bilingues, `hreflang`, sitemap, Open Graph, JSON-LD et ressources IA.
 - [ ] #54 — qualité, contrôles récursifs, build et préparation de la mise en production anglaise.
 
 Ordre de dépendance : `#47 → #48 → #49`, puis les lots #50 et #51 en parallèle ;
-`#51 → #52` ; `#49 + #50 + #51 → #53 → #54`. La décision éditoriale de #52
-doit être tranchée avant la clôture de #54, sans faire de la traduction intégrale
-des transcriptions un bloqueur technique obligatoire.
+`#51 → #52` ; `#49 + #50 + #51 → #53` ; `#52 + #53 → #54`. La traduction
+intégrale des transcriptions est requise avant la clôture de #54.
 
 Points à résoudre avant publication anglaise :
 
-- [ ] Valider le glossaire, les titres d'œuvres et la politique de slugs (#47).
-- [ ] Geler les contenus français concernés par les issues clientes #12, #14, #15, #25, #28 et #29.
-- [ ] Décider le traitement des mentions légales, des transcriptions et des ressources `for-ai`.
+- [x] Conserver les slugs français sous `/en/` (#47).
+- [x] Accepter la retraduction ciblée après correction des issues clientes #12, #14, #15, #25, #28 et #29.
+- [x] Traduire intégralement les mentions légales et les transcriptions en anglais.
+- [x] Indexer immédiatement les pages anglaises et publier les ressources IA dans des fichiers séparés au suffixe `.en`.
+- [x] Ajouter le switcher sur toutes les pages et le faire pointer vers l'article traduit correspondant ; validation du switcher par Stéphanie.
+- [ ] Confirmer sur OVH le routage de `/en/404.html` pour les erreurs sous `/en/`.
+- [ ] Désigner la personne chargée de la relecture des transcriptions à l'écoute.
 - [ ] Faire valider la traduction artistique et juridique par les personnes désignées.
 
 ## Optionnel (post-lancement)
