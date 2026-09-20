@@ -62,7 +62,7 @@
 - [ ] Test cross-browser final (Chrome, Firefox, Safari).
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 - [ ] Si l'origine ne permet pas le routage 404, envisager le repli Cloudflare Worker documenté dans `docs/404-CUSTOM-ERROR-PAGE.md`.
-- [ ] Finaliser le PRD-010 : relire les brouillons à l'écoute, publier les disclosures accessibles et valider le rendu (#33).
+- [ ] Finaliser le suivi du PRD-010 : relire intégralement les transcriptions à l'écoute et documenter les sous-titres à activer sur les plateformes (hors dépôt, #33).
 - [x] Ajouter les scripts de publication contrôlée depuis le Mac et de synchronisation manuelle depuis SSH OVH.
 
 ## Chantier version anglaise
