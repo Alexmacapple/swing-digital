@@ -15,7 +15,13 @@ Pour chaque page EN :
 - les assets continuent de pointer vers les ressources partagées de `src/img`,
   `src/video`, `src/fonts` et `src/css`.
 
+La vérification locale du 2026-09-21 confirme 29 routes EN accessibles,
+`seo:check` à 4/4 et le build de production à 500 fichiers. Le commit de
+référence est `f6de318` sur `origin/main`.
+
 La publication de la version EN reste distincte d’une mise en production OVH.
 Avant publication, exécuter `npm run build:prod`, vérifier le contenu de `dist`
-et contrôler les URLs publiques avec le preflight de production. Aucun chiffre
-de trafic, de positionnement ou de citation IA n’est déduit de la traduction.
+et contrôler les URLs publiques avec le preflight de production, notamment le
+routage de `/en/404.html`. La revue éditoriale, la relecture audio et la
+synchronisation de la branche `production` restent à faire. Aucun chiffre de
+trafic, de positionnement ou de citation IA n’est déduit de la traduction.

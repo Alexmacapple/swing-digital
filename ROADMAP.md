@@ -2,7 +2,7 @@
 
 **Projet** : Site vitrine multi-pages Swing Digital
 **Début** : 2026-02-20
-**Statut** : source validée sur `main`, build publié sur `production`, contenu présent dans le document root OVH ; HTTPS et routage 404 restent à vérifier sur `https://www.swingdigitalproduction.com`
+**Statut** : source EN validée localement et poussée sur `main` (`f6de318`), build précédent publié sur `production` ; la publication EN, HTTPS et le routage 404 restent à vérifier sur `https://www.swingdigitalproduction.com`
 
 ---
 
@@ -34,7 +34,7 @@
 | 22. Règle médias | Balayage des 28 pages, garde-fous de test sur le rognage et sur l'espace colorimétrique des JPEG | Terminé |
 | 23. Site de recette | Flux GitHub Pages arrêté ; désactivation effective à confirmer dans `Settings → Pages` | Flux arrêté |
 | 24. Transcriptions | Cinq transcriptions françaises publiées, disclosures accessibles et générateur corrigé | Ticket #33 clôturé ; relecture humaine intégrale et sous-titres des plateformes restent hors dépôt |
-| 25. Version anglaise | Architecture `/en/`, switcher bilingue, traduction éditoriale, SEO/GEO et validation de production découpés dans les issues #47 à #54 | Cadré ; implémentation non commencée |
+| 25. Version anglaise | Architecture `/en/`, switcher bilingue, traduction éditoriale, SEO/GEO et validation de production découpés dans les issues #47 à #54 | Implémentée sur `main` ; revue éditoriale, OVH et clôture des issues restantes |
 
 ---
 
@@ -46,7 +46,7 @@
 - [ ] Configurer le routage 404 custom : toute URL inexistante doit servir `/404.html` avec un statut HTTP 404.
 - [x] Renseigner l'hébergeur OVH dans `mentions-legales.html`.
 - [ ] Décider le scénario Réservations : billetterie active ou lancement informatif avec contact.
-- [x] Exécuter `npm test`, `npm run seo:check` et `npm run build:prod`.
+- [ ] Obtenir une suite complète `npm test` verte ; dernière exécution : 527 passés, 972 ignorés, code 1 sur des contrôles visuels/responsive.
 - [x] Obtenir un code 0 avec `npm run prod:preflight -- https://www.swingdigitalproduction.com` (avertissements Réservations informatifs).
 - [x] Créer et pousser la branche Git `production`, avec uniquement le contenu de `dist/` à sa racine.
 - [x] Déployer le contenu de `production` dans le document root OVH.
@@ -77,14 +77,14 @@ accessible au clavier.
 
 Issues GitHub ouvertes :
 
-- [ ] #47 — glossaire bilingue et carte des 29 routes anglaises ; slugs français conservés sous `/en/`, validation éditoriale restante.
-- [ ] #48 — architecture `/en/` et switcher bilingue accessible.
-- [ ] #49 — socle partagé, accueil et pages utilitaires.
-- [ ] #50 — pages XR, Films et projets indépendants ; retraduction ciblée acceptée après correction des demandes clientes.
-- [ ] #51 — collection Monroe et Marilyn, hors transcriptions.
-- [ ] #52 — transcriptions vidéo et podcasts ; traduction intégrale en anglais décidée, relecture à l'écoute à désigner.
-- [ ] #53 — ressources SEO/GEO bilingues, `hreflang`, sitemap, Open Graph, JSON-LD et ressources IA.
-- [ ] #54 — qualité, contrôles récursifs, build et préparation de la mise en production anglaise.
+- [ ] #47 — glossaire bilingue et carte des 29 routes anglaises ; livrable présent, validation éditoriale restante.
+- [ ] #48 — architecture `/en/` et switcher bilingue accessible ; implémentation présente, validation éditoriale restante.
+- [ ] #49 — socle partagé, accueil et pages utilitaires ; routage OVH de la 404 EN restant à vérifier.
+- [ ] #50 — pages XR, Films et projets indépendants ; traduction livrée sur `main`, revue finale restante.
+- [ ] #51 — collection Monroe et Marilyn, hors transcriptions ; traduction livrée sur `main`, revue finale restante.
+- [ ] #52 — transcriptions vidéo et podcasts ; texte EN présent, relecture à l'écoute et responsable à désigner.
+- [ ] #53 — ressources SEO/GEO bilingues, `hreflang`, sitemap, Open Graph, JSON-LD et ressources IA ; contrôles locaux verts.
+- [ ] #54 — qualité, contrôles récursifs, build et préparation de la mise en production anglaise ; bloquée par #52, OVH et la suite complète.
 
 Ordre de dépendance : `#47 → #48 → #49`, puis les lots #50 et #51 en parallèle ;
 `#51 → #52` ; `#49 + #50 + #51 → #53` ; `#52 + #53 → #54`. La traduction
@@ -94,9 +94,10 @@ Points à résoudre avant publication anglaise :
 
 - [x] Conserver les slugs français sous `/en/` (#47).
 - [x] Accepter la retraduction ciblée après correction des issues clientes #12, #14, #15, #25, #28 et #29.
-- [x] Traduire intégralement les mentions légales et les transcriptions en anglais.
+- [x] Traduire intégralement les mentions légales et les transcriptions en anglais dans le lot local ; relecture à l'écoute encore requise.
 - [x] Indexer immédiatement les pages anglaises et publier les ressources IA dans des fichiers séparés au suffixe `.en`.
-- [x] Ajouter le switcher sur toutes les pages et le faire pointer vers l'article traduit correspondant ; validation du switcher par Stéphanie.
+- [x] Ajouter le switcher sur toutes les pages et le faire pointer vers l'article traduit correspondant.
+- [ ] Faire valider le switcher et la traduction artistique/juridique par Stéphanie.
 - [ ] Confirmer sur OVH le routage de `/en/404.html` pour les erreurs sous `/en/`.
 - [ ] Désigner la personne chargée de la relecture des transcriptions à l'écoute.
 - [ ] Faire valider la traduction artistique et juridique par les personnes désignées.
@@ -112,4 +113,4 @@ Points à résoudre avant publication anglaise :
 
 ---
 
-**Dernière mise à jour** : 2026-09-20 — branche `production` déployée ; scripts Mac/OVH ajoutés ; HTTPS et routage 404 à vérifier
+**Dernière mise à jour** : 2026-09-21 — version EN implémentée et poussée sur `main` (`f6de318`) ; production EN, revue éditoriale et routage 404 à vérifier

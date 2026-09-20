@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-09-21
+
+- Version anglaise (`#47` à `#54`) : livraison du socle local des 29 routes
+  sous `src/en/`, du sélecteur FR/EN réciproque, des ressources SEO/GEO et des
+  transcriptions anglaises embarquées. Le vocabulaire est harmonisé en anglais
+  britannique, avec `Theatre` retenu pour « théâtre », `The Monroe Experience`,
+  `My Story play` et `Draw Me the Wind`.
+- Accessibilité EN : les libellés produits par `src/js/main.js` suivent la
+  langue du document pour les vidéos, les disclosures et le retour en haut de
+  page. Le cache-buster `main.js` est passé en `v3` sur les pages françaises et
+  anglaises.
+- Validation locale : build de production réussi (500 fichiers), `seo:check`
+  4/4, recette EN 6/6 et PRD-011 7/7. La suite complète Playwright reste non
+  concluante (527 passés, 972 ignorés, code 1 sur des contrôles visuels et
+  responsive) ; elle ne vaut donc pas validation finale de #54.
+- Publication Git : `f6de318` et les six commits EN précédents ont été poussés
+  sur `origin/main`. La branche `production` et le document root OVH ne sont
+  pas encore synchronisés avec cette version EN.
+
 ## 2026-09-20
 
 - The Party, vidéo de présentation (issue #55) : la cliente a fourni une vidéo à placer en haut de la page, « THE PARTY Lauréats Villa Formose Immersive 2026. ». La page n’en portait aucune, son contenu se limitant au pitch et aux quatre pages de présentation. Le site connaît deux intégrations : la bannière `.page11`, en lecture automatique muette, dont les boutons de lecture et de son sont pilotés par l’API Vimeo (`new Vimeo.Player`, `js/main.js`), et le lecteur `youtube-nocookie` à contrôles natifs, sans script. Faute de lien Vimeo pour cette vidéo, le second est retenu, conformément à la règle du projet : Vimeo piloté quand un lien Vimeo existe, YouTube sans cookie et sans lecture automatique sinon. Un iframe YouTube placé dans la bannière aurait rendu ses deux boutons inertes, défaut déjà corrigé par l’issue #32. Le conteneur `.page11` est réutilisé pour la position et le cadrage : mesuré sur le rendu réel, 390 x 219, 768 x 432 et 1440 x 810, soit un ratio de 1,778 aux trois largeurs, sans débordement horizontal. Sans lecture automatique, l’exigence de bouton de pause (WCAG 2.2.2, RGAA 13.8, issue #36) ne s’applique pas. Aucun CSS ni JavaScript ajouté, donc aucun cache-buster à reprendre ; le décompte d’images de `main` reste à quatre, garde-fou du test PRD-013. La vidéo ne comporte aucune parole, indiqué par la cliente : ni transcription verbale ni sous-titres synchronisés ne sont attendus, mais une description de son contenu visuel reste à rédiger, sur le modèle de celle de l’estrade Marilyn publiée avec l’issue #33. L’animation du visuel néon (issue #12) reste distincte et toujours bloquée par l’absence de son visuel source.

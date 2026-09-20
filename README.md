@@ -4,6 +4,10 @@ Site vitrine multi-pages pour Swing Digital, spécialiste des expériences immer
 
 Site statique issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO configuré pour la production.
 
+La version anglaise locale est servie sous `/en/` : 29 routes, sélecteur FR/EN,
+ressources SEO/GEO dédiées et transcriptions anglaises. Elle est disponible sur
+`main` au commit `f6de318`, mais n'est pas encore publiée sur `production`.
+
 - Production cible : `https://www.swingdigitalproduction.com` — publication de `dist/` par la branche Git `production` dans le document root OVH.
 - Recette GitHub Pages : flux arrêté après validation locale ; la désactivation effective du site reste à confirmer dans `Settings → Pages`.
 - Travail et tests : en local uniquement, sur `localhost`.
@@ -96,6 +100,9 @@ npm run seo:check
 | ROADMAP.md | Phases, todo pré-prod |
 | AUDIT-COMPLET.md | Audit technique, SEO, a11y, sécurité, UX |
 | docs/SEO-GEO-AUDIT.md | État SEO/GEO et passage en production |
+| docs/EN-TRANSLATION-STATUS.md | État de la version anglaise et limites de validation |
+| docs/EN-GLOSSARY-ROUTES.md | Glossaire EN et correspondance des 29 routes |
+| docs/EN-SEO-GEO.md | Référencement bilingue et ressources EN |
 | docs/SEO-GEO-PROD-CHECKLIST.md | Checklist go-live SEO/GEO |
 | docs/404-CUSTOM-ERROR-PAGE.md | Configuration serveur de la page 404 personnalisée |
 | docs/PRD-NAVIGATION-XR-FILMS.md | Cadrage source du menu XR / Films |
@@ -152,5 +159,5 @@ Si le domaine public change, exécuter une seule fois `npm run seo:set-base -- h
 
 ---
 
-**Dernière mise à jour** : 2026-09-20 — scripts de publication Mac/OVH ajoutés, flux GitHub Pages arrêté
-**Version** : v17 — tag `mepv1-20-septembre-2026` ; mentions OVH renseignées ; HTTPS et routage 404 à vérifier en production
+**Dernière mise à jour** : 2026-09-21 — version EN poussée sur `main`, scripts de publication Mac/OVH et flux GitHub Pages documentés
+**Version** : v18 — commit `f6de318` ; production EN, HTTPS et routage 404 à vérifier

@@ -12,11 +12,15 @@ risques de rupture des médias et des liens internes.
 | expériences immersives | immersive experiences | Forme générique du site |
 | espaces augmentés | augmented spaces | Catégorie XR, jamais « increased spaces » |
 | réalité mixte | mixed reality | « XR » reste inchangé dans les noms de catégorie |
+| théâtre | theatre | Orthographe britannique retenue dans toute la version EN |
 | spectacle vivant | live performance | Contexte artistique |
 | création sonore | sound creation | Texte institutionnel |
 | récit audiovisuel | audiovisual storytelling | Films et formats |
 | transcription | transcript | Boutons et panneaux média |
 | lire la transcription | read the transcript | Libellé d’action |
+| L’Expérience Monroe | The Monroe Experience | Titre de l’œuvre |
+| La Pièce / My Story | My Story play | Entrée du sous-menu Monroe |
+| Dessine-moi le vent | Draw Me the Wind | Titre de l’œuvre |
 | réservation | booking | La page reste informative et non transactionnelle |
 | plan du site | sitemap | Navigation et SEO |
 | mentions légales | legal notice | Page réglementaire |
