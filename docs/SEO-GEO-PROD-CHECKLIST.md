@@ -1,7 +1,7 @@
 # Checklist SEO/GEO de mise en production — Swing Digital
 
 Date : 2026-09-20
-Statut : domaine final configuré ; publication production bloquée uniquement par les mentions légales d'hébergement et la validation d'infrastructure.
+Statut : domaine final configuré et contenu `production` déployé ; validation HTTPS, redirections et routage 404 encore à effectuer.
 
 ## Go / no-go
 
@@ -9,7 +9,7 @@ Statut : domaine final configuré ; publication production bloquée uniquement p
 |---|---|---|
 | Domaine final | `https://www.swingdigitalproduction.com` | Oui — satisfait |
 | Canonicals, Open Graph, sitemap, `llms.txt` | Tous alignés sur le domaine HTTPS | Oui |
-| Mentions légales | Hébergeur réel renseigné : nom, adresse, téléphone | Oui — bloquant actuel |
+| Mentions légales | Hébergeur réel renseigné : nom, adresse, téléphone | Oui — satisfait |
 | Dossier publié | `dist/` uniquement, jamais `src/` complet | Oui |
 | Artefacts de travail | Absents de `dist/` | Oui |
 | Réservations | Billetterie active ou lancement informatif assumé | Selon objectif |
@@ -28,14 +28,12 @@ scripts/publier-gh-pages.sh
 Production finale :
 
 ```bash
-npm test
-npm run seo:set-base -- https://www.swingdigitalproduction.com
-npm run seo:check
-npm run build:prod
-npm run prod:preflight -- https://www.swingdigitalproduction.com
+./scripts/publier-production.sh
 ```
 
-Après un preflight vert, publier le contenu de `dist/` dans la branche Git de production, puis tirer cette branche dans le document root OVH. Voir `docs/DEPLOIEMENT-PRODUCTION-GIT.md`.
+La routine recommandée est `./scripts/publier-production.sh` après le commit des changements sur `main`. Elle reconstruit `dist/`, met à jour la branche `production` et la pousse en SSH. Si le webhook OVH n'est pas actif, exécuter ensuite `scripts/synchroniser-production-ovh.sh` depuis le document root.
+
+La commande `npm run seo:set-base -- https://www.swingdigitalproduction.com` ne doit être relancée que si le domaine public change.
 
 ## Critère de réussite
 
@@ -46,7 +44,7 @@ npm test
 npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Tant qu'une commande échoue, ne pas publier en production finale. Le preflight actuel échoue sur le placeholder d'hébergeur de `src/mentions-legales.html`.
+Tant qu'une commande échoue, ne pas publier en production finale. Le preflight actuel termine avec le code 0 ; ses deux avertissements Réservations sont acceptables uniquement si le lancement reste informatif.
 
 ## Données à fournir avant go-live
 

@@ -7,7 +7,7 @@ Contexte : préparation du déploiement Git de Swing Digital sur `https://www.sw
 
 Le domaine final est choisi et les sources SEO/GEO pointent désormais vers `https://www.swingdigitalproduction.com`. Le site reste indexable dans le build public : les pages publiques n'ont pas de `noindex`, le sitemap et `robots.txt` déclarent le domaine final, et `404.html` reste exclue de l'index.
 
-La mise en production n'est pas encore annoncée : le preflight local est vert, mais le document root OVH reste à synchroniser et le HTTPS public doit encore être vérifié. Le tag `mepv1-20-septembre-2026` et la branche `production` sont désormais poussés en SSH.
+Le contenu de la branche `production` est présent dans le document root OVH ; le HTTPS public et le routage 404 doivent encore être vérifiés avant d'annoncer la mise en ligne complète. Les scripts de publication sont versionnés sur `main` et le tag `mepv1-20-septembre-2026` reste la référence de cette livraison.
 
 ## État vérifié
 
@@ -20,7 +20,7 @@ La mise en production n'est pas encore annoncée : le preflight local est vert, 
 ## Décisions encore nécessaires
 
 - Confirmer que Réservations reste informatif au lancement, ou fournir le parcours de billetterie actif.
-- Tirer la branche `production` dans le document root OVH puis vérifier DNS, certificat HTTPS et règle d'erreur 404.
+- Vérifier DNS, certificat HTTPS, redirections et règle d'erreur 404 sur le domaine final.
 - Décider les outils de mesure et la politique propriétaire pour les crawlers IA avant d'ajouter des tags ou des règles spécifiques.
 
 ## Procédure de publication
@@ -34,7 +34,7 @@ npm run build:prod
 npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Ces commandes terminent avec le code 0 (les deux avertissements Réservations sont informatifs). Le contenu de `dist/` a été publié à la racine de la branche `production`. La prochaine action est de tirer cette branche dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`, puis de vérifier l'accueil, `robots.txt`, `sitemap.xml` et une URL inexistante avec `curl`.
+Ces commandes terminent avec le code 0 (les deux avertissements Réservations sont informatifs). La routine est désormais encapsulée dans `scripts/publier-production.sh` : elle pousse `main`, reconstruit `dist/`, met à jour `production` et la pousse en SSH. Si nécessaire, `scripts/synchroniser-production-ovh.sh` tire ensuite la branche dans le document root. Vérifier enfin l'accueil, `robots.txt`, `sitemap.xml` et une URL inexistante avec `curl`.
 
 ## À ne pas sur-vendre
 
@@ -47,4 +47,5 @@ Ces commandes terminent avec le code 0 (les deux avertissements Réservations so
 
 - `docs/SEO-GEO-AUDIT.md` — état SEO/GEO et preuves attendues.
 - `docs/SEO-GEO-PROD-CHECKLIST.md` — critères go/no-go.
-- `docs/DEPLOIEMENT-PRODUCTION-GIT.md` — procédure Git et contrôles après publication.
+- `scripts/publier-production.sh` — publication contrôlée depuis le Mac.
+- `scripts/synchroniser-production-ovh.sh` — synchronisation manuelle depuis SSH OVH.

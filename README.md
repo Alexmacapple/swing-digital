@@ -4,7 +4,7 @@ Site vitrine multi-pages pour Swing Digital, spécialiste des expériences immer
 
 Site statique issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO configuré pour la production.
 
-- Production cible : `https://www.swingdigitalproduction.com` — publication prévue par Git/SSH dans le document root OVH.
+- Production cible : `https://www.swingdigitalproduction.com` — publication de `dist/` par la branche Git `production` dans le document root OVH.
 - Recette GitHub Pages : flux arrêté après validation locale ; la désactivation effective du site reste à confirmer dans `Settings → Pages`.
 - Travail et tests : en local uniquement, sur `localhost`.
 
@@ -71,7 +71,8 @@ npm run seo:check
 - Favicon, Open Graph, Twitter Card et JSON-LD sur les pages indexables
 - `robots.txt`, `sitemap.xml` et `llms.txt`
 - Build de production `dist/` excluant les artefacts de travail
-- Publication de production prévue par branche Git dédiée contenant uniquement `dist/`
+- Publication de production par branche Git dédiée contenant uniquement `dist/`
+- Scripts de publication contrôlée : `scripts/publier-production.sh` et `scripts/synchroniser-production-ovh.sh`
 
 ## Accessibilité (WCAG 2.2 AA / RGAA 4.1)
 
@@ -135,22 +136,21 @@ Points à connaître :
 
 ## Production
 
-La production cible `https://www.swingdigitalproduction.com`. Le déploiement se fait par une branche Git contenant uniquement le contenu généré de `dist/`, tirée dans le document root OVH ; voir [docs/DEPLOIEMENT-PRODUCTION-GIT.md](docs/DEPLOIEMENT-PRODUCTION-GIT.md).
+La production cible `https://www.swingdigitalproduction.com`. La branche `production` contient uniquement le contenu généré de `dist/`. Le script Mac construit, contrôle et pousse cette branche ; le script OVH permet une synchronisation manuelle du document root si le webhook n'est pas utilisé.
 
-La chaîne de contrôle est :
+Après avoir commité les changements sur `main`, lancer depuis le dépôt local :
 
 ```bash
-npm test
-npm run seo:check
-npm run seo:set-base -- https://www.swingdigitalproduction.com
-npm run seo:check
-npm run build:prod
-npm run prod:preflight -- https://www.swingdigitalproduction.com
+./scripts/publier-production.sh
 ```
 
-Les mentions légales indiquent désormais OVH SAS. Le preflight doit être relancé ; la publication reste conditionnée à un code 0, au routage 404, au certificat HTTPS du domaine et à la synchronisation de la branche Git de production dans le document root OVH.
+Le script vérifie `main`, lance `npm test`, `npm run seo:check`, `npm run build:prod` et le preflight, puis synchronise la branche `production` dans un worktree dédié et la pousse en SSH. Si le webhook OVH est actif, aucune commande supplémentaire n'est nécessaire sur le serveur.
+
+Pour une synchronisation manuelle depuis le serveur, copier une fois `scripts/synchroniser-production-ovh.sh` dans le répertoire personnel OVH, puis l'exécuter depuis le document root. Le script refuse un dépôt absent ou modifié localement et n'utilise jamais de réinitialisation forcée.
+
+Si le domaine public change, exécuter une seule fois `npm run seo:set-base -- https://nouveau-domaine.example` avant le build ; cette commande ne fait pas partie de la routine de publication courante.
 
 ---
 
-**Dernière mise à jour** : 2026-09-20 — production OVH préparée par Git/SSH, flux GitHub Pages arrêté
-**Version** : v17 — tag `mepv1-20-septembre-2026` ; mentions OVH renseignées ; production à synchroniser sur le serveur
+**Dernière mise à jour** : 2026-09-20 — scripts de publication Mac/OVH ajoutés, flux GitHub Pages arrêté
+**Version** : v17 — tag `mepv1-20-septembre-2026` ; mentions OVH renseignées ; HTTPS et routage 404 à vérifier en production

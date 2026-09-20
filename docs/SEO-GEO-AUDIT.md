@@ -81,8 +81,8 @@ Checklist de go-live : `docs/SEO-GEO-PROD-CHECKLIST.md`.
 
 | Priorité | Problème | Preuve | Impact | Correction | Propriétaire | Effort | Métrique |
 |---|---|---|---|---|---|---|---|
-| P0 | Domaine et origine à vérifier | Les sources pointent vers `https://www.swingdigitalproduction.com`, mais le DNS, le certificat et le document root doivent encore être vérifiés après publication | Une configuration d'origine incorrecte peut servir une ancienne copie ou un mauvais statut HTTP | Publier la branche Git de production dans le document root OVH, puis contrôler HTTPS, redirections et 404 | Infra/hébergement | Moyen | 100 % des URL en 200 HTTPS + 301 HTTP vers HTTPS |
-| P0 | Hébergeur à renseigner | `mentions-legales.html` contient encore les placeholders d'hébergement | Risque légal et confiance utilisateur | Renseigner le nom, l'adresse et le téléphone de l'hébergeur réel | Responsable légal | Faible | Mentions complètes |
+| P0 | Domaine et origine à vérifier | Les sources et la branche `production` pointent vers `https://www.swingdigitalproduction.com` ; le certificat et le routage 404 restent à vérifier en ligne | Une configuration d'origine incorrecte peut servir une ancienne copie ou un mauvais statut HTTP | Contrôler HTTPS, les redirections, le contenu du document root et le statut 404 après `./scripts/publier-production.sh` | Infra/hébergement | Moyen | 100 % des URL en 200 HTTPS + 301 HTTP vers HTTPS |
+| P0 | Hébergeur légal | `mentions-legales.html` renseigne désormais OVH SAS | Le contenu légal est prêt ; la vérification finale porte sur le rendu public | Vérifier la présence du contenu dans `dist/` puis contrôler la page publiée | Responsable légal | Faible | Mentions complètes |
 | P0 | Conversion réservation à trancher | Boutons `aria-disabled="true"` et textes « bientôt disponible » | Si le lancement vise la réservation, les visiteurs et agents ne peuvent pas réserver | Brancher billetterie/newsletter ou assumer un lancement informatif avec contact clair | Produit | Moyen | Clics CTA, réservations, demandes |
 | P0 | Données analytiques absentes | Aucun export fourni | Impossible de prioriser par impressions, CTR, rangs ou citations IA | Configurer GSC, GA4, Bing Webmaster Tools et journaliser les crawlers | Marketing/tech | Moyen | Indexation, clics, CTR, AI referrals |
 
@@ -93,6 +93,7 @@ npm test
 npm run seo:check
 npm run build:prod
 npm run prod:preflight -- https://www.swingdigitalproduction.com
+./scripts/publier-production.sh
 ```
 
 Ces commandes vérifient la copie générée avant publication. Le preflight doit terminer avec le code 0 ; les avertissements Réservations restent acceptables uniquement si le lancement est informatif.
@@ -109,7 +110,7 @@ npm run build:prod
 npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Ces commandes vérifient les URL SEO publiques, génèrent `dist/` et empêchent une mise en production avec des URL hors domaine, des artefacts de travail ou des mentions légales incomplètes.
+Ces commandes vérifient les URL SEO publiques et génèrent `dist/`. Pour publier, utiliser ensuite `./scripts/publier-production.sh`, qui refuse un arbre `main` sale et ne pousse que la branche `production` générée.
 
 ## Dual-engine readiness
 

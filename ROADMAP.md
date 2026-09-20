@@ -2,7 +2,7 @@
 
 **Projet** : Site vitrine multi-pages Swing Digital
 **Début** : 2026-02-20
-**Statut** : source validée sur `main`, build publié sur la branche `production`, document root OVH à synchroniser sur `https://www.swingdigitalproduction.com`
+**Statut** : source validée sur `main`, build publié sur `production`, contenu présent dans le document root OVH ; HTTPS et routage 404 restent à vérifier sur `https://www.swingdigitalproduction.com`
 
 ---
 
@@ -48,7 +48,7 @@
 - [x] Exécuter `npm test`, `npm run seo:check` et `npm run build:prod`.
 - [x] Obtenir un code 0 avec `npm run prod:preflight -- https://www.swingdigitalproduction.com` (avertissements Réservations informatifs).
 - [x] Créer et pousser la branche Git `production`, avec uniquement le contenu de `dist/` à sa racine.
-- [ ] Tirer la branche `production` dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`.
+- [x] Déployer le contenu de `production` dans le document root OVH.
 - [ ] Vérifier DNS, certificat HTTPS, redirections et routage HTTP 404 sur le domaine final.
 
 ## Améliorations recommandées
@@ -62,6 +62,7 @@
 - [ ] Test lecteur d'écran final (VoiceOver, NVDA).
 - [ ] Si l'origine ne permet pas le routage 404, envisager le repli Cloudflare Worker documenté dans `docs/404-CUSTOM-ERROR-PAGE.md`.
 - [ ] Finaliser le PRD-010 : relire les brouillons à l'écoute, publier les disclosures accessibles et valider le rendu (#33).
+- [x] Ajouter les scripts de publication contrôlée depuis le Mac et de synchronisation manuelle depuis SSH OVH.
 
 ## Optionnel (post-lancement)
 
@@ -74,4 +75,4 @@
 
 ---
 
-**Dernière mise à jour** : 2026-09-20 — branche `production` et tag `mepv1-20-septembre-2026` poussés ; synchronisation OVH restante
+**Dernière mise à jour** : 2026-09-20 — branche `production` déployée ; scripts Mac/OVH ajoutés ; HTTPS et routage 404 à vérifier
