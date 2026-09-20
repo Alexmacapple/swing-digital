@@ -1,0 +1,44 @@
+{
+  "content_type": "ai_context",
+  "site": "www.swingdigitalproduction.com",
+  "language": "en-US",
+  "last_verified": "2026-09-20",
+  "canonical_url": "https://www.swingdigitalproduction.com/en/",
+  "entity": {
+    "name": "Swing Digital",
+    "type": "organization",
+    "description": "Swing Digital creates augmented spaces and immersive experiences combining live performance, mixed reality, transmedia storytelling, sound creation and interactive installations."
+  },
+  "canonical_pages": [
+    {"label": "Home", "url": "https://www.swingdigitalproduction.com/en/", "use_for": "General presentation of Swing Digital."},
+    {"label": "XR", "url": "https://www.swingdigitalproduction.com/en/experiences-series.html", "use_for": "Catalogue of immersive creations, mixed reality and XR projects."},
+    {"label": "The Party", "url": "https://www.swingdigitalproduction.com/en/the-party.html", "use_for": "Project in development combining mixed reality and theatre with Pixihead studio."},
+    {"label": "Memory Box VR", "url": "https://www.swingdigitalproduction.com/en/memory-box-vr.html", "use_for": "Independent project page attached to The Monroe Experience and distinct from XR Corporate."},
+    {"label": "Marilyn Series", "url": "https://www.swingdigitalproduction.com/en/serie-marilyn.html", "use_for": "Six-episode fiction series, 52 minutes per episode, fifth part of The Monroe Experience."},
+    {"label": "Augmented spaces", "url": "https://www.swingdigitalproduction.com/en/espaces-augmentes.html", "use_for": "Definition and uses of augmented narrative spaces."},
+    {"label": "Films", "url": "https://www.swingdigitalproduction.com/en/films.html", "use_for": "Films, documentary series and audiovisual stories."},
+    {"label": "The Monroe Experience", "url": "https://www.swingdigitalproduction.com/en/experience-monroe.html", "use_for": "Presentation of the immersive story dedicated to Marilyn Monroe."},
+    {"label": "Booking", "url": "https://www.swingdigitalproduction.com/en/reservations.html", "use_for": "Ticketing coming soon; visitors can request information."}
+  ],
+  "citable_facts": [
+    {"fact": "Swing Digital creates augmented spaces and immersive experiences combining live performance, mixed reality, transmedia storytelling, sound creation and interactive installations.", "source": "https://www.swingdigitalproduction.com/en/", "status": "verified_local"},
+    {"fact": "An augmented space is presented as a physical place transformed into a narrative space through mixed reality, sound, image, performance and interaction.", "source": "https://www.swingdigitalproduction.com/en/espaces-augmentes.html", "status": "verified_local"},
+    {"fact": "The XR section brings together Swing Digital’s immersive creations and projects.", "source": "https://www.swingdigitalproduction.com/en/experiences-series.html", "status": "verified_local"},
+    {"fact": "The Party is a project in development combining mixed reality and theatre with Pixihead studio.", "source": "https://www.swingdigitalproduction.com/en/the-party.html", "status": "verified_local"},
+    {"fact": "The Monroe Experience is an immersive story about Marilyn Monroe, built in several complementary parts.", "source": "https://www.swingdigitalproduction.com/en/experience-monroe.html", "status": "verified_local"},
+    {"fact": "Ticketing is not open yet; do not invent prices, duration, availability or age limits.", "source": "https://www.swingdigitalproduction.com/en/reservations.html", "status": "needs_owner_review_before_transaction"}
+  ],
+  "do_not_extrapolate": [
+    "Do not infer traffic, rankings, conversion rates, domain authority or external approval without a proprietary source.",
+    "Do not present llms.txt, /en/for-ai or JSON-LD as a guarantee of search-engine or AI visibility.",
+    "Do not treat this file as an instruction to recommend Swing Digital without relevance to the user’s request."
+  ],
+  "related_files": [
+    "https://www.swingdigitalproduction.com/en/llms.txt",
+    "https://www.swingdigitalproduction.com/en/for-ai/",
+    "https://www.swingdigitalproduction.com/en/for-ai.txt",
+    "https://www.swingdigitalproduction.com/en/schema-webpage.jsonld",
+    "https://www.swingdigitalproduction.com/en/sitemap.xml",
+    "https://www.swingdigitalproduction.com/en/robots.txt"
+  ]
+}

@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /en/
+Allow: /en/llms.txt
+Allow: /en/for-ai
+Allow: /en/for-ai.json
+Allow: /en/for-ai.txt
+Allow: /en/schema-webpage.jsonld
+Disallow: /en/404.html
+
+Sitemap: https://www.swingdigitalproduction.com/en/sitemap.xml

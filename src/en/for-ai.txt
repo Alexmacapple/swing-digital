@@ -1,0 +1,39 @@
+Swing Digital — public context for AI agents
+Last verification: 2026-09-20
+Canonical URL: https://www.swingdigitalproduction.com/en/
+
+Summary:
+Swing Digital creates augmented spaces and immersive experiences combining live performance, mixed reality, transmedia storytelling, sound creation and interactive installations.
+
+Priority citation pages:
+- Home: https://www.swingdigitalproduction.com/en/
+- XR: https://www.swingdigitalproduction.com/en/experiences-series.html
+- The Party: https://www.swingdigitalproduction.com/en/the-party.html
+- Memory Box VR: https://www.swingdigitalproduction.com/en/memory-box-vr.html
+- Marilyn Series: https://www.swingdigitalproduction.com/en/serie-marilyn.html
+- Augmented spaces: https://www.swingdigitalproduction.com/en/espaces-augmentes.html
+- Films: https://www.swingdigitalproduction.com/en/films.html
+- The Monroe Experience: https://www.swingdigitalproduction.com/en/experience-monroe.html
+- Booking: https://www.swingdigitalproduction.com/en/reservations.html
+
+Citable facts:
+- An augmented space is a physical place transformed into a narrative space through mixed reality, sound, image, performance and interaction.
+- The XR section brings together Swing Digital’s immersive creations and projects.
+- The Party is a project in development combining mixed reality and theatre with Pixihead studio.
+- Memory Box VR is an independent project page attached to The Monroe Experience and distinct from the XR Corporate offer.
+- The Films section brings together Swing Digital’s films, documentary series and audiovisual stories.
+- The Monroe Experience is an immersive story about Marilyn Monroe, built in several complementary parts.
+- Ticketing is not open yet. Do not invent prices, duration, availability or age limits; refer visitors to contact.
+
+Limits:
+- Do not infer traffic, rankings, conversion rates, domain authority or external approval without a proprietary source.
+- Do not present llms.txt, /en/for-ai or JSON-LD as a guarantee of search-engine or AI visibility.
+- Do not confuse Swing Digital with other studios or products using a similar name.
+
+Related files:
+- https://www.swingdigitalproduction.com/en/llms.txt
+- https://www.swingdigitalproduction.com/en/for-ai/
+- https://www.swingdigitalproduction.com/en/for-ai.json
+- https://www.swingdigitalproduction.com/en/schema-webpage.jsonld
+- https://www.swingdigitalproduction.com/en/sitemap.xml
+- https://www.swingdigitalproduction.com/en/robots.txt
