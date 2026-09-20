@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollReveal();
     initHeroVideo();
     initAnchorRedirects();
+    initLanguageSwitcher();
     initDisabledCTA();
     initHeaderSpacing();
     initContactVideo();
@@ -26,6 +27,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var manualAnchorHash = null;
 var manualAnchorUntil = 0;
+
+/**
+ * Sélecteur de langue — ajoute le lien réciproque aux pages françaises
+ * historiques qui ne portent pas encore le balisage statique.
+ */
+function initLanguageSwitcher() {
+    var pathname = window.location.pathname.replace(/\/+/g, '/');
+    var normalized = pathname.replace(/^\/+|\/+$/g, '');
+    var isEnglish = normalized.indexOf('en/') === 0 || normalized === 'en';
+
+    if (!document.querySelector('.language-switcher')) {
+        if (isEnglish) return;
+
+        var englishPath;
+        if (!normalized || normalized === 'index.html') {
+            englishPath = '/en/';
+        } else if (normalized === 'for-ai' || normalized === 'for-ai/index.html') {
+            englishPath = '/en/for-ai/';
+        } else {
+            englishPath = '/en/' + normalized;
+        }
+
+        var nav = document.createElement('nav');
+        nav.className = 'language-switcher';
+        nav.setAttribute('aria-label', 'Sélection de langue');
+        nav.innerHTML = '<a href="' + (pathname || '/') + '" aria-current="page">Français</a>' +
+            '<span aria-hidden="true"> / </span>' +
+            '<a href="' + englishPath + '">English</a>';
+        var headerInner = document.querySelector('.site-header__inner');
+        var logo = headerInner && headerInner.querySelector('.site-header__logo');
+        if (headerInner && logo) {
+            headerInner.insertBefore(nav, logo.nextSibling);
+        } else {
+            document.body.insertBefore(nav, document.body.firstChild);
+        }
+    }
+
+    initFooterLanguageSwitcher(isEnglish);
+}
+
+/**
+ * Répète le changement de langue dans le pied de page pour les pages longues.
+ */
+function initFooterLanguageSwitcher(isEnglish) {
+    var footer = document.querySelector('.site-footer');
+    var footerContainer = footer && footer.querySelector('.footer__container');
+    var headerSwitcher = document.querySelector('.site-header .language-switcher');
+    if (!footerContainer || !headerSwitcher || footerContainer.querySelector('.language-switcher')) return;
+
+    var footerSwitcher = headerSwitcher.cloneNode(true);
+    footerSwitcher.classList.add('language-switcher--footer');
+    footerSwitcher.setAttribute(
+        'aria-label',
+        isEnglish ? 'Language selection in footer' : 'Sélection de langue dans le pied de page'
+    );
+    footerContainer.appendChild(footerSwitcher);
+}
 
 /**
  * Etat actif du menu — lit data-section et data-page sur <body>

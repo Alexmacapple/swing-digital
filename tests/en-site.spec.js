@@ -81,15 +81,30 @@ test.describe('version anglaise locale', () => {
     for (const route of englishRoutes) {
       const html = readRoute(route);
       expect(html, route).toMatch(/<html[^>]+lang=["']en["']/i);
+      expect(html, route).toMatch(/<html[^>]+translate=["']no["']/i);
       expect(html, route).toContain('hreflang="en"');
       expect(html, route).toContain('hreflang="fr"');
       expect(html, route).toContain('class="language-switcher"');
       expect(html, route).toContain('aria-label="Language selection"');
+      expect(html, route).not.toMatch(/>\s*Accueillir\s*</i);
+      expect(html, route).not.toMatch(/>\s*Accueil\s*</i);
       expect(html, route).not.toContain('style.css?v=20260920-issues45-46');
       expect(html, route).not.toMatch(/<html[^>]+lang=["']fr["']/i);
       if (route !== '/en/404.html') {
         expect(html, route).toMatch(/<link rel="canonical" href="[^"]*\/en(?:\/|\/[^\"]+)"/);
       }
+    }
+  });
+
+  test('le sélecteur est visible et réciproque côté français comme côté anglais', async ({ page }) => {
+    for (const route of ['/', '/en/', '/the-party.html', '/en/the-party.html']) {
+      await page.goto(route);
+      const switcher = page.locator('.site-header .language-switcher');
+      await expect(switcher, `sélecteur absent sur ${route}`).toBeVisible();
+      await expect(switcher.locator('a')).toHaveCount(2);
+      await expect(switcher).toContainText('Français');
+      await expect(switcher).toContainText('English');
+      await expect(page.locator('.site-footer .language-switcher--footer')).toBeVisible();
     }
   });
 
@@ -101,7 +116,7 @@ test.describe('version anglaise locale', () => {
     const english = englishRoutes.map(readRoute).join('\n');
     const frenchCount = (french.match(/data-transcript=/g) || []).length;
     const englishCount = (english.match(/data-transcript=/g) || []).length;
-    expect(englishCount).toBe(frenchCount);
+      expect(englishCount).toBe(frenchCount);
     expect(englishCount).toBeGreaterThan(0);
   });
 
