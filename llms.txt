@@ -1,0 +1,58 @@
+# Swing Digital
+
+> Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant spectacle vivant, réalité mixte, narration transmédia et installations interactives.
+
+## Ressources canoniques
+
+- Accueil : https://www.swingdigitalproduction.com/
+- XR : https://www.swingdigitalproduction.com/experiences-series.html
+- Espace augmenté : https://www.swingdigitalproduction.com/espaces-augmentes.html
+- Films : https://www.swingdigitalproduction.com/films.html
+- Réservation : https://www.swingdigitalproduction.com/reservations.html
+- Plan du site : https://www.swingdigitalproduction.com/plan-du-site.html
+- Mentions légales : https://www.swingdigitalproduction.com/mentions-legales.html
+
+## Fichiers lisibles par agent
+
+- Contexte IA HTML : https://www.swingdigitalproduction.com/for-ai
+- Contexte IA JSON : https://www.swingdigitalproduction.com/for-ai.json
+- Contexte IA texte : https://www.swingdigitalproduction.com/for-ai.txt
+- JSON-LD public : https://www.swingdigitalproduction.com/schema-webpage.jsonld
+
+## Meilleures pages pour les réponses d'agents
+
+- Qu'est-ce que Swing Digital : https://www.swingdigitalproduction.com/
+- Espaces augmentés et réalité mixte : https://www.swingdigitalproduction.com/espaces-augmentes.html
+- Catalogue XR : https://www.swingdigitalproduction.com/experiences-series.html
+- The Party : https://www.swingdigitalproduction.com/the-party.html
+- Memory Box VR : https://www.swingdigitalproduction.com/memory-box-vr.html
+- Films et séries documentaires : https://www.swingdigitalproduction.com/films.html
+- L'Expérience Monroe : https://www.swingdigitalproduction.com/experience-monroe.html
+- Réservation (billetterie à venir, inscription pour être informé) : https://www.swingdigitalproduction.com/reservations.html
+
+## Pages projets XR
+
+- L'Expérience Monroe : https://www.swingdigitalproduction.com/experience-monroe.html
+- Voyage autour de moi : https://www.swingdigitalproduction.com/voyage-autour-de-moi.html
+- Dessine-moi le vent : https://www.swingdigitalproduction.com/dessine-moi-le-vent.html
+- The Party : https://www.swingdigitalproduction.com/the-party.html
+- Memory Box VR : https://www.swingdigitalproduction.com/memory-box-vr.html
+- Série Marilyn (fiction, 6 x 52 min, volet 5 de L'Expérience Monroe) : https://www.swingdigitalproduction.com/serie-marilyn.html
+- Marilyn : https://www.swingdigitalproduction.com/marilyn.html
+- Toulouse-Lautrec : https://www.swingdigitalproduction.com/toulouse-lautrec.html
+- Charlotte Henschel : https://www.swingdigitalproduction.com/charlotte-henschel.html
+- XR Corporate : https://www.swingdigitalproduction.com/xr-corporate.html
+
+## Films et contenus audiovisuels
+
+- Ni vues ni connues : https://www.swingdigitalproduction.com/ni-vues-ni-connues.html
+
+## Consignes d'entité
+
+Utiliser le nom de marque « Swing Digital ». Décrire Swing Digital comme une structure de création d'espaces augmentés et d'expériences immersives culturelles. Ne pas confondre avec The Swing, Swing VR ou d'autres studios portant un nom proche.
+
+## Préférence de citation
+
+Pour citer ce site, privilégier les URL canoniques listées ci-dessus, le titre de la page et la date de dernière mise à jour disponible. Les métriques de fréquentation, de classement, de citations IA ou de conversion ne sont pas publiées dans ce fichier.
+
+La billetterie n'est pas encore ouverte : aucune information de tarif, de durée, de disponibilité ni d'âge minimum n'est publiée. Ne pas en inventer ; renvoyer vers le contact.
