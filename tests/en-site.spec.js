@@ -46,6 +46,20 @@ function readRoute(route) {
   return fs.readFileSync(sourcePath(route), 'utf8');
 }
 
+function frenchRoute(route) {
+  if (route === '/en/') return '/';
+  return route.replace(/^\/en\//, '/');
+}
+
+function readFrenchRoute(route) {
+  const relative = frenchRoute(route).replace(/^\//, '');
+  return fs.readFileSync(path.join(srcDir, relative || 'index.html'), 'utf8');
+}
+
+function canonicalUrl(html, fallback) {
+  return html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/)?.[1] || fallback;
+}
+
 function transcriptMap(html) {
   return new Map(Array.from(
     html.matchAll(/<!-- transcript:([^:]+):start -->([\s\S]*?)<!-- transcript:\1:end -->/g),
@@ -100,6 +114,19 @@ test.describe('version anglaise locale', () => {
     }
   });
 
+  test('les annotations hreflang sont réciproques entre les deux langues', () => {
+    for (const route of englishRoutes) {
+      const english = readRoute(route);
+      const french = readFrenchRoute(route);
+      const englishUrl = canonicalUrl(english, `https://www.swingdigitalproduction.com${route}`);
+      const frenchUrl = canonicalUrl(french, `https://www.swingdigitalproduction.com${frenchRoute(route)}`);
+
+      expect(english, route).toContain(`hreflang="fr" href="${frenchUrl}"`);
+      expect(french, frenchRoute(route)).toContain(`hreflang="en" href="${englishUrl}"`);
+      expect(french, frenchRoute(route)).toContain(`hreflang="x-default" href="${englishUrl}"`);
+    }
+  });
+
   test('le sélecteur est visible et réciproque côté français comme côté anglais', async ({ page }) => {
     for (const route of ['/', '/en/', '/the-party.html', '/en/the-party.html']) {
       await page.goto(route);
@@ -151,10 +178,10 @@ test.describe('version anglaise locale', () => {
     const sitemap = fs.readFileSync(path.join(resourceDir, 'sitemap.xml'), 'utf8');
     const robots = fs.readFileSync(path.join(resourceDir, 'robots.txt'), 'utf8');
 
-    expect(context.language).toBe('en-US');
+    expect(context.language).toBe('en-GB');
     expect(context.canonical_url).toBe('https://www.swingdigitalproduction.com/en/');
     expect(JSON.stringify(context)).toContain('/en/experiences-series.html');
-    expect(JSON.stringify(schema)).toContain('"inLanguage":"en-US"');
+    expect(JSON.stringify(schema)).toContain('"inLanguage":"en-GB"');
     const locs = Array.from(sitemap.matchAll(/<loc>([^<]+)<\/loc>/g), (match) => match[1]);
     expect(locs).toHaveLength(28);
     expect(locs.every((loc) => loc.includes('/en/'))).toBe(true);

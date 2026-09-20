@@ -14,7 +14,7 @@
       "@id": "https://www.swingdigitalproduction.com/en/#website",
       "name": "Swing Digital",
       "url": "https://www.swingdigitalproduction.com/en/",
-      "inLanguage": "en-US",
+      "inLanguage": "en-GB",
       "publisher": {"@id": "https://www.swingdigitalproduction.com/en/#organization"}
     },
     {
@@ -23,7 +23,7 @@
       "url": "https://www.swingdigitalproduction.com/en/for-ai/",
       "name": "AI context for agents — Swing Digital",
       "description": "Public context for AI agents: canonical Swing Digital pages, citable facts, recommendation limits and related structured files.",
-      "inLanguage": "en-US",
+      "inLanguage": "en-GB",
       "isPartOf": {"@id": "https://www.swingdigitalproduction.com/en/#website"},
       "about": {"@id": "https://www.swingdigitalproduction.com/en/#organization"}
     },
@@ -33,7 +33,7 @@
       "url": "https://www.swingdigitalproduction.com/en/the-party.html",
       "name": "The Party, mixed reality and theatre — Swing Digital",
       "description": "The Party is a Swing Digital project in development combining mixed reality and theatre with Pixihead studio.",
-      "inLanguage": "en-US",
+      "inLanguage": "en-GB",
       "isPartOf": {"@id": "https://www.swingdigitalproduction.com/en/#website"}
     },
     {
@@ -42,7 +42,7 @@
       "url": "https://www.swingdigitalproduction.com/en/films.html",
       "name": "Films — Swing Digital",
       "description": "Films, documentary series and audiovisual stories by Swing Digital.",
-      "inLanguage": "en-US",
+      "inLanguage": "en-GB",
       "isPartOf": {"@id": "https://www.swingdigitalproduction.com/en/#website"}
     }
   ]

@@ -83,7 +83,7 @@ Issues GitHub ouvertes :
 - [ ] #50 — pages XR, Films et projets indépendants ; traduction livrée sur `main`, revue finale restante.
 - [ ] #51 — collection Monroe et Marilyn, hors transcriptions ; traduction livrée sur `main`, revue finale restante.
 - [ ] #52 — transcriptions vidéo et podcasts ; texte EN présent, relecture à l'écoute et responsable à désigner.
-- [ ] #53 — ressources SEO/GEO bilingues, `hreflang`, sitemap, Open Graph, JSON-LD et ressources IA ; contrôles locaux verts.
+- [ ] #53 — ressources SEO/GEO bilingues, `hreflang`, sitemap, Open Graph, JSON-LD et ressources IA ; contrôles locaux verts et alternates réciproques ajoutés, validation finale restante.
 - [ ] #54 — qualité, contrôles récursifs, build et préparation de la mise en production anglaise ; bloquée par #52, OVH et la suite complète.
 
 Ordre de dépendance : `#47 → #48 → #49`, puis les lots #50 et #51 en parallèle ;
@@ -113,4 +113,4 @@ Points à résoudre avant publication anglaise :
 
 ---
 
-**Dernière mise à jour** : 2026-09-21 — version EN implémentée et poussée sur `main` (`f6de318`) ; production EN, revue éditoriale et routage 404 à vérifier
+**Dernière mise à jour** : 2026-09-21 — passe corrective de revue EN intégrée sur `main` ; tests ciblés et 29 routes locales vérifiés, arbitrages éditoriaux/audio, production EN et routage 404 OVH restant à traiter
