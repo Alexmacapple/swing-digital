@@ -138,6 +138,7 @@ function checkTextFile(file) {
 function checkHtmlFile(file) {
     const relative = path.relative(distDir, file);
     const html = textContent(file);
+    const is404 = relative === '404.html' || relative.endsWith(`${path.sep}404.html`);
 
     const title = html.match(/<title>([^<]+)<\/title>/);
     if (!title || title[1].trim().length < 10) {
@@ -145,7 +146,7 @@ function checkHtmlFile(file) {
     }
 
     const metaDescription = html.match(/<meta name=["']description["'] content=(["'])([\s\S]*?)\1>/);
-    if (relative !== '404.html' && (!metaDescription || metaDescription[2].trim().length < 50)) {
+    if (!is404 && (!metaDescription || metaDescription[2].trim().length < 50)) {
         errors.push(`${relative} n'a pas de meta description exploitable.`);
     }
 
@@ -155,20 +156,20 @@ function checkHtmlFile(file) {
     }
 
     const canonical = html.match(/<link rel=["']canonical["'] href=["']([^"']+)["']>/);
-    if (relative !== '404.html' && (!canonical || !canonical[1].startsWith(`${expectedBase}/`))) {
+    if (!is404 && (!canonical || !canonical[1].startsWith(`${expectedBase}/`))) {
         errors.push(`${relative} a un canonical absent ou hors domaine attendu.`);
     }
 
-    if (relative === '404.html' && !/<meta name=["']robots["'] content=["']noindex, follow["']>/.test(html)) {
+    if (is404 && !/<meta name=["']robots["'] content=["']noindex, follow["']>/.test(html)) {
         errors.push('404.html doit rester en noindex, follow.');
     }
 
-    if (relative !== '404.html' && /<meta name=["']robots["'] content=["'][^"']*noindex/i.test(html)) {
+    if (!is404 && /<meta name=["']robots["'] content=["'][^"']*noindex/i.test(html)) {
         errors.push(`${relative} ne doit pas être noindex en production.`);
     }
 
     const jsonLdBlocks = [...html.matchAll(/<script type=["']application\/ld\+json["']>\s*([\s\S]*?)\s*<\/script>/g)];
-    if (relative !== '404.html' && jsonLdBlocks.length === 0) {
+    if (!is404 && jsonLdBlocks.length === 0) {
         errors.push(`${relative} n'a pas de JSON-LD.`);
     }
 
