@@ -97,7 +97,7 @@ test.describe('PRD-011 - menu XR et Films', () => {
     expect(html).toContain('Films, séries documentaires et récits audiovisuels');
     expect(html).toContain('href="ni-vues-ni-connues.html"');
     expect(html).toContain('Série documentaire');
-    expect(html).toContain('https://swing.appmiweb.com/films.html');
+    expect(html).toContain('https://www.swingdigitalproduction.com/films.html');
   });
 
   test('Ni vues ni connues dépend de Films dans le HTML et les données structurées', () => {
@@ -107,7 +107,7 @@ test.describe('PRD-011 - menu XR et Films', () => {
     expect(html).toContain('data-section="films"');
     expect(html).toContain('<li class="breadcrumb__item"><a href="films.html" class="breadcrumb__link">Films</a></li>');
     expect(html).toContain('"name": "Films"');
-    expect(html).toContain('"item": "https://swing.appmiweb.com/films.html"');
+    expect(html).toContain('"item": "https://www.swingdigitalproduction.com/films.html"');
     expect(description).not.toMatch(/exp[ée]rience immersive/i);
   });
 
@@ -122,7 +122,7 @@ test.describe('PRD-011 - menu XR et Films', () => {
     const schema = readSrc('schema-webpage.jsonld');
 
     expect(js).toMatch(/['"]films['"]:\s*'films\.html'/);
-    expect(sitemap).toContain('https://swing.appmiweb.com/films.html');
+    expect(sitemap).toContain('https://www.swingdigitalproduction.com/films.html');
     expect(plan).toContain('Films');
     expect(plan).toContain('ni-vues-ni-connues.html');
 

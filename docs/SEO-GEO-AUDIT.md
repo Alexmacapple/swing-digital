@@ -1,15 +1,15 @@
 # Audit SEO/GEO — Swing Digital
 
-Date : 2026-06-20
-Périmètre : site statique `src/`, 23 pages indexables, `robots.txt`, `sitemap.xml`, métadonnées, données structurées et lisibilité agent.
+Date : 2026-09-20
+Périmètre : site statique `src/`, pages publiques, `robots.txt`, `sitemap.xml`, métadonnées, données structurées et lisibilité agent.
 
 Checklist de go-live : `docs/SEO-GEO-PROD-CHECKLIST.md`.
 
 ## Observé
 
 - Le site est un site vitrine statique HTML/CSS/JS, en français, pour Swing Digital.
-- Le site est actuellement aligné sur la préproduction `https://swing.appmiweb.com/`. Le domaine final de production n'est pas encore fourni dans le dépôt.
-- Les pages contenaient encore un placeholder de domaine dans les canonicals, Open Graph, `robots.txt` et `sitemap.xml`.
+- Le site est maintenant aligné sur le domaine public retenu : `https://www.swingdigitalproduction.com/`.
+- Les canonicals, Open Graph, Twitter, JSON-LD, `robots.txt`, `sitemap.xml`, `llms.txt` et les ressources `for-ai` utilisent cette base.
 - Aucune donnée GSC, GA4, Bing Webmaster Tools, outil de rang, logs serveur ou outil de visibilité IA n'a été fournie.
 - Les pages de réservation utilisent de vrais boutons et libellés accessibles, mais les actions de billetterie et newsletter sont explicitement indiquées comme bientôt disponibles.
 - La page Réservations contient une FAQ visible en HTML.
@@ -26,8 +26,8 @@ Checklist de go-live : `docs/SEO-GEO-PROD-CHECKLIST.md`.
 
 | Priorité | Élément | Action |
 |---|---|---|
-| P0 | Canonicals | Remplacement du placeholder par la base de préproduction `https://swing.appmiweb.com`, avec canonique racine pour l'accueil. |
-| P0 | Sitemap | Réécriture des 23 URL canoniques et `lastmod` au 2026-06-20. |
+| P0 | Canonicals | Bascule de la base publique vers `https://www.swingdigitalproduction.com`, avec canonique racine pour l'accueil. |
+| P0 | Sitemap | Réécriture des URL canoniques vers le domaine final. |
 | P0 | Robots | Sitemap réel ajouté, `404.html`, `generated-pages.html` et `pages-extracted/` exclus du crawl. |
 | P1 | Open Graph / Twitter | Images et URL rendues absolues, ajout de `og:site_name`, `og:locale` et Twitter Card. |
 | P1 | Données structurées | Ajout JSON-LD `Organization`, `WebSite`, `WebPage` et `BreadcrumbList` sur les pages indexables. |
@@ -68,56 +68,55 @@ Checklist de go-live : `docs/SEO-GEO-PROD-CHECKLIST.md`.
 | P1 | Accessibilité agent-friendly | Stabilisation du scan axe en `prefers-reduced-motion: reduce` et ajout de fonds explicites sur les textes signalés par axe. |
 | P1 | Documentation de déploiement | Mise à jour des documents de projet pour indiquer que seul `dist/` doit être publié. |
 
-## Corrections de cinquième passe préproduction Appmiweb
+## Bascule vers le domaine final
 
 | Priorité | Élément | Action |
 |---|---|---|
-| P0 | Domaine de préproduction | Bascule des canonicals, Open Graph, Twitter, sitemap, robots, JSON-LD et `llms.txt` vers `https://swing.appmiweb.com`. |
+| P0 | Domaine final | Bascule des canonicals, Open Graph, Twitter, sitemap, robots, JSON-LD et `llms.txt` vers `https://www.swingdigitalproduction.com`. |
 | P1 | Liens relatifs | Ajout d'un test SEO/GEO qui vérifie que les liens internes et assets HTML restent relatifs quand une URL absolue n'est pas requise. |
-| P1 | Préflight préprod | Ajout de `npm run appmiweb:preflight`, qui bloque les erreurs techniques mais tolère en avertissement les placeholders légaux réservés à la production finale. |
-| P1 | Bascule future prod | Mise à jour du script `seo:set-base` pour savoir remplacer la préproduction Appmiweb par le futur domaine final. |
+| P1 | Préflight production | `npm run prod:preflight -- https://www.swingdigitalproduction.com` bloque les erreurs techniques et les placeholders légaux. |
+| P1 | Packaging Git | `npm run build:prod` génère `dist/`, seul contenu autorisé dans la branche de déploiement. |
 
 ## P0 à traiter hors code
 
 | Priorité | Problème | Preuve | Impact | Correction | Propriétaire | Effort | Métrique |
 |---|---|---|---|---|---|---|---|
-| P0 | Domaine de production non renseigné | Le site pointe actuellement vers la préproduction `https://swing.appmiweb.com` | Les canonicals, OG, sitemap et `llms.txt` devront changer avant la mise en ligne finale | Choisir le domaine final, configurer HTTPS, puis basculer les URL techniques vers ce domaine | Infra/hébergement | Moyen | 100 % des URL en 200 HTTPS + 301 HTTP vers HTTPS |
+| P0 | Domaine et origine à vérifier | Les sources pointent vers `https://www.swingdigitalproduction.com`, mais le DNS, le certificat et le document root doivent encore être vérifiés après publication | Une configuration d'origine incorrecte peut servir une ancienne copie ou un mauvais statut HTTP | Publier la branche Git de production dans le document root OVH, puis contrôler HTTPS, redirections et 404 | Infra/hébergement | Moyen | 100 % des URL en 200 HTTPS + 301 HTTP vers HTTPS |
 | P0 | Hébergeur à renseigner | `mentions-legales.html` contient encore les placeholders d'hébergement | Risque légal et confiance utilisateur | Renseigner le nom, l'adresse et le téléphone de l'hébergeur réel | Responsable légal | Faible | Mentions complètes |
 | P0 | Conversion réservation à trancher | Boutons `aria-disabled="true"` et textes « bientôt disponible » | Si le lancement vise la réservation, les visiteurs et agents ne peuvent pas réserver | Brancher billetterie/newsletter ou assumer un lancement informatif avec contact clair | Produit | Moyen | Clics CTA, réservations, demandes |
 | P0 | Données analytiques absentes | Aucun export fourni | Impossible de prioriser par impressions, CTR, rangs ou citations IA | Configurer GSC, GA4, Bing Webmaster Tools et journaliser les crawlers | Marketing/tech | Moyen | Indexation, clics, CTR, AI referrals |
 
-## Commandes de préproduction Appmiweb
+## Contrôles locaux avant publication
 
 ```bash
-npm run appmiweb:set-base
 npm test
 npm run seo:check
 npm run build:prod
-npm run appmiweb:preflight
+npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Ces commandes permettent de publier `dist/` sur `https://swing.appmiweb.com` pour validation privée, sans traiter ce domaine comme la production finale.
+Ces commandes vérifient la copie générée avant publication. Le preflight doit terminer avec le code 0 ; les avertissements Réservations restent acceptables uniquement si le lancement est informatif.
 
 ## Commandes de bascule préprod vers prod finale
 
-Quand le domaine final HTTPS est décidé :
+Pour la publication sur le domaine final :
 
 ```bash
 npm test
-npm run seo:set-base -- https://votre-domaine.fr
-SEO_BASE_URL=https://votre-domaine.fr npm run seo:check
+npm run seo:set-base -- https://www.swingdigitalproduction.com
+npm run seo:check
 npm run build:prod
-npm run prod:preflight -- https://votre-domaine.fr
+npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Ces commandes remplacent les URL SEO publiques, relancent le contrôle SEO/GEO avec la base attendue, génèrent `dist/` et empêchent une mise en production avec des URL `localhost`, des artefacts de travail ou des mentions légales incomplètes.
+Ces commandes vérifient les URL SEO publiques, génèrent `dist/` et empêchent une mise en production avec des URL hors domaine, des artefacts de travail ou des mentions légales incomplètes.
 
 ## Dual-engine readiness
 
 | Zone | Statut SEO | Statut GEO/IA | Statut agentique | Recommandation |
 |---|---|---|---|---|
 | Crawlabilité | Bon après correction robots | Ouvert par défaut | Pages publiques lisibles | Décider une politique IA propriétaire avant règles spécifiques. |
-| Indexabilité | Améliorée par canonicals/sitemap | Améliorée par URL stables | Pages indexables identifiables | Finaliser HTTPS puis soumettre sitemap. |
+| Indexabilité | Canonicals et sitemap alignés | URL stables sur le domaine final | Pages indexables identifiables | Vérifier DNS/HTTPS puis soumettre le sitemap. |
 | Données structurées | Ajoutées | Ajoutées | Lisibilité entité + fil d'Ariane | Valider en production après déploiement. |
 | Réponses directes | Accueil et pages stratégiques améliorés | Meilleure extraction | Messages visibles en HTML | Ajouter des blocs similaires uniquement sur les pages à intention claire. |
 | Tables/FAQ | FAQ Réservations + tableaux de faits | Bonne pour questions pratiques et pages MOFU | Réponses visibles | Ajouter des FAQ ciblées seulement si les réponses sont validées et utiles. |
@@ -150,8 +149,8 @@ Ces commandes remplacent les URL SEO publiques, relancent le contrôle SEO/GEO a
 
 | Jour | Action | Résultat attendu |
 |---|---|---|
-| 1 | Renseigner domaine final HTTPS et hébergeur légal. | Preflight production débloquable. |
-| 2 | Lancer la bascule `seo:set-base`, puis publier uniquement `dist/`. | Canonicals, robots, sitemap et `llms.txt` en HTTPS. |
+| 1 | Renseigner l'hébergeur légal et vérifier DNS/HTTPS. | Preflight production débloquable. |
+| 2 | Relancer `seo:set-base`, puis publier uniquement `dist/`. | Canonicals, robots, sitemap et `llms.txt` en HTTPS. |
 | 3 | Soumettre le sitemap dans GSC et Bing Webmaster Tools. | Base de mesure indexation. |
 | 4 | Brancher GA4 avec événements CTA contact/réservation/newsletter. | Conversion mesurable. |
 | 5 | Décider la politique crawlers IA et entraînement. | Robots/WAF ajustables sans ambiguïté. |

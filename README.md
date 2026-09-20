@@ -2,11 +2,11 @@
 
 Site vitrine multi-pages pour Swing Digital, spécialiste des expériences immersives et espaces augmentés.
 
-Site statique issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO prêt pour validation avant domaine final.
+Site statique issu d'une maquette PDF de 62 pages, avec navigation 3 niveaux, page 404 personnalisée, couche IA publique et socle SEO/GEO configuré pour la production.
 
 - Site de recette en ligne, pour la cliente : `https://alexmacapple.github.io/swing-digital/` (GitHub Pages, publié depuis `main`, non référençable). Voir « Site de recette en ligne ».
 - Travail et tests : en local uniquement, sur `localhost`.
-- Domaine final : non décidé. Les métadonnées SEO désignent pour l'instant `https://swing.appmiweb.com`, ancienne préproduction, qui n'est plus la référence de recette.
+- Domaine de production : `https://www.swingdigitalproduction.com`.
 
 ## Démarrage rapide
 
@@ -94,7 +94,7 @@ npm run seo:check
 | PRD-BUILD-PARTIALS.md | PRD historique de factorisation HTML par partials |
 | ROADMAP.md | Phases, todo pré-prod |
 | AUDIT-COMPLET.md | Audit technique, SEO, a11y, sécurité, UX |
-| docs/SEO-GEO-AUDIT.md | Audit SEO/GEO de préproduction |
+| docs/SEO-GEO-AUDIT.md | État SEO/GEO et passage en production |
 | docs/SEO-GEO-PROD-CHECKLIST.md | Checklist go-live SEO/GEO |
 | docs/404-CUSTOM-ERROR-PAGE.md | Configuration serveur de la page 404 personnalisée |
 | docs/PRD-NAVIGATION-XR-FILMS.md | Cadrage source du menu XR / Films |
@@ -141,21 +141,22 @@ Points à connaître :
 
 ## Production
 
-La recette se fait sur le site GitHub Pages (voir plus haut). L'ancienne préproduction Appmiweb n'est plus mise à jour ; les commandes `npm run appmiweb:*` qui l'interrogent restent dans `package.json` mais ne font plus partie du flux de travail. La production finale reste bloquée tant que le domaine final HTTPS, l'hébergeur légal et le scénario Réservations ne sont pas décidés.
+La production cible `https://www.swingdigitalproduction.com`. La recette GitHub Pages reste séparée et non indexable. Le déploiement de production se fait par une branche Git contenant uniquement le contenu généré de `dist/`, tirée dans le document root OVH ; voir [docs/DEPLOIEMENT-PRODUCTION-GIT.md](docs/DEPLOIEMENT-PRODUCTION-GIT.md).
 
-Point d'hébergement restant : les URL inexistantes doivent être configurées côté origine pour servir `/404.html` avec un statut HTTP `404`. Voir `docs/404-CUSTOM-ERROR-PAGE.md`.
-
-Commande de bascule vers production finale :
+La chaîne de contrôle est :
 
 ```bash
 npm test
-npm run seo:set-base -- https://votre-domaine.fr
-SEO_BASE_URL=https://votre-domaine.fr npm run seo:check
+npm run seo:check
+npm run seo:set-base -- https://www.swingdigitalproduction.com
+npm run seo:check
 npm run build:prod
-npm run prod:preflight -- https://votre-domaine.fr
+npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
+
+Le preflight est bloquant tant que les mentions légales contiennent le placeholder d'hébergeur. Les URL inexistantes doivent aussi être configurées côté origine pour servir `/404.html` avec un statut HTTP `404`.
 
 ---
 
-**Dernière mise à jour** : 2026-09-19 — site de recette sur GitHub Pages, travail en local sur localhost
-**Version** : v14 préproduction Satoshi, UI et 404 documentés ; PRD-010 outillé, PRD-011 implémenté ; maillage interne audité
+**Dernière mise à jour** : 2026-09-20 — domaine de production configuré, recette GitHub Pages séparée et procédure Git documentée
+**Version** : v16 — corrections The Party, Lautrec et Charlotte ; SEO/GEO basculé vers le domaine final ; préflight production en attente des mentions légales d'hébergement

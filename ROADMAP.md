@@ -2,7 +2,7 @@
 
 **Projet** : Site vitrine multi-pages Swing Digital
 **Début** : 2026-02-20
-**Statut** : recette par la cliente sur GitHub Pages (`https://alexmacapple.github.io/swing-digital/`), production finale en attente du domaine
+**Statut** : recette par la cliente sur GitHub Pages (`https://alexmacapple.github.io/swing-digital/`), domaine de production configuré sur `https://www.swingdigitalproduction.com`, déploiement Git en préparation
 
 ---
 
@@ -22,8 +22,8 @@
 | 10. SEO | Favicon, og:image, width/height images | Terminé |
 | 11. Zoom 200% | 7 corrections RGAA 10.4 / WCAG 1.4.4 | Terminé |
 | 12. Tests | Harnais Playwright restauré : PRD-011 sur 5 viewports et socle SEO/GEO local | Terminé |
-| 13. SEO/GEO préproduction | Canonicals Appmiweb, sitemap, robots, `llms.txt`, JSON-LD, FAQ, réponses directes | Terminé |
-| 14. Packaging production | `npm run build:prod`, `dist/` public, preflight Appmiweb | Terminé |
+| 13. SEO/GEO production | Canonicals, sitemap, robots, `llms.txt`, JSON-LD, FAQ, réponses directes sur le domaine final | Terminé |
+| 14. Packaging production | `npm run build:prod`, `dist/` public, preflight domaine final | Terminé techniquement |
 | 15. PRD production SEO/GEO | PRD-001 : mesure, LCP, politique crawlers IA | Terminé |
 | 16. Typographie premium | PRD-007 : Satoshi Variable auto-hébergée | Terminé |
 | 17. Couleurs roses | PRD-008 : fonds roses adoucis, lisibilité et page équipe | Terminé |
@@ -39,13 +39,15 @@
 
 ## Avant mise en production (bloquant)
 
-- [ ] Choisir le domaine final HTTPS. Tant qu'il n'est pas choisi, les métadonnées SEO désignent `https://swing.appmiweb.com`, qui ne répond plus.
-- [ ] Basculer les canonicals, Open Graph, sitemap, robots et `llms.txt` vers le domaine final.
+- [x] Choisir le domaine final HTTPS : `https://www.swingdigitalproduction.com`.
+- [x] Basculer les canonicals, Open Graph, sitemap, robots, JSON-LD, `llms.txt` et `for-ai` vers le domaine final.
 - [ ] Configurer HTTPS + redirections HTTP vers HTTPS.
 - [ ] Configurer le routage 404 custom : toute URL inexistante doit servir `/404.html` avec un statut HTTP 404.
 - [ ] Renseigner l'hébergeur dans `mentions-legales.html`.
 - [ ] Décider le scénario Réservations : billetterie active ou lancement informatif avec contact.
-- [ ] Exécuter `npm test`, `npm run seo:check`, `npm run build:prod` et `npm run prod:preflight -- https://domaine-final`.
+- [x] Exécuter `npm test`, `npm run seo:check` et `npm run build:prod`.
+- [ ] Obtenir un code 0 avec `npm run prod:preflight -- https://www.swingdigitalproduction.com`.
+- [ ] Publier la branche Git de production dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`.
 
 ## Améliorations recommandées
 
@@ -70,4 +72,4 @@
 
 ---
 
-**Dernière mise à jour** : 2026-09-19
+**Dernière mise à jour** : 2026-09-20

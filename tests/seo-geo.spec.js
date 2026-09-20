@@ -4,7 +4,7 @@ const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..');
 const srcDir = path.join(repoRoot, 'src');
-const expectedBase = 'https://swing.appmiweb.com';
+const expectedBase = 'https://www.swingdigitalproduction.com';
 
 function readSrc(relativePath) {
   return fs.readFileSync(path.join(srcDir, relativePath), 'utf8');

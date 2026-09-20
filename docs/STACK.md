@@ -63,9 +63,11 @@ Fallbacks             -> Inter, system-ui, Segoe UI, sans-serif
 
 ## Hébergement
 
-Préproduction actuelle : `https://swing.appmiweb.com`.
+- Recette cliente : `https://alexmacapple.github.io/swing-digital/` — branche `gh-pages`, `noindex` et robots bloquant.
+- Production : `https://www.swingdigitalproduction.com` — branche Git de déploiement contenant uniquement `dist/`, tirée dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`.
+- Serveur : `ssh.cluster126.hosting.ovh.net`, compte `laborneoba`, environnement OVH PHP 5.5.
 
-Production finale à définir : domaine HTTPS final, hébergeur légal et routage 404 côté origine.
+Le dossier `src/` n'est jamais servi directement. La procédure complète est documentée dans `docs/DEPLOIEMENT-PRODUCTION-GIT.md`. Le preflight reste bloqué tant que l'hébergeur légal n'est pas renseigné dans les mentions légales.
 
 ## Fichiers
 
@@ -78,4 +80,4 @@ Production finale à définir : domaine HTTPS final, hébergeur légal et routag
 
 ---
 
-**Dernière mise à jour** : 2026-06-21
+**Dernière mise à jour** : 2026-09-20

@@ -6,27 +6,27 @@ Toutes les URL inexistantes doivent afficher la page `404.html` Swing Digital to
 
 À éviter : rediriger les erreurs vers `/404.html` en `200`. Cela rend la page visible, mais affaiblit le signal SEO.
 
-## État observé
+## État à vérifier sur l'origine de production
 
-Le 2026-06-21 :
-
-```bash
-curl -sI https://swing.appmiweb.com/404.html
-```
-
-répond `200`.
+La page `src/404.html` est générée dans `dist/` et porte `noindex, follow`. Le statut HTTP et le corps réellement servis par l'origine OVH restent à vérifier après le premier déploiement Git ; un build local ne prouve pas le comportement du serveur.
 
 ```bash
-curl -sI https://swing.appmiweb.com/page-inexistante-test-404.html
-curl -sL https://swing.appmiweb.com/page-inexistante-test-404.html
+curl -sI https://www.swingdigitalproduction.com/404.html
 ```
 
-répond `404`, mais affiche encore la page technique du serveur avec `Error response`.
+peut répondre `200` pour l'accès direct à la ressource.
+
+```bash
+curl -sI https://www.swingdigitalproduction.com/page-inexistante-test-404.html
+curl -sL https://www.swingdigitalproduction.com/page-inexistante-test-404.html
+```
+
+doit répondre `404` et afficher le corps HTML Swing Digital, pas la page technique de l'hébergeur.
 
 ## Critères de validation
 
 ```bash
-curl -sI https://swing.appmiweb.com/page-inexistante-test-404.html
+curl -sI https://www.swingdigitalproduction.com/page-inexistante-test-404.html
 ```
 
 doit contenir :
@@ -36,13 +36,13 @@ doit contenir :
 ```
 
 ```bash
-curl -sL https://swing.appmiweb.com/page-inexistante-test-404.html | rg "page-404-hero|Page introuvable"
+curl -sL https://www.swingdigitalproduction.com/page-inexistante-test-404.html | rg "page-404-hero|Page introuvable"
 ```
 
 doit trouver le HTML de la page custom.
 
 ```bash
-curl -sL https://swing.appmiweb.com/page-inexistante-test-404.html | rg "Nothing matches the given URI|Error response"
+curl -sL https://www.swingdigitalproduction.com/page-inexistante-test-404.html | rg "Nothing matches the given URI|Error response"
 ```
 
 ne doit rien retourner.
@@ -58,8 +58,8 @@ ErrorDocument 404 /404.html
 Puis vérifier :
 
 ```bash
-curl -sI https://swing.appmiweb.com/page-inexistante-test-404.html
-curl -sL https://swing.appmiweb.com/page-inexistante-test-404.html | rg "page-404-hero"
+curl -sI https://www.swingdigitalproduction.com/page-inexistante-test-404.html
+curl -sL https://www.swingdigitalproduction.com/page-inexistante-test-404.html | rg "page-404-hero"
 ```
 
 Note : ne pas rediriger avec `Redirect 404 /404.html`. Le bon comportement est de servir le document d'erreur en conservant le statut `404`.
@@ -148,11 +148,11 @@ Vérifier ensuite que Cloudflare ne transforme pas la réponse en `200`.
 
 ## Checklist de mise en ligne
 
-1. Identifier le serveur réel de l'origine Appmiweb.
+1. Identifier le serveur réel de l'origine OVH de production.
 2. Appliquer une seule recette : Apache, Nginx, serveur statique custom ou Cloudflare Worker.
 3. Déployer.
 4. Tester une URL inexistante avec `curl -sI`.
 5. Tester le corps de réponse avec `rg "page-404-hero"`.
 6. Vérifier qu'aucune page technique en anglais n'est servie.
 7. Vérifier que `/404.html` reste en `noindex, follow`.
-8. Relancer `npm run appmiweb:preflight`.
+8. Relancer `npm run prod:preflight -- https://www.swingdigitalproduction.com`.

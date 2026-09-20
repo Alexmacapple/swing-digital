@@ -1,52 +1,51 @@
-# RETEX à Loïc — Swing Digital SEO/GEO préproduction
+# RETEX à Loïc — passage au domaine de production
 
-Date : 2026-06-21  
-Contexte : audit SEO/GEO de `https://swing.appmiweb.com/#page-1`, préparation production finale et usage du skill `seo-geo-growth-agent`.
+Date : 2026-09-20
+Contexte : préparation du déploiement Git de Swing Digital sur `https://www.swingdigitalproduction.com`.
 
 ## Message court
 
-La préproduction Swing Digital est saine côté crawl et lisibilité agent, mais elle n'est pas encore prête pour la production finale. Les blocages ne sont pas des bugs de rendu majeurs : ce sont surtout des décisions de lancement à verrouiller, la mesure propriétaire à préparer et une vigilance sur les URL canoniques.
+Le domaine final est choisi et les sources SEO/GEO pointent désormais vers `https://www.swingdigitalproduction.com`. Le site reste indexable dans le build public : les pages publiques n'ont pas de `noindex`, le sitemap et `robots.txt` déclarent le domaine final, et `404.html` reste exclue de l'index.
 
-## À dire à Loïc en priorité
+La mise en production n'est pas encore annoncée : `npm run prod:preflight -- https://www.swingdigitalproduction.com` échoue encore sur le placeholder d'hébergeur des mentions légales. Le déploiement Git OVH est documenté mais doit attendre un preflight vert.
 
-1. Le crawl public est propre : `npm run appmiweb:search-crawl` passe avec `0 écart` sur `24 URL sitemap contrôlées`.
-2. Le preflight préproduction passe, mais avec 3 avertissements attendus : hébergeur légal manquant, CTA Réservations désactivés, billetterie annoncée comme bientôt disponible.
-3. Les endpoints IA existent et répondent : `/llms.txt`, `/for-ai`, `/for-ai.json`, `/for-ai.txt`.
-4. L'URL `https://swing.appmiweb.com/#page-1` ne doit pas devenir une URL SEO ou de partage : la capture arrive sur Contact avec une grande zone rouge, pas sur la promesse principale.
-5. La bonne URL de référence reste `https://swing.appmiweb.com/`, puis le futur domaine final HTTPS.
-6. Les métriques SEO/GEO réelles restent `unknown` tant qu'on n'a pas GSC, GA4/GTM, Bing Webmaster, logs serveur et événements de conversion.
-7. Le backlog production finale est inscrit dans `todo.md`.
+## État vérifié
 
-## Décisions à demander
+1. `npm run seo:set-base -- https://www.swingdigitalproduction.com` a basculé les URL publiques dans `src/`.
+2. Les ressources `robots.txt`, `sitemap.xml`, `llms.txt`, `for-ai` et JSON-LD utilisent le domaine final.
+3. `npm run build:prod` génère `dist/` ; seuls les fichiers de `dist/` doivent être publiés.
+4. La recette GitHub Pages reste distincte et non indexable ; elle ne doit pas servir de branche de production.
+5. Les métriques GSC, GA4/GTM, Bing Webmaster Tools, logs serveur et citations IA restent `unknown` tant qu'aucune preuve propriétaire n'est fournie.
 
-- Quel est le domaine final HTTPS ?
-- Quel est l'hébergeur légal réel à afficher dans les mentions légales ?
-- Réservations doit-elle rester informative ou devenir transactionnelle ?
-- Quelle stack de mesure est retenue : GA4 direct, GTM, autre outil ou mesure différée ?
-- Qui valide la politique de publication des fichiers IA et des claims citables ?
+## Décisions encore nécessaires
 
-## Points à ne pas sur-vendre
+- Renseigner dans `src/mentions-legales.html` le nom, l'adresse et le téléphone réels de l'hébergeur.
+- Confirmer que Réservations reste informatif au lancement, ou fournir le parcours de billetterie actif.
+- Vérifier DNS, certificat HTTPS, document root OVH et règle d'erreur 404 après le premier `git pull` de production.
+- Décider les outils de mesure et la politique propriétaire pour les crawlers IA avant d'ajouter des tags ou des règles spécifiques.
 
-- Ne pas dire que le site est prêt production finale.
-- Ne pas annoncer de trafic, CTR, positions, citations IA ou conversions : aucune donnée propriétaire ne le prouve encore.
-- Ne pas traiter `llms.txt` comme un facteur de ranking Google.
-- Ne pas corriger le lazy-load si les images chargent après scroll : l'audit actuel ne montre pas d'image cassée après exposition.
+## Procédure de publication
 
-## Points outil à remonter à Loïc
+Après correction des mentions légales :
 
-- `run_full_audit.py` est plus fiable avec un `--output-dir` absolu ; le chemin relatif a provoqué un premier échec trompeur.
-- Le validateur du rapport a besoin d'un `screenshot_status` explicite même quand les captures existent.
-- Le résumé généré automatiquement peut rester trop générique ou en anglais si aucun `audit.json` enrichi n'est fourni.
-- `generate_html_audit_report.py` émet un `SyntaxWarning` sur une séquence d'échappement JavaScript.
-- Certains scripts utilisent encore un User-Agent interne `seo-geo-growth-agent/1.2` alors que le skill installé est en `1.3.1`.
+```bash
+npm test
+npm run seo:check
+npm run build:prod
+npm run prod:preflight -- https://www.swingdigitalproduction.com
+```
 
-## Artefacts à pointer
+Si toutes les commandes terminent avec le code 0, publier le contenu de `dist/` à la racine de la branche Git de production, puis tirer cette branche dans `/homez.1917/laborneoba/www.swingdigitalproduction.com`. Vérifier ensuite l'accueil, `robots.txt`, `sitemap.xml` et une URL inexistante avec `curl`.
 
-- Backlog production : `todo.md`
-- Rapport audit page fragmentée : `reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/index.html`
-- Validation du rapport : `reports/swing-digital/2026-06-21-seo-geo-audit-page-1-full/report-validation.json`
-- Rapport Loïc précédent : `reports/swing-digital/2026-06-21-seo-geo-audit-loic-handoff/index.html`
+## À ne pas sur-vendre
 
-## Phrase de conclusion proposée
+- Ne pas annoncer que la production est en ligne avant la vérification HTTPS réelle.
+- Ne pas annoncer de trafic, CTR, positions, citations IA ou conversions sans export observé.
+- Ne pas présenter `llms.txt` comme un facteur de classement Google.
+- Ne pas publier `src/` ou les Markdown du projet sur le document root.
 
-Le bon statut est : préproduction techniquement saine, production finale encore gated. On peut continuer à durcir GEO/Citation et qualité agent, mais on ne doit pas lancer la prod tant que domaine final, mentions légales, Réservations et mesure réelle ne sont pas verrouillés.
+## Références
+
+- `docs/SEO-GEO-AUDIT.md` — état SEO/GEO et preuves attendues.
+- `docs/SEO-GEO-PROD-CHECKLIST.md` — critères go/no-go.
+- `docs/DEPLOIEMENT-PRODUCTION-GIT.md` — procédure Git et contrôles après publication.

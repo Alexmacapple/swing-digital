@@ -9,4 +9,4 @@ Disallow: /404.html
 Disallow: /generated-pages.html
 Disallow: /pages-extracted/
 
-Sitemap: https://swing.appmiweb.com/sitemap.xml
+Sitemap: https://www.swingdigitalproduction.com/sitemap.xml

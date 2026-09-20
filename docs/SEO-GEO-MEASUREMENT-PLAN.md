@@ -1,11 +1,11 @@
-# Plan de mesure SEO/GEO préproduction
+# Plan de mesure SEO/GEO de production
 
-Date : 2026-06-21
-Statut : prêt localement sans tag de production
+Date : 2026-09-20
+Statut : plan prêt ; aucun tag de production installé
 
 ## Objectif
 
-Préparer la mesure SEO/GEO sans polluer les données du futur domaine final.
+Préparer la mesure SEO/GEO du domaine final sans déclarer de données qui n'ont pas encore été observées.
 
 Ce plan transforme le score `Measurement` du rapport en état traçable : les événements sont nommés, les sélecteurs existent dans le HTML, les outils à activer sont listés, mais aucune métrique de trafic, de rang, de CTR, de citation IA ou de conversion n'est déclarée comme observée.
 
@@ -31,17 +31,17 @@ La matrice définit les événements prévus, leurs pages, leurs sélecteurs, le
 | `click_reservation_faq` | Consultation des questions de réservation | Traçable |
 | `click_private_visit_contact` | Contact pour groupe ou visite privée | Traçable |
 
-## Règles préproduction
+## Règles avant activation
 
-- Ne pas installer de tag GA4 ou GTM de production sur `https://swing.appmiweb.com` sans décision explicite.
-- Ne pas envoyer les événements préproduction dans une propriété destinée au domaine final.
+- Le domaine public est configuré sur `https://www.swingdigitalproduction.com`, mais aucun tag GA4 ou GTM de production n'y est installé sans décision explicite.
+- Ne pas envoyer des événements de recette dans une propriété destinée au domaine final.
 - Ne pas déclarer de clics, impressions, CTR, positions, citations IA ou conversions sans export observé.
 - Garder les boutons désactivés de réservation et newsletter hors des conversions tant que les parcours ne sont pas actifs.
 - Utiliser la préproduction pour valider les sélecteurs, le nommage et la checklist, pas la performance.
 
-## Activation au domaine final
+## Activation après validation du lancement
 
-Quand le domaine final HTTPS est confirmé :
+Quand le preflight est vert, que l'origine sert bien `dist/` et que la mesure est validée :
 
 1. Choisir l'outil : GA4 direct, GTM ou alternative validée.
 2. Créer ou vérifier la propriété du domaine final.
@@ -74,4 +74,4 @@ La visibilité IA ne doit pas être déduite de la présence de `/llms.txt` ou `
 
 ## Limites
 
-Ce plan ne remplace pas `PRD-001`. La mesure complète reste à activer au go-live avec le domaine final, les accès GSC, GA4 ou GTM, Bing Webmaster Tools et les éventuels logs serveur.
+Ce plan ne remplace pas `PRD-001`. La mesure complète reste à activer au go-live avec les accès GSC, GA4 ou GTM, Bing Webmaster Tools et les éventuels logs serveur.

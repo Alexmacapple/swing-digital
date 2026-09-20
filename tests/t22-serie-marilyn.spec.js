@@ -20,7 +20,7 @@ test.describe('T22 - Série Marilyn', () => {
     expect(h).toContain(`<p class="page39__description">${ACCROCHE}</p>`);
     for (const s of SELECTIONS) expect(h, s).toContain(`<li>${s}</li>`);
     expect(h).toContain('img/pages/page-39/page-39-image-1.jpg');
-    expect(h).toContain('<link rel="canonical" href="https://swing.appmiweb.com/serie-marilyn.html">');
+    expect(h).toContain('<link rel="canonical" href="https://www.swingdigitalproduction.com/serie-marilyn.html">');
     expect(h).not.toMatch(/memory.?box vr prolonge|memory-box-page/i);
   });
 
@@ -33,7 +33,7 @@ test.describe('T22 - Série Marilyn', () => {
     const ld = JSON.parse(h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     const crumbs = ld['@graph'].find((n) => n['@type'] === 'BreadcrumbList').itemListElement;
     expect(crumbs.map((c) => c.name)).toEqual(['Accueil', 'XR', "L'Expérience Monroe", 'Série Marilyn']);
-    expect(crumbs[3].item).toBe('https://swing.appmiweb.com/serie-marilyn.html');
+    expect(crumbs[3].item).toBe('https://www.swingdigitalproduction.com/serie-marilyn.html');
   });
 
   test('tous les liens « Série Marilyn » mènent à la série, et « Marilyn » reste la page réalité mixte', () => {
@@ -64,7 +64,7 @@ test.describe('T22 - Série Marilyn', () => {
   });
 
   test('la page est recensée partout', () => {
-    expect(readSrc('sitemap.xml')).toContain('<loc>https://swing.appmiweb.com/serie-marilyn.html</loc>');
+    expect(readSrc('sitemap.xml')).toContain('<loc>https://www.swingdigitalproduction.com/serie-marilyn.html</loc>');
     expect(readSrc('plan-du-site.html')).toContain('<li><a href="serie-marilyn.html">Série Marilyn</a></li>');
     for (const f of ['llms.txt', 'for-ai.txt', 'for-ai.json', 'for-ai/index.html']) expect(readSrc(f), f).toContain('serie-marilyn.html');
   });

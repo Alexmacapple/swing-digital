@@ -4,7 +4,7 @@ const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..');
 const srcDir = path.join(repoRoot, 'src');
-const expectedBase = 'https://swing.appmiweb.com';
+const expectedBase = 'https://www.swingdigitalproduction.com';
 const memoryBoxAssets = [
   'img/pages/memory-box-vr/memory-box-vr-1.jpg',
   'img/pages/memory-box-vr/memory-box-vr-2.jpg',

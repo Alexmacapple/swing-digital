@@ -4,48 +4,48 @@
 
 ## Ressources canoniques
 
-- Accueil : https://swing.appmiweb.com/
-- XR : https://swing.appmiweb.com/experiences-series.html
-- Espace augmenté : https://swing.appmiweb.com/espaces-augmentes.html
-- Films : https://swing.appmiweb.com/films.html
-- Réservation : https://swing.appmiweb.com/reservations.html
-- Plan du site : https://swing.appmiweb.com/plan-du-site.html
-- Mentions légales : https://swing.appmiweb.com/mentions-legales.html
+- Accueil : https://www.swingdigitalproduction.com/
+- XR : https://www.swingdigitalproduction.com/experiences-series.html
+- Espace augmenté : https://www.swingdigitalproduction.com/espaces-augmentes.html
+- Films : https://www.swingdigitalproduction.com/films.html
+- Réservation : https://www.swingdigitalproduction.com/reservations.html
+- Plan du site : https://www.swingdigitalproduction.com/plan-du-site.html
+- Mentions légales : https://www.swingdigitalproduction.com/mentions-legales.html
 
 ## Fichiers lisibles par agent
 
-- Contexte IA HTML : https://swing.appmiweb.com/for-ai
-- Contexte IA JSON : https://swing.appmiweb.com/for-ai.json
-- Contexte IA texte : https://swing.appmiweb.com/for-ai.txt
-- JSON-LD public : https://swing.appmiweb.com/schema-webpage.jsonld
+- Contexte IA HTML : https://www.swingdigitalproduction.com/for-ai
+- Contexte IA JSON : https://www.swingdigitalproduction.com/for-ai.json
+- Contexte IA texte : https://www.swingdigitalproduction.com/for-ai.txt
+- JSON-LD public : https://www.swingdigitalproduction.com/schema-webpage.jsonld
 
 ## Meilleures pages pour les réponses d'agents
 
-- Qu'est-ce que Swing Digital : https://swing.appmiweb.com/
-- Espaces augmentés et réalité mixte : https://swing.appmiweb.com/espaces-augmentes.html
-- Catalogue XR : https://swing.appmiweb.com/experiences-series.html
-- The Party : https://swing.appmiweb.com/the-party.html
-- Memory Box VR : https://swing.appmiweb.com/memory-box-vr.html
-- Films et séries documentaires : https://swing.appmiweb.com/films.html
-- L'Expérience Monroe : https://swing.appmiweb.com/experience-monroe.html
-- Réservation (billetterie à venir, inscription pour être informé) : https://swing.appmiweb.com/reservations.html
+- Qu'est-ce que Swing Digital : https://www.swingdigitalproduction.com/
+- Espaces augmentés et réalité mixte : https://www.swingdigitalproduction.com/espaces-augmentes.html
+- Catalogue XR : https://www.swingdigitalproduction.com/experiences-series.html
+- The Party : https://www.swingdigitalproduction.com/the-party.html
+- Memory Box VR : https://www.swingdigitalproduction.com/memory-box-vr.html
+- Films et séries documentaires : https://www.swingdigitalproduction.com/films.html
+- L'Expérience Monroe : https://www.swingdigitalproduction.com/experience-monroe.html
+- Réservation (billetterie à venir, inscription pour être informé) : https://www.swingdigitalproduction.com/reservations.html
 
 ## Pages projets XR
 
-- L'Expérience Monroe : https://swing.appmiweb.com/experience-monroe.html
-- Voyage autour de moi : https://swing.appmiweb.com/voyage-autour-de-moi.html
-- Dessine-moi le vent : https://swing.appmiweb.com/dessine-moi-le-vent.html
-- The Party : https://swing.appmiweb.com/the-party.html
-- Memory Box VR : https://swing.appmiweb.com/memory-box-vr.html
-- Série Marilyn (fiction, 6 x 52 min, volet 5 de L'Expérience Monroe) : https://swing.appmiweb.com/serie-marilyn.html
-- Marilyn : https://swing.appmiweb.com/marilyn.html
-- Toulouse-Lautrec : https://swing.appmiweb.com/toulouse-lautrec.html
-- Charlotte Henschel : https://swing.appmiweb.com/charlotte-henschel.html
-- XR Corporate : https://swing.appmiweb.com/xr-corporate.html
+- L'Expérience Monroe : https://www.swingdigitalproduction.com/experience-monroe.html
+- Voyage autour de moi : https://www.swingdigitalproduction.com/voyage-autour-de-moi.html
+- Dessine-moi le vent : https://www.swingdigitalproduction.com/dessine-moi-le-vent.html
+- The Party : https://www.swingdigitalproduction.com/the-party.html
+- Memory Box VR : https://www.swingdigitalproduction.com/memory-box-vr.html
+- Série Marilyn (fiction, 6 x 52 min, volet 5 de L'Expérience Monroe) : https://www.swingdigitalproduction.com/serie-marilyn.html
+- Marilyn : https://www.swingdigitalproduction.com/marilyn.html
+- Toulouse-Lautrec : https://www.swingdigitalproduction.com/toulouse-lautrec.html
+- Charlotte Henschel : https://www.swingdigitalproduction.com/charlotte-henschel.html
+- XR Corporate : https://www.swingdigitalproduction.com/xr-corporate.html
 
 ## Films et contenus audiovisuels
 
-- Ni vues ni connues : https://swing.appmiweb.com/ni-vues-ni-connues.html
+- Ni vues ni connues : https://www.swingdigitalproduction.com/ni-vues-ni-connues.html
 
 ## Consignes d'entité
 

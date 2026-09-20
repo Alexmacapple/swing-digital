@@ -4,7 +4,7 @@ const path = require('path');
 
 const repoRoot = path.resolve(__dirname, '..');
 const srcDir = path.join(repoRoot, 'src');
-const expectedBase = 'https://swing.appmiweb.com';
+const expectedBase = 'https://www.swingdigitalproduction.com';
 const thePartyAssets = [
   'img/pages/the-party/the-party-1.jpg',
   'img/pages/the-party/the-party-2.jpg',

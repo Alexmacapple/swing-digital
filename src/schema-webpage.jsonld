@@ -3,89 +3,89 @@
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://swing.appmiweb.com/#organization",
+      "@id": "https://www.swingdigitalproduction.com/#organization",
       "name": "Swing Digital",
-      "url": "https://swing.appmiweb.com/",
-      "logo": "https://swing.appmiweb.com/img/hero/swing-logo.jpg",
+      "url": "https://www.swingdigitalproduction.com/",
+      "logo": "https://www.swingdigitalproduction.com/img/hero/swing-logo.jpg",
       "description": "Swing Digital conçoit des espaces augmentés et des expériences immersives mêlant spectacle vivant, réalité mixte, narration transmédia et installations interactives."
     },
     {
       "@type": "WebSite",
-      "@id": "https://swing.appmiweb.com/#website",
+      "@id": "https://www.swingdigitalproduction.com/#website",
       "name": "Swing Digital",
-      "url": "https://swing.appmiweb.com/",
+      "url": "https://www.swingdigitalproduction.com/",
       "inLanguage": "fr-FR",
       "publisher": {
-        "@id": "https://swing.appmiweb.com/#organization"
+        "@id": "https://www.swingdigitalproduction.com/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://swing.appmiweb.com/for-ai#webpage",
-      "url": "https://swing.appmiweb.com/for-ai",
+      "@id": "https://www.swingdigitalproduction.com/for-ai#webpage",
+      "url": "https://www.swingdigitalproduction.com/for-ai",
       "name": "Contexte IA pour agents - Swing Digital",
       "description": "Contexte public pour agents IA : pages canoniques Swing Digital, faits citables, limites de recommandation et fichiers structurés associés.",
       "inLanguage": "fr-FR",
       "isPartOf": {
-        "@id": "https://swing.appmiweb.com/#website"
+        "@id": "https://www.swingdigitalproduction.com/#website"
       },
       "about": {
-        "@id": "https://swing.appmiweb.com/#organization"
+        "@id": "https://www.swingdigitalproduction.com/#organization"
       },
       "isBasedOn": [
-        "https://swing.appmiweb.com/",
-        "https://swing.appmiweb.com/experiences-series.html",
-        "https://swing.appmiweb.com/the-party.html",
-        "https://swing.appmiweb.com/memory-box-vr.html",
-        "https://swing.appmiweb.com/espaces-augmentes.html",
-        "https://swing.appmiweb.com/films.html",
-        "https://swing.appmiweb.com/experience-monroe.html",
-        "https://swing.appmiweb.com/reservations.html",
-        "https://swing.appmiweb.com/llms.txt",
-        "https://swing.appmiweb.com/for-ai.json",
-        "https://swing.appmiweb.com/for-ai.txt"
+        "https://www.swingdigitalproduction.com/",
+        "https://www.swingdigitalproduction.com/experiences-series.html",
+        "https://www.swingdigitalproduction.com/the-party.html",
+        "https://www.swingdigitalproduction.com/memory-box-vr.html",
+        "https://www.swingdigitalproduction.com/espaces-augmentes.html",
+        "https://www.swingdigitalproduction.com/films.html",
+        "https://www.swingdigitalproduction.com/experience-monroe.html",
+        "https://www.swingdigitalproduction.com/reservations.html",
+        "https://www.swingdigitalproduction.com/llms.txt",
+        "https://www.swingdigitalproduction.com/for-ai.json",
+        "https://www.swingdigitalproduction.com/for-ai.txt"
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://swing.appmiweb.com/the-party.html#webpage",
-      "url": "https://swing.appmiweb.com/the-party.html",
+      "@id": "https://www.swingdigitalproduction.com/the-party.html#webpage",
+      "url": "https://www.swingdigitalproduction.com/the-party.html",
       "name": "The Party, réalité mixte et théâtre - Swing Digital",
       "description": "The Party est un projet Swing Digital en développement mêlant réalité mixte et théâtre avec le studio Pixihead.",
       "inLanguage": "fr-FR",
       "isPartOf": {
-        "@id": "https://swing.appmiweb.com/#website"
+        "@id": "https://www.swingdigitalproduction.com/#website"
       },
       "about": {
-        "@id": "https://swing.appmiweb.com/#organization"
+        "@id": "https://www.swingdigitalproduction.com/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://swing.appmiweb.com/memory-box-vr.html#webpage",
-      "url": "https://swing.appmiweb.com/memory-box-vr.html",
+      "@id": "https://www.swingdigitalproduction.com/memory-box-vr.html#webpage",
+      "url": "https://www.swingdigitalproduction.com/memory-box-vr.html",
       "name": "Memory Box VR - Swing Digital",
       "description": "Memory Box VR est une page projet autonome rattachée à L'Expérience Monroe et distincte de l'offre XR Corporate.",
       "inLanguage": "fr-FR",
       "isPartOf": {
-        "@id": "https://swing.appmiweb.com/#website"
+        "@id": "https://www.swingdigitalproduction.com/#website"
       },
       "about": {
-        "@id": "https://swing.appmiweb.com/#organization"
+        "@id": "https://www.swingdigitalproduction.com/#organization"
       }
     },
     {
       "@type": "WebPage",
-      "@id": "https://swing.appmiweb.com/films.html#webpage",
-      "url": "https://swing.appmiweb.com/films.html",
+      "@id": "https://www.swingdigitalproduction.com/films.html#webpage",
+      "url": "https://www.swingdigitalproduction.com/films.html",
       "name": "Films - Swing Digital",
       "description": "Films, séries documentaires et récits audiovisuels de Swing Digital.",
       "inLanguage": "fr-FR",
       "isPartOf": {
-        "@id": "https://swing.appmiweb.com/#website"
+        "@id": "https://www.swingdigitalproduction.com/#website"
       },
       "about": {
-        "@id": "https://swing.appmiweb.com/#organization"
+        "@id": "https://www.swingdigitalproduction.com/#organization"
       }
     }
   ]

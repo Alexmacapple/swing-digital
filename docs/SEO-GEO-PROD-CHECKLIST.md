@@ -1,15 +1,15 @@
 # Checklist SEO/GEO de mise en production — Swing Digital
 
-Date : 2026-06-20
-Statut : prêt techniquement pour la préproduction `https://swing.appmiweb.com`, bloqué pour la production finale tant que le domaine final HTTPS et l'hébergeur légal ne sont pas renseignés.
+Date : 2026-09-20
+Statut : domaine final configuré ; publication production bloquée uniquement par les mentions légales d'hébergement et la validation d'infrastructure.
 
 ## Go / no-go
 
 | Critère | Statut attendu | Blocant |
 |---|---|---|
-| Domaine final | URL HTTPS réelle connue | Oui |
+| Domaine final | `https://www.swingdigitalproduction.com` | Oui — satisfait |
 | Canonicals, Open Graph, sitemap, `llms.txt` | Tous alignés sur le domaine HTTPS | Oui |
-| Mentions légales | Hébergeur réel renseigné : nom, adresse, téléphone | Oui |
+| Mentions légales | Hébergeur réel renseigné : nom, adresse, téléphone | Oui — bloquant actuel |
 | Dossier publié | `dist/` uniquement, jamais `src/` complet | Oui |
 | Artefacts de travail | Absents de `dist/` | Oui |
 | Réservations | Billetterie active ou lancement informatif assumé | Selon objectif |
@@ -18,27 +18,24 @@ Statut : prêt techniquement pour la préproduction `https://swing.appmiweb.com`
 
 ## Commandes de publication
 
-Préproduction Appmiweb :
+Recette GitHub Pages (toujours non indexable) :
 
 ```bash
-npm run appmiweb:set-base
+scripts/publier-gh-pages.sh --a-blanc
+scripts/publier-gh-pages.sh
+```
+
+Production finale :
+
+```bash
 npm test
+npm run seo:set-base -- https://www.swingdigitalproduction.com
 npm run seo:check
 npm run build:prod
-npm run appmiweb:preflight
+npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Production finale, quand le domaine définitif est connu :
-
-```bash
-npm test
-npm run seo:set-base -- https://votre-domaine.fr
-SEO_BASE_URL=https://votre-domaine.fr npm run seo:check
-npm run build:prod
-npm run prod:preflight -- https://votre-domaine.fr
-```
-
-Publier ensuite le contenu du dossier `dist/`.
+Après un preflight vert, publier le contenu de `dist/` dans la branche Git de production, puis tirer cette branche dans le document root OVH. Voir `docs/DEPLOIEMENT-PRODUCTION-GIT.md`.
 
 ## Critère de réussite
 
@@ -46,16 +43,16 @@ Les commandes suivantes doivent terminer avec un code 0 :
 
 ```bash
 npm test
-npm run prod:preflight -- https://votre-domaine.fr
+npm run prod:preflight -- https://www.swingdigitalproduction.com
 ```
 
-Tant qu'une commande échoue, ne pas publier en production finale.
+Tant qu'une commande échoue, ne pas publier en production finale. Le preflight actuel échoue sur le placeholder d'hébergeur de `src/mentions-legales.html`.
 
 ## Données à fournir avant go-live
 
 | Donnée | Où l'appliquer |
 |---|---|
-| Domaine final HTTPS | `seo:set-base`, DNS, hébergement, redirections |
+| Domaine final HTTPS | `seo:set-base`, DNS, hébergement, redirections | `https://www.swingdigitalproduction.com` configuré |
 | Hébergeur légal | `src/mentions-legales.html` |
 | Statut billetterie | `src/reservations.html` |
 | ID GA4 ou alternative analytics RGPD | Balise ou gestionnaire choisi |
@@ -66,5 +63,5 @@ Tant qu'une commande échoue, ne pas publier en production finale.
 - Ne pas ajouter de règles spécifiques aux crawlers IA sans décision propriétaire.
 - Ne pas publier de ratings, avis, prix, récompenses ou métriques non sourcés.
 - Ne pas ajouter de JSON-LD qui ne correspond pas à un contenu visible.
-- Ne pas publier `generated-pages.html`, `pages-extracted/`, les Markdown projet ou le PDF source.
+- Ne pas publier `generated-pages.html`, `pages-extracted/`, les Markdown projet ou le PDF source ; `build:prod` les exclut.
 - Traiter `llms.txt` comme une aide optionnelle aux agents, pas comme un facteur de classement Google.
