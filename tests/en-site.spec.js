@@ -86,6 +86,10 @@ test.describe('version anglaise locale', () => {
       expect(html, route).toContain('hreflang="fr"');
       expect(html, route).toContain('class="language-switcher"');
       expect(html, route).toContain('aria-label="Language selection"');
+      expect(html, route).not.toMatch(/aria-label=["'](?:Lecture|Son)["']/i);
+      expect(html, route).not.toContain('My Story piece');
+      expect(html, route).not.toContain('The Monroe Experiment');
+      expect(html, route).not.toMatch(/\bTheater\b/);
       expect(html, route).not.toMatch(/>\s*Accueillir\s*</i);
       expect(html, route).not.toMatch(/>\s*Accueil\s*</i);
       expect(html, route).not.toContain('style.css?v=20260920-issues45-46');

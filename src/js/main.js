@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
 var manualAnchorHash = null;
 var manualAnchorUntil = 0;
 
+function isEnglishDocument() {
+    return document.documentElement.lang.toLowerCase().indexOf('en') === 0;
+}
+
 /**
  * Sélecteur de langue — ajoute le lien réciproque aux pages françaises
  * historiques qui ne portent pas encore le balisage statique.
@@ -553,6 +557,26 @@ function bindVideoControls(section, iframe) {
     var playBtn = section.querySelector('.page11__play-btn');
     var soundBtn = section.querySelector('.page11__sound-btn');
     var player = new Vimeo.Player(iframe);
+    var labels = isEnglishDocument()
+        ? { play: 'Play video', pause: 'Pause video', mute: 'Mute video', unmute: 'Unmute video' }
+        : { play: 'Lire la vidéo', pause: 'Mettre en pause la vidéo', mute: 'Couper le son', unmute: 'Activer le son' };
+
+    function updateLabels() {
+        if (playBtn) {
+            playBtn.setAttribute(
+                'aria-label',
+                playBtn.getAttribute('aria-pressed') === 'true' ? labels.pause : labels.play
+            );
+        }
+        if (soundBtn) {
+            soundBtn.setAttribute(
+                'aria-label',
+                soundBtn.getAttribute('aria-pressed') === 'true' ? labels.mute : labels.unmute
+            );
+        }
+    }
+
+    updateLabels();
 
     if (playBtn) {
         playBtn.addEventListener('click', function() {
@@ -564,6 +588,7 @@ function bindVideoControls(section, iframe) {
                 player.play();
                 playBtn.setAttribute('aria-pressed', 'true');
             }
+            updateLabels();
         });
     }
 
@@ -577,6 +602,7 @@ function bindVideoControls(section, iframe) {
                 player.setVolume(1);
                 soundBtn.setAttribute('aria-pressed', 'true');
             }
+            updateLabels();
         });
     }
 }
@@ -588,6 +614,8 @@ function bindVideoControls(section, iframe) {
  */
 function initDisclosure() {
     var buttons = document.querySelectorAll('#main-content button[aria-expanded][aria-controls]');
+    var defaultShow = isEnglishDocument() ? 'Show content' : 'Voir le contenu';
+    var defaultHide = isEnglishDocument() ? 'Hide content' : 'Masquer le contenu';
 
     function updateButtonLabel(btn, label) {
         var labelNode = btn.querySelector('.js-disclosure-label');
@@ -609,10 +637,10 @@ function initDisclosure() {
 
             if (btn.getAttribute('aria-expanded') === 'true') {
                 target.hidden = false;
-                updateButtonLabel(btn, btn.dataset.labelHide || 'Masquer le contenu');
+                updateButtonLabel(btn, btn.dataset.labelHide || defaultHide);
             } else {
                 target.hidden = true;
-                updateButtonLabel(btn, btn.dataset.labelShow || 'Voir le contenu');
+                updateButtonLabel(btn, btn.dataset.labelShow || defaultShow);
             }
 
             btn.addEventListener('click', function(e) {
@@ -622,12 +650,12 @@ function initDisclosure() {
                 if (isExpanded) {
                     btn.setAttribute('aria-expanded', 'false');
                     target.hidden = true;
-                    updateButtonLabel(btn, btn.dataset.labelShow || 'Voir le contenu');
+                    updateButtonLabel(btn, btn.dataset.labelShow || defaultShow);
                     btn.focus();
                 } else {
                     btn.setAttribute('aria-expanded', 'true');
                     target.hidden = false;
-                    updateButtonLabel(btn, btn.dataset.labelHide || 'Masquer le contenu');
+                    updateButtonLabel(btn, btn.dataset.labelHide || defaultHide);
                 }
             });
         })(buttons[i]);
@@ -727,16 +755,25 @@ function initHeroVideo() {
 
     initHeroPlayback(video);
 
+    var labels = isEnglishDocument()
+        ? { mute: 'Mute video', unmute: 'Unmute video' }
+        : { mute: 'Couper le son', unmute: 'Activer le son' };
+
+    function updateSoundLabel() {
+        btn.setAttribute('aria-label', video.muted ? labels.unmute : labels.mute);
+    }
+
+    updateSoundLabel();
+
     btn.addEventListener('click', function() {
         if (video.muted) {
             video.muted = false;
             btn.setAttribute('aria-pressed', 'true');
-            btn.setAttribute('aria-label', 'Couper le son');
         } else {
             video.muted = true;
             btn.setAttribute('aria-pressed', 'false');
-            btn.setAttribute('aria-label', 'Activer le son');
         }
+        updateSoundLabel();
     });
 }
 
@@ -748,8 +785,8 @@ function initHeroPlayback(video) {
     var btn = document.getElementById('hero-play-btn');
     if (!btn) return;
 
-    var labelPlay = 'Lancer la vidéo d\'ambiance';
-    var labelPause = 'Mettre en pause la vidéo d\'ambiance';
+    var labelPlay = isEnglishDocument() ? 'Play ambient video' : 'Lancer la vidéo d\'ambiance';
+    var labelPause = isEnglishDocument() ? 'Pause ambient video' : 'Mettre en pause la vidéo d\'ambiance';
 
     function refleter() {
         if (video.paused) {
@@ -888,8 +925,12 @@ function initContactVideo() {
     var btn = document.getElementById('contact-video-btn');
     if (!video || !btn) return;
 
-    var labelPlay = 'Lancer la vidéo d\'ambiance de la section Contact';
-    var labelPause = 'Mettre en pause la vidéo d\'ambiance de la section Contact';
+    var labelPlay = isEnglishDocument()
+        ? 'Play ambient video in the Contact section'
+        : 'Lancer la vidéo d\'ambiance de la section Contact';
+    var labelPause = isEnglishDocument()
+        ? 'Pause ambient video in the Contact section'
+        : 'Mettre en pause la vidéo d\'ambiance de la section Contact';
 
     function setPlaying() {
         btn.setAttribute('aria-label', labelPause);
@@ -940,7 +981,7 @@ function initBackToTop() {
     var btn = document.createElement('button');
     btn.className = 'back-to-top';
     btn.setAttribute('type', 'button');
-    btn.setAttribute('aria-label', 'Retour en haut de page');
+    btn.setAttribute('aria-label', isEnglishDocument() ? 'Back to top' : 'Retour en haut de page');
     btn.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z" fill="currentColor"/></svg>';
     document.body.appendChild(btn);
 
