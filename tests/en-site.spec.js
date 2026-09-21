@@ -147,6 +147,7 @@ test.describe('version anglaise locale', () => {
       'Fox offers her',
       'her dismissal',
       'sense of humour',
+      'a lot of humour in these photos',
       'knows how to recognise',
       "don't necessarily recognise the Marilyn",
     ]) {
@@ -154,7 +155,7 @@ test.describe('version anglaise locale', () => {
     }
 
     expect(html).not.toMatch(/\bHis measurements\b|\bafter his death\b|\bhis body\b|\bhis haircut\b/);
-    expect(html).not.toMatch(/\bsense of humor\b|\brecognize\b/);
+    expect(html).not.toMatch(/\bsense of humor\b|\ba lot of humor in these photos\b|\brecognize\b/);
     expect(html).not.toContain('the Misfits');
 
     for (const page of [installation, home]) {
