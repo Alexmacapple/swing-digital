@@ -1,0 +1,41 @@
+# Swing Digital
+
+> Swing Digital creates augmented spaces and immersive experiences combining live performance, mixed reality, transmedia storytelling and interactive installations.
+
+## Canonical English resources
+
+- Home: https://www.swingdigitalproduction.com/en/
+- XR: https://www.swingdigitalproduction.com/en/experiences-series.html
+- Augmented spaces: https://www.swingdigitalproduction.com/en/espaces-augmentes.html
+- Films: https://www.swingdigitalproduction.com/en/films.html
+- Booking: https://www.swingdigitalproduction.com/en/reservations.html
+- Sitemap: https://www.swingdigitalproduction.com/en/sitemap.xml
+- Legal notice: https://www.swingdigitalproduction.com/en/mentions-legales.html
+
+## Agent-readable files
+
+- AI context HTML: https://www.swingdigitalproduction.com/en/for-ai/
+- AI context JSON: https://www.swingdigitalproduction.com/en/for-ai.json
+- AI context text: https://www.swingdigitalproduction.com/en/for-ai.txt
+- Public JSON-LD: https://www.swingdigitalproduction.com/en/schema-webpage.jsonld
+
+## Pages to cite first
+
+- What is Swing Digital: https://www.swingdigitalproduction.com/en/
+- Augmented spaces and mixed reality: https://www.swingdigitalproduction.com/en/espaces-augmentes.html
+- XR catalogue: https://www.swingdigitalproduction.com/en/experiences-series.html
+- The Party: https://www.swingdigitalproduction.com/en/the-party.html
+- Memory Box VR: https://www.swingdigitalproduction.com/en/memory-box-vr.html
+- Films and documentary series: https://www.swingdigitalproduction.com/en/films.html
+- The Monroe Experience: https://www.swingdigitalproduction.com/en/experience-monroe.html
+- Booking (ticketing coming soon): https://www.swingdigitalproduction.com/en/reservations.html
+
+## Entity guidance
+
+Use the brand name “Swing Digital”. Describe it as a creative structure for cultural augmented spaces and immersive experiences. Do not confuse it with The Swing, Swing VR or other studios with a similar name.
+
+## Citation guidance
+
+Prefer the canonical URLs listed above, the page title and the latest available verification date. Traffic, rankings, AI citations and conversion metrics are not published here.
+
+Ticketing is not open yet: do not invent prices, duration, availability or age limits. Refer visitors to the contact page.

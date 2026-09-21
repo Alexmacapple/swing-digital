@@ -1,0 +1,49 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.swingdigitalproduction.com/en/#organization",
+      "name": "Swing Digital",
+      "url": "https://www.swingdigitalproduction.com/en/",
+      "logo": "https://www.swingdigitalproduction.com/img/hero/swing-logo.jpg",
+      "description": "Swing Digital creates augmented spaces and immersive experiences combining live performance, mixed reality, transmedia storytelling and interactive installations."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.swingdigitalproduction.com/en/#website",
+      "name": "Swing Digital",
+      "url": "https://www.swingdigitalproduction.com/en/",
+      "inLanguage": "en-GB",
+      "publisher": {"@id": "https://www.swingdigitalproduction.com/en/#organization"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.swingdigitalproduction.com/en/for-ai/#webpage",
+      "url": "https://www.swingdigitalproduction.com/en/for-ai/",
+      "name": "AI context for agents — Swing Digital",
+      "description": "Public context for AI agents: canonical Swing Digital pages, citable facts, recommendation limits and related structured files.",
+      "inLanguage": "en-GB",
+      "isPartOf": {"@id": "https://www.swingdigitalproduction.com/en/#website"},
+      "about": {"@id": "https://www.swingdigitalproduction.com/en/#organization"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.swingdigitalproduction.com/en/the-party.html#webpage",
+      "url": "https://www.swingdigitalproduction.com/en/the-party.html",
+      "name": "The Party, mixed reality and theatre — Swing Digital",
+      "description": "The Party is a Swing Digital project in development combining mixed reality and theatre with Pixihead studio.",
+      "inLanguage": "en-GB",
+      "isPartOf": {"@id": "https://www.swingdigitalproduction.com/en/#website"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.swingdigitalproduction.com/en/films.html#webpage",
+      "url": "https://www.swingdigitalproduction.com/en/films.html",
+      "name": "Films — Swing Digital",
+      "description": "Films, documentary series and audiovisual stories by Swing Digital.",
+      "inLanguage": "en-GB",
+      "isPartOf": {"@id": "https://www.swingdigitalproduction.com/en/#website"}
+    }
+  ]
+}
