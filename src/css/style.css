@@ -9032,3 +9032,11 @@ main > .media-transcript {
         font-size: 0.72rem;
     }
 }
+
+/* Le sélecteur du pied de page occupe déjà toute la largeur de son conteneur. */
+@media (max-width: 1023px) {
+    .language-switcher.language-switcher--footer {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
