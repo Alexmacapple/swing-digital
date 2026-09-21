@@ -125,6 +125,8 @@ test.describe('version anglaise locale', () => {
 
   test('les titres de films et les pronoms de la transcription Monroe sont corrigés', () => {
     const html = readRoute('/en/monroe-interviews.html');
+    const installation = readRoute('/en/monroe-installation.html');
+    const home = readRoute('/en/index.html');
 
     expect(html).toContain("Something's Got to Give");
     expect(html).toContain('The Misfits');
@@ -133,6 +135,32 @@ test.describe('version anglaise locale', () => {
     expect(html).not.toContain('He called him strawhead');
     expect(html).not.toContain('Milton Greene gave him');
     expect(html).not.toContain('which did not suit him');
+
+    for (const phrase of [
+      'Her measurements',
+      'she is someone who remained frozen',
+      'after her death',
+      'her body was worked on',
+      'her haircut',
+      'What would her life have been like?',
+      'the big tour of her life',
+      'Fox offers her',
+      'her dismissal',
+      'sense of humour',
+      'knows how to recognise',
+      "don't necessarily recognise the Marilyn",
+    ]) {
+      expect(html).toContain(phrase);
+    }
+
+    expect(html).not.toMatch(/\bHis measurements\b|\bafter his death\b|\bhis body\b|\bhis haircut\b/);
+    expect(html).not.toMatch(/\bsense of humor\b|\brecognize\b/);
+    expect(html).not.toContain('the Misfits');
+
+    for (const page of [installation, home]) {
+      expect(page).toContain('her unfinished novel');
+      expect(page).not.toContain('his unfinished novel');
+    }
   });
 
   test('les annotations hreflang sont réciproques entre les deux langues', () => {
