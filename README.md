@@ -128,7 +128,7 @@ Le script historique faisait :
 
 1. il refuse de publier hors de `main`, avec un arbre de travail non propre, ou si `main` n'est pas aligné sur `origin/main` ;
 2. il reconstruit `dist/` par `npm run build:prod` ;
-3. il copie `dist/` en miroir dans un worktree dédié à la branche `gh-pages` (`~/Claude-worktrees/swing-gh-pages`, créé au premier lancement ; autre emplacement par la variable `SWING_GH_PAGES_WORKTREE`) ;
+3. il copie `dist/` en miroir dans un worktree dédié à la branche `gh-pages` (`~/Claude-deploy/swing-gh-pages`, créé au premier lancement ; autre emplacement par la variable `SWING_GH_PAGES_WORKTREE`) ;
 4. il prépare la copie de recette : `noindex, nofollow` sur chaque page HTML, `robots.txt` qui interdit tout, fichier `.nojekyll` pour que Pages serve le site tel quel ;
 5. il vérifie que toutes les pages portent le `noindex`, puis commite et pousse normalement sur `gh-pages`. Jamais de push forcé : l'historique de la branche s'allonge, mais les images, identiques à celles de `main`, ne sont stockées qu'une fois par git.
 

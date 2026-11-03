@@ -12,7 +12,7 @@
 set -euo pipefail
 
 RACINE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-WORKTREE="${SWING_GH_PAGES_WORKTREE:-$HOME/Claude-worktrees/swing-gh-pages}"
+WORKTREE="${SWING_GH_PAGES_WORKTREE:-$HOME/Claude-deploy/swing-gh-pages}"
 BRANCHE="gh-pages"
 A_BLANC=0
 [ "${1:-}" = "--a-blanc" ] && A_BLANC=1

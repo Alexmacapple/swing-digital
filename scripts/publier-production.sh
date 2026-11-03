@@ -8,7 +8,7 @@ readonly production_branch="production"
 readonly production_domain="${SWING_PRODUCTION_DOMAIN:-https://www.swingdigitalproduction.com}"
 readonly script_dir="$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 readonly repo_root="$(cd -- "$script_dir/.." && pwd)"
-readonly production_worktree="${SWING_PRODUCTION_WORKTREE:-$HOME/Claude-worktrees/swing-production}"
+readonly production_worktree="${SWING_PRODUCTION_WORKTREE:-$HOME/Claude-deploy/swing-production}"
 
 fail() {
     printf 'ERREUR : %s\n' "$*" >&2
