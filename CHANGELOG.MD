@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-06
+
+- Design system : ajout de `design-system/`, extrait de `src/` au commit
+  `e27cb5f`. Les 45 variables couleur deviennent 40 tokens nommés par rôle
+  (doublons fusionnés, deux variables inutilisées écartées), avec 10 styles
+  de texte en graisses 900/700/400, espacements, rayons et ombres. Les 57
+  composants des 28 pages ont chacun un aperçu et un guide. Documentation
+  seule : le site sert toujours `src/css/style.css`, la migration n'est pas
+  commencée.
+
 ## 2026-09-21
 
 - Version anglaise (`#47` à `#54`) : livraison du socle local des 29 routes

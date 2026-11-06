@@ -88,6 +88,16 @@ src/
 
 ---
 
+## Design system
+
+`design-system/` documente l'existant, extrait de `src/` au commit `e27cb5f` (2026-11-06) :
+
+- `design-system/DESIGN.md` : référence texte, à lire avant de créer ou modifier une page : 40 couleurs nommées par rôle (`ground-pink`, `text-red`, `decor-gold`…) avec leurs anciens noms `--color-*`, 10 styles de texte en graisses 900/700/400, espacements, rayons, ombres, 57 composants et ordre de migration.
+- `design-system/design-system/` : tokens (`tokens.json`, `tokens.css`), feuille des composants, un aperçu et un guide par composant.
+- Le site sert toujours `src/css/style.css` : la migration vers les tokens n'est pas commencée et se fera page par page, avec contrôle visuel avant et après.
+
+---
+
 ## Accessibilité - WCAG 2.2 AA / RGAA 4.1
 
 - Dernier audit axe-core complet historique sans violation bloquante ; la suite Playwright actuelle couvre la taxonomie XR / Films et le socle SEO/GEO, pas encore un scan axe-core complet.

@@ -1,0 +1,1 @@
+Icônes en fichier, copiées de `src/img/icons/` : badges App Store et Google Play (`AppProjectHero`), drapeaux de langue. Les icônes d'interface (lecture, pause, son, retour en haut) ne sont pas des fichiers : elles sont en SVG en ligne, `fill="currentColor"`, dans le HTML des composants.

@@ -94,6 +94,8 @@ npm run seo:check
 |---------|---------|
 | CLAUDE.md | Mémoire projet, stack, composants, décisions |
 | GUIDELINES-TEMPLATES.md | Conventions CSS/HTML, archétypes, classes BEM |
+| design-system/DESIGN.md | Design system : tokens par rôle, typographie, 57 composants, ordre de migration |
+| design-system/LISEZMOI.md | Contenu du dossier design system (tokens, aperçus, scripts de génération) |
 | ENSEIGNEMENTS-PAGES.md | Leçons apprises, erreurs récurrentes |
 | PRD-DECOUPAGE.md | PRD découpe multi-pages (terminé) |
 | PRD-BUILD-PARTIALS.md | PRD historique de factorisation HTML par partials |

@@ -1,0 +1,283 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-06T13:38:41Z"
+ },
+ "title": "Swing Digital",
+ "namespace": "SwingDigital",
+ "libraries": [],
+ "sections": {},
+ "groups": [
+  "Logos",
+  "Icones"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "m",
+   "order": [
+    "acumen.png",
+    "cerval.png",
+    "charlie-chaplin.png",
+    "cnc-alt.png",
+    "cnc.png",
+    "drac.png",
+    "ejt-labo.png",
+    "epinay-sur-seine.png",
+    "feu-vert.jpg",
+    "fondation-vinci.jpg",
+    "forum-images.png",
+    "galerie-joseph.png",
+    "grand-est.jpg",
+    "jean-legendre.jpg",
+    "la-centrale.png",
+    "le-sas.png",
+    "morrison-hotel.jpg",
+    "onda.jpg",
+    "orange.png",
+    "pixihead.png",
+    "pole-media.png",
+    "principe-actif-hd.png",
+    "principe-actif.png",
+    "robert-laffont.png",
+    "saint-gratien.png",
+    "seine-saint-denis.jpg",
+    "swing-digital-hd.png",
+    "swing-digital.png",
+    "the-archives.png",
+    "ville-de-paris.svg"
+   ],
+   "files": {
+    "acumen.png": {
+     "name": "acumen.png",
+     "blob": "febdb5bc0a19638fcebc731bf57c50d4",
+     "size": 3041,
+     "type": "image/png"
+    },
+    "cerval.png": {
+     "name": "cerval.png",
+     "blob": "8940cdc0ad9082b13c5968482c382c21",
+     "size": 11249,
+     "type": "image/png"
+    },
+    "charlie-chaplin.png": {
+     "name": "charlie-chaplin.png",
+     "blob": "08c1ba3a735f9aa904cac563c7a1a459",
+     "size": 4529,
+     "type": "image/png"
+    },
+    "cnc-alt.png": {
+     "name": "cnc-alt.png",
+     "blob": "b361086e0ae9da33ad6dd5ae38377489",
+     "size": 3143,
+     "type": "image/png"
+    },
+    "cnc.png": {
+     "name": "cnc.png",
+     "blob": "bbb47ecb37bda23fb7918bdf2b94f238",
+     "size": 3143,
+     "type": "image/png"
+    },
+    "drac.png": {
+     "name": "drac.png",
+     "blob": "b539646e59c6f5a113972ffd4a30d8ee",
+     "size": 8505,
+     "type": "image/png"
+    },
+    "ejt-labo.png": {
+     "name": "ejt-labo.png",
+     "blob": "08f934bb9bed2546f60f6af8e0ff544e",
+     "size": 14076,
+     "type": "image/png"
+    },
+    "epinay-sur-seine.png": {
+     "name": "epinay-sur-seine.png",
+     "blob": "949a76597c7c40a6d815bc61df1c9955",
+     "size": 2683,
+     "type": "image/png"
+    },
+    "feu-vert.jpg": {
+     "name": "feu-vert.jpg",
+     "blob": "a25d6fa0664764e8e8fdc50562d67fc8",
+     "size": 10190,
+     "type": "image/jpeg"
+    },
+    "fondation-vinci.jpg": {
+     "name": "fondation-vinci.jpg",
+     "blob": "9f67e6491f7aad82b5617d2e9a61a670",
+     "size": 3512,
+     "type": "image/jpeg"
+    },
+    "forum-images.png": {
+     "name": "forum-images.png",
+     "blob": "531631b049827283ddc4b883a2290243",
+     "size": 14341,
+     "type": "image/png"
+    },
+    "galerie-joseph.png": {
+     "name": "galerie-joseph.png",
+     "blob": "bc1228e51f4dd14c7ca7e81c042f715e",
+     "size": 5315,
+     "type": "image/png"
+    },
+    "grand-est.jpg": {
+     "name": "grand-est.jpg",
+     "blob": "9696c1284691916cde7bc33f6fd3a412",
+     "size": 6437,
+     "type": "image/jpeg"
+    },
+    "jean-legendre.jpg": {
+     "name": "jean-legendre.jpg",
+     "blob": "33649a31d57d25d83f7296a2b521512d",
+     "size": 6078,
+     "type": "image/jpeg"
+    },
+    "la-centrale.png": {
+     "name": "la-centrale.png",
+     "blob": "e552e5df83fa92e2c87b63c134a79c13",
+     "size": 11653,
+     "type": "image/png"
+    },
+    "le-sas.png": {
+     "name": "le-sas.png",
+     "blob": "8d30891c548a39f97e46115e963ee3d4",
+     "size": 5407,
+     "type": "image/png"
+    },
+    "morrison-hotel.jpg": {
+     "name": "morrison-hotel.jpg",
+     "blob": "c975bce03ed092bee446b422676192cc",
+     "size": 4719,
+     "type": "image/jpeg"
+    },
+    "onda.jpg": {
+     "name": "onda.jpg",
+     "blob": "8dfaf2b9c1a7bdb611565e4d89a4d4e3",
+     "size": 4748,
+     "type": "image/jpeg"
+    },
+    "orange.png": {
+     "name": "orange.png",
+     "blob": "6c784c8416e907db153e2618af29ee8d",
+     "size": 4485,
+     "type": "image/png"
+    },
+    "pixihead.png": {
+     "name": "pixihead.png",
+     "blob": "7a942fa4285b04d4b24c5e7bf125f77e",
+     "size": 3307,
+     "type": "image/png"
+    },
+    "pole-media.png": {
+     "name": "pole-media.png",
+     "blob": "7343db94213a27a8f229dd6454515bb7",
+     "size": 7887,
+     "type": "image/png"
+    },
+    "principe-actif-hd.png": {
+     "name": "principe-actif-hd.png",
+     "blob": "3899efaaf148427b6a18726ba8924d8b",
+     "size": 62554,
+     "type": "image/png"
+    },
+    "principe-actif.png": {
+     "name": "principe-actif.png",
+     "blob": "d0604ad23914cccae0fd37fbcbdf20fb",
+     "size": 5347,
+     "type": "image/png"
+    },
+    "robert-laffont.png": {
+     "name": "robert-laffont.png",
+     "blob": "cff0c072304b7b92eda6d60a38415382",
+     "size": 11913,
+     "type": "image/png"
+    },
+    "saint-gratien.png": {
+     "name": "saint-gratien.png",
+     "blob": "5c10a86950edcffad35e576d96e42623",
+     "size": 12463,
+     "type": "image/png"
+    },
+    "seine-saint-denis.jpg": {
+     "name": "seine-saint-denis.jpg",
+     "blob": "921744c36a7d5710b232534f037f8f4f",
+     "size": 4488,
+     "type": "image/jpeg"
+    },
+    "swing-digital-hd.png": {
+     "name": "swing-digital-hd.png",
+     "blob": "a69df548169b282ffd2efe48c72b81ee",
+     "size": 41166,
+     "type": "image/png"
+    },
+    "swing-digital.png": {
+     "name": "swing-digital.png",
+     "blob": "63588b3adc0b5d1ebe6a6e8ee8d537c4",
+     "size": 7968,
+     "type": "image/png"
+    },
+    "the-archives.png": {
+     "name": "the-archives.png",
+     "blob": "8edeed53791a795fd1e1feb2fb13474b",
+     "size": 6516,
+     "type": "image/png"
+    },
+    "ville-de-paris.svg": {
+     "name": "ville-de-paris.svg",
+     "blob": "d5ded314a202c48a5c500cb738bcb6ff",
+     "size": 1920,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Icones": {
+   "name": "Icones",
+   "tile": "s",
+   "order": [
+    "badge-appstore.svg",
+    "badge-googleplay.svg",
+    "flag-en.svg",
+    "flag-fr.svg"
+   ],
+   "files": {
+    "badge-appstore.svg": {
+     "name": "badge-appstore.svg",
+     "blob": "19153935bda247c08735f02d87ec4a14",
+     "size": 481,
+     "type": "image/svg+xml"
+    },
+    "badge-googleplay.svg": {
+     "name": "badge-googleplay.svg",
+     "blob": "eb10f45f8658f54cedbd4068f7578f8b",
+     "size": 480,
+     "type": "image/svg+xml"
+    },
+    "flag-en.svg": {
+     "name": "flag-en.svg",
+     "blob": "20e46344806a170b5caa80f47e49bd82",
+     "size": 651,
+     "type": "image/svg+xml"
+    },
+    "flag-fr.svg": {
+     "name": "flag-fr.svg",
+     "blob": "7b1d9ad49d8071c8bea738e1b5ce5588",
+     "size": 240,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Alex",
+  "at": "2026-11-06T13:38:41Z",
+  "via": "GitHub · Alexmacapple/swing-digital@e27cb5f",
+  "note": "Création depuis src/ : 40 couleurs dédoublonnées et renommées par rôle, 10 styles, 57 composants"
+ }
+}
